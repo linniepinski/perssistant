@@ -1,0 +1,6 @@
+v1.1
+--------------------
+ae_stripe.php
+assets/stripe.js
+form-template.php
+update.php

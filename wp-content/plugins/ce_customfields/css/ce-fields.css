@@ -1,0 +1,58 @@
+.field-form-item input[type=checkbox],
+.field-form-item input[type=radio]{
+    width: auto;
+    height: auto;
+	vertical-align: middle;
+}
+.field-form-item input[type=select]{
+	min-width: 50%;
+}
+.form-post form .field-form-item .controls label{
+    width: auto;
+	line-height: 28px;
+    padding: 0 20px 0 10px; 
+    margin-bottom: 0;
+}
+form.edit-ad-form .field-form-item  span.sub-title{
+	display: none;
+}
+form.edit-ad-form .field-form-item textarea{
+	color: #0B0300
+}
+div.single-page .ext-field{
+	display: block;
+	clear: both;
+	padding-bottom: 0;
+}
+div.single-page .ext-field label{
+	font-weight: bold;
+	float: left;
+	padding-right: 10px;
+}
+.post-ad-step.step form .ce-sf-item-checkbox .controls label{
+	width: 100px;
+}
+.form-group.ce-sf-item-radio input{
+	width: 30px;
+	height: 10px;
+}
+.ce-sf-item .controls{
+	display: table;
+}
+.post-ad-step .ce-sf-item .controls{
+	display: block;
+	}
+.ce-sf-item .controls ul li{
+	display: inline-block;
+	padding: 0;
+	border:none;
+}
+body.page-template-page-account-profile .accout-profile  .ce-sf-item  label span.sub-title{
+	display: none;
+}
+.listing-page .info-seller p.text-csf-field{
+	padding-bottom: 15px;
+}
+.ce-sf-item  select{
+	min-width: 150px;
+}

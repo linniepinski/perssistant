@@ -1,0 +1,1 @@
+Dev 16 2014 : remove je_insert_resume_field action(2.2.3)

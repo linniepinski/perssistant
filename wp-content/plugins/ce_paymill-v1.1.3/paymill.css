@@ -1,0 +1,92 @@
+
+.modal-paymill .modal-dialog{
+    width: 388px;
+}
+.modal-paymill .modal-header{
+    padding: 10px 40px;
+}
+.modal-paymill form{
+    padding-top: 10px;
+}
+.modal-paymill button.close{
+    position: relative;
+    right: -15px;
+    font-size: 25px;
+}
+.modal-paymill .form-group{
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+.modal-paymill .form-group label{
+    margin-bottom: 8px;
+}
+.modal-paymill .form-group input{
+    width: 100%;
+    height: 39px;
+}
+.modal-paymill .modal-body{
+    padding: 10px 25px;
+}
+.modal-paymill .modal-body button.btn{
+    padding: 5px 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.modal-paymill .form-item-left{
+    width: 56%;
+    float: left;
+}
+.modal-paymill .form-item-right{
+    width: 39%;
+    float: right;
+    padding-left: 12px;
+   
+}
+.modal-paymill .form-item-right input#paymill_exp_year{
+    padding: 0;
+    text-align: center;
+}
+.modal-paymill .form-item-right label{
+   
+}
+.modal-paymill .form-item-right input{
+    width: 48px;
+    float: right;
+}
+.modal-paymill .form-item-right input.error{
+    border-color: red !important;
+}
+.modal-paymill .form-item-right .controls{    
+    float: left;
+    width: 100%;
+    float: right;
+}
+.modal-paymill .form-item-right span{
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+}
+.modal-paymill .form-item-right input.input-cvc{
+    width: 97%;
+}
+
+.modal-paymill .modal-title{
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+/**
+ * 
+ */
+/*.content-step{
+    display: block !important;
+}
+.post-step3{
+    display: block !important;
+}*/

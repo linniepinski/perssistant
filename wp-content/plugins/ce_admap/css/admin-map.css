@@ -1,0 +1,16 @@
+#ce_map_settings div.item{
+	clear: both;
+	display: block;
+}
+#ce_map_settings div.item label{
+	float: left;
+	font-size: 15px;
+	cursor: default;
+	text-transform: none;
+}
+#ce_map_settings input.shortcode{
+	width: 390px;
+	height: 30px;
+	font-weight: normal;
+	font-size: 13px;
+}

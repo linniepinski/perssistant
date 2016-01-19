@@ -1,0 +1,352 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE SimplyHired\n"
+"POT-Creation-Date: 2013-08-20 15:19+0700\n"
+"PO-Revision-Date: 2013-08-20 15:19+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_simplyhired\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:3
+msgid "Import simplyhired jobs manually"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:10
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:74
+msgid "Full-time"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:11
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:75
+msgid "Part-time"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:12
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:76
+msgid "Telecommute"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:13
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:77
+msgid "Contract"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:14
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:78
+msgid "Internship"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:15
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:79
+msgid "Temporary"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:16
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:80
+msgid "Seasonal"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:17
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:81
+msgid "Permanent"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:18
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:82
+msgid "Volunteer"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:25
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:26
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:91
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:92
+msgid "ALL CONTRACT TYPES"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:38
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:29
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:103
+msgid "Job title"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:46
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:106
+msgid "Zipcode"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:51
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:109
+msgid "City"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:56
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:112
+msgid "State"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:62
+msgid "Window Size (max: 100)"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:68
+msgid "Page Number"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:79
+msgid "Search"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:90
+msgid "With Selected Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:93
+msgid "Job Categories"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:100
+msgid "Job Types"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:128
+msgid "Apply for all jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:140
+msgid "Author Username"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/import.php:145
+msgid "Import all selected Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:2
+msgid "Plugin options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:6
+msgid "Automatically delete imported job older than "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:8
+msgid "Day(s)"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:8
+msgid "&nbsp;or"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:9
+msgid "Delete Now"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:13
+msgid "Imported Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:30
+msgid "Title"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:31
+msgid "Creator"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:32
+msgid "Date"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/manage.php:60
+msgid "Delete selected jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:4
+msgid "recurrence"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:4
+msgid " (The next timestamp for a cron event: "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:6
+msgid "How often should the event reoccur?"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:18
+msgid "Simplyhired Schedule List"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:21
+msgid "Add new"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:30
+msgid "Location"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:31
+msgid "Contract Type"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:32
+msgid "Author"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:39
+msgid "All contract types"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:89
+msgid "Simplyhired Contract type"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:115
+msgid "Number of jobs to import (max 25)"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:119
+msgid "Assign a Category for the jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:132
+msgid "Assign a Job Type for the jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:145
+msgid "Assign an Author for the jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:147
+msgid "Enter an author's name"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/schedule.php:151
+msgid "Save Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:7
+msgid "SimplyHired API"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:9
+msgid "Configure your SimplyHired API"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:16
+msgid "Publisher ID"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:20
+msgid "Job-a-matic domain"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:24
+msgid "Search Style"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:29
+msgid "Configuration Flag"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/settings.php:37
+msgid "Save your setting"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:34
+msgid "Permission denied!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:91
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:135
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:161
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:182
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:220
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:241
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:273
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:299
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:314
+msgid "Permission Denied"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:107
+msgid "Jobs have been imported to your site."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired-ajax.php:248
+msgid "Input Invalid!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:69
+msgid "Custom SimplyHired Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:73
+msgid "Custom Single SimplyHired Schedule (10 minutes)"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:177
+msgid ""
+"JE SimplyHired requires CURL to be installed on your server. Please ask your "
+"hosting provider to install PHP CURL for you."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:363
+msgid "No results"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:673
+msgid "JE SimplyHired"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:674
+msgid "JE SIMPLYHIRED"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:677
+msgid "Import SimplyHired jobs into your job board"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:696
+msgid "API Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:701
+msgid "Search Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:706
+msgid "Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/simplyhired.php:711
+msgid "Manage Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/template-job.php:27
+#, php-format
+msgid "View %s job details"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/template-job.php:38
+#, php-format
+msgid "View all jobs posted in %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/template-job.php:54
+msgid "Set Featured"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/template-job.php:57
+msgid "Remove Featured"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_simplyhired/template-job.php:59
+msgid "featured"
+msgstr ""

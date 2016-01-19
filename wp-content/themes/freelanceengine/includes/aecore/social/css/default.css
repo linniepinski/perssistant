@@ -1,0 +1,109 @@
+/* css Page social connect*/
+
+.social-auth .social-form {
+	margin-top:30px;
+}
+.social-auth input {
+	height: 35px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #dadfea;
+	padding-left: 15px;
+	margin-bottom: 20px;
+	outline: none;
+	width: 45%;
+}
+.social-auth input[type="submit"] {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #3397db;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	border: none;
+	box-shadow: none;
+	padding: 8px 30px;
+	margin-top: 10px;
+	width: inherit;
+	display: inline-block;
+}
+.social-auth p {
+	margin: 10px 0;
+	text-align: justify;
+}
+.social-small, .social-big {
+	color: #7b7b7b;
+}
+.social-big {
+	font-size: 2.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 20px 0px 10px 0px;
+}
+.social-auth.social-auth-step2 {
+	display: none;
+}
+.social-form input[type="text"]{
+	margin-right: 10px;
+}
+.sign-in-social {
+	position: absolute;
+	top: 130px;
+	z-index:99;
+}
+.margintop20{
+	margin-top: 20px;
+}
+.sc_user_role{
+	height: 35px;
+	margin-right: 10px;
+}
+/*default style of social login button*/
+ul.list-social-login {
+	list-style: none;
+	padding-left: 0;
+}
+/*ul.list-social-login li {
+	display: inline-block;
+	margin-right: 12px;
+	margin-bottom: 20px;
+}*/
+/*ul.list-social-login li a {
+	display: block;
+	min-width: 110px;
+	height: 32px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 2.3;
+	text-align: center;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-ms-border-radius: 3px;
+}
+ul.list-social-login li a.fb {
+	background: #5d82d1;
+}
+ul.list-social-login li a.tw {
+	background: #40bff5;
+}
+ul.list-social-login li a.gplus {
+	background: #eb5e4c;
+}
+ul.list-social-login li a.lkin {
+	background:#0369A0;
+}
+ul.list-social-login li a i {
+	font-size: 20px;
+	float: left;
+	line-height: 32px;
+	margin-left: 15px;
+}*/
+.socials-head {
+	color: #2c3e50;
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}

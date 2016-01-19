@@ -1,0 +1,169 @@
+.et-main-main.et-main-full{
+	margin: 30px;
+}
+
+.ordered-list{
+
+}
+
+.ordered-list.sortable .sort-handle{
+	float: left;
+	background: 
+}
+
+.ordered-list li{
+	border-bottom: 1px solid #EBEBF2;
+	position: relative;
+	padding: 10px 30px 10px 30px;
+	height: 18px;
+}
+
+.ordered-list li span{
+	color: #427bab;
+}
+
+.ordered-list li .actions{
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	height: 16px;
+}
+
+.ordered-list li .actions a{
+	text-decoration: none;
+	color: #60606e;
+	font-size: 11px;
+	margin-left: 10px;
+}
+
+.title a.back-link{
+	font-size: 11px;
+	float: right;
+	text-decoration: none;
+}
+
+.title a.new-link{
+	background: #427bab;
+	color: #fff;
+	padding: 5px 30px 5px 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-decoration: none;
+	position: relative;
+	font-weight: normal;
+	float: right;
+}
+
+.title a.new-link:hover{
+	background: #41AFE3;
+}
+
+.title a.new-link:after{
+	content: "+";
+	font-family: "Pictos";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 7px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+/*** FORM **/
+.et-form .form-item{
+	padding: 0;
+	margin: 20px 0;
+}
+.et-form .form-item label{
+	color: #60606e;
+	font-family: 'Quicksand', Arial, sans-serif;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 10px;
+}
+.et-form .form-item label.error{
+	color: #FE2E2E;
+	padding-top: 5px;
+}
+.et-form .form-item .cb-field label{
+	display: inline;
+}
+
+
+.et-form .form-item input[type=text],
+.et-form .form-item input[type=password]{
+	width: 450px;
+	height: 36px;
+	border: 1px solid #e5e5ea;
+	border-top-color: #C5C5Ca;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 0 10px;
+	color: #9c9c9c;
+}
+
+.et-form .form-item textarea{
+	height: 100px;
+	width: 450px;
+	color: #9c9c9c;
+	padding: 10px;
+}
+
+.field-type{
+	border: 2px solid #9c9c9c;
+	padding: 0px 4px;
+	margin: 0;
+	font-size: 10px;
+	color: #9c9c9c;
+}
+.field-type.field-text{
+}
+
+.cb-field {
+	margin-right: 20px;
+}
+
+.et-form .form-option{
+	margin-bottom: 10px;
+	clear:both;
+	height: 36px;
+}
+
+.et-form .form-option input[type=text]{
+	width: 250px;
+	float: left;
+	display: block;
+	margin-right: 20px;
+}
+
+.et-form .form-option .controls{
+	float: left;
+}
+
+.et-form .form-option .controls a{
+	height: 36px;
+	padding: 6px 12px;
+	color: #bbb;
+	font-size: 11px;
+}
+
+/*** LOADING ***/
+.loading-overlay{
+	position: absolute;
+	z-index: 9999;
+	opacity: 0.5;
+	filter: alpha(opacity:50);
+	background: #ffffff;
+}
+
+.loading-inner{
+	background: url(../img/loading.gif) center center no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.hide{
+	display: none;
+}

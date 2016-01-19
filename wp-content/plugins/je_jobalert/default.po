@@ -1,0 +1,258 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE_ALERT\n"
+"POT-Creation-Date: 2013-08-09 15:43+0700\n"
+"PO-Revision-Date: 2013-08-09 15:43+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_jobalert\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:108
+msgid "Custom Mail Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:345
+msgid ""
+"Unsubscribed successfully! You won't receive new job alerts in your inbox "
+"anymore."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:350
+msgid "Unsubscribed failed! The email you have just entered is not found."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:374
+msgid "Your email address is invalid!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:388
+msgid "You have successfully subscribed to receive job alerts."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:394
+msgid "Error."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:401
+msgid "Invalid job category."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:484
+msgid "Add New subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:485
+msgid "Edit subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:486
+msgid "New subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:487
+msgid "All subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:488
+msgid "View subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:489
+msgid "Search subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:490
+msgid "No subscriber found"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:491
+msgid "No subscriber found in Trash"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:514
+msgid "Add New subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:515
+msgid "Edit subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:516
+msgid "New subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:517
+msgid "All subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:518
+msgid "View subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:519
+msgid "Search subscriber Group"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:520
+msgid "No location found"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:521
+msgid "No location found in Trash"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:582
+#, php-format
+msgid "New jobs alert from %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:729
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:730
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:733
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:751
+msgid "JE ALERT"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:741
+msgid "Daily"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:742
+msgid "Weekly"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:752
+msgid ""
+"Set how frequent your subscribers will receive new job's alert in their "
+"inbox."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:757
+msgid "Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:758
+msgid "Subscribers"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:763
+msgid "Mailing settings"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:765
+msgid "Set up your Job Alerts"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:772
+msgid "Recurrence"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:772
+msgid "Choose frequency"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:784
+msgid "Job Limit"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:784
+msgid "Number of jobs per email"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:786
+msgid "Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:789
+msgid "Batch Email"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:789
+msgid "Number of emails to send per batch"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:791
+msgid "Emails"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:813
+msgid "Save your setting"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:819
+msgid "Subscriber"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:821
+msgid "List of all subsribers"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:835
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:36
+msgid "Email"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:836
+msgid "Job Category"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:837
+msgid "Location"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:864
+msgid "Export"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:911
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:966
+msgid "VIEW MORE JOBS"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/je_alert.php:922
+#, php-format
+msgid ""
+"Re-discover your potentials. Re-vision your future. Meet Success. Let %s "
+"take you there!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/page-unsubscribe.php:16
+msgid ""
+"Are you sure you want to unsubscribe? You won't be able to receive new job "
+"alerts in your inbox afterward."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/page-unsubscribe.php:26
+msgid "Unsubscribe"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:5
+msgid "A form to subscribe for new jobs notification emails."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:6
+msgid "JE Job Alert"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:27
+msgid "Select Category"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:33
+msgid "City, Country"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:40
+msgid "Subscribe "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobalert/widgets.php:64
+msgid "Title:"
+msgstr ""

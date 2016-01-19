@@ -1,0 +1,38 @@
+ACTION
+------------------------------------------------------------------------------------------------------------------------------------------
+	SELLER
+	---------------------------------------------------------------------------------------------------------------------------------------
+		ce_seller_bar 				: do in ce_seller_bar function, this function print seller bar to show seller information
+		ce_after_insert_seller 		: do after insert seller
+		ce_after_update_seller		: do after update seller
+		
+		
+	AD
+	-----------------------------------------------------------------------------------------------------------------------------------------
+		ce_ad_post_form_fields  		: post ad page template, 
+		ce_ad_edit_form_fields			: modal edit ad
+		ce_publish_ad 					: do when publish ad
+		ce_insert_ad					: do after insert ad
+		ce_update_ad					: do after update ad
+		ce_ad_meta_data					: add more meta data for CE_Ads class
+
+
+FILTER
+------------------------------------------------------------------------------------------------------------------------------------------
+
+	AD
+	---------------------------------------------------------------------------------------------------------------------------------------
+		ce_convert_ad 			: filter result return after convert an ad
+		
+		ce_ad_validate_data		: filter data after validate, validate data for insert and update
+	SELLER	
+	----------------------------------------------------------------------------------------------------------------------------------------
+		ce_convert_seller		: filter result return after convert seller data
+		
+		
+	MAIL 
+	----------------------------------------------------------------------------------------------------------------------------------------
+	et_get_mail_footer			: filter mail footer content
+	et_get_mail_header			: filter mail header content
+	et_filter_auth_email		: filter mail after replace placeholder
+	et_filter_ad_email			: filter mail after replace placholder ad

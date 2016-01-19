@@ -1,0 +1,26 @@
+[29-Aug-2015 12:24:29 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197
+[29-Aug-2015 12:24:30 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197
+[12-Oct-2015 15:25:46 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[12-Oct-2015 15:25:46 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197
+[12-Oct-2015 15:25:48 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[12-Oct-2015 15:25:48 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197
+[30-Oct-2015 19:52:28 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[30-Oct-2015 19:52:28 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197
+[30-Oct-2015 19:52:32 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20131226
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[30-Oct-2015 19:52:32 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home1/fleurdf8/public_html/perssistant/website/wp-content/plugins/captcha/captcha.php on line 197

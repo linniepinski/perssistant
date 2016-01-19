@@ -1,0 +1,112 @@
+#coupon_form .use_coupon {
+	position:absolute;
+	right:300px; 
+	top:20px;
+}
+
+/**** counpon ****/
+#coupon_form .coupon-bar {
+	/*background: url("../images/icon-coupon.png") no-repeat;	
+	color: #ff7669;*/
+	cursor: pointer;
+}
+
+#coupon_form .coupon-item .label {
+	float: left;
+	width: auto;
+	padding: 0;
+	color: #5E5F5E;
+	height: 38px;
+	line-height: 38px;
+}
+
+#coupon_form .coupon-item h6 {
+	font-size: 1.1em;
+	margin: 13px 0;
+}
+#coupon_form  *::-moz-placeholder{
+	opacity: 1;
+}
+#coupon_form .coupon-item .coupon-input {
+	margin-left: 0px;
+}
+#coupon_form .coupon-item  input#coupon_code{
+	margin-right: 30px;
+}
+#coupon_form .coupon-item{
+	
+}
+#coupon_form .coupon-item .coupon-input input {
+	width: 296px;
+	text-align: left;
+	text-indent: 20px;
+	padding: 0 10px;
+	margin-right: 15px;	
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #BCC0BB;
+    border-radius: 3px;
+    box-shadow: none;
+    height: 40px;
+    padding: 5px 10px;
+    color: #ff7769;
+
+}
+
+#coupon_form .coupon-item .coupon-input input.error {
+	border-color: #d68a7c !important;
+	background: #ffffff;
+	color: #d68a7c;
+	margin: 3px;	
+}
+
+#coupon_form .coupon-item .coupon-input span {
+	font-weight: bold;
+	margin-right: 3px;
+	font-size: 1.1em;
+}
+
+#coupon_form .coupon-item .coupon-input span.ad-price,
+#coupon_form .coupon-item .coupon-input span.coupon-price {
+	color: #ff7769;
+}
+
+#coupon_form .coupon-item .coupon-input span.ad-price {
+	/*text-decoration: line-through;*/
+}
+
+#payment_form ul {
+	position : relative;
+}
+
+#payment_form ul li.hidecoupon {
+	border: none;
+	padding: 0;
+}
+.post-ad-step.step form#checkout_form{
+	margin-top: 0;
+}
+
+.post-ad-step  ul.coupon-100 button.btn{
+	top: 0;
+	right: 0;	
+}
+
+.invisible{
+	visibility: hidden;
+}
+.disable-payment{
+	opacity: 0.6;
+}
+.post-ad-step .content-step li.disable-payment,
+.post-ad-step .content-step li.disable-payment button,
+button.disable-payment{
+	cursor: default;
+}
+.payment-coupon{
+	position: relative;
+	z-index: 1;
+}
+/*.payment-coupon button{
+	position: relative;
+	z-index: 1000;
+}*/

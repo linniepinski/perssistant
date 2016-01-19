@@ -1,0 +1,82 @@
+.modal-stripe {
+    width: 320px;
+    background-color: #565656;
+    border-radius: 5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    padding: 5px;
+}
+
+.modal-stripe .content {
+    padding: 20px !important;
+}
+
+.modal-stripe .form-item input {
+    width: 80%;
+}
+
+.modal-stripe .form-item {
+    width: 160px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    float: left;
+    clear: inherit;
+}
+
+.modal-stripe .form-item-right {
+    float: right;
+    width: 90px;
+    margin-right: 20px;
+}
+
+.modal-stripe .footer .button {
+    width: 100%;
+    margin: auto;
+}
+
+.modal-stripe .footer input[type=submit], .modal-stripe .footer input[type=button] {
+    width: 100%;
+    text-align: center;
+}
+
+.modal-stripe .stripe_date {
+    width: 125px;
+}
+
+.modal-stripe .stripe_date input {
+    width: 20%;
+}
+
+.stripe-header {
+    padding: 10px;
+}
+
+.stripe-header .logo img, .stripe-header .info {
+    margin: 0 10px;
+}
+
+.modal-stripe .info span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 1px 0;
+}
+
+.modal-stripe .info span {
+    margin: 0 0 4px 0;
+}
+
+.modal-stripe .info span.plan_name {
+    font-weight: bold;
+}
+
+.modal-stripe .info span.plan_desc {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.modal-stripe .error {
+    border-color: #ff7076 !important;
+    color : #ff7076;
+}
+

@@ -1,0 +1,53 @@
+# Translation of Development (trunk) in German
+# This file is distributed under the same license as the Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-10-19 12:21:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Development (trunk)\n"
+
+#. #-#-#-#-#  tmp-simple-custom-css.pot (Simple Custom CSS 3.2)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/admin.php:72 includes/admin.php:102
+msgid "Simple Custom CSS"
+msgstr "Simple Custom CSS"
+
+#: includes/admin.php:72
+msgid "Custom CSS"
+msgstr "Benutzerdefiniertes CSS"
+
+#: includes/admin.php:99
+msgid "Custom CSS updated successfully."
+msgstr "Benutzerdefiniertes CSS erfolgreich aktualisiert."
+
+#: includes/admin.php:107
+msgid "Simple Custom CSS allows you to add your own styles or override the default CSS of a plugin or theme."
+msgstr "Simple Custom CSS ermöglicht dir, deine eigenen Stil-Regeln hinzuzufügen oder das vorgegebene CSS eines Plugins oder Themes zu überschreiben."
+
+#: includes/admin.php:108
+msgid "To use, enter your custom CSS, then click \"Update Custom CSS\".  It's that simple!"
+msgstr "Zur Benutzung gibst du dein eigenes CSS ein und klickst auf \"Aktualisiere benutzerdefiniertes CSS\". So einfach geht das!"
+
+#: includes/admin.php:109 includes/admin.php:119
+msgid "Update Custom CSS"
+msgstr "Aktualisiere benutzerdefiniertes CSS"
+
+#. Plugin URI of the plugin/theme
+msgid "http://johnregan3.github.io/simple-custom-css"
+msgstr "http://johnregan3.github.io/simple-custom-css"
+
+#. Author of the plugin/theme
+msgid "John Regan, Danny Van Kooten"
+msgstr "John Regan, Danny Van Kooten"
+
+#. Author URI of the plugin/theme
+msgid "http://johnregan3.me"
+msgstr "http://johnregan3.me"
+
+#. Description of the plugin/theme
+msgid "The simple, solid way to add custom CSS to your WordPress website. Simple Custom CSS allows you to add your own styles or override the default CSS of a plugin or theme."
+msgstr "Der einfache und zuverlässige Weg, benutzerdefinierte CSS zu deiner WordPress-Website hinzuzufügen. Simple Custom CSS ermöglicht Dir, deine eigenen Stil-Regeln hinzuzufügen und vorgegebenes CSS eines Plugins oder Themes zu überschreiben."

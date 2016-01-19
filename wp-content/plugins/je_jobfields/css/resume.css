@@ -1,0 +1,38 @@
+.jse-signup-profile  .je-custom-checkbox {
+	font-size: 1.1em;
+}
+.jse-signup-profile  .je-custom-checkbox .jf-checkbox-item .item{
+	margin-right: 0;
+    width: 32%;
+    display: inline-block;
+}
+.je-custom-radio .jse-input{
+	display: inline-block;
+	width: 49%;
+}
+.je-custom-radio .jse-input .jse-radio{
+width: 33px;
+display: inline-block;
+}
+.je-custom-radio .jse-input .job-type {
+	display: inline-block;
+}
+
+.je-custom-radio .field-radio {
+	padding: 20px;
+	display: inline-block;
+}
+.single-resume .jf-input-text .edu-content{
+	padding: 20px 20px 0 20px;
+}
+.ui-datepicker-header.ui-widget-header{
+
+    background: url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% #cccccc;
+    border: 1px solid #aaaaaa;
+    color: #222222;
+    font-weight: bold;
+}
+.form-signup .ui-icon-radio-on,
+.ui-icon-radio-off{
+	background-position: 0 !important;
+}

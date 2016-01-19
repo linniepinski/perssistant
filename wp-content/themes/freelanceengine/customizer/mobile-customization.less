@@ -1,0 +1,312 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  	background: @color;
+  	background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  	background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  	background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  	background: -o-linear-gradient(@stop,
+                                 @start);
+  	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  	background: @color;
+  	background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, rgb(@start,@start,@start)),
+                               color-stop(1, rgb(@stop,@stop,@stop)));
+  	background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@stop,@stop,@stop) 100%);
+  	background: -moz-linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+  	background: -o-linear-gradient(rgb(@stop,@stop,@stop),
+                                 rgb(@start,@start,@start));
+  	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",rgb(@stop,@stop,@stop),rgb(@start,@start,@start)));
+}
+
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+  	border-top: solid 1px @top-color;
+  	border-left: solid 1px @left-color;
+  	border-right: solid 1px @right-color;
+ 	  border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.rounded(@radius: 2px) {
+  	-webkit-border-radius: @radius;
+  	-moz-border-radius: @radius;
+  	border-radius: @radius;
+}
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  	-webkit-border-top-right-radius: @topright;
+  	-webkit-border-bottom-right-radius: @bottomright;
+  	-webkit-border-bottom-left-radius: @bottomleft;
+  	-webkit-border-top-left-radius: @topleft;
+  	-moz-border-radius-topright: @topright;
+  	-moz-border-radius-bottomright: @bottomright;
+  	-moz-border-radius-bottomleft: @bottomleft;
+  	-moz-border-radius-topleft: @topleft;
+  	border-top-right-radius: @topright;
+  	border-bottom-right-radius: @bottomright;
+  	border-bottom-left-radius: @bottomleft;
+  	border-top-left-radius: @topleft;
+  	.background-clip(padding-box);
+}
+.opacity(@opacity: 0.5) {
+  	-moz-opacity: @opacity;
+  	-khtml-opacity: @opacity;
+  	-webkit-opacity: @opacity;
+  	opacity: @opacity;
+  	@opperc: @opacity * 100;
+  	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  	filter: ~"alpha(opacity=@{opperc})";
+}
+.transition-duration(@duration: 0.2s) {
+    -moz-transition-duration: @duration;
+    -webkit-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+.transform(...) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+.rotation(@deg:5deg){
+    .transform(rotate(@deg));
+}
+.scale(@ratio:1.5){
+  .transform(scale(@ratio));
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  	-webkit-box-shadow: @arguments;
+  	-moz-box-shadow: @arguments;
+  	box-shadow: @arguments;
+}
+.box-shadow2( @arguments, @arguments2 ) {
+  	-webkit-box-shadow: @arguments, @arguments2;
+  	-moz-box-shadow: @arguments, @arguments2;
+  	box-shadow: @arguments, @arguments2;
+}
+.box-sizing(@sizing: border-box) {
+  -ms-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  -webkit-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+  -moz-user-select: @argument;
+  -ms-user-select: @argument;
+  user-select: @argument;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+@hyperlink : @action_1;
+
+// font color with back ground bright 
+.fontcolor(@background, @colorDark : #ffffff, @colorWhite : #3b3b3b) when (lightness(@background) >= 80%){
+	color: @colorDark;
+	//color: @background - 104;
+}
+
+// font color with dark background
+.fontcolor(@background, @colorDark : #ffffff, @colorWhite : #3b3b3b) when (lightness(@background) < 80%){ 
+	color: @colorWhite; 
+}
+
+.fontcolor_hover (@background, @percent) when (lightness(@background) >= 80%){
+	color : mix(darken(@background, @percent) , #2F3230, 50% ); 
+	//color: @background - 104;
+
+}
+
+.fontcolor_hover (@background, @percent) when (lightness(@background) < 80%){
+	color : mix( lighten(@background, @percent) ,#EDF3EB, 50% ); 
+}
+
+.bordercolor( @background, @percent ) when (lightness(@background) >= 70%){
+	border-color:darken( @background, @percent );
+}
+
+.bordercolor(@background, @percent) when (lightness(@background) < 70%){ 
+	border-color: lighten(@background, @percent); 
+}
+
+.background_hover(@background, @percent ) when (lightness(@background) >= 80%){
+	background: darken(@background, @percent);
+}
+.background_hover(@background, @percent ) when (lightness(@background) < 80%){ 
+	background: lighten(@background, @percent); 
+}
+
+.background_text(@background, @percent ) when (lightness(@background) >= 60%){
+  color: darken(@background, @percent);
+}
+.background_text(@background, @percent ) when (lightness(@background) < 60%){ 
+  color: lighten(@background, @percent); 
+}
+
+
+.bg-pattern(@pattern){
+  background-color: @background;
+  background-repeat: repeat;
+  .fontcolor_hover(@background, 25%);
+  .background_text(@background, 55%);
+}
+
+.mobile-header-bg(){
+    background-color: @action_1;
+    .fontcolor_hover(@action_1, 25%);
+    .background_text(@action_1, 55%);
+}
+
+.mobile-footer-bg(){
+    background-color: @footer;
+    background-repeat: repeat;
+    .fontcolor_hover(@footer, 25%);
+    .background_text(@footer, 55%);
+}
+.mobile-a-active(){
+    background-color: @action_1;
+    background-repeat: repeat;
+    .fontcolor_hover(@action_1, 25%);
+    .background_text(@action_1, 55%);
+}
+
+/* mobile less css */
+/* HEADER BACKGROUND */
+#header, #cbp-spmenu-s2, #cbp-spmenu-s1 {
+  background : @action_2;
+}
+#cbp-spmenu-s2 ul li,
+#cbp-spmenu-s1 > ul > li,
+#cbp-spmenu-s1 ul ul li {
+  .bordercolor(@action_2, 20%);
+}
+#cbp-spmenu-s2 ul li .link-menu-nav,
+#cbp-spmenu-s1 ul li a,
+.user-avatar .flag-icon,
+#left_menu span {
+  .background_text(@action_2, 55%);
+}
+/* END HEADER BACKGROUND */
+/* MAIN COLOR */
+.info-bottom .price-project, 
+.info-single-project-wrapper .price-project,
+#cbp-spmenu-s2 ul li a.logout-link {
+  color : @action_1;
+}
+.form-group .btn-search-advance,
+.btn-warpper-bid .btn-bid {
+   background-color: @action_1;
+  .box-shadow(0 5px 0 darken(@action_1, 10%));
+}
+/* END MAIN COLOR */
+
+/* SECOND COLOR */
+.notification-section {
+  background : @action_2;
+}
+ul.notification-list,
+.notification-list li {
+  .bordercolor(@action_2, 20%);
+}
+
+
+/* END SECOND COLOR */
+
+/* PROJECT COLOR */
+.list-link-tabs-page a.active{
+  border-color:@project_color;
+}
+span.ribbon:after {
+  border: 10px solid @project_color;
+}
+.show-search-advance, .hide-search-advance,
+.show-search-advance:hover, .hide-search-advance:hover,
+.bid-top li span.number, 
+a, a:hover, a:focus,
+.bid-price span.number,
+#cbp-spmenu-s2 ul li a.mb-change-password {
+  color : @project_color;
+}
+
+.btn-tabs-wrapper ul li.active,
+span.ribbon, 
+.form-group-work-place .submit-chat-content {
+  background : @project_color;
+}
+
+/* END PROJECT COLOR */
+
+/* PROFILE COLOR */
+.list-profiles > li .user-proflie .position,
+.notification-list .postion-employer,
+.list-history-bidders li .user-proflie .position,
+#cbp-spmenu-s2 .user-name-menu .position {
+  color : @profile_color;
+}
+
+/* END PROFILE COLOR */

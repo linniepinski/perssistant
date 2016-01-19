@@ -1,0 +1,94 @@
+.alert-content {
+	width: 100%;
+
+}
+.alert-content .hide{
+	display: none !important;
+}
+.alert-content .form-item {
+	overflow: hidden;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.alert-content  .form-item .select-style,
+ .alert-content  .form-item select{
+	width: 250px;
+}
+.alert-content  .et-main-main  .desc  .form{
+	box-shadow :0 0 2px #999999;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.alert-content .form-item label{
+	width: 200px;
+	float: left;
+	color: #000;
+}
+.alert-content .form-item label span{
+	color: #ccc;
+}
+.alert-content  .et-main-main  .desc .form-item input{
+	float: left;
+	width: 250px;
+	display: inline;
+	height: 35px;
+
+}
+.alert-content  .et-main-main  .desc .form-item span.span-end{
+	line-height: 35px;
+	height: 35px;
+	float: left;
+	padding: 10px 0 0 10px;
+}
+.alignright{
+	float: left;
+	position: relative;
+}
+#alert_subscribers{
+	position: absolute;
+	width: 100%;
+}
+.alert-content table{
+	width: 100%;
+}
+.alert-content tr,
+.alert-content td,
+.alert-content table{
+	border-collapse: collapse;
+	border:1px solid #EBEBF2;
+	width: 900px;
+}
+.alert-content tr th{
+	padding: 10px 5px;
+}
+.alert-content tr td{
+	padding: 5px 0 10px 10px;
+}
+.right-alert{
+	position: relative;
+	display: block;
+}
+.row-paging{
+	display: block;
+	clear: both;
+	margin-top: 20px;
+}
+.row-paging a,
+.row-paging span,
+.row-paging span.current{
+	padding: 3px 8px;
+	border-radius: 3px;
+	border:1px solid #ccc;
+	margin-right: 5px;
+	text-decoration: none;
+	border:1px solid #ccc;
+}
+.row-paging a.prev,
+.row-paging a.next{
+	border:0 !important;
+	text-decoration: underline;
+}
+span.del-subscriber{
+	cursor: pointer;
+}

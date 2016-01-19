@@ -1,0 +1,171 @@
+.no-left { float: inherit !important; }
+
+.et-main-main .job-alert-subscribe {
+	margin-top: 10px;
+}
+
+.et-main-main .job-alert-subscribe .title {
+	color: #427bab;
+	border-bottom: none;
+	font-weight: bold;
+}
+
+.et-main-main .list-job-alert {
+	width: 100%;
+	border: 1px solid #d4d4dd;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 10px;
+	font-size: 1.1em;
+}
+
+.et-main-main .list-job-alert th {
+	text-align: left;
+	border-bottom: 1px solid #f2f2f2;
+	color: #7e7e7e;
+	padding: 15px 10px;
+}
+
+.et-main-main .list-job-alert td {
+	border-bottom: 1px solid #f2f2f2;
+	padding: 15px 10px;
+	color: #427bab;
+}
+
+.et-main-main .list-job-alert td a {
+	text-decoration: none;
+}
+
+.et-main-main .list-job-alert td:first-child a {
+	font-weight: bold;
+}
+
+.et-main-main .list-job-alert tr:last-child td {
+	border-bottom: none;
+}
+
+.btn-job-export {
+	background: #fbfbfb;
+	border: 1px solid #d1d1d1;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #9c9c9c;
+	padding: 0 40px 0 10px;
+	height: 38px;
+	line-height: 36px;
+	position: relative;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: 0 1px 1px #eee;
+	-moz-box-shadow: 0 1px 1px #eee;
+	-webkit-box-shadow: 0 1px 1px #eee;
+}
+
+.btn-job-export span.icon {
+	/*position: absolute;*/
+	right: 10px;
+}
+
+.et-main-main .job-alert-form {
+	background: none;
+	box-shadow: inherit;
+	-moz-box-shadow: inherit;
+	-webkit-box-shadow: inherit;
+	padding: 0;
+	margin-top: 0;
+}
+
+.et-main-main .job-alert-form::after {
+	clear: left;
+}
+
+.et-main-main .job-alert-form .form-item {
+	padding: 10px 0;
+	float: left;
+	width: 100%;
+	clear: inherit;
+}
+
+.et-main-main .job-alert-form .form-item > * {
+	float: left;
+}
+
+.et-main-main .job-alert-form .form-item > span {
+	line-height: 40px;
+	margin-left: 10px;
+	color: #b6b6b6;
+}
+
+.et-main-main .job-alert-form .form-item label {
+	width: 30%;
+	min-width: 230px;
+	/*line-height: 40px;*/
+	padding: 0;
+}
+
+.et-main-main .job-alert-form .form-item label span {
+	font-weight: normal;
+	font-family: Helvetica,Arial,sans-serif;
+	/*margin-left: 20px;*/
+	color: #b6b6b6;
+}
+
+.et-main-main .job-alert-form .form-item input[type=text] { width: 20%; }
+.et-main-main .job-alert-form .form-item select { width: 100%; }
+
+.et-main-main .job-notice {
+	float: left;
+	font-size: 1.1em;
+	color: #9d9d9d;
+	padding: 10px 20px;
+	line-height: 1.4em;
+	margin: 20px 0 30px;
+
+    background: #F5F5F5;
+    box-shadow: 1px 1px 2px #CCCCCC inset;
+    -moz-box-shadow: 1px 1px 2px #CCCCCC inset;
+    -webkit-box-shadow: 1px 1px 2px #CCCCCC inset;
+}
+
+.pagination {
+	padding: 15px;
+}
+.subscriber-controls{
+	font-family: Quicksand, Arial, sans-serif;
+}
+
+.subscriber-controls .paginate{
+	float: right;
+}
+
+.subscriber-controls button{
+	text-decoration: none;
+	color: #9A9AA3;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+.subscriber-controls a {
+	text-decoration: none;
+	color: #9A9AA3;
+}
+
+.subscriber-controls a:hover{
+	color: #21759B;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.subscriber-controls .paginate > span{
+	text-decoration: underline;
+	color: #21759B;
+}
+
+.subscriber-controls .paginate > span, .subscriber-controls .paginate > a{
+	margin: 0 3px;
+	font-weight: bold;
+}

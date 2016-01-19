@@ -1,0 +1,100 @@
+#coupon_form .use_coupon {
+	position:absolute;
+	right:300px; 
+	top:20px;
+}
+
+/**** counpon ****/
+#coupon_form .coupon-bar {
+	background: url("../images/icon-coupon.png") no-repeat;
+	padding-left: 25px;
+	position: absolute;
+	right: 20px;
+	top: -35px;
+	color: #ff7669;
+	font-size: 1em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#coupon_form .coupon-item {
+	padding: 17px 20px;
+	border:1px solid #f2f2f2
+}
+
+#coupon_form .coupon-item .label {
+	float: left;
+	width: auto;
+	padding: 0;
+}
+
+#coupon_form .coupon-item h6 {
+	font-size: 1.1em;
+	margin: 13px 0;
+}
+
+#coupon_form .coupon-item .coupon-input {
+	margin-left: 0px;
+}
+
+#coupon_form .coupon-item .coupon-input input {
+	width: 230px !important;
+	padding: 0 10px;
+	color: #ff7669;
+	margin-right: 10px;
+}
+#coupon_form .coupon-item .coupon-input *:-ms-input-placeholder,
+#coupon_form .coupon-item .coupon-input *::-moz-selection
+#coupon_form .coupon-item .coupon-input *:moz-placeholder,
+#coupon_form .coupon-item .coupon-input *::-moz-placeholder,
+#coupon_form .coupon-item .coupon-input *::-webkit-input-placeholder,
+#coupon_form *::-moz-placeholder,
+#coupon_form .coupon-item .coupon-input *:-ms-input-placeholder{
+	opacity: 1;
+   	color: red;  
+}
+#coupon_form  *::-moz-placeholder{
+	opacity: 1;
+}
+
+
+#coupon_form .coupon-item .coupon-input input.error {
+	border-color: #d68a7c !important;
+	background: #ffffff;
+	color: #d68a7c;
+	margin: 3px;
+	width: 454px;
+}
+
+#coupon_form .coupon-item .coupon-input span {
+	font-weight: bold;
+	margin-right: 3px;
+	font-size: 1.1em;
+}
+
+#coupon_form .coupon-item .coupon-input span.job-price,
+#coupon_form .coupon-item .coupon-input span.coupon-price {
+	color: #ff7769;
+}
+
+#coupon_form .coupon-item .coupon-input span.job-price {
+	/*text-decoration: line-through;*/
+}
+
+#payment_form ul {
+	position : relative;
+}
+
+#payment_form ul li.hidecoupon {
+	border: none;
+	padding: 0;
+}
+.wrap-coupon-free{ }
+.disable-payment{
+	opacity: 0.6;
+}
+.disable-payment .select_payment,
+button.disable-payment{
+	cursor: default;
+}
+/*/*#3f9f3f

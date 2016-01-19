@@ -1,0 +1,44 @@
+.text-color-popup{
+    color: rgba(55,131,196,0.9)!important;
+}
+.text-color-popup-sm{
+    color: rgba(142,68,173,0.9)!important;
+}
+.margin-28{
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.modal-vcenter{
+    padding-top: 0!important;
+}
+.modal-open .modal {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow-y: scroll;
+}
+.top-margin{
+    margin-top: 0!important;
+}
+.popup-email{
+    margin-bottom:10px!important
+}
+.btn-popup{
+    padding: 12px 12px!important;
+    margin-bottom:10px!important
+}
+.width-email{
+    width: 100%!important;
+}
+
+#popup_free_3 .modal-content {
+    height: auto;
+    max-width: 590px;
+}
+
+#popup_free_3 .modal-dialog {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}

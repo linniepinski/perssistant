@@ -1,0 +1,135 @@
+.pricing {
+
+}
+.pricing sup  {
+    top :  -0.2em;
+}
+.pricing-number {
+    /*background: #2c3e50;*/
+    background: #1c647a;
+    text-align: center;
+    padding: 40px;
+}
+.pricing-number h2.price {
+    color:  #fff;
+    font-size:  34px;
+    font-weight:  600;
+    margin: 0 0 10px;
+}
+.pricing-number span {
+    color:  #fff;
+    font-size:  20px;
+    font-weight:  300;
+    display: block;
+}
+.pricing-content {
+    padding: 30px 20px;
+    display: block;
+    text-align: center;
+    background: #fff;
+}
+.pricing-title {
+    color:  #30363b;
+    font-size:  20px;
+    font-weight:  600;
+    margin: 0 0 20px;
+}
+.pricing-detail {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height:  50px;
+    margin:  0 auto;
+}
+.pricing-detail li {
+    display: block;
+    margin-bottom: 10px;
+}
+.pricing-detail li span {
+    color:  #666f78;
+    font-size:  14px;
+}
+.submit-price {
+    margin-top: 30px;
+}
+.pricing:hover .pricing-number, .pricing.active .pricing-number {
+    background: #54b2db;
+}
+.pricing:hover .btn-price, .pricing.active .btn-price,.pricing .btn-price  {
+    background-color:  #9DC817 !important;
+    -moz-box-shadow:  0 2px 0 #8EB70F!important;
+    -webkit-box-shadow:  0 2px 0 #8EB70F!important;
+    box-shadow:  0 2px 0 #8EB70F!important;
+}
+.pricing-container {
+   /* padding-top:  50px;
+    padding-bottom:  100px;*/
+}
+.pricing-item  {
+    margin-top:  50px;
+}
+.pricing-wrapper{
+    min-height: 195px;
+}
+.pricing-wrapper-custom{
+    min-height: 80px;
+}
+.control-buttons-stripe{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.wp-stripe-poweredby{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.btn-price-width{
+
+}
+.price-custom{
+    letter-spacing: 10px;
+    margin: 0!important;
+}
+.btn-success-custom{
+    background-color: #449d44!important;
+    border-color: #398439!important;
+}
+.btn-custom-price{
+    border-radius: 0!important;
+    background-color: #0f2946!important;
+}
+.pay-button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+
+
+    display: block;
+    width: 100%;
+
+    border-radius: 0!important;
+    background-color: #0f2946!important;
+}
+#custom_description{
+    resize: vertical;
+}

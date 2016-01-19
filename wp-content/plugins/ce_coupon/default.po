@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ce_coupon\n"
+"POT-Creation-Date: 2015-01-05 14:48+0700\n"
+"PO-Revision-Date: 2015-01-05 14:48+0700\n"
+"Last-Translator: \n"
+"Language-Team: ET <contact@enginethemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\ce\\wp-content\\plugins\\ce_coupon\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin_view.php:9 admin_view.php:13
+msgid "CE Coupon"
+msgstr ""
+
+#: admin_view.php:10 admin_view.php:26
+msgid "CE COUPON"
+msgstr ""
+
+#: admin_view.php:27
+msgid "Create and manage your own discount promotions."
+msgstr ""
+
+#: ce_coupon.php:200
+msgid "ENTER YOUR COUPON"
+msgstr ""
+
+#: ce_coupon.php:201
+msgid "Total price"
+msgstr ""
+
+#: ce_coupon.php:204
+msgid "Free Post"
+msgstr ""
+
+#: ce_coupon.php:248 ce_coupon.php:255
+msgid "Coupon code is invalid!"
+msgstr ""
+
+#: ce_coupon.php:268
+#, php-format
+msgid "This coupon is valid from (%s) to (%s)."
+msgstr ""
+
+#: ce_coupon.php:284
+msgid "You have used this coupon!"
+msgstr ""
+
+#: ce_coupon.php:288
+msgid "This coupon runs out of usage!"
+msgstr ""
+
+#: ce_coupon.php:341
+msgid "Add New Coupon"
+msgstr ""
+
+#: ce_coupon.php:342
+msgid "Edit Coupon"
+msgstr ""
+
+#: ce_coupon.php:343
+msgid "New Coupon"
+msgstr ""
+
+#: ce_coupon.php:344
+msgid "All Coupon"
+msgstr ""
+
+#: ce_coupon.php:345
+msgid "View Coupon"
+msgstr ""
+
+#: ce_coupon.php:346
+msgid "Search Coupon"
+msgstr ""
+
+#: ce_coupon.php:347
+msgid "No Coupon found"
+msgstr ""
+
+#: ce_coupon.php:348
+msgid "No Coupon found in Trash"
+msgstr ""
+
+#: ce_coupon.php:416
+msgid "Your coupon available 1"
+msgstr ""
+
+#: ce_coupon.php:428
+msgid "Valid coupon"
+msgstr ""
+
+#: ce_coupon.php:434
+msgid "Your coupon code is not applicable for the selected payment plan."
+msgstr ""
+
+#: ce_coupon.php:449 ce_coupon.php:471
+msgid "Permission denied!"
+msgstr ""
+
+#: ce_coupon.php:482
+msgid "Invalid Date format!"
+msgstr ""
+
+#: ce_coupon.php:522 ce_coupon.php:523 coupon-add-new.php:54
+#: coupon-add-new.php:137 coupon-list.php:39 coupon-list.php:40
+msgid "Lifetime"
+msgstr ""
+
+#: ce_coupon.php:532 coupon-list.php:52
+msgid "All ad packages"
+msgstr ""
+
+#: ce_coupon.php:552 coupon-list.php:66
+msgid "Delete"
+msgstr ""
+
+#: ce_coupon.php:553 coupon-list.php:67
+msgid "Edit"
+msgstr ""
+
+#: coupon-add-new.php:7
+msgid "New Coupon List"
+msgstr ""
+
+#: coupon-add-new.php:8
+msgid "Add New"
+msgstr ""
+
+#: coupon-add-new.php:15
+msgid "Add new coupon"
+msgstr ""
+
+#: coupon-add-new.php:22 coupon-add-new.php:105
+msgid "Coupon Usage Count <span>(How many times the coupon can be used)</span>"
+msgstr ""
+
+#: coupon-add-new.php:24 coupon-add-new.php:107
+msgid "Enter a number for coupon usage"
+msgstr ""
+
+#: coupon-add-new.php:28 coupon-add-new.php:111 coupon-list.php:17
+msgid "Discount"
+msgstr ""
+
+#: coupon-add-new.php:31 coupon-add-new.php:114
+msgid "Enter a number for discount amount"
+msgstr ""
+
+#: coupon-add-new.php:42 coupon-add-new.php:125
+msgid ""
+"User Coupon Usage Count <span>(How many times a customer can use the coupon "
+"code)</span>"
+msgstr ""
+
+#: coupon-add-new.php:44 coupon-add-new.php:127
+msgid "Enter a number for user coupon usage"
+msgstr ""
+
+#: coupon-add-new.php:45 coupon-add-new.php:128
+msgid "Time(s)"
+msgstr ""
+
+#: coupon-add-new.php:49 coupon-add-new.php:132
+msgid "Dates"
+msgstr ""
+
+#: coupon-add-new.php:49 coupon-add-new.php:132
+msgid "(Validity period of the coupon)"
+msgstr ""
+
+#: coupon-add-new.php:55 coupon-add-new.php:138
+msgid "Specify date range"
+msgstr ""
+
+#: coupon-add-new.php:60 coupon-add-new.php:143
+msgid "Start date"
+msgstr ""
+
+#: coupon-add-new.php:64 coupon-add-new.php:147
+msgid "Expiry date"
+msgstr ""
+
+#: coupon-add-new.php:71 coupon-add-new.php:154
+msgid ""
+"Payment plans <span>(Coupons can be used on selected or all payment plans)</"
+"span>"
+msgstr ""
+
+#: coupon-add-new.php:74 coupon-add-new.php:157
+msgid "Select payment plans"
+msgstr ""
+
+#: coupon-add-new.php:75 coupon-add-new.php:158
+msgid "Select a payment plan"
+msgstr ""
+
+#: coupon-add-new.php:77 coupon-add-new.php:160
+#, php-format
+msgid "Ad plan - %s"
+msgstr ""
+
+#: coupon-add-new.php:88 coupon-add-new.php:171
+msgid "Save"
+msgstr ""
+
+#: coupon-add-new.php:99
+msgid "Edit coupon"
+msgstr ""
+
+#: coupon-list.php:14
+msgid "Coupon code"
+msgstr ""
+
+#: coupon-list.php:15
+msgid "Start Date"
+msgstr ""
+
+#: coupon-list.php:16
+msgid "Expiry Date"
+msgstr ""
+
+#: coupon-list.php:18
+msgid "Applied Product"
+msgstr ""
+
+#: coupon-list.php:19
+msgid "Used Count"
+msgstr ""
+
+#: coupon-list.php:20
+msgid "Actions"
+msgstr ""

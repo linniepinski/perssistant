@@ -1,0 +1,118 @@
+/*
+Theme Name: FreelanceEngine
+Theme URI: http://www.enginethemes.com/themes/freelanceengine
+Author: EngineThemes Team
+Author URI: http://www.enginethemes.com
+Description: The first WordPress Freelance theme that lets you build your own site from different modules. Dedicate mobile design included.
+Version: 1.5.3
+Tags: fluid-layout, responsive-layout, accessibility-ready, translation-ready
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+@CHARSET "ISO-8859-1";
+
+.sitelang {
+    float: right;
+    position: relative;
+    margin-left: 25px;
+}
+.lang-item {
+    display:block;
+}
+.current-lang {
+    display:none;
+}/* Styles by Sanju */@media only screen and (max-width: 767px) and (min-width: 100px){	.btn-post-project, .btn-post-profile {		position: static!important;		margin-left: 0 !important;		width: 100% !important;	}		.wpb_tabs .wpb_tabs_nav li {		margin-left: 0px !important;		margin-right: 0px !important;	}		.wpb_tabs .nav-tabs-project .wpb_tabs_nav a {		padding: 5px;		font-size: 13px;	}
+
+.title-project {
+    display: inline-block;
+    vertical-align: top;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.project-item-title{
+	    white-space: nowrap;
+		width: 85% !important; 
+		display: inline-block;
+}
+.title-project img {
+    margin-right: 10px;
+	}
+.wpb_wrapper p a{
+		word-wrap: break-word;
+	}
+	.single-profile-content .list-skill-profile ul li{
+		margin-left:35px !important;
+	}
+	.single-profile-content .list-skill-profile {
+		width: 100%;
+		float: left;
+	}
+	.single-profile-content .list-skill-profile ul {
+		text-align: left;
+	}
+	.single-profile-content .list-skill-profile ul li {
+		 margin-left: 0px !important; 
+	}
+	.single-profile-content .single-profile, .single-profile-content .list-skill-profile {
+		width: 100%;
+    }
+	.wpcf7-form input[type='email'], .wpcf7-form input[type='text']{
+		width:100%;
+	}
+	.stickyForm {
+		position: relative !important;
+	}
+	.chosen-sort{
+		width:100%;
+	}
+	.portfolio-filter{
+		position: relative;
+		top:0px;
+	}
+	.invite-freelancer{
+			margin-bottom:10px;
+	}
+}
+
+.check_icon li{
+	    list-style: none;
+    position: relative;
+    padding-left: 30px;
+	
+}
+.check_icon li:before{
+	content: "\f00c";
+    width: 20px;
+    height: 20px;
+    background-color: #54B3DB;
+    color: #fff;
+    border-radius: 50%;
+    font: normal normal normal 14px/1 FontAwesome;
+    padding: 3px;
+    margin: 0px 5px;
+    position: absolute;
+    left: 0
+}
+.page-id-798 .blog-header-container {
+    background: url('http://www.perssistant.com/wp-content/uploads/2015/10/How-It-Works-Banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+    position: relative;
+}
+.page-id-798 .blog-header-container:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.37);
+}
+.page-id-798 .blog-header-container .container{
+	padding: 100px 0px;
+}
+.page-id-798 .blog-header-container .container .row .blog-classic-top h2{
+	color:#fff;
+}

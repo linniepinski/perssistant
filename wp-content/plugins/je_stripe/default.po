@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE_ALERT\n"
+"POT-Creation-Date: 2013-04-09 15:40+0700\n"
+"PO-Revision-Date: 2013-04-09 15:40+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_stripe\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/form-template.php:18
+msgid "Card number:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/form-template.php:26
+msgid "Expired:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/form-template.php:37
+msgid "Name on card:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/form-template.php:46
+msgid "Card code:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/form-template.php:56
+msgid "PAY THROUGH STRIPE"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:79
+msgid "Api setting invalid"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:218
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:231
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:250
+msgid "Stripe"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:219
+msgid "Pay using your credit card through Stripe."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:222
+msgid "Select"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:232
+msgid "Send your payment through Stripe"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:255
+msgid "Your stripe secret key "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_stripe/stripe.php:262
+msgid "Your stripe public key"
+msgstr ""

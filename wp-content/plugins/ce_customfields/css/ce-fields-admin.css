@@ -1,0 +1,194 @@
+.btn-button {
+    background: -moz-linear-gradient(center top , #FBFBFB 0%, #F7F7F7 85%, #E6E6E6 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #C4C4C4 !important;
+    box-shadow: 1px 0 1px #E3E3E3;
+    color: #888888 !important;
+    cursor: pointer;
+    border: 1px solid #D3D3D3;
+    border-radius: 3px;
+    color: #9C9C9C;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+
+.et-main-main .desc .row-submit button {
+    border: 1px solid #D3D3D3;
+    border-radius: 3px;
+    color: #357EBD !important;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+.et-main-main .row-submit button span{
+    padding-left: 0px;
+}
+
+.et-main-main .form-edit-field .row-submit button span,
+.et-main-main .form-edit-tax .row-submit button span{
+    padding-left: 9px;
+}
+.et-main-main .row-submit button span.icon,
+.et-main-main .form-edit-field .row-submit button span.icon,
+.et-main-main .form-edit-tax .row-submit button span.icon{
+    padding-right: 5px;
+    padding-left: 0;
+}
+div#ce_fields_ext form {
+    padding: 25px;
+    overflow: hidden;
+    background: #F5F5F5;
+    margin: 5px 0 10px;
+}
+div#ce_fields_ext form  div.label{
+    color: #7E7E7E;
+    font-family: 'Quicksand',Arial,sans-serif !important;
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 0 !important;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+}
+div#ce_fields_ext form  span label{
+    color: #7E7E7E;
+    font-family: 'Quicksand',Arial,sans-serif !important;
+    font-size: 12.5px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+}
+div#ce_fields_ext form  textarea{
+    width: 100%;
+    height: 110px !important;
+    border-radius: 3px;
+    color: #9C9C9C;
+}
+form.form-edit-tax,
+form.form-edit-field{
+    padding-top: 10px !important;
+}
+form.form-edit-tax .form-item,
+form.form-edit-field .form-item{
+    margin-top: 10px !important;
+}
+.form-item .select-style span{
+    color: #7e7e7e;
+}
+.form-item .select-style option{
+    padding: 9px 0;
+    text-indent: 7px;
+}
+form.form-edit-tax .form-item input[type="text"],
+form.form-edit-field .form-item input[type="text"],
+form.form-edit-field .list-options input[type="text"]{
+    border-style: solid;
+    border-width: 1px;
+    color: #353535 !important;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+}
+.et-main-main  .desc  form.add-tax .form-item input[type="text"]{
+    color: #353535 !important;
+}
+div#ce_fields_ext form  .form-item{
+    padding: 0px;
+
+}
+div#ce_fields_ext form  .row-item{
+    padding: 7px 0 7px 0;
+}
+ul li.no-result{
+    padding-left: 0;
+}
+div#ce_fields_ext  li .actions a{
+    color: #427BAB;
+    cursor: pointer;
+}
+div#ce_fields_ext  li .actions a.act-del{
+}
+label.error{
+    color: #E18972;
+    font-size: 13px;
+    margin-top: 5px;
+    padding-right: 25px;
+    text-left: right; 
+}
+
+ul#cat-list a.delete{
+    text-decoration: blink;
+}
+
+ul#cat-list a.delete span.icon{
+    padding-right: 5px;
+}
+
+ul#cat-list a.delete span.icon:before{
+    font-size: 1.2em;
+}
+div#taxonomy_lists li.off,
+div#taxonomy_lists li.off input,
+div#taxonomy_lists li.off a,
+div#taxonomy_lists li.off span{
+    color:#D3D3DA ;
+}
+div.row-submit{
+    padding-top: 15px;
+}
+ul li.field-ad label{
+    padding-left: 10px;
+    display: block;
+}
+div.hide{
+    display: none;
+}
+div.tab{
+}
+div.ce-field-list{
+    /*float: left;
+    width: 75%;*/
+}
+div.ce-field-list .et-main-left .title{
+
+}
+div#ce_fields_ext .icon-sellers{
+    display: inline !important;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+div.ce-field-list .et-main-main h5{
+    margin: 0;
+}
+.list-options input{
+    display: block;
+}
+.list-options li{
+    position: relative;
+    list-style: none;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 10px;
+    padding-right: 0 !important;
+}
+
+.list-options{
+    position: relative;
+}
+.act-option{
+    position: absolute;
+    top:10px;
+    right: 0;
+}
+.act-option span{
+    cursor: pointer;
+    margin: 0 4px !important;
+    padding: 0 3px !important;
+    color: #427bab;
+    font-weight: bold;
+}

@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ClassfiedEngine v1.6.2\n"
+"Report-Msgid-Bugs-To: http://www.enginethemes.com/\n"
+"POT-Creation-Date: 2015-02-14 10:37+0700\n"
+"PO-Revision-Date: 2015-02-14 10:37+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Engine Themes <contact@enginethemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: E:\\xampp\\htdocs\\wp\\wp-content\\plugins"
+"\\ae_payment\n"
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:36
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:45
+msgid "PayuMoney API"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:48
+msgid "for test mode <b>Merchant ID: JBZaLc | SALT: GQs7yium</b>"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:55
+msgid "Merchant ID PayuMoney"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:62
+msgid "Salt Key PayuMoney"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:81
+msgid "PayuMoney"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:82
+msgid "PAYUMONEY"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:87
+msgid "Integrate the PayU payment gateway to your site"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:112
+msgid "PayU"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:114
+msgid "Send your payment to our PayUMoney account"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:117
+msgid "Select"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:201
+msgid "This Field Cannot be empty"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:202
+msgid "Email not correct please check again"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/ae_payumoney.php:250
+msgid "Paymill payment method false."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/form-template.php:44
+msgid "First name:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/form-template.php:52
+msgid "Last name:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/form-template.php:60
+msgid "Email:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/form-template.php:68
+msgid "Phone:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_payment/form-template.php:79
+msgid "PAY NOW WITH PAYUMONEY"
+msgstr ""

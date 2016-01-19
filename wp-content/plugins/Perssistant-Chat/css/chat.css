@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'status_online';
+    src: url('../font/status_online.eot?92160864');
+    src: url('../font/status_online.eot?92160864#iefix') format('embedded-opentype'),
+    url('../font/status_online.woff?92160864') format('woff'),
+    url('../font/status_online.ttf?92160864') format('truetype'),
+    url('../font/status_online.svg?92160864#status_online') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'status_online';
+    src: url('../font/status_online.svg?92160864#status_online') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "status_online";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-ok-circled:before { content: '\e800'; } /* '' */
+.icon-circle:before { content: '\e801'; } /* '' */
+
+
+
+form#chat{
+
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /*box-shadow: 0 0 8px 1px #ccc;*/
+}
+.modal-vcenter{
+    padding-top: 0!important;
+}
+.chat_history{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 53%;
+}
+/*a href class=" btn-sumary contact-me"*/
+.contact-me-chat{
+    background-color: green!important;
+    padding: 12px 25px!important;
+}
+/**/
+.control-row{
+    margin-bottom: 5px;
+}
+.hr-chat{
+    margin: 10px 0;
+}
+.height-inherit{
+    height: inherit;
+}
+.send_button_chat{
+margin-left: 10px;
+    margin-right: 10px;
+}
+.attach_file_chat{
+
+}
+.message_box_chat{
+    height: initial;
+}
+.item_contact{
+
+}
+#status-chat > .alert {
+    padding: 5px;
+    margin-bottom: 0;
+}
+.right-column-chat{
+    height: 95%;
+    border-left: 1px solid #ccc;
+}
+
+.sieve-custom{
+    /*height: 425px;*/
+    overflow-y: auto;
+    height: 80%;
+
+}
+.the_author_chat{
+
+}
+.the_content_chat{
+
+}
+.the_time_chat{
+
+}
+.time{
+    margin-left: 23px;
+}
+.aut{
+
+}
+.cont{
+
+}
+.invate-to-chat-message{
+
+}
+.btn-invate-on-bid{
+ margin-top: 10px;
+    padding: 5px 7px!important;
+}
+.btn-invate{
+    margin: 10px 10px 0px 0px;
+}
+.btn-invate-cancel{
+    margin-top: 10px;
+}
+.text-color-popup{
+    color: rgba(55,131,196,0.9)!important;
+}
+.top-margin{
+    margin-top: 0!important;
+}
+.count-chat{
+
+}
+.count-chat:after{
+    /*content: "new";*/
+}
+.online{
+color: green;
+}
+.afk{
+    color: #ffca22;
+}
+.offline{
+    color: #808080;
+}
+@media (max-width: 991px) {
+
+    .chat_history{
+        height: 35%;
+    }
+    .sieve-custom{
+        height: 75%;
+    }
+    #status-chat > .alert {
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 767px) {
+    .sieve-custom{
+        /*height: 425px*/
+    }
+    .chat_history{
+        height: 500px
+    }
+    form#chat{
+        border: none;
+    }
+    .right-column-chat{
+        border-left: none;
+    }
+}

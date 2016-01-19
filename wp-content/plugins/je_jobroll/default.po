@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE_ALERT\n"
+"POT-Creation-Date: 2014-03-20 10:52+0700\n"
+"PO-Revision-Date: 2014-03-20 10:52+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_jobroll\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:6
+msgid "SET JOBROLL PAGE"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:8
+msgid "Select a page for your jobroll tempalte"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:11
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:12
+msgid "Select a page"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:32
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:19
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:6
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:18
+msgid "CONTENT"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:35
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:22
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:9
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:21
+msgid "Job Category"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:37
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:38
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:24
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:25
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:11
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:12
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:23
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:24
+msgid "All categories"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:46
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:33
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:20
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:32
+msgid "Job Type"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:48
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:49
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:35
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:36
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:22
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:23
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:34
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:35
+msgid "All job types"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:63
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:50
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:37
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:49
+msgid "DISPLAY"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:66
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:53
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:40
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:52
+msgid "Number of jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:72
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:59
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:46
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:58
+msgid "Width"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:80
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:67
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:54
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:66
+msgid "Background Color"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:86
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:73
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:60
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:72
+msgid "Title"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:88
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:75
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:181
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:209
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:62
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:74
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:173
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:201
+#, php-format
+msgid "Jobs from %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:97
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:87
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:68
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:80
+msgid "CODE"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:99
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:89
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:70
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:82
+msgid "Copy this code and paste into your website"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/backend-jobroll.php:108
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:98
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/backend-jobroll.php:78
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:90
+msgid "QUICK VIEW"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:63
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:55
+msgid "JE Jobroll"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:64
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:56
+msgid "JE JOBROLL"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:67
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:59
+msgid "Create a jobroll for publisher."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:161
+msgid "Save successfull"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:178
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:111
+msgid "Create a jobroll"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:179
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:112
+msgid "Jobroll"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:212
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:144
+#, php-format
+msgid ""
+"You have just activated the JE Jobroll plugin. Go to <a href='%s' >this "
+"page</a> to create a jobroll to display your jobs in other websites."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:320
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:244
+msgid " Add jobs to your site! "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:324
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:248
+msgid "Click here"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll.php:360
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/je_jobroll.php:284
+msgid "Title:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/jobroll.php:210
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobroll/je_jobroll/jobroll.php:202
+msgid "No job currently matches your selected option."
+msgstr ""

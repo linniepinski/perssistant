@@ -1,0 +1,224 @@
+.pricing {
+
+}
+.pricing sup  {
+    top :  -0.2em;
+}
+.pricing-number {
+    /*background: #2c3e50;*/
+    background: #1c647a;
+    text-align: center;
+    padding: 90px 0;
+}
+.pricing-number h2.price {
+    color:  #fff;
+    font-size:  34px;
+    font-weight:  600;
+    margin: 0 0 10px;
+}
+.pricing-number span {
+    color:  #fff;
+    font-size:  20px;
+    font-weight:  300;
+    display: block;
+}
+.pricing-content {
+    padding: 30px 20px;
+    display: block;
+    text-align: center;
+    background: #fff;
+}
+.pricing-title {
+    color:  #30363b;
+    font-size:  20px;
+    font-weight:  600;
+    margin: 0 0 20px;
+}
+.pricing-detail {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height:  150px;
+    margin:  0 auto;
+}
+.pricing-detail li {
+    display: block;
+    margin-bottom: 10px;
+}
+.pricing-detail li span {
+    color:  #666f78;
+    font-size:  14px;
+}
+.submit-price {
+    margin-top: 30px;
+}
+.pricing:hover .pricing-number, .pricing.active .pricing-number {
+    background: #54b2db;
+}
+.pricing:hover .btn-price, .pricing.active .btn-price,.pricing .btn-price  {
+    background-color:  #9DC817 !important;
+    -moz-box-shadow:  0 2px 0 #8EB70F!important;
+    -webkit-box-shadow:  0 2px 0 #8EB70F!important;
+    box-shadow:  0 2px 0 #8EB70F!important;
+}
+.pricing-container {
+   /* padding-top:  50px;
+    padding-bottom:  100px;*/
+}
+.pricing-item  {
+    margin-top:  50px;
+}
+.pricing-wrapper{
+    /*min-height: 195px;*/
+}
+.control-buttons-stripe{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.wp-stripe-poweredby{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.pricing-wrapper {
+    min-height: 250px;
+}
+.pay-button{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    display: block;
+    width: 100%;
+    border-radius: 0!important;
+    background-color: #0f2946!important;
+}
+.team-desc-wrapper{
+    width: 100%;
+}
+.out-div {
+    display: table;
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+}
+
+.in-div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+/*.about-us-item blockquote:before {*/
+    /*content: '“';*/
+    /*font-size: 24pt;*/
+    /*text-align: center;*/
+    /*line-height: 42px;*/
+    /*color: #fff;*/
+    /*background: #ddd;*/
+    /*float: left;*/
+    /*position: relative;*/
+    /*top: 30px;*/
+    /*border-radius: 25px;*/
+
+    /** define it as a block element **/
+    /*display: block;*/
+    /*height: 25px;*/
+    /*width: 25px;*/
+
+/*}*/
+/*.about-us-item blockquote:after {*/
+    /*content: '”';*/
+    /*font-size: 24pt;*/
+    /*text-align: center;*/
+    /*line-height: 42px;*/
+    /*color: #fff;*/
+    /*background: #ddd;*/
+    /*float: right;*/
+    /*position: relative;*/
+    /*bottom: 40px;*/
+    /*border-radius: 25px;*/
+
+    /** define it as a block element **/
+    /*display: block;*/
+    /*height: 25px;*/
+    /*width: 25px;*/
+/*}*/
+/*.about-us-item blockquote{*/
+    /*font-size: 16px;*/
+/*}*/
+.no-padding-lr {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+.about-us-item .photo-testimonial-home{
+    margin-top: 10px;
+}
+.about-us-item blockquote{
+    margin-top: 25px;
+}
+.about-us-item footer:before{
+    content: '';
+}
+
+.about-us-item:nth-child(3n+2){
+border-right:  1px dashed #333;
+border-left:  1px dashed #333;
+}
+
+.about-us-item:not(:nth-last-child(-n+3)){
+    border-bottom: 1px dashed #333;;
+}
+
+/**/
+body{padding-top:20px;}
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* The controlsy */
+.carousel-control {
+    left: -12px;
+    height: 40px;
+    width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 90px;
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* The indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    margin-right: -19px;
+}
+/* The colour of the indicators */
+.carousel-indicators li {
+    background: #cecece;
+}
+.carousel-indicators .active {
+    background: #428bca;
+}
+/**/

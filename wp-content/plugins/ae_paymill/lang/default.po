@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ClassfiedEngine v1.6.2\n"
+"Report-Msgid-Bugs-To: http://www.enginethemes.com/\n"
+"POT-Creation-Date: 2015-01-16 16:56+0700\n"
+"PO-Revision-Date: 2015-01-16 16:56+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Engine Themes <contact@enginethemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: E:\\xampp\\htdocs\\wp\\wp-content\\plugins"
+"\\ae_paymill\n"
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:33
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:42
+msgid "Paymill API"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:45
+msgid "The Paymill API by providing one of your API keys in the request."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:52
+msgid "Private Key"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:59
+msgid "Public Key"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:78
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:105
+msgid "Paymill"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:79
+msgid "PAYMILL"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:83
+msgid "Integrate the Paymill payment gateway to your site"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:107
+msgid "Send your payment to our paymill account"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:110
+msgid "Select"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:136
+msgid "The Credit card number is invalid."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:137
+msgid "The name on card is invalid."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:138
+msgid "The transaction completed successfull!."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:139
+msgid "The transaction was not completed successfull!."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:140
+msgid "An unknown error has been occur. Please contact admin for details."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:141
+msgid "Card is no longer valid or not anymore"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:142
+msgid " Invalid checking number"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:199
+msgid "Transaction was not completed successfully!"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:220
+msgid "Transaction completed successfull!"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/ae_paymill.php:260
+msgid "Paymill payment method false."
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/form-template.php:33
+msgid "Card number:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/form-template.php:41
+msgid "Expiry date:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/form-template.php:57
+msgid "Name on card:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/form-template.php:66
+msgid "Card code:"
+msgstr ""
+
+#: E:\xampp\htdocs\wp\wp-content\plugins\ae_paymill/form-template.php:76
+msgid "PAY THROUGH PAYMILL"
+msgstr ""

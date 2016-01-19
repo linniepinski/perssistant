@@ -1,0 +1,128 @@
+body {
+	font-family: Helvetica, Arial, sans-serif !important;
+	font-size: 14px;
+	line-height: 1.6em;
+    text-align: justify;
+	scrollbar-3dlight-color: #F0F0EE;
+	scrollbar-arrow-color: #676662;
+	scrollbar-base-color: #F0F0EE;
+	scrollbar-darkshadow-color: #DDDDDD;
+	scrollbar-face-color: #E0E0DD;
+	scrollbar-highlight-color: #F0F0EE;
+	scrollbar-shadow-color: #F0F0EE;
+	scrollbar-track-color: #F5F5F5;
+}
+
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+pre {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.tablerow1 {
+	background-color: #BBBBBB;
+}
+
+thead {
+	background-color: #FFBBBB;
+}
+
+tfoot {
+	background-color: #BBBBFF;
+}
+
+th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+body.mceContentBody { 
+   background: #fff !important; 
+}
+
+/* Basic formats */
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+/* Global align classes */
+
+.left {
+	text-align: inherit;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.full {
+	text-align: justify
+}
+
+/* Image and table specific aligns */
+
+img.left, table.left {
+	float: left;
+	text-align: inherit;
+}
+
+img.center, table.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: inherit;
+}
+
+img.center {
+	display: block;
+}
+
+img.right, table.right {
+	float: right;
+	text-align: inherit;
+}
+#CodeDiv {
+	background : #ccc;
+	padding: 5px;
+}
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+    color: #5C5C5C;
+    font-family: 'Quicksand', Arial, sans-serif !important;
+    font-size: 1em;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+    margin : 0;
+}
+
+ p {
+	margin: 0 0 1em;	
+}
+
+ ol, 
+ ul {
+    margin: 0.5em 0 1.5em 0.5em;
+}
+
+ ul {
+	list-style: disc;
+}

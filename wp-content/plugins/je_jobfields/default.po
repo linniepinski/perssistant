@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE RSS\n"
+"POT-Creation-Date: 2014-02-27 10:31+0700\n"
+"PO-Revision-Date: 2014-02-27 10:31+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_jobfields\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:48
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:48
+msgid "Are you sure you want to delete this option?"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:66
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:66
+msgid "JE Custom Fields"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:67
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:67
+msgid "JE CUSTOM FIELDS"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:68
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:68
+msgid "Manage your job's additional information"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:140
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:140
+msgid "Additional information"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:217
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:209
+msgid "Your new field has been inserted to Post a Job form"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:219
+msgid "Your new field has been inserted to Resume form"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:248
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:227
+msgid "Field has been updated"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:266
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:240
+msgid "You dont have permission to perform this action"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:272
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:246
+msgid "Can't delete field"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:275
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:249
+msgid "Field id doesnt exist"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:295
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:269
+msgid "You don't have permission to perform this action"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:303
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:277
+msgid "Cannot sort"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:336
+msgid "Job Fields"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:341
+msgid "Resume Fields"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:351
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:374
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:310
+msgid "New"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:352
+msgid "Job fields list"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:361
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:384
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:320
+msgid "required"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:363
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:386
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:395
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:322
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:331
+msgid "Edit"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:364
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:387
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:396
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:323
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:332
+msgid "Delete"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:375
+msgid "Resume fields list"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:423
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:356
+msgid "Add a new job information field in Post a Job page."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:427
+msgid "Add a new resume information field in Jobseeker Signup page."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:434
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:360
+msgid "Back to custom fields list"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:436
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:362
+msgid "Edit a field"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:438
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:364
+msgid "Add a new field"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:456
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:379
+msgid "Field name"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:457
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:380
+msgid "Enter a field name"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:464
+msgid "Field Label"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:465
+msgid "Enter a field label"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:468
+msgid "Field Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:469
+msgid "Enter a field slug"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:475
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:383
+msgid "Field Description"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:476
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:384
+msgid "Enter field's description"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:479
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:387
+msgid "Field type"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:519
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:531
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:541
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:418
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:430
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:440
+msgid "Delete this option"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:551
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:448
+msgid "Required"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/admin.php:555
+msgid "Check this if field is required"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:301
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:458
+#, php-format
+msgid "Type your %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:303
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:460
+#, php-format
+msgid "Press Enter to keep adding %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:306
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:462
+msgid "Add +"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:364
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:564
+msgid "Select your matches"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:446
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:495
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:551
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:621
+msgid "Oops! You're missing something here..."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:468
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:511
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:578
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:649
+msgid "SAVE"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:470
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:511
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:578
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/front.php:650
+msgid "Cancel"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:67
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:67
+msgid "Search Field Optionss"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:68
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:68
+msgid "Popular Field Options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:69
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:69
+msgid "All Field Options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:72
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:72
+msgid "Edit Field Option"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:73
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:73
+msgid "Update Field Option"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:74
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:74
+msgid "Add New Field Option"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:75
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:75
+msgid "New Field Option Name"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:76
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:76
+msgid "Separate field options with commas"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:77
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:77
+msgid "Add or remove field options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:78
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:78
+msgid "Choose from the most used field options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:79
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:79
+msgid "No field options found."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/inc/field.php:80
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/inc/field.php:80
+msgid "Field options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_jobfields/je_jobfields/admin.php:311
+msgid "Custom fields list"
+msgstr ""

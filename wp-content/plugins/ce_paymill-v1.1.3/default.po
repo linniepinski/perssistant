@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE_ALERT\n"
+"POT-Creation-Date: 2014-03-13 17:49+0700\n"
+"PO-Revision-Date: 2014-03-13 17:50+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\ce_paymill\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:87
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:87
+msgid "Api setting invalid"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:187
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:187
+msgid "Paymill transaction don't successfull!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:207
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:207
+msgid "Transaction successfull!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:248
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:248
+msgid "paymill payment method false."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:282
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:317
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:282
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:317
+msgid "Paymill"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:283
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:283
+msgid "Pay using your credit card through Paymill."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:288
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:288
+msgid "Select"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:298
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:298
+msgid "paymill"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:299
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:299
+msgid "Send your payment through paymill"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:322
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:322
+msgid "Your paymill secret key "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill.php:329
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/ce_paymill.php:329
+msgid "Your paymill public key"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/form-template.php:24
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/form-template.php:24
+msgid "Card number:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/form-template.php:32
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/form-template.php:32
+msgid "Expiry date:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/form-template.php:48
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/form-template.php:48
+msgid "Name on card:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/form-template.php:57
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/form-template.php:57
+msgid "Card code:"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/form-template.php:71
+#: D:\xampp\htdocs\framework\wp-content\plugins\ce_paymill/ce_paymill/form-template.php:71
+msgid "PAY THROUGH PAYMILL"
+msgstr ""

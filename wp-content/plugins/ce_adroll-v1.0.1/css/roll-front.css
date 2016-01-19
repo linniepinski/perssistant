@@ -1,0 +1,161 @@
+.half{
+	width: 48%;
+}
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+.roll-view{
+	overflow: hidden;
+}
+.roll-view .desc{
+	max-width: 956px;
+	position: relative;
+}
+.font-quicksand {
+    font-family: 'Quicksand',Arial,sans-serif !important;
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.row-roll{
+	display: block;
+	overflow: hidden;
+	background: #F5F5F5;
+}
+.row-top{
+	background: #F5F5F5;
+	padding-left: 20px;
+	border-bottom: 2px solid #fff;
+	padding-top: 15px;
+}
+.row-top label{
+	padding-top: 5px;
+}
+.roll-view form{
+	background: #F5F5F5;
+	width: 599px;
+	padding: 20px;
+	float: left;
+}
+.roll-view .et-main-main .desc form{
+	border-right: 2px solid #fff;
+	padding-top: 0;
+	margin-top: 0;
+}
+.roll-view .form-item label{
+	display: block;
+	clear: both;
+}
+.roll-view label{
+	padding-bottom: 10px;
+	display: block;
+}
+.roll-view .form-item .title{
+	padding-bottom: 11px;
+	padding-top: 8px;
+}
+.roll-view .form-item .et-button-select{
+	width: 188px;
+}
+.roll-view .form-item .et-button-select select{
+	width: 100%;
+
+}
+.roll-view .form-item select{
+	position: relative;
+}
+.roll-view select option{
+	padding: 5px;
+	cursor: pointer;
+	border:none;
+}
+.roll-view span{
+	border:none;
+	text-decoration: none;
+	border:0 !important;
+}
+.roll-view input{
+	border:1px solid #ccc;
+	width: 100%;
+	height: 35px;
+	padding-left: 15px;
+}
+.roll-view textarea{
+	width: 100%;
+	border:1px solid #ccc;
+	padding: 10px;
+	font-size: 13px;
+	height: 150px;
+}
+
+.form-item .select-style:after {
+    content: "▼";
+    font-size: 1em;
+    font-weight: normal;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.et-button-select {
+    background: -moz-linear-gradient(center top , #F9F9F9 0%, #F8F8F8 90%, #F5F5F5 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #CECECE;
+    border-radius: 3px;
+    position: relative;
+}
+
+.form-item span.select {
+    display: block;
+    left: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    width: 240px;
+}
+.quick_view{
+	width: 288px;	
+	float: left;
+	padding-left: 10px;	
+	overflow: hidden;
+	padding-top: 20px;
+}
+
+.col-md-9 .form-item label{
+	font-size: 15px;
+	font-weight: normal;
+	padding-bottom: 2px;
+}
+.col-md-9 .roll-view  .form-item {
+	padding: 0 0 10px 0;
+	overflow: hidden;
+	display: block;
+}
+.col-md-9 .form-item .title{
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0;
+}
+.quick_view a{
+	text-decoration: none;
+
+}
+.quick_view ul li{
+	list-style: none;
+	text-decoration: none;
+}
+@media screen and (min-width: 1000px){
+	.col-md-9 .quick_view{
+		float: right;
+		position: absolute;
+		right: -125px;
+		top:0;
+		width: 303px;
+		padding-top: 0;
+	}
+}
+.textwidget{
+	overflow: hidden;
+	max-width: 100%;
+}

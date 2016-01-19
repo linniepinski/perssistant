@@ -1,0 +1,398 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Htaccess editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-23 21:25+0100\n"
+"PO-Revision-Date: 2012-08-23 21:26+0100\n"
+"Last-Translator: Lukenzi <lukenzi@gmail.com>\n"
+"Language-Team: Lukenzi <lukenzi@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-htaccess-editor/\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wp-htaccess-editor.php:77
+#: wp-htaccess-editor.php:81
+#: wp-htaccess-editor.php:85
+#: wp-htaccess-editor.php:90
+#: lib/lib.pages.php:31
+#: lib/lib.pages.php:38
+#: lib/lib.pages.php:45
+msgid "Fatal error: Plugin <strong>WP Htaccess Editor</strong> is corrupted"
+msgstr ""
+
+#: pages/wphe-backup.php:7
+#: lib/lib.pages.php:11
+#, fuzzy
+msgid "Backup"
+msgstr "Záložní"
+
+#: pages/wphe-backup.php:16
+msgid "Unable to restore backup! Probably the wrong setting write permissions to the files."
+msgstr ""
+
+#: pages/wphe-backup.php:18
+#: pages/wphe-backup.php:38
+msgid "The backup file is located in the <code>wp-content</code> folder."
+msgstr ""
+
+#: pages/wphe-backup.php:22
+#, fuzzy
+msgid "Backup was restored successfully"
+msgstr "<b>{0}</b> z <b>{1}</b> lepicí poznámky bylo úspěšně importováno."
+
+#: pages/wphe-backup.php:23
+msgid "Old backup file was deleted successfully"
+msgstr ""
+
+#: pages/wphe-backup.php:26
+#, fuzzy
+msgid "Unable to restore backup!"
+msgstr "nelze obnovit záložní verzi „%.250s“"
+
+#: pages/wphe-backup.php:28
+msgid "This is contents of the original file, put it into a file manually"
+msgstr ""
+
+#: pages/wphe-backup.php:36
+msgid "Backup file was created successfully"
+msgstr ""
+
+#: pages/wphe-backup.php:41
+msgid "Unable to create backup! <code>wp-content</code> folder is not writeable! Change the permissions this folder manually!"
+msgstr ""
+
+#: pages/wphe-backup.php:42
+#: pages/wphe-backup.php:52
+#: pages/wphe-dashboard.php:31
+#: pages/wphe-dashboard.php:43
+msgid "Due to server configuration can not change permissions on files or create new files"
+msgstr ""
+
+#: pages/wphe-backup.php:49
+msgid "Backup file was successfully removed"
+msgstr ""
+
+#: pages/wphe-backup.php:51
+msgid "Backup file could not be removed! Probably the wrong setting write permissions to the files."
+msgstr ""
+
+#: pages/wphe-backup.php:59
+#, fuzzy
+msgid "The backup file was found..."
+msgstr "Soubor s nastavením „%s“ nebyl nalezen: %s"
+
+#: pages/wphe-backup.php:66
+#, fuzzy
+msgid "Do you want to restore the backup file?"
+msgstr "Chcete nahradit stávající soubor?"
+
+#: pages/wphe-backup.php:66
+#, fuzzy
+msgid "Restore backup &raquo;"
+msgstr "Odhlásit se &raquo;"
+
+#: pages/wphe-backup.php:75
+#, fuzzy
+msgid "Do you want to delete a backup file?"
+msgstr "Chcete nahradit stávající soubor?"
+
+#: pages/wphe-backup.php:75
+#: pages/wphe-dashboard.php:25
+#, fuzzy
+msgid "Remove backup &raquo;"
+msgstr "Při zavření odst_ranit záložní soubor"
+
+#: pages/wphe-backup.php:81
+#, fuzzy
+msgid "Backup file not found..."
+msgstr "Soubor s nastavením „%s“ nebyl nalezen: %s"
+
+#: pages/wphe-backup.php:89
+#, fuzzy
+msgid "Do you want to create a new backup file?"
+msgstr "Chcete vytvořit nový archiv s těmito soubory?"
+
+#: pages/wphe-backup.php:89
+#, fuzzy
+msgid "Create new &raquo;"
+msgstr "Vytvořit nový web"
+
+#: pages/wphe-backup.php:98
+#: pages/wphe-dashboard.php:129
+#, fuzzy
+msgid "Information about this plugin"
+msgstr "Zobrazit informace o aplikaci gthumb"
+
+#: pages/wphe-backup.php:100
+#: pages/wphe-dashboard.php:131
+#, fuzzy
+msgid "Author"
+msgstr "Autor"
+
+#: pages/wphe-backup.php:104
+#: pages/wphe-dashboard.php:135
+#, fuzzy
+msgid "Translators"
+msgstr "Česká lokalizace"
+
+#: pages/wphe-backup.php:111
+#: pages/wphe-dashboard.php:142
+#, fuzzy
+msgid "Plugin"
+msgstr "Plugin"
+
+#: pages/wphe-backup.php:113
+#: pages/wphe-dashboard.php:144
+#, fuzzy
+msgid "Version:"
+msgstr "Verze:"
+
+#: pages/wphe-backup.php:114
+#: pages/wphe-dashboard.php:145
+#, fuzzy
+msgid "Plugin homepage:"
+msgstr "Domácí stránka pluginu  &#187;"
+
+#: pages/wphe-backup.php:114
+#: pages/wphe-dashboard.php:145
+#, fuzzy
+msgid "WordPress repository"
+msgstr "Přid_at zdroj"
+
+#: pages/wphe-backup.php:115
+#: pages/wphe-dashboard.php:146
+#, fuzzy
+msgid "Support:"
+msgstr "Fórum podpory"
+
+#: pages/wphe-backup.php:115
+#: pages/wphe-dashboard.php:146
+#, fuzzy
+msgid "Forum"
+msgstr "Online fórum..."
+
+#: pages/wphe-backup.php:116
+#: pages/wphe-dashboard.php:147
+#, fuzzy
+msgid "Support for the development:"
+msgstr "Nástroje na vývoj softwaru"
+
+#: pages/wphe-backup.php:116
+#: pages/wphe-backup.php:127
+#: pages/wphe-dashboard.php:147
+#: pages/wphe-dashboard.php:158
+#: lib/lib.ad.php:20
+msgid "Donate"
+msgstr ""
+
+#: pages/wphe-backup.php:120
+#: pages/wphe-dashboard.php:151
+#, fuzzy
+msgid "Other plugins"
+msgstr "Instalace pluginů"
+
+#: pages/wphe-backup.php:122
+#: pages/wphe-dashboard.php:153
+#, fuzzy
+msgid "System Files Editor"
+msgstr "Editor systému nastavení MateConf."
+
+#: pages/wphe-backup.php:123
+#: pages/wphe-dashboard.php:154
+#, fuzzy
+msgid "Czech support for WordPress"
+msgstr "http://www.separatista.net/forum/"
+
+#: pages/wphe-backup.php:142
+#: pages/wphe-dashboard.php:174
+#, fuzzy
+msgid "You do not have permission to view this page"
+msgstr "Nemáte dostatečné oprávnění pro úpravy tohoto uživatele."
+
+#: pages/wphe-dashboard.php:17
+#, fuzzy
+msgid "File has been successfully changed"
+msgstr "Dříve otevřený soubor byl změněn."
+
+#: pages/wphe-dashboard.php:19
+msgid "You have made changes to the htaccess file. The original file was automatically backed up (in <code>wp-content</code> folder)"
+msgstr ""
+
+#: pages/wphe-dashboard.php:20
+msgid "Check the functionality of your site (the links to the articles or categories)."
+msgstr ""
+
+#: pages/wphe-dashboard.php:20
+#, fuzzy
+msgid "If something is not working properly restore the original file from backup"
+msgstr "Ze zálohy nelze obnovit nastavení displeje"
+
+#: pages/wphe-dashboard.php:25
+msgid "If everything works properly, you can delete the backup file:"
+msgstr ""
+
+#: pages/wphe-dashboard.php:25
+#: pages/wphe-dashboard.php:66
+#, fuzzy
+msgid "or"
+msgstr "nebo"
+
+#: pages/wphe-dashboard.php:25
+#, fuzzy
+msgid "restore the original file from backup"
+msgstr "Ze zálohy nelze obnovit nastavení displeje"
+
+#: pages/wphe-dashboard.php:30
+#: pages/wphe-dashboard.php:34
+#, fuzzy
+msgid "The file could not be saved!"
+msgstr "Soubor s nastaveními nemohl být uložen"
+
+#: pages/wphe-dashboard.php:35
+msgid "Unable to create backup of the original file! <code>wp-content</code> folder is not writeable! Change the permissions this folder!"
+msgstr ""
+
+#: pages/wphe-dashboard.php:42
+#, fuzzy
+msgid "Htaccess file is not created."
+msgstr "Soubor není platným souborem .desktop"
+
+#: pages/wphe-dashboard.php:45
+msgid "Htaccess file was successfully created."
+msgstr ""
+
+#: pages/wphe-dashboard.php:46
+#, fuzzy
+msgid "View new Htaccess file"
+msgstr "_Uložit nový soubor jako:"
+
+#: pages/wphe-dashboard.php:53
+msgid "Backup file could not be removed! <code>wp-content</code> folder is not writeable! Change the permissions this folder!"
+msgstr ""
+
+#: pages/wphe-dashboard.php:55
+msgid "Backup file has been successfully removed."
+msgstr ""
+
+#: pages/wphe-dashboard.php:60
+msgid "Using this editor you can easily modify your htaccess file without having to use an FTP client."
+msgstr ""
+
+#: pages/wphe-dashboard.php:61
+msgid "<strong>WARNING:</strong> Any error in this file may cause malfunction of your site!"
+msgstr ""
+
+#: pages/wphe-dashboard.php:62
+msgid "Edit htaccess file should therefore be performed only by experienced users!"
+msgstr ""
+
+#: pages/wphe-dashboard.php:65
+#, fuzzy
+msgid "Information for editing htaccess file"
+msgstr "Nemohu získat informace o souboru '%s': %s"
+
+#: pages/wphe-dashboard.php:66
+msgid "For more information on possible adjustments to this file, please visit"
+msgstr ""
+
+#: pages/wphe-dashboard.php:67
+msgid "Interesting tips and guides can also be found on "
+msgstr ""
+
+#: pages/wphe-dashboard.php:68
+#, fuzzy
+msgid "Or use the Google search."
+msgstr "Vyhledat <i>%(name)s</i> pomocí <b>Google</b>"
+
+#: pages/wphe-dashboard.php:74
+#, fuzzy
+msgid "Htaccess file does not exists!"
+msgstr "Plugin neexistuje."
+
+#: pages/wphe-dashboard.php:82
+#: pages/wphe-dashboard.php:91
+#, fuzzy
+msgid "Htaccess file cannot read!"
+msgstr ""
+"Nemůžu přečíst zvkukový soubor:\n"
+"%s"
+
+#: pages/wphe-dashboard.php:106
+#, fuzzy
+msgid "Content of the Htaccess file"
+msgstr "Chyba při čtení obsahu souboru '%s'"
+
+#: pages/wphe-dashboard.php:108
+#, fuzzy
+msgid "Save file &raquo;"
+msgstr "Uložit aktuální soubor"
+
+#: pages/wphe-dashboard.php:119
+#, fuzzy
+msgid "Create new <code>.htaccess</code> file?"
+msgstr "Vytvořit nový soubor ze šablony"
+
+#: pages/wphe-dashboard.php:119
+#, fuzzy
+msgid "Create &raquo;"
+msgstr "Další &raquo;"
+
+#: lib/lib.wp-files.php:10
+msgid "Plugin WP Htaccess Editor Error: File \"/wp-includes/pluggable.php\" does not exists!"
+msgstr ""
+
+#: lib/lib.wp-files.php:18
+msgid "Plugin WP Htaccess Editor Error: File \"/wp-includes/capabilities.php\" does not exists!"
+msgstr ""
+
+#: lib/lib.ad.php:7
+#, fuzzy
+msgid "Plugin homepage"
+msgstr "Domácí stránka pluginu  &#187;"
+
+#, fuzzy
+#~ msgid "Unlimited hosting WEDOS"
+#~ msgstr "Zadejte 0 pro neomezenou rychlost."
+
+#, fuzzy
+#~ msgid "WP Htaccess Editor"
+#~ msgstr "Modernizované API pro editor"
+
+#, fuzzy
+#~ msgid "Htaccess Editor"
+#~ msgstr "Stylování vizuálního editoru"
+
+#, fuzzy
+#~ msgid "Download backup file"
+#~ msgstr "Nezdařila se záloha souboru"
+
+#, fuzzy
+#~ msgid "Access denied"
+#~ msgstr "Přístup zamítnut"
+
+#, fuzzy
+#~ msgid "Htaccess file not found!"
+#~ msgstr "Soubor s nastavením „%s“ nebyl nalezen: %s"
+
+#, fuzzy
+#~ msgid "Htaccess file found..."
+#~ msgstr "Soubor nebyl nalezen"
+
+#, fuzzy
+#~ msgid "Htaccess file is empty..."
+#~ msgstr "Soubor s nastavením „%s“ je prázdný"
+
+#, fuzzy
+#~ msgid "URL:"
+#~ msgstr "URL:"
+
+#, fuzzy
+#~ msgid "Feedback:"
+#~ msgstr "Přání a stížnosti"

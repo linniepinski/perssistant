@@ -1,0 +1,39 @@
+.half{
+	width: 48%;
+}
+.alignleft{
+	float: left;
+}
+.alignright{
+	float: right;
+}
+.roll-view .desc{
+	max-width: 599px;
+}
+.roll-view .form-item label{
+	display: block;
+	clear: both;
+}
+.roll-view label{
+	padding-bottom: 10px;
+}
+.roll-view .form-item .title{
+	padding-bottom: 11px;
+	padding-top: 8px;
+}
+.roll-view .form-item .et-button-select{
+	width: 188px;
+}
+.roll-view .form-item .et-button-select select{
+	width: 100%;
+}
+.roll-view select option{
+	padding: 5px;
+	cursor: pointer;
+	border:none;
+}
+.roll-view span{
+	border:none;
+	text-decoration: none;
+	border:0 !important;
+}

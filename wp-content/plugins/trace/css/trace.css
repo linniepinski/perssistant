@@ -1,0 +1,80 @@
+﻿.diary-activity{
+    /*background-color: green;*/
+    color: #000000;
+}
+.diary-activity-status {
+    border: 2px solid #54B2DB;
+    text-align: center;
+}
+
+.diary-activity-status>span {
+    background-color: #64BD63;
+    display: block;
+    padding: 0 0;
+    color: #000000;
+}
+.no-padding-lr {
+    padding-left: 3px!important;
+    padding-right: 3px!important;
+}
+
+.no-padding-memo {
+    padding-left: 1px!important;
+    padding-right: 1px!important;
+}
+.memostring{
+    color: #000000;
+    text-indent: 12px;
+    background-color: #73c072;
+    border: 0 solid #000000;
+    border-radius: 8px;
+    margin-bottom: 5px;
+
+}
+.time-block{
+    /*height: 178px;*/
+    display: table;
+}
+.center-ver{
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.no-padding-r{
+    padding-right: 2px!important;
+}
+.no-padding-l{
+    padding-left: 2px!important;
+}
+.info-block{
+    margin-top: 3px;
+}
+.info-block-empty{
+    margin-top: 3px;
+    height: 23px;
+    content: ' ';
+}
+.empty-img-confirm{
+    height: 100%;
+    border: 3px dashed #ccc;
+}
+.image-line{
+    margin-bottom: 10px;
+}
+.select-count-diary{
+
+}
+.deleted-memo{
+    background-color: transparent;
+}
+/*hr {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+.trace-time-of-week{
+margin: 0 0;
+}
+.trace-link-work-diary{
+    margin: 0 0;
+
+}

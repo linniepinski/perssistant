@@ -1,0 +1,381 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Htaccess editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-23 21:43+0100\n"
+"PO-Revision-Date: 2012-08-23 21:43+0100\n"
+"Last-Translator: Lukenzi <lukenzi@gmail.com>\n"
+"Language-Team: Lukenzi <lukenzi@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: /opt/lampp/htdocs/wordpress/wp-content/plugins/wp-htaccess-editor/\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wp-htaccess-editor.php:77
+#: wp-htaccess-editor.php:81
+#: wp-htaccess-editor.php:85
+#: wp-htaccess-editor.php:90
+#: lib/lib.pages.php:31
+#: lib/lib.pages.php:38
+#: lib/lib.pages.php:45
+msgid "Fatal error: Plugin <strong>WP Htaccess Editor</strong> is corrupted"
+msgstr "Chyba: Plugin <strong>WP Htaccess Editor</strong> je poškozen"
+
+#: pages/wphe-backup.php:7
+#: lib/lib.pages.php:11
+msgid "Backup"
+msgstr "Záloha"
+
+#: pages/wphe-backup.php:16
+msgid "Unable to restore backup! Probably the wrong setting write permissions to the files."
+msgstr "Obnovení zálohy nebylo úspěšné! Pravděpodobně jsou špatně nastavena práva k zápisu do souboru. "
+
+#: pages/wphe-backup.php:18
+#: pages/wphe-backup.php:38
+msgid "The backup file is located in the <code>wp-content</code> folder."
+msgstr "Soubor zálohy je uložen ve složce <code>wp-content</code>."
+
+#: pages/wphe-backup.php:22
+msgid "Backup was restored successfully"
+msgstr "Záloha souboru byla úspěšně obnovena."
+
+#: pages/wphe-backup.php:23
+msgid "Old backup file was deleted successfully"
+msgstr "Starý záložní soubor byl úspěšně odstraněn."
+
+#: pages/wphe-backup.php:26
+msgid "Unable to restore backup!"
+msgstr "Nelze obnovit zálohu!"
+
+#: pages/wphe-backup.php:28
+msgid "This is contents of the original file, put it into a file manually"
+msgstr "Toto je obsah původního souboru, vložte jej do souboru <code>htaccess</code> ručně."
+
+#: pages/wphe-backup.php:36
+msgid "Backup file was created successfully"
+msgstr "Záložní soubor byl úspěšně vytvořen."
+
+#: pages/wphe-backup.php:41
+msgid "Unable to create backup! <code>wp-content</code> folder is not writeable! Change the permissions this folder manually!"
+msgstr "Nelze vytvořit zálohu! Do složky <code>wp-content</code> nelze zapisovat, změňte oprávnění této složky!"
+
+#: pages/wphe-backup.php:42
+#: pages/wphe-backup.php:52
+#: pages/wphe-dashboard.php:31
+#: pages/wphe-dashboard.php:43
+msgid "Due to server configuration can not change permissions on files or create new files"
+msgstr "Kvůli nastavení serveru nelze měnit oprávnění souborů ani vytvářet nové soubory nebo mazat stávající"
+
+#: pages/wphe-backup.php:49
+msgid "Backup file was successfully removed"
+msgstr "Záložní soubor byl úspěšně odstraněn."
+
+#: pages/wphe-backup.php:51
+msgid "Backup file could not be removed! Probably the wrong setting write permissions to the files."
+msgstr "Záložní soubor nelze odstranit! Pravděpodobně jsou špatně nastavena práva k zápisu do souboru. "
+
+#: pages/wphe-backup.php:63
+msgid "Do you want to restore the backup file?"
+msgstr "Chcete obnovit zálohu původního souboru?"
+
+#: pages/wphe-backup.php:63
+msgid "Restore backup &raquo;"
+msgstr "Obnovit &raquo;"
+
+#: pages/wphe-backup.php:72
+msgid "Do you want to delete a backup file?"
+msgstr "Chcete odstranit záložní soubor?"
+
+#: pages/wphe-backup.php:72
+#: pages/wphe-dashboard.php:25
+msgid "Remove backup &raquo;"
+msgstr "Odstranit zálohu &raquo;"
+
+#: pages/wphe-backup.php:78
+msgid "Backup file not found..."
+msgstr "Záložní soubor nebyl nalezen..."
+
+#: pages/wphe-backup.php:86
+msgid "Do you want to create a new backup file?"
+msgstr "Chcete vytvořit nový záložní soubor?"
+
+#: pages/wphe-backup.php:86
+msgid "Create new &raquo;"
+msgstr "Vytvořit nový &raquo;"
+
+#: pages/wphe-backup.php:95
+#: pages/wphe-dashboard.php:129
+msgid "Information about this plugin"
+msgstr "Informace o tomto pluginu"
+
+#: pages/wphe-backup.php:97
+#: pages/wphe-dashboard.php:131
+msgid "Author"
+msgstr "Autor"
+
+#: pages/wphe-backup.php:101
+#: pages/wphe-dashboard.php:135
+msgid "Translators"
+msgstr "Překladatelé"
+
+#: pages/wphe-backup.php:108
+#: pages/wphe-dashboard.php:142
+msgid "Plugin"
+msgstr "Plugin"
+
+#: pages/wphe-backup.php:110
+#: pages/wphe-dashboard.php:144
+msgid "Version:"
+msgstr "Verze pluginu:"
+
+#: pages/wphe-backup.php:111
+#: pages/wphe-dashboard.php:145
+msgid "Plugin homepage:"
+msgstr "Domovská stránka pluginu:"
+
+#: pages/wphe-backup.php:111
+#: pages/wphe-dashboard.php:145
+msgid "WordPress repository"
+msgstr "WordPress repozitář"
+
+#: pages/wphe-backup.php:112
+#: pages/wphe-dashboard.php:146
+msgid "Support:"
+msgstr "Podpora:"
+
+#: pages/wphe-backup.php:112
+#: pages/wphe-dashboard.php:146
+msgid "Forum"
+msgstr "Fórum"
+
+#: pages/wphe-backup.php:113
+#: pages/wphe-dashboard.php:147
+msgid "Support for the development:"
+msgstr "Přispějte na další vývoj:"
+
+#: pages/wphe-backup.php:113
+#: pages/wphe-backup.php:124
+#: pages/wphe-dashboard.php:147
+#: pages/wphe-dashboard.php:158
+#: lib/lib.ad.php:20
+msgid "Donate"
+msgstr "Přispějte"
+
+#: pages/wphe-backup.php:117
+#: pages/wphe-dashboard.php:151
+msgid "Other plugins"
+msgstr "Další pluginy autora"
+
+#: pages/wphe-backup.php:119
+#: pages/wphe-dashboard.php:153
+msgid "System Files Editor"
+msgstr "System Files Editor"
+
+#: pages/wphe-backup.php:120
+#: pages/wphe-dashboard.php:154
+msgid "Czech support for WordPress"
+msgstr "Česká podpora pro WordPress"
+
+#: pages/wphe-backup.php:139
+#: pages/wphe-dashboard.php:174
+msgid "You do not have permission to view this page"
+msgstr "Nemáte oprávnění k zobrazení této stránky"
+
+#: pages/wphe-dashboard.php:17
+msgid "File has been successfully changed"
+msgstr "Soubor byl uložen"
+
+#: pages/wphe-dashboard.php:19
+msgid "You have made changes to the htaccess file. The original file was automatically backed up (in <code>wp-content</code> folder)"
+msgstr "Provedli jste změny v htaccess souboru. Původní soubor byl automaticky zálohován (ve složce <code>wp-content</code>)"
+
+#: pages/wphe-dashboard.php:20
+msgid "Check the functionality of your site (the links to the articles or categories)."
+msgstr "Vyzkoušejte funkčnost Vašeho webu (odkazy na články nebo rubriky)."
+
+#: pages/wphe-dashboard.php:20
+msgid "If something is not working properly restore the original file from backup"
+msgstr "Pokud nefungují správně, obnovte zálohu původního souboru."
+
+#: pages/wphe-dashboard.php:25
+msgid "If everything works properly, you can delete the backup file:"
+msgstr "Pokud vše funguje jak má, můžete záložní soubor smazat:"
+
+#: pages/wphe-dashboard.php:25
+#: pages/wphe-dashboard.php:66
+msgid "or"
+msgstr "nebo"
+
+#: pages/wphe-dashboard.php:25
+msgid "restore the original file from backup"
+msgstr "obnovte zálohu původního souboru"
+
+#: pages/wphe-dashboard.php:30
+#: pages/wphe-dashboard.php:34
+msgid "The file could not be saved!"
+msgstr "Soubor nebyl uložen!"
+
+#: pages/wphe-dashboard.php:35
+msgid "Unable to create backup of the original file! <code>wp-content</code> folder is not writeable! Change the permissions this folder!"
+msgstr "Nelze vytvořit zálohu původního souboru! Do složky <code>wp-content</code> nelze zapisovat, změňte oprávnění u této složky!"
+
+#: pages/wphe-dashboard.php:42
+msgid "Htaccess file is not created."
+msgstr "Soubor Htaccess nebyl vytvořen."
+
+#: pages/wphe-dashboard.php:45
+msgid "Htaccess file was successfully created."
+msgstr "Soubor htaccess byl úspěšně vytvořen."
+
+#: pages/wphe-dashboard.php:46
+msgid "View new Htaccess file"
+msgstr "Zobrazit Htaccess soubor"
+
+#: pages/wphe-dashboard.php:53
+msgid "Backup file could not be removed! <code>wp-content</code> folder is not writeable! Change the permissions this folder!"
+msgstr "Záložní soubor nelze odstranit! Složka <code>wp-content</code> nemá nastavena oprávnění pro zápis, změňte oprávnění ručně!"
+
+#: pages/wphe-dashboard.php:55
+msgid "Backup file has been successfully removed."
+msgstr "Záložní soubor byl úspěšně odstraněn."
+
+#: pages/wphe-dashboard.php:60
+msgid "Using this editor you can easily modify your htaccess file without having to use an FTP client."
+msgstr "Tento editor slouží k snadné úpravě vašeho htaccess souboru bez nutnosti použití FTP klienta."
+
+#: pages/wphe-dashboard.php:61
+msgid "<strong>WARNING:</strong> Any error in this file may cause malfunction of your site!"
+msgstr "<strong>POZOR:</strong> Jakákoliv chyba v tomto souboru může způsobit nefunkčnost vašeho webu!"
+
+#: pages/wphe-dashboard.php:62
+msgid "Edit htaccess file should therefore be performed only by experienced users!"
+msgstr "Upravovat htaccess soubor by měli provádět pouze zkušení uživatelé!"
+
+#: pages/wphe-dashboard.php:65
+msgid "Information for editing htaccess file"
+msgstr "Informace pro úpravy Htaccess souboru"
+
+#: pages/wphe-dashboard.php:66
+msgid "For more information on possible adjustments to this file, please visit"
+msgstr "Pro více informací o možných úpravách tohoto souboru navštivte weby"
+
+#: pages/wphe-dashboard.php:67
+msgid "Interesting tips and guides can also be found on "
+msgstr "Zajímavé tipy a návody můžete nalézt také na webu"
+
+#: pages/wphe-dashboard.php:68
+msgid "Or use the Google search."
+msgstr "Nebo použijte vyhledávač Google"
+
+#: pages/wphe-dashboard.php:74
+msgid "Htaccess file does not exists!"
+msgstr "Soubor Htaccess neexistuje!"
+
+#: pages/wphe-dashboard.php:82
+#: pages/wphe-dashboard.php:91
+msgid "Htaccess file cannot read!"
+msgstr "Soubor Htaccess nelze přečíst!"
+
+#: pages/wphe-dashboard.php:106
+msgid "Content of the Htaccess file"
+msgstr "Obsah Htaccess souboru"
+
+#: pages/wphe-dashboard.php:108
+msgid "Save file &raquo;"
+msgstr "Uložit soubor &raquo;"
+
+#: pages/wphe-dashboard.php:119
+msgid "Create new <code>.htaccess</code> file?"
+msgstr "Vytvořit nový <code>.htaccess</code> soubor?"
+
+#: pages/wphe-dashboard.php:119
+msgid "Create &raquo;"
+msgstr "Vytvořit nový &raquo;"
+
+#: lib/lib.wp-files.php:10
+msgid "Plugin WP Htaccess Editor Error: File \"/wp-includes/pluggable.php\" does not exists!"
+msgstr "Chyba v pluginu WP Htaccess Editor: Soubor \"/wp-includes/pluggable.php\" neexistuje!"
+
+#: lib/lib.wp-files.php:18
+msgid "Plugin WP Htaccess Editor Error: File \"/wp-includes/capabilities.php\" does not exists!"
+msgstr "Chyba v pluginu WP Htaccess Editor: Soubor \"/wp-includes/capabilities.php\" neexistuje!"
+
+#: lib/lib.ad.php:7
+msgid "Plugin homepage"
+msgstr "Web autora pluginu"
+
+#~ msgid "The backup file was found..."
+#~ msgstr "Záložní soubor byl nalezen..."
+
+#~ msgid "Unlimited hosting WEDOS"
+#~ msgstr "Neomezený hosting WEDOS"
+
+#~ msgid "WP Htaccess Editor"
+#~ msgstr "WP Htaccess Editor"
+
+#~ msgid "Htaccess"
+#~ msgstr "Htaccess"
+
+#~ msgid "Htaccess Editor"
+#~ msgstr "Htaccess Editor"
+
+#~ msgid "WP Htaccess Editor - Backup"
+#~ msgstr "WP Htaccess Editor - Záloha"
+
+#~ msgid "Download backup file"
+#~ msgstr "Uložit záložní soubor do PC"
+
+#~ msgid ""
+#~ "Unable to create backup! Probably the wrong setting write permissions to "
+#~ "the files."
+#~ msgstr ""
+#~ "Vytvoření zálohy nebylo úspěšné! Pravděpodobně jsou špatně nastavena "
+#~ "práva k zápisu do souboru. "
+
+#~ msgid "Access denied"
+#~ msgstr "Přístup odepřen"
+
+#~ msgid ""
+#~ "The file could not be saved! Probably the wrong setting read permissions "
+#~ "to the files"
+#~ msgstr ""
+#~ "Soubor nebyl uložen! Pravděpodobně jsou špatně nastavena práva k zápisu "
+#~ "do souboru. "
+
+#~ msgid ""
+#~ "Htaccess file is not created. Probably the wrong setting read permissions "
+#~ "to the files"
+#~ msgstr ""
+#~ "Soubor Htaccess nebyl vytvořen! Pravděpodobně jsou špatně nastavena práva "
+#~ "k zápisu do souboru. "
+
+#~ msgid ""
+#~ "Backup file could not be removed! Probably the wrong setting read "
+#~ "permissions to the files"
+#~ msgstr ""
+#~ "Záložní soubor se nepodařilo odstranit! Pravděpodobně jsou špatně "
+#~ "nastavena práva k zápisu do souboru. "
+
+#~ msgid "Htaccess file not found!"
+#~ msgstr "Htaccess soubor nebyl nalezen!"
+
+#~ msgid "Htaccess file found..."
+#~ msgstr "Htaccess soubor byl nalezen..."
+
+#~ msgid "Htaccess file is empty..."
+#~ msgstr "Htaccess soubor je prázdný..."
+
+#~ msgid "Htaccess file is not readable, probably does not exist"
+#~ msgstr "Htaccess soubor nelze přečíst, pravděpodobně neexistuje"
+
+#~ msgid "URL:"
+#~ msgstr "Web pluginu:"
+
+#~ msgid "Feedback:"
+#~ msgstr "Hlášení chyb:"

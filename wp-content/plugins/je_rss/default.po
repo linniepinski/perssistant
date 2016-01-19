@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JE RSS\n"
+"POT-Creation-Date: 2013-08-20 15:21+0700\n"
+"PO-Revision-Date: 2013-08-20 15:21+0700\n"
+"Last-Translator: dakachi <david87dang@gmail.com>\n"
+"Language-Team: Enginethemes Team <enginethemes@enginethmes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\framework\\wp-content\\plugins"
+"\\je_rss\n"
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:3
+msgid "Plugin options"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:7
+msgid "Automatically delete imported job older than "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:9
+msgid "Day(s)"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:9
+msgid "&nbsp;or"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:10
+msgid "Delete Now"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:15
+msgid "Imported Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:32
+msgid "Title"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:33
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:30
+msgid "RSS Link"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:34
+msgid "Creator"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:35
+msgid "Date"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manage.php:65
+msgid "Delete selected jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:3
+msgid "Import jobs manually"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:9
+msgid "RSS link"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:19
+msgid "Get Job"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:29
+msgid "With Selected Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:32
+msgid "Job Categories"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:39
+msgid "Job Types"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:47
+msgid "Job Location"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:69
+msgid "Apply for all jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:81
+msgid "Author Username"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/manual.php:86
+msgid "Import all selected Jobs"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:27
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:63
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:81
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:108
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:146
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:173
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:218
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:283
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:331
+msgid "Permission Denied"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:44
+msgid "Permission Denied!"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:157
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:162
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:235
+msgid "Your RSS feed is invalid."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:187
+msgid "Jobs have been imported to your site."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:255
+msgid "1 job has been deleted"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:255
+#, php-format
+msgid "%d jobs have been deleted"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_ajax.php:266
+msgid "No job has been deleted"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:71
+msgid "Custom RSS Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:75
+msgid "Custom Single RSS Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:228
+msgid ""
+"There is no new job in this RSS feed. You may have already imported all of "
+"them."
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:332
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:333
+msgid "JE RSS"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:336
+msgid "Import jobs from RSS feeds into your job board"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:378
+msgid "Manual"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:383
+msgid "Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:388
+msgid "Manage"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:489
+msgid "Edit"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:490
+msgid "Featured"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:491
+msgid "Approve"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:492
+msgid "Reject"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:493
+msgid "Archive"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:494
+msgid "View jobs posted by "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:495
+msgid "Remove Featured"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:496
+msgid "Set Featured"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:497
+msgid "PAID"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:498
+msgid "UNPAID"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/rss_import.php:499
+msgid "FREE"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:4
+msgid "Recurrence"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:4
+msgid " (The next timestamp for a cron event: "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:19
+msgid "RSS Link Schedule"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:22
+msgid "Add new"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:31
+msgid "Author"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/schedule.php:109
+msgid "Entering job author name"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:60
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:70
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/template-job.php:31
+#, php-format
+msgid "View posted jobs by %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:79
+#, php-format
+msgid "View posted jobs in %s "
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:126
+#, php-format
+msgid "View jobs posted by %s"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:135
+#, php-format
+msgid "View %s website"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:160
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/single-rss.php:161
+msgid "APPLY FOR THIS JOB"
+msgstr ""
+
+#: D:\xampp\htdocs\framework\wp-content\plugins\je_rss/template-job.php:26
+#, php-format
+msgid "View %s job details"
+msgstr ""
