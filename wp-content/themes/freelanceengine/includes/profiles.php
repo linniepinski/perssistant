@@ -300,6 +300,11 @@ function fre_register_portfolio() {
 
     global $ae_post_factory;
 
+//    $meta_array_portfolio = array(
+//        'portfolio_link',
+//
+//    );
+
     $ae_post_factory->set(PORTFOLIO, new AE_Posts( PORTFOLIO, array('skill'), array('portfolio_link') ) );
 
     register_post_type( PORTFOLIO, $args );
@@ -1096,8 +1101,16 @@ class Fre_PortfolioAction extends AE_PostAction {
 
         $portfolio = $ae_post_factory->get($this->post_type);
 
+   // var_dump($request);
+    //var_dump($portfolio);
 
-
+        if (!isset($request['id'])){
+            unset($request['id']);
+        }else{
+            $request['ID'] = $request['id'];
+            unset($request['id']);
+        }
+       // $request['post_content'] = strip_tags($request['post_content']);
         // set status for profile
 
         if( !isset($request['post_status']) ){
@@ -1108,15 +1121,15 @@ class Fre_PortfolioAction extends AE_PostAction {
 
         // set default post content
 
-        $request['post_content'] = '';
+        //$request['post_content'] = '';
 
 
 
         // sync place
-
+//var_dump($request);
         $result = $portfolio->sync($request);
 
-
+//var_dump($result);
 
         if (!is_wp_error($result)) { 
 
@@ -1128,7 +1141,8 @@ class Fre_PortfolioAction extends AE_PostAction {
 
                 set_post_thumbnail( $result, $thumb_id );
 
-            }    
+                $result = $portfolio->get( $result->ID );
+            }
 
 
 
@@ -1167,14 +1181,20 @@ class Fre_PortfolioAction extends AE_PostAction {
             } else if($request['method'] == 'update'){
 
 
-
                 $response = array(
 
                     'success'      => true,
 
                     'data'         => array(
 
-                        'redirect_url' => $result->permalink
+                        'redirect_url' => $result->permalink,
+                        'post_title' => $result->post_title,
+                        'post_content' => $result->post_content,
+                        'the_post_thumnail' => $result->the_post_thumnail,
+                        'the_post_thumbnail' => $result->the_post_thumbnail,
+                        'the_post_thumbnail_full' => $result->the_post_thumbnail_full,
+                        'featured_image' => $result->featured_image,
+
 
                     ) ,
 

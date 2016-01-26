@@ -6,7 +6,7 @@ $current        = $post_object->current_post;
 ?>
 <li <?php post_class( 'project-item' ); ?>>
 	<div class="row">
-    	<div class="col-md-5 col-sm-5 col-xs-7 text-ellipsis">
+    	<div class="col-md-4 col-sm-5 col-xs-7 text-ellipsis">
         	<a href="<?php echo get_author_posts_url( $current->post_author ); ?>"  class="title-project">
                 <?php echo get_avatar( $post->post_author, 35 ); ?>
             </a>
@@ -30,7 +30,7 @@ $current        = $post_object->current_post;
             </span>
         </div>
 
-        <div class="col-md-1 col-sm-2 col-xs-4 hidden-xs">
+        <div class="col-md-2 col-sm-2 col-xs-4 hidden-xs">
             <span class="budget-project">
                 <?php
                 if ($current->type_budget == 'hourly_rate'){

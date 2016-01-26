@@ -3690,7 +3690,9 @@ window.AE = window.AE || {};
 
                     beforeSend: function() {
 
-                        view.blockUi.block($target);
+                        //view.blockUi.block($target);
+                        
+                        view.blockUi.block($target.find('button.btn-submit-login-form'));
 
                     },
 

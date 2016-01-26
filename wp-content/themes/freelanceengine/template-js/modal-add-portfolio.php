@@ -30,6 +30,10 @@
                 		<label><?php _e('Portfolio Title', ET_DOMAIN) ?></label>
                 		<p><input type="text" name="post_title" id="post_title" /></p>
                 	</div>
+                    <div class="form-group">
+                        <label><?php _e('Portfolio Description', ET_DOMAIN) ?></label>
+                        <textarea name="post_content" id="post_content"></textarea>
+                    </div>
                 	<div class="clearfix"></div>
                 	<div class="form-group portfolio-skills">
                 		<label><?php _e('Select Skill', ET_DOMAIN) ?></label>
@@ -45,6 +49,7 @@
 		                			if(!empty($skills)){
 			                			foreach ($skills as $skill) {
 			                				echo '<option value="'.$skill->slug.'">'.$skill->name.'</option>';
+
 			                			}
 			                		}
 		                		?>

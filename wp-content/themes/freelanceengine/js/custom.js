@@ -205,7 +205,7 @@ jQuery(document).ready(function(){
 		}
 
 	});
-	
+
 	//Validate forgot password
 	jQuery("form.forgot_form").validate({
 		rules: {
@@ -318,6 +318,7 @@ jQuery(document).ready(function(){
     }).blur(function () {
         jQuery('#pswd_info').fadeOut('fast');
     });
+
 	jQuery("#user_signup_form").validate({
 		rules: {
 			user_login: "required",

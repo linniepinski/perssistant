@@ -114,6 +114,18 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="category-filters-list">
+                    <ul>
+                        <?php
+                        /*
+                         * 
+                         * */
+                        ?>
+
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <div class="number-project-wrapper">
@@ -312,11 +324,15 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
     });
     jQuery('#category-modal').on('hidden.bs.modal', function () {
         var count = jQuery("#category-parent-checkbox :checkbox").length;
+        var htmloutput_filters = '';
         jQuery("#category-parent-checkbox :checkbox").each(function (index) {
             var optionthis = jQuery("option[value='" + jQuery(this).attr('value') + "']");
             var current_value = jQuery(this).attr('value');
             if (jQuery(this).attr('checked') == 'checked') {
-                jQuery("option[value='" + current_value + "']").attr("selected", "selected");
+                varthis = jQuery("option[value='" + current_value + "']");
+                varthis.attr("selected", "selected");
+                htmloutput_filters += '<li '+ 'data-parent="'+ current_value +'"' +'><span>'+ varthis.text() +'</span><a href="javascript:void(0);" class="delete"><i class="fa fa-times"></i></a></li>'
+                    console.log(jQuery("option[value='" + current_value + "']").text());
             } else {
                 jQuery("option[value='" + current_value + "']").removeAttr("selected");
             }
@@ -324,6 +340,8 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 optionthis.change();
             }
         });
+        jQuery('.category-filters-list > ul').html(htmloutput_filters);
+
         AE.pubsub.trigger('ae:notification', {
             msg : 'Query processing, please wait a bit.',
             notice_type: 'success'

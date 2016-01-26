@@ -35,7 +35,7 @@ class WPBakeryShortCode_fre_block_project extends WPBakeryShortCode {
                     <div class="col-md-12">
                         <div class="tab-content-project">
                             <div class="row title-tab-project">
-                                <div class="col-md-5 col-sm-5 col-xs-7">
+                                <div class="col-md-4 col-sm-5 col-xs-7">
                                     <span><?php _e("PROJECT TITLE", ET_DOMAIN); ?></span>
                                 </div>
                                 <div class="col-md-2 col-sm-3 hidden-xs">
@@ -44,8 +44,8 @@ class WPBakeryShortCode_fre_block_project extends WPBakeryShortCode {
                                 <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
                                     <span><?php _e("POSTED DATE", ET_DOMAIN); ?></span>
                                 </div>
-                                <div class="col-md-1 col-sm-2 hidden-xs">
-                                    <span><?php _e("BUDGET", ET_DOMAIN); ?></span>
+                                <div class="col-md-2 col-sm-2 hidden-xs">
+                                    <span class="text-right"><?php _e("BUDGET", ET_DOMAIN); ?></span>
                                 </div>
                             </div>
                             <!-- Tab panes -->

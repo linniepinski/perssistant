@@ -230,7 +230,7 @@
 
                                 <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
 
-                                    <span class="avatar-and-name">
+                                    <span class="avatar-and-name current_user_avatar">
 
                                         <span class="avatar">
 

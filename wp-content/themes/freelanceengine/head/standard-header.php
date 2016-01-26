@@ -54,7 +54,7 @@
                             <div class="dropdown-info-acc-wrapper">
                                 <div class="dropdown">
                                     <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                                        <span class="avatar-and-name ">
+                                        <span class="avatar-and-name current_user_avatar">
                                             <span class="avatar">
                                                 <?php 
                                                     $notify_number = 0;
@@ -72,7 +72,7 @@
                                         <span class="caret"></span>
                                     </div>
                                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                        <li><span class="avatar-and-name avatar-name-ontop">
+                                        <li><span class="avatar-and-name avatar-name-ontop current_user_avatar">
                                                 <span class="avatar">
                                                 <?php 
                                                     $notify_number = 0;

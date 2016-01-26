@@ -15,6 +15,29 @@ $profile_id         = get_user_meta($post->post_author,'user_profile_id', true);
 $currency           = ae_get_option('content_currency',array('align' => 'left', 'code' => 'USD', 'icon' => '$'));
 
 ?>
+
+
+
+
+<?php
+$role = ae_user_role();
+if ($project_status == 'publish') {
+    if( ( fre_share_role() || $role == FREELANCER ) && $user_ID != $project->post_author ){
+        $has_bid = fre_has_bid( get_the_ID() );
+        if( $has_bid ) {
+?>
+            <div class="single-projects info-project-item-details content-require-project h4"><?php  _e('You submitted this proposal',ET_DOMAIN);?></div>
+<?php
+        }
+    }
+}
+?>
+
+
+
+
+
+
 <div class="col-md-12">
 	<div class="tab-content-project">
     	<!-- Title -->
@@ -77,12 +100,12 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                                     $has_bid = fre_has_bid( get_the_ID() );
                                     if( $has_bid ) {                                                                   
                                         ?>
-                                        <a rel="<?php echo $project->ID;?>" href="#" id="<?php echo $has_bid;?>" title= "<?php _e('Cancel this bidding',ET_DOMAIN); ?>"  class="btn btn-apply-project-item btn-del-project-modal" >
+                                        <a rel="<?php echo $project->ID;?>" href="#" id="<?php echo $has_bid;?>" title= "<?php _e('Cancel this bidding',ET_DOMAIN); ?>"  class="btn btn-apply-project-item btn-del-project-modal modal_bid_update" >
                                             <?php  _e('Cancel',ET_DOMAIN);?>
                                         </a>
 
-                                        <a  href="#" class="btn btn-apply-project-item btn-project-status" data-toggle="modal" data-target="#modal_bid_update">
-                                            <?php  _e('Bid ',ET_DOMAIN);?>
+                                        <a  href="#" class="btn btn-apply-project-item btn-project-status modal_bid_update" data-toggle="modal" data-target="#modal_bid_update">
+                                            <?php  _e(' Edit Bid ',ET_DOMAIN);?>
                                         </a>
 
                                     <?php

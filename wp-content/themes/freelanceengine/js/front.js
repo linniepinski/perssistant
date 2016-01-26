@@ -440,6 +440,7 @@
 
 		 */
 
+       // var clicked_portfolio_model;
 		PortfolioItem = Views.PostItem.extend({
 
 			events: {
@@ -497,10 +498,19 @@
                 if (typeof this.modalPortfolio === 'undefined') {
                     this.modalPortfolio = new Views.Modal_Edit_Portfolio({
                         el: '#modal_edit_portfolio',
-                        collection: this.portfolios_collection
+                        collection: this
+                        //collection: this.portfolio_colection
                         // model: portfolio
                     });
                 }
+                //clicked_portfolio_model = this.model.attributes;
+                //console.log(this.model.attributes);
+                //console.log(this.model.attributes.ID);
+                //console.log(this.model.attributes.featured_image);
+                //console.log(this.model.attributes.featured_image);
+                //console.log(event);
+                //console.log(portfolio);
+                //jQuery('')
                 this.modalPortfolio.setModel(portfolio);
                 this.modalPortfolio.openModal();
 
@@ -524,7 +534,6 @@
                             '<div class="mfp-top-bar">' +
                             '<div class="mfp-title"></div>' +
                             '<div class="mfp-close"></div>' +
-                            '<div class="mfp-decoration"></div>' +
                             '</div>' +
                             '</header>' +
                             '<section class="mfp-content-container">' +
@@ -535,8 +544,7 @@
                             '<div class="mfp-bottom-bar-container">' +
                             '<div class="mfp-bottom-bar">' +
                             '<div class="mfp-counter"></div>' +
-                            '<textarea style="height: auto; width: 100%; line-height: initial" class="mfp-description"></textarea>' +
-                            '<div class="mfp-decoration"></div>' +
+                            '<div class="mfp-description"></div>' +
                             '</div>' +
                             '</div>' +
                             '</figcaption>' +
@@ -1811,11 +1819,59 @@
 
 						}
 
-					}
+					},
 
 				});
 
+                jQuery('#new_password').keyup(function () {
+                    var pswd = jQuery(this).val();
+                    if (pswd.length < 8) {
+                        jQuery('#length').removeClass('valid').removeClass('required').addClass('invalid');
+                    } else {
+                        jQuery('#length').removeClass('invalid').addClass('valid').addClass('required');
+                    }
+                    //validate letter
+                    if (pswd.match(/[A-z]/)) {
+                        jQuery('#letter').removeClass('invalid').addClass('valid');
+                    } else {
+                        jQuery('#letter').removeClass('valid').addClass('invalid');
+                    }
+
+//validate capital letter
+                    if (pswd.match(/[A-Z]/)) {
+                        jQuery('#capital').removeClass('invalid').addClass('valid');
+                    } else {
+                        jQuery('#capital').removeClass('valid').addClass('invalid');
+                    }
+
+//validate number
+                    if (pswd.match(/\d/)) {
+                        jQuery('#number').removeClass('invalid').addClass('valid');
+                    } else {
+                        jQuery('#number').removeClass('valid').addClass('invalid');
+                    }
+                    var count_valid = jQuery('#pswd_info li.valid').length;
+                    if (count_valid && jQuery('#pswd_info li.required').length >= 1) {
+                        if (count_valid >= 2) {
+                            jQuery('.strong-level').text('minimum')
+                        }
+                        if (count_valid >= 3) {
+                            jQuery('.strong-level').text('medium')
+                        }
+                        if (count_valid >= 4) {
+                            jQuery('.strong-level').text('strong')
+                        }
+                    } else {
+                        jQuery('.strong-level').text('danger')
+                    }
+                }).focus(function () {
+                    jQuery('#pswd_info').fadeIn('slow');
+                }).blur(function () {
+                    jQuery('#pswd_info').fadeOut('fast');
+                })
+
 			},
+
 
 			/**
 
@@ -1828,6 +1884,11 @@
 				event.preventDefault();
 
 				event.stopPropagation();
+
+                if (jQuery('#pswd_info li.valid').length < 2 || jQuery('#pswd_info li.required').length < 1 ){
+                    jQuery('#pswd_info').fadeIn('slow');
+                    return false;
+                }
 
 				/**
 
@@ -1898,6 +1959,12 @@
 								view.closeModal();
 
 								form.trigger('reset');
+
+                                jQuery('#length').removeClass('valid').addClass('invalid');
+                                jQuery('#number').removeClass('valid').addClass('invalid');
+                                jQuery('#capital').removeClass('valid').addClass('invalid');
+                                jQuery('#letter').removeClass('valid').addClass('invalid');
+                                jQuery('.strong-level').text('danger')
 
 								//window.location.href = ae_globals.homeURL;
 
@@ -2991,7 +3058,7 @@
                     '<div class="mfp-top-bar">' +
                     '<div class="mfp-title"></div>' +
                     '<div class="mfp-close"></div>' +
-                    '<div class="mfp-decoration"></div>' +
+
                     '</div>' +
                     '</header>' +
                     '<section class="mfp-content-container">' +
@@ -3002,8 +3069,7 @@
                     '<div class="mfp-bottom-bar-container">' +
                     '<div class="mfp-bottom-bar">' +
                     '<div class="mfp-counter"></div>' +
-                    '<textarea style="height: auto; width: 100%; line-height: initial" class="mfp-description"></textarea>' +
-                    '<div class="mfp-decoration"></div>' +
+                    '<div class="mfp-description"></div>' +
                     '</div>' +
                     '</div>' +
                     '</figcaption>' +
@@ -3201,26 +3267,39 @@
 		 * Menu style fixed
 
 		*/
-
+        var lastScrollTop = 0
 		$(window).scroll(function(e) {
 
 			$el = $('#header-wrapper');
+// console.log($(window).scrollTop());
+            var st = $(this).scrollTop();
 
-			if( $(window).scrollTop() > $el.height() && ( ( $(document).height() - $(window).height() ) > 2*$el.height() ) ) { 
+            if($(window).scrollTop() > $el.height()  ) {
 
-				$el.addClass("sticky");
+//				$el.addClass("hidden-sticky", 1000, "linear");
+                if (st > lastScrollTop){
+//                    console.log('scrolldown');
+                    $el.removeClass("on-top").removeClass("sticky").addClass("hidden-sticky");
+//                    $el.css('transform', 'translateY(-71px)')
+                } else {
+//                    console.log('scrollup');
+                    $el.removeClass("on-top").removeClass("hidden-sticky").addClass("sticky");
+//                    $el.css('transform', 'translateY(0px)')
+
+                }
 
 			} else {
-
+                $el.removeClass("sticky").removeClass("hidden-sticky").addClass("on-top");
 				if($(window).scrollTop() <= $el.height()) {
 
-					$el.removeClass("sticky");	
 
 				}				
 
 			}
+            lastScrollTop = st;
 
-		});
+
+        });
 
 
 

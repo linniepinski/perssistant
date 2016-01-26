@@ -19,7 +19,21 @@
 					<div class="form-group">
 						<label for="new_password"><?php _e('Your New Password', ET_DOMAIN) ?></label>
 						<input type="password" class="form-control" id="new_password" name="new_password" placeholder="<?php _e('Enter your new password', ET_DOMAIN) ?>">
-					</div>	
+					</div>
+
+                    <!-- Form validation password -->
+                    <div id="pswd_info" style="display: none">
+                        <h4>Security level: <strong class="strong-level">danger</strong></h4>
+                        <h4>Password must meet the following requirements:</h4>
+                        <ul>
+                            <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                            <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                            <li id="number" class="invalid">At least <strong>one number</strong></li>
+                            <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+                        </ul>
+                    </div>
+                    <!-- / Form validation password -->
+
                     <div class="clearfix"></div>
 					<div class="form-group">
 						<label for="renew_password"><?php _e('Retype New Password', ET_DOMAIN) ?></label>

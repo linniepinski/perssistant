@@ -70,6 +70,7 @@
 		 * add all
 		 */
 		addAll: function() {
+
 			for (var i = 0; i < this.user_view.length - 1; i++) {
 				// this.user_view[i].$el.remove();
 				this.user_view[i].remove();

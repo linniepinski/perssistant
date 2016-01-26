@@ -36,7 +36,7 @@
 	                		<select id="skills" name="skill">
 		                		<?php
 		                			if($profile_id) {
-		                				$skills = wp_get_object_terms( $profile_id, 'skill' );		                			
+		                				$skills = wp_get_object_terms( $profile_id, 'skill' );
 			                			foreach ($skills as $skill) {
 			                				echo '<option value="'.$skill->slug.'">'.$skill->name.'</option>';
 			                			}

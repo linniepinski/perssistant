@@ -1,3 +1,22 @@
+label#checkbox_label {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+}
+#et_featured + span {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/checkbox_sprite.jpg) no-repeat;
+    cursor: pointer;
+}
+#et_featured:checked + span {
+    background-position: 0 -33px;
+}
+
+
 .list-share-social.addthis_toolbox.addthis_default_style {
 line-height: 50px;
 text-align:center;
@@ -1062,7 +1081,8 @@ select  {
             float:  left;
     }
 }
-/* --------------------------------------------------------- *//* H E A D E R  S T Y L E/* --------------------------------------------------------- */#header-wrapper  {
+/* --------------------------------------------------------- *//* H E A D E R  S T Y L E/* --------------------------------------------------------- */
+#header-wrapper  {
         top:  0;
         left:  0;
         width:  100%;
@@ -1070,19 +1090,44 @@ select  {
         height:  auto;
         background-color: none;
 }
-#header-wrapper.trans-color {
-        position:  absolute;
-}
-#header-wrapper.sticky  {
-        position:  fixed;
-        margin:  0;
-        padding:  0;
-        width:  100%;
-         background: rgba(255,255,255,.9)!important;
 
-        -webkit-box-shadow:  0 1px 3px rgba(0,  0,  0,  0.12);
-        -moz-box-shadow:  0 1px 3px rgba(0,  0,  0,  0.12);
-        box-shadow:  0 1px 3px rgba(0,  0,  0,  0.12);
+#header-wrapper {
+    will-change: transform;
+    /*will-change: transform;*/
+    /*transition: transform 0.4s ease-out 1s;*/
+
+}
+#header-wrapper.on-top{
+    transform: translateY(0px);
+
+    /*transition: transform 0.4s ease-out 0.1s;*/
+}
+#header-wrapper.hidden-sticky {
+    position: fixed;
+    transform: translateY(-71px);
+    transition: transform 0.4s ease-out 0s;
+}
+
+#header-wrapper.not-page-home.hidden-sticky {
+    position: fixed;
+    transform: translateY(-108px);
+}
+
+#header-wrapper.trans-color {
+    position: absolute;
+}
+
+#header-wrapper.sticky {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, .9) !important;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transform: translateY(0px);
+    transition: transform 0.4s ease-in 0s;
 }
 #header-wrapper.standard-menu  {
         background:   rgba(0,  0,  0,  0.1);
@@ -1092,19 +1137,20 @@ select  {
         z-index:  1;
         position:  relative;
 }
-.sticky .top-header {
+.top-header {
         padding:  0;
 }
-.top-header {
-        display: block;
-        padding: 14px 0;
+/*.top-header {*/
+        /*display: block;*/
+        /*padding: 14px 0;*/
         /*background-color:  #fff;*/
-        -moz-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        -webkit-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        position: relative;
-        z-index: 5;
-}
+        /*-moz-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*-webkit-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*position: relative;*/
+        /*z-index: 5;*/
+/*}*/
+
 .btn-menu-call {
 }
 .btn-menu-call li {
@@ -1232,6 +1278,7 @@ select  {
 
 #header-wrapper.sticky .login-form-header-wrapper ul li a, #header-wrapper.not-page-home .login-form-header-wrapper ul li a{
         color: #2c3d4f;
+
 }
 
 #header-wrapper.sticky .btn-menu-call li a,  #header-wrapper.sticky .btn-menu-call li .trigger-menu i,  #header-wrapper.sticky .btn-menu-call li .trigger-search i,  #header-wrapper.sticky .dropdown-info-acc-wrapper .avatar-and-name, #header-wrapper.sticky .login-form-header-wrapper a, #header-wrapper.not-page-home .btn-menu-call li a,  #header-wrapper.not-page-home .btn-menu-call li .trigger-menu i, #header-wrapper.not-page-home .btn-menu-call li .trigger-search i, #header-wrapper.not-page-home .dropdown-info-acc-wrapper .avatar-and-name {
@@ -1346,7 +1393,8 @@ header.trans-color .top-header {
         color: #fff;
         margin-top:  10px;
 }
-/* --------------Search fullscreen------------- */.wrapper-input-search-top {
+/* --------------Search fullscreen------------- */
+.wrapper-input-search-top {
         margin-bottom: 30px;
 }
 .select-search-top {
@@ -1933,6 +1981,9 @@ ul.notification-list {
         font-weight: 700;
         color:  #2c3d4f;
 }
+.list-project li .hidden-xs .budget-project {
+    text-align: right;
+}
 .list-project li .wrapper-btn {
         text-align: right;
         margin: 0;
@@ -2444,6 +2495,10 @@ ul.notification-list {
         max-width:  95px;
         overflow:  hidden;
         white-space:  nowrap;
+}
+.single-projects .modal_bid_update  {
+    padding:  5px 7px !important;
+    margin-right: 3px !important;
 }
 .single-projects .info-project-item {
         padding: 0 30px;
@@ -4971,19 +5026,24 @@ p.text-term  {
         margin-left:  10px;
         font-size:  12px;
 }
-/* ====== MODAL PORFOLIO ====== */form#create_portfolio  input  {
+/* ====== MODAL PORFOLIO ====== */
+form#create_portfolio input,
+form#edit_portfolio input{
         margin-bottom:  15px;
 }
-#portfolio_img_thumbnail  {
+#portfolio_img_thumbnail  ,
+#portfolio_img_edit_thumbnail  {
         display:  block;
         margin:  0 auto;
         min-height:  70px;
 }
-#portfolio_img_thumb  {
+#portfolio_img_thumb  ,
+#portfolio_img_edit_thumb  {
         max-width:  150px;
         height:  auto;
 }
-#portfolio_img_container  {
+#portfolio_img_container  ,
+#portfolio_img_edit_container  {
         text-align:  center;
         position:  relative;
         padding:  10px;
@@ -4992,12 +5052,14 @@ p.text-term  {
         height:  235px;
         color:  #737c85;
 }
-#portfolio_img_container p.add-file  {
+#portfolio_img_container p.add-file  ,
+#portfolio_img_edit_container p.add-file  {
         font-size:  18px;
         font-weight:  bold;
         margin-bottom:  0;
 }
-#portfolio_img_container p.drag-drop  {
+#portfolio_img_container p.drag-drop  ,
+#portfolio_img_edit_container p.drag-drop  {
         font-size:  14px;
         font-weight:  600;
 }
@@ -5266,7 +5328,7 @@ b.currency  {
 .step-content-wrapper .list-price li .btn.btn-submit-price-plan:hover,  .btn.btn-submit-login-form:hover  {
         opacity:  .8;
 }
-.step-content-wrapper input.text-field,  .step-content-wrapper .chosen-container-multi .chosen-choices, #modal_edit_project .chosen-container-multi .chosen-choices  {
+.step-content-wrapper input.text-field, .step-content-wrapper select.text-field,  .step-content-wrapper .chosen-container-multi .chosen-choices, #modal_edit_project .chosen-container-multi .chosen-choices  {
         width:  95%;
         border:  1px solid #d7d8da;
         -moz-border-radius:  4px;
@@ -5362,13 +5424,13 @@ b.currency  {
 .page-authenticate  {
         background:  #fff;
 }
-.skills-list {
+.skills-list , .category-filters-list ul {
         padding: 0;
         margin: 0;
         list-style: none;
         margin-top: 20px;
 }
-.skills-list li {
+.skills-list li , .category-filters-list ul li{
         display:  inline-block;
         padding: 3px 12px;
         -moz-border-radius:  3px;
@@ -5381,12 +5443,12 @@ b.currency  {
         margin-right: 15px;
         margin-bottom: 10px;
 }
-.skills-list li i {
+.skills-list li i , .category-filters-list ul li i{
         display: inline-block;
         margin-left: 10px;
         color:  #656f77;
 }
-.skills-list li .text-ellipsis {
+.skills-list li .text-ellipsis , .category-filters-list ul li .text-ellipsis{
         max-width:  75px;
         display:  inline-block;
         vertical-align:  middle;
@@ -6337,7 +6399,7 @@ div .level-2 > label  {
     cursor: pointer;
 }
 /*09.10.15 end add*/
-
+/* ----------------- verify pass form -------------------------*/
 #pswd_info {
     /*position:absolute;*/
     /*bottom:-75px;*/
@@ -6408,4 +6470,29 @@ div .level-2 > label  {
 #pswd_info {
     /*display:none;*/
 }
+/* ----------------- verify pass form end -------------------------*/
 
+/* P O R T F O L I O magnific popup */
+.mfp-footer{
+    margin: 0;
+    padding: 0;
+}
+.mfp-bottom-bar{
+    margin: 0;
+}
+img.mfp-img{
+    padding: 0;
+}
+.mfp-title{
+    margin-bottom: 20px;
+    font-size: 200%;
+}
+.mfp-description{
+color: white;
+    height: auto;
+    width: 100%;
+    line-height: initial;
+    margin-top: 20px;
+
+}
+/* P O R T F O L I O magnific popup end */

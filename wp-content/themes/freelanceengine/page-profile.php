@@ -484,7 +484,7 @@ get_header();
 
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <input class="form-control number is_number" type="number" min="0" max="99"
+                                    <input class="form-control number is_number" type="number" min="0" max="30"
                                            name="et_experience"
                                            value="<?php echo $experience; ?>"/>
                                 </div>

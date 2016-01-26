@@ -3,7 +3,7 @@
 <div class="dropdown-info-acc-wrapper">
     <div class="dropdown">
         <div class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-            <span class="avatar-and-name">
+            <span class="avatar-and-name current_user_avatar">
                 <span class="avatar">
                     <img alt="" src="{{= et_avatar_url }}" class="avatar avatar-96 photo avatar-default" height="96" width="96">
                 </span>
@@ -12,7 +12,7 @@
             <span class="caret"></span>
         </div>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-             <li><span class="avatar-and-name avatar-name-ontop">
+             <li><span class="avatar-and-name avatar-name-ontop current_user_avatar">
                 <span class="avatar">
                     <img alt="" src="{{= et_avatar_url }}" class="avatar avatar-96 photo avatar-default" height="96" width="96">
                 </span>
