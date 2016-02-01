@@ -249,7 +249,6 @@ function chatroom_loadprev() {
 }
 function status_chat(strong, message, cclass) {
     jQuery("#status-alert").show();
-    jQuery("#status-alert").alert();
     jQuery("#status-alert").addClass(cclass);
     jQuery(".alert-status").html('<strong>' + strong + '</strong>' + message);
     jQuery("#status-alert").fadeTo(2000, 500).slideUp(500, function () {
@@ -270,6 +269,13 @@ function resizeChat() {
     }
 }
 function OnKeyCodeEvents() {
+    jQuery('input.inter-search').keydown(function(e) {
+        if(e.keyCode == 13) { // enter key was pressed
+            // run own code
+            console.log('ok2');
+            return false; // prevent execution of rest of the script + event propagation / event bubbling + prevent default behaviour
+        }
+    });
     jQuery('.message_box_chat').on('keydown', function (event) {
         if (event.keyCode == 13 && event.shiftKey) {
             event.preventDefault();
@@ -495,7 +501,7 @@ function sendNotification(title, options) {
                 settings.searchInput = searchBar.find("input");
                 container.before(searchBar);
             }
-            return settings.searchInput.on("keyup.sieve change.sieve", function () {
+            return settings.searchInput.on("keyup.sieve change.sieve", function (event) {
                 var items, query;
                 query = compact($(this).val().toLowerCase().split(/\s+/));
                 items = container.find(settings.itemSelector);

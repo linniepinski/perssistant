@@ -66,9 +66,9 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                             <?php _e("Open", ET_DOMAIN); ?> 
                         </span> 
                         <span class="text-normal">
-                        <?php 
+                        <?php
                             if( empty($et_expired_date) ) {
-                                printf(__('%s ago',ET_DOMAIN), human_time_diff( get_the_time('U'), time() ) );
+                                printf(__('%s ago',ET_DOMAIN), human_time_diff( get_post_time('U', true), time() ) );
                             }else{
                                 printf(__('%s left',ET_DOMAIN), human_time_diff( time(), strtotime($et_expired_date)) ); 
                             }  

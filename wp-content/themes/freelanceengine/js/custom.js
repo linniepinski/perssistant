@@ -344,6 +344,18 @@ jQuery(document).ready(function(){
 
         }
 	});
+    jQuery('.sw_skill').on('change',function(){
+       console.log('changed')
+        parent = jQuery(this).parent().find('.error');
+        if(jQuery('.sw_skill > option:selected').length < 10){
+            console.log('change2d')
+            jQuery('.skill-error').html('');
+        }else{
+            console.log('cha2nge2d')
+            jQuery('.skill-error').html('<span class="message">You\'ve added maximum number of skills<i class="fa fa-exclamation-triangle"></i></span>');
+
+        }
+    });
 });
 
 (function($) {

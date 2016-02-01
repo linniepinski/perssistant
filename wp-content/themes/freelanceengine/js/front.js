@@ -1919,7 +1919,17 @@
 					view.user.set($(this).attr('name'), $(this).val());
 
 				})
+                if(jQuery('#old_password').val() === jQuery('#new_password').val() ){
 
+                    AE.pubsub.trigger('ae:notification', {
+
+                        msg : 'Your new password matches the old one!',
+
+                        notice_type: 'error'
+
+                    });
+                    return false;
+                }
 
 
 				// check form validate and process sign-in

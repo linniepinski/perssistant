@@ -114,17 +114,18 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="category-filters-list">
+            <div class="col-md-12 text-center">
+                <div class="category-filters-list text-justify">
                     <ul>
                         <?php
                         /*
-                         * 
+                         *
                          * */
                         ?>
 
                     </ul>
                 </div>
+                <button class="btn btn-info open-filter-list-project hidden">Open</button>
             </div>
         </div>
     </div>
@@ -185,7 +186,8 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
         </div>
     </div>
 </div>
-<div class="modal fade bs-example-modal-lg" id="category-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade bs-example-modal-lg" id="category-modal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -226,7 +228,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
     </div>
 </div>
 <script type="application/javascript">
-    var half_count = Math.round(jQuery("#project_category > option").length / 3 );
+    var half_count = Math.round(jQuery("#project_category > option").length / 3);
     var parent_category = '';
     jQuery("#project_category > option").each(function (index) {
         select = '';
@@ -288,7 +290,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 jQuery("input[data-parent='" + thischeckbox.attr('data-parent') + "']:checked").each(function (index) {
                     countsss++;
                 });
-                if (countsss == count_child ) {
+                if (countsss == count_child) {
                     jQuery("input[value='" + current_value + "'").attr('checked', 'checked');
                 }
             }
@@ -307,7 +309,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 });
             }
         }
-        if (jQuery("#category-parent-checkbox :checked").length == 0 ){
+        if (jQuery("#category-parent-checkbox :checked").length == 0) {
             jQuery("#category-all :checkbox").attr('checked', 'checked');
         }
     });
@@ -318,10 +320,11 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             jQuery("#category-parent-checkbox :checkbox").removeAttr("checked");
             optionthis.removeAttr("selected");
         }
-        if (jQuery("#category-parent-checkbox :checked").length == 0 ){
+        if (jQuery("#category-parent-checkbox :checked").length == 0) {
             jQuery("#category-all :checkbox").attr('checked', 'checked');
         }
     });
+
     jQuery('#category-modal').on('hidden.bs.modal', function () {
         var count = jQuery("#category-parent-checkbox :checkbox").length;
         var htmloutput_filters = '';
@@ -331,8 +334,8 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             if (jQuery(this).attr('checked') == 'checked') {
                 varthis = jQuery("option[value='" + current_value + "']");
                 varthis.attr("selected", "selected");
-                htmloutput_filters += '<li '+ 'data-parent="'+ current_value +'"' +'><span>'+ varthis.text() +'</span><a href="javascript:void(0);" class="delete"><i class="fa fa-times"></i></a></li>'
-                    console.log(jQuery("option[value='" + current_value + "']").text());
+                htmloutput_filters += '<li ' + 'data-parent="' + current_value + '"' + '><span>' + varthis.text() + '</span><a href="javascript:void(0);" class="delete" onclick="del_filter(\''+current_value+'\')"><i class="fa fa-times"></i></a></li>'
+               //console.log(jQuery("option[value='" + current_value + "']").text());
             } else {
                 jQuery("option[value='" + current_value + "']").removeAttr("selected");
             }
@@ -340,11 +343,37 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 optionthis.change();
             }
         });
+//        var tags_filter_list = jQuery('.category-filters-list > ul');
         jQuery('.category-filters-list > ul').html(htmloutput_filters);
+        jQuery('.open-filter-list-project').text('Open');
+        if (jQuery('.category-filters-list > ul').height() < 40) {
+            jQuery('.open-filter-list-project').addClass('hidden');
+            jQuery('.category-filters-list > ul').removeClass('all-hidden');
+        } else {
+            jQuery('.open-filter-list-project').removeClass('hidden');
+            jQuery('.category-filters-list > ul').addClass('all-hidden');
+        }
 
         AE.pubsub.trigger('ae:notification', {
-            msg : 'Query processing, please wait a bit.',
+            msg: 'Query processing, please wait a bit.',
             notice_type: 'success'
         });
-    })
+    });
+//    jQuery('.category-filters-list').bind("DOMSubtreeModified", function() {
+////        alert("tree changed");
+//    });
+    jQuery('.open-filter-list-project').on('click', function () {
+        jQuery('.category-filters-list > ul').toggleClass('all-hidden');
+        if (jQuery('.category-filters-list > ul').hasClass('all-hidden')) {
+            jQuery(this).text('Open')
+        } else {
+            jQuery(this).text('Hide')
+        }
+    });
+    function del_filter(val){
+        console.log(val);
+        jQuery("option[value='" + val + "']").removeAttr("selected").change();
+        jQuery("input[value='"+val+"'").removeAttr('checked');
+        jQuery("li[data-parent='"+val+"']").remove();
+    }
 </script>

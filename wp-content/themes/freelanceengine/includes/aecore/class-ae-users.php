@@ -344,7 +344,7 @@ class AE_Users
      */
     public function update($user_data) {
         global $current_user, $user_ID;
-        
+
         /**
          * prevent user edit other user profile
          */
@@ -412,7 +412,8 @@ class AE_Users
             #update account info
             if($user_data['default_payment_option'] == 'paypal') {
                 update_user_meta( $result, 'default_payment_option', 1 );                
-                update_user_meta( $result, 'active_cc', '' );   
+                update_user_meta( $result, 'active_cc', '' );
+                update_user_meta( $result, 'paypal', $user_data['paypal']);
             } else {
                 update_user_meta( $result, 'default_payment_option', 2 );                
                 update_user_meta( $result, 'active_cc', $user_data['default_payment_option'] ); 

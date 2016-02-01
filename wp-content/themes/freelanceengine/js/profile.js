@@ -175,7 +175,7 @@
             }
             ;
             this.$('.sw_skill').chosen({
-                max_selected_options: 5,
+                max_selected_options: 10,
                 inherit_select_classes: true,
                 width: '95%',
             })
@@ -212,6 +212,7 @@
                         min: 0,
                         max: 30
                     }
+
                 }
             });
             // credit card authorization
@@ -391,6 +392,13 @@
             if (this.$('form#profile_form').valid() && !form.hasClass("processing")) {
                 this.profile.save('', '', {
                     beforeSend: function () {
+                        if(jQuery('#about_content').val().length <= 250){
+                            AE.pubsub.trigger('ae:notification', {
+                                msg: 'minimum 250sym',
+                                notice_type: 'error',
+                            });
+                            return false;
+                        }
                         view.blockUi.block(button);
                         form.addClass('processing');
                     },
@@ -865,9 +873,7 @@
         },
         setupFields: function () {
             var view = this;
-            // view.portfolio = view.collection.model.attributes;
-            //view.current_portfolio = clicked_portfolio_model;
-            //console.log(view);
+
             this.$('.form-group').find('input').each(function () {
                 $(this).val(view.portfolio.get($(this).attr('name')));
             });
@@ -877,16 +883,10 @@
             view.$('#portfolio_img_edit_thumb').attr('src', view.collection.model.attributes.the_post_thumbnail);
             view.$('#post_title').val(view.collection.model.attributes.post_title);
             view.$('#post_thumbnail').val(0);
-            //console.log(view.collection.model.attributes.skill[0]);
-//            var option_skill = view.$('select#skills option[data-id='+view.collection.model.attributes.skill[0] + ']');
-//            option_skill.attr('selected','selected');
-            //console.log(option_skill.text());
-//            view.$('a.chosen-single span').text(option_skill.text());
-///console.log(option_skill);
+
             view.$("#portfolio_img_thumbnail").html('');
         },
         resetUploader: function () {
-            debugger;
             if (typeof Views.Profile.portfolio_uploader_edit === 'undefined') return;
             Views.Profile.portfolio_uploader_edit.controller.splice();
             Views.Profile.portfolio_uploader_edit.controller.refresh();
@@ -923,22 +923,13 @@
             /**
              * scan all fields in form and set the value to model user
              */
-                //console.log( view);
             form.find('input, textarea, select').each(function () {
                 if ($(this).attr('name')) {
                     view.portfolio.set($(this).attr('name'), $(this).val());
                     console.log($(this).attr('name'), $(this).val());
                 }
             });
-            // check if user has selected an image!
-//            if ($("form.edit_portfolio #post_thumbnail").val() == "0") {
-//                AE.pubsub.trigger('ae:notification', {
-//                    msg: fre_fronts.portfolio_img,
-//                    notice_type: 'error'
-//                });
-//                return false;
-//            }
-            // check form validate and process sign-up
+
             if (this.portfolio_validator.form() && !form.hasClass("processing")) {
                 this.portfolio.save('', '', {
                     beforeSend: function () {
@@ -948,24 +939,7 @@
                     success: function (portfolio, status, jqXHR) {
                         view.blockUi.unblock();
                         form.removeClass('processing');
-                        // trigger event process authentication
-                        // AE.pubsub.trigger('ae:portfolio:create', portfolio, status, jqXHR);
-                        // add to collection
-                        console.log(view);
-                        console.log(view.collection.model.get(portfolio.id));
-                        console.log(view.collection.model.collection.get(portfolio.id));
-                        console.log(portfolio);
-                        //console.log(view.collection.model.collection);
-                        //console.log(view.collection.model.collection.get(1830));
-                        //alert(portfolio.id);
-                        //this.AE.Portfolios.set(portfolio.attributes);
-                        // view.collection.model.collection.remove(portfolio);
-                        //view.collection.model.collection.add(portfolio, {
-                        //    at: 0
-                        //});
-//                        console.log(this);
 
-                        //alert('wtf');
                         if (status.success) {
                             var model = view.collection.model.collection.get(portfolio.id);
                             if (model) {
@@ -1041,13 +1015,13 @@ function focus_field(id, tab, container) {
     if (container === undefined) {
         current_field = jQuery("[id='" + id + "']").focus();
         if (jQuery("[href='#" + tab + "']").parent().hasClass('active')) {
-            jQuery("html, body").delay(250).animate({scrollTop: current_field.offset().top / 2 - 100}, 500);
+            jQuery("html, body").delay(250).animate({scrollTop: current_field.offset().top / 2 - 100 }, 500);
 
             current_field.focus();
         } else {
             jQuery("[href='#" + tab + "']").click();
             setTimeout(function () {
-                jQuery("html, body").delay(250).animate({scrollTop: current_field.offset().top / 2 - 100}, 500);
+                jQuery("html, body").delay(250).animate({scrollTop: current_field.offset().top / 2 - 100 }, 500);
                 current_field.focus();
             }, 750);
         }
@@ -1055,14 +1029,14 @@ function focus_field(id, tab, container) {
     else {
         if (container == 'about') {
             if (jQuery("[href='#" + tab + "']").parent().hasClass('active')) {
-                jQuery("html, body").delay(250).animate({scrollTop: jQuery('iframe#about_content_ifr').offset().top - jQuery('iframe#about_content_ifr').height()}, 500);
+                jQuery("html, body").delay(250).animate({scrollTop: jQuery('iframe#about_content_ifr').offset().top - jQuery('iframe#about_content_ifr').height() }, 500);
                 jQuery('iframe#about_content_ifr').contents().find('body').focus();
                 console.log('fsadfasdf2');
 
             } else {
                 jQuery("[href='#" + tab + "']").click();
                 setTimeout(function () {
-                    jQuery("html, body").animate({scrollTop: jQuery('iframe#about_content_ifr').offset().top - jQuery('iframe#about_content_ifr').height()}, 500);
+                    jQuery("html, body").animate({scrollTop: jQuery('iframe#about_content_ifr').offset().top - jQuery('iframe#about_content_ifr').height() }, 500);
                     jQuery('iframe#about_content_ifr').contents().find('body').focus();
                 }, 250);
 

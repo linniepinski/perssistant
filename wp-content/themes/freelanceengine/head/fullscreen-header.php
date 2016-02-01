@@ -799,15 +799,15 @@
         jQuery('#search-free').slideToggle();
     })
 
-     jQuery(window).on('scroll', function(){
-        if(jQuery('#header-wrapper').hasClass('sticky')){
-            jQuery('.search-form-top').addClass('stickyForm')
-        }else{
-             jQuery('.search-form-top').removeClass('stickyForm')
-        }
-         if(jQuery('body').scrollTop()===0){
-         jQuery('.search-form-top').removeClass('stickyForm')
-     }
-    })
+//     jQuery(window).on('scroll', function(){
+//        if(jQuery('#header-wrapper').hasClass('sticky')){
+//            jQuery('.search-form-top').addClass('stickyForm')
+//        }else{
+//             jQuery('.search-form-top').removeClass('stickyForm')
+//        }
+//         if(jQuery('body').scrollTop()===0){
+//         jQuery('.search-form-top').removeClass('stickyForm')
+//     }
+//     })
 
 </script>

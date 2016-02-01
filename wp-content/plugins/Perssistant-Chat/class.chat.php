@@ -19,6 +19,7 @@ class chat
 
     public static function Init()
     {
+
         //global $chat_require_capabilities;
         //var_dump(get_post_meta(1474,'unreadInvitation',true));
         //var_dump(get_post(get_post_meta(1481,'unreadInvitation',true)));
@@ -482,11 +483,14 @@ class chat
 
     public static function myajax_notifications_everywhere()
     {
+
+
         $current_user = wp_get_current_user();
         $last_check = get_user_meta($current_user->ID, 'last_check_chat_id');
         if (!isset($last_check)) {
             $last_check = 0;
         }
+
         $args = array(
 
             'wpse_pid' => $last_check, //$last_check , // Our custom post id argument
@@ -538,7 +542,6 @@ class chat
         } else {
             echo 'No new message here';
         }
-
         exit;
 
     }
@@ -579,8 +582,14 @@ class chat
             'orderby' => 'post_date',
             'order' => 'ASC',
         );
+
+
+
+
         $products = new WP_Query($args);
+
         //var_dump($products);
+
         if ($products->have_posts()) {
             while ($products->have_posts()) {
                 $products->the_post();

@@ -391,7 +391,7 @@ get_header();
                             if (!$switch_skill) {
                                 ?>
                                 <input class="form-control skill" type="text" id="skill"
-                                       placeholder="<?php _e("Skills (max is 5)", ET_DOMAIN); ?>" name=""
+                                       placeholder="<?php _e("Skills (max is 10)", ET_DOMAIN); ?>" name=""
                                        autocomplete="off" class="skill" spellcheck="false">
                                 <ul class="skills-list" id="skills_list"></ul>
                             <?php
@@ -402,7 +402,7 @@ get_header();
                                         $c_skills[] = $value->term_id;
                                     };
                                 }
-                                ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="' . __(" Skills (max is 5)", ET_DOMAIN) . '"',
+                                ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="' . __(" Skills (max is 10)", ET_DOMAIN) . '"',
                                         'class' => 'sw_skill required',
                                         'hide_empty' => false,
                                         'hierarchical' => true,
@@ -414,6 +414,10 @@ get_header();
                             }
 
                             ?>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="skill-error error">
                         </div>
                     </div>
                     <div class="clearfix"></div>

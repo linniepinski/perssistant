@@ -591,7 +591,7 @@ ET_Slide_View_Item = Backbone.View.extend({
 
 		},100);
 		
-		setTimeout(function(){						
+		setTimeout(function(){
 			tinyMCE.execCommand("mceRepaint");
 			tinyMCE.init({	     
 	        selector:  '#'+selector.attr('id'),

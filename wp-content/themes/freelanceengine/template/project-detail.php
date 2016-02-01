@@ -115,8 +115,10 @@ if ($project_status == 'publish') {
                                         </a>
                                     <?php }
                                 }else { ?>
-                                    <a href="#" id="<?php the_ID();?>"  class="btn btn-apply-project-item" ><?php  _e('Open',ET_DOMAIN);?></a>
-                                    <?php 
+<!--                                    <a href="#" id="--><?php //the_ID();?><!--"  class="btn btn-apply-project-item" >--><?php // _e('Open',ET_DOMAIN);?><!--</a>-->
+                                    <div class="alert alert-success alert-status-project" role="alert"><?php _e('Status:',ET_DOMAIN);?> <strong><?php _e('Open',ET_DOMAIN);?></strong></div>
+
+                                <?php
                                 }
                                 break;
                             case 'close':
@@ -145,12 +147,13 @@ if ($project_status == 'publish') {
                                 $comment = get_comments( array('status'=> 'approve', 'type' => 'fre_review', 'post_id'=> get_the_ID() ) );
 
                                 if( $user_ID == $freelan_id && empty( $comment ) ){ ?>
-                                    <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" ><?php  _e('Review & Complete',ET_DOMAIN);?></a>
+                                    <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" ><?php  _e('Review',ET_DOMAIN);?></a>
                                     <?php 
                                 } else { ?>
 
-                                <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item" ><?php  _e('Completed',ET_DOMAIN);?></a>
-                                <?php 
+<!--                                <a href="#" id="--><?php //the_ID();?><!--"   class="btn btn-apply-project-item project-complete" >--><?php // _e('Completed',ET_DOMAIN);?><!--</a>-->
+                                    <div class="alert alert-danger alert-status-project" role="alert"><?php _e('Status:',ET_DOMAIN);?> <strong><?php _e('Closed',ET_DOMAIN);?></strong></div>
+                                <?php
                                 }
                                 break;
                             default:

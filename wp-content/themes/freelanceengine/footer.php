@@ -34,9 +34,9 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
         </div>
     </div>
 </footer>
-<?php }else{ $flag = false;} ?>   
+<?php }else{ $flag = false;} ?>
 <div class="copyright-wrapper <?php if(!$flag){ echo 'copyright-wrapper-margin-top'; } ?> ">
-<?php 
+<?php
     $copyright = ae_get_option('copyright');
     $has_nav_menu = has_nav_menu( 'et_footer' );
     $col = 'col-md-6';
@@ -58,8 +58,8 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
             <?php }?>
             <div class="<?php echo $col;?> col-sm-4">
             	<p class="text-copyright">
-                    <?php 
-                        if($copyright){ echo $copyright; } 
+                    <?php
+                        if($copyright){ echo $copyright; }
                     ?>
                 </p>
             </div>

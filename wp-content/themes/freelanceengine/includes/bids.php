@@ -115,7 +115,7 @@ function fre_register_bid() {
 
         'dealine',
 
-        
+        'decide_later',
 
         // bid status set to 1 if project owner accept bid
 
@@ -198,6 +198,7 @@ class Fre_BidAction extends AE_PostAction
         /* accept a bid */
 
         $this->add_ajax('ae-accept-bid', 'bid_accept');
+        $this->add_ajax('ae-skip-bid', 'bid_skip');
 
         
 
@@ -365,33 +366,73 @@ class Fre_BidAction extends AE_PostAction
 
         }
 
-        
 
-        if ($result->type_time == 'day') {
 
-            if ($result->bid_time > 1) {
+        if(!empty($result->type_time)){
+            /*new convert*/
+            if ($result->type_time == 'day') {
 
-                $result->bid_time_text = sprintf(__("in %d days", ET_DOMAIN) , $result->bid_time);
+                if ($result->bid_time > 1) {
+
+                    $result->bid_time_text = sprintf(__("in %d days", ET_DOMAIN) , $result->bid_time);
+
+                } else {
+
+                    $result->bid_time_text = sprintf(__("in %d day", ET_DOMAIN) , $result->bid_time);
+
+                }
+
+            }elseif ($result->type_time == 'week') {
+
+                if ($result->bid_time > 1) {
+
+                    $result->bid_time_text = sprintf(__("in %d weeks", ET_DOMAIN) , $result->bid_time);
+
+                } else {
+
+                    $result->bid_time_text =sprintf(__("in %d week", ET_DOMAIN) , $result->bid_time);
+
+                }
+            }else{
+                if ($result->bid_time > 1) {
+
+                    $result->bid_time_text = sprintf(__("in %d months", ET_DOMAIN) , $result->bid_time);
+
+                } else {
+
+                    $result->bid_time_text =sprintf(__("in %d month", ET_DOMAIN) , $result->bid_time);
+
+                }
+            }
+        }else{
+            /*old convert*/
+            if ($result->type_time == 'day') {
+
+                if ($result->bid_time > 1) {
+
+                    $result->bid_time_text = sprintf(__("in %d days", ET_DOMAIN) , $result->bid_time);
+
+                } else {
+
+                    $result->bid_time_text = sprintf(__("in %d day", ET_DOMAIN) , $result->bid_time);
+
+                }
 
             } else {
 
-                $result->bid_time_text = sprintf(__("in %d day", ET_DOMAIN) , $result->bid_time);
+                if ($result->bid_time > 1) {
+
+                    $result->bid_time_text = sprintf(__("in %d weeks", ET_DOMAIN) , $result->bid_time);
+
+                } else {
+
+                    $result->bid_time_text =sprintf(__("in %d week", ET_DOMAIN) , $result->bid_time);
+
+                }
 
             }
-
-        } else {
-
-            if ($result->bid_time > 1) {
-
-                $result->bid_time_text = sprintf(__("in %d weeks", ET_DOMAIN) , $result->bid_time);
-
-            } else {
-
-                $result->bid_time_text = sprintf(__("in %d week", ET_DOMAIN) , $result->bid_time);
-
-            }
-
         }
+
 
         
 
@@ -649,7 +690,39 @@ $post_data['post_title'] = $title;
 
     }
 
-    
+    function bid_skip() {
+        global $current_user;
+        $request =  $_POST;
+        $bid_id = $request['bid_id'];
+        $project_id = get_post_field('post_parent', $bid_id);
+        $author_id = (int)get_post($project_id)->post_author;
+        if($current_user->id === $author_id){
+           // var_dump($_POST);
+            wp_delete_post( $bid_id, true );
+            wp_send_json(array(
+
+                'success' => true,
+
+                'msg' => 'OK'
+
+            ));
+
+        }else{
+            wp_send_json(array(
+
+                'success' => false,
+
+                'msg' => 'Error'
+
+            ));
+        }
+
+      // var_dump($current_user->id);
+      //  var_dump($project_id);
+       // var_dump($author_id);
+
+        wp_die();
+    }
 
     /**
 
@@ -743,6 +816,7 @@ $post_data['post_title'] = $title;
 
         $bid_required_field = apply_filters('fre_bid_required_field', array(
 
+            'decide_later',
             'bid_budget',
 
             'bid_time',
@@ -785,7 +859,7 @@ $post_data['post_title'] = $title;
 
         */
 
-        if (in_array('bid_budget', $bid_required_field) && (!isset($args['bid_budget']))) {
+        if (in_array('bid_budget', $bid_required_field) && (!isset($args['bid_budget'])) && $args['decide_later'] == false) {
 
             return new WP_Error('empty_bid', __('You have to set the bid budget.' , ET_DOMAIN));
 
@@ -801,7 +875,7 @@ $post_data['post_title'] = $title;
 
         
 
-        if (in_array('bid_budget', $bid_required_field) && $args['bid_budget'] < 0) {
+        if ((in_array('bid_budget', $bid_required_field) && $args['bid_budget'] < 0) && $args['decide_later'] == false) {
 
             return new WP_Error('budget_less_than_zero', __("Your budget have to greater than zero!", ET_DOMAIN));
 
@@ -809,7 +883,7 @@ $post_data['post_title'] = $title;
 
         
         //  || (in_array('bid_time', $bid_required_field) && !is_numeric($args['bid_time']))
-        if ((in_array('bid_budget', $bid_required_field) && !is_numeric($args['bid_budget']))) {
+        if ((in_array('bid_budget', $bid_required_field) && !is_numeric($args['bid_budget']) ) && $args['decide_later'] == false) {
 
             return new WP_Error('invalid_input', __('Please enter a valid number in budget or bid time', ET_DOMAIN));
 

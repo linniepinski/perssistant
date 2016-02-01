@@ -225,11 +225,45 @@ $("a.popup-login").trigger('click');
                     $target.hide();
                     $('.info-bidding').removeClass('hide-accept');
                     $target.parents('.info-bidding').addClass('hide-accept');
-                    $(".col-md-3").find(".confirm").html('');
+//                    $(".col-md-3").find(".confirm").html('');
+                    $.ajax({
+                        url: ae_globals.ajaxURL,
+                        type: 'post',
+                        data: {
+                            bid_id: view.bid_id,
+                            action: 'ae-accept-bid',
+                        },
+                        beforeSend: function() {
+                            view.blockUi.block($target);
+                        },
+                        success: function(res) {
+                            view.blockUi.unblock();
+                            if (res.success) {
+                                $("a.btn-project-status").html(single_text.working);
+                                $target.find("button.btn-bid-status").after('<span class="ribbon"><i class="fa fa-trophy"></i></span>');
+//                                $target.find('.confirm').remove();
+//                                $target.parents('.info-bidding').find('.btn-invate-on-bid').removeClass('hidden');
+
+//                                $target.parents('.info-bidding').find('.btn-skip').addClass('hidden');
+
+                                $(".info-bidding").find("button.btn-bid-status").remove();
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: res.msg,
+                                    notice_type: 'success'
+                                });
+                            } else {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: res.msg,
+                                    notice_type: 'error'
+                                });
+                            }
+                        }
+                    });
                     setTimeout(function() {
-                        $row.find('span.confirm').html('<button class="btn btn-agree"> ' + single_text.agree + ' </button> <button class="btn btn-skip"> ' + single_text.skip + ' </button>');
-                        $("span.confirm").fadeIn(500);
-                    }, 100);
+//                        <button class="btn btn-agree"> ' + single_text.agree + ' </button>
+//                        $row.find('span.confirm').html('<button class="btn btn-skip"> ' + single_text.skip + ' </button>');
+//                        $("span.confirm").fadeIn(500);
+                    }, 300);
 
                     return false;
                 } else {
@@ -244,9 +278,50 @@ $("a.popup-login").trigger('click');
             // hide confirm if user cancel an accept
             skipAccept: function(event) {
                 var $target = $(event.currentTarget);
-                $target.parents('.info-bidding').removeClass('hide-accept');
-                $target.closest(".confirm").toggle();
-                $target.parents('.number-price-project').find("button.btn-accept-bid").fadeIn(500);
+                view = this;
+                //console.log(this);
+                console.log($target.attr('data-id'));
+//                console.log($target.find('data-id'));
+
+//                $target.parents('.info-bidding').removeClass('hide-accept');
+//                $target.closest(".confirm").toggle();
+//                $target.parents('.info-bidding').find('button.btn-apply-project-item').fadeIn(500);
+                $.ajax({
+                    url: ae_globals.ajaxURL,
+                    type: 'post',
+                    data: {
+                        bid_id: $target.attr('data-id'),
+                        action: 'ae-skip-bid',
+                    },
+                    beforeSend: function() {
+                        view.blockUi.block($target);
+//                        console.log($target.parents().find('.bid-item').remove())
+//                        return false;
+                    },
+                    success: function(res) {
+                        view.blockUi.unblock();
+                        console.log(res);
+                        if (res.success) {
+                            $target.parents().find('.bid-item').remove();
+//                            $("a.btn-project-status").html(single_text.working);
+//                            $target.find("button.btn-bid-status").after('<span class="ribbon"><i class="fa fa-trophy"></i></span>');
+//                            $target.find('.confirm').remove();
+//                            $target.parents('.info-bidding').find('.btn-invate-on-bid').removeClass('hidden');
+
+//                            $(".info-bidding").find("button.btn-bid-status").remove();
+                            AE.pubsub.trigger('ae:notification', {
+                                msg: res.msg,
+                                notice_type: 'success'
+                            });
+                        } else {
+                            AE.pubsub.trigger('ae:notification', {
+                                msg: res.msg,
+                                notice_type: 'error'
+                            });
+                        }
+                    }
+                });
+               // $target.parents('.number-price-project').find("button.btn-apply-project-item").fadeIn(500);
             },
             /**
              * accept a bid, sync to server
@@ -271,6 +346,7 @@ $("a.popup-login").trigger('click');
                             $("a.btn-project-status").html(single_text.working);
                             $target.find("button.btn-bid-status").after('<span class="ribbon"><i class="fa fa-trophy"></i></span>');
                             $target.find('.confirm').remove();
+                            $target.find('.btn-invate-on-bid').removeClass('hidden')
                             $(".info-bidding").find("button.btn-bid-status").remove();
                             AE.pubsub.trigger('ae:notification', {
                                 msg: res.msg,
@@ -323,8 +399,12 @@ $("a.popup-login").trigger('click');
                         action: 'ae-sync-bid',
                         method: 'remove'
                     },
-                    beforeSend: function() {},
+                    beforeSend: function(event) {
+                        jQuery('#modal-deleting-bid').modal('hide');
+
+                    },
                     success: function(res) {
+
                         if (res.success) {
                             $target.closest('.info-bidding').remove();
                             AE.pubsub.trigger('ae:notification', {
