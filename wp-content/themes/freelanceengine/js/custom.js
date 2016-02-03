@@ -244,10 +244,18 @@ jQuery(document).ready(function(){
 	var hide_text = jQuery('.hide-text').val();
 	var work_text = jQuery('.work-text').val();
 	//alert(jQuery('.user-type span.text').text());
-	if( jQuery('.sign-up-switch').length > 0 ){
-				
-		clickCheckbox.onchange = function() {			
 
+    if( jQuery('.sign-up-switch').length > 0 ){
+
+        if(clickCheckbox.checked){
+            roleInput.val("employer");
+            jQuery('.user-type span.text').text(hide_text).removeClass('work').addClass('hire');
+        } else {
+            roleInput.val("freelancer");
+            jQuery('.user-type span.text').text(work_text).removeClass('hire').addClass('work');
+        }
+
+        clickCheckbox.onchange = function() {
 			if(clickCheckbox.checked){
 				roleInput.val("employer");
 				jQuery('.user-type span.text').text(hide_text).removeClass('work').addClass('hire');
