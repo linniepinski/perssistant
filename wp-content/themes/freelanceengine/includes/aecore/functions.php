@@ -1060,11 +1060,9 @@ function ae_editor_settings() {
 
         'wpautop' => false,
 
-        
-
         //'tabindex'    =>  '2',
 
-        'teeny' => true,
+        'teeny' => false,
 
         'tinymce' => array(
 
@@ -1077,6 +1075,15 @@ function ae_editor_settings() {
             'autoresize_min_height' => 250,
 
             'autoresize_max_height' => 550,
+
+            'menu' => array(
+                'edit' => array(
+                    'title' => 'Edit', 'items' => 'undo redo | cut copy paste pastetext | selectall')
+            ,
+
+            ),
+
+
 
             'theme_advanced_buttons1' => 'bold,|,italic,|,underline,|,bullist,numlist,|,link,unlink,|,wp_fullscreen',
 
@@ -1162,41 +1169,53 @@ function ce_teeny_mce_buttons($buttons) {
 
 
 
-function ce_tinymce_add_plugins($plugin_array) {
+//function ce_tinymce_add_plugins($plugin_array) {
+//
+//
+//
+//    // $autoresize = get_template_directory_uri() . '/js/lib/tiny_mce/plugins/autoresize/editor_plugin.js';
+//
+//
+//
+//    // //$plugin_array['feimage'] = $feimage;
+//
+//    // if(!is_admin())
+//
+//    //     $plugin_array['autoresize'] = $autoresize;
+//
+//
+//
+//    //$plugin_array['etHeading']    = $et_heading;
+//
+//    //$plugin_array['wordcount']    = $wordcount;
+//
+//
+//
+//    return $plugin_array;
+//
+//}
 
-    
-
-    // $autoresize = get_template_directory_uri() . '/js/lib/tiny_mce/plugins/autoresize/editor_plugin.js';
-
-    
-
-    // //$plugin_array['feimage'] = $feimage;
-
-    // if(!is_admin())
-
-    //     $plugin_array['autoresize'] = $autoresize;
-
-    
-
-    //$plugin_array['etHeading']    = $et_heading;
-
-    //$plugin_array['wordcount']    = $wordcount;
-
-    
-
-    return $plugin_array;
-
-}
-
-
-
-add_filter('mce_external_plugins', 'ce_tinymce_add_plugins');
+//add_filter('mce_external_plugins', 'ce_tinymce_add_plugins');
 
 
 
 /* add function */
 
+add_filter('mce_external_plugins', 'ce_tinymce_add_plugins2');
 
+function ce_tinymce_add_plugins2 () {
+    $plugins = array('wordcount');
+
+    $plugins_array = array();
+
+    foreach ($plugins as $plugin ) {
+        //$args[ $plugin ] = get_template_directory_uri().'/includes/aecore/tinymce/'. $plugin . '/plugin.min.js';
+        $plugins_array[ $plugin ] = get_template_directory_uri().'/includes/aecore/tinymce/'. $plugin . '/editor_plugin.js';
+    }
+
+
+    return $plugins_array;
+}
 
 /**
 

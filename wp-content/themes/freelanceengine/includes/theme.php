@@ -172,8 +172,15 @@ function fre_share_role() {
 
 }
 
-
-
+function check_existing_post_name($title){
+    global $wpdb;
+    $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $title . "'" );
+    if ($postid){
+        return true;
+    }else{
+        return false;
+    }
+}
 /**
 
  * allow user to upload a video file

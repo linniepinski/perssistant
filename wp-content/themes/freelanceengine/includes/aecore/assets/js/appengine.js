@@ -3691,7 +3691,17 @@ window.AE = window.AE || {};
                     beforeSend: function() {
 
                         //view.blockUi.block($target);
-                        
+                        count = jQuery('#post_content_ifr').contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length;
+                        //count = count.replace(d, "");
+
+                        if (count >= 250) {
+                            jQuery('.post-content-error').html('');
+
+                        } else {
+                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols<i class="fa fa-exclamation-triangle"></i></span>');
+                            return false;
+                        }
+
                         view.blockUi.block($target.find('button.btn-submit-login-form'));
 
                     },

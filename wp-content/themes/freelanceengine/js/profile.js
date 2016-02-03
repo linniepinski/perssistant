@@ -392,11 +392,14 @@
             if (this.$('form#profile_form').valid() && !form.hasClass("processing")) {
                 this.profile.save('', '', {
                     beforeSend: function () {
-                        if(jQuery('#about_content').val().length <= 250){
-                            AE.pubsub.trigger('ae:notification', {
-                                msg: 'minimum 250sym',
-                                notice_type: 'error',
-                            });
+                        count = jQuery('#about_content').text().replace(/(<([^>]+)>)/ig,"").length
+                        //count = count.replace(d, "");
+
+                        if (count >= 250) {
+                            jQuery('.post-content-error').html('');
+
+                        } else {
+                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols<i class="fa fa-exclamation-triangle"></i></span>');
                             return false;
                         }
                         view.blockUi.block(button);
@@ -1121,7 +1124,7 @@ function refreshcountcompleteFreelancer() {
         htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Country" (+10%)</p>';
     }
 
-    if (jQuery("iframe#about_content_ifr").contents().find('p').text().trim() !== '') {
+    if (jQuery("iframe#about_content_ifr").contents().find('p').text().trim() !== '' && jQuery("iframe#about_content_ifr").contents().find('p').text().trim().length > 250) {
         percent += 10;
     }
     else {
@@ -1205,6 +1208,37 @@ function AnimRes(currentPer, percent) {
         width: percent + "%"
     }, 2000);
 }
+jQuery('#activate_without_interview').on('click',function(){
+    var button = jQuery(this);
+    button.attr('disabled','disabled');
+
+    jQuery.ajax({
+        type: "post",
+        dataType: "json",
+        url: ajaxurl,
+        data: {
+            action: 'activate_without_interview'
+        },
+        beforeSend: function () {
+
+        },
+        success: function (status) {
+            if(status.status){
+                button.fadeOut('slow');
+                AE.pubsub.trigger('ae:notification', {
+                    msg: status.msg,
+                    notice_type: 'success'
+                });
+            } else {
+                button.removeAttr('disabled');
+                AE.pubsub.trigger('ae:notification', {
+                    msg: status.msg,
+                    notice_type: 'success'
+                });
+            }
+        }
+    });
+});
 
 /*cv upload js*/
 jQuery('#create_cv').on('submit', function (e) {

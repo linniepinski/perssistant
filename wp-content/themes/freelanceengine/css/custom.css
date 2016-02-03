@@ -875,12 +875,12 @@ img.mfp-img {
         color:  #5d5f5e;
 }
 body  {
-        font-size:  14px;
-        line-height:  1.4;
-        font-family:  'Raleway',  sans-serif;
-        color:  #5d5f5e;
-        background:  #ecf0f1;
-        font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: 'Raleway', sans-serif;
+    color: #5d5f5e;
+    background: #ecf0f1;
+    font-weight: 500;
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -1108,7 +1108,8 @@ select  {
             float:  left;
     }
 }
-/* --------------------------------------------------------- *//* H E A D E R  S T Y L E/* --------------------------------------------------------- */#header-wrapper  {
+/* --------------------------------------------------------- *//* H E A D E R  S T Y L E/* --------------------------------------------------------- */
+#header-wrapper  {
         top:  0;
         left:  0;
         width:  100%;
@@ -1116,9 +1117,6 @@ select  {
         height:  auto;
         background-color: none;
 }
-<<<<<<< .mine
-=======
-
 #header-wrapper {
     will-change: transform;
     /*will-change: transform;*/
@@ -1142,7 +1140,7 @@ select  {
 }
 
 #header-wrapper.trans-color {
-        position:  absolute;
+    position: absolute;
     transition: transform 0.4s ease-in 0s;
 }
 
@@ -1156,7 +1154,7 @@ select  {
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     transform: translateY(0px);
-    transition: transform 0.2s ease-in 0s;
+    transition: transform 0.4s ease-in 0s;
 }
 #header-wrapper.standard-menu  {
         background:   rgba(0,  0,  0,  0.1);
@@ -1166,19 +1164,20 @@ select  {
         z-index:  1;
         position:  relative;
 }
-.sticky .top-header {
+.top-header {
         padding:  0;
 }
-.top-header {
-        display: block;
-        padding: 14px 0;
+/*.top-header {*/
+        /*display: block;*/
+        /*padding: 14px 0;*/
         /*background-color:  #fff;*/
-        -moz-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        -webkit-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        box-shadow:  0 1px 0 rgba(225, 230, 234, 1);
-        position: relative;
-        z-index: 5;
-}
+        /*-moz-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*-webkit-box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*box-shadow:  0 1px 0 rgba(225, 230, 234, 1);*/
+        /*position: relative;*/
+        /*z-index: 5;*/
+/*}*/
+
 .btn-menu-call {
 }
 .btn-menu-call li {
@@ -1308,6 +1307,7 @@ select  {
 
 #header-wrapper.sticky .login-form-header-wrapper ul li a, #header-wrapper.not-page-home .login-form-header-wrapper ul li a{
         color: #2c3d4f;
+
 }
 
 #header-wrapper.sticky .btn-menu-call li a,  #header-wrapper.sticky .btn-menu-call li .trigger-menu i,  #header-wrapper.sticky .btn-menu-call li .trigger-search i,  #header-wrapper.sticky .dropdown-info-acc-wrapper .avatar-and-name, #header-wrapper.sticky .login-form-header-wrapper a, #header-wrapper.not-page-home .btn-menu-call li a,  #header-wrapper.not-page-home .btn-menu-call li .trigger-menu i, #header-wrapper.not-page-home .btn-menu-call li .trigger-search i, #header-wrapper.not-page-home .dropdown-info-acc-wrapper .avatar-and-name {
@@ -1423,7 +1423,8 @@ header.trans-color .top-header {
         color: #fff;
         margin-top:  10px;
 }
-/* --------------Search fullscreen------------- */.wrapper-input-search-top {
+/* --------------Search fullscreen------------- */
+.wrapper-input-search-top {
         margin-bottom: 30px;
 }
 .select-search-top {
@@ -5061,7 +5062,9 @@ p.text-term  {
         margin-left:  10px;
         font-size:  12px;
 }
-/* ====== MODAL PORFOLIO ====== */form#create_portfolio  input  {
+/* ====== MODAL PORFOLIO ====== */
+form#create_portfolio input,
+form#edit_portfolio input{
         margin-bottom:  15px;
 }
 #portfolio_img_thumbnail  ,
@@ -5361,7 +5364,7 @@ b.currency  {
 .step-content-wrapper .list-price li .btn.btn-submit-price-plan:hover,  .btn.btn-submit-login-form:hover  {
         opacity:  .8;
 }
-.step-content-wrapper input.text-field,  .step-content-wrapper .chosen-container-multi .chosen-choices, #modal_edit_project .chosen-container-multi .chosen-choices  {
+.step-content-wrapper input.text-field, .step-content-wrapper select.text-field,  .step-content-wrapper .chosen-container-multi .chosen-choices, #modal_edit_project .chosen-container-multi .chosen-choices  {
         width:  95%;
         border:  1px solid #d7d8da;
         -moz-border-radius:  4px;
@@ -5457,7 +5460,7 @@ b.currency  {
 .page-authenticate  {
         background:  #fff;
 }
-.skills-list {
+.skills-list , .category-filters-list ul {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -5484,12 +5487,12 @@ b.currency  {
         margin-right: 15px;
         margin-bottom: 10px;
 }
-.skills-list li i {
+.skills-list li i , .category-filters-list ul li i{
         display: inline-block;
         margin-left: 10px;
         color:  #656f77;
 }
-.skills-list li .text-ellipsis {
+.skills-list li .text-ellipsis , .category-filters-list ul li .text-ellipsis{
         max-width:  75px;
         display:  inline-block;
         vertical-align:  middle;
@@ -6440,7 +6443,7 @@ div .level-2 > label  {
     cursor: pointer;
 }
 /*09.10.15 end add*/
-
+/* ----------------- verify pass form -------------------------*/
 #pswd_info {
     /*position:absolute;*/
     /*bottom:-75px;*/
@@ -6511,6 +6514,7 @@ div .level-2 > label  {
 #pswd_info {
     /*display:none;*/
 }
+/* ----------------- verify pass form end -------------------------*/
 
 /* P O R T F O L I O magnific popup */
 .mfp-footer{
@@ -6543,16 +6547,20 @@ color: white;
     padding: 5px 15px;
     text-align: center;
 }
-/*.mce-path {
+.mce-path {
     display: none !important;
-}*/
+}
 .btn-skip-custom{
     padding: 5px 24px;
     margin-top: 10px;
 }
+.post-content-error i.fa.fa-exclamation-triangle,
 .skill-error i.fa.fa-exclamation-triangle{
     margin-left: 10px;
     position: initial;
+}
+#wp-link-close{
+    width: 110px!important;
 }
 /*.bid-time-group-addon #bid-time{*/
     /*border-bottom-right-radius: 0;*/

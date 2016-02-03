@@ -2,6 +2,8 @@
 
 function register_interview()
 {
+    add_option('interview_system',false,null,true);
+
     $labels = array(
         'name' => __('interview', ET_DOMAIN),
         'singular_name' => __('interview', ET_DOMAIN),
@@ -92,9 +94,19 @@ function mt_tools_page()
 // mt_toplevel_page() displays the page content for the custom Test Toplevel menu
 function mt_toplevel_page()
 {
+
     ?>
 
-<!--    <script type="text/javascript" src="/wp-content/themes/freelanceengine/js/jquery.tablesorter.js"></script>-->
+<div class="interview-settings">
+    <?php
+    echo "<h2>" . __('Settings', 'interview-setting') . "</h2>";
+    ?>
+<label for="interview_system">Activate interview system</label>
+    <input type="checkbox" id="interview_system" name="interview_system" <?php if (get_option('interview_system') == 'true'){ echo 'checked';}?>>
+</div>
+    <div class="info-interview-status">
+
+    </div>
     <?php
     echo "<h2>" . __('Interviews', 'menu-test') . "</h2>";
 
@@ -128,6 +140,11 @@ function mt_toplevel_page()
             today_page();
             break;
     }
+    ?>
+    <script>
+
+    </script>
+    <?php
 }
 
 function future_page(){
@@ -542,9 +559,50 @@ class interview extends AE_PostAction
 
         $this->add_ajax('fetch-interview', 'fetch_interview');
         $this->add_ajax('confirm-interview', 'activite_user');
+        $this->add_ajax('interview-settings', 'interview_settings');
+        $this->add_ajax('activate_without_interview', 'activate_without_interview');
 
 
     }
+ function activate_without_interview(){
+     global $current_user;
+         $result = update_user_meta($current_user->id,'interview_status','confirmed');
+         if ($result){
+             wp_send_json(array(
+                 'status' => true,
+                 'msg' => 'success'
+             ));
+         }else{
+             wp_send_json(array(
+                 'status' => false,
+                 'msg' => 'error'
+             ));
+         }
+     wp_die(); 
+ }
+ function interview_settings(){
+     if ( ae_user_role() == 'administrator'){
+        $result = update_option( $_POST['option_name'],$_POST['option_value'],true);
+
+         if ($result){
+             wp_send_json(array(
+                 'status' => true,
+                 'msg' => 'success'
+             ));
+         }else{
+         wp_send_json(array(
+             'status' => false,
+             'msg' => 'error'
+         ));
+     }
+     }else{
+         wp_send_json(array(
+             'status' => false,
+             'msg' => 'deny'
+         ));
+     }
+     wp_die();
+ }
  function activite_user(){
 
 

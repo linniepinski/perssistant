@@ -207,6 +207,11 @@
                     <div class="col-sm-8">
                         <?php wp_editor( '', 'post_content', ae_editor_settings()  );  ?>
                     </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-4 col-sm-8 post-content-error error">
+                    </div>
                 </div>
             </div>
 

@@ -166,6 +166,47 @@
 })(window.AE.Models, window.AE.Views, window.AE.Collections, jQuery, Backbone);
 
 jQuery(document).ready(function () {
+	jQuery('.interview-settings > input[type="checkbox"]').change(function() {
+		this_checkbox = jQuery(this);
+		this_checkbox.attr('disabled','disabled');
+		jQuery('.info-interview-status').html('');
+		jQuery.ajax({
+			type: "post",
+			dataType: "json",
+			url: ajaxurl,
+			data: {
+				action: 'interview-settings',
+				option_name: this_checkbox.attr('name'),
+				option_value: this_checkbox.is(":checked")
+			},
+			beforeSend: function () {
+				jQuery('.info-interview-status').fadeIn('slow');
+
+				jQuery('.info-interview-status').html('<span>Update settings...</span>');
+			},
+			success: function (status) {
+
+				if(status.status){
+					jQuery('.info-interview-status').html('<span>Settings have been saved</span>');
+				} else {
+					jQuery('.info-interview-status').html('<span>Error</span>');
+
+				}
+
+
+
+			}
+		});
+		jQuery(this).removeAttr('disabled');
+		jQuery('.info-interview-status').fadeOut('slow');
+	});
+
+	//jQuery('#interview_system').is(":checked")
+
+	//jQuery('.interview-settings > input').on('click','change', function (event) {//
+	//	console.log(jQuery(this))
+	//	console.log(event)
+	//});
     jQuery('.confirm-user').on('click', function (event) {
         //alert(ajaxurl);
         var button = jQuery(this);

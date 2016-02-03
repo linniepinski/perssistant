@@ -32,8 +32,8 @@ var dologinuser = function () {
 				});
 
 				form.trigger('reset');
-				
-				window.location.href='/profile';
+
+				window.location.href='/login';
 
 			} else {
 				AE.pubsub.trigger('ae:notification', {
@@ -66,11 +66,6 @@ var saveinterview = function() {
             date_interview_1 :date1,
             date_interview_2 :date2,
             date_interview_3 :date3,
-//            dates : {
-//                1:date1,
-//                2:date2,
-//                3:date3
-//            },
             skype_id :interview_skype,
             tel :interview_tel
         },
@@ -85,10 +80,6 @@ var saveinterview = function() {
                     msg : status.msg,
                     notice_type: 'success'
                 });
-
-               // form.trigger('reset');
-
-               // window.location.href='/login';
 
             } else {
                 AE.pubsub.trigger('ae:notification', {

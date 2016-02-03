@@ -22,7 +22,7 @@ if($user_ID) {
 
     }
 
-    wp_redirect(home_url());
+    wp_redirect('/profile');
 
     exit;
 
