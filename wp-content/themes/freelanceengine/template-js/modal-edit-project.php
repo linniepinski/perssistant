@@ -20,7 +20,7 @@
                         <!-- project budget -->
                         <div class="form-group">
                             <label for="et_budget" class="control-label title-plan"><?php printf(__("Budget (%s)", ET_DOMAIN), fre_currency_sign(false) ); ?></label>
-                            <input required type="text" class="input-item form-control text-field" id="et_budget" placeholder="<?php _e("Budget", ET_DOMAIN); ?>" name="et_budget">
+                            <input required type="number" min="1" class="input-item form-control text-field" id="et_budget" placeholder="<?php _e("Budget", ET_DOMAIN); ?>" name="et_budget">
                         </div>
                         <!--// project budget -->
 						<div class="clearfix"></div>
