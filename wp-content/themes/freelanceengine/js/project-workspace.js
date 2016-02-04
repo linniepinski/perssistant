@@ -223,11 +223,18 @@
                 var message = new Models.Message(),
                     view = this, 
                     $target = target;
+                if ($target.find('textarea').val().length < 1 ){
+                    AE.pubsub.trigger('ae:notification', {
+                        msg: 'You cannot send an empty message.',
+                        notice_type: 'error'
+                    });
+                    return false;
+                }
                 $target.find('textarea, input, select').each(function() {
                     message.set($(this).attr('name'), $(this).val());
                 });
-                message.set('fileID' , this.filecontroller.fileIDs);                
-                
+                message.set('fileID' , this.filecontroller.fileIDs);
+
                 this.filecontroller.fileIDs = [];
                 message.save('', '', {
                     beforeSend: function() {
@@ -370,9 +377,17 @@
                 var message = new Models.Report(),
                     view = this, 
                     $target = target;
+                if ($target.find('textarea').val().length < 1 ){
+                    AE.pubsub.trigger('ae:notification', {
+                        msg: 'You cannot send an empty message.',
+                        notice_type: 'error'
+                    });
+                    return false;
+                }
                 $target.find('textarea, input, select').each(function() {
                     message.set($(this).attr('name'), $(this).val());
                 });
+
                 message.set('fileID' , this.filecontroller.fileIDs);                
                 this.filecontroller.fileIDs = [];
                 message.save('', '', {
