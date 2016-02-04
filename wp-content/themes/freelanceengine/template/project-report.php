@@ -76,7 +76,7 @@ $message_object = new Fre_Report('fre_report');
                             <div class="file-attachment-wrapper">
                                 <div class="title-attachment"><?php _e("Attachment", ET_DOMAIN); ?></div>
                                 <a href="#" class="attach-file-button" id="report_docs_browse_button">
-                                    <i class="fa fa-plus-circle"></i><?php _e("Attach file", ET_DOMAIN); ?>
+                                    <i class="fa fa-paperclip"></i><?php _e("Attach file", ET_DOMAIN); ?>
                                 </a>
                                 <ul class="file-attack-report apply_docs_file_list" id="apply_docs_file_list">
                                     <!-- report file list -->
