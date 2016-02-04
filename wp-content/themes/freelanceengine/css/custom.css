@@ -6562,13 +6562,32 @@ color: white;
 #wp-link-close{
     width: 110px!important;
 }
-/*.bid-time-group-addon #bid-time{*/
-    /*border-bottom-right-radius: 0;*/
-    /*border-top-right-radius: 0;*/
-/*}*/
-/*.bid-time-group-addon div.input-group-addon{*/
-    /*height: 45px;*/
-/*}*/
-/*.bid-time-group-addon{*/
+.featured-modal-footer{
+    text-align: center;
+}
+.featured-modal-footer .btn{
 
-/*}*/
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+}
+.browse_cont {
+    position:relative !important;
+    cursor: pointer !important;
+    width: 94px;
+    height: 30px;
+}
+.upload_btn {
+    position:absolute;
+    top:0px;
+    display: block !important;
+    width: 94px !important;
+    height: 30px !important;
+    opacity: 0;
+
+}
+#paymill_modal .modal-header .close  {
+    width: 30px;
+    height: 30px;
+}

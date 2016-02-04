@@ -151,10 +151,8 @@ class chat
             }
             require 'templates/main_temp.php';
         } else {
-            echo '<div style="margin-top:7%" class="col-xs-offset-2 col-xs-8 bs-example bs-example-standalone" data-example-id="dismissible-alert-js">
-    <div class="alert alert-info alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            ' . 'You can\'t join the chat. Please login.' . '
+            echo '<div style="margin-top:7%" class="col-xs-12 bs-example bs-example-standalone">
+    <div class="alert alert-info" role="alert">' . 'You can\'t join the chat. Please login.' . '
             </div></div>';
             //get_footer();
         }
@@ -386,19 +384,11 @@ class chat
 
                 if ($attachments) {
                     foreach ($attachments as $attachment) {
-                        //echo $attachment['guid'];
-                        $type_file = explode("/", $attachment['post_mime_type']);
-                        //echo $type_file[0];
-                        //var_dump($attachment);
-                        if ($type_file[0] == 'image') {
-                            /*$default_attr = array(
-                                //'src' => $attachment['guid'],
-                                'class' => "img-responsive",
-                                'alt' => trim(strip_tags(get_post_meta($attachment_id, '_wp_attachment_image_alt', true))),
-                            );*/
-                            $html_link = '<a href="' . $attachment['guid'] . '" download>' . wp_get_attachment_image($attachment['ID'], array(320, 320)) . '</a>';
 
-                            //echo $html_link;
+                        $type_file = explode("/", $attachment['post_mime_type']);
+
+                        if ($type_file[0] == 'image') {
+                            $html_link = '<a href="' . $attachment['guid'] . '" download>' . wp_get_attachment_image($attachment['ID'], array(320, 320)) . '</a>';
                         } else {
                             $html_link = '<a href="' . $attachment['guid'] . '" download>' . end(explode("/", $attachment['guid'])) . '</a>';
                         }
@@ -432,11 +422,16 @@ class chat
             }
         } else {
 
-            echo '<div class="panell panel-primary">
-                    <div class="panel-body">
-                        <h5 style="text-align: center">No message here</h5>
-                    </div>
-                </div>';
+//            echo '<div class="panell panel-primary">
+//                    <div class="panel-body">
+//                        <h5 style="text-align: center">No message here</h5>
+//                    </div>
+//                </div>';
+            wp_send_json(array(
+                'status' => true,
+                'type' => 'empty',
+                'msg' => 'No messages',
+            ));
         }
         exit;
     }
