@@ -10,7 +10,7 @@
 				<h4 class="modal-title"><?php _e("Change your password.", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="chane_pass_form" class="auth-form chane_pass_form">
+				<form id="chane_pass_form" class="auth-form chane_pass_form">
 					<div class="form-group">
 						<label for="old_password"><?php _e('Old Password', ET_DOMAIN) ?></label>
 						<input type="password" class="form-control" id="old_password" name="old_password" placeholder="<?php _e('Enter your old password', ET_DOMAIN) ?>">

@@ -22,7 +22,7 @@
             	<div class="text-intro-acc">
             		<?php _e('Already have an account?', ET_DOMAIN) ?>&nbsp;&nbsp;<a href="#signin" role="tab" data-toggle="tab"><?php _e('Login', ET_DOMAIN); ?></a>
                 </div>
-                <form role="form" id="signup_form" class="signup_form">
+                <form id="signup_form" class="signup_form">
                     <input type="hidden" name="role" id="role" value="employer" />
                     <div class="form-group">
                     	<div class="row">
@@ -126,7 +126,7 @@
                 <div class="text-intro-acc">
             		<?php _e('You do not have an account?', ET_DOMAIN) ?>&nbsp;&nbsp;<a href="#signup" role="tab" data-toggle="tab"><?php _e('Register', ET_DOMAIN) ?></a>
                 </div>
-                <form role="form" id="signin_form" class="signin_form">
+                <form id="signin_form" class="signin_form">
                     <div class="form-group">
                     	<div class="row">
                         	<div class="col-md-4">

@@ -17,7 +17,7 @@
 				<h4 class="modal-title"><?php _e("Private Message!", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="submit_contact" class="auth-form submit_contact">
+				<form id="submit_contact" class="auth-form submit_contact">
 					<input type="hidden" name="send_to" id="send_to" value="<?php echo $send_to ?>" />
 					<div class="form-group textarea-form">
 						<label for="user_login"><?php _e('Your message', ET_DOMAIN) ?></label>

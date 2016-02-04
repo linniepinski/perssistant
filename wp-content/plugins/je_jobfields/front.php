@@ -449,18 +449,18 @@ class JEP_Fields_Front extends JEP_Fields_Init{
 				</div>
 				<?php switch ($field->type) {
 					case 'text': ?>
-						<div><input type="text" class="bg-default-input input-field <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>" id=""></div>
+						<div><input type="text" class="bg-default-input input-field <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>"></div>
 					<?php
 						break;
 					case 'url': ?>
-						<div><input type="text" class="bg-default-input input-field input-url <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>" id=""></div>
+						<div><input type="text" class="bg-default-input input-field input-url <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>"></div>
 					<?php
 						break;
 
 					case 'date': ?>
 						<div class="input-date">
 							<div class="icon icon-date" data-icon="\"></div>
-							<input type="text" class="bg-default-input input-field cfield-<?php echo $field->ID ?> <?php echo $required ?>" name="<?php echo $name ?>" id="">
+							<input type="text" class="bg-default-input input-field cfield-<?php echo $field->ID ?> <?php echo $required ?>" name="<?php echo $name ?>">
 						</div>
 					<?php
 						break;
@@ -469,7 +469,7 @@ class JEP_Fields_Front extends JEP_Fields_Init{
 						$options = JEP_Field::get_options($field->ID);
 						?>
 						<div class="select-style btn-background border-radius">
-							<select class="input-field <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>" id="">
+							<select class="input-field <?php echo $required ?> cfield-<?php echo $field->ID ?>" name="<?php echo $name ?>">
 								<?php foreach ($options as $option) {
 									echo '<option value="' . $option->ID . '">'. $option->name .'</option>';
 								} ?>
@@ -535,7 +535,7 @@ class JEP_Fields_Front extends JEP_Fields_Init{
 
 								<div class="jse-input" style="width:100%;">
 									<span>
-										<input id="" type="text" class="bg-default-input skill-input" value="" placeholder="<?php printf (__("Type your %s", ET_DOMAIN), strtolower($field->label) ) ; ?>" />	
+										<input type="text" class="bg-default-input skill-input" value="" placeholder="<?php printf (__("Type your %s", ET_DOMAIN), strtolower($field->label) ) ; ?>" />
 									</span>
 									<?php printf(__('Press Enter to keep adding %s', ET_DOMAIN), strtolower( $field->label ) ); ?>
 								</div>
@@ -761,7 +761,7 @@ class JEP_Fields_Front extends JEP_Fields_Init{
 								<div id="inline_skills" class="auto-add">
 									<div class="jse-input" style="width:100%;">
 										<span>
-											<input id="" type="text" class="bg-default-input skill-input <?php echo $required;?>" value="" placeholder="<?php printf (__("Type your %s", ET_DOMAIN), strtolower( $field->label ) ) ; ?>" />
+											<input type="text" class="bg-default-input skill-input <?php echo $required;?>" value="" placeholder="<?php printf (__("Type your %s", ET_DOMAIN), strtolower( $field->label ) ) ; ?>" />
 										</span>
 										<?php printf(__('Press Enter to keep adding %s', ET_DOMAIN), strtolower( $field->label ) ); ?>
 									</div>

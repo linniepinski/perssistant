@@ -429,14 +429,14 @@ License: GPL2
 											<td class="jobtitle">'.$job_type.'</td>
 											<td>
 												<div class="select-style et-button-select">
-													<select class="job_cat" name="import['.$i.'][job_category]" id="">
+													<select class="job_cat" name="import['.$i.'][job_category]">
 														 '.$cats.'
 													</select>
 												</div>
 											</td>
 											<td>
 												<div class="select-style et-button-select">
-													<select class="job_type" name="import['.$i.'][job_type]" id="">
+													<select class="job_type" name="import['.$i.'][job_type]">
 														'.$list.'
 													</select>
 												</div>
@@ -853,7 +853,7 @@ License: GPL2
  			
  			<script id="imported_template" type="text/template">
  				<tr>
- 					<td><input class="allow" type="checkbox" name="" id="" value="<?php echo '<%= ID %>' ?>"></th>
+ 					<td><input class="allow" type="checkbox" name="" value="<?php echo '<%= ID %>' ?>"></th>
  					<td><a target="_blank" href="<?php echo '<%= link %>' ?>"><?php echo '<%= title %>' ?></a></td>
                      <td><?php echo '<%= url %>' ?></td>
  					<td><?php echo '<%= creator %>' ?></td>

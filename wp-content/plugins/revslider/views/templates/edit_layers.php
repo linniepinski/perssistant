@@ -903,7 +903,7 @@
 											?>
 										</div><div style="clear: both;"></div>
 
-										<li id="" class="custom attributes_title" style="">
+										<li class="custom attributes_title" style="">
 											<span class="setting_text_2 text-disabled" original-title=""><?php _e("Caption Sharp Corners (optional only with BG color)",REVSLIDER_TEXTDOMAIN)?></span>
 											<!--<hr>-->
 										</li>
@@ -914,7 +914,7 @@
 											?>
 										</div>
 
-										<li id="" class="custom attributes_title" style="">
+										<li class="custom attributes_title" style="">
 											<span class="setting_text_2 text-disabled" original-title=""><?php _e("Advanced Responsive Settings",REVSLIDER_TEXTDOMAIN)?></span>
 										</li>
 										<div class="layer-links">

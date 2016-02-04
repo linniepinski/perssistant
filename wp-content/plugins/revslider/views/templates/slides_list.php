@@ -123,7 +123,7 @@
 						</span>
 						
 						<span class="slide-col col-operations">
-							<a id="" class='button-primary revred button_delete_slide ' style="width:120px; margin-top:8px !important" data-slideid="<?php echo $slideid?>" href='javascript:void(0)'><i class="revicon-trash"></i><?php _e("Delete",REVSLIDER_TEXTDOMAIN)?></a>
+							<a class='button-primary revred button_delete_slide ' style="width:120px; margin-top:8px !important" data-slideid="<?php echo $slideid?>" href='javascript:void(0)'><i class="revicon-trash"></i><?php _e("Delete",REVSLIDER_TEXTDOMAIN)?></a>
 							<span class="loader_round loader_delete" style="display:none;"><?php _e("Deleting Slide...",REVSLIDER_TEXTDOMAIN)?></span>
 							<a id="button_duplicate_slide_<?php echo $slideid?>" style="width:120px; " class='button-primary revyellow button_duplicate_slide' href='javascript:void(0)'><i class="revicon-picture"></i><?php _e("Duplicate",REVSLIDER_TEXTDOMAIN)?></a>
 							<?php

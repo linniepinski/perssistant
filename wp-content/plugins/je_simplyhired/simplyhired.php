@@ -748,14 +748,14 @@ TEMPLATE;
 				</td>
 				<td>
 					<div class="select-style et-button-select">
-						<select class="job_cat" name="import[{{i}}][job_category]" id="">
+						<select class="job_cat" name="import[{{i}}][job_category]">
 							<?php echo et_job_categories_option_list(); ?>
 						</select>
 					</div>
 				</td>
 				<td>
 					<div class="select-style et-button-select">
-						<select class="job_type" name="import[{{i}}][job_type]" id="">
+						<select class="job_type" name="import[{{i}}][job_type]">
 							<?php foreach ($job_types as $type) {
 								echo '<option value="'. $type->slug .'">'.$type->name.'</option>';
 							} ?>
@@ -766,7 +766,7 @@ TEMPLATE;
 		</script>
 		<script id="imported_template" type="text/template">
 			<tr>
-				<td><input class="allow" type="checkbox" name="" id="" value="{{ID}}"></th>
+				<td><input class="allow" type="checkbox" name="" value="{{ID}}"></th>
 				<td><a target="_blank" href="{{url}}">{{title}}</a></td>
 				<td>{{creator}}</td>
 				<td>{{date}}</td>

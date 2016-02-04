@@ -90,7 +90,7 @@ get_header();
 
             <div class="blog-content">
 
-                  <form role="form" id="user_signin_form" class="auth-form signin_form">
+                  <form id="user_signin_form" class="auth-form signin_form">
 
 					<div class="form-group">
 

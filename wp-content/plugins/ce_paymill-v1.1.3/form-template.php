@@ -54,7 +54,7 @@
 									<label>
 										<?php _e('Card number:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input  tabindex="20" id="paymill_number" type="text" size="20"  data-paymill="number" class="bg-default-input not_empty" placeholder="&#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226;" />
 									</div>
 								</div>
@@ -62,7 +62,7 @@
 								  	<label>
 										<?php _e('Expiry date:', ET_DOMAIN);?>
 								  	</label>
-								 	<div class="paymill_date" id="">
+								 	<div class="paymill_date">
 									 	<input tabindex="22" type="text" size="4" data-paymill="exp-year" placeholder="YYYY"  class="bg-default-input not_empty" id="paymill_exp_year"/>
 								      	<span> / </span>								      	
 								      	<input tabindex="21" type="text" size="2" data-paymill="exp-month" placeholder="MM"  class="bg-default-input not_empty" id="paymill_exp_month"/>
@@ -78,7 +78,7 @@
 							  	<label>
 									<?php _e('Name on card:',ET_DOMAIN);?>
 							  	</label>
-							  	<div class="controls " id="">
+							  	<div class="controls ">
 									<input tabindex="23" name="paymill_card_holdername" id="paymill_card_holdername"  data-paymill="paymill_card_holdername" class="bg-default-input not_empty" type="text" />
 							 	</div>
 							</div>
@@ -87,7 +87,7 @@
 								<label>
 									<?php _e('Card code:', ET_DOMAIN);?>
 							  	</label>
-							 	<div class="controls" id="">
+							 	<div class="controls">
 									<input tabindex="24" type="text" size="3"  data-paymill="cvc" class="bg-default-input not_empty input-cvc " placeholder="CVC" id="paymill_cvc" />
 							  	</div>
 							</div>	
@@ -99,7 +99,7 @@
 					</div>
 					<div class="footer form-group font-quicksand">
 						<div class="button">  
-							<button type="submit" class="btn  btn-primary" id="button_paymill" /><?php _e('PAY THROUGH PAYMILL',ET_DOMAIN); ?> </button>
+							<button type="submit" class="btn  btn-primary" id="button_paymill"><?php _e('PAY THROUGH PAYMILL',ET_DOMAIN); ?> </button>
 						</div>
 					</div>
 				</form>

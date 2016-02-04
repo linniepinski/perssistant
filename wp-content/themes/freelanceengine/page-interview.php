@@ -80,7 +80,7 @@ get_header();
 
                 <div class="blog-content">
 
-                    <form role="form" id="interview_form" class="interview_form">
+                    <form id="interview_form" class="interview_form">
                         <input type="hidden" id="post_id" name="post_id" value="<?php echo $post_id;?>">
 
                         <label>Please enter 3 possible dates and times to talk to us on Skype or call:</label>

@@ -35,7 +35,7 @@
 
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Job title', ET_DOMAIN) ?>" type="text" value="<?php echo $q ?>" id="" name="q" />
+						<input class="bg-grey-input" placeholder="<?php _e('Job title', ET_DOMAIN) ?>" type="text" value="<?php echo $q ?>" name="q" />
 					</div>
 				</div>
 
@@ -43,29 +43,29 @@
 				<!-- Location -->
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Zipcode', ET_DOMAIN) ?>" type="text" value="<?php echo $lz ?>" id="" name="lz" />
+						<input class="bg-grey-input" placeholder="<?php _e('Zipcode', ET_DOMAIN) ?>" type="text" value="<?php echo $lz ?>" name="lz" />
 					</div>
 				</div>			
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('City', ET_DOMAIN) ?>" type="text" value="<?php echo urldecode($lc) ?>" id="" name="lc" />
+						<input class="bg-grey-input" placeholder="<?php _e('City', ET_DOMAIN) ?>" type="text" value="<?php echo urldecode($lc) ?>" name="lc" />
 					</div>
 				</div>
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('State', ET_DOMAIN) ?>" type="text" value="<?php echo urldecode($ls) ?>" id="" name="ls" />
+						<input class="bg-grey-input" placeholder="<?php _e('State', ET_DOMAIN) ?>" type="text" value="<?php echo urldecode($ls) ?>" name="ls" />
 					</div>
 				</div>
 
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Window Size (max: 100)', ET_DOMAIN) ?>" type="text" value="<?php echo $ws ?>" id="" name="ws" />
+						<input class="bg-grey-input" placeholder="<?php _e('Window Size (max: 100)', ET_DOMAIN) ?>" type="text" value="<?php echo $ws ?>" name="ws" />
 					</div>
 				</div>
 				
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Page Number', ET_DOMAIN) ?>" type="text" value="<?php echo $pn ?>" id="" name="pn" />
+						<input class="bg-grey-input" placeholder="<?php _e('Page Number', ET_DOMAIN) ?>" type="text" value="<?php echo $pn ?>" name="pn" />
 					</div>
 				</div>
 
@@ -112,7 +112,7 @@
 				<table>
 					<tbody>
 						<tr class="heading">
-							<th><input class="setall" type="checkbox" name="" id="" checked="checked"></th>
+							<th><input class="setall" type="checkbox" name="" checked="checked"></th>
 							<th width="58%">Job Title</th>
 							<th width="20%">Category</th>
 							<th width="20%">Type</th>

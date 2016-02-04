@@ -26,7 +26,7 @@
 			<table>
 				<tbody>
 					<tr class="heading">
-						<th><input class="setall" type="checkbox" name="" id=""></th>
+						<th><input class="setall" type="checkbox" name=""></th>
 						<th><?php _e('Title') ?></th>
 						<th><?php _e('Creator') ?></th>
 						<th><?php _e('Date') ?></th>
@@ -35,7 +35,7 @@
 					foreach ($jobs->posts as $index => $job) {
 						?>
 						<tr>
-							<td><input class="allow" type="checkbox" name="" id="" value="<?php echo $job->ID ?>"></th>
+							<td><input class="allow" type="checkbox" name="" value="<?php echo $job->ID ?>"></th>
 							<td> <a href="<?php echo get_post_meta($job->ID, 'et_simplyhired_url', true) ?>" target="_blank"><?php echo $job->post_title ?></a> </td>
 							<td><?php echo get_post_meta($job->ID, 'et_simplyhired_creator', true) ?></td>
 							<td><?php echo $job->post_date ?></td>

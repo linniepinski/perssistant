@@ -32,7 +32,7 @@
 	<div class="row block-posts block-page">
 		<div class="col-md-9 col-sm-12 col-xs-12 posts-container" id="left_content">
             <div class="blog-content">
-	            <form role="form" id="resetpass_form" class="signin_form">
+	            <form id="resetpass_form" class="signin_form">
 					<input type="hidden" id="user_login" name="user_login" value="<?php if(isset($_GET['user_login'])) echo $_GET['user_login'] ?>" />
 					<input type="hidden" id="user_key" name="user_key" value="<?php if(isset($_GET['key'])) echo $_GET['key'] ?>">
 	                <div class="form-group">

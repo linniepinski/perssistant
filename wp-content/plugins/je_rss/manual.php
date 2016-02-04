@@ -55,7 +55,7 @@
 				<table>
 					<tbody>
 						<tr class="heading">
-							<th><input class="setall" type="checkbox" name="" id="" checked="checked"></th>
+							<th><input class="setall" type="checkbox" name="" checked="checked"></th>
 							<th width="35%">Job Title</th>
 							<th width="22%">Category</th>
 							<th width="22%">Type</th>

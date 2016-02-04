@@ -91,7 +91,7 @@ get_header();
 
 				<input type="hidden" value="<?php _e("Hire", ET_DOMAIN); ?>" class="hide-text" name="hidetext" />
 
-                <form role="form" id="user_signup_form" class="auth-form signup_form">
+                <form id="user_signup_form" class="auth-form signup_form">
 
                 	<p class="user-type">
 

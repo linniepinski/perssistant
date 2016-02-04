@@ -12,7 +12,7 @@
 				<h4 class="modal-title"><?php _e("Add item for your Portfolio", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="create_portfolio" class="auth-form create_portfolio">
+				<form id="create_portfolio" class="auth-form create_portfolio">
                 	<div id="portfolio_img_container">
                 		<input type="hidden" name="post_thumbnail" id="post_thumbnail" value="0" />
                 		<span class="image" id="portfolio_img_thumbnail">

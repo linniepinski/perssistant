@@ -32,7 +32,7 @@
 			<table>
 				<tbody>
 					<tr class="heading">
-						<th><input class="setall" type="checkbox" name="" id=""></th>
+						<th><input class="setall" type="checkbox" name=""></th>
 						<th><?php _e('Title') ?></th>
 						<th><?php _e('Link'); ?></th>
 						<th><?php _e('Creator') ?></th>
@@ -42,7 +42,7 @@
 					foreach ($jobs->posts as $index => $job) {
 						?>
 						<tr>
-							<td><input class="allow" type="checkbox" name="" id="" value="<?php echo $job->ID ?>"></td>
+							<td><input class="allow" type="checkbox" name="" value="<?php echo $job->ID ?>"></td>
 							<td> <a href="<?php echo get_permalink($job->ID) ?>" target="_blank"><?php echo $job->post_title ?></a> </td>
 							<td><a href="<?php echo get_post_meta($job->ID, 'et_linkedin_url', true); ?>" target="_blank"><?php  echo get_post_meta($job->ID, 'et_linkedin_url', true);?></a></td>
 							<td><?php echo get_post_meta($job->ID, 'et_linkedin_company', true) ?></td>

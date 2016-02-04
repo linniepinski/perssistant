@@ -28,7 +28,7 @@
 			<table>
 				<tbody>
 					<tr class="heading">
-						<th><input class="setall" type="checkbox" name="" id=""></th>
+						<th><input class="setall" type="checkbox" name=""></th>
 						<th width="40%"><?php _e('Title') ?></th>
 						<th width="30%"><?php _e('RSS Link') ?></th>
 						<th width="15%"><?php _e('Creator') ?></th>
@@ -38,7 +38,7 @@
 					foreach ($jobs->posts as $index => $job) {
 						?>
 						<tr>
-							<td><input class="allow" type="checkbox" name="" id="" value="<?php echo $job->ID ?>"></th>
+							<td><input class="allow" type="checkbox" name="" value="<?php echo $job->ID ?>"></th>
 							<td><a target="_blank" href="<?php echo get_permalink($job->ID) ?>" >
 									<?php echo $job->post_title ?>
 								</a>

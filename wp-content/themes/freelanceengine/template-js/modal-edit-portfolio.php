@@ -12,7 +12,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                 <h4 class="modal-title"><?php _e("Edit item for your Portfolio", ET_DOMAIN) ?></h4>
             </div>
             <div class="modal-body">
-                <form role="form" id="edit_portfolio" class="auth-form edit_portfolio">
+                <form id="edit_portfolio" class="auth-form edit_portfolio">
                     <input type="hidden" id="ID" name="id" value="">
                     <input type="hidden" name="method" value="update"/>
 

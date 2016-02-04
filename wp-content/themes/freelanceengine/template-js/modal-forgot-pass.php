@@ -8,7 +8,7 @@
 				<h4 class="modal-title"><?php _e("Forgot Password?", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="forgot_form" class="auth-form forgot_form">
+				<form id="forgot_form" class="auth-form forgot_form">
 					<div class="form-group">
 						<label for="forgot_user_email"><?php _e('Enter your email here', ET_DOMAIN) ?></label>
 						<input type="text" class="form-control" id="user_email" name="user_email" />
