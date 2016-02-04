@@ -87,7 +87,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                         <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
@@ -129,7 +129,7 @@
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/" class="se-free">
 
-                                            </i><?php _e("Search Virtual Assistant", ET_DOMAIN) ?>
+                                            <?php _e("Search Virtual Assistant", ET_DOMAIN) ?>
 
                                         </a>
 
@@ -166,7 +166,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                     <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
@@ -228,7 +228,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                     <span class="avatar-and-name current_user_avatar">
 
@@ -374,7 +374,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                         <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
 
@@ -454,7 +454,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                         <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
 
@@ -515,7 +515,7 @@
 
                             <div class="dropdown">
 
-                                <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
                                     <span class="avatar-and-name">
 

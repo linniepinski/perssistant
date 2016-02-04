@@ -22,7 +22,7 @@
 		wp_footer();
 	?>
 	<!-- MODAL QUIT PROJECT-->
-	<div class="modal fade" id="quit_project" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="quit_project" role="dialog" aria-labelledby="quit_project" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
 	            <div class="modal-header">
@@ -35,7 +35,7 @@
 	                </p>
 	            </div>
 	            <div class="modal-body">
-	                <form role="form" id="quit_project_form" class="quit_project_form">
+	                <form id="quit_project_form" class="quit_project_form">
 	                    <div class="form-group">
 	                        <label for="user_login"><?php _e('Please give us a clear report', ET_DOMAIN) ?></label>
 	                        <textarea name="comment_content"></textarea>

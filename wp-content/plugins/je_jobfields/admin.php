@@ -630,7 +630,7 @@ class JEP_Fields_Admin extends JEP_Fields_Init{
 								</div>
 							</li>
 						<?php } ?>
-						<!-- <li class="item" id="" data="">
+						<!-- <li class="item" data="">
 							<div class="sort-handle"></div>
 							<span><strong>Soft Skill</strong> (required)</span>
 							<div class="actions">
@@ -825,7 +825,7 @@ class JEP_Fields_Admin extends JEP_Fields_Init{
 								}
 							} ?>
 							<li class="form-option">
-								<input type="text" name="options[<?php echo $count ?>]" id="">
+								<input type="text" name="options[<?php echo $count ?>]">
 								<div class="controls controls-2">
 									<a class="button act-open-form del-opt" rel="33" title="<?php _e('Delete this option') ?>">
 										<span class="icon" data-icon="*"></span>
@@ -835,7 +835,7 @@ class JEP_Fields_Admin extends JEP_Fields_Init{
 						</ul>
 						<script type="text/template" id="tl_option">
 							<li class="form-option">
-								<input type="text" name="options[{{ id }}]" id="">
+								<input type="text" name="options[{{ id }}]">
 								<div class="controls controls-2">
 									<a class="button act-open-form" title="<?php _e('Delete this option') ?>">
 										<span class="icon" data-icon="*"></span>
@@ -846,7 +846,7 @@ class JEP_Fields_Admin extends JEP_Fields_Init{
 					</div>
 					<div class="form-item">
 						<label for="required"><?php _e('Required') ?></label>
-						<input type="hidden" name="required" value="0" id="">
+						<input type="hidden" name="required" value="0">
 						<input type="checkbox" name="required" value="1" id="required" <?php if( $field->required ) echo 'checked="checked"' ?> > 
 						<label for="required" style="display:inline;" >
 							<?php _e("Check this if field is required", ET_DOMAIN); ?>

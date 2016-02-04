@@ -11,7 +11,7 @@
 				<h4 class="modal-title"><?php _e("Become our member!", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="signup_form" class="auth-form signup_form">
+				<form id="signup_form" class="auth-form signup_form">
                 	<p class="user-type">
                 		<?php _e("What are you looking for?", ET_DOMAIN) ?> 
 

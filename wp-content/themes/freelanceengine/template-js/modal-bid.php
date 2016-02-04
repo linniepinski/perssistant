@@ -15,7 +15,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                     echo '</p>';
                 } else { ?>
                     <div>
-                        <form role="form" id="bid_form" class="bid-form">
+                        <form id="bid_form" class="bid-form">
                             <div class="form-group"><label for="bid_budget"><?php
                                     if (get_post_meta($post->ID, 'type_budget', true) == 'hourly_rate') {
                                         _e('Hourly rate', ET_DOMAIN);

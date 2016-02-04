@@ -6,7 +6,7 @@ $bid_budget = get_post_meta( $bid, 'bid_budget', true );
 $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 ?>
 <!-- MODAL FINISH PROJECT-->
-<div class="modal fade" id="modal_review" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_review" role="dialog" aria-labelledby="modal_review" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -16,7 +16,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				<h4 class="modal-title"><?php _e("Congratulation!", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-			<form role="form" id="review_form" class="review-form">	
+			<form id="review_form" class="review-form">
 			<?php if($post->post_author == $user_ID) {  // employer finish project form ?>
 				<input type="hidden" name="action" value="ae-employer-review" />
             	<label style="line-height:2.5;">
@@ -105,7 +105,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 			</div>
 			<div class="modal-body">
 
-				<form role="form" id="review_form" class="review-form">				
+				<form id="review_form" class="review-form">
                 	<div class="form-group rate">
                     	
                     	<label for="post_content"><?php _e('Rate for this profile',ET_DOMAIN);?> </label>

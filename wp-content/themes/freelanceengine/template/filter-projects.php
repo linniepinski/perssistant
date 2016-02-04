@@ -156,7 +156,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
         </div>
     </div>
 </div>
-<div class="modal fade" id="skillsmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="skillsmodal" tabindex="-1" role="dialog" aria-labelledby="skillsmodal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,7 +187,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
     </div>
 </div>
 <div class="modal fade bs-example-modal-lg" id="category-modal" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel">
+     aria-labelledby="category-modal">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">

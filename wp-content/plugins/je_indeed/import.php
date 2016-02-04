@@ -14,7 +14,7 @@
 			<div class="import-search-form">
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Publisher ID', ET_DOMAIN) ?>" type="text" value="<?php echo $publisher ?>" id="" name="publisher" />
+						<input class="bg-grey-input" placeholder="<?php _e('Publisher ID', ET_DOMAIN) ?>" type="text" value="<?php echo $publisher ?>" name="publisher" />
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Location', ET_DOMAIN) ?>" type="text" value="<?php echo $l ?>" id="" name="l" />
+						<input class="bg-grey-input" placeholder="<?php _e('Location', ET_DOMAIN) ?>" type="text" value="<?php echo $l ?>" name="l" />
 					</div>
 				</div>
 
@@ -56,7 +56,7 @@
 				<div class="form no-margin no-padding no-background">
 					<?php _e("Number of days back to search.", ET_DOMAIN); ?>
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Within (days)', ET_DOMAIN) ?>" type="text" value="<?php echo $fromage ?>" id="" name="fromage" />
+						<input class="bg-grey-input" placeholder="<?php _e('Within (days)', ET_DOMAIN) ?>" type="text" value="<?php echo $fromage ?>" name="fromage" />
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 			<div class="import-search-form">
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Logo URL', ET_DOMAIN) ?>" type="text" value="<?php echo $author ?>" id="" name="author" />
+						<input class="bg-grey-input" placeholder="<?php _e('Logo URL', ET_DOMAIN) ?>" type="text" value="<?php echo $author ?>" name="author" />
 					</div>
 				</div>
 			</div>

@@ -31,7 +31,7 @@
 									<label>
 										<?php _e('Card number:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input tabindex="20" id="stripe_number" type="text" size="20"  data-stripe="number" class="bg-default-input not_empty" placeholder="&#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226; &nbsp; &nbsp; &nbsp; &#8226;&#8226;&#8226;&#8226;" />
 									</div>
 								</div>
@@ -39,7 +39,7 @@
 								  	<label>
 										<?php _e('Expiry date:', ET_DOMAIN);?>
 								  	</label>
-								 	<div class="stripe_date" id="">
+								 	<div class="stripe_date">
 									 	<input tabindex="22" type="text" size="4" data-stripe="exp-year" placeholder="YY"  class="bg-default-input not_empty" id="exp_year"/>
 								      	<span> / </span>								      	
 								      	<input tabindex="21" type="text" size="2" data-stripe="exp-month" placeholder="MM"  class="bg-default-input not_empty" id="exp_month"/>
@@ -56,8 +56,8 @@
 							  	<label>
 									<?php _e('Name on card:',ET_DOMAIN);?>
 							  	</label>
-							  	<div class="controls name_card " id="">
-									<input tabindex="23" name="" id="name_card"  data-stripe="name" class="bg-default-input not_empty" type="text" />
+							  	<div class="controls name_card ">
+									<input tabindex="23" name="name_card" id="name_card"  data-stripe="name" class="bg-default-input not_empty" type="text" />
 							 	</div>
 							</div>
 
@@ -65,7 +65,7 @@
 								<label>
 									<?php _e('Card code:', ET_DOMAIN);?>
 							  	</label>
-							 	<div class="controls card-code" id="">
+							 	<div class="controls card-code">
 									<input tabindex="24" type="text" size="3"  data-stripe="cvc" class="bg-default-input not_empty input-cvc " placeholder="CVC" id="cvc" />
 							  	</div>
 							</div>	

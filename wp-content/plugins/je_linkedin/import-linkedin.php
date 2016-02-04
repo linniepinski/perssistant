@@ -45,24 +45,24 @@
 				</div>
 				<div class="form no-margin no-padding no-background">
 				   <div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Postal Code', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['postal-code']; ?>" id="" name="postal-code" />
+						<input class="bg-grey-input" placeholder="<?php _e('Postal Code', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['postal-code']; ?>" name="postal-code" />
 					  
 					</div>
 					
 					</div>
 				<div class="form no-margin no-padding no-background">
 				   <div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Keywords', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['keywords']; ?>" id="" name="keywords" />
+						<input class="bg-grey-input" placeholder="<?php _e('Keywords', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['keywords']; ?>" name="keywords" />
 					</div>
 					</div>
 			<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Job title', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['job-title']; ?>" id="" name="job-title" />
+						<input class="bg-grey-input" placeholder="<?php _e('Job title', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['job-title']; ?>" name="job-title" />
 					</div>
 				</div>
 				<div class="form no-margin no-padding no-background">
 					<div class="form-item">
-						<input class="bg-grey-input" placeholder="<?php _e('Company name', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['company-name']; ?>" id="" name="company-name" />
+						<input class="bg-grey-input" placeholder="<?php _e('Company name', ET_DOMAIN) ?>" type="text" value="<?php echo $search_str['company-name']; ?>" name="company-name" />
 					</div>
 				</div>
 				
@@ -105,7 +105,7 @@
 				<table>
 					<tbody>
 						<tr class="heading">
-							<th><input class="setall" type="checkbox" name="" id="" checked="checked"></th>
+							<th><input class="setall" type="checkbox" name="" checked="checked"></th>
 							<th width="58%">Job Title</th>
 							<th width="58%">Job Type</th>
 							<th width="20%">Category</th>

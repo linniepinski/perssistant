@@ -479,7 +479,7 @@ class JE_RSS_Import {
 				</td>
 				<td>
 					<div class="select-style et-button-select">
-						<select class="job_cat" name="import[{{ i }}][job_category]" id="">
+						<select class="job_cat" name="import[{{ i }}][job_category]">
 					';
 						 echo et_job_categories_option_list(); 
 				echo '		</select>
@@ -487,7 +487,7 @@ class JE_RSS_Import {
 				</td>
 				<td>
 					<div class="select-style et-button-select">
-						<select class="job_type" name="import[{{ i }}][job_type]" id="">
+						<select class="job_type" name="import[{{ i }}][job_type]">
 				'; 			foreach ($job_types as $type) {
 								echo '<option value="'. $type->term_id .'">'.$type->name.'</option>';
 							}
@@ -503,7 +503,7 @@ class JE_RSS_Import {
 		<script id="imported_template" type="text/template">
 		<?php echo '
 			<tr>
-				<td><input class="allow" type="checkbox" name="" id="" value="{{ID}}"></th>
+				<td><input class="allow" type="checkbox" name="" value="{{ID}}"></th>
 				<td><a target="_blank" href="{{permalink}}"> {{ title }} </a></td>
 				<td>{{url}}</td>
 				<td>{{creator}}</td>

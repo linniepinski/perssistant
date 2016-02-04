@@ -38,7 +38,7 @@
 			        	<div class="text-intro-acc">
 			        		<?php _e('Already have an account?', ET_DOMAIN) ?>&nbsp;&nbsp;<a href="#signin" role="tab" data-toggle="tab"><?php _e('Login', ET_DOMAIN); ?></a>
 			            </div>
-                        <form role="form" id="user_signup_form" class="auth-form signup_form">
+                        <form id="user_signup_form" class="auth-form signup_form">
 				            <input type="hidden" value="<?php _e("Work", ET_DOMAIN); ?>" class="work-text" name="worktext" />
 							<input type="hidden" value="<?php _e("Hire", ET_DOMAIN); ?>" class="hide-text" name="hidetext" />
 
@@ -143,7 +143,7 @@
 			            <div class="text-intro-acc">
 			        		<?php _e('You do not have an account?', ET_DOMAIN) ?>&nbsp;&nbsp;<a href="#signup" role="tab" data-toggle="tab"><?php _e('Register', ET_DOMAIN) ?></a>
 			            </div>
-                        <form role="form" id="user_signin_form" class="auth-form signin_form">
+                        <form id="user_signin_form" class="auth-form signin_form">
 			                <div class="form-group">
 			                	<div class="row">
 			                    	<div class="col-md-4">

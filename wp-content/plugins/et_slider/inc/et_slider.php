@@ -203,7 +203,7 @@ class ET_SLider {
                                             <div id="p1859iirsr1g9k68qeemhl511hm0_html5_container" style="position: absolute; background: none repeat scroll 0% 0% transparent; width: 0px; height: 0px; overflow: hidden; z-index: -1; opacity: 0; top: 0px; left: 0px;" class="plupload html5"><input type="file" accept="image/jpeg,image/gif,image/png" style="font-size: 999px; position: absolute; width: 100%; height: 100%;" id="p1859iirsr1g9k68qeemhl511hm0_html5"></div>
                                         </div>
                                         <div class="submit">
-                                            <button class="btn-button engine-submit-btn" id="">
+                                            <button class="btn-button engine-submit-btn">
                                                 <span>Save</span><span data-icon="+" class="icon"></span>
                                             </button>
                                         </div>

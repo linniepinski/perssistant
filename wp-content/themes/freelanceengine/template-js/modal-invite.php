@@ -33,7 +33,7 @@ query_posts( array('post_status' => 'publish', 'post_type' => 'project', 'author
 			</div>
 			<div class="modal-body">
 				<?php if(have_posts()) { ?>
-				<form role="form" id="submit_invite" class="auth-form submit_invite">
+				<form id="submit_invite" class="auth-form submit_invite">
 					<div class="form-group invites-list">
 					<?php
 						while (have_posts()) { the_post(); 

@@ -43,7 +43,7 @@
 									<label>
 										<?php _e('First name:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input  tabindex="20" id="payu_firstname" type="text" size="20"  required class="bg-default-input not_empty required" placeholder="Your first name" />
 									</div>
 								</div>
@@ -51,7 +51,7 @@
 									<label>
 										<?php _e('Last name:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input  tabindex="20" id="payu_lastname" type="text" size="20"  class="bg-default-input not_empty" placeholder="Your last name" />
 									</div>
 								</div>
@@ -59,7 +59,7 @@
 									<label>
 										<?php _e('Email:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input  tabindex="20" id="payu_email" type="email" size="20" required  class="bg-default-input not_empty" placeholder="e.g exemple@enginethemes.com" />
 									</div>
 								</div>
@@ -67,7 +67,7 @@
 									<label>
 										<?php _e('Phone:', ET_DOMAIN);?>
 									</label>
-									<div class="controls fld-wrap" id="">
+									<div class="controls fld-wrap">
 										<input  tabindex="20" id="payu_phone" type="text" size="20" class="bg-default-input not_empty" placeholder="0123456789" />
 									</div>
 								</div>
@@ -76,7 +76,7 @@
 					</div>
 					<div class="footer form-group font-quicksand">
 						<div class="button">  
-							<button type="submit" class="btn  btn-primary" id="button_payu" /><?php _e('PAY NOW WITH PAYUMONEY',ET_DOMAIN); ?> </button>
+							<button type="submit" class="btn  btn-primary" id="button_payu"><?php _e('PAY NOW WITH PAYUMONEY',ET_DOMAIN); ?> </button>
 						</div>
 					</div>
 				</form>
@@ -100,6 +100,6 @@
         <input type="hidden" name="furl" id="payu_furl"/>
         <input type="hidden" name="curl" id="payu_curl"/>
         <input type="hidden" name="service_provider" value="payu_paisa"/>
-        <button type="submit" class="btn  btn-primary" id="button_payu_h" />Submit </button>
+        <button type="submit" class="btn  btn-primary" id="button_payu_h" >Submit </button>
 </form>
 </div>

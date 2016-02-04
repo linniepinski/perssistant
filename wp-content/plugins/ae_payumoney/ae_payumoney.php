@@ -113,7 +113,7 @@ function ae_payu_render_button() {
             <span><?php
     _e("Send your payment to our PayUMoney account", ET_DOMAIN); ?></span>
         </span>
-        <a href="#" id="" class="btn btn-submit-price-plan other-payment" data-type="payu"><?php
+        <a href="#" class="btn btn-submit-price-plan other-payment" data-type="payu"><?php
     _e("Select", ET_DOMAIN); ?></a>
     </li>
     

@@ -16,7 +16,7 @@
 
 <section class="section-wrapper section-register">
 <!--    <form class="form-mobile-wrapper signup_form">-->
-    <form role="form" id="user_signup_form" class="auth-form signup_form">
+    <form id="user_signup_form" class="auth-form signup_form">
         <input type="hidden" value="<?php _e("Work", ET_DOMAIN); ?>" class="work-text" name="worktext" />
         <input type="hidden" value="<?php _e("Hire", ET_DOMAIN); ?>" class="hide-text" name="hidetext" />
 
@@ -97,7 +97,7 @@
 </section>  
 
 <section class="section-wrapper section-login">
-    <form role="form" id="user_signin_form" class="auth-form signin_form">
+    <form id="user_signin_form" class="auth-form signin_form">
     	<div class="container">
             <div class="row">
                 <div class="col-md-12">

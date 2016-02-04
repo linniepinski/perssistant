@@ -8,7 +8,7 @@
 				<h4 class="modal-title"><?php _e("Welcome back!", ET_DOMAIN) ?></h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="signin_form" class="auth-form signin_form">
+				<form id="signin_form" class="auth-form signin_form">
 					<div class="form-group">
 						<label for="login_user_login"><?php _e('Your User Name or Email', ET_DOMAIN) ?></label>
 						<input type="text" class="form-control" id="login_user_login" name="user_login" placeholder="<?php _e('Enter username', ET_DOMAIN) ?>">

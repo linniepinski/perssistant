@@ -247,8 +247,12 @@
 						<hr>
 					</div>
 					<div class="modal-body">
-						<h4 class="text-center" style="font-size:25px; padding-top:50px;">The cost of featured projects is 25 Euro.</h4>
+						<h4 class="text-center" style="font-size:25px; padding-top:50px;">The cost for a premium job is 25 eur, to be paid after confirmation of your job.</h4>
 					</div>
+                    <div class="modal-footer featured-modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-default featured-cancel" data-dismiss="modal">Cancel</button>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -259,6 +263,9 @@
 				jQuery("#et_featured").click(function(){
 					if (jQuery("#et_featured").is(':checked')) { jQuery('#modal').modal('show'); }
 				});
+                jQuery(".featured-cancel").on('click', function(){
+                    jQuery("#et_featured").removeAttr('checked');
+                });
 			});
 		</script>
 			

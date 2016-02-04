@@ -3,7 +3,7 @@ global $post;
 $status  = $post->post_status;
 $review = isset($_GET['review']) ? $_GET['review'] : 0;
 ?>
-<form role="form" id="review_form" class="review-form review-form-mobile" <?php if($review != 1) echo 'style ="display:none"';?> >             
+<form id="review_form" class="review-form review-form-mobile" <?php if($review != 1) echo 'style ="display:none"';?> >
     <div class="form-group rate">
         
         <label for="post_content"><?php _e('Rate for this profile',ET_DOMAIN);?> </label>

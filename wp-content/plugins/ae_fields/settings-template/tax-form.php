@@ -1,7 +1,7 @@
 <?php
 $custom_field = $this->params['custom_field'];
 ?>
-<form id="" action="de-add-package" class="engine-payment-form add-pack-form">
+<form action="de-add-package" class="engine-payment-form add-pack-form">
 	<input type="hidden" name="type" value="<?php echo $custom_field; ?>" />
 	<div class="form payment-plan">
 		<div class="form-item">

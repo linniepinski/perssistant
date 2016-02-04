@@ -1,4 +1,4 @@
-<div class="modal fade" id="acceptance_project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="acceptance_project" tabindex="-1" role="dialog" aria-labelledby="acceptance_project" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -10,7 +10,7 @@
 				</h4>
 			</div>
 			<div class="modal-body">
-				<form role="form" id="escrow_bid" class="">
+				<form id="escrow_bid" class="">
 					<div class="escrow-info">
 		            	<!-- bid info content here -->
 	                </div>

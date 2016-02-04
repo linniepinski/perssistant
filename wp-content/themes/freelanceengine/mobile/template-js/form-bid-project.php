@@ -1,4 +1,4 @@
-<form role="form" id="bid_form" class="bid-form bid-form-mobile" <?php if(!isset($_GET['bid'])) echo 'style="display:none"';?> >
+<form id="bid_form" class="bid-form bid-form-mobile" <?php if(!isset($_GET['bid'])) echo 'style="display:none"';?> >
                
     <?php
     if(!is_user_logged_in()){ ?>

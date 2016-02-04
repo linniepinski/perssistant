@@ -15,7 +15,7 @@ global $wp_query, $ae_post_factory, $user_ID, $post; ?><!-- MODAL BIG -->
                     echo '</p>';
                 } else { ?>
                     <div>
-                        <form role="form" id="bid_form_update" class="bid-form-update">
+                        <form id="bid_form_update" class="bid-form-update">
 
                             <div class="form-group"><label for="bid_budget"><?php
                                     if(get_post_meta($post->ID,'type_budget',true) == 'hourly_rate'){

@@ -258,8 +258,8 @@
 					<?php _e("Preview Image",REVSLIDER_TEXTDOMAIN)?>:
 				</div>
 
-				<input type="button" id="" class="button-image-select-video button-primary revblue" value="<?php _e("Set",REVSLIDER_TEXTDOMAIN)?>">
-				<input type="button" id="" class="button-image-remove-video button-primary revblue" value="<?php _e("Remove",REVSLIDER_TEXTDOMAIN)?>">
+				<input type="button" class="button-image-select-video button-primary revblue" value="<?php _e("Set",REVSLIDER_TEXTDOMAIN)?>">
+				<input type="button" class="button-image-remove-video button-primary revblue" value="<?php _e("Remove",REVSLIDER_TEXTDOMAIN)?>">
 				<input type="hidden" class="checkbox_video_dialog float_left" id="input_video_preview">
 				<div class="clear"></div>
 				<div style="width:100%;height:10px"></div>

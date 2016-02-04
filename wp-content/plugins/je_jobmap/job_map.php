@@ -66,9 +66,9 @@ class JobMap_Widget extends WP_Widget {
 
             <form style=" display:none; bottom: 5px !important;background : #dfdfdf; padding : 5px;">
 
-                <input id="" name="id_base" type="hidden" value="<?php echo $this->id_base ?>">
-                <input id="" name="widget-id" type="hidden" value="<?php echo $this->id ?>">
-                <input id="" name="savewidgets" type="hidden" value="<?php echo $ajax_nonce ?>">
+                <input name="id_base" type="hidden" value="<?php echo $this->id_base ?>">
+                <input name="widget-id" type="hidden" value="<?php echo $this->id ?>">
+                <input name="savewidgets" type="hidden" value="<?php echo $ajax_nonce ?>">
                 
 
                 <input size="3" id="<?php echo $this->get_field_id('width') ?>" name="<?php echo $this->get_field_name('width'); ?>" type="hidden" value="<?php echo $instance['width'] ?>">

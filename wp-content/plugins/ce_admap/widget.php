@@ -75,9 +75,9 @@ class AdMap_Widget extends WP_Widget {
                 <input id="<?php echo $this->get_field_id('auto_save') ?>" name="<?php echo $this->get_field_name('auto_save')?>" type="hidden" value="<?php echo $instance['auto_save']; ?>">
 
 
-                <input id="" name="id_base" type="hidden" value="<?php echo $this->id_base ?>">
-                <input id="" name="widget-id" type="hidden" value="<?php echo $this->id ?>">
-                <input id="" name="savewidgets" type="hidden" value="<?php echo $ajax_nonce ?>">
+                <input name="id_base" type="hidden" value="<?php echo $this->id_base ?>">
+                <input name="widget-id" type="hidden" value="<?php echo $this->id ?>">
+                <input name="savewidgets" type="hidden" value="<?php echo $ajax_nonce ?>">
 
 
                 <!-- <input size="3" id="<?php echo $this->get_field_id('width') ?>" name="<?php echo $this->get_field_name('width'); ?>" type="hidden" value="<?php echo $instance['width'] ?>"> -->

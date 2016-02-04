@@ -41,7 +41,7 @@ if(et_is_mobile()){ ?>
 					<div class="label">
 						<?php _e('Card number:', ET_DOMAIN);?>
 					</div>
-					<div class="fld-wrap" id="">
+					<div class="fld-wrap">
 						<input tabindex="20" id="paymill_number" name="number" type="text" size="20" data-paymill="number" class="bg-default-input not_empty" placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;" />
 					</div>
 				</div>
@@ -49,7 +49,7 @@ if(et_is_mobile()){ ?>
 				  	<div class="label">
 						<?php _e('Expiry date:', ET_DOMAIN);?>
 				  	</div>
-				 	<div class="fld-wrap paymill_date" id="">
+				 	<div class="fld-wrap paymill_date">
 					 	<input tabindex="21" type="text" size="2" name="exp-month" data-paymill="exp-month" placeholder="MM" class="bg-default-input not_empty" id="paymill_exp_month"/>
 				      	<span> / </span>
 				      	<input tabindex="22" type="text" size="4" name="exp-year" data-paymill="exp-year" placeholder="YYYY" class="bg-default-input not_empty" id="paymill_exp_year"/>
@@ -60,7 +60,7 @@ if(et_is_mobile()){ ?>
 				  	<div class="label">
 						<?php _e('Name on card:',ET_DOMAIN);?>
 				  	</div>
-				  	<div class="fld-wrap" id="">
+				  	<div class="fld-wrap">
 						<input tabindex="23" name="cardholder" id="paymill-cardholder" data-paymill="name" class="bg-default-input not_empty" type="text" />
 				 	</div>
 				</div>	
@@ -69,7 +69,7 @@ if(et_is_mobile()){ ?>
 				  	<div class="label">
 						<?php _e('Card code:', ET_DOMAIN);?>
 				  	</div>
-				 	<div class="fld-wrap" id="">
+				 	<div class="fld-wrap">
 						<input tabindex="24" type="text" size="3" id="paymill-cvc" data-paymill="cvc" class="bg-default-input not_empty" placeholder="CVC" id="paymill_cvc" />
 				  	</div>
 				  	
@@ -80,7 +80,7 @@ if(et_is_mobile()){ ?>
 				  	<div class="label">
 						<?php _e('Address:', ET_DOMAIN);?>
 				  	</div>
-				 	<div class="fld-wrap" id="">
+				 	<div class="fld-wrap">
 						<textarea tabindex="24" style="width:280px;height:50px;" id="paymill-des" data-paymill="des" class="bg-default-input not_empty" id="paymill_des" /></textarea>
 				  	</div>
 				  	
