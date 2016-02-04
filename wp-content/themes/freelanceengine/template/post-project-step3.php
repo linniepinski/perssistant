@@ -225,7 +225,7 @@
 
                 <span class="switchery">
                     <small></small>
-                    <span align="center" id="et_featured_checkbox"><?php _e("Yes", ET_DOMAIN); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", ET_DOMAIN); ?></span>
+                    <span id="et_featured_checkbox"><?php _e("Yes", ET_DOMAIN); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", ET_DOMAIN); ?></span>
                 </span>
 
             </label>

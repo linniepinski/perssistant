@@ -33,6 +33,9 @@
     horizontal-align: middle;
 }
 
+#et_featured_checkbox {
+    text-align: center;
+}
 
 .list-share-social.addthis_toolbox.addthis_default_style {
 line-height: 50px;
