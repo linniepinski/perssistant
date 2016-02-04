@@ -188,7 +188,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
 </div>
 <div class="modal fade bs-example-modal-lg" id="category-modal" tabindex="-1" role="dialog"
      aria-labelledby="category-modal">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -214,10 +214,8 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                     <div id="category-all" class="col-xs-12 col-md-12 text-left"></div>
                 </div>
                 <div id="category-parent-checkbox" class="row">
-
-                    <div id="column-1" class="col-xs-12 col-md-4"></div>
-                    <div id="column-2" class="col-xs-12 col-md-4"></div>
-                    <div id="column-3" class="col-xs-12 col-md-4"></div>
+                    <div id="column-1" class="col-xs-12 col-md-6"></div>
+                    <div id="column-2" class="col-xs-12 col-md-6"></div>
                 </div>
 
             </div>
@@ -228,7 +226,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
     </div>
 </div>
 <script type="application/javascript">
-    var half_count = Math.round(jQuery("#project_category > option").length / 3);
+    var half_count = Math.round(jQuery("#project_category > option").length / 2);
     var parent_category = '';
     jQuery("#project_category > option").each(function (index) {
         select = '';
@@ -250,7 +248,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 }
             }
         }
-        else if (index < half_count * 2) {
+        else  {
             var current = jQuery(this).attr('class').split(" ");
             if (current[3] == 'level-0') {
                 parent_category = current[1];
@@ -260,16 +258,16 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 jQuery('#category-parent-checkbox > #column-2').append('<div class="checkbox ' + jQuery(this).attr('class') + '"><label><input type="checkbox" data-parent="' + parent_category + '" name="' + jQuery(this).attr('value') + '" value="' + jQuery(this).attr('value') + '" ' + select + '>' + jQuery(this).text() + '</label></div>');
             }
         }
-        else {
-            var current = jQuery(this).attr('class').split(" ");
-            if (current[3] == 'level-0') {
-                parent_category = current[1];
-                jQuery('#category-parent-checkbox > #column-3').append('<div class="checkbox ' + jQuery(this).attr('class') + '"><label><input type="checkbox" name="' + jQuery(this).attr('value') + '" value="' + jQuery(this).attr('value') + '" ' + select + '>' + jQuery(this).text() + '</label></div>');
-            }
-            else {
-                jQuery('#category-parent-checkbox > #column-3').append('<div class="checkbox ' + jQuery(this).attr('class') + '"><label><input type="checkbox" data-parent="' + parent_category + '" name="' + jQuery(this).attr('value') + '" value="' + jQuery(this).attr('value') + '" ' + select + '>' + jQuery(this).text() + '</label></div>');
-            }
-        }
+//        else {
+//            var current = jQuery(this).attr('class').split(" ");
+//            if (current[3] == 'level-0') {
+//                parent_category = current[1];
+//                jQuery('#category-parent-checkbox > #column-3').append('<div class="checkbox ' + jQuery(this).attr('class') + '"><label><input type="checkbox" name="' + jQuery(this).attr('value') + '" value="' + jQuery(this).attr('value') + '" ' + select + '>' + jQuery(this).text() + '</label></div>');
+//            }
+//            else {
+//                jQuery('#category-parent-checkbox > #column-3').append('<div class="checkbox ' + jQuery(this).attr('class') + '"><label><input type="checkbox" data-parent="' + parent_category + '" name="' + jQuery(this).attr('value') + '" value="' + jQuery(this).attr('value') + '" ' + select + '>' + jQuery(this).text() + '</label></div>');
+//            }
+//        }
         jQuery('#category-all').append(allcategory);
     });
     jQuery("#category-parent-checkbox :checkbox").change(function () {
