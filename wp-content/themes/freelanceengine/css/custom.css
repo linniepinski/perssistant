@@ -6411,7 +6411,7 @@ header.sticky {
 }
 /*09.10.15*/
 div .level-0{
-    margin-left: -5px;
+    /*margin-left: -5px;*/
 }
 div .level-0 > label  {
     font-weight: bold;
