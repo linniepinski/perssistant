@@ -477,7 +477,7 @@ function today_page(){
 
                     $str = $post_meta['date_interview_1'][0];
                     if ($str > time() && $str < $tomorrow){
-                        echo '<strong><u>'. date('m/d/Y g:i A',$str).'</strong></u>';
+                        echo '<strong>'. date('m/d/Y g:i A',$str).'</strong>';
                     } elseif ($str < time()){
                         ?>
                         <label style="color: red">Expired</label>
@@ -494,7 +494,7 @@ function today_page(){
 
                     $str = $post_meta['date_interview_2'][0];
                     if ($str > time() && $str < $tomorrow){
-                        echo '<strong><u>'. date('m/d/Y g:i A',$str).'</strong></u>';
+                        echo '<strong>'. date('m/d/Y g:i A',$str).'</strong>';
                     } elseif ($str < time()){
                         ?>
                         <label style="color: red">Expired</label>
@@ -511,7 +511,7 @@ function today_page(){
 
                     $str = $post_meta['date_interview_3'][0];
                     if ($str > time() && $str < $tomorrow){
-                        echo '<strong><u>'. date('m/d/Y g:i A',$str).'</strong></u>';
+                        echo '<strong>'. date('m/d/Y g:i A',$str).'</strong>';
                     } elseif ($str < time()){
                         ?>
                         <label style="color: red">Expired</label>
@@ -578,7 +578,7 @@ class interview extends AE_PostAction
                  'msg' => 'error'
              ));
          }
-     wp_die(); 
+     wp_die();
  }
  function interview_settings(){
      if ( ae_user_role() == 'administrator'){

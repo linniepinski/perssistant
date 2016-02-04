@@ -237,9 +237,17 @@ function chatroom_loadprev() {
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
         },
         success: function (data) {
-            jQuery("#loadprev").after(data);
-            status_chat('Success!', ' Message history loaded. .', 'alert-success');
-            jQuery("#loadprev").removeClass("disabled");
+            console.log(data);
+            if(data.status == true){
+                if(data.type == 'empty'){
+                    jQuery("#loadprev").remove();
+                    status_chat('', data.msg, 'alert-warning');
+                }
+            }else{
+                jQuery("#loadprev").after(data);
+                status_chat('Success!', ' Message history loaded.', 'alert-success');
+                jQuery("#loadprev").removeClass("disabled");
+            }
         },
         error: function (errorThrown) {
             status_chat('Error!', 'Something went wrong.', 'alert-danger');

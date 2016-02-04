@@ -19,7 +19,6 @@ the_post();
         <!-- block control  -->
         <div class="row block-posts">
             <div class="col-md-12 col-sm-12 col-xs-12 posts-container" id="left_content">
-
                     <?php
                     the_content();
                     wp_link_pages( array(
@@ -29,7 +28,6 @@ the_post();
                         'link_after'  => '</span>',
                     ) );
                     ?>
-
                     <div class="clearfix"></div>
                     <?php /*
 		        <div class="latest-pages">
@@ -44,7 +42,6 @@ the_post();
     </div>
 <div style="display: none">
 <?php
-
 get_footer();
 ?>
     </div>
