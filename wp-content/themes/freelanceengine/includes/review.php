@@ -277,7 +277,7 @@ class Fre_ReviewAction extends AE_Base
         if ($status !== 'complete') {
             wp_send_json(array(
                 'succes' => false,
-                'msg' => __('You can\'t not reivew on this project.', ET_DOMAIN)
+                'msg' => __('You can\'t not review on this project.', ET_DOMAIN)
             ));
         }
         

@@ -5213,6 +5213,7 @@ b.currency  {
 }
 .content-search-form-top-wrapper .currency {
     float: right;
+    color: white;
 }
 /* * Page Post Places style * -------------------------------------------------- */.post-place-warpper  {
         display:  block;
