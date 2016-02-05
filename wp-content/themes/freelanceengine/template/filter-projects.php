@@ -6,7 +6,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
 <div class="header-sub-wrapper">
     <div class="container box-shadow-style-theme search-form-top">
         <div class="row">
-            <div class="col-md-15">
+            <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top"><?php _e('Category', ET_DOMAIN); ?></h2>
 
@@ -37,7 +37,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 </div>
             </div>
 
-            <div class="col-md-15">
+            <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
                         <h2 class="title-search-form-top"><?php _e('Keyword', ET_DOMAIN) ?></h2>
@@ -48,7 +48,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 </div>
             </div>
 
-            <div class="col-md-15">
+            <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top"><?php _e("Project Type", ET_DOMAIN); ?></h2>
 
@@ -72,19 +72,19 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             <?php
             $max_slider = ae_get_option('fre_slide_max_budget', 2000);
             ?>
-            <div class="col-md-15">
+            <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top"><?php _e("Budget", ET_DOMAIN); ?></h2>
                     <input id="et_budget" type="text" name="et_budget" class="slider-ranger" value=""
                            data-slider-min="0"
                            data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5"
                            data-slider-value="[0,<?php echo $max_slider; ?>]"
-                        />
+                    />
                     <b class="currency"><?php echo fre_price_format($max_slider) ?></b>
                     <input type="hidden" name="budget" id="budget" value=""/>
                 </div>
             </div>
-            <div class="col-md-15">
+            <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="skill-control">
                         <h2 class="title-search-form-top"><?php _e('Your Skills', ET_DOMAIN) ?></h2>
@@ -111,6 +111,17 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                                                     */
                             ?>
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="content-search-form-top-wrapper">
+                    <div class="reset-control">
+                        <h2 class="title-search-form-top"><?php _e('Reset filters', ET_DOMAIN) ?></h2>
+
+                        <button type="button" class="btn btn-primary btn-block btn-reset-filters">
+                            Reset
+                        </button>
                     </div>
                 </div>
             </div>
@@ -248,7 +259,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 }
             }
         }
-        else  {
+        else {
             var current = jQuery(this).attr('class').split(" ");
             if (current[3] == 'level-0') {
                 parent_category = current[1];
@@ -325,23 +336,32 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
 
     jQuery('#category-modal').on('hidden.bs.modal', function () {
         var count = jQuery("#category-parent-checkbox :checkbox").length;
+        var count_checked = jQuery("#category-all :checked,#category-parent-checkbox :checked").length;
         var htmloutput_filters = '';
-        jQuery("#category-parent-checkbox :checkbox").each(function (index) {
-            var optionthis = jQuery("option[value='" + jQuery(this).attr('value') + "']");
-            var current_value = jQuery(this).attr('value');
-            if (jQuery(this).attr('checked') == 'checked') {
-                varthis = jQuery("option[value='" + current_value + "']");
-                varthis.attr("selected", "selected");
-                htmloutput_filters += '<li ' + 'data-parent="' + current_value + '"' + '><span>' + varthis.text() + '</span><a href="javascript:void(0);" class="delete" onclick="del_filter(\''+current_value+'\')"><i class="fa fa-times"></i></a></li>'
-               //console.log(jQuery("option[value='" + current_value + "']").text());
-            } else {
-                jQuery("option[value='" + current_value + "']").removeAttr("selected");
-            }
-            if (index === count - 1) {
-                optionthis.change();
-            }
-        });
-//        var tags_filter_list = jQuery('.category-filters-list > ul');
+        if (count_checked == 1 && jQuery("#category-all :checked").length == 1) {
+            var options = jQuery('#project_category > option');
+            options.each(function (index) {
+                jQuery(this).removeAttr('selected');
+            });
+            jQuery('#project_category').change();
+        } else {
+            jQuery("#category-parent-checkbox :checkbox").each(function (index) {
+                var optionthis = jQuery("option[value='" + jQuery(this).attr('value') + "']");
+                var current_value = jQuery(this).attr('value');
+                if (jQuery(this).attr('checked') == 'checked') {
+                    varthis = jQuery("option[value='" + current_value + "']");
+                    varthis.attr("selected", "selected");
+                    htmloutput_filters += '<li ' + 'data-parent="' + current_value + '"' + '><span>' + varthis.text() + '</span><a href="javascript:void(0);" class="delete" onclick="del_filter(\'' + current_value + '\')"><i class="fa fa-times"></i></a></li>'
+                    //console.log(jQuery("option[value='" + current_value + "']").text());
+                } else {
+                    jQuery("option[value='" + current_value + "']").removeAttr("selected");
+                }
+                if (index === count - 1) {
+                    optionthis.change();
+                }
+            });
+        }
+
         jQuery('.category-filters-list > ul').html(htmloutput_filters);
         jQuery('.open-filter-list-project').text('Open');
         if (jQuery('.category-filters-list > ul').height() < 40) {
@@ -357,9 +377,9 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             notice_type: 'success'
         });
     });
-//    jQuery('.category-filters-list').bind("DOMSubtreeModified", function() {
-////        alert("tree changed");
-//    });
+    //    jQuery('.category-filters-list').bind("DOMSubtreeModified", function() {
+    ////        alert("tree changed");
+    //    });
     jQuery('.open-filter-list-project').on('click', function () {
         jQuery('.category-filters-list > ul').toggleClass('all-hidden');
         if (jQuery('.category-filters-list > ul').hasClass('all-hidden')) {
@@ -368,10 +388,53 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             jQuery(this).text('Hide')
         }
     });
-    function del_filter(val){
-        console.log(val);
+    function del_filter(val) {
+
         jQuery("option[value='" + val + "']").removeAttr("selected").change();
-        jQuery("input[value='"+val+"'").removeAttr('checked');
-        jQuery("li[data-parent='"+val+"']").remove();
+        jQuery("input[value='" + val + "'").removeAttr('checked');
+        jQuery("li[data-parent='" + val + "']").remove();
     }
+
+    jQuery('.btn-reset-filters').on('click', function () {
+        //reset category list
+        var categories = jQuery('#project_category > option');
+        categories.each(function (index) {
+            jQuery(this).removeAttr('selected');
+        });
+        jQuery('#category-all :checkbox').attr('checked', 'checked');
+        jQuery("#category-parent-checkbox :checked").each(function (index) {
+            jQuery(this).removeAttr('checked');
+        });
+        jQuery('.category-filters-list > ul').html('');
+        //reset search
+        jQuery('.header-sub-wrapper').find('.search').removeAttr('value').text('').keyup();
+        ;
+        //reset types
+        jQuery("#project_type > option").each(function (index) {
+            jQuery(this).removeAttr('selected');
+        });
+        jQuery("#project_type > option[value='']").attr('selected', 'selected');
+        jQuery('#project_type_chosen > a > span').text('All types');
+        //reset range values
+        jQuery('.slider-track').contents().first()
+            .css("left", "0%")
+            .css("width", "100%")
+            .next()
+            .css("left", "0%")
+            .next()
+            .css("left", "100%");
+        var for_tooltip_left = (jQuery('.slider').width() - jQuery('.slider > .tooltip').width()) / 2;
+        var input_range_budget = jQuery('#et_budget');
+        jQuery('.slider > .tooltip')
+            .css("top", "-30")
+            .css("left", for_tooltip_left);
+        jQuery('.slider').find('.tooltip-inner').text(input_range_budget.attr('data-slider-min') + '  :  ' + input_range_budget.attr('data-slider-max'));
+        jQuery('#et_budget').removeAttr('value').change();
+        //reset skills
+        jQuery('.skill-item a.delete').click();
+        jQuery('#skills_list').html('');
+        //reset init
+        jQuery('#project_category').change();
+
+    });
 </script>
