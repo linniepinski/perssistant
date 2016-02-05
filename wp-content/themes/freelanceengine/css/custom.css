@@ -6197,7 +6197,7 @@ input[type=checkbox], input[type=radio]{width: auto!important;}
 .page-id-597 .wpb_wrapper .pricing-container{padding: 0!important; }
 .wpb_wrapper .highlighted{ text-align: center;margin: 0 auto;width: 28%;display: inherit;padding: 2%;font-size: 23px;}
 .info-bidding .number-price-project .btn-accept-bid {}
-.saveCardw .form-group-control.error .message, .form-group label.error { font-size: 11px;color: #E18972;margin-top: 10px; display: inline-block;
+.saveCardw .form-group-control.error .message, .form-group label.error { font-size: 11px;color: #E18972; display: inline-block;
     margin-right: 10px;}
   .saveCardw  label {margin-bottom: 10px}
 

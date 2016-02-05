@@ -31,18 +31,17 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                         later</label>
                                 </div>
                                 <script>
-
                                     jQuery(document).ready(function () {
                                         jQuery('.checkbox1').change(function () {
 
                                             if (jQuery(this).is(':checked')) {
-                                                jQuery('#bid_budget').removeClass('required').removeAttr('value').hide();
+                                                jQuery('#bid_budget').removeClass('required').removeAttr('value').parent().hide();
 //                                                    jQuery('#bid_budget').val('0');
 //                                                    jQuery('#bid_budget').text('0');
 //                                                    jQuery('#bid_budget').attr('type','hidden');
                                             }
                                             else {
-                                                jQuery('#bid_budget').addClass('required').removeAttr('value').show();
+                                                jQuery('#bid_budget').addClass('required').removeAttr('value').parent().show();
 
 //                                                    jQuery('#bid_budget').attr('type','number');
 //                                                    jQuery('#bid_budget').val('');
@@ -54,8 +53,11 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                     });
 
                                 </script>
-                                <input type="number" name="bid_budget" id="bid_budget"
-                                       class="form-control required number" min="1"/></div>
+                                <div class="form-group">
+                                    <input type="number" name="bid_budget" id="bid_budget"
+                                           class="form-control required number" min="1"/></div>
+                                </div>
+
                             <div class="clearfix"></div>
                             <div class="form-group"><label for="bid_time"><?php _e('Deadline', ET_DOMAIN); ?></label>
 
