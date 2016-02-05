@@ -422,7 +422,9 @@ class AE_Menu extends AE_Page
                     'png' => 'image/png',
                     'bmp' => 'image/bmp',
                     'tif|tiff' => 'image/tiff',
-                    // 'doc|docx' => 'application/msword' ,
+                    'doc|docx' => 'application/msword' ,
+                    'ppt' => 'application/vnd.ms-powerpoint' ,
+                    'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation' ,
                     // 'pdf' => 'application/pdf',
                     // 'zip' => 'multipart/x-zip'
                 ));
