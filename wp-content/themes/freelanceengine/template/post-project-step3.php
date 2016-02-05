@@ -172,7 +172,7 @@
                         <label for="carousel_browse_button" class="control-label title-plan">
                             <?php _e("Attachment", ET_DOMAIN); ?><br/>
                             <span>
-                            <?php _e("File extension: Png, Jpg, Pdf, Zip", ET_DOMAIN); ?>
+                            <?php _e("File extension: Png, Jpg, Pdf, Zip, Ppt,Doc", ET_DOMAIN); ?>
                             </span>
                         </label>
                     </div>

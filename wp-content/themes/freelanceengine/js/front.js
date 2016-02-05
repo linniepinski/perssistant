@@ -2812,7 +2812,7 @@
 
 	                model: view.model,
 
-	                extensions : 'pdf,doc,docx,png,jpg,gif,zip'
+	                extensions : 'pdf,doc,docx,png,jpg,gif,zip,ppt,pptx'
 
 	            });
 
