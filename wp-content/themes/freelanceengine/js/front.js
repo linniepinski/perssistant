@@ -1783,7 +1783,9 @@
 
 			initialize: function() {
 
-				this.user    = AE.App.user;   
+				this.user    = AE.App.user;
+
+				this.LoadingButtonNew = new Views.LoadingButtonNew();
 
 				this.blockUi = new Views.BlockUi();
 
@@ -1940,7 +1942,7 @@
 
 						beforeSend: function() {
 
-							view.blockUi.block(button);
+							view.LoadingButtonNew.loading(button);
 
 							form.addClass('processing');
 
@@ -1948,7 +1950,7 @@
 
 						success: function(user, status, jqXHR) {
 
-							view.blockUi.unblock();
+							view.LoadingButtonNew.finish(button);
 
 							form.removeClass('processing');
 
@@ -2948,7 +2950,7 @@
 
 	                this.model = new Models.Bid();
 
-	                this.model.set('post_parent', 2858);
+	                //this.model.set('post_parent', 2858); //???
 
 	            }
 
@@ -3284,7 +3286,7 @@
 // console.log($(window).scrollTop());
             var st = $(this).scrollTop();
 
-            if($(window).scrollTop() > $el.height()  ) {
+            if($(window).scrollTop() > $el.height() && $(document).height() > 1000 ) {
 
 //				$el.addClass("hidden-sticky", 1000, "linear");
                 if (st > lastScrollTop){

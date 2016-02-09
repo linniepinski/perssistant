@@ -360,8 +360,8 @@ get_header();
                                                     }
                                                 } ?>
                                                 <div class="form-group">
-                                                    <input type="submit" class="btn-submit btn-sumary" name=""
-                                                           value="<?php _e('Save Details', ET_DOMAIN) ?>">
+                                                    <button type="submit" class="btn-submit btn-sumary"
+                                                           ><?php _e('Save Details', ET_DOMAIN) ?></button>
                                                 </div>
                                             </form>
                                         </div>
@@ -561,8 +561,7 @@ get_header();
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
-                                                    <input type="submit" class="btn-submit btn-sumary" name=""
-                                                           value="<?php _e('Save Details', ET_DOMAIN) ?>">
+                                                    <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', ET_DOMAIN) ?></button>
                                                 </div>
                                             </form>
                                         </div>
