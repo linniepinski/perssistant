@@ -15,7 +15,7 @@ global $post;
 get_header();
 the_post();
 ?>
-    <div class="container-fluid page-container">
+    <div class="container page-container">
         <!-- block control  -->
         <div class="row block-posts">
             <div class="col-md-12 col-sm-12 col-xs-12 posts-container" id="left_content">
