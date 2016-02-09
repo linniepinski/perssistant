@@ -637,7 +637,7 @@ $("a.popup-login").trigger('click');
             },
             initialize: function() {
                 AE.Views.Modal_Box.prototype.initialize.apply(this, arguments);
-                this.blockUi = new Views.BlockUi();
+                this.LoadingButtonNew = new Views.LoadingButtonNew();
                 $("form#bid_form").validate({
                     ignore: "",
                     rules: {
@@ -664,10 +664,11 @@ $("a.popup-login").trigger('click');
                     type: 'post',
                     data: data,
                     beforeSend: function() {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
+//return false;
                     },
                     success: function(res) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         AE.pubsub.trigger('ae:notification', {
                             msg: res.msg,
                             notice_type: res.success

@@ -492,6 +492,38 @@ window.AE = window.AE || {};
         }
 
     });
+    AE.Views.LoadingButtonNew = Backbone.View.extend({
+        dotCount: 3,
+        isLoading: false,
+        text_before: '',
+        initialize: function () {
+
+
+        },
+        loading: function (target) {
+
+            target.attr('disabled', 'disabled');
+            target.addClass('disabled');
+
+            this.text_before = target.text();
+//if (target)
+    console.log(target.tagName);
+            target.text("Loading");
+            target.append('<i class="fa fa-refresh custom-loader"></i>');
+
+        },
+        finish: function (target) {
+
+            target.removeClass('disabled');
+            target.removeAttr('disabled');
+            target.text(this.text_before);
+        }
+
+    });
+
+
+
+
 
     // View: Modal Box
 
