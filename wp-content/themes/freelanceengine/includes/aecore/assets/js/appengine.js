@@ -3197,6 +3197,8 @@ window.AE = window.AE || {};
             // init block ui
 
             this.blockUi = new Views.BlockUi();
+            this.LoadingButtonNew = new Views.LoadingButtonNew();
+
 
             this.formValidate();
 
@@ -3733,14 +3735,16 @@ window.AE = window.AE || {};
                             jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols<i class="fa fa-exclamation-triangle"></i></span>');
                             return false;
                         }
+                        view.LoadingButtonNew.loading($target.find('button.btn-submit-login-form'));
 
-                        view.blockUi.block($target.find('button.btn-submit-login-form'));
+                       // view.blockUi.block($target.find('button.btn-submit-login-form'));
 
                     },
 
-                    success: function(model, res) { 
+                    success: function(model, res) {
+                        view.LoadingButtonNew.finish($target.find('button.btn-submit-login-form'));
 
-                        view.blockUi.unblock();
+                        //view.blockUi.unblock();
 
                         if (res.success) {
 
