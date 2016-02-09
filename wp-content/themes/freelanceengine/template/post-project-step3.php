@@ -27,7 +27,6 @@
 	<p class="step-heading active">
     	<span class="number-step"><?php if($step > 1 ) echo $step; else echo '<i class="fa fa-rocket"></i>'; ?></span>
         <span class="text-heading-step"><?php _e("Enter your project details", ET_DOMAIN); ?></span>
-        <i class="fa fa-caret-right"></i>
     </p>
     <div class="step-content-wrapper content" style="<?php if($step != 1) echo "display:none;" ?>" >
     	<form class="post" role="form">
@@ -74,11 +73,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="hours_limit" class="control-label title-plan">
-                            <?php printf(__("Limit hours per week (%s)", ET_DOMAIN), fre_currency_sign(false) ); ?>
+                            <?php printf(__("Limit hours per week", ET_DOMAIN) ); ?>
                         </label>
                     </div>
                     <div class="col-sm-8">
-                        <input step="2" disabled required type="number" class="input-item form-control text-field is_number" id="hours_limit" placeholder="<?php _e("Hours_limit", ET_DOMAIN); ?>" name="hours_limit">
+                        <input step="1" min="1" disabled required type="number" class="input-item form-control text-field is_number" id="hours_limit" placeholder="<?php _e("Hours limit", ET_DOMAIN); ?>" name="hours_limit">
                     </div>
                 </div>
             </div>
