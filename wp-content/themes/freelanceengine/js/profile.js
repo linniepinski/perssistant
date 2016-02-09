@@ -50,6 +50,7 @@
         initialize: function () {
             var view = this;
             this.blockUi = new Views.BlockUi();
+            this.LoadingButtonNew = new Views.LoadingButtonNew();
             this.user = AE.App.user;
             //get id from the url
             var hash = window.location.hash;
@@ -326,11 +327,11 @@
                 this.user.set('do', 'profile');
                 this.user.request('update', {
                     beforeSend: function () {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
                         // trigger event process authentication
                         AE.pubsub.trigger('ae:user:account', profile, status, jqXHR);
@@ -392,7 +393,7 @@
             if (this.$('form#profile_form').valid() && !form.hasClass("processing")) {
                 this.profile.save('', '', {
                     beforeSend: function () {
-                        count = jQuery('#about_content').text().replace(/(<([^>]+)>)/ig,"").length
+                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length
                         //count = count.replace(d, "");
 
                         if (count >= 250) {
@@ -402,11 +403,14 @@
                             jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols<i class="fa fa-exclamation-triangle"></i></span>');
                             return false;
                         }
-                        view.blockUi.block(button);
+
+                        view.LoadingButtonNew.loading(button);
+
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
+
                         form.removeClass('processing');
                         // trigger event process authentication
                         AE.pubsub.trigger('ae:user:profile', profile, status, jqXHR);
@@ -1124,7 +1128,7 @@ function refreshcountcompleteFreelancer() {
         htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Country" (+10%)</p>';
     }
 
-    if (jQuery("iframe#about_content_ifr").contents().find('p').text().trim() !== '' && jQuery("iframe#about_content_ifr").contents().find('p').text().trim().length > 250) {
+    if (jQuery("iframe#about_content_ifr").contents().find('body').text().trim() !== '' && jQuery("iframe#about_content_ifr").contents().find('body').text().trim().length > 250) {
         percent += 10;
     }
     else {
