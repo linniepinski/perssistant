@@ -89,7 +89,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                        <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span class="avatar-and-name"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -102,7 +102,7 @@
                                    
                                    <li role="presentation" class="hidden-xs hidden-sm">
 
-                                        <span  class="avatar-and-name" style="color: #333;"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret" style="border-top: 4px solid #000;"></span>
@@ -168,7 +168,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                    <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                    <span class="avatar-and-name"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -181,7 +181,7 @@
                                    
                                    <li role="presentation" class="hidden-xs hidden-sm">
 
-                                        <span  class="avatar-and-name" style="color: #333;"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -376,7 +376,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                        <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
+                                        <span class="avatar-and-name"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -389,7 +389,7 @@
                                    
                                    <li role="presentation">
 
-                                        <span  class="avatar-and-name" style="color: #333;"><i class="fa fa-search"></i><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret" style="border-top: 4px solid #000;"></span>
@@ -456,7 +456,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                        <span class="avatar-and-name"><i class="fa fa-search"></i><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
+                                        <span class="avatar-and-name"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -469,7 +469,7 @@
                                    
                                     <li role="presentation" >
 
-                                        <span  class="avatar-and-name" style="color: #333;"><i class="fa fa-search"></i><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
 
 
                                     <span class="caret"></span>
