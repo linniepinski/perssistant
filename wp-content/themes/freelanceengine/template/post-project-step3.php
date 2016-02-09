@@ -181,7 +181,7 @@
                             <li>
                                 <div class="plupload_buttons" id="carousel_container">
                                     <span class="img-gallery" id="carousel_browse_button">
-                                        <a href="#" class="add-img"><?php _e("Attach file", ET_DOMAIN); ?> <i class="fa fa-plus"></i></a>
+                                        <a href="#" class="add-img"><i class="fa fa-paperclip"></i> <?php _e("Attach file", ET_DOMAIN); ?></a>
                                     </span>
                                 </div>
                             </li>
