@@ -116,12 +116,12 @@ if(!function_exists('fre_project_button')) {
 function ae_edit_post_button ($post) {
 	if($post->post_status == 'pending'){ ?>
         <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i></a>
+        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
     <?php } ?>
 
     <?php if($post->post_status == 'publish'){ ?>
         <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i></a>
+        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
         <a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
     <?php } ?>
     <?php if($post->post_status == 'archive'){ ?>
@@ -147,12 +147,12 @@ function ae_js_edit_post_button () {
 ?>
 	<# if(post_status == 'pending'){ #>
         <a data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i></a>
+        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
     <# } #>
 
     <# if(post_status == 'publish'){ #>
         <a data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i></a>
+        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
         <a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
     <# } #>
     <# if(post_status == 'draft'){ #>
