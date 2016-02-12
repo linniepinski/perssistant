@@ -48,7 +48,7 @@ $current_user = wp_get_current_user();
                                value="Send message">
 
 
-                        <?php
+                       <?php
                         wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
 
 

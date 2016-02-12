@@ -101,6 +101,9 @@ margin-left: 10px;
 .message_box_chat{
     height: initial;
 }
+#search_chat .count-matches{
+    display: none;
+}
 .item_contact{
 
 }
@@ -161,6 +164,9 @@ margin-left: 10px;
 }
 .count-chat:after{
     /*content: "new";*/
+}
+.status-online{
+    margin-right: 10px;
 }
 .online{
 color: green;

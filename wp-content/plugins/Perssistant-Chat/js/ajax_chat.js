@@ -37,7 +37,6 @@ function showRequest(formData, jqForm, options) {
         status_chat('Wait...', ' Message sending.', 'alert-info');
         return true;
     }
-
 }
 function showResponse(responseText, statusText, xhr, $form) {
     jQuery('.panell').remove();
@@ -106,6 +105,7 @@ function chatroom_check_online() {
         },
         success: function (data) {
             jQuery("section.sieve-custom .mCSB_container").html(data);
+            CountSearchMatches();
             setTimeout("chatroom_check_online()", 60000);
         },
         error: function (errorThrown) {
@@ -278,10 +278,8 @@ function resizeChat() {
 }
 function OnKeyCodeEvents() {
     jQuery('input.inter-search').keydown(function(e) {
-        if(e.keyCode == 13) { // enter key was pressed
-            // run own code
-            console.log('ok2');
-            return false; // prevent execution of rest of the script + event propagation / event bubbling + prevent default behaviour
+        if(e.keyCode == 13) {
+            return false;
         }
     });
     jQuery('.message_box_chat').on('keydown', function (event) {
@@ -368,6 +366,28 @@ function invate_freelancer(user_id_receiver, user_id_sender, project_id_invate, 
     jQuery('#popup_invate_freelancer_to_chat').modal('show');
     centerModals(jQuery("#popup_invate_freelancer_to_chat"));
 }
+function Init_CountSearchMatches(){
+    jQuery('.inter-search').focus(function () {
+        if (jQuery('.inter-search').val().length > 0) {
+            jQuery('.count-matches').fadeIn('slow');
+        }
+    }).blur(function () {
+        jQuery('.count-matches').fadeOut('fast');
+    });
+
+}
+
+function CountSearchMatches(){
+    var label_output = jQuery('.count-matches');
+    var count_search_result = jQuery('.sieve .item_contact:visible').length;
+    text_output = 'Matching results : <span>' + count_search_result + '</span>';
+    label_output.html(text_output);
+    if (jQuery('.inter-search').val().length > 0) {
+        label_output.fadeIn('slow');
+    }else{
+        label_output.fadeOut('fast');
+    }
+}
 
 function InitGUI() {
     resizeChat();
@@ -390,6 +410,8 @@ function InitGUI() {
         selector: '[data-toggle=tooltip]'
     });
     jQuery("section.sieve").sieve({ itemSelector: "div" });
+    Init_CountSearchMatches();
+
 }
 
 jQuery(window).on('resize', function () {
@@ -494,14 +516,15 @@ function sendNotification(title, options) {
             container = $(this);
             settings = $.extend({
                 searchInput: null,
-                searchTemplate: "<div id='search_chat' class='form-group'><label>Search contact:</label> <input type='text' class='inter-search form-control'></div>",
+                searchTemplate: "<div id='search_chat' class='form-group'><label>Search contact:</label> <input type='text' class='inter-search form-control'><div class='count-matches'></div></div>",
                 itemSelector: "tbody tr",
                 textSelector: null,
                 toggle: function (item, match) {
                     return item.toggle(match);
                 },
                 complete: function () {
-
+                    console.log('wtf');
+                    CountSearchMatches();
                 }
             }, options);
             if (!settings.searchInput) {

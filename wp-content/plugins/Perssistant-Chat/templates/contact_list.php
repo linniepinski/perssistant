@@ -70,10 +70,10 @@ if (!empty($user_query->results)) {
                 $time_diff = time() - (int)$time_last[0];
             }
             if ($time_diff == null OR $time_diff > 3600) {
-                $class = '<span class="pull-right icon-circle offline"></span>';
+                $class = '<span class="status-online pull-right icon-circle offline"></span>';
             } elseif ($time_diff > 600) {
-                $class = '<span class="pull-right icon-circle afk"></span>';
-            } else $class = '<span class="pull-right icon-ok-circled online"></span>';
+                $class = '<span class="status-online pull-right icon-circle afk"></span>';
+            } else $class = '<span class="status-online pull-right icon-ok-circled online"></span>';
 
             echo '<div class="item_contact" id_contact="' . $user->ID . '"><p>' . get_avatar($user->ID, 35) . '    ' . $user->display_name.' '.$count_miss.' ' . $class . '</p></div> ' . "\n";
             unset($time_diff);
@@ -84,7 +84,9 @@ if (!empty($user_query->results)) {
    //
 }
 } else {
-    echo 'No users found.';
+   // echo 'No users found.';
+    echo '<div class="no-users"><p>No users found.</p></div> ' . "\n";
+
 }
 
 /*$args = array(

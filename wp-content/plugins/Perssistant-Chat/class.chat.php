@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package ukrosoft-chat
  */
@@ -19,7 +18,6 @@ class chat
 
     public static function Init()
     {
-
         //global $chat_require_capabilities;
         //var_dump(get_post_meta(1474,'unreadInvitation',true));
         //var_dump(get_post(get_post_meta(1481,'unreadInvitation',true)));
@@ -119,10 +117,7 @@ class chat
                 $where .= $wpdb->prepare(" AND {$wpdb->posts}.ID {$cmp} %d ", $pid);
             }
             return $where;
-
         }, 10, 2);
-
-
     }
 
     function wpse119881_get_author($post_id = 0)
@@ -421,7 +416,6 @@ class chat
             <?php
             }
         } else {
-
 //            echo '<div class="panell panel-primary">
 //                    <div class="panel-body">
 //                        <h5 style="text-align: center">No message here</h5>
@@ -478,8 +472,6 @@ class chat
 
     public static function myajax_notifications_everywhere()
     {
-
-
         $current_user = wp_get_current_user();
         $last_check = get_user_meta($current_user->ID, 'last_check_chat_id');
         if (!isset($last_check)) {
@@ -577,13 +569,7 @@ class chat
             'orderby' => 'post_date',
             'order' => 'ASC',
         );
-
-
-
-
         $products = new WP_Query($args);
-
-        //var_dump($products);
 
         if ($products->have_posts()) {
             while ($products->have_posts()) {
@@ -613,7 +599,6 @@ class chat
 
                 $message = preg_replace("/(\r\n)/", "<br/>", $message);
                 $responsed = array(
-
                     'what' => 'chat_message',
                     'action' => 'check_updates',
                     'id' => $contact_with_user . '_' . $user_id,
@@ -641,7 +626,6 @@ class chat
                 );
                 $Response = new WP_Ajax_Response($responsed);
                 $Response->send();
-
                 exit;
 
             }

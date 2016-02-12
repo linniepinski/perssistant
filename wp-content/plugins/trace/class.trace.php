@@ -19,7 +19,6 @@ class trace
 
     public static function Init()
     {
-
         wp_register_style('TraceCss', plugin_dir_url(__FILE__) . 'css/trace.css');
         wp_enqueue_style('TraceCss');
 
