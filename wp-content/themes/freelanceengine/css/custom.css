@@ -38,8 +38,21 @@
 }
 
 .list-share-social.addthis_toolbox.addthis_default_style {
-line-height: 50px;
+line-height: 20px;
 text-align:center;
+}
+
+@media (min-width: 992px) {
+    .single-projects .info-project-item .info-item > li {
+        margin-right: 15px;
+        padding: 10px 15px 10px 0;
+    }
+}
+@media (max-width: 1200px) {
+    .single-projects .info-project-item .info-item > li {
+        margin-right: 20px;
+        padding: 10px 20px 10px 0;
+    }
 }
 
 .item_contact{
@@ -1866,6 +1879,10 @@ ul.notification-list {
         padding: 0;
         list-style: none;
 }
+ul.info-item{
+    display: flex;
+    justify-content: space-between;
+}
 .box-shadow-style-theme {
         -moz-border-radius:  1px;
         -webkit-border-radius:  1px;
@@ -2354,7 +2371,8 @@ ul.notification-list {
 }
 .link-clone {
         display: inline-block;
-        margin-right: 20px;
+        /*margin-right: 20px;*/
+    margin-top: 8px;
 }
 .info-project-item ul.info-item li {
         display: inline-block;
@@ -2552,6 +2570,7 @@ ul.notification-list {
 }
 .single-projects .info-project-item .info-item > li:last-child {
         margin-right: 0;
+    border-right: 0;
 }
 .single-projects .info-project-item .info-item > li .number-blue {
         color:  #3397db;
@@ -2569,6 +2588,11 @@ ul.notification-list {
 .single-projects .info-project-item .info-project-item-right .list-share-social li a {
         color:  #656f77;
         font-size:  14px;
+}
+.project-info-social{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .single-projects .info-project-item-details {
         padding: 20px 30px;
@@ -2783,6 +2807,8 @@ blockquote p  {
 }
 .content-require-project  {
         padding-bottom:  20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .single-profile-content .profile-overview h4.title-single-profile,  .single-profile-content .profile-history h4.title-single-profile {
         color:  #2c3d4f;

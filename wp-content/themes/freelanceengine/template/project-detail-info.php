@@ -13,7 +13,7 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
 ?>
 <div class="info-project-item">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
         <?php                                        
                                                
             if( empty($convert->total_bids ) ) {
@@ -97,23 +97,34 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                     } ?>
                     
                 </li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <div class="info-project-item-right">                          
-                <?php  if( fre_share_role() || ae_user_role() == 'employer' || ae_user_role() == 'administrator' ){ ?>
-                <span class="link-clone">
+                    <?php  if( fre_share_role() || ae_user_role() == 'employer' || ae_user_role() == 'administrator' ){ ?>
+                <li>
+
+                        <span class="link-clone">
                     <a href="<?php echo et_get_page_link( array('page_type' => 'submit-project', 'post_title' => __("Submit project", ET_DOMAIN )) ); ?>" title="">
                         <i class="fa fa-plus-circle"></i><?php _e('Create a Project like this',ET_DOMAIN);?>
                     </a>
-                </span> 
-                <?php }  ?>
-                <ul class="list-share-social addthis_toolbox addthis_default_style" >
-                    <li><a href="#" title="" class="addthis_button_facebook"><i class="fa fa-facebook "></i></a></li>
-                    <li><a href="#" title="" class="addthis_button_twitter"><i class="fa fa-twitter "></i></a></li>
-                    <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" title="<?php the_title();?>" target="_blank"  class="addthis_button_google"><i class="fa fa-google-plus"></i></a></li> <!--addthis_button_google_plusone_share !-->
-                </ul>
-            </div>
+                </span>
+                </li>
+
+                    <?php }  ?>
+
+            </ul>
         </div>
+<!--        <div class="col-md-4">-->
+<!--            <div class="info-project-item-right">                          -->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </div> <!-- end .info-project-item !! -->
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-share-social addthis_toolbox addthis_default_style text-center project-info-social" >
+            <li><a href="#" title="" class="addthis_button_facebook"><i class="fa fa-facebook "></i></a></li>
+            <li><a href="#" title="" class="addthis_button_twitter"><i class="fa fa-twitter "></i></a></li>
+            <li><a href="https://plus.google.com/share?url=<?php the_permalink();?>" title="<?php the_title();?>" target="_blank"  class="addthis_button_google"><i class="fa fa-google-plus"></i></a></li> <!--addthis_button_google_plusone_share !-->
+        </ul>
+    </div>
+</div>
