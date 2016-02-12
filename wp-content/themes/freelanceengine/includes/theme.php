@@ -173,8 +173,8 @@ function fre_share_role() {
 }
 
 function check_existing_post_name($title){
-    global $wpdb;
-    $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $title . "'" );
+    global $wpdb,$current_user;
+    $postid = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_title = '" . $title . "' AND post_author = '".$current_user->ID."'");
     if ($postid){
         return true;
     }else{
