@@ -48,6 +48,7 @@
 
     <div class="info-bidding fade-out fade-in bid-item bid-<?php the_ID();?> bid-item-<?php echo $project_status;?>">
 
+        <div class="row">
         <div class="col-md-4 col-xs-4">
 
 
@@ -190,8 +191,11 @@
 
             } 
             ?>
-         </div>   
+         </div>
+            </div>
         <?php if($convert->post_content){ ?>
+<div class="row">
+
 
             <div class="col-md-12">
 
@@ -202,7 +206,7 @@
                 </blockquote>
 
             </div>
-
+</div>
         <?php } ?>
 
 

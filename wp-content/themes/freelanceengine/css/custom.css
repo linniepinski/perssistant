@@ -1050,6 +1050,10 @@ select  {
         border-bottom-color:  transparent;
         top:  35px;
         position:  absolute;
+
+}
+.info-bidding blockquote{
+    margin-top: 12px;
 }
 .list-project li span.ribbon  {
         width: 20px;
@@ -6651,4 +6655,22 @@ input[type=number] {
 }
 input[type=number]:hover {
     -moz-appearance: spinner;
+}
+
+.ribbon:after {
+    border-bottom-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    width: 100%;
+    border-top-width: 7px !important;
+    border-bottom-width: 23px !important;
+    border-left-width: 25px !important;
+    border-right-width: 25px !important;
+    border-left-color: #1c647a !important;
+    border-right-color: #1c647a !important;
+}
+
+@media (max-width: 768px) {
+    .ribbon {
+        width: 50px !important;
+    }
 }
