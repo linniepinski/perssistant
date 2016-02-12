@@ -1,5 +1,4 @@
 <?php
-
 function register_interview()
 {
     add_option('interview_system',false,null,true);
@@ -684,6 +683,4 @@ class interview extends AE_PostAction
 
 
 }
-
 new interview();
-

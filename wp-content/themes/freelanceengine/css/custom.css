@@ -6657,7 +6657,7 @@ input[type=number]:hover {
     -moz-appearance: spinner;
 }
 
-.ribbon:after {
+.info-bidding .ribbon:after {
     border-bottom-color: rgba(0, 0, 0, 0);
     border-style: solid;
     width: 100%;
@@ -6670,7 +6670,7 @@ input[type=number]:hover {
 }
 
 @media (max-width: 768px) {
-    .ribbon {
+    .info-bidding .ribbon {
         width: 50px !important;
     }
 }

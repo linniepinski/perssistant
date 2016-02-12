@@ -409,6 +409,7 @@ class Fre_ProjectAction extends AE_PostAction
         $request = $_REQUEST;
         global $ae_post_factory, $user_ID;
 
+        var_dump($request);
         if (!AE_Users::is_activate($user_ID)) {
             wp_send_json(array(
                 'success' => false,
@@ -434,19 +435,19 @@ class Fre_ProjectAction extends AE_PostAction
             unset($request['et_payment_package']);
         }
 
-        if (isset($request['archive'])) {
-            $request['post_status'] = 'archive';
-        }
-        if (isset($request['publish'])) {
-            $request['post_status'] = 'publish';
-        }
-        if (isset($request['delete'])) {
-            $request['post_status'] = 'trash';
-        }
-
-        if (isset($request['disputed'])) {
-            $request['post_status'] = 'disputed';
-        }
+//        if (isset($request['archive'])) {
+//            $request['post_status'] = 'archive';
+//        }
+//        if (isset($request['publish'])) {
+//            $request['post_status'] = 'publish';
+//        }
+//        if (isset($request['delete'])) {
+//            $request['post_status'] = 'trash';
+//        }
+//
+//        if (isset($request['disputed'])) {
+//            $request['post_status'] = 'disputed';
+//        }
 
         if (isset($request['project_type'])) unset($request['project_type']);
 

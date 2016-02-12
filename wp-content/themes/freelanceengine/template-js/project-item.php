@@ -1,6 +1,6 @@
 <script type="text/template" id="ae-project-loop">
     <div class="row">
-        <div class="col-md-5 col-sm-5 col-xs-7 text-ellipsis">
+        <div class="col-md-4 col-sm-5 col-xs-7 text-ellipsis">
             <a href="{{= author_url }}" class="title-project">
                 {{= et_avatar }}
             </a>
@@ -17,7 +17,7 @@
         <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
             <span>{{= post_date }}</span>
         </div>
-        <div class="col-md-1 col-sm-2 col-xs-4 hidden-xs">
+        <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
             <# if(type_budget == 'hourly_rate'){ #>
                 <span class="budget-project">{{=budget}}/h</span>
                 <# } else { #>
@@ -25,7 +25,7 @@
                     <# } #>
         </div>
         <# if(post_status == 'pending'){ #>
-            <div class="col-md-2 col-sm-2 col-xs-5 text-right">
+            <div class="col-md-2 col-sm-2 col-xs-4 hidden-xs">
                 <a href="#" class="action approve" data-action="approve">
                     <i class="fa fa-check"></i>
                 </a> &nbsp;
