@@ -1115,19 +1115,20 @@ function refreshcountcompleteFreelancer() {
         htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "E-Mail" (+10%)</p>';
     }
     if (jQuery('#paypal').val().trim() !== '') {
-        percent += 10;
+        //percent += 10;
+        percent += 20;
     }
     else {
         temp = "'" + jQuery('#paypal').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+20%)</p>';
     }
 
     if (jQuery('#user_mobile').val().trim() !== '') {
-        percent += 10;
+        //percent += 10;
     }
     else {
         temp = "'" + jQuery('#user_mobile').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field"  onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+10%)</p>';
+        //htmlIncludeDescription += '<p class="focus-field"  onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+10%)</p>';
     }
 
     if (jQuery('[name = "et_professional_title"]').val().trim() !== '') {
@@ -1210,19 +1211,20 @@ function refreshcountcompleteEmployer() {
     }
 
     if (jQuery('#paypal').val().trim() !== '') {
-        percent += 20;
+        //percent += 20;
+        percent += 40;
     }
     else {
         temp = "'" + jQuery('#paypal').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+20%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+40%)</p>';
     }
 
     if (jQuery('#user_mobile').val().trim() !== '') {
-        percent += 20;
+        //percent += 20;
     }
     else {
-        temp = "'" + jQuery('#user_mobile').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+20%)</p>';
+        //temp = "'" + jQuery('#user_mobile').attr('id') + "'";
+        //htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+20%)</p>';
     }
     if (htmlIncludeDescription != '') {
         htmlIncludeDescription = '<br>' + htmlIncludeDescription;
