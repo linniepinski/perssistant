@@ -37,24 +37,56 @@
                 	<div class="clearfix"></div>
                 	<div class="form-group portfolio-skills">
                 		<label><?php _e('Select Skill', ET_DOMAIN) ?></label>
-                		<p>
-	                		<select id="skills" name="skill">
-		                		<?php
+<!--                		<p>-->
+<!--	                		<select id="skills" name="skill">-->
+<!--		                		--><?php
+//
+//		                			if($profile_id) {
+//		                				$skills = wp_get_object_terms( $profile_id, 'skill' );
+//		                			} else {
+//		                				$skills = get_terms( 'skill', array('hide_empty' => false) );
+//		                			}
+//		                			if(!empty($skills)){
+//			                			foreach ($skills as $skill) {
+//			                				echo '<option value="'.$skill->slug.'">'.$skill->name.'</option>';
+//
+//			                			}
+//			                		}
+//		                		?>
+<!--		                	</select>-->
+<!--		                </p>-->
 
-		                			if($profile_id) {
-		                				$skills = wp_get_object_terms( $profile_id, 'skill' );
-		                			} else {
-		                				$skills = get_terms( 'skill', array('hide_empty' => false) );
-		                			}
-		                			if(!empty($skills)){
-			                			foreach ($skills as $skill) {
-			                				echo '<option value="'.$skill->slug.'">'.$skill->name.'</option>';
+							<?php
+							$switch_skill = ae_get_option('switch_skill');
 
-			                			}
-			                		}
-		                		?>
-		                	</select>
-		                </p>
+							if (!$switch_skill) {
+								?>
+								<input class="form-control skill" type="text" id="skill"
+									   placeholder="<?php _e("Skills (max is 10)", ET_DOMAIN); ?>"
+									   name=""
+									   autocomplete="off" class="skill" spellcheck="false">
+								<ul class="skills-list" id="skills_list"></ul>
+								<?php
+							} else {
+								$c_skills = array();
+								if (!empty($current_skills)) {
+									foreach ($current_skills as $key => $value) {
+										$c_skills[] = $value->term_id;
+									};
+								}
+								ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" multiple data-chosen-disable-search="" data-placeholder="' . __(" Skills (max is 10)", ET_DOMAIN) . '"',
+										'class' => 'sw_skill modal-skills required',
+										'hide_empty' => false,
+										'hierarchical' => true,
+										'id' => 'skill',
+										'show_option_all' => false,
+										'selected' => $c_skills
+									)
+								);
+							}
+
+							?>
+
                 	</div>
                 	<div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">

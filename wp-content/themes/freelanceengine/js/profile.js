@@ -674,15 +674,16 @@
         initialize: function () {
             this.user = AE.App.user;
             this.blockUi = new Views.BlockUi();
+            this.LoadingButtonNew = new Views.LoadingButtonNew();
+            jQuery(".modal-skills").chosen({width: "95%"})
             this.initValidator();
             // upload file portfolio image
             this.uploaderID = 'portfolio_img';
             var $container = $("#portfolio_img_container"),
                 view = this;
             //init chosen
-            this.$('#skills').chosen({
-                width: '330px'
-            });
+            this.$(".modal-skills").chosen({width: "95%"})
+
             if (typeof this.portfolio_uploader === "undefined") {
                 this.portfolio_uploader = new AE.Views.File_Uploader({
                     el: $container,
@@ -727,6 +728,11 @@
         },
         setupFields: function () {
             var view = this;
+            view.$(".modal-skills").find('option').each(function () {
+                jQuery(this).removeAttr('selected');
+            });
+            view.$("iframe#post_content_ifr").contents().find('body').html('');
+            view.$(".modal-skills").trigger('chosen:updated');
             this.$('.form-group').find('input').each(function () {
                 $(this).val(view.portfolio.get($(this).attr('name')));
             });
@@ -762,6 +768,11 @@
             /**
              * call validator init
              */
+            //this.$('.modal-skills').chosen({
+            //    max_selected_options: 10,
+            //    inherit_select_classes: true,
+            //    width: '95%',
+            //})
             this.initValidator();
             var form = $(event.currentTarget),
                 button = form.find('button.btn-submit'),
@@ -784,11 +795,11 @@
             if (this.portfolio_validator.form() && !form.hasClass("processing")) {
                 this.portfolio.save('', '', {
                     beforeSend: function () {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
                         form.addClass('processing');
                     },
                     success: function (portfolio, status, jqXHR) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
                         // trigger event process authentication
                         AE.pubsub.trigger('ae:portfolio:create', portfolio, status, jqXHR);
@@ -829,16 +840,18 @@
         initialize: function () {
             this.user = AE.App.user;
             this.blockUi = new Views.BlockUi();
+            this.LoadingButtonNew = new Views.LoadingButtonNew();
             this.initValidator();
             // upload file portfolio image
             this.uploaderID = 'portfolio_img_edit';
+            this.$(".modal-skills").chosen({width: "95%"})
             var $container = $("#portfolio_img_edit_container"),
                 view = this;
             //init chosen
             this.$('#skills').chosen({
                 width: '330px'
             });
-            console.log(this);
+           // console.log(this);
             if (typeof Views.Profile.portfolio_uploader_edit === "undefined") {
                 Views.Profile.portfolio_uploader_edit = new AE.Views.File_Uploader({
                     el: $container,
@@ -883,18 +896,25 @@
         },
         setupFields: function () {
             var view = this;
-
+            view.$(".modal-skills").find('option').each(function () {
+                jQuery(this).removeAttr('selected');
+            })
             this.$('.form-group').find('input').each(function () {
                 $(this).val(view.portfolio.get($(this).attr('name')));
             });
+            console.log(view.collection.model.attributes);
             view.$('#ID').val(view.collection.model.attributes.ID);
             var content = view.collection.model.attributes.post_content;
             view.$('#post_content').val(jQuery('<div>' + view.collection.model.attributes.post_content + '</div>').text());
             view.$('#portfolio_img_edit_thumb').attr('src', view.collection.model.attributes.the_post_thumbnail);
             view.$('#post_title').val(view.collection.model.attributes.post_title);
             view.$('#post_thumbnail').val(0);
-
             view.$("#portfolio_img_thumbnail").html('');
+            jQuery.each(view.collection.model.attributes.skill, function (index, value) {
+                view.$(".modal-skills").find("option[value='" + value + "']").attr('selected', true);
+            });
+            view.$(".modal-skills").trigger('chosen:updated');
+
         },
         resetUploader: function () {
             if (typeof Views.Profile.portfolio_uploader_edit === 'undefined') return;
@@ -926,6 +946,11 @@
             /**
              * call validator init
              */
+            this.$('.modal-skills').chosen({
+                max_selected_options: 10,
+                inherit_select_classes: true,
+                width: '95%',
+            })
             this.initValidator();
             var form = $(event.currentTarget),
                 button = form.find('button.btn-submit'),
@@ -943,11 +968,11 @@
             if (this.portfolio_validator.form() && !form.hasClass("processing")) {
                 this.portfolio.save('', '', {
                     beforeSend: function () {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
                         form.addClass('processing');
                     },
                     success: function (portfolio, status, jqXHR) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
 
                         if (status.success) {
