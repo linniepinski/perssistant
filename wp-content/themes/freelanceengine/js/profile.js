@@ -48,6 +48,7 @@
          * init view setup Block Ui and Model User
          */
         initialize: function () {
+            this.initValidator();
             var view = this;
             this.blockUi = new Views.BlockUi();
             this.LoadingButtonNew = new Views.LoadingButtonNew();
@@ -197,6 +198,16 @@
                     },
                     paypal: {
                         email: true
+                    }
+
+                },
+                messages: {
+                    //name: "Please specify your name",
+                    paypal: {
+                        email: "Email address seems invalid"
+                    },
+                    user_email: {
+                        email: "Email address seems invalid"
                     }
                 }
             });
