@@ -259,7 +259,7 @@ class AE_Users
     public function insert($user_data) {
         
         if (!$user_data['user_login'] || !preg_match('/^[a-z\d_]{2,20}$/i', $user_data['user_login'])) {
-            return new WP_Error('username_invalid', __("Username only lowercase letters (a-z) and numbers are allowed.", ET_DOMAIN));
+            return new WP_Error('username_invalid', __("For username, letters (A-z), numbers(0-9) and underscore are allowed.", ET_DOMAIN));
         }
         if (!isset($user_data['user_email']) || !$user_data['user_email'] || $user_data['user_email'] == '' || !is_email($user_data['user_email']) ) {
             return new WP_Error('email_invalid', __("Email field is invalid.", ET_DOMAIN));
