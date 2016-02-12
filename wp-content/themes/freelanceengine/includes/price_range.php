@@ -30,5 +30,3 @@ function get_project_price_range() {
             . "AND wp_postmeta.meta_key = 'et_budget'");
     return $price_range_args[0];
 }
-?>
-

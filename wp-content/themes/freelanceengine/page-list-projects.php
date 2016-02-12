@@ -50,16 +50,16 @@ get_header();
             	<div class="col-md-12">
                 	<div class="tab-content-project">
                     	<div class="row title-tab-project">
-                            <div class="col-md-5 col-sm-5 col-xs-7">
+                            <div class="col-md-4 col-sm-4 col-xs-7">
                                 <h2><?php _e("PROJECT TITLE", ET_DOMAIN); ?></h2>
                             </div>
                             <div class="col-md-2 col-sm-3 hidden-xs">
                                 <h2><?php _e("BY", ET_DOMAIN); ?></h2>
                             </div>
-                            <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
+                            <div class="col-md-2 col-sm-3 hidden-sm hidden-xs">
                                 <h2><?php _e("POSTED DATE", ET_DOMAIN); ?></h2>
                             </div>
-                            <div class="col-md-1 col-sm-2 hidden-xs">
+                            <div class="col-md-2 col-sm-2 hidden-xs">
                                 <h2><?php _e("BUDGET", ET_DOMAIN); ?></h2>
                             </div>
                         </div>

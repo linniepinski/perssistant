@@ -105,7 +105,7 @@ get_header();
             	<div class="col-md-12">
                 	<div class="tab-content-project">
                     	<div class="row title-tab-project">
-                            <div class="col-md-5 col-sm-5 col-xs-7">
+                            <div class="col-md-4 col-sm-5 col-xs-7">
                                 <span><?php _e("PROJECT TITLE", ET_DOMAIN); ?></span>
                             </div>
                             <div class="col-md-2 col-sm-3 hidden-xs">
@@ -114,7 +114,7 @@ get_header();
                             <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
                                 <span><?php _e("POSTED DATE", ET_DOMAIN); ?></span>
                             </div>
-                            <div class="col-md-1 col-sm-2 hidden-xs">
+                            <div class="col-md-2 col-sm-2 hidden-xs text-center">
                                 <span><?php _e("BUDGET", ET_DOMAIN); ?></span>
                             </div>
                         </div>
