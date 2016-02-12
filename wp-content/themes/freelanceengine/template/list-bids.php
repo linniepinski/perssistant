@@ -2,7 +2,7 @@
 
 /**
 
- * The template for display a list bids of a project 
+ * The template for display a list bids of a project
 
  * @since 1.0
 
@@ -26,13 +26,13 @@ $number_bids    = (int)get_number_bids( get_the_ID() );
 
 add_filter('posts_orderby', 'fre_order_by_bid_status');
 
-$q_bid      = new WP_Query( array(  'post_type' => BID, 
+$q_bid      = new WP_Query( array(  'post_type' => BID,
 
-                                    'post_parent' => get_the_ID(), 
+                                    'post_parent' => get_the_ID(),
 
                                     'post_status' => array('publish','complete', 'accept')
 
-                                ) 
+                                )
 
                             );
 
@@ -67,7 +67,7 @@ $biddata    = array();
         </div>
          <div class="col-md-3 col-xs-3" >
 
-           
+
 
         </div>
 
@@ -81,14 +81,14 @@ $biddata    = array();
 
         if( $q_bid->have_posts() ):
 
-                    
+
 
             global $wp_query, $ae_post_factory, $post;
 
             $post_object = $ae_post_factory->get(BID);
 
 
-            while( $q_bid ->have_posts() ) :$q_bid->the_post(); 
+            while( $q_bid ->have_posts() ) :$q_bid->the_post();
 
                 $convert    = $post_object->convert($post);
 
@@ -96,19 +96,19 @@ $biddata    = array();
 
                 get_template_part('template/bid','item');
 
-            endwhile;           
+            endwhile;
 
-            
+
 
             echo '<div class="paginations-wrapper">';
 
-                $q_bid->query = array_merge(  $q_bid->query ,array('is_single' => 1 ) ) ;   
+                $q_bid->query = array_merge(  $q_bid->query ,array('is_single' => 1 ) ) ;
 
                 ae_pagination($q_bid, get_query_var('paged'), 'load');
 
             echo '</div>';
 
-                   
+
 
         else :
 
@@ -116,45 +116,52 @@ $biddata    = array();
 
         endif;
 
-        ?>                        
+        ?>
 
     </div>
 
 </div>
 
-<input type="hidden" id="project_id" name="<?php echo $project->ID;?>" value="<?php echo $project->ID;?>" />   
+<input type="hidden" id="project_id" name="<?php echo $project->ID;?>" value="<?php echo $project->ID;?>" />
 
 <div class="col-md-4">
 
+    <?php
+    $project_status = $project->post_status;
+    $bid_accept     = get_post_meta($project->ID, 'accepted', true);
+
+    if ($bid_accept &&  $project_status == 'close') {
+    ?>
     <div class="row title-tab-project">
 
         <div class="col-md-12">
-           <?php  if ((ae_user_role($user_ID) == FREELANCER) || !is_user_logged_in()) { ?>
-            <span><?php _e('ABOUT EMPLOYER',ET_DOMAIN);?></span>
-           <?php } else { ?>
-            <span><?php _e('ABOUT VIRTUAL ASSISTANT',ET_DOMAIN);?></span>
-           <?php } ?>
+            <?php if ((ae_user_role($user_ID) == FREELANCER) || !is_user_logged_in()) { ?>
+                <span><?php _e('ABOUT EMPLOYER', ET_DOMAIN); ?></span>
+            <?php } else { ?>
+                <span><?php _e('ABOUT VIRTUAL ASSISTANT', ET_DOMAIN); ?></span>
+            <?php } ?>
 
         </div>
 
     </div>
+    <?php
+}
+
+    if ($bid_accept &&  $project_status == 'close') {
+    ?>
 
     <div class="info-company-wrapper">
 
         <div class="row">
 
             <div class="col-md-12">
-               <?php 
-               
-                $bid_accept     = get_post_meta($project->ID, 'accepted', true);
+               <?php
 
-                $project_status = $project->post_status; 
-                
-                if ($bid_accept &&  $project_status == 'close') {
+
                     if ((ae_user_role($user_ID) == FREELANCER) || !is_user_logged_in()) {
                         fre_display_user_info( $project->post_author );
                     } else {
-                        $bid_accepted           = $project->accepted; 
+                        $bid_accepted           = $project->accepted;
                         $bid_accepted_author    = get_post_field( 'post_author', $bid_accepted);
 
                         $user = get_userdata($bid_accepted_author);
@@ -164,11 +171,11 @@ $biddata    = array();
                         $user_data = $ae_users->convert($user);
 
                         $author_email_verified = (ae_get_option('user_confirm') && get_user_meta($user_data->ID, 'register_status', true) == "unconfirm") ? false : true;
-                        $author_phone_verified = (get_user_meta( $user_data->ID, 'phone', true) != "") ? true : false;                         
+                        $author_phone_verified = (get_user_meta( $user_data->ID, 'phone', true) != "") ? true : false;
 
                         $rating = Fre_Review::freelancer_rating_score($user_data->ID);
 
-                        $profile_id = get_user_meta($user_data->ID, 'user_profile_id', true); 
+                        $profile_id = get_user_meta($user_data->ID, 'user_profile_id', true);
 
                         $hourly_rate_price = get_post_meta($profile_id, 'hour_rate', true);
                         $experience = get_post_meta($profile_id, 'et_experience', true);
@@ -185,8 +192,8 @@ $biddata    = array();
                 <div class="info-company-avatar">
                     <a href="<?php echo get_author_posts_url($user_data->ID); ?>">
                         <span class="info-avatar">
-                            <?php 
-                                echo get_avatar($user_data->ID, 35);                                                      
+                            <?php
+                                echo get_avatar($user_data->ID, 35);
                             ?>
                         </span>
                     </a>
@@ -243,28 +250,28 @@ $biddata    = array();
                         <i class="fa fa-map-marker"></i>
                         <span class="text"><?php _e('Country:',ET_DOMAIN);?></span>
                         <span class="text-right">
-                            <?php 
+                            <?php
                                 echo $arrCountry->country_name;
                             ?>
                         </span>
                     </li>
                 </ul>
-            <?php
-                    }
-                }
-            ?>             
+
 
             </div>
 
         </div>
 
     </div>
-
+                        <?php
+                    }
+    }
+    ?>
 </div>
 
 
 
-<?php 
+<?php
 
 if(!empty($biddata)) {
 
