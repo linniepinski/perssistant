@@ -194,6 +194,9 @@
                     user_email: {
                         required: true,
                         email: true
+                    },
+                    paypal: {
+                        email: true
                     }
                 }
             });
