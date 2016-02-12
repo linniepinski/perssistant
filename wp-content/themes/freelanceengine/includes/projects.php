@@ -409,7 +409,6 @@ class Fre_ProjectAction extends AE_PostAction
         $request = $_REQUEST;
         global $ae_post_factory, $user_ID;
 
-        var_dump($request);
         if (!AE_Users::is_activate($user_ID)) {
             wp_send_json(array(
                 'success' => false,

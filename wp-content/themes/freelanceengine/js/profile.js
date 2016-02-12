@@ -768,11 +768,6 @@
             /**
              * call validator init
              */
-            //this.$('.modal-skills').chosen({
-            //    max_selected_options: 10,
-            //    inherit_select_classes: true,
-            //    width: '95%',
-            //})
             this.initValidator();
             var form = $(event.currentTarget),
                 button = form.find('button.btn-submit'),
