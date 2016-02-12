@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: ANDREY
- * Date: 27.10.15
- * Time: 13:02
- */
 class account_balance
 {
     public static function Init()
@@ -23,13 +16,9 @@ class account_balance
         add_shortcode('paymill', array('account_balance', 'display_paymill_btn'));
         add_shortcode('modal_paymill', array('account_balance', 'get_modal_paymill'));
     }
-
-
-
     public static function get_payment_form()
     {
         echo do_shortcode('[paymill id=99 amount=' . $_POST['custom_amount'] . ' title="Custom amount" custom_description="' . htmlspecialchars($_POST['custom_description']) . '" ]');
-
         wp_die();
     }
 

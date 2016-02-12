@@ -116,7 +116,7 @@ if ($chat_query) {
 
         </div>
 
-    <?php
+   <?php
 
 
     }
