@@ -415,7 +415,7 @@ class Fre_ProjectAction extends AE_PostAction
                 'msg' => __("Your account is pending. You have to activate your account to continue this step.", ET_DOMAIN)
             ));
         };
-        if (check_existing_post_name($request['post_title'])) {
+        if (check_existing_post_name($request['post_title']) && $request['method'] != 'update') {
             wp_send_json(array(
                 'success' => false,
                 'msg' => __("Current title name already exists", ET_DOMAIN)

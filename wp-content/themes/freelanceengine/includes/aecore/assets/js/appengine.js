@@ -1893,7 +1893,6 @@ window.AE = window.AE || {};
             this.options = _.extend(this, options);
 
             this.blockUi = new Views.BlockUi();
-
             if (this.$('.ae_query').length > 0) {
 
                 this.query = JSON.parse(this.$('.ae_query').html());
@@ -2420,7 +2419,7 @@ window.AE = window.AE || {};
 
                     if (res && !res.success) {
 
-                        //view.$('.paginations').remove();
+                        view.$('.paginations').remove();
 
                         view.$('.found_post').html(0);
 
