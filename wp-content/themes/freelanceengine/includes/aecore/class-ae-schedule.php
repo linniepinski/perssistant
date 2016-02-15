@@ -15,10 +15,10 @@ class AE_Schedule extends AE_Base {
 	function __construct( $post_type = 'ad' ) {
 		$this->post_type = $post_type;
 		$this->add_filter( 'cron_schedules',  'add_cron_time');
-		$this->add_action('init', 'schedule_events', 100);
+//		$this->add_action('init', 'schedule_events', 100);
 
-		$this->cron_hook = $this->post_type.'_archived_expireds';
-		$this->add_action( $this->cron_hook,'archive_ad' );
+//		$this->cron_hook = $this->post_type.'_archived_expireds';
+//		$this->add_action( $this->cron_hook,'archive_ad' );
 
 		self::$cron_time	=	3600*4;
 	}
