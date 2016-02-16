@@ -33,7 +33,7 @@ var dologinuser = function () {
 
 				form.trigger('reset');
 
-				window.location.href='/login';
+				window.location.href='/';
 
 			} else {
 				AE.pubsub.trigger('ae:notification', {
