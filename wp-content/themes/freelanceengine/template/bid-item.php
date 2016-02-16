@@ -195,6 +195,8 @@
             </div>
         <?php if($convert->post_content){ ?>
 <div class="row">
+    <p style="text-transform: uppercase" class="title-tab-project"><span>Posted on: <?php echo date('F d,Y g:i a',strtotime($convert->project_post_date)) ?> (<?php echo get_option('timezone_string'); ?>)</span></p>
+
 
 
             <div class="col-md-12">
