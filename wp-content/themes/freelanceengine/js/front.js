@@ -2364,9 +2364,7 @@
 
 	            this.initValidator();
 
-
-
-	            this.$('#project_category').chosen({
+				this.$('#project_category').chosen({
 
 	                width: '100%',
 
@@ -2386,7 +2384,7 @@
 
 				        	inherit_select_classes: false,
 
-				        	width: '95%'
+				        	width: '100%'
 
 		            });	
 
@@ -2484,10 +2482,9 @@
 
 	            view.$el.find('input,textarea,select').each(function() {
 
-	                view.model.set($(this).attr('name'), $(this).val());
+	                view.model.set($(this).attr('name'), $(this).text());
 
 	            });
-
 
 
 	            view.$el.find('input[type=checkbox]').each(function() {
@@ -2626,6 +2623,7 @@
 
 	            this.skill_control.setModel(this.model);
 
+
 	        },
 
 	        /**
@@ -2650,12 +2648,21 @@
 
 	             */
 
-	            form_field.find('input[type="text"],input[type="hidden"], textarea,select').each(function() {
-
+	            form_field.find('input[type="text"],input[type="number"],input[type="hidden"], textarea,select').each(function() {
+//debugger;
 	                var $input = $(this);
 
-	                $input.val(view.model.get($input.attr('name')));
+					if ($input.attr('name') == 'post_title'){
 
+						var elem = document.createElement('textarea');
+						elem.innerHTML = view.model.get($input.attr('name'));
+						var decoded = elem.value;
+						$input.val(decoded);
+
+					}else{
+						$input.val(view.model.get($input.attr('name')));
+
+					}
 	                // trigger chosen update if is select
 
 	                if ($input.get(0).nodeName === "SELECT") $input.trigger('chosen:updated');
