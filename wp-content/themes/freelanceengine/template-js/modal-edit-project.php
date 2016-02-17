@@ -93,9 +93,9 @@
                         <!-- project description -->
                         <div class="form-group">
 
-                            <label for="post_content" class="control-label title-plan"><?php _e("Description", ET_DOMAIN); ?></label>
+                            <label for="edit_projects" class="control-label title-plan"><?php _e("Description", ET_DOMAIN); ?></label>
 
-                            <?php wp_editor( '', 'post_content', ae_editor_settings()  );  ?>
+                            <?php wp_editor( '', 'edit_projects', ae_editor_settings()  );  ?>
 
                         </div>           
                         <div class="clearfix"></div>   

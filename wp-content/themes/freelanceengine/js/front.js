@@ -2361,8 +2361,10 @@
 	            AE.Views.Modal_Box.prototype.initialize.call();
 
 	            this.blockUi = new Views.BlockUi();
+				this.LoadingButtonNew = new Views.LoadingButtonNew();
 
-	            this.initValidator();
+
+				this.initValidator();
 
 				this.$('#project_category').chosen({
 
@@ -2481,9 +2483,22 @@
 	             */
 
 	            view.$el.find('input,textarea,select').each(function() {
+					if($(this).attr('id') == 'post_title'){
+						view.model.set('post_title', $(this).val());
 
-	                view.model.set($(this).attr('name'), $(this).text());
+					}else if ($(this).attr('id') == 'et_budget'){
+						view.model.set('et_budget', $(this).val());
 
+					}else if ($(this).attr('id') == 'edit_projects'){
+						view.model.set('post_content', $(this).val());
+					}else if ($(this).attr('id') == 'skill'){
+						view.model.set('skill', $(this).val());
+					}else if ($(this).attr('id') == 'project_category'){
+						view.model.set('project_category', $(this).val());
+					}else{
+						view.model.set($(this).attr('name'), $(this).text());
+
+					}
 	            });
 
 
@@ -2549,16 +2564,15 @@
 
 		                beforeSend: function() {
 
-		                	view.blockUi.block(button);
-
-		                    //view.loading();
+		                	//view.blockUi.block(button);
+							view.LoadingButtonNew.loading(button);
 
 		                },
 
 		                success: function(result, res, jqXHR) {
 
-		                    view.blockUi.unblock();
-
+		                    //view.blockUi.unblock();
+							view.LoadingButtonNew.finish(button);
 		                    if (res.success) {
 
 		                    	view.closeModal();
@@ -2703,9 +2717,9 @@
 
 	            if (typeof tinyMCE !== 'undefined') {
 
-	                tinymce.EditorManager.execCommand('mceAddEditor', true, "post_content");
+	                tinymce.EditorManager.execCommand('mceAddEditor', true, "edit_projects");
 
-	                tinymce.EditorManager.get('post_content').setContent(view.model.get('post_content'));
+	                tinymce.EditorManager.get('edit_projects').setContent(view.model.get('post_content'));
 
 	            }	          
 
