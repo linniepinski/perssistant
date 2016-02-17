@@ -641,7 +641,7 @@ $("a.popup-login").trigger('click');
                 $("form#bid_form").validate({
                     ignore: "",
                     rules: {
-                        post_content: "required",
+                        bid_content: "required",
                     }
                     // errorPlacement: function(label, element) {
                     //     // position error label after generated textarea

@@ -5630,9 +5630,7 @@ ul.wpb_tabs_nav.profile  > li > a:hover {
 .bid-form input.error  {
 }
 .bid-form label.error  {
-        width:  85%;
-        margin-top:  -25px;
-        position:  absolute;
+        text-align: right;
 }
 .bid-form .wp-editor-container label.error  {
         position:  absolute;
