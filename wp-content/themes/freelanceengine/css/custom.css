@@ -1218,6 +1218,7 @@ select  {
         text-align: right;
         margin:  20px 0 0;
 }
+
 .login-form-header-wrapper .dropdown-menu {
         -moz-border-radius:  2px;
         -webkit-border-radius:  2px;
@@ -1233,6 +1234,12 @@ select  {
         padding: 10px;
         min-width:  200px;
 }
+@media (max-width: 1020px){
+    .login-form-header-wrapper .dropdown-menu {
+        min-width:  190px;
+    }
+}
+
 .dropdown-menu  {
         left:  -11px;
         top:  -60%;
