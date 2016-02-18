@@ -123,10 +123,10 @@ get_header();
 
 			                    $before_string = __("You can also sign in by:", ET_DOMAIN);
 
-			                    ae_render_social_button( array(), array(), $before_string ); 
+			                    ae_render_social_button( array(), array(), $before_string );
 
 			                }
-
+do_action( 'wordpress_social_login' );
 			            ?>
 				</form>	           
 
