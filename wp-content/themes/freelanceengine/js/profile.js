@@ -345,6 +345,7 @@
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
+                        start_refresh_count();
                         view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
                         // trigger event process authentication
@@ -423,8 +424,8 @@
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
+                        start_refresh_count();
                         view.LoadingButtonNew.finish(button);
-
                         form.removeClass('processing');
                         // trigger event process authentication
                         AE.pubsub.trigger('ae:user:profile', profile, status, jqXHR);
@@ -1040,10 +1041,12 @@
 
 jQuery(document).ready(function () {
     if (window.location.pathname == '/profile/') {
-        setInterval("start()", 2500);
+        //setInterval("start()", 2500);
+        setTimeout("start_refresh_count()", 3500);
+        //start_refresh_count();
     }
 });
-function start() {
+function start_refresh_count() {
     if (jQuery('section').hasClass('freelancer')) {
         refreshcountcompleteFreelancer();
     }

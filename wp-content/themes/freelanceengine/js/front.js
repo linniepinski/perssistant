@@ -3286,7 +3286,7 @@
 // console.log($(window).scrollTop());
             var st = $(this).scrollTop();
 
-            if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.25 ) {
+            if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 ) {
 
 //				$el.addClass("hidden-sticky", 1000, "linear");
                 if (st > lastScrollTop){

@@ -56,16 +56,16 @@ if (ae_user_role() != FREELANCER) {
     if ($display_name) $intProfileCompletion += 20;
     if ($user_data->location) $intProfileCompletion += 20;
     if ($user_data->user_email) $intProfileCompletion += 20;
-    if (get_user_meta($user_ID, 'paypal', true)) $intProfileCompletion += 20;
-    if ($user_mobile) $intProfileCompletion += 20;
+    if (get_user_meta($user_ID, 'paypal', true)) $intProfileCompletion += 40;
+    //if ($user_mobile) $intProfileCompletion += 20;
 
     $totalPercent = ($intProfileCompletion * 0.01);
 } else {
     if ($display_name) $intProfileCompletion += 10;
     if ($user_data->location) $intProfileCompletion += 10;
     if ($user_data->user_email) $intProfileCompletion += 10;
-    if (get_user_meta($user_ID, 'paypal', true)) $intProfileCompletion += 10;
-    if ($user_mobile) $intProfileCompletion += 10;
+    if (get_user_meta($user_ID, 'paypal', true)) $intProfileCompletion += 20;
+   // if ($user_mobile) $intProfileCompletion += 10;
     if ($job_title) $intProfileCompletion += 10;
     if ($hour_rate) $intProfileCompletion += 10;
     if (!empty($current_skills)) $intProfileCompletion += 10;
@@ -1102,7 +1102,7 @@ get_header();
                         }
                         ?>
                         <div class="setting-profile-wrapper <?php echo $user_role; ?>">
-                            <?php if ($totalPercent != 100) { ?>
+<!--                            --><?php //if ($totalPercent != 100) { ?>
                                 <div class="form-group">
                                     <div class="text-small">
                                         <label><?php _e('Profile Completion', ET_DOMAIN) ?></label>
@@ -1116,7 +1116,7 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                            <?php } ?>
+<!--                            --><?php //} ?>
 
                             <?php if ($user_role == FREELANCER) { ?>
                                 <div class="form-group <?php if ($totalPercent != 100) {
