@@ -49,7 +49,7 @@
     <div class="info-bidding fade-out fade-in bid-item bid-<?php the_ID();?> bid-item-<?php echo $project_status;?>">
 
         <div class="row">
-        <div class="col-md-4 col-xs-4">
+        <div class="col-xs-12 col-md-4">
 
 
 
@@ -65,7 +65,7 @@
 
         </div>
 
-        <div class="col-md-3 col-xs-3">
+        <div class="col-xs-12 col-md-3">
 
         	<div class="rate-exp-wrapper">
 
@@ -77,7 +77,7 @@
 
         </div>
 
-        <div class="col-md-2 col-xs-2">
+        <div class="col-xs-6 col-md-2">
 
         <?php
 
@@ -162,7 +162,7 @@
 
 
         </div>
-        <div class="col-md-3 col-xs-3">
+        <div class="col-xs-6 col-md-3">
             <?php
                 if( $user_ID == (int) $project->post_author && $project_status == 'publish' ){?>
 
@@ -196,7 +196,7 @@
         <?php if($convert->post_content){ ?>
 <div class="row">
     <p style="text-transform: uppercase" class="title-tab-project"><span>Posted on: <?php echo date('F d,Y g:i a',strtotime(get_post($convert->id)->post_date_gmt)) ?> (<?php echo get_option('timezone_string'); ?>)</span></p>
-            <div class="col-md-12">
+            <div class="col-xs-12">
 
                 <blockquote class="comment-author-history">
 

@@ -898,6 +898,8 @@ body  {
     background: #ecf0f1;
     font-weight: 500;
     min-height: 100vh;
+    padding-top: 79px;
+    display: block;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1135,7 +1137,9 @@ select  {
         width:  100%;
         z-index:  999;
         height:  auto;
-        background-color: none;
+        background-color: rgb(84,179,219);
+        background-color: rgba(84,179,219,1);
+        position: fixed;
 }
 #header-wrapper {
     will-change: transform;
@@ -1149,9 +1153,9 @@ select  {
     /*transition: transform 0.4s ease-out 0.1s;*/
 }
 #header-wrapper.hidden-sticky {
-    position: fixed;
+    /*position: fixed;*/
     transform: translateY(-80px);
-    transition: transform 0.2s ease-out 0s;
+    transition: transform 0.4s ease-out 0s;
 }
 
 #header-wrapper.not-page-home.hidden-sticky {
@@ -1174,7 +1178,7 @@ select  {
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     transform: translateY(0px);
-    transition: transform 0.4s ease-in 0s;
+    transition: transform 0.1s ease-in 0s;
 }
 #header-wrapper.standard-menu  {
         background:   rgba(0,  0,  0,  0.1);
@@ -6284,7 +6288,8 @@ input[type=checkbox], input[type=radio]{width: auto!important;}
 
 
 .top-header nav {
-    background-color: rgba(74, 147, 179, 1);
+    background-color: rgb(84,179,219);
+    background-color: rgba(84,179,219,1);
     border: none;
     margin-bottom: 0;
     padding-bottom: 9px;
