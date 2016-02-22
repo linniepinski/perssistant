@@ -4330,6 +4330,10 @@ form.form-detail-profile-page .mce-panel div.mce-toolbar-grp {
 .typeahead:focus  {
         border:  1px solid #0097CF;
 }
+ul.typeahead {
+    max-height: 400px;
+    overflow: auto;
+}
 .tt-query  {
         box-shadow:  0 1px 1px rgba(0,  0,  0,  0.075) inset;
 }
