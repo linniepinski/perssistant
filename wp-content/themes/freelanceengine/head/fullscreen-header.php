@@ -37,7 +37,7 @@
                     <?php $sufx = (is_user_logged_in())?'?r=1':'';?>
                     <?php if (is_page_template('page-home.php')) { ?>
 
-                    <!--<a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>-->
+                    <a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>
 
                     <a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_black"><?php fre_logo('site_logo_black') ?></a>
 

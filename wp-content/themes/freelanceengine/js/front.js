@@ -3300,35 +3300,24 @@
 		 * Menu style fixed
 
 		*/
-        var lastScrollTop = 0
+                var lastScrollTop = 0
 		$(window).scroll(function(e) {
-
-			$el = $('#header-wrapper');
-// console.log($(window).scrollTop());
-            var st = $(this).scrollTop();
-			var scrollBottom = $(window).scrollTop() + $(window).height();
-            if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 && scrollBottom < $(document).height() - 100 ) {
-
-//				$el.addClass("hidden-sticky", 1000, "linear");
-                if (st > lastScrollTop){
-//                    console.log('scrolldown');
-                    $el.removeClass("on-top").removeClass("sticky").addClass("hidden-sticky");
-//                    $el.css('transform', 'translateY(-71px)')
-                } else {
-//                    console.log('scrollup');
-                    $el.removeClass("on-top").removeClass("hidden-sticky").addClass("sticky");
-//                    $el.css('transform', 'translateY(0px)')
-
-                }
-
-			} else {
-                $el.removeClass("sticky").removeClass("hidden-sticky").addClass("on-top");
-				if($(window).scrollTop() <= $el.height()) {
-
-
-				}				
-
-			}
+                    $el = $('#header-wrapper');
+                     console.log($(window).scrollTop());
+                    var st = $(this).scrollTop();
+                    var scrollBottom = $(window).scrollTop() + $(window).height();
+                    
+                    if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 && scrollBottom < $(document).height() - 100 ) {
+                        if (st > lastScrollTop){
+                            $el.removeClass("on-top").removeClass("on-bottom").removeClass("sticky").addClass("hidden-sticky");
+                        } else {
+                            $el.removeClass("on-top").removeClass("on-bottom").removeClass("hidden-sticky").addClass("sticky");
+                        }
+                    } else if($(window).scrollTop() < 10) {
+                        $el.removeClass("sticky").removeClass("hidden-sticky").removeClass("on-bottom").addClass("on-top");
+                    } else {
+                        $el.removeClass("sticky").removeClass("hidden-sticky").addClass("on-bottom");			
+                    }
             lastScrollTop = st;
 
 
