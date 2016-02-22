@@ -12,7 +12,7 @@ if(!$current){
     return;
 }
 ?>
-<div <?php post_class( 'col-md-6 col-sm-12 col-xs-12 profile-item' ); ?>>
+<div <?php post_class( 'col-xs-12 col-md-6 profile-item' ); ?>>
 	<div class="profile-content">
         <ul class="top-profile">
             <li class="img-avatar">
@@ -44,11 +44,13 @@ if(!$current){
                     <li><span><?php echo $current->experience ?></span></li>
                 </ul>
             </li>
-            <li class="list-skill-profile">
-                <ul>
-                <?php echo $current->skill_list; ?>   
-                </ul>
-            </li>
+            <?php if (strlen($current->skill_list) > 0) : ?>
+                <li class="list-skill-profile">
+                    <ul>
+                    <?php echo $current->skill_list; ?>   
+                    </ul>
+                </li>
+            <?php endif; ?>
         </ul> 
     </div>
 </div>

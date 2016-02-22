@@ -105,15 +105,15 @@ if($convert) {
                                     
                                 </ul>  
                                 <?php if($convert && (fre_share_role() || ae_user_role($author_id) == FREELANCER ) ){ ?>
-                                <div class="list-skill-profile">
-                                    <ul>
-                                    <?php if(isset($convert->tax_input['skill']) && $convert->tax_input['skill']){
-                                            foreach ($convert->tax_input['skill'] as $tax){ ?>	
-                                                <li><span class="skill-name-profile"><?php echo $tax->name; ?></span></li>
-                                    <?php 	}
-                                          } ?>        	
-                                    </ul>
-                                </div>
+                                     <?php if(isset($convert->tax_input['skill']) && $convert->tax_input['skill']){ ?>
+                                        <div class="list-skill-profile">
+                                            <ul>
+                                                <?php   foreach ($convert->tax_input['skill'] as $tax){ ?>	
+                                                    <li><span class="skill-name-profile"><?php echo $tax->name; ?></span></li>
+                                                <?php 	}?>  
+                                            </ul>
+                                        </div>
+                                    <?php } ?>    
                                 <?php } ?>
                                 <div class="clearfix"></div>
                             </div>

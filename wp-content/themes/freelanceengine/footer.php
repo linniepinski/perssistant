@@ -19,16 +19,16 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 <footer> 
 	<div class="container">
     	<div class="row">
-            <div class="col-md-3 col-sm-6">
+            <div class="col-sm-6 col-md-3">
                 <?php if( is_active_sidebar( 'fre-footer-1' ) ) dynamic_sidebar( 'fre-footer-1' );?>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-sm-6 col-md-3">
                 <?php if( is_active_sidebar( 'fre-footer-2' ) ) dynamic_sidebar( 'fre-footer-2' );?>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class=" col-sm-6 col-md-3">
                 <?php if( is_active_sidebar( 'fre-footer-3' ) ) dynamic_sidebar( 'fre-footer-3' );?>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class=" col-sm-6 col-md-3">
                 <?php if( is_active_sidebar( 'fre-footer-4' ) ) dynamic_sidebar( 'fre-footer-4' );?>
             </div>
         </div>
@@ -46,11 +46,11 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 ?>
 	<div class="container">
         <div class="row">
-            <div class="<?php echo $col ?> col-sm-4">
+            <div class="col-sm-4 <?php echo $col ?>">
             	<a href="<?php echo home_url(); ?>" class="logo-footer"><?php fre_logo('site_logo_white') ?></a>
             </div>
             <?php if($has_nav_menu){ ?>
-            <div class="col-md-4 col-sm-4">
+            <div class="col-sm-4 col-md-4">
                 <?php
                     wp_nav_menu( array('theme_location' =>'et_footer') );
                 ?>
@@ -181,7 +181,6 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
     </div><!-- /.modal-dialog login -->
 </div><!-- /.modal -->
 <!--// MODAL QUIT PROJECT-->
-
 
 <!-- MODAL CLOSE PROJECT-->
 <div class="modal fade" id="close_project_success" role="dialog" aria-labelledby="close_project_success" aria-hidden="true">

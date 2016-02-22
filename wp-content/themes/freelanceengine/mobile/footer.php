@@ -21,6 +21,69 @@
 	    }
 		wp_footer();
 	?>
+
+<?php 
+if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' ) 
+    || is_active_sidebar( 'fre-footer-3' ) || is_active_sidebar( 'fre-footer-4' )
+    )
+{$flag=true; ?>
+<!-- FOOTER -->
+<footer> 
+	<div class="container">
+    	<div class="row">
+            <div class="col-xs-12">
+                <?php if( is_active_sidebar( 'fre-footer-1' ) ) dynamic_sidebar( 'fre-footer-1' );?>
+            </div>
+            <div class="col-xs-12">
+                <?php if( is_active_sidebar( 'fre-footer-2' ) ) dynamic_sidebar( 'fre-footer-2' );?>
+            </div>
+            <div class=" col-xs-12">
+                <?php if( is_active_sidebar( 'fre-footer-3' ) ) dynamic_sidebar( 'fre-footer-3' );?>
+            </div>
+            <div class=" col-xs-12">
+                <?php if( is_active_sidebar( 'fre-footer-4' ) ) dynamic_sidebar( 'fre-footer-4' );?>
+            </div>
+        </div>
+    </div>
+</footer>
+<?php }else{ $flag = false;} ?>
+<div class="copyright-wrapper <?php if(!$flag){ echo 'copyright-wrapper-margin-top'; } ?> ">
+<?php
+    $copyright = ae_get_option('copyright');
+    $has_nav_menu = has_nav_menu( 'et_footer' );
+    $col = 'col-md-6';
+    if($has_nav_menu) {
+        $col = 'col-md-4';
+    }
+?>
+	<div class="container">
+        <div class="row">
+            <div class="col-xs-12 <?php echo $col ?>">
+                <?php if ($pagename == 'home' || $pagename == 'auth') { ?>
+                    <a href="<?php echo home_url(); ?>" class="logo-footer"><?php fre_logo('site_logo_white') ?></a>
+                <?php } else {?>
+                    <a href="<?php echo home_url(); ?>" class="logo-footer"><?php fre_logo('site_logo_black') ?></a>
+                <?php } ?>
+            </div>
+            <?php if($has_nav_menu){ ?>
+            <div class="col-xs-12 col-md-4">
+                <?php
+                    wp_nav_menu( array('theme_location' =>'et_footer') );
+                ?>
+            </div>
+            <?php }?>
+            <div class="col-xs-12 <?php echo $col;?>">
+            	<p class="text-copyright">
+                    <?php
+                        if($copyright){ echo $copyright; }
+                    ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER / END -->
 	<!-- MODAL QUIT PROJECT-->
 	<div class="modal fade" id="quit_project" role="dialog" aria-labelledby="quit_project" aria-hidden="true">
 	    <div class="modal-dialog">

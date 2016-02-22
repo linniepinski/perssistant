@@ -130,7 +130,7 @@ if (function_exists('fre_user_have_notify')) {
                 <?php } ?>
                 <li>
                     <a href="<?php echo et_get_page_link('profile'); ?>#tab_project" class="link-menu-nav">
-                        <?php _e('Project Details', ET_DOMAIN) ?>
+                        <?php _e('My project', ET_DOMAIN) ?>
                     </a>
                 </li>
                 <li>

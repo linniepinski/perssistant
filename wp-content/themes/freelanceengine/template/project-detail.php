@@ -42,16 +42,16 @@ if ($project_status == 'publish') {
 	<div class="tab-content-project">
     	<!-- Title -->
     	<div class="row title-tab-project">
-            <div class="col-lg-4 col-md-5 col-sm-4 col-xs-7">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <span><?php _e("PROJECT TITLE", ET_DOMAIN); ?></span>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
                 <span><?php _e("BY", ET_DOMAIN); ?></span>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3 hidden-sm hidden-md hidden-xs">
+            <div class="hidden-xs hidden-sm hidden-md col-lg-2">
                 <span><?php _e("POSTED DATE", ET_DOMAIN); ?></span>
             </div>
-            <div class="col-lg-2 col-md-1 col-sm-2 hidden-xs">
+            <div class="hidden-xs col-sm-6 col-md-6 col-lg-2">
                 <span><?php _e("BUDGET", ET_DOMAIN); ?></span>
             </div>
         </div>
@@ -60,19 +60,23 @@ if ($project_status == 'publish') {
         <div class="single-projects">
             <div class="project type-project project-item">
                 <div class="row">
-                    <div class="col-lg-4 col-md-5 col-sm-4 col-xs-7">
+                    <!--PROJECT TITLE-->
+                    <div class="col-xs-7 col-sm-4 col-md-4 col-lg-4">
                         <a href="<?php echo get_author_posts_url( $post->post_author ); ?>" class="avatar-author-project-item">
                             <?php echo get_avatar( $post->post_author, 35,true, get_the_title($profile_id) ); ?>
                         </a>
                         <h1 class="content-title-project-item"><?php the_title();?></h1>
                     </div>
-                     <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+                    <!--BY-->
+                    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
                       	<span class="author-link-project-item"><?php the_author_posts_link();?></span>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 hidden-sm hidden-md hidden-xs">
+                    <!--POSTED DATE-->
+                    <div class="hidden-xs hidden-sm hidden-md col-lg-2">
                          <span  class="time-post-project-item"><?php the_date(); ?></span>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                    <!--BUDGET-->
+                    <div class="hidden-xs col-sm-3 col-md-3 col-lg-2">
                         <?php
                         if ($convert->type_budget == 'hourly_rate'){
                            ?>
@@ -85,7 +89,8 @@ if ($project_status == 'publish') {
                         }
                         ?>
                     </div>
-                    <div class="col-lg-2 col-md-3 text-right col-sm-3 col-xs-5" style="padding:0; margin:0;">
+                    <!--STATUS-->
+                    <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 text-right  " style="padding:0; margin:0;">
                     <?php
                     if(current_user_can( 'manage_options' ) && false) {
                         get_template_part( 'template/admin', 'project-control' );

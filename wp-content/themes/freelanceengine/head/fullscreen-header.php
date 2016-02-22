@@ -37,7 +37,7 @@
                     <?php $sufx = (is_user_logged_in())?'?r=1':'';?>
                     <?php if (is_page_template('page-home.php')) { ?>
 
-					<a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>
+                    <!--<a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>-->
 
                     <a href="<?php echo home_url() . $sufx; ?>" class="logo site_logo_black"><?php fre_logo('site_logo_black') ?></a>
 
@@ -150,7 +150,7 @@
 
                             <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("SIGN UP", ET_DOMAIN) ?></a>
 
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <!--<a class="perssistant register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>-->
                         </div>
 
                     
@@ -351,7 +351,7 @@
                             </div>
                                                     
                         </div>
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <a class="perssistant register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
 
                       
                         <?php } ?>
@@ -438,7 +438,7 @@
 
                             <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("ANMELDUNG", ET_DOMAIN) ?></a>
 
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <!--<a class="perssistant register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>-->
                         </div>
 
                     
@@ -638,7 +638,7 @@
                             </div>
                                                     
                         </div>
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <a class="perssistant register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
 
                       
                         <?php } ?>

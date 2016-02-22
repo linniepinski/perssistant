@@ -88,7 +88,7 @@
                                 <?php }
                             }
                             else { ?>
-                                <a href="#" id="<?php the_ID();?>"  class="btn-apply-project-item btn-bid" ><?php  _e('Opening',ET_DOMAIN);?></a>
+                                <a href="#" id="<?php the_ID();?>"  class="btn-apply-project-item btn-bid" ><?php  _e('Open',ET_DOMAIN);?></a>
                                 <?php 
                             }
                             

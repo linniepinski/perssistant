@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-3 col-xs-3">
                     <?php if(is_page_template('page-home.php')) { ?>
-                        <a href="<?php echo home_url(); ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>
+                        <!--<a href="<?php echo home_url(); ?>" class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>-->
                         <a href="<?php echo home_url(); ?>" class="logo site_logo_black"><?php fre_logo('site_logo_black') ?></a>
                     <?php }else { ?>
                         <a href="<?php echo home_url(); ?>" class="logo"><?php fre_logo('site_logo_black') ?></a>
