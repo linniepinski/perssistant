@@ -385,9 +385,9 @@ class Fre_Notification extends AE_PostAction
             case 'bid_accept':
                 $project_author = get_post_field('post_author', $project);
                 $author = '<a class="user-link" href="'. get_author_posts_url($project_author) .'" ><span class="avatar-notification">
-                            ' . get_avatar($project_author, 30) . '
+                            ' . get_avatar($project_author, 45) . '
                         </span>&nbsp;&nbsp;
-                        <span class="date-notification">
+                        <span class="date-notification name">
                             ' . get_the_author_meta('display_name', $project_author) . '
                         </span>
                         </a>';
@@ -401,9 +401,9 @@ class Fre_Notification extends AE_PostAction
                 $project_owner = get_post_field('post_author', $project);
                 $author = '<a class="user-link" href="'. get_author_posts_url($project_owner) .'" >
                             <span class="avatar-notification">
-                            ' . get_avatar($project_owner, 30) . '
+                            ' . get_avatar($project_owner, 45) . '
                         </span>&nbsp;&nbsp;
-                        <span class="date-notification">
+                        <span class="date-notification name">
                             ' . get_the_author_meta('display_name', $project_owner) . '
                         </span>
                         </a>';
@@ -415,9 +415,9 @@ class Fre_Notification extends AE_PostAction
                 $bid_author = get_post_field('post_author', $accepted_bid);
                 
                 $author = '<a class="user-link" href="'. get_author_posts_url($bid_author) .'" ><span class="avatar-notification">
-                            ' . get_avatar($bid_author, 30) . '
+                            ' . get_avatar($bid_author, 45) . '
                         </span>&nbsp;&nbsp;
-                        <span class="date-notification">
+                        <span class="date-notification name">
                             ' . get_the_author_meta('display_name', $bid_author) . '
                         </span>
                         </a>';
@@ -427,9 +427,9 @@ class Fre_Notification extends AE_PostAction
             case 'new_message':
                 if (!isset($sender)) $sender = 1;
                 $author = '<a class="user-link"  href="'. get_author_posts_url($sender) .'" ><span class="avatar-notification">
-                            ' . get_avatar($sender, 30) . '
+                            ' . get_avatar($sender, 45) . '
                         </span>&nbsp;&nbsp;
-                        <span class="date-notification">
+                        <span class="date-notification name">
                             ' . get_the_author_meta('display_name', $sender) . '
                         </span>
                         </a>';
@@ -446,9 +446,9 @@ class Fre_Notification extends AE_PostAction
             case 'new_invite':
                 if (!isset($send_invite)) $send_invite = 1;
                 $author = '<a class="user-link"   href="'. get_author_posts_url($send_invite) .'"  ><span class="avatar-notification">
-                            ' . get_avatar($send_invite, 30) . '
+                            ' . get_avatar($send_invite, 45) . '
                         </span>&nbsp;&nbsp;
-                        <span class="date-notification">
+                        <span class="date-notification name">
                             ' . get_the_author_meta('display_name', $send_invite) . '
                         </span>
                         </a>';

@@ -3306,8 +3306,8 @@
 			$el = $('#header-wrapper');
 // console.log($(window).scrollTop());
             var st = $(this).scrollTop();
-
-            if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 ) {
+			var scrollBottom = $(window).scrollTop() + $(window).height();
+            if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 && scrollBottom < $(document).height() - 100 ) {
 
 //				$el.addClass("hidden-sticky", 1000, "linear");
                 if (st > lastScrollTop){

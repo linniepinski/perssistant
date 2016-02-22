@@ -61,7 +61,6 @@ if(!$current || !isset( $current->project_title )){
         <div class="content-bid-item-history">
 
 
-
             <?php if($current->project_status == 'complete'){ ?>
 
 

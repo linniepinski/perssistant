@@ -4,6 +4,8 @@ $bid = get_post_meta( $post->ID, 'accepted', true );
 $bid_author = get_post_field( 'post_author', $bid );
 $bid_budget = get_post_meta( $bid, 'bid_budget', true );
 $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
+
+
 ?>
 <!-- MODAL FINISH PROJECT-->
 <div class="modal fade" id="modal_review" role="dialog" aria-labelledby="modal_review" aria-hidden="true">
@@ -33,6 +35,26 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
                 <div class="form-group">
                     <label for="post_content"><?php printf(__('Rate for "%s"' ,ET_DOMAIN), $bid_author_name); ?> </label>
                     <div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-8 col-md-6">
+							<?php
+							$args = array(
+								'hide_empty' => false
+							);
+							$list_review_items =  get_terms('rating_taxonomy' , $args);
+							if ( ! empty( $list_review_items ) && ! is_wp_error( $list_review_items ) ){
+								echo '<ul class="rating-list">';
+								foreach ( $list_review_items as $term ) {
+									echo '<li>';
+									echo '<label attr-slug="'. $term->slug.'">' . $term->name . '</label>';
+									echo '<div class="rating-it_2" style="cursor: pointer;"></div>';
+									echo '</li>';
+								}
+								echo '</ul>';
+							}
+							?>
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 				 	<label for="user_login">
@@ -62,7 +84,28 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
                 </p>
                 <div class="form-group">
                     <label for="post_content"><?php printf(__('Rate for "%s"',ET_DOMAIN),$employer_name); ?> </label>
-                    <div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
+					<div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-8 col-md-6">
+							<?php
+							$args = array(
+								'hide_empty' => false
+							);
+							$list_review_items =  get_terms('rating_taxonomy' , $args);
+							//				var_dump($list_review_items);
+							if ( ! empty( $list_review_items ) && ! is_wp_error( $list_review_items ) ){
+								echo '<ul class="rating-list">';
+								foreach ( $list_review_items as $term ) {
+									echo '<li>';
+									echo '<label attr-slug="'. $term->slug.'">' . $term->name . '</label>';
+									echo '<div class="rating-it_2" style="cursor: pointer;"></div>';
+									echo '</li>';
+								}
+								echo '</ul>';
+							}
+							?>
+						</div>
+					</div>
 
 				</div>
 				<div class="form-group">

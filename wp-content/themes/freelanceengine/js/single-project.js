@@ -195,7 +195,36 @@ $("a.popup-login").trigger('click');
                 });
                 $('.rating-it').raty({
                     half: true,
-                    hints: raty.hint
+                    hints: raty.hint,
+                    readOnly: true
+                });
+                $('.rating-it_2').raty({
+                    half: false,
+                    hints: raty.hint,
+                    starOff:"icon-square",
+                    starOn:"icon-square icon-square-full",
+                    scoreName: function() {
+                        $(this).parent().find('label').text();
+                        console.log($(this).parent().find('label').text());
+                        return "list_scores["+$(this).parent().find('label').attr('attr-slug')+"]";
+                    },
+                    click: function(score, evt) {
+                        var score_all = 0;
+                        var count_scores = $('.rating-it_2').length;
+                       $('.rating-it_2').each(function(){
+                           var eThis = $(this).find('input');
+                           var eVal = (isNaN(parseInt(eThis.val()))) ? 0 : parseInt(eThis.val());
+                           score_all += eVal;
+                       });
+                        var score_new = score_all / count_scores;
+                        jQuery('.rating-it').raty({
+                            score: score_new,
+                            readOnly: true,
+                            //scoreName: function() {
+                            //    return "score";
+                            //}
+                        });
+                    }
                 });
             },
             // show modal bid project
