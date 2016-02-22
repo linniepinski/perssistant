@@ -119,13 +119,16 @@ get_header();
                     <a class="show-forgot-form" href="<?php echo site_url() . '/forgotpassword'?>"><?php _e("Forgot Password?", ET_DOMAIN) ?></a> |<a class="show-forgot-form" href="<?php echo site_url() . '/sign-up'?>"><?php _e("Register", ET_DOMAIN) ?></a>
 <?php
 
-			                if( function_exists('ae_render_social_button')){
+//			                if( function_exists('ae_render_social_button')){
+//
+//			                    $before_string = __("You can also sign in by:", ET_DOMAIN);
+//
+//			                    ae_render_social_button( array(), array(), $before_string );
+//
+//			                }
 
-			                    $before_string = __("You can also sign in by:", ET_DOMAIN);
+?><div class="socials-head"><?php echo __("You can also sign in by:", ET_DOMAIN); ?></div><?php
 
-			                    ae_render_social_button( array(), array(), $before_string );
-
-			                }
 do_action( 'wordpress_social_login' );
 			            ?>
 				</form>	           

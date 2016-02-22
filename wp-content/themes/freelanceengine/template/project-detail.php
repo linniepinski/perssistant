@@ -194,7 +194,7 @@ if ($project_status == 'publish') {
                             
                 </div>
 
-            
+
             </div>
         <!-- Content project / End -->
         <div class="clearfix"></div>

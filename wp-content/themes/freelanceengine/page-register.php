@@ -205,14 +205,17 @@ get_header();
 
 					<?php } 
 
-		                if( function_exists('ae_render_social_button')){
+//		                if( function_exists('ae_render_social_button')){
+//
+//		                    $before_string = __("You can also sign in by:", ET_DOMAIN);
+//
+//		                    ae_render_social_button( array(), array(), $before_string );
+//
+//		                }
+//
+					?><div class="socials-head"><?php echo __("You can also sign in by:", ET_DOMAIN); ?></div><?php
 
-		                    $before_string = __("You can also sign in by:", ET_DOMAIN);
-
-		                    ae_render_social_button( array(), array(), $before_string ); 
-
-		                }
-
+					do_action( 'wordpress_social_login' );
 		            ?>
 
 				</form>	           

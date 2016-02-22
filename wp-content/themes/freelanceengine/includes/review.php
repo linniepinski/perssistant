@@ -1,5 +1,37 @@
 <?php
+add_action( 'init', 'rating_taxonomy', 0 );
 
+function rating_taxonomy() {
+
+    $labels = array(
+        'name'                       => _x( 'Review_settings', 'taxonomy general name' ),
+        'singular_name'              => _x( 'Review_setting', 'taxonomy singular name' ),
+        'search_items'               => __( 'Search review setting' ),
+        'popular_items'              => __( 'Popular review setting' ),
+        'all_items'                  => __( 'All review setting' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit review setting' ),
+        'update_item'                => __( 'Update review setting' ),
+        'add_new_item'               => __( 'Add New review setting' ),
+        'new_item_name'              => __( 'New review setting Name' ),
+        'separate_items_with_commas' => __( 'Separate review setting with commas' ),
+        'add_or_remove_items'        => __( 'Add or remove review setting' ),
+        'choose_from_most_used'      => __( 'Choose from the most used review settings' ),
+        'not_found'                  => __( 'No review setting found.' ),
+        'menu_name'                  => __( 'Review settings' ),
+    );
+
+    $args = array(
+        'hierarchical'          => false,
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'rewrite'               => array( 'slug' => 'rating_item' ),
+    );
+
+    register_taxonomy( 'rating_taxonomy', PROJECT , $args );
+}
 /**
  * project review class
  */
@@ -22,7 +54,8 @@ class Fre_Review extends AE_Comments
     public function __construct($type = "em_review") {
         $this->comment_type = $type;
         $this->meta = array(
-            'et_rate'
+            'et_rate',
+            'list_scores'
         );
         
         $this->post_arr = array();
@@ -157,7 +190,7 @@ class Fre_ReviewAction extends AE_Base
         $author_bid = get_post_field('post_author', $bid_id_accepted);
         
         $profile_id = get_user_meta($author_bid, 'user_profile_id', true);
-        
+
         /*
          * validate data
         */
@@ -196,7 +229,7 @@ class Fre_ReviewAction extends AE_Base
         // insert review
         $review = Fre_Review::get_instance();
         $comment = $review->insert($args);
-        
+
         if (!is_wp_error($comment)) {
             
             /**
@@ -359,7 +392,6 @@ class Fre_ReviewAction extends AE_Base
         $freelancer_id = get_post_field('post_author', $bid_id_accepted);
         
         $profile_id = get_user_meta($freelancer_id, 'user_profile_id', true);
-        
         //update status for project
         wp_update_post(array(
             'ID' => $project_id,
@@ -377,6 +409,10 @@ class Fre_ReviewAction extends AE_Base
             if ($rate > 5) $rate = 5;
             update_comment_meta($comment_id, 'et_rate', $rate);
             update_post_meta($bid_id_accepted, 'rating_score', $rate);
+            update_post_meta($bid_id_accepted, 'comment_employer', $comment_id);
+            foreach ($_POST['list_scores'] as $key => $item ){
+                update_comment_meta($comment_id, "list_score__{$key}", $item);
+            }
         }
         
         $sql = "select AVG(M.meta_value)  as rate_point, COUNT(C.comment_ID) as count
@@ -573,4 +609,27 @@ function fre_count_reviews($user_id = 0) {
     wp_cache_set("reviews-{$user_id}", $count);
     return (int)$count;
 }
-?>
+
+// view rating list
+//
+//if($current->comment_employer){
+//    $converted_list = review_rating_list_convert($current->comment_employer);
+//    foreach ($converted_list as $name => $item) {
+//        echo $name;
+//
+//<div class="rate-it" data-score="--><?php //echo $item<!--"></div>-->
+//
+//    }
+//}
+
+function review_rating_list_convert($comment_id){
+    $list_ratings = get_comment_meta($comment_id);
+    $output = array();
+    foreach ($list_ratings as $name => $score){
+        if (explode('__',$name)[1]){
+            $current_name = explode('__',$name)[1];
+            $output[$current_name] = $score[0];
+        }
+    }
+return $output;
+}

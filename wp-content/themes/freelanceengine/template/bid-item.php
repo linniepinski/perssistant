@@ -2,11 +2,11 @@
 
 /**
 
- * The template for displaying a bid info item, 
+ * The template for displaying a bid info item,
 
- * this template is used to display bid info in a project details, 
+ * this template is used to display bid info in a project details,
 
- * and called at template/list-bids.php 
+ * and called at template/list-bids.php
 
  * @since 1.0
 
@@ -38,13 +38,13 @@
 
     $role           = ae_user_role();
 
-    
+
 
 ?>
 
 
 
-<div class="row list-bidding"> 
+<div class="row list-bidding">
 
     <div class="info-bidding fade-out fade-in bid-item bid-<?php the_ID();?> bid-item-<?php echo $project_status;?>">
 
@@ -81,7 +81,7 @@
 
         <?php
 
-            $time = $convert->bid_time;    
+            $time = $convert->bid_time;
 
             $type = $convert->type_time;
 
@@ -91,13 +91,13 @@
 
     	<span class="number-price-project">
 
-            <?php 
+            <?php
 
             /**
 
-             * user can view bid details 
+             * user can view bid details
 
-             # when a project is complete 
+             # when a project is complete
 
              # when current user is project owner
 
@@ -105,15 +105,15 @@
 
              */
 
-            if( in_array($project_status, array('complete','close', 'disputing') ) 
+            if( in_array($project_status, array('complete','close', 'disputing') )
 
-                || ( $user_ID && $user_ID == $project->post_author ) 
+                || ( $user_ID && $user_ID == $project->post_author )
 
-                || ( $user_ID && $user_ID == $convert->post_author ) 
+                || ( $user_ID && $user_ID == $convert->post_author )
 
-            ) { 
+            ) {
                  if ($post_object->current_post->decide_later == 'on'){
-                   
+
                     ?>
                     <span class="number-price">Decide later</span>
                     <?php
@@ -140,13 +140,13 @@
 
             <?php }else{ ?>
 
-                <span class="number-price"><?php _e("In Process", ET_DOMAIN); ?></span> 
+                <span class="number-price"><?php _e("In Process", ET_DOMAIN); ?></span>
 
-            <?php } 
+            <?php }
 
             // end biding budget details
 
-        
+
 
             /**
 
@@ -179,7 +179,7 @@
                         ?>
                     </button>
                 <span class="confirm pull-right"><button class="btn btn-skip btn-skip-custom" data-id="<?php the_ID();?>">Decline</button></span>
-				<?php 
+				<?php
 
 
 
@@ -189,7 +189,7 @@
 
                 <?php
 
-            } 
+            }
             ?>
          </div>
             </div>

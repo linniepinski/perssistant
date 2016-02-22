@@ -138,7 +138,7 @@
                             <ul class="skills-list" id="skills_list"></ul>
                             <?php
                         }else{
-                            ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 5)", ET_DOMAIN).'"', 
+                            ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 10)", ET_DOMAIN).'"',
                                                 'class' => 'sw_skill chosen multi-tax-item tax-item required', 
                                                 'hide_empty' => false, 
                                                 'hierarchical' => true , 

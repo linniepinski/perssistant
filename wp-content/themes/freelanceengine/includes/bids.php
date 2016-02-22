@@ -337,7 +337,9 @@ class Fre_BidAction extends AE_PostAction
         $profile_id = get_user_meta($result->post_author, 'user_profile_id', true);
 
         $result->rating_score = (float)get_post_meta($result->ID, 'rating_score', true);
-
+if (get_post_meta($result->ID, 'comment_employer', true) != 0){
+    $result->comment_employer = (int)get_post_meta($result->ID, 'comment_employer', true);
+}
         if ((isset($_REQUEST) && isset($_REQUEST['query']) && isset($_REQUEST['query']['is_single'])) || is_singular(PROJECT)) {
 
             $result->rating_score = (float)get_post_meta($profile_id, 'rating_score', true);
