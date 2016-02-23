@@ -315,41 +315,43 @@ $("a.popup-login").trigger('click');
 //                $target.parents('.info-bidding').removeClass('hide-accept');
 //                $target.closest(".confirm").toggle();
 //                $target.parents('.info-bidding').find('button.btn-apply-project-item').fadeIn(500);
-                $.ajax({
-                    url: ae_globals.ajaxURL,
-                    type: 'post',
-                    data: {
-                        bid_id: $target.attr('data-id'),
-                        action: 'ae-skip-bid',
-                    },
-                    beforeSend: function() {
-                        view.blockUi.block($target);
+                if (confirm(ae_globals.confirm_delete_bid)) {
+                    $.ajax({
+                        url: ae_globals.ajaxURL,
+                        type: 'post',
+                        data: {
+                            bid_id: $target.attr('data-id'),
+                            action: 'ae-skip-bid',
+                        },
+                        beforeSend: function () {
+                            view.blockUi.block($target);
 //                        console.log($target.parents().find('.bid-item').remove())
 //                        return false;
-                    },
-                    success: function(res) {
-                        view.blockUi.unblock();
-                        console.log(res);
-                        if (res.success) {
-                            $target.parents().find('.bid-item').remove();
+                        },
+                        success: function (res) {
+                            view.blockUi.unblock();
+                            console.log(res);
+                            if (res.success) {
+                                $target.parents().find('.bid-item').remove();
 //                            $("a.btn-project-status").html(single_text.working);
 //                            $target.find("button.btn-bid-status").after('<span class="ribbon"><i class="fa fa-trophy"></i></span>');
 //                            $target.find('.confirm').remove();
 //                            $target.parents('.info-bidding').find('.btn-invate-on-bid').removeClass('hidden');
 
 //                            $(".info-bidding").find("button.btn-bid-status").remove();
-                            AE.pubsub.trigger('ae:notification', {
-                                msg: res.msg,
-                                notice_type: 'success'
-                            });
-                        } else {
-                            AE.pubsub.trigger('ae:notification', {
-                                msg: res.msg,
-                                notice_type: 'error'
-                            });
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: res.msg,
+                                    notice_type: 'success'
+                                });
+                            } else {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: res.msg,
+                                    notice_type: 'error'
+                                });
+                            }
                         }
-                    }
-                });
+                    });
+                }
                // $target.parents('.number-price-project').find("button.btn-apply-project-item").fadeIn(500);
             },
             /**
