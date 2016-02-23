@@ -1,5 +1,0 @@
-[24-Oct-2015 13:11:53 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
-Module compiled with module API=20131226
-PHP    compiled with module API=20100525
-These options need to match
- in Unknown on line 0
