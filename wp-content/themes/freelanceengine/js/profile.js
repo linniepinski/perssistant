@@ -415,7 +415,7 @@
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols<i class="fa fa-exclamation-triangle"></i></span>');
+                            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
                             return false;
                         }
 

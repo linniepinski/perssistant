@@ -351,7 +351,7 @@ jQuery(document).ready(function(){
             jQuery('.skill-error').html('');
         }else{
             console.log('cha2nge2d')
-            jQuery('.skill-error').html('<span class="message">You\'ve added maximum number of skills<i class="fa fa-exclamation-triangle"></i></span>');
+            jQuery('.skill-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> You\'ve added maximum number of skills</span>');
 
         }
     });

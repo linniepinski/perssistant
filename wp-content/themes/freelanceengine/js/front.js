@@ -1,497 +1,497 @@
 (function($, Models, Collections, Views) {
 
-	$(document).ready(function() {  
+    $(document).ready(function() {
 
-		/**
+        /**
 
-		 * define blog item view
+         * define blog item view
 
-		 */
+         */
 
-		BlogItem = Views.PostItem.extend({
+        BlogItem = Views.PostItem.extend({
 
-			tagName: 'div',
+            tagName: 'div',
 
-			className: 'blog-wrapper post-item',
+            className: 'blog-wrapper post-item',
 
-			template: _.template($('#ae-post-loop').html()),
+            template: _.template($('#ae-post-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				// before render view
+                // before render view
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				// after render view
+                // after render view
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * list view control blog list
+         * list view control blog list
 
-		 */
+         */
 
-		ListBlogs = Views.ListPost.extend({
+        ListBlogs = Views.ListPost.extend({
 
-			tagName: 'div',
+            tagName: 'div',
 
-			itemView: BlogItem,
+            itemView: BlogItem,
 
-			itemClass: 'post-item'
+            itemClass: 'post-item'
 
-		});
+        });
 
 
 
-		/**
+        /**
 
-		 * model Notify
+         * model Notify
 
-		 */
+         */
 
-		Models.Notify = Backbone.Model.extend({
+        Models.Notify = Backbone.Model.extend({
 
-			action: 'ae-notify-sync',
+            action: 'ae-notify-sync',
 
-			initialize: function() {}
+            initialize: function() {}
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Notify collections
+         * Notify collections
 
-		 */
+         */
 
-		Collections.Notify = Backbone.Collection.extend({
+        Collections.Notify = Backbone.Collection.extend({
 
-			model: Models.Notify,
+            model: Models.Notify,
 
-			action: 'ae-fetch-notify',
+            action: 'ae-fetch-notify',
 
-			initialize: function() {
+            initialize: function() {
 
-				this.paged = 1;
+                this.paged = 1;
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * define notify item view
+         * define notify item view
 
-		 * @since 1.2
+         * @since 1.2
 
-		 * @author Dakachi
+         * @author Dakachi
 
-		 */
+         */
 
-		NotifyItem = Views.PostItem.extend({
+        NotifyItem = Views.PostItem.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'notify-item',
+            className: 'notify-item',
 
-			template: _.template($('#ae-notify-loop').html()),
+            template: _.template($('#ae-notify-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				// before render view
+                // before render view
 
-				// console.log('render');
+                // console.log('render');
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				// after render view
+                // after render view
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * list view control notification list
+         * list view control notification list
 
-		 * @since 1.2
+         * @since 1.2
 
-		 * @author Dakachi
+         * @author Dakachi
 
-		 */
+         */
 
-		ListNotify = Views.ListPost.extend({
+        ListNotify = Views.ListPost.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			itemView: NotifyItem,
+            itemView: NotifyItem,
 
-			itemClass: 'notify-item'
+            itemClass: 'notify-item'
 
-		});
+        });
 
 
 
-		// notification list control
+        // notification list control
 
-		if( $('#notification_container').length > 0 ){
+        if ($('#notification_container').length > 0) {
 
 
 
-			if( $('#notification_container').find('.postdata').length > 0 ){
+            if ($('#notification_container').find('.postdata').length > 0) {
 
-				var postsdata = JSON.parse($('#notification_container').find('.postdata').html()),
+                var postsdata = JSON.parse($('#notification_container').find('.postdata').html()),
 
-					posts = new Collections.Notify(postsdata);				
+                    posts = new Collections.Notify(postsdata);
 
-			} else {
+            } else {
 
-				var posts = new Collections.Notify();	
+                var posts = new Collections.Notify();
 
-			}
+            }
 
-			/**
+            /**
 
-			 * init list blog view
+             * init list blog view
 
-			 */
+             */
 
-			new ListNotify({
+            new ListNotify({
 
-				itemView: NotifyItem,
+                itemView: NotifyItem,
 
-				collection: posts,
+                collection: posts,
 
-				el: $('#notification_container').find('.notification-list')
+                el: $('#notification_container').find('.notification-list')
 
-			});
+            });
 
-			/**
+            /**
 
-			 * init block control list blog
+             * init block control list blog
 
-			 */
+             */
 
-			new Views.BlockControl({
+            new Views.BlockControl({
 
-				collection: posts,
+                collection: posts,
 
-				el: $('#notification_container')
+                el: $('#notification_container')
 
-			});
+            });
 
-		}
+        }
 
 
 
-		/**
+        /**
 
-		 * model project
+         * model project
 
-		 */
+         */
 
-		Models.Project = Backbone.Model.extend({
+        Models.Project = Backbone.Model.extend({
 
-			action: 'ae-project-sync',
+            action: 'ae-project-sync',
 
-			initialize: function() {}
+            initialize: function() {}
 
-		});
+        });
 
-		/**
+        /**
 
-		 * project collections
+         * project collections
 
-		 */
+         */
 
-		Collections.Projects = Backbone.Collection.extend({
+        Collections.Projects = Backbone.Collection.extend({
 
-			model: Models.Project,
+            model: Models.Project,
 
-			action: 'ae-fetch-projects',
+            action: 'ae-fetch-projects',
 
-			initialize: function() {
+            initialize: function() {
 
-				this.paged = 1;
+                this.paged = 1;
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * define project item view
+         * define project item view
 
-		 */
+         */
 
-		ProjectItem = Views.PostItem.extend({
+        ProjectItem = Views.PostItem.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'project-item',
+            className: 'project-item',
 
-			template: _.template($('#ae-project-loop').html()),
+            template: _.template($('#ae-project-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				// before render view
+                // before render view
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				// after render view
+                // after render view
 
-			}
+            }
 
-		});
+        });
 
 
 
-		User_BidItem = Views.PostItem.extend({
+        User_BidItem = Views.PostItem.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'user-bid-item',
+            className: 'user-bid-item',
 
-			template: _.template($('#ae-user-bid-loop').html()),
+            template: _.template($('#ae-user-bid-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				// before render view
+                // before render view
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				// after render view
+                // after render view
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * list view control project list
+         * list view control project list
 
-		 */
+         */
 
-		ListProjects = Views.ListPost.extend({
+        ListProjects = Views.ListPost.extend({
 
-			tagName: 'ul',
+            tagName: 'ul',
 
-			itemView: ProjectItem,
+            itemView: ProjectItem,
 
-			itemClass: 'project-item'
+            itemClass: 'project-item'
 
-		});
+        });
 
 
 
-		User_ListBids = Views.ListPost.extend({
+        User_ListBids = Views.ListPost.extend({
 
-			tagName: 'ul',
+            tagName: 'ul',
 
-			itemView: User_BidItem,
+            itemView: User_BidItem,
 
-			itemClass: 'user-bid-item'
+            itemClass: 'user-bid-item'
 
-		});        
+        });
 
-		/**
+        /**
 
-		 * Model profile
+         * Model profile
 
-		 */
+         */
 
-		Models.Profile = Backbone.Model.extend({
+        Models.Profile = Backbone.Model.extend({
 
-			action: 'ae-profile-sync',
+            action: 'ae-profile-sync',
 
-			initialize: function() {}
+            initialize: function() {}
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Profile collection
+         * Profile collection
 
-		 */
+         */
 
-		Collections.Profiles = Backbone.Collection.extend({
+        Collections.Profiles = Backbone.Collection.extend({
 
-			model: Models.Profile,
+            model: Models.Profile,
 
-			action: 'ae-fetch-profiles',
+            action: 'ae-fetch-profiles',
 
-			initialize: function() {
+            initialize: function() {
 
-				this.paged = 1;
+                this.paged = 1;
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Define profile item view
+         * Define profile item view
 
-		 */
+         */
 
-		ProfileItem = Views.PostItem.extend({
+        ProfileItem = Views.PostItem.extend({
 
-			tagName: 'div',
+            tagName: 'div',
 
-			className: 'col-md-6 col-sm-12 col-xs-12 profile-item',
+            className: 'col-md-6 col-sm-12 col-xs-12 profile-item',
 
-			template: _.template($('#ae-profile-loop').html()),
+            template: _.template($('#ae-profile-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				//before render item
+                //before render item
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				//after render view
+                //after render view
 
-				var view = this;
+                var view = this;
 
-				view.$('.rate-it').raty({
+                view.$('.rate-it').raty({
 
-					readOnly: true,
+                    readOnly: true,
 
-					half: true,
+                    half: true,
 
-					score: function() {
+                    score: function() {
 
-						return view.model.get('rating_score');
+                        return view.model.get('rating_score');
 
-					},
+                    },
 
-					hints: raty.hint
+                    hints: raty.hint
 
-				});
+                });
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * List view control profiles list
+         * List view control profiles list
 
-		 */
+         */
 
-		ListProfiles = Views.ListPost.extend({
+        ListProfiles = Views.ListPost.extend({
 
-			tagName: 'div',
+            tagName: 'div',
 
-			itemView: ProfileItem,
+            itemView: ProfileItem,
 
-			itemClass: 'profile-item'
+            itemClass: 'profile-item'
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Model portfolio
+         * Model portfolio
 
-		 */
+         */
 
-		Models.Portfolio = Backbone.Model.extend({
+        Models.Portfolio = Backbone.Model.extend({
 
-			action: 'ae-portfolio-sync',
+            action: 'ae-portfolio-sync',
 
-			initialize: function() {}
+            initialize: function() {}
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Portfolio collection
+         * Portfolio collection
 
-		 */
+         */
 
-		Collections.Portfolios = Backbone.Collection.extend({
+        Collections.Portfolios = Backbone.Collection.extend({
 
-			model: Models.Portfolio,
+            model: Models.Portfolio,
 
-			action: 'ae-fetch-portfolios',
+            action: 'ae-fetch-portfolios',
 
-			initialize: function() {
+            initialize: function() {
 
-				this.paged = 1;
+                this.paged = 1;
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Define portfolio item view
+         * Define portfolio item view
 
-		 */
+         */
 
-       // var clicked_portfolio_model;
-		PortfolioItem = Views.PostItem.extend({
+        // var clicked_portfolio_model;
+        PortfolioItem = Views.PostItem.extend({
 
-			events: {
+            events: {
 
-				'click a.delete' : 'removePortfolio',
-				'click a.edit' : 'editPortfolio'
+                'click a.delete': 'removePortfolio',
+                'click a.edit': 'editPortfolio'
 
-			},
+            },
 
-			initialize: function(){
+            initialize: function() {
 
-				this.blockUi    = new Views.BlockUi();
+                this.blockUi = new Views.BlockUi();
 
-			},
+            },
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'portfolio-item col-md-4',
+            className: 'portfolio-item col-md-4',
 
-			template: _.template($('#ae-portfolio-loop').html()),
+            template: _.template($('#ae-portfolio-loop').html()),
 
-			removePortfolio: function(event){
+            removePortfolio: function(event) {
 
-				event.preventDefault();
+                event.preventDefault();
 
-				var view = this;
+                var view = this;
 
-				this.model.destroy({
+                this.model.destroy({
 
-					beforeSend: function() {
+                    beforeSend: function() {
 
-						view.blockUi.block(view.$el);
+                        view.blockUi.block(view.$el);
 
-					},
+                    },
 
-					success: function(res) {
+                    success: function(res) {
 
-						view.blockUi.unblock();
+                        view.blockUi.unblock();
 
-					}
+                    }
 
-				});
+                });
 
-			},
-            editPortfolio: function(event){
+            },
+            editPortfolio: function(event) {
 
-//                event.preventDefault();
-//                //alert('sdafdsf');
-//                var view = this;
-//                console.log(this);
-//                console.log(view.blockUi);
+                //                event.preventDefault();
+                //                //alert('sdafdsf');
+                //                var view = this;
+                //                console.log(this);
+                //                console.log(view.blockUi);
 
                 event.preventDefault();
                 var portfolio = new Models.Portfolio();
@@ -499,8 +499,8 @@
                     this.modalPortfolio = new Views.Modal_Edit_Portfolio({
                         el: '#modal_edit_portfolio',
                         collection: this
-                        //collection: this.portfolio_colection
-                        // model: portfolio
+                            //collection: this.portfolio_colection
+                            // model: portfolio
                     });
                 }
                 //clicked_portfolio_model = this.model.attributes;
@@ -516,14 +516,14 @@
 
             },
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				this.$el.find('.image-gallery').magnificPopup({
-                    type:'image',
+                this.$el.find('.image-gallery').magnificPopup({
+                    type: 'image',
                     image: {
                         headerFit: true,
                         captionFit: true,
@@ -561,769 +561,769 @@
 
                     },
                     callbacks: {
-//                elementParse: function(item) {
-//                    // Function will fire for each target element
-//                    // "item.el" is a target DOM element (if present)
-//                    // "item.src" is a source that you may modify
-//                   // item.find('.mfp-description').html(item.el.data('description'));
-//                    //console.log(jQuery('.mfp-description')); // Do whatever you want with "item" object
-//                },
+                        //                elementParse: function(item) {
+                        //                    // Function will fire for each target element
+                        //                    // "item.el" is a target DOM element (if present)
+                        //                    // "item.src" is a source that you may modify
+                        //                   // item.find('.mfp-description').html(item.el.data('description'));
+                        //                    //console.log(jQuery('.mfp-description')); // Do whatever you want with "item" object
+                        //                },
                         markupParse: function(template, values, item) {
                             values.description = item.el.data('description'); // or item.img.data('description');
                             console.log(values);
                         }
                     }
                 });
-			}
+            }
 
-		});
+        });
 
 
 
 
-		/**
+        /**
 
-		 * List view control Portfolios list
+         * List view control Portfolios list
 
-		 */
+         */
 
-		ListPortfolios = Views.ListPost.extend({
+        ListPortfolios = Views.ListPost.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			itemView: PortfolioItem,
+            itemView: PortfolioItem,
 
-			itemClass: 'portfolio-item'
+            itemClass: 'portfolio-item'
 
-		});
+        });
 
 
 
-		/**
+        /**
 
-		 *  MODEL WORK HISTORY
+         *  MODEL WORK HISTORY
 
-		 */
+         */
 
-		Models.Bid = Backbone.Model.extend({
+        Models.Bid = Backbone.Model.extend({
 
-			action: 'ae-bid-sync',
+            action: 'ae-bid-sync',
 
-			initialize: function() {}
+            initialize: function() {}
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Bid collection
+         * Bid collection
 
-		 */
+         */
 
-		Collections.Bids = Backbone.Collection.extend({
+        Collections.Bids = Backbone.Collection.extend({
 
-			model: Models.Bid,
+            model: Models.Bid,
 
-			action: 'ae-fetch-bid',
+            action: 'ae-fetch-bid',
 
-			initialize: function() {
+            initialize: function() {
 
-				this.paged = 1;
+                this.paged = 1;
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * Define profile item view
+         * Define profile item view
 
-		 */
+         */
 
-		BidItem = Views.PostItem.extend({
+        BidItem = Views.PostItem.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'bid-item',
+            className: 'bid-item',
 
-			template: _.template($('#ae-bid-history-loop').html()),
+            template: _.template($('#ae-bid-history-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				//before render item
+                //before render item
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				//after render view
+                //after render view
 
-				var view = this;
+                var view = this;
 
-				view.$('.rate-it').raty({
+                view.$('.rate-it').raty({
 
-					readOnly: true,
+                    readOnly: true,
 
-					half: true,
+                    half: true,
 
-					score: function() {
+                    score: function() {
 
-						return view.model.get('rating_score');
+                        return view.model.get('rating_score');
 
-					},
+                    },
 
-					hints: raty.hint
+                    hints: raty.hint
 
-				});
+                });
 
-			}
+            }
 
-		});
+        });
 
 
 
-		WorkHistoryItem = Views.PostItem.extend({
+        WorkHistoryItem = Views.PostItem.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			className: 'bid-item',
+            className: 'bid-item',
 
-			template: _.template($('#ae-work-history-loop').html()),
+            template: _.template($('#ae-work-history-loop').html()),
 
-			onItemBeforeRender: function() {
+            onItemBeforeRender: function() {
 
-				//before render item
+                //before render item
 
-			},
+            },
 
-			onItemRendered: function() {
+            onItemRendered: function() {
 
-				//after render view
+                //after render view
 
-				var view = this;
+                var view = this;
 
-				view.$('.rate-it').raty({
+                view.$('.rate-it').raty({
 
-					readOnly: true,
+                    readOnly: true,
 
-					half: true,
+                    half: true,
 
-					score: function() {
+                    score: function() {
 
-						return view.model.get('rating_score');
+                        return view.model.get('rating_score');
 
-					},
+                    },
 
-					hints: raty.hint
+                    hints: raty.hint
 
-				});
+                });
 
-			}
+            }
 
-		});
+        });
 
-		/**
+        /**
 
-		 * List view control bid list
+         * List view control bid list
 
-		 */
+         */
 
-		ListBids = Views.ListPost.extend({
+        ListBids = Views.ListPost.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			itemView: BidItem,
+            itemView: BidItem,
 
-			itemClass: 'bid-item'
+            itemClass: 'bid-item'
 
-		});
+        });
 
 
 
-		/**
+        /**
 
-		 * List view control bid list
+         * List view control bid list
 
-		 */
+         */
 
-		ListWorkHistory = Views.ListPost.extend({
+        ListWorkHistory = Views.ListPost.extend({
 
-			tagName: 'li',
+            tagName: 'li',
 
-			itemView: WorkHistoryItem,
+            itemView: WorkHistoryItem,
 
-			itemClass: 'bid-item'
+            itemClass: 'bid-item'
 
-		});
+        });
 
 
 
-		if($('#ae-bid-loop').length > 0) {
+        if ($('#ae-bid-loop').length > 0) {
 
-			/* bid item in single project*/
+            /* bid item in single project*/
 
-	        SingleBidItem = Views.PostItem.extend({
+            SingleBidItem = Views.PostItem.extend({
 
-	            tagName: 'div',
+                tagName: 'div',
 
-	            className: 'info-bidding',
+                className: 'info-bidding',
 
-	            template: _.template($('#ae-bid-loop').html()),            
+                template: _.template($('#ae-bid-loop').html()),
 
-	            onItemBeforeRender: function() {
+                onItemBeforeRender: function() {
 
-	                //before render item
+                    //before render item
 
-	            },
+                },
 
-	            onItemRendered: function() {
+                onItemRendered: function() {
 
-	                //after render view
+                    //after render view
 
-	                var view = this;
+                    var view = this;
 
-	                view.$('.rate-it').raty({
+                    view.$('.rate-it').raty({
 
-	                    readOnly: true,
+                        readOnly: true,
 
-	                    half: true,
+                        half: true,
 
-	                    score: function() {
+                        score: function() {
 
-	                        return view.model.get('rating_score');
+                            return view.model.get('rating_score');
 
-	                    },
+                        },
 
-	                    hints: raty.hint
+                        hints: raty.hint
 
-	                });
+                    });
 
-	            }
+                }
 
-	        });
+            });
 
-	        /* bid list in single project*/
+            /* bid list in single project*/
 
-	        SingleListBids = Views.ListPost.extend({
+            SingleListBids = Views.ListPost.extend({
 
-	            tagName: 'div',
+                tagName: 'div',
 
-	            itemView: SingleBidItem,
+                itemView: SingleBidItem,
 
-	            itemClass: 'info-bidding',
+                itemClass: 'info-bidding',
 
-	            initialize : function(){
+                initialize: function() {
 
-	                this.tagName = 'ul';
+                    this.tagName = 'ul';
 
-	            },
+                },
 
-	            
 
-	        });
 
-	    }
+            });
 
+        }
 
 
-		/*
 
-		*
+        /*
 
-		* F R O N T  V I E W S
+        *
 
-		*
+        * F R O N T  V I E W S
 
-		*/
+        *
 
-		Views.Front = Backbone.View.extend({
+        */
 
-			el: 'body',
+        Views.Front = Backbone.View.extend({
 
-			model: [],
+            el: 'body',
 
-			events: {
+            model: [],
 
-				'click a.popup-login' : 'openModalLogin', 
+            events: {
 
-				//'click a.register-btn' : 'openModalRegister',				
+                'click a.popup-login': 'openModalLogin',
 
-				'click .trigger-notification' : 'updateNotify',
+                //'click a.register-btn' : 'openModalRegister',				
 
-				'click .trigger-notification-2' : 'updateNotify'
+                'click .trigger-notification': 'updateNotify',
 
-			},
+                'click .trigger-notification-2': 'updateNotify'
 
-			initialize: function(options) {
+            },
 
-				_.bindAll(this, 'editPost', 'updateAuthButtons' , 'rejectPost');				
+            initialize: function(options) {
 
-				if( $('body').find('.all_skills').length > 0)
+                _.bindAll(this, 'editPost', 'updateAuthButtons', 'rejectPost');
 
-					this.all_skills = JSON.parse( $('body').find('.all_skills').html() ) ;
+                if ($('body').find('.all_skills').length > 0)
 
+                    this.all_skills = JSON.parse($('body').find('.all_skills').html());
 
 
-				// if ($('#user_id').length > 0) {
 
-				// 	this.user = new Models.User(JSON.parse($('#user_id').html()));
+                // if ($('#user_id').length > 0) {
 
-				// 	//$('#user_id').remove();
+                // 	this.user = new Models.User(JSON.parse($('#user_id').html()));
 
-				// } else {
+                // 	//$('#user_id').remove();
 
-				// 	this.user = new Models.User();
+                // } else {
 
-				// }
+                // 	this.user = new Models.User();
 
-				this.user = this.model;
+                // }
 
-				/**
+                this.user = this.model;
+
+                /**
 
 	             * unhighlight chosen
 
 	            */
 
-	            $('select.chosen, select.chosen-single').on('change', function(event,params){
+                $('select.chosen, select.chosen-single').on('change', function(event, params) {
 
-	                if(typeof params.selected !== 'undefined') {
+                    if (typeof params.selected !== 'undefined') {
 
-	                    var $container = $(this).closest('div');
+                        var $container = $(this).closest('div');
 
-	                    if ($container.hasClass('error')) {
+                        if ($container.hasClass('error')) {
 
-	                        $container.removeClass('error');
+                            $container.removeClass('error');
 
-	                    }
+                        }
 
-	                    $container.find('div.message').remove().end().find('i.fa-exclamation-triangle').remove();
+                        $container.find('div.message').remove().end();
 
-	                }
+                    }
 
-	            });
+                });
 
-				// this.$('.multi-tax-item').chosen({
+                // this.$('.multi-tax-item').chosen({
 
-				//     width: '95%',
+                //     width: '95%',
 
-				//     max_selected_options: parseInt(ae_globals.max_cat),
+                //     max_selected_options: parseInt(ae_globals.max_cat),
 
-				//     inherit_select_classes: true
+                //     inherit_select_classes: true
 
-				// });
+                // });
 
-				if (typeof $.validator !== 'undefined') {
+                if (typeof $.validator !== 'undefined') {
 
-					$.validator.setDefaults({
+                    $.validator.setDefaults({
 
-						// prevent the form to submit automatically by this plugin
+                        // prevent the form to submit automatically by this plugin
 
-						// so we need to apply handler manually
+                        // so we need to apply handler manually
 
-						onsubmit: true,
+                        onsubmit: true,
 
-						onfocusout: function(element, event) {
+                        onfocusout: function(element, event) {
 
-							if (!this.checkable(element) && element.tagName.toLowerCase() === 'textarea') {
+                            if (!this.checkable(element) && element.tagName.toLowerCase() === 'textarea') {
 
-								this.element(element);
+                                this.element(element);
 
-							} else if (!this.checkable(element) && (element.name in this.submitted || !this.optional(element))) {
+                            } else if (!this.checkable(element) && (element.name in this.submitted || !this.optional(element))) {
 
-								this.element(element);
+                                this.element(element);
 
-							}
+                            }
 
-						},
+                        },
 
-						validClass: "valid", // the classname for a valid element container
+                        validClass: "valid", // the classname for a valid element container
 
-						errorClass: "message", // the classname for the error message for any invalid element
+                        errorClass: "message", // the classname for the error message for any invalid element
 
-						errorElement: 'div', // the tagname for the error message append to an invalid element container
+                        errorElement: 'div', // the tagname for the error message append to an invalid element container
 
-						// append the error message to the element container
+                        // append the error message to the element container
 
-						errorPlacement: function(error, element) {
+                        errorPlacement: function(error, element) {
 
-							$(element).closest('div').append(error);
+                            $(element).closest('div').append(error);
 
-						},
+                        },
 
-						// error is detected, addClass 'error' to the container, remove validClass, add custom icon to the element
+                        // error is detected, addClass 'error' to the container, remove validClass, add custom icon to the element
 
-						highlight: function(element, errorClass, validClass) {
+                        highlight: function(element, errorClass, validClass) {
 
-							var $container = $(element).closest('div');
+                            var $container = $(element).closest('div');
 
-							if (!$container.hasClass('error')) {
+                            if (!$container.hasClass('error')) {
 
-								$container.addClass('error').removeClass(validClass).append('<i class="fa fa-exclamation-triangle" ></i>');
+                                $container.addClass('error').removeClass(validClass);
 
-							}
+                            }
 
 
-                            if (this.mark != 1){
+                            if (this.mark != 1) {
                                 if (jQuery(element).hasClass('chosen')) {
                                     jQuery(element).next(".chosen-container").find(".default").focus();
-                                }else if (jQuery(element).hasClass('wp-editor-area')) {
-                                    window.scrollTo(0,jQuery(element).parent().offset().top-100);
-                                }else{
+                                } else if (jQuery(element).hasClass('wp-editor-area')) {
+                                    window.scrollTo(0, jQuery(element).parent().offset().top - 100);
+                                } else {
                                     jQuery(element).focus();
                                 }
-                                this.mark=1;
+                                this.mark = 1;
                             }
-						},
+                        },
 
-						// remove error when the element is valid, remove class error & add validClass to the container
+                        // remove error when the element is valid, remove class error & add validClass to the container
 
-						// remove the error message & the custom error icon in the element
+                        // remove the error message & the custom error icon in the element
 
-						unhighlight: function(element, errorClass, validClass) {
+                        unhighlight: function(element, errorClass, validClass) {
 
-							var $container = $(element).closest('div');
+                            var $container = $(element).closest('div');
 
-							if ($container.hasClass('error')) {
+                            if ($container.hasClass('error')) {
 
-								$container.removeClass('error').addClass(validClass);
+                                $container.removeClass('error').addClass(validClass);
 
-							}
+                            }
 
-							$container.find('div.message').remove().end().find('i.fa-exclamation-triangle').remove();
+                            $container.find('div.message').remove().end();
 
-                            this.mark=0;
-						}
+                            this.mark = 0;
+                        }
 
-					});
+                    });
 
-				}
+                }
 
 
 
-				this.noti_templates = new _.template('<div class="notification autohide {{= type }}-bg">' + '<div class="main-center">' + '{{= msg }}' + '</div>' + '</div>');
+                this.noti_templates = new _.template('<div class="notification autohide {{= type }}-bg">' + '<div class="main-center">' + '{{= msg }}' + '</div>' + '</div>');
 
-				//edit project pending
+                //edit project pending
 
-				AE.pubsub.on('ae:model:onEdit', this.editPost, this);
+                AE.pubsub.on('ae:model:onEdit', this.editPost, this);
 
 
 
-				//catch action reject project
+                //catch action reject project
 
-				AE.pubsub.on('ae:model:onReject', this.rejectPost, this);
+                AE.pubsub.on('ae:model:onReject', this.rejectPost, this);
 
 
 
-				// event handler for when receiving response from server after requesting login/register
+                // event handler for when receiving response from server after requesting login/register
 
-				AE.pubsub.on('ae:user:auth', this.handleAuth, this);
+                AE.pubsub.on('ae:user:auth', this.handleAuth, this);
 
-				// event handle notification
+                // event handle notification
 
-				AE.pubsub.on('ae:notification', this.showNotice, this);
+                AE.pubsub.on('ae:notification', this.showNotice, this);
 
-				/*
+                /*
 
-				 * check not is mobile, after user login, update authentication button
+                 * check not is mobile, after user login, update authentication button
 
-				 */
+                 */
 
-				//if(!parseInt(ae_globals.ae_is_mobile)){
+                //if(!parseInt(ae_globals.ae_is_mobile)){
 
-					// render button in header
+                // render button in header
 
-	            	this.model.on('change:ID', this.updateAuthButtons);
+                this.model.on('change:ID', this.updateAuthButtons);
 
-	            //}
+                //}
 
 
 
-	            $('textarea').autosize();
+                $('textarea').autosize();
 
 
 
-			},
+            },
 
-			/**
+            /**
 
-			 * callback after user ID change and update header authentication button 
+             * callback after user ID change and update header authentication button 
 
-			 * @since 1.0
+             * @since 1.0
 
-			 * @author Dakachi
+             * @author Dakachi
 
-			 */
+             */
 
-	        updateAuthButtons: function(model){
+            updateAuthButtons: function(model) {
 
-	        	if($('#header_login_template').length > 0 ) {
+                if ($('#header_login_template').length > 0) {
 
-	        		var header_template = _.template($('#header_login_template').html());
+                    var header_template = _.template($('#header_login_template').html());
 
-		            if ($('.dropdown-info-acc-wrapper').length > 0) return;
+                    if ($('.dropdown-info-acc-wrapper').length > 0) return;
 
-		            this.$('.non-login').remove();
+                    this.$('.non-login').remove();
 
-		            this.$('.login-form-header-wrapper').html(header_template(model.attributes));
+                    this.$('.login-form-header-wrapper').html(header_template(model.attributes));
 
-		            console.log('logged in');
+                    console.log('logged in');
 
-	        	}
+                }
 
-	        	console.log('logged in 2');
+                console.log('logged in 2');
 
-	        },	
+            },
 
-	        		
 
-			openModalLogin: function (event){ 
 
-				event.preventDefault();
+            openModalLogin: function(event) {
 
-				var view = this;
+                event.preventDefault();
 
-				this.modalLogin = new Views.Modal_Login({
+                var view = this;
 
-					el: "#modal_login",
+                this.modalLogin = new Views.Modal_Login({
 
-					model : view.model
+                    el: "#modal_login",
 
-				});
+                    model: view.model
 
-				this.modalLogin.openModal();
+                });
 
-			},
+                this.modalLogin.openModal();
 
-			openModalRegister: function (event){
+            },
 
-				event.preventDefault();
+            openModalRegister: function(event) {
 
-				var view = this;
+                event.preventDefault();
 
-				this.modalRegister = new Views.Modal_Register({
+                var view = this;
 
-					el: "#modal_register", 
+                this.modalRegister = new Views.Modal_Register({
 
-					model : view.model
+                    el: "#modal_register",
 
-				});
+                    model: view.model
 
-				this.modalRegister.openModal();
+                });
 
-			},
+                this.modalRegister.openModal();
 
+            },
 
 
-			updateNotify : function(event){ 
 
-				this.user.set('read_notify', 1);
+            updateNotify: function(event) {
 
-				this.user.save();
+                this.user.set('read_notify', 1);
 
-				this.$('.avatar .circle-new').remove();
+                this.user.save();
 
-				this.$('.notify-number').remove();
+                this.$('.avatar .circle-new').remove();
 
-			}, 
+                this.$('.notify-number').remove();
 
-			/*
+            },
 
-			 * Show notification
+            /*
 
-			 */
+             * Show notification
 
-			showNotice: function(params) {
+             */
 
-				var view = this;
+            showNotice: function(params) {
 
-				// remove existing notification
+                var view = this;
 
-				$('div.notification').remove();
+                // remove existing notification
 
-				var notification = $(view.noti_templates({
+                $('div.notification').remove();
 
-					msg: params.msg,
+                var notification = $(view.noti_templates({
 
-					type: params.notice_type
+                    msg: params.msg,
 
-				}));
+                    type: params.notice_type
 
-				if ($('#wpadminbar').length !== 0) {
+                }));
 
-					notification.addClass('having-adminbar');
+                if ($('#wpadminbar').length !== 0) {
 
-				}
+                    notification.addClass('having-adminbar');
 
-				notification.hide().prependTo('body').fadeIn('fast').delay(1000).fadeOut(5000, function() {
+                }
 
-					$(this).remove();
+                notification.hide().prependTo('body').fadeIn('fast').delay(1000).fadeOut(5000, function() {
 
-				});
+                    $(this).remove();
 
-			},
+                });
 
-			handleAuth: function(model, resp, jqXHR) {
+            },
 
-				// check if authentication is successful or not
+            handleAuth: function(model, resp, jqXHR) {
 
-				if (resp.success) {
+                // check if authentication is successful or not
 
+                if (resp.success) {
 
 
-					AE.pubsub.trigger('ae:notification', {
 
-						msg: resp.msg,
+                    AE.pubsub.trigger('ae:notification', {
 
-						notice_type: 'success'
+                        msg: resp.msg,
 
-					});
+                        notice_type: 'success'
 
+                    });
 
 
-					var data = resp.data;
 
+                    var data = resp.data;
 
 
-					//action login
 
-					if(data.do == "login" && !ae_globals.is_submit_project){
+                    //action login
 
-						window.location.reload();
+                    if (data.do == "login" && !ae_globals.is_submit_project) {
 
-						//window.location.href = data.redirect_url;
+                        window.location.reload();
 
-					//action register
+                        //window.location.href = data.redirect_url;
 
-					} else if( data.do == "register" && !ae_globals.is_submit_project ){
+                        //action register
 
-						if( model.get('role') == "freelancer" || model.get('role') == "employer" ){
+                    } else if (data.do == "register" && !ae_globals.is_submit_project) {
 
-							window.location.href = data.redirect_url;
+                        if (model.get('role') == "freelancer" || model.get('role') == "employer") {
 
-						} else {
+                            window.location.href = data.redirect_url;
 
-							window.location.reload();
+                        } else {
 
-						}
+                            window.location.reload();
 
-					}
+                        }
 
+                    }
 
 
-					if (!ae_globals.user_confirm) this.model.set(resp.data);
 
+                    if (!ae_globals.user_confirm) this.model.set(resp.data);
 
 
-				} else {
 
-					AE.pubsub.trigger('ae:notification', {
+                } else {
 
-						msg: resp.msg,
+                    AE.pubsub.trigger('ae:notification', {
 
-						notice_type: 'error'
+                        msg: resp.msg,
 
-					});
+                        notice_type: 'error'
 
-				}
+                    });
 
-			},
+                }
 
+            },
 
 
-			/**
+
+            /**
 
 	         * setup reject post modal and trigger event open modal reject
 
 	         */
 
-	        rejectPost: function(model) {
+            rejectPost: function(model) {
 
-	            if (typeof this.rejectModal === 'undefined') {
+                if (typeof this.rejectModal === 'undefined') {
 
-	                this.rejectModal = new Views.RejectPostModal({
+                    this.rejectModal = new Views.RejectPostModal({
 
-	                    el: $('#reject_post')
+                        el: $('#reject_post')
 
-	                });
+                    });
 
-	            }
+                }
 
-	            this.rejectModal.onReject(model);
+                this.rejectModal.onReject(model);
 
-	        },
+            },
 
-        
 
-			 /**
+
+            /**
 
 	         * setup model for modal edit post and trigger event open the modal EditPost
 
 	         */
 
-	        editPost: function(model) {        	
-
-	        	
-
-	            if (typeof this.editModal === 'undefined') {
-
-	                this.editModal = new Views.EditPost({
-
-	                    el: $('#modal_edit_' + model.get('post_type'))
-
-	                });
-
-	            }
-
-	            this.editModal.onEdit(model, this.all_skills);
-
-	        },
+            editPost: function(model) {
 
 
 
-		});
+                if (typeof this.editModal === 'undefined') {
 
-		/*
+                    this.editModal = new Views.EditPost({
 
-		*
+                        el: $('#modal_edit_' + model.get('post_type'))
 
-		* M O D A L  R E G I S T E R  V I E W S
+                    });
 
-		*
+                }
 
-		*/
+                this.editModal.onEdit(model, this.all_skills);
 
-		Views.Modal_Register = Views.Modal_Box.extend({
-
-		    events: {
-
-		        // user register
-
-		        'submit form.signup_form': 'doRegister',
-
-		    },
+            },
 
 
 
-		    /**
+        });
 
-		     * init view setup Block Ui and Model User
+        /*
 
-		     */
+        *
 
-		    initialize: function() {
+        * M O D A L  R E G I S T E R  V I E W S
 
-				
+        *
 
-		        this.user = AE.App.user;   
+        */
 
-						 
+        Views.Modal_Register = Views.Modal_Box.extend({
 
-		        this.blockUi = new Views.BlockUi();
+            events: {
 
-		        this.initValidator();
+                // user register
 
-		        //check button 
+                'submit form.signup_form': 'doRegister',
 
-		        /*var clickCheckbox = document.querySelector('.sign-up-switch'),
+            },
+
+
+
+            /**
+
+             * init view setup Block Ui and Model User
+
+             */
+
+            initialize: function() {
+
+
+
+                this.user = AE.App.user;
+
+
+
+                this.blockUi = new Views.BlockUi();
+
+                this.initValidator();
+
+                //check button 
+
+                /*var clickCheckbox = document.querySelector('.sign-up-switch'),
 
 		            roleInput     = $("input#role");
 
@@ -1359,473 +1359,475 @@
 
         			this.$(".switchery").append(moveIt);
 
-	            }*/    
+	            }*/
 
-		    },                     
+            },
 
-		    /**
+            /**
 
-		     * init form validator rules
+             * init form validator rules
 
-		     * can override this function by using prototype
+             * can override this function by using prototype
 
-		     */
+             */
 
-		    initValidator: function() {
+            initValidator: function() {
 
-		    	if($('#agreement').length > 0) {
+                if ($('#agreement').length > 0) {
 
-		    		this.register_validator = $("form.signup_form").validate({
+                    this.register_validator = $("form.signup_form").validate({
 
-			            rules: {
+                        rules: {
 
-			                user_login: "required",
+                            user_login: "required",
 
-			                user_pass: "required",
+                            user_pass: "required",
 
-			                agreement : "required",
+                            agreement: "required",
 
-			                user_email: {
+                            user_email: {
 
-			                    required: true,
+                                required: true,
 
-			                    email: true
+                                email: true
 
-			                },
+                            },
 
-			                repeat_pass: {
+                            repeat_pass: {
 
-			                    required: true,
+                                required: true,
 
-			                    equalTo: "#repeat_pass"
+                                equalTo: "#repeat_pass"
 
-			                }
+                            }
 
-			            }
+                        }
 
-			        });
+                    });
 
-			        return true;
+                    return true;
 
-		    	}
+                }
 
-		        /**
+                /**
 
-		         * register rule
+                 * register rule
 
-		         */
+                 */
 
-		        this.register_validator = $("form.signup_form").validate({
+                this.register_validator = $("form.signup_form").validate({
 
-		            rules: {
+                    rules: {
 
-		                user_login: "required",
+                        user_login: "required",
 
-		                user_pass: "required",
+                        user_pass: "required",
 
-		                user_email: {
+                        user_email: {
 
-		                    required: true,
+                            required: true,
 
-		                    email: true
+                            email: true
 
-		                },
+                        },
 
-		                repeat_pass: {
+                        repeat_pass: {
 
-		                    required: true,
+                            required: true,
 
-		                    equalTo: "#repeat_pass"
+                            equalTo: "#repeat_pass"
 
 
 
-		                }
+                        }
 
-		            }
+                    }
 
-		        });
+                });
 
-		    },
+            },
 
-		    /**
+            /**
 
-		     * user sign-up catch event when user submit form signup
+             * user sign-up catch event when user submit form signup
 
-		     */
+             */
 
-		    doRegister: function(event) {
+            doRegister: function(event) {
 
-		        event.preventDefault();
+                event.preventDefault();
 
-		        event.stopPropagation();
+                event.stopPropagation();
 
-		        // *
+                // *
 
-		        //  * call validator init
+                //  * call validator init
 
-				 
 
-		        this.initValidator();
 
-		        var form     = $(event.currentTarget),
+                this.initValidator();
 
-		            button   = form.find('button.btn-submit'),
+                var form = $(event.currentTarget),
 
-		            view     = this;
+                    button = form.find('button.btn-submit'),
 
-		        /**
+                    view = this;
 
-		         * scan all fields in form and set the value to model user
+                /**
 
-		         */
+                 * scan all fields in form and set the value to model user
 
-		        form.find('input, textarea, select').each(function() {
+                 */
 
-		            view.user.set($(this).attr('name'), $(this).val());
+                form.find('input, textarea, select').each(function() {
 
-		        })
+                    view.user.set($(this).attr('name'), $(this).val());
 
-		        // check form validate and process sign-up
+                })
 
-		        if (this.register_validator.form() && !form.hasClass("processing")) {
+                // check form validate and process sign-up
 
-		            this.user.set('do', 'register');
+                if (this.register_validator.form() && !form.hasClass("processing")) {
 
-		            this.user.request('create', {
+                    this.user.set('do', 'register');
 
-		                beforeSend: function() {
+                    this.user.request('create', {
 
-		                    view.blockUi.block(button);
+                        beforeSend: function() {
 
-		                    form.addClass('processing');
+                            view.blockUi.block(button);
 
-		                },
+                            form.addClass('processing');
 
-		                success: function(user, status, jqXHR) {
+                        },
 
-		                    view.blockUi.unblock();
+                        success: function(user, status, jqXHR) {
 
-		                    form.removeClass('processing');
+                            view.blockUi.unblock();
 
-		                    // trigger event process authentication
+                            form.removeClass('processing');
 
-		                    AE.pubsub.trigger('ae:user:auth', user, status, jqXHR);
+                            // trigger event process authentication
 
+                            AE.pubsub.trigger('ae:user:auth', user, status, jqXHR);
 
 
-		                    if(status.success){
 
-		                        AE.pubsub.trigger('ae:notification', {
+                            if (status.success) {
 
-		                            msg : status.msg,
+                                AE.pubsub.trigger('ae:notification', {
 
-		                            notice_type: 'success'
+                                    msg: status.msg,
 
-		                        });
+                                    notice_type: 'success'
 
-		                        view.closeModal();
+                                });
 
-		                        form.trigger('reset');                                                           
+                                view.closeModal();
 
-		                    } else {
+                                form.trigger('reset');
 
-		                        AE.pubsub.trigger('ae:notification', {
+                            } else {
 
-		                            msg : status.msg,
+                                AE.pubsub.trigger('ae:notification', {
 
-		                            notice_type: 'error'
+                                    msg: status.msg,
 
-		                        });
+                                    notice_type: 'error'
 
-		                    }
+                                });
 
-		                }
+                            }
 
-		            });
+                        }
 
+                    });
 
 
-		        }
 
-		    }
+                }
 
-		});
+            }
 
-		/*
+        });
 
-		*
+        /*
 
-		* M O D A L  L O G I N  V I E W S
+        *
 
-		*
+        * M O D A L  L O G I N  V I E W S
 
-		*/
+        *
 
-		Views.Modal_Login = Views.Modal_Box.extend({
+        */
 
-			events: {
+        Views.Modal_Login = Views.Modal_Box.extend({
 
-				// user login
+            events: {
 
-				'submit form.signin_form': 'doLogin',
+                // user login
 
-				// show forgotpass form
+                'submit form.signin_form': 'doLogin',
 
-				'click a.show-forgot-form': 'showForgot'
+                // show forgotpass form
 
-			},
+                'click a.show-forgot-form': 'showForgot'
 
+            },
 
 
-			/**
 
-			 * init view setup Block Ui and Model User
+            /**
 
-			 */
+             * init view setup Block Ui and Model User
 
-			initialize: function() {
+             */
 
-				this.user    = AE.App.user;   
+            initialize: function() {
 
-				this.blockUi = new Views.BlockUi();
+                this.user = AE.App.user;
 
-				//validate forms
+                this.blockUi = new Views.BlockUi();
 
-				this.initValidator();     
+                //validate forms
 
-			},                     
+                this.initValidator();
 
-			/**
+            },
 
-			 * init form validator rules
+            /**
 
-			 * can override this function by using prototype
+             * init form validator rules
 
-			 */
+             * can override this function by using prototype
 
-			initValidator: function() { 
+             */
 
-				// login rule
+            initValidator: function() {
 
-				this.login_validator = this.$("form.signin_form").validate({
+                // login rule
 
-					rules: {
+                this.login_validator = this.$("form.signin_form").validate({
 
-						user_login: "required",
+                    rules: {
 
-						user_pass: "required"
+                        user_login: "required",
 
-					}
+                        user_pass: "required"
 
-				});
+                    }
 
-			},
+                });
 
-			/**
+            },
 
-			 * show modal forgot pass form
+            /**
 
-			 */
+             * show modal forgot pass form
 
-			showForgot: function(event){
+             */
 
-				event.preventDefault();
+            showForgot: function(event) {
 
-				event.stopPropagation();
+                event.preventDefault();
 
-				this.forgot = new Views.Modal_Forgot({el: "#modal_forgot"});
+                event.stopPropagation();
 
-				//close sign in form
+                this.forgot = new Views.Modal_Forgot({
+                    el: "#modal_forgot"
+                });
 
-				this.closeModal();
+                //close sign in form
 
-				//open forgot form
+                this.closeModal();
 
-				this.forgot.openModal();
+                //open forgot form
 
-			},
+                this.forgot.openModal();
 
-			/**
+            },
 
-			 * user login,catch event when user submit login form
+            /**
 
-			 */
+             * user login,catch event when user submit login form
 
-			doLogin: function(event) { 
+             */
 
-				event.preventDefault();
+            doLogin: function(event) {
 
-				event.stopPropagation();
+                event.preventDefault();
 
-				/**
+                event.stopPropagation();
 
-				 * call validator init
+                /**
 
-				 */
+                 * call validator init
 
-				this.initValidator();
+                 */
 
+                this.initValidator();
 
 
-				var form = $(event.currentTarget),
 
-					button = form.find('button.btn-submit'),
+                var form = $(event.currentTarget),
 
-					view = this;
+                    button = form.find('button.btn-submit'),
 
+                    view = this;
 
 
-				/**
 
-				 * scan all fields in form and set the value to model user
+                /**
 
-				 */
+                 * scan all fields in form and set the value to model user
 
-				form.find('input, textarea, select').each(function() {
+                 */
 
-					view.user.set($(this).attr('name'), $(this).val());
+                form.find('input, textarea, select').each(function() {
 
-				})
+                    view.user.set($(this).attr('name'), $(this).val());
 
+                })
 
 
-				// check form validate and process sign-in
 
-				if (this.login_validator.form() && !form.hasClass("processing")) {
+                // check form validate and process sign-in
 
-					this.user.set('do', 'login');
+                if (this.login_validator.form() && !form.hasClass("processing")) {
 
-					this.user.request('read', {
+                    this.user.set('do', 'login');
 
-						beforeSend: function() {
+                    this.user.request('read', {
 
-							view.blockUi.block(button);
+                        beforeSend: function() {
 
-							form.addClass('processing');
+                            view.blockUi.block(button);
 
-						},
+                            form.addClass('processing');
 
-						success: function(user, status, jqXHR) {
+                        },
 
-							view.blockUi.unblock();
+                        success: function(user, status, jqXHR) {
 
-							form.removeClass('processing');
+                            view.blockUi.unblock();
 
-							// trigger event process authentication
+                            form.removeClass('processing');
 
-							AE.pubsub.trigger('ae:user:auth', user, status, jqXHR);
+                            // trigger event process authentication
 
-							if(status.success){
+                            AE.pubsub.trigger('ae:user:auth', user, status, jqXHR);
 
-								AE.pubsub.trigger('ae:notification', {
+                            if (status.success) {
 
-									msg : status.msg,
+                                AE.pubsub.trigger('ae:notification', {
 
-									notice_type: 'success'
+                                    msg: status.msg,
 
-								});
+                                    notice_type: 'success'
 
-								view.closeModal();
+                                });
 
-								form.trigger('reset');
+                                view.closeModal();
 
-							} else {
+                                form.trigger('reset');
 
-								AE.pubsub.trigger('ae:notification', {
+                            } else {
 
-									msg : status.msg,
+                                AE.pubsub.trigger('ae:notification', {
 
-									notice_type: 'error'
+                                    msg: status.msg,
 
-								});
+                                    notice_type: 'error'
 
-							}
+                                });
 
-						}
+                            }
 
-					});
+                        }
 
+                    });
 
 
-				}
 
-			},
+                }
 
-		});
+            },
 
-		/*
+        });
 
-		*
+        /*
 
-		* M O D A L  L O G I N  V I E W S
+        *
 
-		*
+        * M O D A L  L O G I N  V I E W S
 
-		*/
+        *
 
-		Views.Modal_Change_Pass = Views.Modal_Box.extend({
+        */
 
-			events: {
+        Views.Modal_Change_Pass = Views.Modal_Box.extend({
 
-				// user login
+            events: {
 
-				'submit form.chane_pass_form': 'doChangePass',
+                // user login
 
-			},
+                'submit form.chane_pass_form': 'doChangePass',
 
+            },
 
 
-			/**
 
-			 * init view setup Block Ui and Model User
+            /**
 
-			 */
+             * init view setup Block Ui and Model User
 
-			initialize: function() {
+             */
 
-				this.user    = AE.App.user;
+            initialize: function() {
 
-				this.LoadingButtonNew = new Views.LoadingButtonNew();
+                this.user = AE.App.user;
 
-				this.blockUi = new Views.BlockUi();
+                this.LoadingButtonNew = new Views.LoadingButtonNew();
 
-				this.initValidator();      
+                this.blockUi = new Views.BlockUi();
 
-			},                     
+                this.initValidator();
 
-			/**
+            },
 
-			 * init form validator rules
+            /**
 
-			 * can override this function by using prototype
+             * init form validator rules
 
-			 */
+             * can override this function by using prototype
 
-			initValidator: function() {
+             */
 
-				// login rule
+            initValidator: function() {
 
-				this.changepass_validator = $("form.chane_pass_form").validate({
+                // login rule
 
-					rules: {
+                this.changepass_validator = $("form.chane_pass_form").validate({
 
-						old_password: "required",
+                    rules: {
 
-						new_password: "required",
+                        old_password: "required",
 
-						renew_password: {
+                        new_password: "required",
 
-							required: true,
+                        renew_password: {
 
-							equalTo: "#new_password"
+                            required: true,
 
-						}
+                            equalTo: "#new_password"
 
-					},
+                        }
 
-				});
+                    },
 
-                jQuery('#new_password').keyup(function () {
+                });
+
+                jQuery('#new_password').keyup(function() {
                     var pswd = jQuery(this).val();
                     if (pswd.length < 8) {
                         jQuery('#length').removeClass('valid').removeClass('required').addClass('invalid');
@@ -1839,14 +1841,14 @@
                         jQuery('#letter').removeClass('valid').addClass('invalid');
                     }
 
-//validate capital letter
+                    //validate capital letter
                     if (pswd.match(/[A-Z]/)) {
                         jQuery('#capital').removeClass('invalid').addClass('valid');
                     } else {
                         jQuery('#capital').removeClass('valid').addClass('invalid');
                     }
 
-//validate number
+                    //validate number
                     if (pswd.match(/\d/)) {
                         jQuery('#number').removeClass('invalid').addClass('valid');
                     } else {
@@ -1866,66 +1868,66 @@
                     } else {
                         jQuery('.strong-level').text('danger')
                     }
-                }).focus(function () {
+                }).focus(function() {
                     jQuery('#pswd_info').fadeIn('slow');
-                }).blur(function () {
+                }).blur(function() {
                     jQuery('#pswd_info').fadeOut('fast');
                 })
 
-			},
+            },
 
 
-			/**
+            /**
 
-			 * user login,catch event when user submit login form
+             * user login,catch event when user submit login form
 
-			 */
+             */
 
-			doChangePass: function(event) {
+            doChangePass: function(event) {
 
-				event.preventDefault();
+                event.preventDefault();
 
-				event.stopPropagation();
+                event.stopPropagation();
 
-                if (jQuery('#pswd_info li.valid').length < 2 || jQuery('#pswd_info li.required').length < 1 ){
+                if (jQuery('#pswd_info li.valid').length < 2 || jQuery('#pswd_info li.required').length < 1) {
                     jQuery('#pswd_info').fadeIn('slow');
                     return false;
                 }
 
-				/**
+                /**
 
-				 * call validator init
+                 * call validator init
 
-				 */
+                 */
 
-				this.initValidator();
-
-
-
-				var form   = $(event.currentTarget),
-
-					button = form.find('.btn-submit'),
-
-					view   = this;
+                this.initValidator();
 
 
 
-				/**
+                var form = $(event.currentTarget),
 
-				 * scan all fields in form and set the value to model user
+                    button = form.find('.btn-submit'),
 
-				 */
+                    view = this;
 
-				form.find('input, textarea, select').each(function() {
 
-					view.user.set($(this).attr('name'), $(this).val());
 
-				})
-                if(jQuery('#old_password').val() === jQuery('#new_password').val() ){
+                /**
+
+                 * scan all fields in form and set the value to model user
+
+                 */
+
+                form.find('input, textarea, select').each(function() {
+
+                    view.user.set($(this).attr('name'), $(this).val());
+
+                })
+                if (jQuery('#old_password').val() === jQuery('#new_password').val()) {
 
                     AE.pubsub.trigger('ae:notification', {
 
-                        msg : 'Your new password matches the old one!',
+                        msg: 'Your new password matches the old one!',
 
                         notice_type: 'error'
 
@@ -1934,43 +1936,43 @@
                 }
 
 
-				// check form validate and process sign-in
+                // check form validate and process sign-in
 
-				if (this.changepass_validator.form() && !form.hasClass("processing")) {
+                if (this.changepass_validator.form() && !form.hasClass("processing")) {
 
-					this.user.save('do' ,'changepass', {
+                    this.user.save('do', 'changepass', {
 
-						beforeSend: function() {
+                        beforeSend: function() {
 
-							view.LoadingButtonNew.loading(button);
+                            view.LoadingButtonNew.loading(button);
 
-							form.addClass('processing');
+                            form.addClass('processing');
 
-						},
+                        },
 
-						success: function(user, status, jqXHR) {
+                        success: function(user, status, jqXHR) {
 
-							view.LoadingButtonNew.finish(button);
+                            view.LoadingButtonNew.finish(button);
 
-							form.removeClass('processing');
+                            form.removeClass('processing');
 
-							// trigger event process after change pass
+                            // trigger event process after change pass
 
-							AE.pubsub.trigger('ae:user:changepass', user, status, jqXHR);
+                            AE.pubsub.trigger('ae:user:changepass', user, status, jqXHR);
 
-							if(status.success){
+                            if (status.success) {
 
-								AE.pubsub.trigger('ae:notification', {
+                                AE.pubsub.trigger('ae:notification', {
 
-									msg : status.msg,
+                                    msg: status.msg,
 
-									notice_type: 'success'
+                                    notice_type: 'success'
 
-								});
+                                });
 
-								view.closeModal();
+                                view.closeModal();
 
-								form.trigger('reset');
+                                form.trigger('reset');
 
                                 jQuery('#length').removeClass('valid').addClass('invalid');
                                 jQuery('#number').removeClass('valid').addClass('invalid');
@@ -1978,824 +1980,826 @@
                                 jQuery('#letter').removeClass('valid').addClass('invalid');
                                 jQuery('.strong-level').text('danger')
 
-								//window.location.href = ae_globals.homeURL;
+                                //window.location.href = ae_globals.homeURL;
 
-							} else {
+                            } else {
 
-								AE.pubsub.trigger('ae:notification', {
+                                AE.pubsub.trigger('ae:notification', {
 
-									msg : status.msg,
+                                    msg: status.msg,
 
-									notice_type: 'error'
+                                    notice_type: 'error'
 
-								});
+                                });
 
-							}
+                            }
 
-						}
+                        }
 
-					});
+                    });
 
 
 
-				}
+                }
 
-			},
+            },
 
-		});
+        });
 
-		/*
+        /*
 
-		 *
+         *
 
-		 * M O D A L  F O R G O T  V I E W S
+         * M O D A L  F O R G O T  V I E W S
 
-		 *
+         *
 
-		 */
+         */
 
-		Views.Modal_Forgot = Views.Modal_Box.extend({
+        Views.Modal_Forgot = Views.Modal_Box.extend({
 
-			events: {
+            events: {
 
-				// user forgot password
+                // user forgot password
 
-				'submit form.forgot_form': 'doSendPassword',
+                'submit form.forgot_form': 'doSendPassword',
 
-			},
+            },
 
 
 
-			/**
+            /**
 
-			 * init view setup Block Ui and Model User
+             * init view setup Block Ui and Model User
 
-			 */
+             */
 
-			initialize: function() {
+            initialize: function() {
 
-				this.user    = AE.App.user;   
+                this.user = AE.App.user;
 
-				this.blockUi = new Views.BlockUi();
+                this.blockUi = new Views.BlockUi();
 
-				this.initValidator();      
+                this.initValidator();
 
-			},                     
+            },
 
-			/**
+            /**
 
-			 * init form validator rules
+             * init form validator rules
 
-			 * can override this function by using prototype
+             * can override this function by using prototype
 
-			 */
+             */
 
-			initValidator: function() {
+            initValidator: function() {
 
-				/**
+                /**
 
-				 * forgot pass email rule
+                 * forgot pass email rule
 
-				 */
+                 */
 
-				this.forgot_validator = $("form.forgot_form").validate({
+                this.forgot_validator = $("form.forgot_form").validate({
 
-					rules: {
+                    rules: {
 
-						user_email: {
+                        user_email: {
 
-							required: true,
+                            required: true,
 
-							email: true
+                            email: true
 
-						},
+                        },
 
-					}
+                    }
 
-				});
+                });
 
-			},
+            },
 
-			/**
+            /**
 
-			 * user forgot password
+             * user forgot password
 
-			 */
+             */
 
-			doSendPassword: function(event) {
+            doSendPassword: function(event) {
 
-				event.preventDefault();
+                event.preventDefault();
 
-				event.stopPropagation();
+                event.stopPropagation();
 
-				/**
+                /**
 
-				 * call validator init
+                 * call validator init
 
-				 */
+                 */
 
-				this.initValidator();
+                this.initValidator();
 
-				var form   = $(event.currentTarget),
+                var form = $(event.currentTarget),
 
-					email  = form.find('input#user_email').val(),
+                    email = form.find('input#user_email').val(),
 
-					button = form.find('button.btn-submit'),
+                    button = form.find('button.btn-submit'),
 
-					view   = this;
+                    view = this;
 
 
 
-				if (this.forgot_validator.form() && !form.hasClass("processing")) {
+                if (this.forgot_validator.form() && !form.hasClass("processing")) {
 
 
 
-					this.user.set('user_login', email);
+                    this.user.set('user_login', email);
 
-					this.user.set('do', 'forgot');
+                    this.user.set('do', 'forgot');
 
-					this.user.request('read', {
+                    this.user.request('read', {
 
-						beforeSend: function() {
+                        beforeSend: function() {
 
-							view.blockUi.block(button);
+                            view.blockUi.block(button);
 
-							form.addClass('processing');
+                            form.addClass('processing');
 
-						},
+                        },
 
-						success: function(user, status, jqXHR) {
+                        success: function(user, status, jqXHR) {
 
-							form.removeClass('processing');
+                            form.removeClass('processing');
 
-							view.blockUi.unblock();
+                            view.blockUi.unblock();
 
-							if(status.success){
+                            if (status.success) {
 
-								view.closeModal();    
+                                view.closeModal();
 
-								AE.pubsub.trigger('ae:notification', {
+                                AE.pubsub.trigger('ae:notification', {
 
-									msg : status.msg,
+                                    msg: status.msg,
 
-									notice_type: 'success'
+                                    notice_type: 'success'
 
-								});
+                                });
 
-								form.trigger('reset');
+                                form.trigger('reset');
 
-							}else {
+                            } else {
 
-								AE.pubsub.trigger('ae:notification', {
+                                AE.pubsub.trigger('ae:notification', {
 
-									msg : status.msg,
+                                    msg: status.msg,
 
-									notice_type: 'error'
+                                    notice_type: 'error'
 
-								});
+                                });
 
-							}
+                            }
 
-							
 
-						}
 
-					});
+                        }
 
+                    });
 
 
-				}
 
-			}
+                }
 
-		});
+            }
 
-		/*
+        });
 
-		*
+        /*
 
-		* S E A R C H  H E A D E R  V I E W S
+        *
 
-		*
+        * S E A R C H  H E A D E R  V I E W S
 
-		*/
+        *
 
-		/*Views.SearchForm = Backbone.View.extend({
+        */
 
-			events: {
+        /*Views.SearchForm = Backbone.View.extend({
 
-				//change search type job or profile?
+        	events: {
 
-				'change select.search-filter': 'changeSearchType'
+        		//change search type job or profile?
 
-			},
+        		'change select.search-filter': 'changeSearchType'
 
-			initialize: function() {
+        	},
 
-				this.container           = this.$("#search_form");
+        	initialize: function() {
 
-				this.search_type         = "project";
+        		this.container           = this.$("#search_form");
 
-				this.collection_projects = new Collections.Projects();
+        		this.search_type         = "project";
 
-				this.collection_profiles = new Collections.Profiles();
+        		this.collection_projects = new Collections.Projects();
 
-				// projects list
+        		this.collection_profiles = new Collections.Profiles();
 
-				if (typeof ListProjects !== "undefined") {
+        		// projects list
 
-					//list projects
+        		if (typeof ListProjects !== "undefined") {
 
-					new ListProjects({
+        			//list projects
 
-						itemView: ProjectItem,
+        			new ListProjects({
 
-						collection: this.collection_projects,
+        				itemView: ProjectItem,
 
-						el: $('#projects_list')
+        				collection: this.collection_projects,
 
-					});
+        				el: $('#projects_list')
 
-					//list profiles
+        			});
 
-					new ListProfiles({
+        			//list profiles
 
-						itemView: ProfileItem,
+        			new ListProfiles({
 
-						collection: this.collection_profiles,
+        				itemView: ProfileItem,
 
-						el: $('#profiles_list')
+        				collection: this.collection_profiles,
 
-					});
+        				el: $('#profiles_list')
 
-				}
+        			});
 
-				if (typeof Views.BlockControl !== "undefined") {
+        		}
 
-					//project control
+        		if (typeof Views.BlockControl !== "undefined") {
 
-					SearchProjectControl  = Views.BlockControl.extend({
+        			//project control
 
-						onBeforeFetch : function() { 
+        			SearchProjectControl  = Views.BlockControl.extend({
 
-							this.$el.find('.no-result').remove();
+        				onBeforeFetch : function() { 
 
-						},
+        					this.$el.find('.no-result').remove();
 
-						onAfterFetch : function(result, res) {
+        				},
 
-							if(!res.success) {
+        				onAfterFetch : function(result, res) {
 
-								$('#projects_list').append($('#project-no-result').html());	
+        					if(!res.success) {
 
-							}							
+        						$('#projects_list').append($('#project-no-result').html());	
 
-						}
+        					}							
 
-					});
+        				}
 
-					new SearchProjectControl({
+        			});
 
-						collection: this.collection_projects,
+        			new SearchProjectControl({
 
-						el: this.$(".projects-search-container"),
+        				collection: this.collection_projects,
 
-						query: {
+        				el: this.$(".projects-search-container"),
 
-							paginate: 'page'
+        				query: {
 
-						}
+        					paginate: 'page'
 
-					});
+        				}
 
+        			});
 
 
-					SearchProfileControl  = Views.BlockControl.extend({
 
-						onBeforeFetch : function() { 
+        			SearchProfileControl  = Views.BlockControl.extend({
 
-							this.$el.find('.no-result').remove();
+        				onBeforeFetch : function() { 
 
-						},
+        					this.$el.find('.no-result').remove();
 
-						onAfterFetch : function(result, res) {
+        				},
 
-							if(!res.success) {
+        				onAfterFetch : function(result, res) {
 
-								$('#profiles_list').append($('#profile-no-result').html());	
+        					if(!res.success) {
 
-							}							
+        						$('#profiles_list').append($('#profile-no-result').html());	
 
-						}
+        					}							
 
-					});
+        				}
 
-					//profile control
+        			});
 
-					new SearchProfileControl({
+        			//profile control
 
-						collection: this.collection_profiles,
+        			new SearchProfileControl({
 
-						el: this.$(".profiles-search-container"),
+        				collection: this.collection_profiles,
 
-						query: {
+        				el: this.$(".profiles-search-container"),
 
-							paginate: 'page'
+        				query: {
 
-						}
+        					paginate: 'page'
 
-					});
+        				}
 
-				}
+        			});
 
-			},
+        		}
 
-			changeSearchType: function(event) {
+        	},
 
-				var target = $(event.currentTarget);
+        	changeSearchType: function(event) {
 
-				this.search_type = target.val();
+        		var target = $(event.currentTarget);
 
-				if (this.search_type == "profile") {
+        		this.search_type = target.val();
 
-					$(".profiles-search-container").show();
+        		if (this.search_type == "profile") {
 
-					$(".projects-search-container").hide();
+        			$(".profiles-search-container").show();
 
-				} else {
+        			$(".projects-search-container").hide();
 
-					$(".projects-search-container").show();
+        		} else {
 
-					$(".profiles-search-container").hide();
+        			$(".projects-search-container").show();
 
-				}
+        			$(".profiles-search-container").hide();
 
-			}
+        		}
 
-		});*/
+        	}
 
-		
+        });*/
 
-		 /**
+
+
+        /**
 
 	     * modal edit project
 
 	     */
 
-	    Views.EditPost = Views.Modal_Box.extend({
+        Views.EditPost = Views.Modal_Box.extend({
 
-	        events: {
+            events: {
 
-	            'submit form#frm_edit_project': 'submitPost',
+                'submit form#frm_edit_project': 'submitPost',
 
-	            // 'click form .btn-submit': 'submitPost'          
+                // 'click form .btn-submit': 'submitPost'          
 
-	                    
 
-	        },
 
-	        initialize: function() {
+            },
 
-	            _.bindAll(this, 'onEdit', 'cbSuccess', 'cbBeforeSend');
+            initialize: function() {
 
-	            AE.Views.Modal_Box.prototype.initialize.call();
+                _.bindAll(this, 'onEdit', 'cbSuccess', 'cbBeforeSend');
 
-	            this.blockUi = new Views.BlockUi();
-				this.LoadingButtonNew = new Views.LoadingButtonNew();
+                AE.Views.Modal_Box.prototype.initialize.call();
 
+                this.blockUi = new Views.BlockUi();
+                this.LoadingButtonNew = new Views.LoadingButtonNew();
 
-				this.initValidator();
 
-				this.$('#project_category').chosen({
+                this.initValidator();
 
-	                width: '100%',
+                this.$('#project_category').chosen({
 
-	                max_selected_options: parseInt(ae_globals.max_cat),
+                    width: '100%',
 
-	                inherit_select_classes: true
+                    max_selected_options: parseInt(ae_globals.max_cat),
 
-	            });
+                    inherit_select_classes: true
 
+                });
 
 
-				if($('.sw_skill').length > 0) {
 
-	         			this.$('.sw_skill').chosen({
+                if ($('.sw_skill').length > 0) {
 
-			            	max_selected_options:parseInt(ae_globals.max_cat),
+                    this.$('.sw_skill').chosen({
 
-				        	inherit_select_classes: false,
+                        max_selected_options: parseInt(ae_globals.max_cat),
 
-				        	width: '100%'
+                        inherit_select_classes: false,
 
-		            });	
+                        width: '100%'
 
-		        }
+                    });
 
+                }
 
 
-	        },
 
-	        /**
+            },
 
-	        * validate form before submit
+            /**
 
-	        */       
+            * validate form before submit
 
-	      
+            */
 
-	        initValidator: function() {
 
-	            /**
 
-	             * post form validate
+            initValidator: function() {
 
-	             */
+                /**
 
-	             
+                 * post form validate
 
-	            $("form#frm_edit_project").validate({
+                 */
 
-	                ignore: "",
 
-	                rules: {
 
-	                    post_title: "required",
+                $("form#frm_edit_project").validate({
 
-	                    et_budget: "required",
+                    ignore: "",
 
-	                    project_category: "required",
+                    rules: {
 
-	                    post_content: "required"
+                        post_title: "required",
 
-	                },
+                        et_budget: "required",
 
-	                errorPlacement: function(label, element) {
+                        project_category: "required",
 
-	                    // position error label after generated textarea
+                        post_content: "required"
 
-	                    // position error label after generated textarea
+                    },
 
-	                    if (element.is("textarea")) {
+                    errorPlacement: function(label, element) {
 
-	                        label.insertAfter(element.next());
+                        // position error label after generated textarea
 
-	                    } else {
+                        // position error label after generated textarea
 
-	                        $(element).closest('div').append(label);
+                        if (element.is("textarea")) {
 
-	                    }
+                            label.insertAfter(element.next());
 
-	                //     AE.pubsub.trigger('ae:notification', {
+                        } else {
 
-	                //                         msg: ae_globals.msg,
+                            $(element).closest('div').append(label);
 
-	                //                         notice_type: 'error',
+                        }
 
-	                //                     });
+                             AE.pubsub.trigger('ae:notification', {
 
-	                }
+                                                 msg: ae_globals.msg,
 
-	            });
+                                                 notice_type: 'error',
 
-	        },
+                                             });
 
-	        // user submit form edit post
+                    }
 
-	        submitPost: function(event) {
+                });
 
-	            event.preventDefault();
+            },
 
-	            var view 		= this,
+            // user submit form edit post
 
-	            	form 		= $(event.currentTarget),
+            submitPost: function(event) {
 
-	            	button   	= form.find('button.btn'),
+                event.preventDefault();
 
-	                temp 		= new Array();
+                var view = this,
 
+                    form = $(event.currentTarget),
 
+                    button = form.find('button.btn'),
 
-	            /**
+                    temp = new Array();
 
-	             * update model from input, textarea, select
 
-	             */
 
-	            view.$el.find('input,textarea,select').each(function() {
-					if($(this).attr('id') == 'post_title'){
-						view.model.set('post_title', $(this).val());
+                /**
 
-					}else if ($(this).attr('id') == 'et_budget'){
-						view.model.set('et_budget', $(this).val());
+                 * update model from input, textarea, select
 
-					}else if ($(this).attr('id') == 'edit_projects'){
-						view.model.set('post_content', $(this).val());
-					}else if ($(this).attr('id') == 'skill'){
-						view.model.set('skill', $(this).val());
-					}else if ($(this).attr('id') == 'project_category'){
-						view.model.set('project_category', $(this).val());
-					}else{
-						view.model.set($(this).attr('name'), $(this).text());
+                 */
 
-					}
-	            });
+                view.$el.find('input,textarea,select').each(function() {
+                    if ($(this).attr('id') == 'post_title') {
+                        view.model.set('post_title', $(this).val());
 
+                    } else if ($(this).attr('id') == 'et_budget') {
+                        view.model.set('et_budget', $(this).val());
 
-	            view.$el.find('input[type=checkbox]').each(function() {
+                    } else if ($(this).attr('id') == 'edit_projects') {
+                        view.model.set('post_content', $(this).val());
+                    } else if ($(this).attr('id') == 'skill') {
+                        view.model.set('skill', $(this).val());
+                    } else if ($(this).attr('id') == 'project_category') {
+                        view.model.set('project_category', $(this).val());
+                    } else {
+                        view.model.set($(this).attr('name'), $(this).text());
 
-	                var name = $(this).attr('name');
+                    }
+                });
 
-	                view.model.set(name, []);
 
-	            });
+                view.$el.find('input[type=checkbox]').each(function() {
 
+                    var name = $(this).attr('name');
 
+                    view.model.set(name, []);
 
-	            /**
+                });
 
-	             * update input check box to model
 
-	             */
 
-	            view.$el.find('input[type=checkbox]:checked').each(function() {
+                /**
 
-	                var name = $(this).attr('name');
+                 * update input check box to model
 
-	                if (typeof temp[name] !== 'object') {
+                 */
 
-	                    temp[name] = new Array();
+                view.$el.find('input[type=checkbox]:checked').each(function() {
 
-	                }
+                    var name = $(this).attr('name');
 
-	                temp[name].push($(this).val());
+                    if (typeof temp[name] !== 'object') {
 
-	                view.model.set(name, temp[name]);
+                        temp[name] = new Array();
 
-	            });
+                    }
 
-	            /**
+                    temp[name].push($(this).val());
 
-	             * update input radio to model
+                    view.model.set(name, temp[name]);
 
-	             */
+                });
 
-	            view.$el.find('input[type=radio]:checked').each(function() {
+                /**
 
-	                view.model.set($(this).attr('name'), $(this).val());
+                 * update input radio to model
 
-	            });
+                 */
 
+                view.$el.find('input[type=radio]:checked').each(function() {
 
+                    view.model.set($(this).attr('name'), $(this).val());
 
-	            view.model.set('skill', view.skill_control.model.get('skill'));
+                });
 
 
 
-	            /**
+                view.model.set('skill', view.skill_control.model.get('skill'));
 
-	             * save model
 
-	             */
 
-	            if( this.$("form#frm_edit_project").validate() )  {
+                /**
 
-	            	view.model.save('', '', {
+                 * save model
 
-		                beforeSend: function() {
+                 */
 
-		                	//view.blockUi.block(button);
-							view.LoadingButtonNew.loading(button);
+                if (this.$("form#frm_edit_project").validate()) {
 
-		                },
+                    view.model.save('', '', {
 
-		                success: function(result, res, jqXHR) {
+                        beforeSend: function() {
 
-		                    //view.blockUi.unblock();
-							view.LoadingButtonNew.finish(button);
-		                    if (res.success) {
+                            //view.blockUi.block(button);
+                            view.LoadingButtonNew.loading(button);
 
-		                    	view.closeModal();
+                        },
 
-		                        if (ae_globals.is_single) {
+                        success: function(result, res, jqXHR) {
 
-		                        	window.location.reload();
+                            //view.blockUi.unblock();
+                            view.LoadingButtonNew.finish(button);
+                            if (res.success) {
 
-		                        }
+                                view.closeModal();
 
-		                        view.success(res);
+                                if (ae_globals.is_single) {
 
-		                    } else {
+                                    window.location.reload();
 
-		                        view.error(res);
+                                }
 
-		                    }
+                                view.success(res);
 
-		                }
+                            } else {
 
-		            });
+                                view.error(res);
 
-	            }
+                            }
 
-	            
+                        }
 
-	        },
+                    });
 
-	        /**
+                }
 
-	         * on edit a model and setup modal data views
 
-	         */
 
-	        onEdit: function(model,skills) {
+            },
 
-	        	var view =  this;	        	
+            /**
 
-	            this.model = model;
+             * on edit a model and setup modal data views
 
-	            this.all_skills = skills;	           
+             */
 
-	            // open the modal
+            onEdit: function(model, skills) {
 
-	           
+                var view = this;
 
-	            this.openModal();
+                this.model = model;
 
-	            // setup fields
+                this.all_skills = skills;
 
-	            this.setupFields();
+                // open the modal
 
 
 
-	            if(typeof this.skill_control === 'undefined') {
+                this.openModal();
 
-	            	this.skill_control = new Views.Skill_Control({el : view.$('.skill-control')});
+                // setup fields
 
-	            }
+                this.setupFields();
 
-	            // console.log(this.model);
 
-	            this.skill_control.setModel(this.model);
 
+                if (typeof this.skill_control === 'undefined') {
 
-	        },
+                    this.skill_control = new Views.Skill_Control({
+                        el: view.$('.skill-control')
+                    });
 
-	        /**
+                }
 
-	         *
+                // console.log(this.model);
 
-	         */
+                this.skill_control.setModel(this.model);
 
-	        setupFields: function() {
 
-	            var view = this,
+            },
 
-	                form_field = view.$('.form-group');
+            /**
 
+             *
 
+             */
 
-	            AE.pubsub.trigger('AE:beforeSetupFields', this.model);
+            setupFields: function() {
 
-	            /**
+                var view = this,
 
-	             * update form value for input, textarea select
+                    form_field = view.$('.form-group');
 
-	             */
 
-	            form_field.find('input[type="text"],input[type="number"],input[type="hidden"], textarea,select').each(function() {
-//debugger;
-	                var $input = $(this);
 
-					if ($input.attr('name') == 'post_title'){
+                AE.pubsub.trigger('AE:beforeSetupFields', this.model);
 
-						var elem = document.createElement('textarea');
-						elem.innerHTML = view.model.get($input.attr('name'));
-						var decoded = elem.value;
-						$input.val(decoded);
+                /**
 
-					}else{
-						$input.val(view.model.get($input.attr('name')));
+                 * update form value for input, textarea select
 
-					}
-	                // trigger chosen update if is select
+                 */
 
-	                if ($input.get(0).nodeName === "SELECT") $input.trigger('chosen:updated');
+                form_field.find('input[type="text"],input[type="number"],input[type="hidden"], textarea,select').each(function() {
+                    //debugger;
+                    var $input = $(this);
 
-	            });
+                    if ($input.attr('name') == 'post_title') {
 
-	            form_field.find('input[type="radio"]').each(function() {
+                        var elem = document.createElement('textarea');
+                        elem.innerHTML = view.model.get($input.attr('name'));
+                        var decoded = elem.value;
+                        $input.val(decoded);
 
-	                var $input = $(this),
+                    } else {
+                        $input.val(view.model.get($input.attr('name')));
 
-	                    name = $input.attr('name');
+                    }
+                    // trigger chosen update if is select
 
-	                if ($input.val() == view.model.get(name)) {
+                    if ($input.get(0).nodeName === "SELECT") $input.trigger('chosen:updated');
 
-	                    $input.attr('checked', true);
+                });
 
-	                }
+                form_field.find('input[type="radio"]').each(function() {
 
-	            });	   
+                    var $input = $(this),
 
+                        name = $input.attr('name');
 
+                    if ($input.val() == view.model.get(name)) {
 
-	            form_field.find('input[type="checkbox"]').each(function() {
+                        $input.attr('checked', true);
 
-	                var $input = $(this),
+                    }
 
-	                    name = $input.attr('name');
+                });
 
-	                if ( $.inArray(parseInt($input.val()),view.model.get(name)) > -1 ) {
 
-	                    $input.attr('checked', true);
 
-	                }
+                form_field.find('input[type="checkbox"]').each(function() {
 
-	            });	       	         	
+                    var $input = $(this),
 
-	            // update value for post content editor
+                        name = $input.attr('name');
 
-	            if (typeof tinyMCE !== 'undefined') {
+                    if ($.inArray(parseInt($input.val()), view.model.get(name)) > -1) {
 
-	                tinymce.EditorManager.execCommand('mceAddEditor', true, "edit_projects");
+                        $input.attr('checked', true);
 
-	                tinymce.EditorManager.get('edit_projects').setContent(view.model.get('post_content'));
+                    }
 
-	            }	          
+                });
 
-				form_field.find("ul#skills_list").html('');
+                // update value for post content editor
 
-				// init carousel
+                if (typeof tinyMCE !== 'undefined') {
 
-				if (typeof view.carousels === 'undefined') {
+                    tinymce.EditorManager.execCommand('mceAddEditor', true, "edit_projects");
 
-	                view.carousels = new Views.Carousel({
+                    tinymce.EditorManager.get('edit_projects').setContent(view.model.get('post_content'));
 
-	                    el: $('#gallery_container'),
+                }
 
-	                    model: view.model,
+                form_field.find("ul#skills_list").html('');
 
-	                    extensions : 'pdf,doc,docx,png,jpg,gif,zip'
+                // init carousel
 
-	                });
+                if (typeof view.carousels === 'undefined') {
 
-	            } else {
+                    view.carousels = new Views.Carousel({
 
-	                view.carousels.setModel(view.model);
+                        el: $('#gallery_container'),
 
-	                view.carousels.setupView();
+                        model: view.model,
 
-	            }
+                        extensions: 'pdf,doc,docx,png,jpg,gif,zip'
 
-	            AE.pubsub.trigger('AE:afterSetupFields', this.model);
+                    });
 
-	        },
+                } else {
 
-	        resetUploader: function() {
+                    view.carousels.setModel(view.model);
 
-	            if (typeof this.uploader === 'undefined') return;
+                    view.carousels.setupView();
 
-	            this.uploader.controller.splice();
+                }
 
-	            this.uploader.controller.refresh();
+                AE.pubsub.trigger('AE:afterSetupFields', this.model);
 
-	            this.uploader.controller.destroy();
+            },
 
-	        },
+            resetUploader: function() {
 
-	        cbSuccess: function(res) {
+                if (typeof this.uploader === 'undefined') return;
 
-	            var view = this;
+                this.uploader.controller.splice();
 
-	            view.blockUi.unblock();
+                this.uploader.controller.refresh();
 
-	            // view.model.set('cover_image', res.data.attach_id);
+                this.uploader.controller.destroy();
 
-	            // view.model.set('cover_image_url', res.data.full[0]);
+            },
 
-	            // view.$('#cover_background').css('background', 'url(' + res.data.full[0] + ') no-repeat center center / cover cadetblue');
+            cbSuccess: function(res) {
 
-	            view.model.set('uploadingCarousel', false);
+                var view = this;
 
-	        },
+                view.blockUi.unblock();
 
-	        cbBeforeSend: function(ele) {
+                // view.model.set('cover_image', res.data.attach_id);
 
-	            var view = this;
+                // view.model.set('cover_image_url', res.data.full[0]);
 
-	            button = $(ele).find('.image');
+                // view.$('#cover_background').css('background', 'url(' + res.data.full[0] + ') no-repeat center center / cover cadetblue');
 
-	            view.blockUi.block(button);
+                view.model.set('uploadingCarousel', false);
 
-	            view.model.set('uploadingCarousel', true);
+            },
 
-	        }
+            cbBeforeSend: function(ele) {
 
-	    });
+                var view = this;
 
-		
+                button = $(ele).find('.image');
 
-		/*
+                view.blockUi.block(button);
+
+                view.model.set('uploadingCarousel', true);
+
+            }
+
+        });
+
+
+
+        /*
 
 	     *
 
@@ -2805,282 +2809,280 @@
 
 	    */
 
-		Views.SubmitProject = Views.SubmitPost.extend({
+        Views.SubmitProject = Views.SubmitPost.extend({
 
-	        onAfterInit: function() {
+            onAfterInit: function() {
 
-	        	var view = this;
+                var view = this;
 
-	        	if( $('#edit_postdata').length > 0 ) {
+                if ($('#edit_postdata').length > 0) {
 
-                var postdata = JSON.parse($('#edit_postdata').html());
+                    var postdata = JSON.parse($('#edit_postdata').html());
 
-	                this.model = new Models.Project(postdata);
+                    this.model = new Models.Project(postdata);
 
-	                this.model.set('renew', 1);
+                    this.model.set('renew', 1);
 
-	                this.setupFields();
+                    this.setupFields();
 
-	            }else {
+                } else {
 
-	                this.model = new Models.Project();    
+                    this.model = new Models.Project();
 
-	            }
+                }
 
 
 
-	            view.carousels = new Views.Carousel({
+                view.carousels = new Views.Carousel({
 
-	                el: $('#gallery_container'),
+                    el: $('#gallery_container'),
 
-	                model: view.model,
+                    model: view.model,
 
-	                extensions : 'pdf,doc,docx,png,jpg,gif,zip,ppt,pptx'
+                    extensions: 'pdf,doc,docx,png,jpg,gif,zip,ppt,pptx'
 
-	            });
+                });
 
 
 
-	            if($('.sw_skill').length > 0) {
+                if ($('.sw_skill').length > 0) {
 
-	            	this.$('.sw_skill').chosen({
+                    this.$('.sw_skill').chosen({
 
-		            	max_selected_options:parseInt(ae_globals.max_cat),
+                        max_selected_options: parseInt(ae_globals.max_cat),
 
-		            	inherit_select_classes: false,
+                        inherit_select_classes: false,
 
-		            	width: '95%',
+                        width: '95%',
 
-		            });	
+                    });
 
-		        }
+                }
 
-	            if(view.$('.skill-control').length > 0 ) {
+                if (view.$('.skill-control').length > 0) {
 
-	            	//new skills view
+                    //new skills view
 
-		            new Views.Skill_Control({
+                    new Views.Skill_Control({
 
-		                model: this.model, 
+                        model: this.model,
 
-		                el : view.$('.skill-control'), 
+                        el: view.$('.skill-control'),
 
-		                name : 'skill'
+                        name: 'skill'
 
-		            });
+                    });
 
-	            }
+                }
 
-	            this.$('.multi-tax-item').chosen({
+                this.$('.multi-tax-item').chosen({
 
-	                width: '95%',
+                    width: '95%',
 
-	                max_selected_options: parseInt(ae_globals.max_cat),
+                    max_selected_options: parseInt(ae_globals.max_cat),
 
-	                inherit_select_classes: true
+                    inherit_select_classes: true
 
-	            });
+                });
 
-	        },
+            },
 
-	        onLimitFree: function() {
+            onLimitFree: function() {
 
-	            AE.pubsub.trigger('ae:notification', {
+                AE.pubsub.trigger('ae:notification', {
 
-	                msg: ae_globals.limit_free_msg,
+                    msg: ae_globals.limit_free_msg,
 
-	                notice_type: 'error',
+                    notice_type: 'error',
 
-	            });
+                });
 
-	        },
+            },
 
-	        onAfterShowNextStep: function(step) {
+            onAfterShowNextStep: function(step) {
 
-	            $('.step-heading').find('i.fa-caret-down').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
+                $('.step-heading').find('i.fa-caret-down').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
 
-	            $('.step-' + step).find('.step-heading i.fa-caret-right').removeClass('fa-caret-right').addClass('fa-caret-down');
+                $('.step-' + step).find('.step-heading i.fa-caret-right').removeClass('fa-caret-right').addClass('fa-caret-down');
 
-	        },
+            },
 
-	        onAfterSelectStep: function(step) {
+            onAfterSelectStep: function(step) {
 
-	            $('.step-heading').find('i').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
+                $('.step-heading').find('i').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
 
-	            step.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
+                step.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
 
-	        },
+            },
 
-	        // on after Submit auth fail
+            // on after Submit auth fail
 
-	        onAfterAuthFail: function(model, res) {
+            onAfterAuthFail: function(model, res) {
 
-	            AE.pubsub.trigger('ae:notification', {
+                AE.pubsub.trigger('ae:notification', {
 
-	                msg: res.msg,
+                    msg: res.msg,
 
-	                notice_type: 'error',
+                    notice_type: 'error',
 
-	            });
+                });
 
-	        },
+            },
 
-	        onAfterPostFail: function(model, res) {
+            onAfterPostFail: function(model, res) {
 
-	            AE.pubsub.trigger('ae:notification', {
+                AE.pubsub.trigger('ae:notification', {
 
-	                msg: res.msg,
+                    msg: res.msg,
 
-	                notice_type: 'error',
+                    notice_type: 'error',
 
-	            });
+                });
 
-	        }, 
+            },
 
-	        onAfterSelectPlan : function($step, $li){
+            onAfterSelectPlan: function($step, $li) {
 
-	        	var label = $li.attr('data-label');
+                var label = $li.attr('data-label');
 
-	        	$step.find('.text-heading-step').html(label);
+                $step.find('.text-heading-step').html(label);
 
-	        }
+            }
 
-	    });
+        });
 
 
 
 
+        Views.SubmitBibPlan = Views.SubmitPost.extend({
 
-		Views.SubmitBibPlan = Views.SubmitPost.extend({
+            onAfterInit: function() {
 
-	        onAfterInit: function() {
+                var view = this;
 
-	        	var view = this;
+                if ($('#edit_postdata').length > 0) {
 
-	        	if( $('#edit_postdata').length > 0 ) {
+                    var postdata = JSON.parse($('#edit_postdata').html());
 
-                var postdata = JSON.parse($('#edit_postdata').html());
+                    this.model = new Models.Bid(postdata);
 
-	                this.model = new Models.Bid(postdata);
+                    this.model.set('renew', 1);
 
-	                this.model.set('renew', 1);
+                    this.setupFields();
 
-	                this.setupFields();
+                } else {
 
-	            }else {
+                    this.model = new Models.Bid();
 
-	                this.model = new Models.Bid();
+                    //this.model.set('post_parent', 2858); //???
 
-	                //this.model.set('post_parent', 2858); //???
+                }
 
-	            }
+                //new skills view
 
-	              //new skills view
+                new Views.Skill_Control({
 
-	            new Views.Skill_Control({
+                    model: this.model,
 
-	                model: this.model, 
+                    el: view.$('.skill-control')
 
-	                el : view.$('.skill-control')
+                });
 
-	            });
 
 
+                this.$('.multi-tax-item').chosen({
 
-	            this.$('.multi-tax-item').chosen({
+                    width: '95%',
 
-	                width: '95%',
+                    max_selected_options: parseInt(ae_globals.max_cat),
 
-	                max_selected_options: parseInt(ae_globals.max_cat),
+                    inherit_select_classes: true
 
-	                inherit_select_classes: true
+                });
 
-	            });
+            },
 
-	        },
+            onLimitFree: function() {
 
-	        onLimitFree: function() {
+                AE.pubsub.trigger('ae:notification', {
 
-	            AE.pubsub.trigger('ae:notification', {
+                    msg: ae_globals.limit_free_msg,
 
-	                msg: ae_globals.limit_free_msg,
+                    notice_type: 'error',
 
-	                notice_type: 'error',
+                });
 
-	            });
+            },
 
-	        },
+            onAfterShowNextStep: function(step) {
 
-	        onAfterShowNextStep: function(step) {
+                $('.step-heading').find('i.fa-caret-down').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
 
-	            $('.step-heading').find('i.fa-caret-down').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
+                $('.step-' + step).find('.step-heading i.fa-caret-right').removeClass('fa-caret-right').addClass('fa-caret-down');
 
-	            $('.step-' + step).find('.step-heading i.fa-caret-right').removeClass('fa-caret-right').addClass('fa-caret-down');
+            },
 
-	        },
+            onAfterSelectStep: function(step) {
 
-	        onAfterSelectStep: function(step) {
+                $('.step-heading').find('i').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
 
-	            $('.step-heading').find('i').removeClass('fa-caret-right fa-caret-down').addClass('fa-caret-right');
+                step.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
 
-	            step.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
+            },
 
-	        },
+            // on after Submit auth fail
 
-	        // on after Submit auth fail
+            onAfterAuthFail: function(model, res) {
 
-	        onAfterAuthFail: function(model, res) {
+                AE.pubsub.trigger('ae:notification', {
 
-	            AE.pubsub.trigger('ae:notification', {
+                    msg: res.msg,
 
-	                msg: res.msg,
+                    notice_type: 'error',
 
-	                notice_type: 'error',
+                });
 
-	            });
+            },
 
-	        },
+            onAfterPostFail: function(model, res) {
 
-	        onAfterPostFail: function(model, res) {
+                AE.pubsub.trigger('ae:notification', {
 
-	            AE.pubsub.trigger('ae:notification', {
+                    msg: res.msg,
 
-	                msg: res.msg,
+                    notice_type: 'error',
 
-	                notice_type: 'error',
+                });
 
-	            });
+            }
 
-	        }
+        });
 
-	    });
 
-		
 
 
+        $('.slider-ranger').slider();
 
-		$('.slider-ranger').slider();
 
 
+        DPGlobal.dates = ae_globals.dates;
 
-		DPGlobal.dates = ae_globals.dates;
+        $('.datepicker').datepicker({
 
-		$('.datepicker').datepicker({
+            format: 'mm/dd/yyyy'
 
-			format : 'mm/dd/yyyy'
+        });
 
-		}); 
+        // $('#datepicker').on('changeDate', function(ev){
 
-		// $('#datepicker').on('changeDate', function(ev){
+        //     $(this).datepicker('hide');
 
-		//     $(this).datepicker('hide');
+        // });
 
-		// });
+        $('.tooltip-style').tooltip();
 
-		$('.tooltip-style').tooltip();
-
-		$('.image-gallery').magnificPopup({
-            type:'image',
+        $('.image-gallery').magnificPopup({
+            type: 'image',
             image: {
                 headerFit: true,
                 captionFit: true,
@@ -3119,13 +3121,13 @@
 
             },
             callbacks: {
-//                elementParse: function(item) {
-//                    // Function will fire for each target element
-//                    // "item.el" is a target DOM element (if present)
-//                    // "item.src" is a source that you may modify
-//                   // item.find('.mfp-description').html(item.el.data('description'));
-//                    //console.log(jQuery('.mfp-description')); // Do whatever you want with "item" object
-//                },
+                //                elementParse: function(item) {
+                //                    // Function will fire for each target element
+                //                    // "item.el" is a target DOM element (if present)
+                //                    // "item.src" is a source that you may modify
+                //                   // item.find('.mfp-description').html(item.el.data('description'));
+                //                    //console.log(jQuery('.mfp-description')); // Do whatever you want with "item" object
+                //                },
                 markupParse: function(template, values, item) {
                     values.description = item.el.data('description'); // or item.img.data('description');
                     console.log(values);
@@ -3135,189 +3137,204 @@
 
 
 
-		$('.trigger-menu').click(function(){
+        $('.trigger-menu').click(function() {
 
-			$('.search-fullscreen').hide();
+            $('.search-fullscreen').hide();
 
-			$('.notification-fullscreen').hide(); 
+            $('.notification-fullscreen').hide();
 
-			$('.menu-fullscreen').show();
+            $('.menu-fullscreen').show();
 
-			$('body').addClass('fre-menu-overflow');
+            $('body').addClass('fre-menu-overflow');
 
-			// $('#video-background-wrapper').hide();
+            // $('#video-background-wrapper').hide();
 
-		});
+        });
 
 
 
-		$('.overlay-close').click(function() {
+        $('.overlay-close').click(function() {
 
-		   $('body').removeClass('fre-menu-overflow');
+            $('body').removeClass('fre-menu-overflow');
 
-		   // $('#video-background-wrapper').show();
+            // $('#video-background-wrapper').show();
 
-		});
+        });
 
-		$('.trigger-search').click(function(){
+        $('.trigger-search').click(function() {
 
-			$('.menu-fullscreen').hide(); 	
+            $('.menu-fullscreen').hide();
 
-			$('.notification-fullscreen	').hide(); 
+            $('.notification-fullscreen	').hide();
 
-			$('.search-fullscreen').show();
+            $('.search-fullscreen').show();
 
-			$('body').addClass('fre-menu-overflow');
+            $('body').addClass('fre-menu-overflow');
 
-			//$('#video-background-wrapper').hide();
+            //$('#video-background-wrapper').hide();
 
-		});
+        });
 
-		
 
-		$('.trigger-notification, .trigger-notification-2').on('click',function(){
 
-			//$('.menu-fullscreen').hide(); 
+        $('.trigger-notification, .trigger-notification-2').on('click', function() {
 
-			//$('.search-fullscreen').hide();
+            //$('.menu-fullscreen').hide(); 
 
-			//$('.notification-fullscreen').show();
+            //$('.search-fullscreen').hide();
 
-			//$('body').addClass('fre-menu-overflow');
+            //$('.notification-fullscreen').show();
 
-		});
+            //$('body').addClass('fre-menu-overflow');
 
-		
+        });
 
-		if($('.menu-fullscreen  li').length > 6) {
 
-			$('.overlay nav').css( {height : '80%'});
 
-			$('.menu-main > li').css({height : '80px'});
+        if ($('.menu-fullscreen  li').length > 6) {
 
-		}
+            $('.overlay nav').css({
+                height: '80%'
+            });
 
-		if($('.menu-fullscreen  li').length > 10)  {
+            $('.menu-main > li').css({
+                height: '80px'
+            });
 
-			$('.overlay nav').css( {height : '95%'});
+        }
 
-		}
+        if ($('.menu-fullscreen  li').length > 10) {
 
-		$('.menu-fullscreen ul.sub-menu').each(function(){
+            $('.overlay nav').css({
+                height: '95%'
+            });
 
-			var li = $(this).find('li').length;
+        }
 
-			li++;
+        $('.menu-fullscreen ul.sub-menu').each(function() {
 
-			$(this).parents('li').css({height : li*60 +10 +'px'});
+            var li = $(this).find('li').length;
 
-		});
+            li++;
 
+            $(this).parents('li').css({
+                height: li * 60 + 10 + 'px'
+            });
 
+        });
 
-		// Select style
 
-		var class_chosen = $(".chosen-select");
 
-		$(".chosen-select").each(function(){
+        // Select style
 
-			var data_chosen_width = $(this).attr('data-chosen-width'),
+        var class_chosen = $(".chosen-select");
 
-				data_chosen_disable_search = $(this).attr('data-chosen-disable-search'),
+        $(".chosen-select").each(function() {
 
-				max_selected_options = $(this).attr('data-max-select') ;
+            var data_chosen_width = $(this).attr('data-chosen-width'),
 
-			$(this).chosen({width: data_chosen_width, disable_search: data_chosen_disable_search, max_selected_options : max_selected_options });
+                data_chosen_disable_search = $(this).attr('data-chosen-disable-search'),
 
-		});
+                max_selected_options = $(this).attr('data-max-select');
 
+            $(this).chosen({
+                width: data_chosen_width,
+                disable_search: data_chosen_disable_search,
+                max_selected_options: max_selected_options
+            });
 
+        });
 
-		// $('.chosen-select-date').chosen({width : '70%', disable_search: true});	
 
-		
 
-		// Resize search input header
+        // $('.chosen-select-date').chosen({width : '70%', disable_search: true});	
 
-		function resizeInput() {
 
-			 var contents = $(this).val(),
 
-			 	charlength = contents.length;
+        // Resize search input header
 
-			if(charlength > 0 ) {
+        function resizeInput() {
 
-				$(this).attr('size', charlength);	
+            var contents = $(this).val(),
 
-				$(this).css('width', 'auto');	
+                charlength = contents.length;
 
-			}else{
+            if (charlength > 0) {
 
-				$(this).css('width', '540px');	
+                $(this).attr('size', charlength);
 
-			}
+                $(this).css('width', 'auto');
 
-			
+            } else {
 
-		}
+                $(this).css('width', '540px');
 
-		$('input.field-search-top')
+            }
 
-		// event handler
 
-		.keyup(resizeInput)
 
-		// resize on page load
+        }
 
-		.each(resizeInput);
+        $('input.field-search-top')
 
+        // event handler
 
+        .keyup(resizeInput)
 
-		//iOS7 Switcher
+        // resize on page load
 
-		var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        .each(resizeInput);
 
-		elems.forEach(function(html) {
 
-			var switchery = new Switchery(html,{});
 
-		});
+        //iOS7 Switcher
 
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
+        elems.forEach(function(html) {
 
-		//iOS7 Switcher for sign-up
+            var switchery = new Switchery(html, {});
 
-		$('.sign-up-switch').each(function(index, el) {
+        });
 
-			 new Switchery(el,{ color: 'rgba(231,76,60,.9)', secondaryColor: 'rgba(42,62,80,.9)' });
 
-		});
 
+        //iOS7 Switcher for sign-up
 
+        $('.sign-up-switch').each(function(index, el) {
 
-		/**
+            new Switchery(el, {
+                color: 'rgba(231,76,60,.9)',
+                secondaryColor: 'rgba(42,62,80,.9)'
+            });
 
-		 * Menu style fixed
+        });
 
-		*/
-                var lastScrollTop = 0
-		$(window).scroll(function(e) {
-                    $el = $('#header-wrapper');
-                     console.log($(window).scrollTop());
-                    var st = $(this).scrollTop();
-                    var scrollBottom = $(window).scrollTop() + $(window).height();
-                    
-                    if($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 && scrollBottom < $(document).height() - 100 ) {
-                        if (st > lastScrollTop){
-                            $el.removeClass("on-top").removeClass("on-bottom").removeClass("sticky").addClass("hidden-sticky");
-                        } else {
-                            $el.removeClass("on-top").removeClass("on-bottom").removeClass("hidden-sticky").addClass("sticky");
-                        }
-                    } else if($(window).scrollTop() < 10) {
-                        $el.removeClass("sticky").removeClass("hidden-sticky").removeClass("on-bottom").addClass("on-top");
-                    } else {
-                        $el.removeClass("sticky").removeClass("hidden-sticky").addClass("on-bottom");			
-                    }
+
+
+        /**
+
+         * Menu style fixed
+
+        */
+        var lastScrollTop = 0
+        $(window).scroll(function(e) {
+            $el = $('#header-wrapper');
+//            console.log($(window).scrollTop());
+            var st = $(this).scrollTop();
+            var scrollBottom = $(window).scrollTop() + $(window).height();
+
+            if ($(window).scrollTop() > $el.height() && $(document).height() > $(window).height() * 1.20 && scrollBottom < $(document).height() - 100) {
+                if (st > lastScrollTop) {
+                    $el.removeClass("on-top").removeClass("on-bottom").removeClass("sticky").addClass("hidden-sticky");
+                } else {
+                    $el.removeClass("on-top").removeClass("on-bottom").removeClass("hidden-sticky").addClass("sticky");
+                }
+            } else if ($(window).scrollTop() < 10) {
+                $el.removeClass("sticky").removeClass("hidden-sticky").removeClass("on-bottom").addClass("on-top");
+            } else {
+                $el.removeClass("sticky").removeClass("hidden-sticky").addClass("on-bottom");
+            }
             lastScrollTop = st;
 
 
@@ -3326,66 +3343,69 @@
 
 
 
+        /**
 
-		/**
+         * COUNTER 
 
-		 * COUNTER 
+         */
 
-		 */
+        if ($('.odometer').length > 0) {
 
-		if( $('.odometer').length > 0 ){
+            $('.odometer').waypoint(function() {
 
-			$('.odometer').waypoint(function() {
+                var data_number = $(this).attr('data-number');
 
-				var data_number = $(this).attr('data-number');
+                $(this).html(data_number);
 
-				$(this).html(data_number);
+            }, {
+                offset: '75%'
+            });
 
-			}, {offset: '75%'});
+        }
 
-		}
+        /**
 
-		/**
+         * TABS
 
-		 * TABS
+         */
 
-		 */
+        $('#authenticate_tab a').click(function(e) {
 
-		$('#authenticate_tab a').click(function(e) {
+            e.preventDefault();
 
-			e.preventDefault();
+            $(this).tab('show');
 
-			$(this).tab('show');
+        });
 
-		});
+        $('#standardmenu .active > a').click(function() {
+            return false;
+        });
 
-		$('#standardmenu .active > a').click(function(){return false;});
 
 
+        /**
 
-		/**
+         * RATE IT
 
-		 * RATE IT
+         */
 
-		 */
+        $('.rate-it').raty({
 
-		$('.rate-it').raty({
+            readOnly: true,
 
-			readOnly: true,
+            half: true,
 
-			half: true,
+            score: function() {
 
-			score: function() {
+                return $(this).attr('data-score');
 
-				return $(this).attr('data-score');
+            },
 
-			},
+            hints: raty.hint
 
-			hints: raty.hint
+        });
 
-		});
-
-	});
+    });
 
 })(jQuery, window.AE.Models, window.AE.Collections, window.AE.Views);
 
@@ -3393,100 +3413,98 @@
 
 jQuery.fn.serializeObject = function() {
 
-	var self = this,
+    var self = this,
 
-		json = {},
+        json = {},
 
-		push_counters = {},
+        push_counters = {},
 
-		patterns = {
+        patterns = {
 
-			"validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+            "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
 
-			"key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+            "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
 
-			"push": /^$/,
+            "push": /^$/,
 
-			"fixed": /^\d+$/,
+            "fixed": /^\d+$/,
 
-			"named": /^[a-zA-Z0-9_]+$/
+            "named": /^[a-zA-Z0-9_]+$/
 
-		};
+        };
 
-	this.build = function(base, key, value) {
+    this.build = function(base, key, value) {
 
-		base[key] = value;
+        base[key] = value;
 
-		return base;
+        return base;
 
-	};
+    };
 
-	this.push_counter = function(key) {
+    this.push_counter = function(key) {
 
-		if (push_counters[key] === undefined) {
+        if (push_counters[key] === undefined) {
 
-			push_counters[key] = 0;
+            push_counters[key] = 0;
 
-		}
+        }
 
-		return push_counters[key]++;
+        return push_counters[key]++;
 
-	};
+    };
 
-	jQuery.each(jQuery(this).serializeArray(), function() {
+    jQuery.each(jQuery(this).serializeArray(), function() {
 
-		// skip invalid keys
+        // skip invalid keys
 
-		if (!patterns.validate.test(this.name)) {
+        if (!patterns.validate.test(this.name)) {
 
-			return;
+            return;
 
-		}
+        }
 
-		var k,
+        var k,
 
-			keys = this.name.match(patterns.key),
+            keys = this.name.match(patterns.key),
 
-			merge = this.value,
+            merge = this.value,
 
-			reverse_key = this.name;
+            reverse_key = this.name;
 
-		while ((k = keys.pop()) !== undefined) {
+        while ((k = keys.pop()) !== undefined) {
 
-			// adjust reverse_key
+            // adjust reverse_key
 
-			reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
+            reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
 
-			// push
+            // push
 
-			if (k.match(patterns.push)) {
+            if (k.match(patterns.push)) {
 
-				merge = self.build([], self.push_counter(reverse_key), merge);
+                merge = self.build([], self.push_counter(reverse_key), merge);
 
-			}
+            }
 
-			// fixed
+            // fixed
+            else if (k.match(patterns.fixed)) {
 
-			else if (k.match(patterns.fixed)) {
+                merge = self.build([], k, merge);
 
-				merge = self.build([], k, merge);
+            }
 
-			}
+            // named
+            else if (k.match(patterns.named)) {
 
-			// named
+                merge = self.build({}, k, merge);
 
-			else if (k.match(patterns.named)) {
+            }
 
-				merge = self.build({}, k, merge);
+        }
 
-			}
+        json = jQuery.extend(true, json, merge);
 
-		}
+    });
 
-		json = jQuery.extend(true, json, merge);
-
-	});
-
-	return json;
+    return json;
 
 };

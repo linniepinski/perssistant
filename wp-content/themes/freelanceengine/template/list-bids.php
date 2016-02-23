@@ -36,30 +36,26 @@ $biddata = array();
 
 ?>
 
-    <div class="col-md-8">
+    <div class="col-xs-12 col-md-8">
 
 
         <div class="row title-tab-project <?php if ($q_bid->found_posts < 1) echo 'display-none' ?>">
 
-            <div class="col-md-4 col-xs-4">
+            <div class="col-xs-4 col-md-4">
 
                 <span><?php printf(__('FREELANCER BIDDING (%s)', ET_DOMAIN), $number_bids); ?></span>
 
             </div>
 
-            <div class="col-md-3 col-xs-3">
+            <div class="col-xs-3 col-md-3">
 
                 <span><?php _e('REPUTATION', ET_DOMAIN); ?></span>
 
             </div>
 
-            <div class="col-md-2 col-xs-2">
+            <div class="col-xs-5 col-md-5">
 
                 <span><?php _e('BID', ET_DOMAIN); ?></span>
-
-            </div>
-            <div class="col-md-3 col-xs-3">
-
 
             </div>
 

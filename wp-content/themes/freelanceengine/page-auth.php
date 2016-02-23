@@ -147,7 +147,7 @@
 			                <div class="form-group">
 			                	<div class="row">
 			                    	<div class="col-md-4">
-			                        	<label class="control-label title-plan" for="user_login"><?php _e('Username', ET_DOMAIN) ?><span><?php _e('Enter Username', ET_DOMAIN) ?></span></label>
+                                                    <label class="control-label title-plan" for="user_login"><?php _e('Username', ET_DOMAIN) ?><span><?php _e('Enter Username', ET_DOMAIN) ?></span></label>
 			                        </div>
 			                        <div class="col-sm-8">
 			                            <input type="text" class="form-control text-field" id="login_user_login" name="user_login" placeholder="<?php _e('Enter username', ET_DOMAIN);?>">
