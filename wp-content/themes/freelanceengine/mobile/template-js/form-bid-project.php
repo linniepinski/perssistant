@@ -19,7 +19,7 @@
         <label for="bid_time"><?php _e('Deadline',ET_DOMAIN);?></label>
         <input type="number" name="bid_time" id="bid_time" class="form-control required number" />      
         <div class="clearfix" style="height:12px;"></div>                
-        <select name="type_time">                           
+        <select name="type_time" class="bid_time form-control">                           
             <option value="day"><?php _e('days',ET_DOMAIN);?></option>
             <option value="week"><?php _e('week',ET_DOMAIN);?></option>
         </select>

@@ -7925,7 +7925,7 @@ input[type=number]:hover {
   .width-880 {
     width: auto; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* line 5893, ../sass/custom.scss */
   .btn-menu-call li a span, .btn-menu-call li .trigger-menu i, .btn-menu-call li .trigger-search i {
     font-size: 13px; }
@@ -7988,9 +7988,11 @@ input[type=number]:hover {
   .content-search-form-top-wrapper #skill, .content-search-form-top-wrapper .keyword, .slider.slider-horizontal {
     width: 90% !important;
     max-width: 90%; } 
-  /* line 6546, ../sass/custom.scss */
-  .info-bidding .ribbon {
-    width: 50px !important; } }
+  /* line 6171, ../sass/custom.scss */
+  .top-header .navbar-collapse {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; } }
 
 @media (max-width: 640px) {
   /* line 5943, ../sass/custom.scss */
@@ -8033,13 +8035,6 @@ input[type=number]:hover {
   /* line 5972, ../sass/custom.scss */
   #modal_edit_project .wp-editor-wrap {
     width: 500px; } }
-
-@media (max-width: 767px) {
-  /* line 6171, ../sass/custom.scss */
-  .top-header .navbar-collapse {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 6177, ../sass/custom.scss */
@@ -8161,3 +8156,8 @@ input[type=number]:hover {
   /* line 6292, ../sass/custom.scss */
   .top-header .navbar-collapse.collapse {
     padding-bottom: 15px; } }
+
+@media (max-width: 768px) {
+  /* line 6546, ../sass/custom.scss */
+  .info-bidding .ribbon {
+    width: 50px !important; } }

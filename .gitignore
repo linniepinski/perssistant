@@ -19,3 +19,8 @@ wp-content/plugins/hello.php
 /stats
 /wp-content/themes/freelanceengine/nbproject/private/
 /wp-content/themes/freelanceengine/nbproject
+/wp-content/themes/freelanceengine/.sass-cache
+/wp-content/themes/freelanceengine/node_modules
+/wp-content/themes/freelanceengine/Gruntfile.js
+/wp-content/themes/freelanceengine/package.json
+/wp-content/themes/freelanceengine/sass

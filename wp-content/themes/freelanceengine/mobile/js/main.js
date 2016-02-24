@@ -104,6 +104,9 @@
                 data_chosen_disable_search = $(this).attr('data-chosen-disable-search');
             $(this).chosen({width: data_chosen_width, disable_search: data_chosen_disable_search });
         });
+        $("select").each(function(){
+            $(this).chosen({width: '100%', disable_search: true });
+        });
 
         if ($('#ae-bid-loop').length > 0) {
             /* bid item in single project*/
