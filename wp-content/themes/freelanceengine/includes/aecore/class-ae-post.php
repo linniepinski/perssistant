@@ -653,7 +653,7 @@ class AE_Posts
      * @since 1.0
      */
     public function fetch($args) {
-        
+
         $args['post_type'] = $this->post_type;
         if (isset($args['radius']) && $args['radius']) {
             $query = $this->nearbyPost($args);

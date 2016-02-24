@@ -67,7 +67,7 @@ get_header();
                         <div class="tab-content block-projects">
                             <div class="tab-pane fade in active" id="tab_lastest_projects">
                             	<?php 
-                                query_posts(array('post_type' => 'project' , 'post_status' => 'publish'));
+                                query_posts(array('post_type' => 'project' , 'post_status' => 'publish', 'suppress_filter' => false));
                                 get_template_part( 'list', 'projects' ); 
                                 wp_reset_query();
                                 ?>

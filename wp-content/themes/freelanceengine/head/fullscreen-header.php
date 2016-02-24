@@ -69,7 +69,7 @@
 
                 </div>
                 */?>
-                          <?php $currentlang = get_bloginfo('language'); if($currentlang=="en-GB"): ?>
+<!--                          --><?php //$currentlang = get_bloginfo('language'); if($currentlang=="en-GB"): ?>
       
        
 
@@ -141,12 +141,13 @@
                                                     
                         </div> 
                         <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
-                        <div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div>
+<!--                        <div class="sitelang">--><?php //pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?><!--</div>-->
                             </div>
-                           
+                            <?php do_action('wpml_add_language_selector');?>
 
-                       
-                         <a href="<?php echo site_url(); ?>/login" class="login login-btn"><?php _e("LOGIN", ET_DOMAIN) ?></a>
+
+
+                            <a href="<?php echo site_url(); ?>/login" class="login login-btn"><?php _e("LOGIN", ET_DOMAIN) ?></a>
 
                             <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("SIGN UP", ET_DOMAIN) ?></a>
 
@@ -222,7 +223,7 @@
                         </div>
                          <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
                              <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a>  
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div></div>
+<!--<div class="sitelang">--><?php //pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?><!--</div></div>-->
 
                         <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
 
@@ -359,294 +360,7 @@
                     </div>
 
                 </div>
-                 <?php else: ?>
-                 <div class="login-form-header-wrapper">
-                            
-                        <?php if(!is_user_logged_in()){ ?>
 
-                        <div class="non-login">
-                    
-                            <div class="pull-left mtop7" >
-                            <a class="login login-btn" href="<?php echo site_url(); ?>/projekt-hinzuzufugen/"><?php _e("PROJEKT HINZUFÜGEN", ET_DOMAIN) ?></a>
-                            
-                            
-                              <div class="dropdown-info-acc-wrapper">
-
-                            <div class="dropdown">
-
-                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-
-                                        <span class="avatar-and-name"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
-
-
-                                    <span class="caret"></span>
-
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="  left: -11px;
-  top: -110%">
-
-                                   
-                                   <li role="presentation">
-
-                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
-
-
-                                    <span class="caret" style="border-top: 4px solid #000;"></span>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    <li role="presentation">
-
-                                        <a  tabindex="-1" role="menuitem" href="<?php echo site_url(); ?>/projects/" class="se-proj">
-
-                                                <?php _e("Suche nach Projekten", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    
-
-                                    <li role="presentation">
-
-                                        <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/" class="se-free">
-
-                                            </i><?php _e("Suche nach Freiberuflern", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                                                    
-                        </div> 
-                        <a class="login login-btn" href="<?php echo site_url(); ?>/wie-es-funktioniert/"><?php _e("WIE ES FUNKTIONIERT", ET_DOMAIN) ?></a>
-                        <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("NACHRICHTEN", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a>
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div>
-                            </div>
-                           
-
-                       
-                         <a href="<?php echo site_url(); ?>/login" class="login login-btn"><?php _e("EINLOGGEN", ET_DOMAIN) ?></a>
-
-                            <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("ANMELDUNG", ET_DOMAIN) ?></a>
-
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
-                        </div>
-
-                    
-                        <?php } else { ?>
-                         <div class="pull-left mtop7" > 
-                            <?php if( ae_user_role() == FREELANCER ) { ?>
-                            <a href="<?php echo site_url(); ?>/projects/" class="login login-btn"><?php _e("FIND A PROJECT", ET_DOMAIN) ?></a>
-                            <?php } else { ?>
-                                <a href="<?php echo site_url(); ?>/projekt-hinzuzufugen/" class="login login-btn"><?php _e("PROJEKT HINZUFÜGEN", ET_DOMAIN) ?></a>
-                            <?php } ?>
-                        
-                        <div class="dropdown-info-acc-wrapper">
-
-                            <div class="dropdown">
-
-                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-
-                                        <span class="avatar-and-name"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
-
-
-                                    <span class="caret"></span>
-
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="left: -11px;
-  top: -110%">
-
-                                   
-                                    <li role="presentation" >
-
-                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("SUCHE", ET_DOMAIN); ?></span></span>
-
-
-                                    <span class="caret"></span>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    <li role="presentation">
-
-                                        <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/projects/" class="se-proj">
-
-                                                <?php _e("Suche nach Projekten", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    
-
-                                    <li role="presentation">
-
-                                        <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/" class="se-free">
-
-                                            </i><?php _e("Suche nach Freiberuflern", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                                                    
-                        </div>
-                         <a class="login login-btn" href="<?php echo site_url(); ?>/wie-es-funktioniert/"><?php _e("WIE ES FUNKTIONIERT", ET_DOMAIN) ?></a>
-                             <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("NACHRICHTEN", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a> 
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div> </div>
-
-                        <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
-
-                            <div class="dropdown">
-
-                                <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
-
-                                    <span class="avatar-and-name">
-
-                                        <span class="avatar">
-
-                                            <?php 
-
-                                                $notify_number = 0;
-
-                                                if(function_exists('fre_user_have_notify') ) {
-
-                                                    $notify_number = fre_user_have_notify();
-
-                                                    if($notify_number) {
-
-                                                        echo '<span class="trigger-overlay trigger-notification-2 circle-new">'.$notify_number.'</span>';
-
-                                                    }                                                    
-
-                                                } 
-
-                                                echo get_avatar($user_ID);
-
-                                            ?>
-
-                                        </span>
-
-                                        <?php echo $current_user->display_name; ?>
-
-                                    </span>
-
-                                    <span class="caret"></span>
-
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-
-                                    <li><span class="avatar-and-name avatar-name-ontop">
-
-                                        <span class="avatar">
-
-                                            <?php 
-
-                                                $notify_number = 0;
-
-                                                if(function_exists('fre_user_have_notify') ) {
-
-                                                    $notify_number = fre_user_have_notify();
-
-                                                    if($notify_number) {
-
-                                                        echo '<span class="trigger-overlay trigger-notification-2 circle-new">'.$notify_number.'</span>';
-
-                                                    }                                                    
-
-                                                } 
-
-                                                echo get_avatar($user_ID);
-
-                                            ?>
-
-                                        </span>
-
-                                        <?php echo $current_user->display_name; ?>
-
-                                    </span>
-
-                                    <span class="caret"></span></li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    <li role="presentation">
-
-                                        <a role="menuitem" tabindex="-1" href="<?php echo et_get_page_link("profile") ?>" class="display-name">
-
-                                            <i class="fa fa-user"></i><?php _e("Dein Profil", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    <li role="presentation">
-                                        
-                                        <a href="<?php echo site_url(); ?>/profile/" class="trigger-notification">
-
-                                            <i class="fa fa-flag"></i>
-
-                                            <?php 
-
-                                                _e("Benachrichtigung", ET_DOMAIN); 
-
-                                                if($notify_number) {
-
-                                                    echo ' <span class="notify-number">(' . $notify_number . ')</span>';
-
-                                                }
-
-                                             ?>
-
-                                        </a>
-
-                                    </li>
-
-                                    <li role="presentation" class="divider"></li>
-
-                                    <li role="presentation">
-
-                                        <a role="menuitem" tabindex="-1" href="<?php echo wp_logout_url(); ?>" class="logout">
-
-                                            <i class="fa fa-sign-out"></i><?php _e("Abmelden", ET_DOMAIN) ?>
-
-                                        </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </div>
-                                                    
-                        </div>
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
-
-                      
-                        <?php } ?>
-
-                    </div>
-
-       
-        <?php endif; ?> 
 
 
             </div>
