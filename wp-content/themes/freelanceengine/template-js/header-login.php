@@ -25,7 +25,7 @@
 
             <li role="presentation">
                 <a role="menuitem" tabindex="-1" href="<?php echo et_get_page_link('profile'); ?>" class="display-name">
-                    <i class="fa fa-user"></i><?php _e("Your Profile", ET_DOMAIN) ?>
+                    <i class="fa fa-user"></i><?php _e("Your Profile", 'header-login') ?>
                 </a>
             </li>
             <li role="presentation" class="divider"></li>
@@ -46,7 +46,7 @@
             */ ?>
             <li role="presentation">
                 <a role="menuitem" tabindex="-1" href="<?php echo wp_logout_url(); ?>" class="logout">
-                    <i class="fa fa-sign-out"></i><?php _e("Logout", ET_DOMAIN) ?>
+                    <i class="fa fa-sign-out"></i><?php _e("Logout", 'header-login') ?>
                 </a>
             </li>
         </ul>

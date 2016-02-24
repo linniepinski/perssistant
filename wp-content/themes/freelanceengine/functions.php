@@ -131,7 +131,7 @@ class ET_FreelanceEngine extends AE_Base
 
             //all new roles
 
-            add_role(FREELANCER, __('Freelancer', ET_DOMAIN) , array(
+            add_role(FREELANCER, __('Freelancer', 'functions') , array(
 
                 'read' => true,
 
@@ -165,7 +165,7 @@ class ET_FreelanceEngine extends AE_Base
 
         if (!isset($wp_roles->roles[EMPLOYER])) {
 
-            add_role(EMPLOYER, __('Employer', ET_DOMAIN) , array(
+            add_role(EMPLOYER, __('Employer', 'functions') , array(
 
                 'read' => true,
 
@@ -193,15 +193,15 @@ class ET_FreelanceEngine extends AE_Base
 
         
 
-        register_nav_menu('et_header', __("Fullscreen Header menu", ET_DOMAIN));
+        register_nav_menu('et_header', __("Fullscreen Header menu", 'functions'));
 
-        register_nav_menu('et_header_standard', __("Standard Header menu", ET_DOMAIN));
+        register_nav_menu('et_header_standard', __("Standard Header menu", 'functions'));
 
 
 
-        register_nav_menu('et_mobile', __("Mobile menu", ET_DOMAIN));
+        register_nav_menu('et_mobile', __("Mobile menu", 'functions'));
 
-        register_nav_menu('et_footer', __("Footer menu", ET_DOMAIN));
+        register_nav_menu('et_footer', __("Footer menu", 'functions'));
 
         
 
@@ -529,7 +529,7 @@ class ET_FreelanceEngine extends AE_Base
 
         register_post_status('reject', array(
 
-            'label' => __('Reject', ET_DOMAIN) ,
+            'label' => __('Reject', 'functions') ,
 
             'private' => true,
 
@@ -551,7 +551,7 @@ class ET_FreelanceEngine extends AE_Base
 
         register_post_status('archive', array(
 
-            'label' => __('Archive', ET_DOMAIN) ,
+            'label' => __('Archive', 'functions') ,
 
             'private' => false,
 
@@ -1093,13 +1093,13 @@ class ET_FreelanceEngine extends AE_Base
 
     function admin_comment_types_dropdown($comment_types) {
 
-        $comment_types['fre_review']   = __("Freelancer Review", ET_DOMAIN);
+        $comment_types['fre_review']   = __("Freelancer Review", 'functions');
 
-        $comment_types['em_review']   = __("Employer Review", ET_DOMAIN);
+        $comment_types['em_review']   = __("Employer Review", 'functions');
 
-        $comment_types['fre_report']   = __("Report", ET_DOMAIN);
+        $comment_types['fre_report']   = __("Report", 'functions');
 
-        $comment_types['fre_invite']   = __("Invite", ET_DOMAIN);
+        $comment_types['fre_invite']   = __("Invite", 'functions');
 
         return $comment_types;
 
@@ -1169,7 +1169,7 @@ class ET_FreelanceEngine extends AE_Base
 
             $author = get_user_by('id', $result->post_author);
 
-            $result->author_name = isset($author->display_name) ? $author->display_name : __('Unnamed', ET_DOMAIN);
+            $result->author_name = isset($author->display_name) ? $author->display_name : __('Unnamed', 'functions');
 
         }
 
@@ -1191,15 +1191,15 @@ class ET_FreelanceEngine extends AE_Base
 
                     if ($num_comments == 0) {
 
-                        $comments = __('No Comments', ET_DOMAIN);
+                        $comments = __('No Comments', 'functions');
 
                     } elseif ($num_comments > 1) {
 
-                        $comments = $num_comments . __(' Comments', ET_DOMAIN);
+                        $comments = $num_comments . __(' Comments', 'functions');
 
                     } else {
 
-                        $comments = __('1 Comment', ET_DOMAIN);
+                        $comments = __('1 Comment', 'functions');
 
                     }
 
@@ -1207,7 +1207,7 @@ class ET_FreelanceEngine extends AE_Base
 
                 } else {
 
-                    $write_comments = __('Comments are off for this post.', ET_DOMAIN);
+                    $write_comments = __('Comments are off for this post.', 'functions');
 
                 }
 
@@ -1247,7 +1247,7 @@ class ET_FreelanceEngine extends AE_Base
 
             foreach ($categories as $category) {
 
-                $output.= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s", ET_DOMAIN) , $category->name)) . '">' . $category->cat_name . '</a>' . $separator;
+                $output.= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s", 'functions') , $category->name)) . '">' . $category->cat_name . '</a>' . $separator;
 
             }
 
@@ -1470,7 +1470,7 @@ class ET_FreelanceEngine extends AE_Base
 
         wp_localize_script('front', 'fre_fronts', array(
 
-            'portfolio_img' => __('Please select an image!', ET_DOMAIN)
+            'portfolio_img' => __('Please select an image!', 'functions')
 
         ));
 
@@ -1614,17 +1614,17 @@ class ET_FreelanceEngine extends AE_Base
 
                 wp_localize_script('single-project', 'single_text', array(
 
-                    'agree' => __('Agree', ET_DOMAIN) ,
+                    'agree' => __('Agree', 'functions') ,
 
-                    'accepted' => __('Accepted', ET_DOMAIN) ,
+                    'accepted' => __('Accepted', 'functions') ,
 
-                    'skip' => __('Skip', ET_DOMAIN) ,
+                    'skip' => __('Skip', 'functions') ,
 
-                    'working' => __('Working', ET_DOMAIN) ,
+                    'working' => __('Working', 'functions') ,
 
-                    'complete' => __('Complete', ET_DOMAIN) ,
+                    'complete' => __('Complete', 'functions') ,
 
-                    'completed' => __('Completed', ET_DOMAIN) ,
+                    'completed' => __('Completed', 'functions') ,
 
                 ));
 
@@ -1698,17 +1698,17 @@ class ET_FreelanceEngine extends AE_Base
 
             wp_localize_script('single-project', 'single_text', array(
 
-                'agree' => __('Agree', ET_DOMAIN) ,
+                'agree' => __('Agree', 'functions') ,
 
-                'accepted' => __('Accepted', ET_DOMAIN) ,
+                'accepted' => __('Accepted', 'functions') ,
 
-                'skip' => __('Skip', ET_DOMAIN) ,
+                'skip' => __('Skip', 'functions') ,
 
-                'working' => __('Working', ET_DOMAIN) ,
+                'working' => __('Working', 'functions') ,
 
-                'complete' => __('Complete', ET_DOMAIN) ,
+                'complete' => __('Complete', 'functions') ,
 
-                'completed' => __('Completed', ET_DOMAIN) ,
+                'completed' => __('Completed', 'functions') ,
 
             ));
 
@@ -2086,7 +2086,7 @@ class ET_FreelanceEngine extends AE_Base
 
         // Change this to your theme text domain, used for internationalising strings
 
-        $theme_text_domain = ET_DOMAIN;
+        $theme_text_domain = 'functions';
 
         
 
@@ -2398,7 +2398,7 @@ function fre_append_post_status_list() {
 
             $complete = " selected='selected'";
 
-            $label = '<span id="post-status-display">' . __("Completed", ET_DOMAIN) . '</span>';
+            $label = '<span id="post-status-display">' . __("Completed", 'functions') . '</span>';
 
         }
 
@@ -2406,7 +2406,7 @@ function fre_append_post_status_list() {
 
             $closed = " selected='selected'";
 
-            $label = '<span id="post-status-display">' . __("Close", ET_DOMAIN) . '</span>';
+            $label = '<span id="post-status-display">' . __("Close", 'functions') . '</span>';
 
         }
 
@@ -2414,7 +2414,7 @@ function fre_append_post_status_list() {
 
             $disputing = " selected='selected'";
 
-            $label = '<span id="post-status-display">' . __("Disputing", ET_DOMAIN) . '</span>';
+            $label = '<span id="post-status-display">' . __("Disputing", 'functions') . '</span>';
 
         }
 
@@ -2422,7 +2422,7 @@ function fre_append_post_status_list() {
 
             $disputed = " selected='selected'";
 
-            $label = '<span id="post-status-display">' . __("Disputed", ET_DOMAIN) . '</span>';
+            $label = '<span id="post-status-display">' . __("Disputed", 'functions') . '</span>';
 
         }
 

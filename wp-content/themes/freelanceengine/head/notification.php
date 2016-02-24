@@ -8,7 +8,7 @@ global $user_ID;
             <!-- projects container -->
             <div class="col-md-12 freelancer-list-container">
                 <h4 class="notification-header">    
-                    <?php _e("NOTIFICATIONS", ET_DOMAIN); ?>
+                    <?php _e("NOTIFICATIONS", 'head-notification'); ?>
                 </h4>
                
                   <?php fre_user_notification($user_ID); ?>

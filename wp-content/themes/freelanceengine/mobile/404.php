@@ -10,7 +10,7 @@
 			        <div class="col-md-12 col-xs-12">
 			            <div class="blog-content">
 			                <h2 class="title-blog">
-			                	<?php _e("Not Found", ET_DOMAIN); ?>
+			                	<?php _e("Not Found", '404'); ?>
 			                </h2>
 			            </div>
 			        </div>
@@ -22,7 +22,7 @@
 
 		<div class="col-md-12 col-xs-12 blog-content-wrapper">
 			<div class="blog-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', ET_DOMAIN ); ?></p>
+				<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', '404' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
 		</div><!-- SINGLE CONTENT -->

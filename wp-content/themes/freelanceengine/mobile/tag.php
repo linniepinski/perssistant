@@ -10,7 +10,7 @@
 			if(have_posts()){
 				get_template_part( 'mobile/list', 'posts' );
 			} else {
-				echo '<h2>'.__( 'There is no posts yet', ET_DOMAIN ).'</h2>';
+				echo '<h2>'.__( 'There is no posts yet', 'tag' ).'</h2>';
 			}
 		?>
 		</div><!-- LEFT CONTENT -->

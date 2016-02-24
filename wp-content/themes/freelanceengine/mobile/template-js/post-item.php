@@ -28,7 +28,7 @@
 					{{= post_excerpt }}
 				</div>
                 <a href="{{= permalink }}" class="read-more">
-                    <?php _e("READ MORE",ET_DOMAIN) ?><i class="fa fa-arrow-circle-o-right"></i>
+                    <?php _e("READ MORE",'post-item') ?><i class="fa fa-arrow-circle-o-right"></i>
                 </a>
             </div>
         </div>

@@ -141,9 +141,9 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 
 				<?php 
 				if($status =='complete')
-					_e('Rate project and post your review here',ET_DOMAIN); 
+					_e('Rate project and post your review here','modal-review'); 
 				else  
-					_e('Complete project and post your review here',ET_DOMAIN);
+					_e('Complete project and post your review here','modal-review');
 				?></h4>
 			</div>
 			<div class="modal-body">
@@ -151,13 +151,13 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				<form id="review_form" class="review-form">
                 	<div class="form-group rate">
                     	
-                    	<label for="post_content"><?php _e('Rate for this profile',ET_DOMAIN);?> </label>
+                    	<label for="post_content"><?php _e('Rate for this profile','modal-review');?> </label>
                         <div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
 					</div>
                     <div class="clearfix"></div>
                     <div class="form-group">
                     	
-                    	<label for="post_content"><?php _e('Message review profile ',ET_DOMAIN); ?></label>
+                    	<label for="post_content"><?php _e('Message review profile ','modal-review'); ?></label>
                         <?php wp_editor( '', 'comment_content', ae_editor_settings() );  ?>
 					</div>                  
 					<input type="hidden" name="project_id" value="<?php the_ID(); ?>" />					
@@ -171,7 +171,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 					<?php do_action('after_review_form'); ?>	
                     <div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-						<?php _e('Submit', ET_DOMAIN) ?>
+						<?php _e('Submit', 'modal-review') ?>
 					</button>
 				</form>	
 			</div>

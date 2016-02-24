@@ -36,7 +36,7 @@
                     <?php echo $convert->bid_time_text; ?>
                 </span>
             <?php }else { ?>
-                <span class="number"><?php _e("In Process", ET_DOMAIN); ?></span>
+                <span class="number"><?php _e("In Process", 'bid-item-mobile'); ?></span>
             <?php } ?>
         </div>
         <p class="btn-warpper-bid col-md-3 number-price-project">
@@ -48,7 +48,7 @@
         */
         if( $user_ID == $project->post_author && $project_status == 'publish' ){ ?>
             <button href="#" id="<?php the_ID();?>" rel="<?php echo $project->ID;?>" class="btn-sumary btn-bid btn-accept-bid btn-bid-status">
-                <?php _e('Accept',ET_DOMAIN) ; ?>
+                <?php _e('Accept','bid-item-mobile') ; ?>
             </button>
             <span class="confirm"></span>
             <?php 

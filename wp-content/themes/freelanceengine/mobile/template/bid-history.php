@@ -11,8 +11,8 @@ if(is_page_template('page-profile.php')) {
     $author_id = $user_ID;
 }
  $status = array(    
-        'publish'  => __("ACTIVE", ET_DOMAIN), 
-        'complete' => __("COMPLETED", ET_DOMAIN)
+        'publish'  => __("ACTIVE", 'bid-history-mobile'), 
+        'complete' => __("COMPLETED", 'bid-history-mobile')
     );
     
 query_posts( array(  'post_status' => array('publish', 'complete'), 'post_type' => BID, 'author' => $author_id, 'accepted' => 1  ));
@@ -22,12 +22,12 @@ query_posts( array(  'post_status' => array('publish', 'complete'), 'post_type' 
         <ul role="tablist">
             <li class="active">
                 <a href="#history-tabs" role="tab" data-toggle="tab">
-                    <?php printf(__('History (%s)', ET_DOMAIN), $wp_query->found_posts ) ?>
+                    <?php printf(__('History (%s)', 'bid-history-mobile'), $wp_query->found_posts ) ?>
                 </a>
             </li>
             <li>
                 <a href="#porfolio-tabs" role="tab" data-toggle="tab">
-                    <?php printf(__('(%s) Porfolios', ET_DOMAIN), fre_count_user_posts($author_id, PORTFOLIO) ) ?>
+                    <?php printf(__('(%s) Porfolios', 'bid-history-mobile'), fre_count_user_posts($author_id, PORTFOLIO) ) ?>
                 </a>
             </li>
         </ul>
@@ -38,11 +38,11 @@ query_posts( array(  'post_status' => array('publish', 'complete'), 'post_type' 
             <div class="btn-tabs-wrapper">            
                 <div class="work-history-heading">
                     <a href="#" class="work-history-title" >
-                        <?php printf(__('Works History (%s)', ET_DOMAIN), fre_count_user_posts($author_id, PROJECT) ) ?>
+                        <?php printf(__('Works History (%s)', 'bid-history-mobile'), fre_count_user_posts($author_id, PROJECT) ) ?>
                     </a>
                     <div class="project-status-filter" >
                         <select class="status-filter " name="post_status" data-chosen-width="100%" data-chosen-disable-search="1" 
-                            data-placeholder="<?php _e("Select a status", ET_DOMAIN); ?>">
+                            data-placeholder="<?php _e("Select a status", 'bid-history-mobile'); ?>">
                             <?php foreach ($status as $key => $stat) {
                                 echo '<option value="'.$key.'">'.$stat.'</option>' ;
                             }  ?>

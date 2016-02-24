@@ -11,18 +11,18 @@
 <?php
 if(is_page_template('page-profile.php')) {
     $status = array(    
-        'reject'   => __("REJECTED", ET_DOMAIN) , 
-        'pending'  => __("PENDING", ET_DOMAIN) , 
-        'publish'  => __("ACTIVE", ET_DOMAIN), 
-        'close'    => __("HIRED", ET_DOMAIN),
-        'complete' => __("COMPLETED", ET_DOMAIN),
-        'draft'    => __("DRAFT", ET_DOMAIN), 
-        'archive'  => __("ARCHIVED", ET_DOMAIN), 
+        'reject'   => __("REJECTED", 'work-history-mobile') , 
+        'pending'  => __("PENDING", 'work-history-mobile') , 
+        'publish'  => __("ACTIVE", 'work-history-mobile'), 
+        'close'    => __("HIRED", 'work-history-mobile'),
+        'complete' => __("COMPLETED", 'work-history-mobile'),
+        'draft'    => __("DRAFT", 'work-history-mobile'), 
+        'archive'  => __("ARCHIVED", 'work-history-mobile'), 
     );
 } else {
     $status = array(    
-        'publish'  => __("ACTIVE", ET_DOMAIN), 
-        'complete' => __("COMPLETED", ET_DOMAIN)
+        'publish'  => __("ACTIVE", 'work-history-mobile'), 
+        'complete' => __("COMPLETED", 'work-history-mobile')
     );
 }
 global $user_ID;
@@ -47,16 +47,16 @@ $bid_posts   = $wp_query->found_posts;
         <a href="#" class="work-history-title" >
             <?php 
             if(fre_share_role()) {
-                printf(__('Posted Projects (%s)', ET_DOMAIN), fre_count_user_posts($author_id, PROJECT) );
+                printf(__('Posted Projects (%s)', 'work-history-mobile'), fre_count_user_posts($author_id, PROJECT) );
             }else {
-                printf(__('Works History (%s)', ET_DOMAIN), fre_count_user_posts($author_id, PROJECT) );
+                printf(__('Works History (%s)', 'work-history-mobile'), fre_count_user_posts($author_id, PROJECT) );
             }
             ?>
         </a>
         <div class="project-status-filter" >
             <select class="status-filter " name="post_status" data-chosen-width="100%" data-chosen-disable-search="1" 
-                data-placeholder="<?php _e("Select a status", ET_DOMAIN); ?>">
-                <option value=""><?php _e("Select a status", ET_DOMAIN); ?></option>
+                data-placeholder="<?php _e("Select a status", 'work-history-mobile'); ?>">
+                <option value=""><?php _e("Select a status", 'work-history-mobile'); ?></option>
                 <?php foreach ($status as $key => $stat) {
                     echo '<option value="'.$key.'">'.$stat.'</option>' ;
                 }  ?>

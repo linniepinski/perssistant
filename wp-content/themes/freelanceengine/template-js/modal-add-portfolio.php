@@ -74,7 +74,7 @@
 										$c_skills[] = $value->term_id;
 									};
 								}
-								ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" multiple data-chosen-disable-search="" data-placeholder="' . __(" Skills (max is 10)", ET_DOMAIN) . '"',
+								ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" multiple data-chosen-disable-search="" data-placeholder="' . __(" Skills (max is 10)", 'modal-add-portfolio') . '"',
 										'class' => 'sw_skill modal-skills required',
 										'hide_empty' => false,
 										'hierarchical' => true,

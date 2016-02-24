@@ -40,7 +40,7 @@
 
 		            <i class="fa fa-search"></i>
 
-		            <input type="text" name="s" placeholder="<?php _e("Search at blog",ET_DOMAIN) ?>">
+		            <input type="text" name="s" placeholder="<?php _e("Search at blog",'page-blog') ?>">
 
 		        </form>
 
@@ -72,7 +72,7 @@
 
 			} else {
 
-				echo '<h2>'.__( 'There is no posts yet', ET_DOMAIN ).'</h2>';
+				echo '<h2>'.__( 'There is no posts yet', 'page-blog' ).'</h2>';
 
 			}
 

@@ -8,11 +8,11 @@ $isEmployer = ($user_role == "employer");
     <div class="list-link-tabs-page">
         <div class="container">
             <?php if($user_role != "employer"): ?>
-            <a href="<?php echo get_post_type_archive_link(PROJECT) ?>" class="active"><?php _e("Projects", ET_DOMAIN); ?></a>
+            <a href="<?php echo get_post_type_archive_link(PROJECT) ?>" class="active"><?php _e("Projects", 'page-home-mobile'); ?></a>
             <?php endif; ?>
             
             <?php if($user_role != "freelancer"): ?>
-            <a href="<?php echo get_post_type_archive_link(PROFILE) ?>" <?php if($isEmployer) echo 'class="active" '; ?> ><?php _e("Profil$user_rolees", ET_DOMAIN); ?></a>
+            <a href="<?php echo get_post_type_archive_link(PROFILE) ?>" <?php if($isEmployer) echo 'class="active" '; ?> ><?php _e("Profil$user_rolees", 'page-home-mobile'); ?></a>
             <?php endif; ?>
         </div>
     </div>
@@ -22,10 +22,10 @@ $isEmployer = ($user_role == "employer");
                 <div class="row">
                     <div class="col-xs-8">
                         <span class="icon-form-search icon-search"></span>
-                        <input type="text" name="s" value="" placeholder="<?php _e("Type keyword", ET_DOMAIN); ?>" class="search-normal-input keyword search">
+                        <input type="text" name="s" value="" placeholder="<?php _e("Type keyword", 'page-home-mobile'); ?>" class="search-normal-input keyword search">
                     </div>
-                    <div class="col-xs-4"><a href="#" class="show-search-advance"><?php _e("Advanced", ET_DOMAIN); ?></a></div>
-                    <div class="col-xs-4"><a href="#" class="hide-search-advance" style="display:none;"><?php _e("Cancel", ET_DOMAIN); ?></a></div>
+                    <div class="col-xs-4"><a href="#" class="show-search-advance"><?php _e("Advanced", 'page-home-mobile'); ?></a></div>
+                    <div class="col-xs-4"><a href="#" class="hide-search-advance" style="display:none;"><?php _e("Cancel", 'page-home-mobile'); ?></a></div>
                 </div>
             </div>
             
@@ -55,7 +55,7 @@ $isEmployer = ($user_role == "employer");
         <script type="text/template" id="project-no-result">
             <div class="col-md-12 no-result">
                 <p class="alert alert-info">
-                    <i class="fa fa-info-circle"></i>&nbsp;<?php _e("Sorry no results found.", ET_DOMAIN); ?>
+                    <i class="fa fa-info-circle"></i>&nbsp;<?php _e("Sorry no results found.", 'page-home-mobile'); ?>
                 </p>
             </div>  
         </script>

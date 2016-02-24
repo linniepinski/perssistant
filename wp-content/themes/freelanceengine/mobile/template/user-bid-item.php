@@ -40,7 +40,7 @@ $status_text    = $project->status_text;
             </div>
             <div class="info-bottom">
                 <span class="name-author"> 
-                    <?php printf(__('Posted by %s', ET_DOMAIN), get_the_author_meta( 'display_name', $project->post_author )) ?>
+                    <?php printf(__('Posted by %s', 'user-bid-item-mobile'), get_the_author_meta( 'display_name', $project->post_author )) ?>
                 </span>
                 <span class="price-project"><?php echo $currency['icon'].$bid->bid_budget ?></span>
             </div>
@@ -52,9 +52,9 @@ $status_text    = $project->status_text;
             <li>
             <?php 
                 if($total_bids > 1 || $total_bids == 0) {
-                    printf(__('<span class="number">%s</span> Bids', ET_DOMAIN), $total_bids);
+                    printf(__('<span class="number">%s</span> Bids', 'user-bid-item-mobile'), $total_bids);
                 }else{
-                    _e('<span class="number">1</span> Bid', ET_DOMAIN);
+                    _e('<span class="number">1</span> Bid', 'user-bid-item-mobile');
                 }
             ?>
             </li>
@@ -63,7 +63,7 @@ $status_text    = $project->status_text;
                 <span class="number">
                     <?php echo $bid_average; ?>
                 </span>
-                <?php printf( __('Avg Bid (%s)', ET_DOMAIN), $currency['code'] ) ?>
+                <?php printf( __('Avg Bid (%s)', 'user-bid-item-mobile'), $currency['code'] ) ?>
             </li>
 
             <li class="clearfix"></li>
@@ -77,7 +77,7 @@ $status_text    = $project->status_text;
                 <p class="btn-warpper-bid">
                     <?php if($project->post_status == "publish"){ ?>
                     <a href="<?php echo $project->permalink ?>" class="btn-sumary btn-bid">
-                        <?php _e("CANCEL", ET_DOMAIN) ?>
+                        <?php _e("CANCEL", 'user-bid-item-mobile') ?>
                     </a>
                     <?php } ?>
                 </p>

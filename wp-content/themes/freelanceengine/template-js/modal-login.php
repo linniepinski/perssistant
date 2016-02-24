@@ -19,7 +19,7 @@
 					</div>		
                     <div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-						<?php _e('Sign in', ET_DOMAIN) ?>
+						<?php _e('Sign in', 'modal-login') ?>
 					</button>
                     <a class="show-forgot-form" href="#"><?php _e("Forgot Password?", 'modal-login') ?></a>
                         <?php

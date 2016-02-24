@@ -20,7 +20,7 @@
             <span class="number-price">{{= bid_budget_text }}</span>
             <span class="number-day">{{= bid_time_text }}</span>
             <# if( post_status =='publish' && current_user == project_author ) { #>
-                <button class="btn-sumary btn-accept-bid btn-bid-status" rel="{{= post_parent }}" href="#"> <?php _e('Accept', ET_DOMAIN); ?> </button> 
+                <button class="btn-sumary btn-accept-bid btn-bid-status" rel="{{= post_parent }}" href="#"> <?php _e('Accept', 'bid-item'); ?> </button>
                 <span class="confirm"></span>
 
             <# } else if( post_status == 'close' && accepted == ID){ #>                

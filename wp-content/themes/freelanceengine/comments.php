@@ -31,18 +31,18 @@ if ( post_password_required() ) {
 	<h3 class="title et-comments-title">
 		<?php 
 			comments_number (
-				__('0 Comments on this article', ET_DOMAIN), 
-				__('1 Comment on this article', ET_DOMAIN), 
-				__('% Comments on this article', ET_DOMAIN)
+				__('0 Comments on this article', 'comments'), 
+				__('1 Comment on this article', 'comments'), 
+				__('% Comments on this article', 'comments')
 			);
 		?>
 	</h3>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', ET_DOMAIN ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', ET_DOMAIN ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', ET_DOMAIN ) ); ?></div>
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'comments' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'comments' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'comments' ) ); ?></div>
 	</nav><!-- #comment-nav-above -->
 	<?php endif; // Check for comment navigation. ?>
 
@@ -58,9 +58,9 @@ if ( post_password_required() ) {
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', ET_DOMAIN ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', ET_DOMAIN ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', ET_DOMAIN ) ); ?></div>
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'comments' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'comments' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'comments' ) ); ?></div>
 	</nav><!-- #comment-nav-below -->
 	<?php endif; // Check for comment navigation. ?>
 
@@ -68,21 +68,21 @@ if ( post_password_required() ) {
 	
 	<?php if ( ! comments_open() ) : ?>
 	<p class="no-comments et-comments-title">
-		<?php _e( 'Comments are closed.', ET_DOMAIN ); ?>
+		<?php _e( 'Comments are closed.', 'comments' ); ?>
 	</p>
 	<?php endif; ?>
 	<div class="btm-comment-form">
 		<?php 
 			comment_form ( array(
-							'comment_field'        => ' <div class="form-item"><label for="comment">' . __( 'Your Comment', ET_DOMAIN ) . '</label><div class="input"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
+							'comment_field'        => ' <div class="form-item"><label for="comment">' . __( 'Your Comment', 'comments' ) . '</label><div class="input"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
 							'comment_notes_before' => '',
 							'comment_notes_after'  => '',
 							'id_form'              => 'commentform',
 							'id_submit'            => 'submit',
-							'title_reply'          => __( "Comment", ET_DOMAIN),
-							'title_reply_to'       => __( 'Leave a Reply to %s', ET_DOMAIN),
-							'cancel_reply_link'    => __( 'Cancel reply',ET_DOMAIN ),
-							'label_submit'         => __( 'Comment', ET_DOMAIN ),
+							'title_reply'          => __( "Comment", 'comments'),
+							'title_reply_to'       => __( 'Leave a Reply to %s', 'comments'),
+							'cancel_reply_link'    => __( 'Cancel reply','comments' ),
+							'label_submit'         => __( 'Comment', 'comments' ),
 					) );
 		?>
 	</div>
@@ -115,7 +115,7 @@ function fre_comment_callback( $comment, $args, $depth ){
                 </span>
                 <?php 
                     comment_reply_link(array_merge($args, array(
-						'reply_text' => __( '&nbsp;&nbsp;|&nbsp;&nbsp; Reply ', ET_DOMAIN ).'<i class="fa fa-edit"></i>',
+						'reply_text' => __( '&nbsp;&nbsp;|&nbsp;&nbsp; Reply ', 'comments' ).'<i class="fa fa-edit"></i>',
 						'depth'      => $depth,
 						'max_depth'  => $args['max_depth'] 
                     )));

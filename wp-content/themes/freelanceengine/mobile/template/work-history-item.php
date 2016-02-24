@@ -42,9 +42,9 @@
                 <div class="rate-it" data-score="<?php echo $current->rating_score; ?>"></div>
             </span>            
         <?php } else if($current->post_status == 'close'){ ?>
-            <span class="status"><?php _e('Job is closed', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job is closed', 'work-history-mobile');?></span>
         <?php } else { ?>
-            <span class="status"><?php _e('Job in process', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job in process', 'work-history-mobile');?></span>
         <?php } ?>
     </div>
 </li>

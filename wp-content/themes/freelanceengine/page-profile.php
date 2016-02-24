@@ -110,39 +110,39 @@ get_header();
                         <?php
                         // auto_refresh_balance();
                         ?>
-                        <?php /* <h2 class="number-profile"><?php printf(__(" %s's Profile ", ET_DOMAIN), $display_name ) ?></h2> */ ?>
+                        <?php /* <h2 class="number-profile"><?php printf(__(" %s's Profile ", 'page-profile'), $display_name ) ?></h2> */ ?>
                         <div class="nav-tabs-profile">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs responsive" role="tablist" id="myTab">
 
                                 <li class="active">
                                     <a href="#tab_notification_details" role="tab" data-toggle="tab">
-                                        <?php _e('Notification', ET_DOMAIN) ?>
+                                        <?php _e('Notification', 'page-profile') ?>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="#tab_project_details" role="tab" data-toggle="tab">
-                                        <?php _e('My Projects', ET_DOMAIN) ?>
+                                        <?php _e('My Projects', 'page-profile') ?>
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="#tab_account_details" role="tab" data-toggle="tab">
-                                        <?php _e('Account Details', ET_DOMAIN) ?>
+                                        <?php _e('Account Details', 'page-profile') ?>
                                     </a>
                                 </li>
 
                                 <?php if (fre_share_role() || $user_role == FREELANCER) { ?>
                                     <li>
                                         <a href="#tab_profile_details" role="tab" data-toggle="tab">
-                                            <?php _e('Profile Details', ET_DOMAIN) ?>
+                                            <?php _e('Profile Details', 'page-profile') ?>
                                         </a>
                                     </li>
                                     <!--
                             <li>
                                 <a href="#tab_bank_details" role="tab" data-toggle="tab">
-                                    <?php _e('Bank Details', ET_DOMAIN) ?>
+                                    <?php _e('Bank Details', 'page-profile') ?>
                                 </a>
                             </li> -->
                                 <?php } ?>
@@ -150,7 +150,7 @@ get_header();
                                 <?php /*if($user_role != FREELANCER){ ?>
                             <li>
                                 <a href="#tab_finance_details" role="tab" data-toggle="tab">
-                                    <?php _e('Authorize Credit Card', ET_DOMAIN) ?>
+                                    <?php _e('Authorize Credit Card', 'page-profile') ?>
                                 </a>
                             </li>
                             <?php } */
@@ -192,7 +192,7 @@ get_header();
                                             <?php echo get_avatar($user_data->ID, 125) ?>
                                         </span>
                                             <a href="#" id="user_avatar_browse_button">
-                                                <?php _e('Change', ET_DOMAIN) ?>
+                                                <?php _e('Change', 'page-profile') ?>
                                             </a>
                                         <span class="et_ajaxnonce hidden"
                                               id="<?php echo de_create_nonce('user_avatar_et_uploader'); ?>">
@@ -202,11 +202,11 @@ get_header();
                                             <form class="form-info-basic" id="account_form">
                                                 <div class="form-group">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Your Full Name', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Full Name', 'page-profile') ?></label>
                                                         <input type="text" class="form-control" id="display_name"
                                                                name="display_name"
                                                                value="<?php echo $user_data->display_name ?>"
-                                                               placeholder="<?php _e('Enter Full Name', ET_DOMAIN) ?>">
+                                                               placeholder="<?php _e('Enter Full Name', 'page-profile') ?>">
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -214,7 +214,7 @@ get_header();
                                                 <div class="form-group">
                                                     <div class="form-group-control">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Location', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Location', 'page-profile') ?></label>
                                                             <?php if (ae_user_role() != FREELANCER) { ?>
                                                                 <select
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
@@ -247,7 +247,7 @@ get_header();
                                                                 <input type="text" class="form-control" id="location"
                                                                        name="location"
                                                                        value="<?php echo $user_data->location ?>"
-                                                                       placeholder="<?php _e('Enter location', ET_DOMAIN) ?>">
+                                                                       placeholder="<?php _e('Enter location', 'page-profile') ?>">
                                                             <?php } ?>
 
                                                         </div>
@@ -256,22 +256,22 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Email Address', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Email Address', 'page-profile') ?></label>
                                                         <input type="email" class="form-control" id="user_email"
                                                                name="user_email"
                                                                value="<?php echo $user_data->user_email ?>"
-                                                               placeholder="<?php _e('Enter email', ET_DOMAIN) ?>">
+                                                               placeholder="<?php _e('Enter email', 'page-profile') ?>">
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <?php if (true) { //ae_get_option('use_escrow', false)?>
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Your Paypal Account', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Your Paypal Account', 'page-profile') ?></label>
                                                             <input type="email" class="form-control" id="paypal"
                                                                    name="paypal"
                                                                    value="<?php echo get_user_meta($user_ID, 'paypal', true); ?>"
-                                                                   placeholder="<?php _e('Enter your paypal email', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your paypal email', 'page-profile') ?>">
                                                         </div>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -289,7 +289,7 @@ get_header();
                                                         ?>
                                                         <div class="form-group">
                                                             <div class="form-group-control">
-                                                                <label><?php _e('Primary Account', ET_DOMAIN) ?></label>
+                                                                <label><?php _e('Primary Account', 'page-profile') ?></label>
                                                                 <select
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
                                                                     id="default_payment_option"
@@ -336,7 +336,7 @@ get_header();
 
                                                         <div class="form-group">
                                                             <div class="form-group-control">
-                                                                <label><?php _e('Primary Account', ET_DOMAIN) ?></label>
+                                                                <label><?php _e('Primary Account', 'page-profile') ?></label>
                                                                 <select
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
                                                                     id="default_payment_option"
@@ -361,7 +361,7 @@ get_header();
                                                 } ?>
                                                 <div class="form-group">
                                                     <button type="submit" class="btn-submit btn-sumary"
-                                                           ><?php _e('Save Details', ET_DOMAIN) ?></button>
+                                                           ><?php _e('Save Details', 'page-profile') ?></button>
                                                 </div>
                                             </form>
                                         </div>
@@ -376,25 +376,25 @@ get_header();
 
                                                 <div class="form-group ">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Professional Title', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Professional Title', 'page-profile') ?></label>
                                                         <input class="form-control" type="text"
                                                                id="et_professional_title"
                                                                name="et_professional_title"
                                                                value="<?php echo $job_title ?>"
-                                                               placeholder="<?php _e("e.g: Wordpress Developer", ET_DOMAIN) ?>">
+                                                               placeholder="<?php _e("e.g: Wordpress Developer", 'page-profile') ?>">
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Your Hourly Rate', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Hourly Rate', 'page-profile') ?></label>
 
                                                         <div class="row">
                                                             <div class="col-xs-8">
                                                                 <input class="form-control" type="text" id="hour_rate"
                                                                        name="hour_rate"
                                                                        value="<?php echo $hour_rate ?>"
-                                                                       placeholder="<?php _e('e.g:30', ET_DOMAIN) ?>">
+                                                                       placeholder="<?php _e('e.g:30', 'page-profile') ?>">
                                                             </div>
                                                             <div class="col-xs-4">
                                                         <span class="profile-exp-year">
@@ -402,7 +402,7 @@ get_header();
                                                         if ($currency) {
                                                             echo $currency['code'];
                                                         } else {
-                                                            _e('USD', ET_DOMAIN);
+                                                            _e('USD', 'page-profile');
                                                         } ?>
                                                         </span>
                                                             </div>
@@ -412,14 +412,14 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="skill-profile-control form-group-control">
-                                                        <label><?php _e('Your Skills', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Skills', 'page-profile') ?></label>
                                                         <?php
                                                         $switch_skill = ae_get_option('switch_skill');
 
                                                         if (!$switch_skill) {
                                                             ?>
                                                             <input class="form-control skill" type="text" id="skill"
-                                                                   placeholder="<?php _e("Skills (max is 10)", ET_DOMAIN); ?>"
+                                                                   placeholder="<?php _e("Skills (max is 10)", 'page-profile'); ?>"
                                                                    name=""
                                                                    autocomplete="off" class="skill" spellcheck="false">
                                                             <ul class="skills-list" id="skills_list"></ul>
@@ -431,7 +431,7 @@ get_header();
                                                                     $c_skills[] = $value->term_id;
                                                                 };
                                                             }
-                                                            ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="' . __(" Skills (max is 10)", ET_DOMAIN) . '"',
+                                                            ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="' . __(" Skills (max is 10)", 'page-profile') . '"',
                                                                     'class' => 'sw_skill required',
                                                                     'hide_empty' => false,
                                                                     'hierarchical' => true,
@@ -452,11 +452,11 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="profile-category">
-                                                        <label><?php _e('Category', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Category', 'page-profile') ?></label>
                                                         <?php
                                                         ae_tax_dropdown('project_category',
                                                             array(
-                                                                'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
+                                                                'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", 'page-profile') . '"',
                                                                 'class' => 'chosen multi-tax-item tax-item required cat_profile',
                                                                 'hide_empty' => false,
                                                                 'hierarchical' => true,
@@ -471,9 +471,9 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Your Country', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Country', 'page-profile') ?></label>
 
-                                                        <?php /*<input class="form-control" type="text" id="country" placeholder="<?php _e("Country", ET_DOMAIN); ?>" name="country" value="<?php if($country){echo $country;} ?>" autocomplete="off" class="country" spellcheck="false" >*/ ?>
+                                                        <?php /*<input class="form-control" type="text" id="country" placeholder="<?php _e("Country", 'page-profile'); ?>" name="country" value="<?php if($country){echo $country;} ?>" autocomplete="off" class="country" spellcheck="false" >*/ ?>
                                                         <select
                                                             class="chosen multi-tax-item tax-item required cat_profile"
                                                             id="country"
@@ -506,7 +506,7 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group about-you">
                                                     <div class="form-group-control row-about-you">
-                                                        <label><?php _e('About you', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('About you', 'page-profile') ?></label>
 
                                                         <div class="clearfix"></div>
                             <textarea class="form-control" name="post_content" id="about_content" cols="30"
@@ -520,7 +520,7 @@ get_header();
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
                                                     <div class="experience">
-                                                        <label><?php _e('Your Experience', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Experience', 'page-profile') ?></label>
 
                                                         <div class="row">
                                                             <div class="col-xs-3">
@@ -531,7 +531,7 @@ get_header();
                                                             </div>
                                                             <div class="col-xs-3">
                                                                 <span
-                                                                    class="profile-exp-year"><?php _e("year(s)", ET_DOMAIN); ?></span>
+                                                                    class="profile-exp-year"><?php _e("year(s)", 'page-profile'); ?></span>
                                                             </div>
                                                         </div>
 
@@ -542,7 +542,7 @@ get_header();
                                                 <?php do_action('ae_edit_post_form', PROFILE, $profile); ?>
                                                 <div class="form-group portfolios-wrapper">
                                                     <div class="form-group-control">
-                                                        <label><?php _e('Your Portfolio', ET_DOMAIN) ?></label>
+                                                        <label><?php _e('Your Portfolio', 'page-profile') ?></label>
 
                                                         <div class="edit-portfolio-container">
                                                             <?php
@@ -561,7 +561,7 @@ get_header();
                                                 </div>
                                                 <div class="clearfix"></div>
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', ET_DOMAIN) ?></button>
+                                                    <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', 'page-profile') ?></button>
                                                 </div>
                                             </form>
                                         </div>
@@ -576,7 +576,7 @@ get_header();
                                         ?>
                                         <div class="info-project-items">
                                             <h4 class="title-big-info-project-items">
-                                                <?php _e("Your Bidding", ET_DOMAIN) ?>
+                                                <?php _e("Your Bidding", 'page-profile') ?>
                                             </h4>
                                             <?php
                                             query_posts(array(
@@ -647,7 +647,7 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Card Type', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Card Type', 'page-profile') ?></label>
                                                             <select style="width:250px;"
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
                                                                     id="card_type" name="card_type"
@@ -671,46 +671,46 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Card Number', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Card Number', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="card_number"
                                                                    id="card_number" value=""
-                                                                   placeholder="<?php _e("Card Number", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("Card Number", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('First Name', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('First Name', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="first_name"
                                                                    id="first_name" value=""
-                                                                   placeholder="<?php _e("First Name", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("First Name", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Last Name', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Last Name', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="last_name"
                                                                    id="last_name" value=""
-                                                                   placeholder="<?php _e("Last Name", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("Last Name", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Expiration Date', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Expiration Date', 'page-profile') ?></label>
 
                                                             <p>
                                                                 <input class="form-control" type="text" name="exp_month"
                                                                        id="exp_month" value=""
-                                                                       placeholder="<?php _e("MM", ET_DOMAIN) ?>"
+                                                                       placeholder="<?php _e("MM", 'page-profile') ?>"
                                                                        style="width:48%; float:left">
                                                                 <input class="form-control" type="text" name="exp_year"
                                                                        id="exp_year" value=""
-                                                                       placeholder="<?php _e("YY", ET_DOMAIN) ?>"
+                                                                       placeholder="<?php _e("YY", 'page-profile') ?>"
                                                                        style="width:48%; float:right">
                                                             </p>
                                                         </div>
@@ -719,48 +719,48 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('CVV', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('CVV', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="card_cvv"
                                                                    id="card_cvv" value=""
-                                                                   placeholder="<?php _e("CVV", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("CVV", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Street', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Street', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="street"
                                                                    id="street" value=""
-                                                                   placeholder="<?php _e("Street", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("Street", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('City', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('City', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="city"
                                                                    id="city" value=""
-                                                                   placeholder="<?php _e("City", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("City", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('State', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('State', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="state"
                                                                    id="state" value=""
-                                                                   placeholder="<?php _e("State", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("State", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Country', ET_DOMAIN) ?></label>
-                                                            <?php /*<input class="form-control"  type="text" name="country" id="country" value="" placeholder="<?php _e("Country", ET_DOMAIN) ?>"> */ ?>
+                                                            <label><?php _e('Country', 'page-profile') ?></label>
+                                                            <?php /*<input class="form-control"  type="text" name="country" id="country" value="" placeholder="<?php _e("Country", 'page-profile') ?>"> */ ?>
                                                             <select style="width:250px;"
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
                                                                     id="user_country" name="user_country"
@@ -783,17 +783,17 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Zip Code', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Zip Code', 'page-profile') ?></label>
                                                             <input class="form-control" type="text" name="zip_code"
                                                                    id="zip_code" value=""
-                                                                   placeholder="<?php _e("Zip Code", ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e("Zip Code", 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Make it default payment option', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Make it default payment option', 'page-profile') ?></label>
                                                             <input class="form-control" type="checkbox"
                                                                    name="default_payment" id="default_payment"
                                                                    value="">
@@ -803,7 +803,7 @@ get_header();
 
                                                     <div class="form-group">
                                                         <input type="submit" class="btn-submit btn-sumary" name=""
-                                                               value="<?php _e('Authorize Card', ET_DOMAIN) ?>">
+                                                               value="<?php _e('Authorize Card', 'page-profile') ?>">
                                                     </div>
                                                 </form>
                                             </div>
@@ -823,7 +823,7 @@ get_header();
                                                 <form class="form-info-basic" id="bank_form">
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank Information', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank Information', 'page-profile') ?></label>
                                                             <select
                                                                 class="chosen multi-tax-item tax-item required cat_profile"
                                                                 id="account_type"
@@ -843,18 +843,18 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank Name', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank Name', 'page-profile') ?></label>
                                                             <input type="text" class="form-control required"
                                                                    id="bank_name" name="bank_name"
                                                                    value="<?php echo get_user_meta($user_ID, 'bank_name', true); ?>"
-                                                                   placeholder="<?php _e('Enter your bank name', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your bank name', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank Country', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank Country', 'page-profile') ?></label>
                                                             <select
                                                                 class="chosen multi-tax-item tax-item required cat_profile"
                                                                 id="bank_country"
@@ -885,133 +885,133 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('ABA Routing No', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('ABA Routing No', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="routing_no"
                                                                    name="routing_no"
                                                                    value="<?php echo get_user_meta($user_ID, 'routing_no', true); ?>"
-                                                                   placeholder="<?php _e('Enter ABA routing number', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter ABA routing number', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank Address', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank Address', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="bank_address"
                                                                    name="bank_address"
                                                                    value="<?php echo get_user_meta($user_ID, 'bank_address', true); ?>"
-                                                                   placeholder="<?php _e('Enter your bank address', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your bank address', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank City', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank City', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="bank_city"
                                                                    name="bank_city"
                                                                    value="<?php echo get_user_meta($user_ID, 'bank_city', true); ?>"
-                                                                   placeholder="<?php _e('Enter your bank city', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your bank city', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank State', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank State', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="bank_state"
                                                                    name="bank_state"
                                                                    value="<?php echo get_user_meta($user_ID, 'bank_state', true); ?>"
-                                                                   placeholder="<?php _e('Enter your bank state', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your bank state', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Bank Zip Code', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Bank Zip Code', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="bank_zipcode"
                                                                    name="bank_zipcode"
                                                                    value="<?php echo get_user_meta($user_ID, 'bank_zipcode', true); ?>"
-                                                                   placeholder="<?php _e('Enter your bank zip code', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your bank zip code', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder Currency', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder Currency', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_currency"
                                                                    name="account_holder_currency"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_currency', true); ?>"
-                                                                   placeholder="<?php _e('Enter your currency code', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your currency code', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder Name', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder Name', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_name"
                                                                    name="account_holder_name"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_name', true); ?>"
-                                                                   placeholder="<?php _e('Enter your name', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your name', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account No', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account No', 'page-profile') ?></label>
                                                             <input type="text" class="form-control" id="account_number"
                                                                    name="account_number"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_number', true); ?>"
-                                                                   placeholder="<?php _e('Enter your acc no', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your acc no', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder Address', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder Address', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_address"
                                                                    name="account_holder_address"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_address', true); ?>"
-                                                                   placeholder="<?php _e('Enter your address', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your address', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder City', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder City', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_city"
                                                                    name="account_holder_city"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_city', true); ?>"
-                                                                   placeholder="<?php _e('Enter your city', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your city', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder State', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder State', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_state"
                                                                    name="account_holder_state"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_state', true); ?>"
-                                                                   placeholder="<?php _e('Enter your state', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your state', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder Country', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder Country', 'page-profile') ?></label>
                                                             <select
                                                                 class="chosen multi-tax-item tax-item required cat_profile"
                                                                 id="account_holder_country"
@@ -1039,19 +1039,19 @@ get_header();
 
                                                     <div class="form-group">
                                                         <div class="form-group-control">
-                                                            <label><?php _e('Account Holder Zip Code', ET_DOMAIN) ?></label>
+                                                            <label><?php _e('Account Holder Zip Code', 'page-profile') ?></label>
                                                             <input type="text" class="form-control"
                                                                    id="account_holder_zipcode"
                                                                    name="account_holder_zipcode"
                                                                    value="<?php echo get_user_meta($user_ID, 'account_holder_zipcode', true); ?>"
-                                                                   placeholder="<?php _e('Enter your zip code', ET_DOMAIN) ?>">
+                                                                   placeholder="<?php _e('Enter your zip code', 'page-profile') ?>">
                                                         </div>
                                                     </div>
 
 
                                                     <div class="form-group">
                                                         <input type="submit" class="btn-submit btn-sumary" name=""
-                                                               value="<?php _e('Save Bank Details', ET_DOMAIN) ?>">
+                                                               value="<?php _e('Save Bank Details', 'page-profile') ?>">
                                                     </div>
                                                 </form>
                                             </div>
@@ -1105,7 +1105,7 @@ get_header();
 <!--                            --><?php //if ($totalPercent != 100) { ?>
                                 <div class="form-group">
                                     <div class="text-small">
-                                        <label><?php _e('Profile Completion', ET_DOMAIN) ?></label>
+                                        <label><?php _e('Profile Completion', 'page-profile') ?></label>
 
                                         <div class="profile-completion-status"><span
                                                 style="width:<?php echo $totalPercent; ?>%"><?php echo $totalPercent; ?>
@@ -1123,21 +1123,21 @@ get_header();
                                     echo 'confirm-request';
                                 } ?>">
                             <span class="text-intro">
-                                <?php _e("Available for hire?", ET_DOMAIN) ?></span>
+                                <?php _e("Available for hire?", 'page-profile') ?></span>
                             <span class="switch-for-hide tooltip-style" data-toggle="tooltip" data-placement="top"
-                                  title='<?php _e('Turn on to display an "Invite me" button on your profile, allowing potential employers to suggest projects for you.', ET_DOMAIN); ?>'
+                                  title='<?php _e('Turn on to display an "Invite me" button on your profile, allowing potential employers to suggest projects for you.', 'page-profile'); ?>'
                             >
                                 <input type="checkbox" <?php echo $user_available; ?> class="js-switch user-available"
                                        name="user_available"/>
                                 <span class="user-status-text text <?php echo $user_available ? 'yes' : 'no' ?>">
-                                    <?php echo $user_available ? __('Yes', ET_DOMAIN) : __('No', ET_DOMAIN); ?>
+                                    <?php echo $user_available ? __('Yes', 'page-profile') : __('No', 'page-profile'); ?>
                                 </span>
                             </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="form-group">
                             <span class="text-small">
-                                <?php _e('Select "Yes" to display a "Hire me" button on your profile allowing potential clients and employers to contact you.', ET_DOMAIN) ?>
+                                <?php _e('Select "Yes" to display a "Hire me" button on your profile allowing potential clients and employers to contact you.', 'page-profile') ?>
                             </span>
                                 </div>
                                 <div class="clearfix"></div>
@@ -1151,9 +1151,9 @@ get_header();
                                 <div class="form-group confirm-request">
                             <span class="text-small">
                                 <?php
-                                _e('You have not confirmed your email yet, please check out your mailbox.', ET_DOMAIN);
+                                _e('You have not confirmed your email yet, please check out your mailbox.', 'page-profile');
                                 echo '<br/>';
-                                echo ' <a class="request-confirm" href="#">' . __('Request confirm email.', ET_DOMAIN) . '</a>';
+                                echo ' <a class="request-confirm" href="#">' . __('Request confirm email.', 'page-profile') . '</a>';
                                 ?>
                             </span>
                                 </div>
@@ -1163,7 +1163,7 @@ get_header();
                             <span class="text-small verified">
                               <span class="text-small"><label for="user_mobile">
                                       <?php
-                                      _e('Email Verified', ET_DOMAIN);
+                                      _e('Email Verified', 'page-profile');
                                       echo '</label></span>';
                                       echo '<br/>';
                                       echo '  <i class="fa fa-check"></i>  <a class="request-confirm" href="#">' . $user_data->user_email . '</a>';
@@ -1177,20 +1177,20 @@ get_header();
                                 <div class="form-group confirm-request"
                                      id="verify" <?php if ($user_mobile) { ?> style="display:none;" <?php } ?>>
                     <span class="text-small"><label
-                            for="user_mobile"><?php _e('Verify your phone no', ET_DOMAIN) ?></label></span><br/>
+                            for="user_mobile"><?php _e('Verify your phone no', 'page-profile') ?></label></span><br/>
                                     <input type="text" name="user_mobile" id="user_mobile" value=""/>
                                     <button type="button" class="btn-submit"
-                                            onclick="validatenumber();"><?php _e('Verify Phone', ET_DOMAIN) ?></button>
+                                            onclick="validatenumber();"><?php _e('Verify Phone', 'page-profile') ?></button>
                                 </div>
                                 <div class="form-group confirm-request verified"
                                      id="verified" <?php if (!$user_mobile) { ?> style="display:none;" <?php } ?>>
 
                     <span class="text-small"><label
-                            for="user_mobile"><?php _e('Your phone no', ET_DOMAIN) ?></label></span> <br/>
+                            for="user_mobile"><?php _e('Your phone no', 'page-profile') ?></label></span> <br/>
                                     <span id="user_verified_mobile"><i
                                             class="fa fa-check"></i> <?php echo $user_mobile; ?></span>
                                     <button type="button" class="btn-submit"
-                                            onclick="editnumber();"><?php _e('Edit Phone', ET_DOMAIN) ?></button>
+                                            onclick="editnumber();"><?php _e('Edit Phone', 'page-profile') ?></button>
                                 </div>
                             </form>
 
@@ -1200,23 +1200,23 @@ get_header();
                                         <a role="menuitem" tabindex="-1"
                                            href="<?php echo et_get_page_link("submit-project") ?>"
                                            class="display-name">
-                                            <i class="fa fa-plus-circle"></i><?php _e("Post a Project", ET_DOMAIN) ?>
+                                            <i class="fa fa-plus-circle"></i><?php _e("Post a Project", 'page-profile') ?>
                                         </a>
                                     </li>
                                 <?php } ?>
                                 <li>
                                     <a href="#" class="change-password">
                                         <i class="fa fa-key"></i>
-                                        <?php _e("Change Password", ET_DOMAIN) ?>
+                                        <?php _e("Change Password", 'page-profile') ?>
                                     </a>
                                 </li>
                                 <!-- <li>
-                                <a href="#" class="creat-team-link"><i class="fa fa-users"></i><?php _e("Create Your Team", ET_DOMAIN) ?></a>
+                                <a href="#" class="creat-team-link"><i class="fa fa-users"></i><?php _e("Create Your Team", 'page-profile') ?></a>
                             </li> -->
                                 <li>
                                     <a href="<?php echo wp_logout_url(home_url()); ?>" class="logout-link">
                                         <i class="fa fa-sign-out"></i>
-                                        <?php _e("Log Out", ET_DOMAIN) ?>
+                                        <?php _e("Log Out", 'page-profile') ?>
                                     </a>
                                 </li>
                                 <!-- HTML to write -->
