@@ -24,3 +24,6 @@ wp-content/plugins/hello.php
 /wp-content/themes/freelanceengine/Gruntfile.js
 /wp-content/themes/freelanceengine/package.json
 /wp-content/themes/freelanceengine/sass
+/wp-content/themes/freelanceengine/mobile/.sass-cache
+/wp-content/themes/freelanceengine/mobile/sass
+/wp-content/themes/freelanceengine/mobile/config.rb
