@@ -1751,6 +1751,13 @@ input.portfolio-title {
 	float:right;
 	position:relative;
 }
+.form-user-profile .form-group-mobile .curency-form .chosen-container .chosen-single{
+    height: 50px;
+    line-height: 50px;
+}
+.form-user-profile .form-group-mobile .curency-form .chosen-container-single .chosen-single div b{
+    background-position: 0 14px;
+}
 .form-user-profile .form-group-mobile .curency-form select, .form-user-profile .form-group-mobile textarea{
 	display: block;
 	width: 100%;
