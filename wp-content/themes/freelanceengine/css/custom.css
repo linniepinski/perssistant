@@ -4580,8 +4580,8 @@ form.form-detail-profile-page .mce-panel div.mce-toolbar-grp {
 form.form-detail-profile-page .experience .error .message {
   white-space: nowrap;
   position: relative;
-  left: 20px;
-  top: -17px; }
+  /*        left: 20px;
+          top: -17px;*/ }
 
 /* line 3846, ../sass/custom.scss */
 form.form-detail-profile-page .form-group-control textarea {
