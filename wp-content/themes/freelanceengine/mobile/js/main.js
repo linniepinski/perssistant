@@ -73,15 +73,15 @@
         });
         $('.show-search-advance').click(function(e) {
             $('#advance-search').slideDown(300);
-            $(this).fadeOut(300, function(e) {
-                $('.hide-search-advance').fadeIn(300);
+            $(this).parent().fadeOut(300, function(e) {
+                $('.hide-search-advance').parent().fadeIn(300);
             });
         });
         $('.hide-search-advance, .hide-advance-search').click(function(e) {
             e.preventDefault();
             $('#advance-search').slideUp(300);
-            $('.hide-search-advance').fadeOut(300, function(e) {
-                $('.show-search-advance').fadeIn(300);
+            $('.hide-search-advance').parent().fadeOut(300, function(e) {
+                $('.show-search-advance').parent().fadeIn(300);
             });
         });
         $('.btn-list-bidder').click(function(e) {
