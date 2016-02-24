@@ -8,16 +8,16 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
         <div class="row">
             <div class="col-md-15 col-sm-6">
                 <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top"><?php _e('Category', ET_DOMAIN); ?></h2>
+                    <h2 class="title-search-form-top"><?php _e('Category', 'filter-profiles'); ?></h2>
                     <p>
                         <?php 
                             ae_tax_dropdown( 'project_category' , 
-                                  array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", ET_DOMAIN).'"', 
+                                  array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", 'filter-profiles').'"', 
                                           'class' => 'cat-filter chosen-select', 
                                           'hide_empty' => true, 
                                           'hierarchical' => true , 
                                           'id' => 'project_category' , 
-                                          'show_option_all' => __("All categories", ET_DOMAIN),
+                                          'show_option_all' => __("All categories", 'filter-profiles'),
                                           'value' => 'slug'
                                       ) 
                             );
@@ -29,17 +29,17 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Location', ET_DOMAIN) ?>
+                            <?php _e('Location', 'filter-profiles') ?>
                         </h2>
                         <p>
                             <?php 
                                 ae_tax_dropdown( 'country' , 
-                                      array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", ET_DOMAIN).'"', 
+                                      array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", 'filter-profiles').'"', 
                                               'class' => 'cat-filter chosen-select', 
                                               'hide_empty' => true, 
                                               'hierarchical' => true , 
                                               'id' => 'country' , 
-                                              'show_option_all' => __("All locations", ET_DOMAIN),
+                                              'show_option_all' => __("All locations", 'filter-profiles'),
                                               'value' => 'slug'
                                           ) 
                                 );
@@ -55,10 +55,10 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Keyword', ET_DOMAIN) ?>
+                            <?php _e('Keyword', 'filter-profiles') ?>
                         </h2>
                         <div class="skills-wrap">
-                            <input class="form-control keyword search" type="text" id="s" placeholder="<?php _e("Keyword", ET_DOMAIN); ?>" name="s"  autocomplete="off" spellcheck="false" >
+                            <input class="form-control keyword search" type="text" id="s" placeholder="<?php _e("Keyword", 'filter-profiles'); ?>" name="s"  autocomplete="off" spellcheck="false" >
                             <i class="fa fa-search"></i>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
             <div class="col-md-15 col-sm-6 ">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top">
-                        <?php _e('Hourly rate', ET_DOMAIN);?>
+                        <?php _e('Hourly rate', 'filter-profiles');?>
                     </h2>
                     <input id="hour_rate" type="text" name="hour_rate" class="slider-ranger" value="" data-slider-min="0" 
                         data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5" 
@@ -88,10 +88,10 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
                 <div class="content-search-form-top-wrapper">
                     <div class="skill-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Skills Required', ET_DOMAIN) ?>
+                            <?php _e('Skills Required', 'filter-profiles') ?>
                         </h2>
                         <div class="skills-wrap">
-                            <input type="text" class="form-control skill" id="skill" placeholder="<?php _e("Keyword", ET_DOMAIN); ?>" name=""  autocomplete="off" spellcheck="false" />
+                            <input type="text" class="form-control skill" id="skill" placeholder="<?php _e("Keyword", 'filter-profiles'); ?>" name=""  autocomplete="off" spellcheck="false" />
                             <i class="fa fa-search"></i>
                         </div>
                         <input type="hidden" class="skill_filter" name="filter_skill" value="1" />
@@ -108,8 +108,8 @@ $currency    = ae_get_option('content_currency',array('align' => 'left', 'code' 
                   <h2 class="number-profile">
                   <?php 
                         $found_posts = '<span class="found_post">'.$wp_query->found_posts.'</span>';
-                        $plural = sprintf(__('%s Profiles ',ET_DOMAIN), $found_posts);
-                        $singular = sprintf(__('%s Profile',ET_DOMAIN),$found_posts);
+                        $plural = sprintf(__('%s Profiles ','filter-profiles'), $found_posts);
+                        $singular = sprintf(__('%s Profile','filter-profiles'),$found_posts);
                     ?>
                         <span class="plural <?php if( $wp_query->found_posts <= 1 ) { echo 'hide'; } ?>" >
                             <?php echo $plural; ?>

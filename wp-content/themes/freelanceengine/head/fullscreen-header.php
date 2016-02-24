@@ -80,7 +80,7 @@
                         <div class="non-login">
                     
                             <div class="navbar-left links-wrap">
-                            <a class="login login-btn" href="<?php echo site_url(); ?>/submit-project/"><?php _e("POST A PROJECT", ET_DOMAIN) ?></a>
+                            <a class="login login-btn" href="<?php echo site_url(); ?>/submit-project/"><?php _e("POST A PROJECT", 'header') ?></a>
                             
                             
                             <div class="dropdown-info-acc-wrapper">
@@ -89,7 +89,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                        <span class="avatar-and-name"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span class="avatar-and-name"><span><?php _e("BROWSE", 'header'); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -102,21 +102,21 @@
                                    
                                    <li role="presentation" class="hidden-xs hidden-sm">
 
-                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", 'header'); ?></span></span>
 
 
                                     <span class="caret" style="border-top: 4px solid #000;"></span>
 
                                     </li>
                                     
-                                    <?php if(wp_get_current_user()->roles[0] == 'freelancer' || !is_user_logged_in()){ ?>
+                                    <?php if(ae_user_role() == FREELANCER || !is_user_logged_in()){ ?>
                                     <li role="presentation" class="divider hidden-xs hidden-sm"></li>
 
                                     <li role="presentation">
 
                                         <a  tabindex="-1" role="menuitem" href="<?php echo site_url(); ?>/projects/" class="se-proj">
 
-                                                <?php _e("Search Projects", ET_DOMAIN) ?>
+                                                <?php _e("Search Projects", 'header') ?>
 
                                         </a>
 
@@ -129,7 +129,7 @@
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/" class="se-free">
 
-                                            <?php _e("Search Virtual Assistant", ET_DOMAIN) ?>
+                                            <?php _e("Search Virtual Assistant", 'header') ?>
 
                                         </a>
 
@@ -140,27 +140,24 @@
                             </div>
                                                     
                         </div> 
-                        <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
-<!--                        <div class="sitelang">--><?php //pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?><!--</div>-->
+                        <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                             </div>
                             <?php do_action('wpml_add_language_selector');?>
 
+                            <a href="<?php echo site_url(); ?>/login" class="login login-btn"><?php _e("LOGIN", 'header') ?></a>
 
+                            <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("SIGN UP", 'header') ?></a>
 
-                            <a href="<?php echo site_url(); ?>/login" class="login login-btn"><?php _e("LOGIN", ET_DOMAIN) ?></a>
-
-                            <a href="<?php echo site_url(); ?>/sign-up" class="register register-btn"><?php _e("SIGN UP", ET_DOMAIN) ?></a>
-
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
                         </div>
 
                     
                         <?php } else { ?>
                          <div class="navbar-left links-wrap" > 
                             <?php if( ae_user_role() == FREELANCER ) { ?>
-                            <a href="<?php echo site_url(); ?>/projects/" class="login login-btn"><?php _e("FIND A PROJECT", ET_DOMAIN) ?></a>
+                            <a href="<?php echo site_url(); ?>/projects/" class="login login-btn"><?php _e("FIND A PROJECT", 'header') ?></a>
                             <?php } else { ?>
-                                <a href="<?php echo site_url(); ?>/submit-project/" class="login login-btn"><?php _e("POST A PROJECT", ET_DOMAIN) ?></a>
+                                <a href="<?php echo site_url(); ?>/submit-project/" class="login login-btn"><?php _e("POST A PROJECT", 'header') ?></a>
                             <?php } ?>
                         
                         <div class="dropdown-info-acc-wrapper">
@@ -169,7 +166,7 @@
 
                                 <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 
-                                    <span class="avatar-and-name"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                    <span class="avatar-and-name"><span><?php _e("BROWSE", 'header'); ?></span></span>
 
 
                                     <span class="caret"></span>
@@ -182,21 +179,21 @@
                                    
                                    <li role="presentation" class="hidden-xs hidden-sm">
 
-                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", ET_DOMAIN); ?></span></span>
+                                        <span  class="avatar-and-name" style="color: #333;"><span><?php _e("BROWSE", 'header'); ?></span></span>
 
 
                                     <span class="caret"></span>
 
                                     </li>
                                     
-                                    <?php if(wp_get_current_user()->roles[0] == 'freelancer' || !is_user_logged_in()){ ?>
+                                    <?php if(ae_user_role() == FREELANCER || !is_user_logged_in()){ ?>
                                     <li role="presentation" class="divider hidden-xs hidden-sm"></li>
 
                                     <li role="presentation">
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/projects/" class="se-proj">
 
-                                                <?php _e("Search Projects", ET_DOMAIN) ?>
+                                                <?php _e("Search Projects", 'header') ?>
 
                                         </a>
 
@@ -210,7 +207,7 @@
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/" class="se-free">
 
-                                            </i><?php _e("Search Virtual Assistant", ET_DOMAIN) ?>
+                                            </i><?php _e("Search Virtual Assistant", 'header') ?>
 
                                         </a>
 
@@ -221,10 +218,11 @@
                             </div>
                                                     
                         </div>
-                         <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
-                             <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a>  
-<!--<div class="sitelang">--><?php //pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?><!--</div></div>-->
-
+                         <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
+                             <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>&nbsp&nbsp<span class="badge count-chat"></span></a>
+<div>
+    <?php do_action('wpml_add_language_selector');?>
+</div>
                         <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
 
                             <div class="dropdown">
@@ -305,7 +303,7 @@
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo et_get_page_link("profile") ?>" class="display-name">
 
-                                            <i class="fa fa-user"></i><?php _e("Your Profile", ET_DOMAIN) ?>
+                                            <i class="fa fa-user"></i><?php _e("Your Profile", 'header') ?>
 
                                         </a>
 
@@ -321,7 +319,7 @@
 
                                             <?php 
 
-                                                _e("Notification", ET_DOMAIN); 
+                                                _e("Notification", 'header');
 
                                                 if($notify_number) {
 
@@ -341,7 +339,7 @@
 
                                         <a role="menuitem" tabindex="-1" href="<?php echo wp_logout_url(); ?>" class="logout">
 
-                                            <i class="fa fa-sign-out"></i><?php _e("Logout", ET_DOMAIN) ?>
+                                            <i class="fa fa-sign-out"></i><?php _e("Logout", 'header') ?>
 
                                         </a>
 
@@ -352,7 +350,7 @@
                             </div>
                                                     
                         </div>
-                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", ET_DOMAIN) ?></a>
+                            <a class="register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
 
                       
                         <?php } ?>
@@ -372,132 +370,7 @@
     </div>
 
 </header>
-<?php /*
-<div class="container box-shadow-style-theme search-form-top" id="search-proj">
-       <div class="slider-wrap">
-        <i class="fa fa-times fa-4"></i> 
-            <div class="row" style="clear:both; border-top: 1px solid #F5F5F5; padding-top:5px; margin-top:5px">
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Category</h2>
-                    <p>
-                        <select data-chosen-width="90%" data-chosen-disable-search="" data-placeholder="Choose categories" name="project_category" id="project_category" class="cat-filter chosen-select" style="display: none;">
-    <option value="" selected="selected">All categories</option>
-    <option class=" ui-design  level-0" value="ui-design">UI Design</option>
-    <option class=" web-design  level-0" value="web-design">Web Design</option>
-</select><div class="chosen-container chosen-container-single" style="width: 90%;" title="" id="project_category_chosen"><a class="chosen-single" tabindex="-1"><span>All categories</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
- 
-                    </p>
-                </div>
-            </div>
-    
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <div class="search-control">
-                        <h2 class="title-search-form-top">Keyword</h2>
-                        <input class="form-control keyword search" type="text" id="s" placeholder="Keyword" name="s" autocomplete="off" spellcheck="false">
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Project Type</h2>
-                    <p>
-                        <select data-chosen-width="90%" data-chosen-disable-search="1" data-placeholder="All types" name="project_type" id="project_type" class="type-filter chosen-select" style="display: none;">
-    <option value="" selected="selected">All types</option>
-    <option class=" full-time  level-0" value="full-time">Full time</option>
-    <option class=" urgent  level-0" value="urgent">Urgent</option>
-</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 90%;" title="" id="project_type_chosen"><a class="chosen-single chosen-default" tabindex="-1"><span>All types</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>
- 
-                    </p>
-                </div>
-            </div>
-            
-                        <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Budget</h2>
-                    <div class="slider slider-horizontal" style="width: 170px;"><div class="slider-track"><div class="slider-selection"></div><div class="slider-handle round"></div><div class="slider-handle round"></div></div><div class="tooltip top" style="top: -30px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">[ : 0</div></div><input id="et_budget" type="text" name="et_budget" class="slider-ranger" value="" data-slider-min="0" data-slider-max="Array" data-slider-step="5" data-slider-value="[0,Array]"></div> 
-                    <b class="currency">$1.00</b>
-                    <input type="hidden" name="budget" id="budget" value="">
-                </div>
-            </div>
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <div class="skill-control">
-                        <h2 class="title-search-form-top">Your Skills</h2>
-                        <input class="form-control skill" type="text" id="skill" placeholder="Type and enter" name="" autocomplete="off" spellcheck="false">
-                        <input type="hidden" class="skill_filter" name="filter_skill" value="1">
-                        <ul class="skills-list" id="skills_list"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </div>
-    </div>
-<div class="container box-shadow-style-theme search-form-top" id="search-free">
-        <div class="slider-wrap">
-        <i class="fa fa-times fa-4"></i> 
-          <div class="row" style="clear:both; border-top: 1px solid #F5F5F5; padding-top:5px; margin-top:5px">
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Freelancer</h2>
-                    <p>
-                        <select data-chosen-width="90%" data-chosen-disable-search="" data-placeholder="Choose categories" name="project_category" id="project_category" class="cat-filter chosen-select" style="display: none;">
-    <option value="" selected="selected">All categories</option>
-    <option class=" ui-design  level-0" value="ui-design">UI Design</option>
-    <option class=" web-design  level-0" value="web-design">Web Design</option>
-</select><div class="chosen-container chosen-container-single" style="width: 90%;" title="" id="project_category_chosen"><a class="chosen-single" tabindex="-1"><span>All categories</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div>
- 
-                    </p>
-                </div>
-            </div>
-    
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <div class="search-control">
-                        <h2 class="title-search-form-top">Keyword</h2>
-                        <input class="form-control keyword search" type="text" id="s" placeholder="Keyword" name="s" autocomplete="off" spellcheck="false">
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Project Type</h2>
-                    <p>
-                        <select data-chosen-width="90%" data-chosen-disable-search="1" data-placeholder="All types" name="project_type" id="project_type" class="type-filter chosen-select" style="display: none;">
-    <option value="" selected="selected">All types</option>
-    <option class=" full-time  level-0" value="full-time">Full time</option>
-    <option class=" urgent  level-0" value="urgent">Urgent</option>
-</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 90%;" title="" id="project_type_chosen"><a class="chosen-single chosen-default" tabindex="-1"><span>All types</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>
- 
-                    </p>
-                </div>
-            </div>
-            
-                        <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top">Budget</h2>
-                    <div class="slider slider-horizontal" style="width: 170px;"><div class="slider-track"><div class="slider-selection"></div><div class="slider-handle round"></div><div class="slider-handle round"></div></div><div class="tooltip top" style="top: -30px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">[ : 0</div></div><input id="et_budget" type="text" name="et_budget" class="slider-ranger" value="" data-slider-min="0" data-slider-max="Array" data-slider-step="5" data-slider-value="[0,Array]"></div> 
-                    <b class="currency">$1.00</b>
-                    <input type="hidden" name="budget" id="budget" value="">
-                </div>
-            </div>
-            <div class="col-md-15">
-                <div class="content-search-form-top-wrapper">
-                    <div class="skill-control">
-                        <h2 class="title-search-form-top">Your Skills</h2>
-                        <input class="form-control skill" type="text" id="skill" placeholder="Type and enter" name="" autocomplete="off" spellcheck="false">
-                        <input type="hidden" class="skill_filter" name="filter_skill" value="1">
-                        <ul class="skills-list" id="skills_list"></ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-*/ ?>
+
 <script>
     jQuery('.slider-wrap .fa-times').on('click', function(){
         jQuery(this).parents('.container').slideUp();        
@@ -512,16 +385,5 @@
          jQuery('#search-proj').slideUp();
         jQuery('#search-free').slideToggle();
     })
-
-//     jQuery(window).on('scroll', function(){
-//        if(jQuery('#header-wrapper').hasClass('sticky')){
-//            jQuery('.search-form-top').addClass('stickyForm')
-//        }else{
-//             jQuery('.search-form-top').removeClass('stickyForm')
-//        }
-//         if(jQuery('body').scrollTop()===0){
-//         jQuery('.search-form-top').removeClass('stickyForm')
-//     }
-//     })
 
 </script>

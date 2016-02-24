@@ -67,7 +67,7 @@ if(!$current || !isset( $current->project_title )){
 
                 <h5><a href = "<?php echo $current->project_link; ?>"><?php echo $current->project_title; ?></a>
 
-                    <div class="rate-it" data-score="<?php echo $current->rating_score?>"></div> by <a href="<?php echo $user_data->author_url;?>" target="_blank"><?php echo $user_data->user_nicename; ?></a> / Total Projects: <?php echo fre_count_user_posts_by_type($project_author_id, 'project', '"publish","complete","close" ', true);?>
+                    <div class="rate-it" data-score="<?php echo $current->rating_score?>"></div> by <a href="<?php echo $user_data->author_url;?>" target="_blank"><?php echo $user_data->user_nicename; ?></a> / <?php _e('Total Projects:', 'bid-history-item');?> <?php echo fre_count_user_posts_by_type($project_author_id, 'project', '"publish","complete","close" ', true);?>
 
                 </h5>
 
@@ -89,7 +89,7 @@ if(!$current || !isset( $current->project_title )){
 
 
 
-                <span class="stt-in-process"><?php _e('Job is completed', ET_DOMAIN);?></span> 
+                <span class="stt-in-process"><?php _e('Job is completed', 'bid-history-item');?></span> 
 
                 
 
@@ -107,7 +107,7 @@ if(!$current || !isset( $current->project_title )){
 
                 </h5>
 
-                <span class="stt-in-process"><?php _e('Job is closed', ET_DOMAIN);?></span> 
+                <span class="stt-in-process"><?php _e('Job is closed', 'bid-history-item');?></span> 
 
 
 
@@ -121,7 +121,7 @@ if(!$current || !isset( $current->project_title )){
 
                 </h5>
 
-                <span class="stt-in-process"><?php _e('Job in process', ET_DOMAIN);?></span> 
+                <span class="stt-in-process"><?php _e('Job in process', 'bid-history-item');?></span> 
 
 
 
@@ -137,11 +137,11 @@ if(!$current || !isset( $current->project_title )){
 
         <li>
 
-            <?php _e("Bid Budget", ET_DOMAIN); ?> : <span class="number-price-project-info"><?php echo $current->bid_budget_text; ?> </span>
+            <?php _e("Bid Budget", 'bid-history-item'); ?> : <span class="number-price-project-info"><?php echo $current->bid_budget_text; ?> </span>
 
         </li>
 
-        <!-- <li><?php _e('Earned :', ET_DOMAIN) ;  echo $current->et_budget; ?></li> -->
+        <!-- <li><?php _e('Earned :', 'bid-history-item') ;  echo $current->et_budget; ?></li> -->
 
     </ul>
 

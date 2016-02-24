@@ -41,20 +41,20 @@ $status_text    = $bid->status_text;
     <?php if($project->post_status == "publish"){ ?>
         <div class="col-md-6">
         	<a href="<?php echo $project->permalink ?>" class="btn btn-apply-project-item">
-                <?php _e("Cancel", ET_DOMAIN) ?>
+                <?php _e("Cancel", 'user-bid-item') ?>
             </a>
         </div>
         <!-- danng !-->
         <?php }  else if($project->post_status == 'complete' && ae_user_role() == 'freelancer' && $bid->ID == $project->accepted ){ ?>
         <div class="col-md-6">
             <a href="<?php echo add_query_arg('review',1,$project->permalink) ?>" class="btn btn-apply-project-item">
-                <?php _e("Review job", ET_DOMAIN) ?>
+                <?php _e("Review job", 'user-bid-item') ?>
             </a>
         </div>
         <?php  } else if($project->post_status == 'close' && ae_user_role() == 'freelancer' && $bid->ID == $project->accepted ){ ?>
         <div class="col-md-6">
             <a href="<?php echo add_query_arg(array('workspace' => 1), $project->permalink); ?>" class="btn btn-apply-project-item">
-                <?php _e("Open Workspace", ET_DOMAIN) ?>
+                <?php _e("Open Workspace", 'user-bid-item') ?>
             </a>
         </div>
         <?php  } ?>
@@ -66,9 +66,9 @@ $status_text    = $bid->status_text;
             <li>
                 <?php 
                 if($total_bids > 1 || $total_bids == 0 ) {
-                    printf(__('<span class="number-blue">%d</span> Bids', ET_DOMAIN), $total_bids);
+                    printf(__('<span class="number-blue">%d</span> Bids', 'user-bid-item'), $total_bids);
                 }else {
-                    printf(__('<span class="number-blue">%d</span> Bid', ET_DOMAIN), $total_bids);
+                    printf(__('<span class="number-blue">%d</span> Bid', 'user-bid-item'), $total_bids);
                 }
                 ?>
             </li>
@@ -79,7 +79,7 @@ $status_text    = $bid->status_text;
                     if ($project->total_bids > 0) $avg = get_total_cost_bids($project->ID) / $project->total_bids;
                     echo fre_number_format($avg);
                 ?>
-                </span><?php printf( __('Avg Bid (%s)', ET_DOMAIN), $currency['code'] ) ?>
+                </span><?php printf( __('Avg Bid (%s)', 'user-bid-item'), $currency['code'] ) ?>
             </li>
             <li>
                 <span class="number-blue">
@@ -88,7 +88,7 @@ $status_text    = $bid->status_text;
             </li>
             <li>
                 <span>
-                    <?php _e("Bidding:", ET_DOMAIN) ?> 
+                    <?php _e("Bidding:", 'user-bid-item') ?> 
                 </span>
                 <span class="number-blue"> 
                     <?php echo $bid->bid_budget_text; ?> 

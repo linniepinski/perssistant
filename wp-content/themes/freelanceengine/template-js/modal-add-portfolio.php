@@ -9,7 +9,7 @@
 				<button type="button" class="close" data-dismiss="modal">
 					<i class="fa fa-times"></i>
 				</button>
-				<h4 class="modal-title"><?php _e("Add item for your Portfolio", ET_DOMAIN) ?></h4>
+				<h4 class="modal-title"><?php _e("Add item for your Portfolio", 'modal-add-portfolio') ?></h4>
 			</div>
 			<div class="modal-body">
 				<form id="create_portfolio" class="auth-form create_portfolio">
@@ -19,24 +19,24 @@
                 			<!-- IMG UPLOAD GO HERE -->
                 		</span>
                 		<span class="et_ajaxnonce hidden" id="<?php echo wp_create_nonce( 'portfolio_img_et_uploader' ); ?>"></span>
-                		<p class="add-file"><?php _e('ADD FILES', ET_DOMAIN) ?></p>
-                		<p class="drag-drop"><?php _e('Simply Drag & Drop', ET_DOMAIN) ?></p>
+                		<p class="add-file"><?php _e('ADD FILES', 'modal-add-portfolio') ?></p>
+                		<p class="drag-drop"><?php _e('Simply Drag & Drop', 'modal-add-portfolio') ?></p>
                 		<p class="browser-image">
                 			<input type="button" id="portfolio_img_browse_button" class="btn btn-default btn-submit" value="Browse" />
                 		</p>
                 	</div>
                 	<div class="clearfix"></div>
                 	<div class="form-group">
-                		<label><?php _e('Portfolio Title', ET_DOMAIN) ?></label>
+                		<label><?php _e('Portfolio Title', 'modal-add-portfolio') ?></label>
                 		<p><input type="text" name="post_title" id="post_title" /></p>
                 	</div>
                     <div class="form-group">
-                        <label><?php _e('Portfolio Description', ET_DOMAIN) ?></label>
+                        <label><?php _e('Portfolio Description', 'modal-add-portfolio') ?></label>
                         <textarea name="post_content" id="post_content"></textarea>
                     </div>
                 	<div class="clearfix"></div>
                 	<div class="form-group portfolio-skills">
-                		<label><?php _e('Select Skill', ET_DOMAIN) ?></label>
+                		<label><?php _e('Select Skill', 'modal-add-portfolio') ?></label>
 <!--                		<p>-->
 <!--	                		<select id="skills" name="skill">-->
 <!--		                		--><?php
@@ -62,7 +62,7 @@
 							if (!$switch_skill) {
 								?>
 								<input class="form-control skill" type="text" id="skill"
-									   placeholder="<?php _e("Skills (max is 10)", ET_DOMAIN); ?>"
+									   placeholder="<?php _e("Skills (max is 10)", 'modal-add-portfolio'); ?>"
 									   name=""
 									   autocomplete="off" class="skill" spellcheck="false">
 								<ul class="skills-list" id="skills_list"></ul>
@@ -90,7 +90,7 @@
                 	</div>
                 	<div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-						<?php _e('Add item', ET_DOMAIN) ?>
+						<?php _e('Add item', 'modal-add-portfolio') ?>
 					</button>
 				</form>	
 			</div>

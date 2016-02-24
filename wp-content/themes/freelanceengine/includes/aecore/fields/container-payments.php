@@ -33,9 +33,9 @@ class AE_OrderList
      */
     function render() {
         $support_gateway = apply_filters('ae_support_gateway', array(
-            'cash' => __("Cash", ET_DOMAIN) ,
-            'paypal' => __("Paypal", ET_DOMAIN) ,
-            '2checkout' => __("2Checkout", ET_DOMAIN) ,
+            'cash' => __("Cash", 'aecore-fields-backend') ,
+            'paypal' => __("Paypal", 'aecore-fields-backend') ,
+            '2checkout' => __("2Checkout", 'aecore-fields-backend') ,
         ));
         $orders = AE_Order::get_orders();
 ?>
@@ -45,7 +45,7 @@ class AE_OrderList
 				<span class="et-search-role">
 					<select name="role" id="" class="et-input" >
 						<option value="" ><?php
-        _e("All", ET_DOMAIN); ?></option>
+        _e("All", 'aecore-fields-backend'); ?></option>
 						<?php
         foreach ($support_gateway as $name => $label) {
             echo '<option value="' . $name . '" >' . $label . '</option>';
@@ -54,7 +54,7 @@ class AE_OrderList
 				</span>
 				<span class="et-search-input">
 					<input type="text" class="et-input order-search" name="keyword" placeholder="<?php
-        _e("Search post...", ET_DOMAIN); ?>">
+        _e("Search post...", 'aecore-fields-backend'); ?>">
 					<span class="icon" data-icon="s"></span>
 				</span>
 			</form>				
@@ -63,7 +63,7 @@ class AE_OrderList
 
 		<div class="et-main-main no-margin clearfix overview list">			
 			<div class="title font-quicksand"><?php
-        _e('All Orders', ET_DOMAIN) ?></div>
+        _e('All Orders', 'aecore-fields-backend') ?></div>
 			<!-- order list  -->
 			<ul class="list-inner list-payment users-list">
 			<?php
@@ -75,7 +75,7 @@ class AE_OrderList
                 ae_get_template_part('order', 'item');
             }
         } else {
-            _e('There are no payments yet.', ET_DOMAIN);
+            _e('There are no payments yet.', 'aecore-fields-backend');
         }
 ?>
 			</ul>
@@ -85,7 +85,7 @@ class AE_OrderList
         if ($orders->max_num_pages > 1) { ?>
 				<button class="et-button btn-button load-more" >
 					<?php
-            _e('More Payments', ET_DOMAIN) ?>
+            _e('More Payments', 'aecore-fields-backend') ?>
 				</button>
 			<?php
         } ?>	        			
@@ -169,7 +169,7 @@ class AE_OrderList
         $response['page'] = $_REQUEST['paged'] + 1;
         $response['data'] = $content;
         
-        if (!$orders->have_posts()) $response['msg'] = __("No order found by your query.", ET_DOMAIN);
+        if (!$orders->have_posts()) $response['msg'] = __("No order found by your query.", 'aecore-fields-backend');
         
         wp_send_json($response);
     }
@@ -208,7 +208,7 @@ class AE_OrderList
         if ($order_id) {
             wp_send_json(array(
                 'success' => true,
-                'msg' => __("Update order successfull.", ET_DOMAIN)
+                'msg' => __("Update order successfull.", 'aecore-fields-backend')
             ));
         } else {
             wp_send_json(array(

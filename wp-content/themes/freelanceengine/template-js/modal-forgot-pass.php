@@ -5,17 +5,17 @@
 				<button type="button" class="close" data-dismiss="modal">
 					<i class="fa fa-times"></i>
 				</button>
-				<h4 class="modal-title"><?php _e("Forgot Password?", ET_DOMAIN) ?></h4>
+				<h4 class="modal-title"><?php _e("Forgot Password?", 'modal-forgot-password') ?></h4>
 			</div>
 			<div class="modal-body">
 				<form id="forgot_form" class="auth-form forgot_form">
 					<div class="form-group">
-						<label for="forgot_user_email"><?php _e('Enter your email here', ET_DOMAIN) ?></label>
+						<label for="forgot_user_email"><?php _e('Enter your email here', 'modal-forgot-password') ?></label>
 						<input type="text" class="form-control" id="user_email" name="user_email" />
 					</div>
                     <div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-						<?php _e('Send', ET_DOMAIN) ?>
+						<?php _e('Send', 'modal-forgot-password') ?>
 					</button>
 				</form>	
 			</div>

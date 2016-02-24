@@ -8,18 +8,18 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
         <div class="row">
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top"><?php _e('Category', ET_DOMAIN); ?></h2>
+                    <h2 class="title-search-form-top"><?php _e('Category', 'filter-projects'); ?></h2>
 
                     <p>
                         <?php
 
                         /*ae_tax_dropdown('project_category',
-                            array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
+                            array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", 'filter-projects') . '"',
                                 'class' => 'cat-filter chosen-select',
                                 'hide_empty' => true,
                                 'hierarchical' => true,
                                 'id' => 'project_category',
-                                'show_option_all' => __("All categories", ET_DOMAIN),
+                                'show_option_all' => __("All categories", 'filter-projects'),
                                 'value' => 'slug'
                             )
                         );*/
@@ -40,9 +40,9 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
-                        <h2 class="title-search-form-top"><?php _e('Keyword', ET_DOMAIN) ?></h2>
+                        <h2 class="title-search-form-top"><?php _e('Keyword', 'filter-projects') ?></h2>
                         <input class="form-control keyword search" type="text" id="s"
-                               placeholder="<?php _e("Keyword", ET_DOMAIN); ?>" name="s" autocomplete="off"
+                               placeholder="<?php _e("Keyword", 'filter-projects'); ?>" name="s" autocomplete="off"
                                spellcheck="false">
                     </div>
                 </div>
@@ -50,17 +50,17 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
 
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top"><?php _e("Project Type", ET_DOMAIN); ?></h2>
+                    <h2 class="title-search-form-top"><?php _e("Project Type", 'filter-projects'); ?></h2>
 
                     <p>
                         <?php
                         ae_tax_dropdown('project_type',
-                            array('attr' => 'data-chosen-width="90%" data-chosen-disable-search="1" data-placeholder="' . __("All types", ET_DOMAIN) . '"',
+                            array('attr' => 'data-chosen-width="90%" data-chosen-disable-search="1" data-placeholder="' . __("All types", 'filter-projects') . '"',
                                 'class' => 'type-filter chosen-select',
                                 'hide_empty' => true,
                                 'hierarchical' => true,
                                 'id' => 'project_type',
-                                'show_option_all' => __("All types", ET_DOMAIN),
+                                'show_option_all' => __("All types", 'filter-projects'),
                                 'value' => 'slug'
                             )
                         );
@@ -74,7 +74,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             ?>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top"><?php _e("Budget", ET_DOMAIN); ?></h2>
+                    <h2 class="title-search-form-top"><?php _e("Budget", 'filter-projects'); ?></h2>
                     <input id="et_budget" type="text" name="et_budget" class="slider-ranger" value=""
                            data-slider-min="0"
                            data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5"
@@ -87,7 +87,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="skill-control">
-                        <h2 class="title-search-form-top"><?php _e('Your Skills', ET_DOMAIN) ?></h2>
+                        <h2 class="title-search-form-top"><?php _e('Your Skills', 'filter-projects') ?></h2>
 
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                                 data-target="#skillsmodal">
@@ -98,13 +98,13 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                             <!-- --><?php
                             /*
                                                     ae_tax_dropdown('skill',
-                                                        array('attr' => 'data-chosen-width="90%" data-chosen-disable-search="" data-placeholder="' . __("Choose skills", ET_DOMAIN) . '"',
+                                                        array('attr' => 'data-chosen-width="90%" data-chosen-disable-search="" data-placeholder="' . __("Choose skills", 'filter-projects') . '"',
                                                             'class' => 'skill_filter chosen-select',
                                                             //'hide_empty' => true,
                                                             //'hierarchical' => true,
                                                             'id' => 'skill',
                                                             'show_count' => -1,
-                                                            'show_option_all' => __("All skills", ET_DOMAIN),
+                                                            'show_option_all' => __("All skills", 'filter-projects'),
                                                             'value' => 'name'
                                                         )
                                                     );
@@ -117,7 +117,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="reset-control">
-                        <h2 class="title-search-form-top"><?php _e('Reset filters', ET_DOMAIN) ?></h2>
+                        <h2 class="title-search-form-top"><?php _e('Reset filters', 'filter-projects') ?></h2>
 
                         <button type="button" class="btn btn-primary btn-block btn-reset-filters">
                             Reset
@@ -148,8 +148,8 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
 
                         <?php
                         $found_posts = '<span class="found_post">' . $wp_query->found_posts . '</span>';
-                        $plural = sprintf(__('%s Projects for you', ET_DOMAIN), $found_posts);
-                        $singular = sprintf(__('%s Projects for you', ET_DOMAIN), $found_posts);
+                        $plural = sprintf(__('%s Projects for you', 'filter-projects'), $found_posts);
+                        $singular = sprintf(__('%s Projects for you', 'filter-projects'), $found_posts);
                         ?>
                         <span class="plural <?php if ($wp_query->found_posts <= 1) {
                             echo 'hide';
@@ -180,7 +180,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                     <div class="row">
                         <div class="col-xs-6">
                             <input class="form-control skill" type="text" id="skill"
-                                   placeholder="<?php _e("Type here", ET_DOMAIN); ?>" name="" autocomplete="off"
+                                   placeholder="<?php _e("Type here", 'filter-projects'); ?>" name="" autocomplete="off"
                                    spellcheck="false">
                         </div>
                         <div class="col-xs-6">
@@ -210,12 +210,12 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                 <?php
 
                 ae_tax_dropdown('project_category',
-                    array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" multiple data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
+                    array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" multiple data-placeholder="' . __("Choose categories", 'filter-projects') . '"',
                         'class' => 'cat-filter hidden',
                         'hide_empty' => false,
                         'hierarchical' => true,
                         'id' => 'project_category',
-                        'show_option_all' => __("All categories", ET_DOMAIN),
+                        'show_option_all' => __("All categories", 'filter-projects'),
                         'value' => 'slug'
                     )
                 );

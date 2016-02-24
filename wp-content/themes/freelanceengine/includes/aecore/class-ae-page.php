@@ -106,9 +106,9 @@ class AE_Page extends AE_Base
             'imgURL'          => ae_get_url() . '/assets/img/',
             'jsURL'           => ae_get_url() . '/assets/js/',
             'themeImgURL'     => get_template_directory_uri(). '/img/',
-            'loadingImg'      => '<img class="loading loading-wheel" src="' . ae_get_url() . '/assets/img/loading.gif" alt="' . __('Loading...', ET_DOMAIN) . '">',
-            'loading'         => __('Loading', ET_DOMAIN) ,
-            'texts'           => array('limit_category_level' => __("Categories' level is limited to 3", ET_DOMAIN)),
+            'loadingImg'      => '<img class="loading loading-wheel" src="' . ae_get_url() . '/assets/img/loading.gif" alt="' . __('Loading...', 'aecore-class-ae-page-backend') . '">',
+            'loading'         => __('Loading', 'aecore-class-ae-page-backend') ,
+            'texts'           => array('limit_category_level' => __("Categories' level is limited to 3", 'aecore-class-ae-page-backend')),
             'ae_is_mobile'    => et_load_mobile() ? 1 : 0,
             'plupload_config' => array(
                 'max_file_size'       => '3mb',
@@ -117,7 +117,7 @@ class AE_Page extends AE_Base
                 'silverlight_xap_url' => includes_url('js/plupload/plupload.silverlight.xap') ,
                 'filters'             => array(
                     array(
-                        'title'      => __('Image Files', ET_DOMAIN) ,
+                        'title'      => __('Image Files', 'aecore-class-ae-page-backend') ,
                         'extensions' => 'jpg,jpeg,gif,png'
                     )
                 )
@@ -141,8 +141,8 @@ class AE_Page extends AE_Base
         echo ae_get_url(); ?>/assets/img/engine-logo.png" /> </a>
                     </div>
                     <div class="slogan"><span><?php
-        _e('Administration', ET_DOMAIN) ?></span>. <?php
-        _e('You are an admin. Here you administrate.', ET_DOMAIN) ?></div>          
+        _e('Administration', 'aecore-class-ae-page-backend') ?></span>. <?php
+        _e('You are an admin. Here you administrate.', 'aecore-class-ae-page-backend') ?></div>          
                 </div>
                 <div class="et-wrapper clearfix">
                     <div class="et-left-column">                        
@@ -297,8 +297,8 @@ class AE_Menu extends AE_Page
         // $this->add_action( 'wp_ajax_ae-fetch-users', 'fetch_user' );
         
         $this->args = array(
-            'page_title' => __('Engine Settings', ET_DOMAIN) ,
-            'menu_title' => __('Engine Settings', ET_DOMAIN) ,
+            'page_title' => __('Engine Settings', 'aecore-class-ae-page-backend') ,
+            'menu_title' => __('Engine Settings', 'aecore-class-ae-page-backend') ,
             'cap' => 'administrator',
             'slug' => 'et-overview',
             'icon_url' => '',
@@ -325,7 +325,7 @@ class AE_Menu extends AE_Page
     function action_sync() {
 
         if(!current_user_can( 'manage_options' )) {
-            wp_send_json( array('success' => false , 'msg' => __("You do not have permission to change option.", ET_DOMAIN)) );
+            wp_send_json( array('success' => false , 'msg' => __("You do not have permission to change option.", 'aecore-class-ae-page-backend')) );
         }
 
         
@@ -365,7 +365,7 @@ class AE_Menu extends AE_Page
             'data' => array(
                 'ID' => $id
             ) ,
-            'msg' => __("Update option successfully!", ET_DOMAIN)
+            'msg' => __("Update option successfully!", 'aecore-class-ae-page-backend')
         );
         wp_send_json($response);
     }
@@ -393,7 +393,7 @@ class AE_Menu extends AE_Page
         global $user_ID;
         $res = array(
             'success' => false,
-            'msg' => __('There is an error occurred', ET_DOMAIN) ,
+            'msg' => __('There is an error occurred', 'aecore-class-ae-page-backend') ,
             'code' => 400,
         );
 
@@ -401,19 +401,19 @@ class AE_Menu extends AE_Page
          * User must login to upload image
          */
         if(!$user_ID) {
-            $res['msg'] = __("You must login to upload image.", ET_DOMAIN);
+            $res['msg'] = __("You must login to upload image.", 'aecore-class-ae-page-backend');
             wp_send_json( $res );
         }
         
         // check fileID
         if (!isset($_POST['fileID']) || empty($_POST['fileID']) || !isset($_POST['imgType']) || empty($_POST['imgType'])) {
-            $res['msg'] = __('Missing image ID', ET_DOMAIN);
+            $res['msg'] = __('Missing image ID', 'aecore-class-ae-page-backend');
         } else {
             $fileID = $_POST["fileID"];
             $imgType = $_POST['imgType'];
             // check ajax nonce
             if (!de_check_ajax_referer($imgType . '_et_uploader', false, false) && !check_ajax_referer($imgType . '_et_uploader', false, false) ) {
-                $res['msg'] = __('Security error!', ET_DOMAIN);
+                $res['msg'] = __('Security error!', 'aecore-class-ae-page-backend');
             } elseif (isset($_FILES[$fileID])) {
                 // 
                 $upload_mimes = apply_filters('et_upload_file_upload_mimes', array(
@@ -451,18 +451,18 @@ class AE_Menu extends AE_Page
 
                         $res = array(
                             'success' => true,
-                            'msg' => __('Branding image has been uploaded successfully', ET_DOMAIN) ,
+                            'msg' => __('Branding image has been uploaded successfully', 'aecore-class-ae-page-backend') ,
                             'data' => $attach_data
                         );
                     }
                     catch(Exception $e) {
-                        $res['msg'] = __('Error when updating settings.', ET_DOMAIN);
+                        $res['msg'] = __('Error when updating settings.', 'aecore-class-ae-page-backend');
                     }
                 } else {
                     $res['msg'] = $attach_id->get_error_message();
                 }
             } else {
-                $res['msg'] = __('Uploaded file not found', ET_DOMAIN);
+                $res['msg'] = __('Uploaded file not found', 'aecore-class-ae-page-backend');
             }
         }
         // send json to client
@@ -510,7 +510,7 @@ class AE_Menu extends AE_Page
         
         $wp_admin_bar->add_menu(array(
             'id' => $parent,
-            'title' => __('Site Dashboard', ET_DOMAIN) ,
+            'title' => __('Site Dashboard', 'aecore-class-ae-page-backend') ,
             'href' => false
         ));
         

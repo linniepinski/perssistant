@@ -45,37 +45,37 @@ class AE_UsersContainer {
 				<div id="search_users" >
 					<span class="et-search-role">
 						<select name="role" id="" class="et-input" >
-							<option value="" ><?php _e("All", ET_DOMAIN); ?></option>
+							<option value="" ><?php _e("All", 'aecore-fields-container-users-backend'); ?></option>
 							<?php foreach ($role_names as $role_name => $role_label) {
 									echo '<option value="'. $role_name .'" >'. $role_label .'</option>';
 							} ?>
 						</select>
 					</span>
 					<span class="et-search-input">
-						<input type="text" class="et-input user-search" name="keyword" placeholder="<?php _e("Search users...", ET_DOMAIN); ?>">
+						<input type="text" class="et-input user-search" name="keyword" placeholder="<?php _e("Search users...", 'aecore-fields-container-users-backend'); ?>">
 						<span class="icon" data-icon="s"></span>
 					</span>
-				</div>				
+				</div>
 			</div>
 			<!-- // user search box -->
 
-			<div class="et-main-main no-margin clearfix overview list">			
-				<div class="title font-quicksand"><?php _e('All Users', ET_DOMAIN) ?></div>
+			<div class="et-main-main no-margin clearfix overview list">
+				<div class="title font-quicksand"><?php _e('All Users', 'aecore-fields-container-users-backend') ?></div>
 				<ul class="list-inner list-payment users-list">
-					<?php  
+					<?php
 					foreach ($users as $user) {
 						$user_data[]	=	$ae_users->convert($user);
 						ae_get_template_part('user' , 'item');
 					} ?>
 				</ul>
 				<script type="application/json" id="ae_users_list">
-					<?php 
+					<?php
 					    echo json_encode( array('users' =>  $user_data , 'pages' => $pages , 'query' => $args ) );
-					?> 
+					?>
 				</script>
 				<?php if( $pages > 1 ) { ?>
 					<button class="et-button btn-button load-more" >
-						<?php _e('More Users', ET_DOMAIN) ?>
+						<?php _e('More Users', 'aecore-fields-backend') ?>
 					</button>
 				<?php } ?>	        			
 			</div>

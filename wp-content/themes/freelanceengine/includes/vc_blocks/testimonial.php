@@ -8,7 +8,7 @@ class WPBakeryShortCode_fre_testimonial_block extends WPBakeryShortCode {
 
         extract(shortcode_atts(array(
             'el_class'      => '',
-            // 'title'         => __('TESTIMONIALS BLOCK',ET_DOMAIN),
+            // 'title'         => __('TESTIMONIALS BLOCK','vc_blocks-testimonial-backend'),
             's_content'     => '',
             'number'        => 3,
         ), $atts));
@@ -53,7 +53,7 @@ class WPBakeryShortCode_fre_testimonial_block extends WPBakeryShortCode {
                 </div>
                 <!-- <div class="col-md-12">
                     <a href="#" class="view-all-test">
-                        <?php _e("View All Testimonials", ET_DOMAIN) ?>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i>
+                        <?php _e("View All Testimonials", 'vc_blocks-testimonial-backend') ?>&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-double-right"></i>
                     </a>
                 </div> -->
             </div>
@@ -70,16 +70,16 @@ class WPBakeryShortCode_fre_testimonial_block extends WPBakeryShortCode {
 
 vc_map( array(
     "base"      => "fre_testimonial_block",
-    "name"      => __("FrE Testimonial", ET_DOMAIN),
+    "name"      => __("FrE Testimonial", 'vc_blocks-testimonial-backend'),
     "class"     => "",
     "icon"      => "icon-wpb-de_service",
-    "category"  => __("FreelanceEngine", ET_DOMAIN),
+    "category"  => __("FreelanceEngine", 'vc_blocks-testimonial-backend'),
     "params"    => array(
         array(
             "type" => "textfield",
-            "heading" => __("Extra class name", ET_DOMAIN),
+            "heading" => __("Extra class name", 'vc_blocks-testimonial-backend'),
             "param_name" => "el_class",
-            "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", ET_DOMAIN)
+            "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", 'vc_blocks-testimonial-backend')
         )
     )
 ));

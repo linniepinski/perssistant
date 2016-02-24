@@ -11,7 +11,7 @@
 <div class="step-wrapper step-payment" id="step-payment">
 	<a href="#" class="step-heading active">
     	<span class="number-step"><?php echo $step; ?></span>
-        <span class="text-heading-step"><?php _e("Select payment method", ET_DOMAIN); ?></span>
+        <span class="text-heading-step"><?php _e("Select payment method", 'upgrade-account-step4'); ?></span>
         <i class="fa fa-caret-right"></i>
     </a>
     <div class="step-content-wrapper content" style="display:none;">
@@ -31,10 +31,10 @@
         ?>
         	<li>
                 <span class="title-plan select-payment" data-type="paypal">
-                    <?php _e("Paypal", ET_DOMAIN); ?>
-                    <span><?php _e("Send your payment via Paypal.", ET_DOMAIN); ?></span>
+                    <?php _e("Paypal", 'upgrade-account-step4'); ?>
+                    <span><?php _e("Send your payment via Paypal.", 'upgrade-account-step4'); ?></span>
                 </span>
-                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="paypal"><?php _e("Select", ET_DOMAIN); ?></a>
+                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="paypal"><?php _e("Select", 'upgrade-account-step4'); ?></a>
             </li>
         <?php }
             $co = ae_get_option('2checkout');
@@ -42,10 +42,10 @@
          ?>
             <li>
                 <span class="title-plan select-payment" data-type="2checkout">
-					<?php _e("2Checkout", ET_DOMAIN); ?>
-                    <span><?php _e("Send your payment via 2Checkout.", ET_DOMAIN); ?></span>
+					<?php _e("2Checkout", 'upgrade-account-step4'); ?>
+                    <span><?php _e("Send your payment via 2Checkout.", 'upgrade-account-step4'); ?></span>
                 </span>
-                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="2checkout"><?php _e("Select", ET_DOMAIN); ?></a>
+                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="2checkout"><?php _e("Select", 'upgrade-account-step4'); ?></a>
             </li>
         <?php 
         }   
@@ -54,10 +54,10 @@
         ?>
             <li>
                 <span class="title-plan select-payment" data-type="cash">
-                    <?php _e("Cash", ET_DOMAIN); ?>
-                    <span><?php _e("Send your cash payment to our bank account", ET_DOMAIN); ?></span>
+                    <?php _e("Cash", 'upgrade-account-step4'); ?>
+                    <span><?php _e("Send your cash payment to our bank account", 'upgrade-account-step4'); ?></span>
                 </span>
-                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="cash"><?php _e("Select", ET_DOMAIN); ?></a>
+                <a href="#" class="btn btn-submit-price-plan select-payment" data-type="cash"><?php _e("Select", 'upgrade-account-step4'); ?></a>
             </li>
         <?php } 
             do_action( 'after_payment_list' ); 

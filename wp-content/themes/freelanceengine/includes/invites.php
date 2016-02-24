@@ -13,7 +13,7 @@ function fre_create_invite($user_id, $project_id){
         'comment_post_ID' => $project_id,
         'comment_author' => $current_user->data->user_login,
         'comment_author_email' => $current_user->data->user_email,
-        'comment_content' => sprintf(__("Invite %s to bid project", ET_DOMAIN), get_the_author_meta( 'display_name', $user_id )) ,
+        'comment_content' => sprintf(__("Invite %s to bid project", 'invites-backend'), get_the_author_meta( 'display_name', $user_id )) ,
         'comment_type' => 'fre_invite',
         'user_id' => $user_ID,
         'comment_approved' => 1

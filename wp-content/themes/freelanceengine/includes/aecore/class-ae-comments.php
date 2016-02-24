@@ -159,7 +159,7 @@ class AE_Comments
                 $ago = time() - strtotime($date);
                 
                 //return error if comment to fast
-                if ($ago < ((int)$time)) return new WP_Error('fast_review', __("Please wait 2 minutes after each action submission.", ET_DOMAIN));
+                if ($ago < ((int)$time)) return new WP_Error('fast_review', __("Please wait 2 minutes after each action submission.", 'aecore-class-ae-comments-backend'));
             }
         }
         
@@ -178,9 +178,9 @@ class AE_Comments
 
             if (!empty($comments)) {
                 if(isset($args['type'])) {
-                    return new WP_Error('duplication', __("Already added.", ET_DOMAIN));
+                    return new WP_Error('duplication', __("Already added.", 'aecore-class-ae-comments-backend'));
                 }else {
-                    return new WP_Error('duplicationde', __("You have already comment on this.", ET_DOMAIN));
+                    return new WP_Error('duplicationde', __("You have already comment on this.", 'aecore-class-ae-comments-backend'));
                 }                
             }
         }

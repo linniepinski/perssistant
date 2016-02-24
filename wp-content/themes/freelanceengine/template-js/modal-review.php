@@ -15,7 +15,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				<button type="button" class="close" data-dismiss="modal">
 					<i class="fa fa-times"></i>
 				</button>
-				<h4 class="modal-title"><?php _e("Congratulation!", ET_DOMAIN) ?></h4>
+				<h4 class="modal-title"><?php _e("Congratulation!", 'modal-review') ?></h4>
 			</div>
 			<div class="modal-body">
 			<form id="review_form" class="review-form">
@@ -23,8 +23,8 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				<input type="hidden" name="action" value="ae-employer-review" />
             	<label style="line-height:2.5;">
 
-            		<?php _e( 'You are going to finish this project.' , ET_DOMAIN ); ?><br>
-					<?php printf(__( 'Your payment will be sent when the freelancer confirms it has been done.' , ET_DOMAIN ), $bid_author_name ); ?>
+            		<?php _e( 'You are going to finish this project.' , 'modal-review' ); ?><br>
+					<?php printf(__( 'Your payment will be sent when the freelancer confirms it has been done.' , 'modal-review' ), $bid_author_name ); ?>
 				</label>
                 <p>
                 	<strong class="color-green"><?php echo fre_price_format($bid_budget); ?></strong>  
@@ -33,7 +33,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
                 	</strong>
                 </p>
                 <div class="form-group">
-                    <label for="post_content"><?php printf(__('Rate for "%s"' ,ET_DOMAIN), $bid_author_name); ?> </label>
+                    <label for="post_content"><?php printf(__('Rate for "%s"' ,'modal-review'), $bid_author_name); ?> </label>
                     <div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-8 col-md-6">
@@ -58,13 +58,13 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				</div>
 				<div class="form-group">
 				 	<label for="user_login">
-						<?php printf(__('Your review about %s', ET_DOMAIN), $bid_author_name); ?>
+						<?php printf(__('Your review about %s', 'modal-review'), $bid_author_name); ?>
 					</label>
 					<textarea name="comment_content" ></textarea>
 				</div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-ok">
-						<?php _e('Finish', ET_DOMAIN) ?>
+						<?php _e('Finish', 'modal-review') ?>
                     </button>
 				</div>
 				
@@ -73,8 +73,8 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 			  ?>
 			  	<input type="hidden" name="action" value="ae-freelancer-review" />
             	<label style="line-height:2.5;">
-            		<?php _e( 'You are going to finish this project.' , ET_DOMAIN ); ?><br>
-					<?php printf(__( '%s has finish project. You will receive payment after you review him.' , ET_DOMAIN ), $employer_name); ?>
+            		<?php _e( 'You are going to finish this project.' , 'modal-review' ); ?><br>
+					<?php printf(__( '%s has finish project. You will receive payment after you review him.' , 'modal-review' ), $employer_name); ?>
 				</label>
                 <p>
                 	<strong class="color-green"><?php echo fre_price_format($bid_budget); ?></strong>
@@ -83,7 +83,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
                 	</strong>
                 </p>
                 <div class="form-group">
-                    <label for="post_content"><?php printf(__('Rate for "%s"',ET_DOMAIN),$employer_name); ?> </label>
+                    <label for="post_content"><?php printf(__('Rate for "%s"','modal-review'),$employer_name); ?> </label>
 					<div class="rating-it" style="cursor: pointer;"> <input type="hidden" name="score" > </div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-8 col-md-6">
@@ -110,13 +110,13 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 				</div>
 				<div class="form-group">
 				 	<label for="user_login">
-						<?php printf(__('Your review about %s', ET_DOMAIN), $employer_name); ?>
+						<?php printf(__('Your review about %s', 'modal-review'), $employer_name); ?>
 					</label>
 					<textarea name="comment_content"></textarea>
 				</div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-ok">
-						<?php _e('Finish', ET_DOMAIN) ?>
+						<?php _e('Finish', 'modal-review') ?>
                     </button>
 				</div>
 				<?php } ?>

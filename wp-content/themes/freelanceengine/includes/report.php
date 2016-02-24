@@ -56,11 +56,11 @@ class Fre_Report extends AE_Comments
         }   
 
         $display_name = get_the_author_meta( 'display_name', $comment->user_id );
-        $comment->display_name = sprintf(__("%s's report", ET_DOMAIN), $display_name);
+        $comment->display_name = sprintf(__("%s's report", 'report-backend'), $display_name);
 
         unset($comment->comment_author_email);
         
-        $comment->message_time = sprintf(__('on %s', ET_DOMAIN) , get_comment_date($date_format, $comment)) . '&nbsp;' . sprintf(__('at %s', ET_DOMAIN) , get_comment_date($time_format, $comment));
+        $comment->message_time = sprintf(__('on %s', 'report-backend') , get_comment_date($date_format, $comment)) . '&nbsp;' . sprintf(__('at %s', 'report-backend') , get_comment_date($time_format, $comment));
         return $comment;
     }
 }
@@ -221,7 +221,7 @@ class Fre_ReportForm extends AE_Base
         $project = get_post($args['comment_post_ID']);
         if (!$project || is_wp_error($project)) {
             wp_send_json_error(array(
-                'msg' => __("Invalid project.", ET_DOMAIN)
+                'msg' => __("Invalid project.", 'report-backend')
             ));
         }
         
@@ -229,13 +229,13 @@ class Fre_ReportForm extends AE_Base
         
         // dont have accepted bid
         if (!$bid_accepted) {
-            return new WP_Error('bid_not_found', __("This project have not accepted any bid.", ET_DOMAIN));
+            return new WP_Error('bid_not_found', __("This project have not accepted any bid.", 'report-backend'));
         }
         
         // current user dont own accepted bid
         $bid = get_post($bid_accepted);
         if (!current_user_can( 'manage_options' ) && !($bid->post_author == $user_ID || $project->post_author == $user_ID)) {
-            return new WP_Error('permission_denied', __("You do not have permission to report dispute this project.", ET_DOMAIN));
+            return new WP_Error('permission_denied', __("You do not have permission to report dispute this project.", 'report-backend'));
         }
         
         $request['comment_approved'] = 1;

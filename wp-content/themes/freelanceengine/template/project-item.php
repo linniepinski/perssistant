@@ -44,7 +44,7 @@ echo fre_price_format($current->et_budget);
         <div class="col-md-2 col-sm-2 col-xs-5">
             <p class="wrapper-btn">
                 <a href="<?php echo get_permalink();?>" class="btn-sumary btn-apply-project">
-                    <?php _e('Apply',ET_DOMAIN);?>
+                    <?php _e('Apply','project-item');?>
                 </a>
             </p>
         </div>

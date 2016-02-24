@@ -36,16 +36,16 @@ class WPBakeryShortCode_fre_block_project extends WPBakeryShortCode {
                         <div class="tab-content-project">
                             <div class="row title-tab-project">
                                 <div class="col-md-4 col-sm-5 col-xs-7">
-                                    <span><?php _e("PROJECT TITLE", ET_DOMAIN); ?></span>
+                                    <span><?php _e("PROJECT TITLE", 'vc_blocks-projects-backend'); ?></span>
                                 </div>
                                 <div class="col-md-2 col-sm-3 hidden-xs">
-                                    <span><?php _e("BY", ET_DOMAIN); ?></span>
+                                    <span><?php _e("BY", 'vc_blocks-projects-backend'); ?></span>
                                 </div>
                                 <div class="col-md-2 col-sm-2 hidden-sm hidden-xs">
-                                    <span><?php _e("POSTED DATE", ET_DOMAIN); ?></span>
+                                    <span><?php _e("POSTED DATE", 'vc_blocks-projects-backend'); ?></span>
                                 </div>
                                 <div class="col-md-2 col-sm-2 hidden-xs">
-                                    <span class="text-right"><?php _e("BUDGET", ET_DOMAIN); ?></span>
+                                    <span class="text-right"><?php _e("BUDGET", 'vc_blocks-projects-backend'); ?></span>
                                 </div>
                             </div>
                             <!-- Tab panes -->
@@ -113,7 +113,7 @@ $query_places = "SELECT *
                         WHERE 
                             tax.taxonomy = 'project_type' AND tax.count > 0";                     
 $places =  $wpdb->get_results($query_places);
-$places_arr    = array(__('All', ET_DOMAIN) => '');
+$places_arr    = array(__('All', 'vc_blocks-projects-backend') => '');
 
 foreach ($places as $place) {
     $places_arr[$place->name] = $place->slug;
@@ -122,15 +122,15 @@ foreach ($places as $place) {
 
 vc_map( array(
     "base"      => "fre_block_project",
-    "name"      => __("List projects", ET_DOMAIN),
+    "name"      => __("List projects", 'vc_blocks-projects-backend'),
     "class"     => "",
     "icon"      => "",
-    "category" => __("FreelanceEngine", ET_DOMAIN),
+    "category" => __("FreelanceEngine", 'vc_blocks-projects-backend'),
     "params"    => array(
 
         array(
             "type" => "textfield",
-            "heading" => __("Number of posts", ET_DOMAIN),
+            "heading" => __("Number of posts", 'vc_blocks-projects-backend'),
             "class" => "input-title",
             "param_name" => "showposts",
             "value"     => '10'
@@ -138,21 +138,21 @@ vc_map( array(
         array(
             "type"       => "dropdown",
             "class"      => "",
-            "heading"    => __("Query", ET_DOMAIN),
+            "heading"    => __("Query", 'vc_blocks-projects-backend'),
             "param_name" => "query",
             "value"      => array('Featured Posts' => 'featured', 'Recent Posts' => 'recent'),
         ), 
         array(
             "type"       => "dropdown",
             "class"      => "",
-            "heading"    => __("Project type", ET_DOMAIN),
+            "heading"    => __("Project type", 'vc_blocks-projects-backend'),
             "param_name" => "project_type",
             "value"      => $places_arr,
         ),
         array(
             "type"       => "dropdown",
             "class"      => "",
-            "heading"    => __("Paginate", ET_DOMAIN),
+            "heading"    => __("Paginate", 'vc_blocks-projects-backend'),
             "param_name" => "paginate",
             "value"      => array('none' => '0', 'Page paginate' => 'page', 'Load More' => 'load_more'),
         )
@@ -168,7 +168,7 @@ class WPBakeryShortCode_fre_list_projects extends WPBakeryShortCode {
 
         extract(shortcode_atts(array(
             'el_class'      => '',
-            'title'         => __("Projects", ET_DOMAIN),
+            'title'         => __("Projects", 'vc_blocks-projects-backend'),
             's_title'     => '',
             's_description'        => '',
             'showposts' => 10
@@ -186,16 +186,16 @@ class WPBakeryShortCode_fre_list_projects extends WPBakeryShortCode {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="number-project"><?php printf(__('%s Projects for you',ET_DOMAIN),$count_project->publish);?></h2>
+                            <h2 class="number-project"><?php printf(__('%s Projects for you','vc_blocks-projects-backend'),$count_project->publish);?></h2>
                             <div class="nav-tabs-project">
                                 <?php fre_project_button(); ?>
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist" id="myTab">
                                     <li class="active">
-                                        <a href="#tab_lastest_projects" role="tab" data-toggle="tab"><?php _e("Lastest Projects", ET_DOMAIN); ?></a>
+                                        <a href="#tab_lastest_projects" role="tab" data-toggle="tab"><?php _e("Lastest Projects", 'vc_blocks-projects-backend'); ?></a>
                                     </li>
                                     <li>
-                                        <a href="#tab_featured_projects" role="tab" data-toggle="tab"><?php _e("Featured Projects", ET_DOMAIN); ?></a>
+                                        <a href="#tab_featured_projects" role="tab" data-toggle="tab"><?php _e("Featured Projects", 'vc_blocks-projects-backend'); ?></a>
                                     </li>
                                 </ul>
                             </div>
@@ -210,16 +210,16 @@ class WPBakeryShortCode_fre_list_projects extends WPBakeryShortCode {
                             <div class="tab-content-project">
                                 <div class="row title-tab-project">
                                     <div class="col-md-5">
-                                        <h2><?php _e("PROJECT TITLE", ET_DOMAIN); ?></h2>
+                                        <h2><?php _e("PROJECT TITLE", 'vc_blocks-projects-backend'); ?></h2>
                                     </div>
                                     <div class="col-md-2">
-                                        <h2><?php _e("BY", ET_DOMAIN); ?></h2>
+                                        <h2><?php _e("BY", 'vc_blocks-projects-backend'); ?></h2>
                                     </div>
                                     <div class="col-md-2">
-                                        <h2><?php _e("POSTED DATE", ET_DOMAIN); ?></h2>
+                                        <h2><?php _e("POSTED DATE", 'vc_blocks-projects-backend'); ?></h2>
                                     </div>
                                     <div class="col-md-1">
-                                        <h2><?php _e("BUDGET", ET_DOMAIN); ?></h2>
+                                        <h2><?php _e("BUDGET", 'vc_blocks-projects-backend'); ?></h2>
                                     </div>
                                 </div>
                                 <!-- Tab panes -->
@@ -251,31 +251,31 @@ class WPBakeryShortCode_fre_list_projects extends WPBakeryShortCode {
 
 vc_map( array(
     "base"      => "fre_list_projects",
-    "name"      => __("List projects", ET_DOMAIN),
+    "name"      => __("List projects", 'vc_blocks-projects-backend'),
     "class"     => "",
     "icon"      => "",
-    "category" => __("FreelanceEngine", ET_DOMAIN),
+    "category" => __("FreelanceEngine", 'vc_blocks-projects-backend'),
     "params"    => array(
         array(
             "type" => "textfield",
-            "heading" => __("Title", ET_DOMAIN),
+            "heading" => __("Title", 'vc_blocks-projects-backend'),
             "class" => "input-title",
             "param_name" => "s_title",
             "value"     => 'THE FREELANCE MARKETPLACE WP THEME MADE BY ENGINETHEMES'
         ),
         array(
             "type" => "textfield",
-            "heading" => __("Number of posts", ET_DOMAIN),
+            "heading" => __("Number of posts", 'vc_blocks-projects-backend'),
             "class" => "input-title",
             "param_name" => "showposts",
             "value"     => '10'
         ),        
         array(
             "type" => "checkbox",
-            //"heading" => __("Enable featured list", ET_DOMAIN),
+            //"heading" => __("Enable featured list", 'vc_blocks-projects-backend'),
             "class" => "input-description",
             "param_name" => "featured",
-             "value"      => Array(__('Use featured list', ET_DOMAIN) =>true )
+             "value"      => Array(__('Use featured list', 'vc_blocks-projects-backend') =>true )
         )
     )
 ));

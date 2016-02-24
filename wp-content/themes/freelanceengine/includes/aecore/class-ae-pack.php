@@ -189,7 +189,7 @@ class AE_PackAction extends AE_Base
         extract($request);
         
         $request['post_status'] = 'publish';
-        if (!isset($request['post_content'])) $request['post_content'] = __('content here', ET_DOMAIN);
+        if (!isset($request['post_content'])) $request['post_content'] = __('content here', 'aecore-class-ae-pack-backend');
         
         $option_name = $request['option_name'];
         
@@ -220,7 +220,7 @@ class AE_PackAction extends AE_Base
             wp_send_json(array(
                 'success' => true,
                 'data' => $result,
-                'msg' => __("Sync success.", ET_DOMAIN)
+                'msg' => __("Sync success.", 'aecore-class-ae-pack-backend')
             ));
         } else {
             
@@ -273,7 +273,7 @@ class AE_PackAction extends AE_Base
         // send json to client
         echo json_encode(array(
             'success' => $result,
-            'msg' => __('Payment plans have been sorted', ET_DOMAIN)
+            'msg' => __('Payment plans have been sorted', 'aecore-class-ae-pack-backend')
         ));
         exit;
     }

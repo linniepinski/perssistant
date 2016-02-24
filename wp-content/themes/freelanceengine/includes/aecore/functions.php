@@ -1335,7 +1335,7 @@ function et_process_file_upload($file, $author = 0, $parent = 0, $mimes = array(
 
              // wp_handle_upload returned some kind of error. the return does contain error details, so you can use it here if you want.
 
-            return new WP_Error('upload_error', __('There was a problem with your upload.', ET_DOMAIN));
+            return new WP_Error('upload_error', __('There was a problem with your upload.', 'aecore-functions-backend'));
 
         }
 
@@ -1343,7 +1343,7 @@ function et_process_file_upload($file, $author = 0, $parent = 0, $mimes = array(
 
          // No file was passed
 
-        return new WP_Error('upload_error', __('Where is the file?', ET_DOMAIN));
+        return new WP_Error('upload_error', __('Where is the file?', 'aecore-functions-backend'));
 
     }
 
@@ -1395,13 +1395,13 @@ function et_handle_upload_prefilter($file) {
 
     $file_size = filesize($file['tmp_name']);
 
-    if ($space_left < $file_size) $file['error'] = sprintf(__('Not enough space to upload. %1$s KB needed.', ET_DOMAIN) , number_format(($file_size - $space_left) / 1024));
+    if ($space_left < $file_size) $file['error'] = sprintf(__('Not enough space to upload. %1$s KB needed.', 'aecore-functions-backend') , number_format(($file_size - $space_left) / 1024));
 
-    if ($file_size > (1024 * get_site_option('fileupload_maxk', 1500))) $file['error'] = sprintf(__('This file is too big. Files must be less than %1$s KB in size.', ET_DOMAIN) , get_site_option('fileupload_maxk', 1500));
+    if ($file_size > (1024 * get_site_option('fileupload_maxk', 1500))) $file['error'] = sprintf(__('This file is too big. Files must be less than %1$s KB in size.', 'aecore-functions-backend') , get_site_option('fileupload_maxk', 1500));
 
     if (function_exists('upload_is_user_over_quota') && upload_is_user_over_quota(false)) {
 
-        $file['error'] = __('You have used your space quota. Please delete files before uploading.', ET_DOMAIN);
+        $file['error'] = __('You have used your space quota. Please delete files before uploading.', 'aecore-functions-backend');
 
     }
 
@@ -1521,11 +1521,11 @@ function ae_the_time($from) {
 
     if (time() - $from > (7 * 24 * 60 * 60)) {
 
-        return sprintf(__('on %s', ET_DOMAIN) , date_i18n(get_option('date_format') , $from, true));
+        return sprintf(__('on %s', 'aecore-functions-backend') , date_i18n(get_option('date_format') , $from, true));
 
     } else {
 
-        return ae_human_time_diff($from) . ' ' . __('ago', ET_DOMAIN);
+        return ae_human_time_diff($from) . ' ' . __('ago', 'aecore-functions-backend');
 
     }
 
@@ -1597,7 +1597,7 @@ function ae_human_time_diff($from, $to = '') {
 
         /* translators: min=minute */
 
-        $since = sprintf(et_number_based(__('%s min', ET_DOMAIN) , __('%s min', ET_DOMAIN) , __('%s mins', ET_DOMAIN) , $mins) , $mins);
+        $since = sprintf(et_number_based(__('%s min', 'aecore-functions-backend') , __('%s min', 'aecore-functions-backend') , __('%s mins', 'aecore-functions-backend') , $mins) , $mins);
 
     } elseif ($diff < DAY_IN_SECONDS && $diff >= HOUR_IN_SECONDS) {
 
@@ -1605,7 +1605,7 @@ function ae_human_time_diff($from, $to = '') {
 
         if ($hours <= 1) $hours = 1;
 
-        $since = sprintf(et_number_based(__('%s hour', ET_DOMAIN) , __('%s hour', ET_DOMAIN) , __('%s hours', ET_DOMAIN) , $hours) , $hours);
+        $since = sprintf(et_number_based(__('%s hour', 'aecore-functions-backend') , __('%s hour', 'aecore-functions-backend') , __('%s hours', 'aecore-functions-backend') , $hours) , $hours);
 
     } elseif ($diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS) {
 
@@ -1615,7 +1615,7 @@ function ae_human_time_diff($from, $to = '') {
 
         if ($days <= 1) $days = 1;
 
-        $since = sprintf(et_number_based(__('%s day', ET_DOMAIN) , __('%s day', ET_DOMAIN) , __('%s days', ET_DOMAIN) , $days) , $days);
+        $since = sprintf(et_number_based(__('%s day', 'aecore-functions-backend') , __('%s day', 'aecore-functions-backend') , __('%s days', 'aecore-functions-backend') , $days) , $days);
 
     } elseif ($diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS) {
 
@@ -1625,7 +1625,7 @@ function ae_human_time_diff($from, $to = '') {
 
         if ($weeks <= 1) $weeks = 1;
 
-        $since = sprintf(et_number_based(__('%s week', ET_DOMAIN) , __('%s week', ET_DOMAIN) , __('%s weeks', ET_DOMAIN) , $weeks) , $weeks);
+        $since = sprintf(et_number_based(__('%s week', 'aecore-functions-backend') , __('%s week', 'aecore-functions-backend') , __('%s weeks', 'aecore-functions-backend') , $weeks) , $weeks);
 
     } elseif ($diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS) {
 
@@ -1635,7 +1635,7 @@ function ae_human_time_diff($from, $to = '') {
 
         if ($months <= 1) $months = 1;
 
-        $since = sprintf(et_number_based(__('%s month', ET_DOMAIN) , __('%s month', ET_DOMAIN) , __('%s months', ET_DOMAIN) , $months) , $months);
+        $since = sprintf(et_number_based(__('%s month', 'aecore-functions-backend') , __('%s month', 'aecore-functions-backend') , __('%s months', 'aecore-functions-backend') , $months) , $months);
 
     } elseif ($diff >= YEAR_IN_SECONDS) {
 
@@ -1645,7 +1645,7 @@ function ae_human_time_diff($from, $to = '') {
 
         if ($years <= 1) $years = 1;
 
-        $since = sprintf(et_number_based(__('%s year', ET_DOMAIN) , __('%s year', ET_DOMAIN) , __('%s years', ET_DOMAIN) , $years) , $years);
+        $since = sprintf(et_number_based(__('%s year', 'aecore-functions-backend') , __('%s year', 'aecore-functions-backend') , __('%s years', 'aecore-functions-backend') , $years) , $years);
 
     }
 
@@ -2199,7 +2199,7 @@ if( !function_exists( 'et_get_page_link' ) ){
 
             'post_title' => '',
 
-            'post_content' => __('Please fill out the form below ', ET_DOMAIN) ,
+            'post_content' => __('Please fill out the form below ', 'aecore-functions-backend') ,
 
             'post_type' => 'page',
 
@@ -2375,11 +2375,11 @@ function et_the_time($from) {
 
     if (time() - $from > (7 * 24 * 60 * 60)) {
 
-        return sprintf(__('on %s', ET_DOMAIN) , date_i18n(get_option('date_format') , $from, true));
+        return sprintf(__('on %s', 'aecore-functions-backend') , date_i18n(get_option('date_format') , $from, true));
 
     } else {
 
-        return et_human_time_diff($from) . ' ' . __('ago', ET_DOMAIN);
+        return et_human_time_diff($from) . ' ' . __('ago', 'aecore-functions-backend');
 
     }
 
@@ -2431,7 +2431,7 @@ function et_human_time_diff($from, $to = '') {
 
         /* translators: min=minute */
 
-        $since = sprintf(et_number_based(__('%s min', ET_DOMAIN) , __('%s min', ET_DOMAIN) , __('%s mins', ET_DOMAIN) , $mins) , $mins);
+        $since = sprintf(et_number_based(__('%s min', 'aecore-functions-backend') , __('%s min', 'aecore-functions-backend') , __('%s mins', 'aecore-functions-backend') , $mins) , $mins);
 
     } elseif ($diff < DAY_IN_SECONDS && $diff >= HOUR_IN_SECONDS) {
 
@@ -2439,7 +2439,7 @@ function et_human_time_diff($from, $to = '') {
 
         if ($hours <= 1) $hours = 1;
 
-        $since = sprintf(et_number_based(__('%s hour', ET_DOMAIN) , __('%s hour', ET_DOMAIN) , __('%s hours', ET_DOMAIN) , $hours) , $hours);
+        $since = sprintf(et_number_based(__('%s hour', 'aecore-functions-backend') , __('%s hour', 'aecore-functions-backend') , __('%s hours', 'aecore-functions-backend') , $hours) , $hours);
 
     } elseif ($diff < WEEK_IN_SECONDS && $diff >= DAY_IN_SECONDS) {
 
@@ -2449,7 +2449,7 @@ function et_human_time_diff($from, $to = '') {
 
         if ($days <= 1) $days = 1;
 
-        $since = sprintf(et_number_based(__('%s day', ET_DOMAIN) , __('%s day', ET_DOMAIN) , __('%s days', ET_DOMAIN) , $days) , $days);
+        $since = sprintf(et_number_based(__('%s day', 'aecore-functions-backend') , __('%s day', 'aecore-functions-backend') , __('%s days', 'aecore-functions-backend') , $days) , $days);
 
     } elseif ($diff < 30 * DAY_IN_SECONDS && $diff >= WEEK_IN_SECONDS) {
 
@@ -2459,7 +2459,7 @@ function et_human_time_diff($from, $to = '') {
 
         if ($weeks <= 1) $weeks = 1;
 
-        $since = sprintf(et_number_based(__('%s week', ET_DOMAIN) , __('%s week', ET_DOMAIN) , __('%s weeks', ET_DOMAIN) , $weeks) , $weeks);
+        $since = sprintf(et_number_based(__('%s week', 'aecore-functions-backend') , __('%s week', 'aecore-functions-backend') , __('%s weeks', 'aecore-functions-backend') , $weeks) , $weeks);
 
     } elseif ($diff < YEAR_IN_SECONDS && $diff >= 30 * DAY_IN_SECONDS) {
 
@@ -2469,7 +2469,7 @@ function et_human_time_diff($from, $to = '') {
 
         if ($months <= 1) $months = 1;
 
-        $since = sprintf(et_number_based(__('%s month', ET_DOMAIN) , __('%s month', ET_DOMAIN) , __('%s months', ET_DOMAIN) , $months) , $months);
+        $since = sprintf(et_number_based(__('%s month', 'aecore-functions-backend') , __('%s month', 'aecore-functions-backend') , __('%s months', 'aecore-functions-backend') , $months) , $months);
 
     } elseif ($diff >= YEAR_IN_SECONDS) {
 
@@ -2479,7 +2479,7 @@ function et_human_time_diff($from, $to = '') {
 
         if ($years <= 1) $years = 1;
 
-        $since = sprintf(et_number_based(__('%s year', ET_DOMAIN) , __('%s year', ET_DOMAIN) , __('%s years', ET_DOMAIN) , $years) , $years);
+        $since = sprintf(et_number_based(__('%s year', 'aecore-functions-backend') , __('%s year', 'aecore-functions-backend') , __('%s years', 'aecore-functions-backend') , $years) , $years);
 
     }
 

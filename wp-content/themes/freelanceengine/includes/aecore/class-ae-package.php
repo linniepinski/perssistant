@@ -26,7 +26,7 @@ class AE_Package extends AE_Pack
         // backend text
         $this->localize = array(
             'backend_text' => array(
-                'text' => __('%s for %d days', ET_DOMAIN) ,
+                'text' => __('%s for %d days', 'aecore-class-ae-package-backend') ,
                 'data' => array(
                     'et_price',
                     'et_number_posts'
@@ -68,9 +68,9 @@ class AE_Package extends AE_Pack
             $currency = ae_currency_sign(false);
             $align = ae_currency_align(false);
             if ($align) {
-                $result->backend_text = sprintf(__("(%s)%s for %d days", ET_DOMAIN) , $currency, $result->et_price, $result->et_duration);
+                $result->backend_text = sprintf(__("(%s)%s for %d days", 'aecore-class-ae-package-backend') , $currency, $result->et_price, $result->et_duration);
             } else {
-                $result->backend_text = sprintf(__("%s(%s) for %d days", ET_DOMAIN) , $result->et_price, $currency, $result->et_duration);
+                $result->backend_text = sprintf(__("%s(%s) for %d days", 'aecore-class-ae-package-backend') , $result->et_price, $currency, $result->et_duration);
             }
         }
         return $result;
@@ -271,7 +271,7 @@ class AE_Package extends AE_Pack
             if ($number > $limit_free_plan) {
                 
                 $response['success'] = true;
-                $response['msg'] = __("You have reached the maximum number of Free posts. Please select another plan.", ET_DOMAIN);
+                $response['msg'] = __("You have reached the maximum number of Free posts. Please select another plan.", 'aecore-class-ae-package-backend');
                 
                 return $response;
             }

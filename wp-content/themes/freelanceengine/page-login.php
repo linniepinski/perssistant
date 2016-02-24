@@ -94,17 +94,17 @@ get_header();
 
 					<div class="form-group">
 
-						<label for="login_user_login"><?php _e('Your User Name or Email', ET_DOMAIN) ?></label>
+						<label for="login_user_login"><?php _e('Your User Name or Email', 'login-page') ?></label>
 
-						<input type="text" class="form-control" id="login_user_login" name="user_login" placeholder="<?php _e('Enter username', ET_DOMAIN) ?>">
+						<input type="text" class="form-control" id="login_user_login" name="user_login" placeholder="<?php _e('Enter username', 'login-page') ?>">
 
 					</div>
 
 					<div class="form-group">
 
-						<label for="login_user_pass"><?php _e('Your Password', ET_DOMAIN) ?></label>
+						<label for="login_user_pass"><?php _e('Your Password', 'login-page') ?></label>
 
-						<input type="password" class="form-control" id="login_user_pass" name="user_pass" placeholder="<?php _e('Password', ET_DOMAIN) ?>">
+						<input type="password" class="form-control" id="login_user_pass" name="user_pass" placeholder="<?php _e('Password', 'login-page') ?>">
 
 					</div>		
 
@@ -112,11 +112,11 @@ get_header();
 
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
 
-						<?php _e('Sign in', ET_DOMAIN) ?>
+						<?php _e('Sign in', 'login-page') ?>
 
 					</button>
 
-                    <a class="show-forgot-form" href="<?php echo site_url() . '/forgotpassword'?>"><?php _e("Forgot Password?", ET_DOMAIN) ?></a> |<a class="show-forgot-form" href="<?php echo site_url() . '/sign-up'?>"><?php _e("Register", ET_DOMAIN) ?></a>
+                    <a class="show-forgot-form" href="<?php echo site_url() . '/forgotpassword'?>"><?php _e("Forgot Password?", 'login-page') ?></a> |<a class="show-forgot-form" href="<?php echo site_url() . '/sign-up'?>"><?php _e("Register", 'login-page') ?></a>
 <?php
 
 //			                if( function_exists('ae_render_social_button')){
@@ -127,7 +127,7 @@ get_header();
 //
 //			                }
 
-?><div class="socials-head"><?php echo __("You can also sign in by:", ET_DOMAIN); ?></div><?php
+?><div class="socials-head"><?php echo __("You can also sign in by:", 'login-page'); ?></div><?php
 
 do_action( 'wordpress_social_login' );
 			            ?>

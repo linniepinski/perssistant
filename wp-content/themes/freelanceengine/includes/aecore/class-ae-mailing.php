@@ -52,7 +52,7 @@ class AE_Mailing extends AE_Base
         $user_email = $user->user_email;
 
 
-        $subject = __("Congratulations! Your account has been verified successfully.", ET_DOMAIN);
+        $subject = __("Congratulations! Your account has been verified successfully.", 'aecore-class-ae-mailing-backend');
 
         $message = ae_get_option('confirmed_mail_template');
 
@@ -80,7 +80,7 @@ class AE_Mailing extends AE_Base
         $user_email = $user->user_email;
 
 
-        $subject = __("Congratulations! Your phone has been verified successfully.", ET_DOMAIN);
+        $subject = __("Congratulations! Your phone has been verified successfully.", 'aecore-class-ae-mailing-backend');
 
         $message = ae_get_option('confirmed_phone_template');
 
@@ -115,7 +115,7 @@ class AE_Mailing extends AE_Base
         $headers .= 'Reply-To: ' . $current_user->display_name . ' <' . $current_user->user_email . '>' . "\r\n";
 
 
-        $subject = sprintf(__('[%s]New Private Message From %s', ET_DOMAIN), get_bloginfo('blogname'), $current_user->display_name);
+        $subject = sprintf(__('[%s]New Private Message From %s', 'aecore-class-ae-mailing-backend'), get_bloginfo('blogname'), $current_user->display_name);
 
         $message = ae_get_option('inbox_mail_template');
 
@@ -179,7 +179,7 @@ class AE_Mailing extends AE_Base
         ), et_get_page_link('reset-pass'));
 
 
-        $activate_url = '<a href="' . $activate_url . '">' . __("Activate Link", ET_DOMAIN) . '</a>';
+        $activate_url = '<a href="' . $activate_url . '">' . __("Activate Link", 'aecore-class-ae-mailing-backend') . '</a>';
 
         $message = str_ireplace('[activate_url]', $activate_url, $message);
 
@@ -189,7 +189,7 @@ class AE_Mailing extends AE_Base
         else $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
 
 
-        $subject = sprintf(__('[%s] Password Reset', ET_DOMAIN), $blogname);
+        $subject = sprintf(__('[%s] Password Reset', 'aecore-class-ae-mailing-backend'), $blogname);
 
 
         $subject = apply_filters('et_retrieve_password_title', $subject);
@@ -218,7 +218,7 @@ class AE_Mailing extends AE_Base
 
         $place = get_post($request['comment_post_ID']);
 
-        $subject = sprintf(__("[%s]New report message from %s.", ET_DOMAIN), get_option('blogname'), $user->display_name);
+        $subject = sprintf(__("[%s]New report message from %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'), $user->display_name);
 
 
         $message = ae_get_option('ae_report_mail');
@@ -253,7 +253,7 @@ class AE_Mailing extends AE_Base
 
         $place = get_post($request['place_id']);
 
-        $subject = sprintf(__("[%s]Your claim request has been approved.", ET_DOMAIN), get_option('blogname'));
+        $subject = sprintf(__("[%s]Your claim request has been approved.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
 
         $message = ae_get_option('ae_approve_claim_mail');
@@ -284,7 +284,7 @@ class AE_Mailing extends AE_Base
 
         $place = get_post($request['place_id']);
 
-        $subject = sprintf(__("[%s]Your claim request has been rejected.", ET_DOMAIN), get_option('blogname'));
+        $subject = sprintf(__("[%s]Your claim request has been rejected.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
 
         $message = ae_get_option('ae_reject_claim_mail');
@@ -313,7 +313,7 @@ class AE_Mailing extends AE_Base
 
         $place = get_post($request['place_id']);
 
-        $subject = sprintf(__("[%s]New claim request from %s.", ET_DOMAIN), get_option('blogname'), $user->display_name);
+        $subject = sprintf(__("[%s]New claim request from %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'), $user->display_name);
 
 
         $message = ae_get_option('ae_claim_mail');
@@ -356,7 +356,7 @@ class AE_Mailing extends AE_Base
 
 
         if (ae_user_role($user_id) == FREELANCER) {
-            $subject = sprintf(__("Congratulations! You have successfully registered to %s.", ET_DOMAIN), get_option('blogname'));
+            $subject = sprintf(__("Congratulations! You have successfully registered to %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
             if (ae_get_option('user_confirm')) {
 
@@ -368,7 +368,7 @@ class AE_Mailing extends AE_Base
 
             }
         } else {
-            $subject = sprintf(__("Congratulations! You have successfully registered to %s.", ET_DOMAIN), get_option('blogname'));
+            $subject = sprintf(__("Congratulations! You have successfully registered to %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
             if (ae_get_option('user_confirm')) {
 
@@ -414,7 +414,7 @@ class AE_Mailing extends AE_Base
         $user_email = $user->user_email;
 
 
-        $subject = sprintf(__("You have request a confirm email from %s.", ET_DOMAIN), get_option('blogname'));
+        $subject = sprintf(__("You have request a confirm email from %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
 
         //if (ae_get_option('user_confirm')) {
@@ -459,7 +459,7 @@ class AE_Mailing extends AE_Base
 
                     // publish post mail
 
-                    $subject = sprintf(__("Your post '%s' has been approved.", ET_DOMAIN), get_the_title($post->ID));
+                    $subject = sprintf(__("Your post '%s' has been approved.", 'aecore-class-ae-mailing-backend'), get_the_title($post->ID));
 
                     $message = ae_get_option('publish_mail_template');
 
@@ -483,7 +483,7 @@ class AE_Mailing extends AE_Base
                     // archive post mail
 
 
-                    $subject = sprintf(__('Your post "%s" has been archived', ET_DOMAIN), get_the_title($post->ID));
+                    $subject = sprintf(__('Your post "%s" has been archived', 'aecore-class-ae-mailing-backend'), get_the_title($post->ID));
 
                     $message = ae_get_option('archive_mail_template');
 
@@ -537,7 +537,7 @@ class AE_Mailing extends AE_Base
 
         // mail title
 
-        $subject = sprintf(__("Your post '%s' has been rejected.", ET_DOMAIN), get_the_title($data['ID']));
+        $subject = sprintf(__("Your post '%s' has been rejected.", 'aecore-class-ae-mailing-backend'), get_the_title($data['ID']));
 
 
         // get reject mail template
@@ -575,9 +575,9 @@ class AE_Mailing extends AE_Base
 
         $mail = ae_get_option('new_post_alert', '') ? ae_get_option('new_post_alert', '') : get_option('admin_email');
 
-        $subject = __("Have a new post on your site.", ET_DOMAIN);
+        $subject = __("Have a new post on your site.", 'aecore-class-ae-mailing-backend');
 
-        $message = sprintf(__("<p>Hi,</p><p> Have a new post on your site. You can review it here: %s </p>", ET_DOMAIN), get_permalink($post));
+        $message = sprintf(__("<p>Hi,</p><p> Have a new post on your site. You can review it here: %s </p>", 'aecore-class-ae-mailing-backend'), get_permalink($post));
 
         $this->wp_mail($mail, $subject, $message);
 
@@ -602,11 +602,11 @@ class AE_Mailing extends AE_Base
 
         if ($post_id) {
 
-            $subject = sprintf(__("You submit a post by cash on '%s'", ET_DOMAIN), ae_get_option('blogname'));
+            $subject = sprintf(__("You submit a post by cash on '%s'", 'aecore-class-ae-mailing-backend'), ae_get_option('blogname'));
 
         } else {
 
-            $subject = sprintf(__("You purchase successfully package '%s' by cash on '%s'", ET_DOMAIN), $package['NAME'], ae_get_option('blogname'));
+            $subject = sprintf(__("You purchase successfully package '%s' by cash on '%s'", 'aecore-class-ae-mailing-backend'), $package['NAME'], ae_get_option('blogname'));
 
         }
 
@@ -636,7 +636,7 @@ class AE_Mailing extends AE_Base
     {
 
 
-        $subject = __('Thank you for your payment!', ET_DOMAIN);
+        $subject = __('Thank you for your payment!', 'aecore-class-ae-mailing-backend');
 
 
         $user = get_userdata($user_id);
@@ -959,7 +959,7 @@ class AE_Mailing extends AE_Base
 
          */
 
-        $author_link = '<a href="' . get_author_posts_url($user_id) . '" >' . __("Author's Posts", ET_DOMAIN) . '</a>';
+        $author_link = '<a href="' . get_author_posts_url($user_id) . '" >' . __("Author's Posts", 'aecore-class-ae-mailing-backend') . '</a>';
 
         $content = str_ireplace('[author_link]', $author_link, $content);
 
@@ -973,7 +973,7 @@ class AE_Mailing extends AE_Base
         ), home_url());
 
 
-        $confirm_link = '<a href="' . $confirm_link . '" >' . __("Click here to confirm link", ET_DOMAIN) . '</a>&nbsp;&nbsp;&nbsp;&nbsp;Or copy link and paste to browser.&nbsp;&nbsp;' . $confirm_link;
+        $confirm_link = '<a href="' . $confirm_link . '" >' . __("Click here to confirm link", 'aecore-class-ae-mailing-backend') . '</a>&nbsp;&nbsp;&nbsp;&nbsp;Or copy link and paste to browser.&nbsp;&nbsp;' . $confirm_link;
 
 
         /**
@@ -1047,7 +1047,7 @@ class AE_Mailing extends AE_Base
 
          */
 
-        $author_link = '<a href="' . get_author_posts_url($post->post_author) . '" >' . __("Author's Posts", ET_DOMAIN) . '</a>';
+        $author_link = '<a href="' . get_author_posts_url($post->post_author) . '" >' . __("Author's Posts", 'aecore-class-ae-mailing-backend') . '</a>';
 
         $content = str_ireplace('[author_link]', $author_link, $content);
 

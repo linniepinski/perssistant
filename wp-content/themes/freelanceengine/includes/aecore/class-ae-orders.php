@@ -12,7 +12,7 @@ class AE_Order extends ET_Order
             $this->payment_package = empty($order['payment_plan']) ? '' : (string)$order['payment_plan'];
             $this->payment_plan =  $this->payment_package;
 
-            $this->order_name = empty($order['order_name']) ? __("Post ad", ET_DOMAIN) : $order['order_name'];
+            $this->order_name = empty($order['order_name']) ? __("Post ad", 'aecore-class-ae-orders-backend') : $order['order_name'];
             $order_id = parent::__construct($order, $ship);
             $this->update_order();
         } else {

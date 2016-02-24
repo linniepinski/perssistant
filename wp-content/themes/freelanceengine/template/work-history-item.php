@@ -22,14 +22,14 @@ if(!$current){
 }
 
 $status = array(    
-    'reject'  => __("REJECTED", ET_DOMAIN) , 
-    'pending' => __("PENDING", ET_DOMAIN) , 
-    'publish' => __("ACTIVE", ET_DOMAIN), 
-    'close' => __("HIRED", ET_DOMAIN),
-    'complete' => __("COMPLETED", ET_DOMAIN),
-    'draft'   => __("DRAFT", ET_DOMAIN), 
-    'archive' => __("ARCHIVED", ET_DOMAIN), 
-    'disputing' => __( "DISPUTE" , ET_DOMAIN )
+    'reject'  => __("REJECTED", 'work-history-item') , 
+    'pending' => __("PENDING", 'work-history-item') , 
+    'publish' => __("ACTIVE", 'work-history-item'), 
+    'close' => __("HIRED", 'work-history-item'),
+    'complete' => __("COMPLETED", 'work-history-item'),
+    'draft'   => __("DRAFT", 'work-history-item'), 
+    'archive' => __("ARCHIVED", 'work-history-item'), 
+    'disputing' => __( "DISPUTE" , 'work-history-item' )
 );
 
 ?>
@@ -47,7 +47,7 @@ $status = array(
                     <div class="rate-it" data-score="<?php echo $current->rating_score; ?>"></div>
                 </h5>
                 <span class="comment-author-history"><?php echo $current->project_comment; ?></span>
-                <span class="stt-in-process"><?php _e('Job is completed', ET_DOMAIN);?></span> 
+                <span class="stt-in-process"><?php _e('Job is completed', 'work-history-item');?></span> 
             
             <?php } else if($current->post_status == 'close'){ ?>
                 <h5>
@@ -55,7 +55,7 @@ $status = array(
                 </h5>
                 <span class="stt-in-process">
                     <?php 
-                        _e('Job is closed', ET_DOMAIN);
+                        _e('Job is closed', 'work-history-item');
                      ?>
                 </span> 
             <?php }else{ ?>
@@ -63,7 +63,7 @@ $status = array(
                 <h5>
                     <a href = "<?php echo $current->permalink; ?>"><?php echo $current->post_title; ?></a>
                 </h5>
-                <span class="stt-in-process"><?php _e('Job is open', ET_DOMAIN);?></span> 
+                <span class="stt-in-process"><?php _e('Job is open', 'work-history-item');?></span> 
                 
             <?php } ?>
         </div>
@@ -73,7 +73,7 @@ $status = array(
             <?php echo $current->post_date; ?>
         </li>
         <li>
-            <?php _e("Budget", ET_DOMAIN); ?> :
+            <?php _e("Budget", 'work-history-item'); ?> :
             <span class="number-price-project-info"><?php echo $current->budget; ?></span>
         </li>
         <li class="post-control"> 
@@ -85,7 +85,7 @@ $status = array(
             }
             if($user_ID == $current->post_author && $current->post_status == 'close') { 
             ?> 
-                <a href = "<?php echo add_query_arg(array('workspace' => 1), $current->permalink); ?>" title=" <?php _e( 'Open Workspace' , ET_DOMAIN ); ?>">
+                <a href = "<?php echo add_query_arg(array('workspace' => 1), $current->permalink); ?>" title=" <?php _e( 'Open Workspace' , 'work-history-item' ); ?>">
                     <i class="fa fa-share-square-o"></i>
                 </a>
             <?php }

@@ -8,19 +8,19 @@ function de_init_package() {
     
     register_post_type('pack', array(
         'labels' => array(
-            'name' => __('Pack', ET_DOMAIN) ,
-            'singular_name' => __('Pack', ET_DOMAIN) ,
-            'add_new' => __('Add New', ET_DOMAIN) ,
-            'add_new_item' => __('Add New Pack', ET_DOMAIN) ,
-            'edit_item' => __('Edit Pack', ET_DOMAIN) ,
-            'new_item' => __('New Pack', ET_DOMAIN) ,
-            'all_items' => __('All Packs', ET_DOMAIN) ,
-            'view_item' => __('View Pack', ET_DOMAIN) ,
-            'search_items' => __('Search Packs', ET_DOMAIN) ,
-            'not_found' => __('No Pack found', ET_DOMAIN) ,
-            'not_found_in_trash' => __('NoPacks found in Trash', ET_DOMAIN) ,
+            'name' => __('Pack', 'packages-backend') ,
+            'singular_name' => __('Pack', 'packages-backend') ,
+            'add_new' => __('Add New', 'packages-backend') ,
+            'add_new_item' => __('Add New Pack', 'packages-backend') ,
+            'edit_item' => __('Edit Pack', 'packages-backend') ,
+            'new_item' => __('New Pack', 'packages-backend') ,
+            'all_items' => __('All Packs', 'packages-backend') ,
+            'view_item' => __('View Pack', 'packages-backend') ,
+            'search_items' => __('Search Packs', 'packages-backend') ,
+            'not_found' => __('No Pack found', 'packages-backend') ,
+            'not_found_in_trash' => __('NoPacks found in Trash', 'packages-backend') ,
             'parent_item_colon' => '',
-            'menu_name' => __('Packs', ET_DOMAIN)
+            'menu_name' => __('Packs', 'packages-backend')
         ) ,
         'public' => false,
         'publicly_queryable' => true,

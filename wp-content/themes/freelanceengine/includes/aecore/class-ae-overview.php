@@ -42,48 +42,48 @@ class AE_Overview extends AE_Page
             $monthly_data[] = array(
                 'label' => $obj->labels->name,
                 'data' => $monthly,
-                'title' => __("Overview", ET_DOMAIN)
+                'title' => __("Overview", 'aecore-class-ae-overview-backend')
             );
             
             $weekly = $this->get_weekly_stat($post_type);
             $weekly_data[] = array(
                 'label' => $obj->labels->name,
                 'data' => $weekly,
-                'title' => __("3 Months Overview", ET_DOMAIN)
+                'title' => __("3 Months Overview", 'aecore-class-ae-overview-backend')
             );
             
             $daily = $this->get_daily_stat($post_type);
             $daily_data[] = array(
                 'label' => $obj->labels->name,
                 'data' => $daily,
-                'title' => __("2 weeks Overview", ET_DOMAIN)
+                'title' => __("2 weeks Overview", 'aecore-class-ae-overview-backend')
             );
         }
 
         $daily_register = $this->get_daily_registration();
         if(!empty($daily_register )) {
             $daily_data[] = array(
-                'label' => __("Signup", ET_DOMAIN) ,
+                'label' => __("Signup", 'aecore-class-ae-overview-backend') ,
                 'data' => $daily_register,
-                'title' => __("Overview", ET_DOMAIN)
+                'title' => __("Overview", 'aecore-class-ae-overview-backend')
             );
         }
 
         $weekly_register = $this->get_daily_registration();
         if(!empty($weekly_register )) {
             $weekly_data[] = array(
-                'label' => __("Signup", ET_DOMAIN) ,
+                'label' => __("Signup", 'aecore-class-ae-overview-backend') ,
                 'data' => $weekly_register,
-                'title' => __("Overview", ET_DOMAIN)
+                'title' => __("Overview", 'aecore-class-ae-overview-backend')
             );
         }
 
         $monthly_register = $this->get_monthly_registration();
         if(!empty($monthly_register )) {
             $monthly_data[] = array(
-                'label' => __("Signup", ET_DOMAIN) ,
+                'label' => __("Signup", 'aecore-class-ae-overview-backend') ,
                 'data' => $monthly_register ,
-                'title' => __("Overview", ET_DOMAIN)
+                'title' => __("Overview", 'aecore-class-ae-overview-backend')
             );
         }
 
@@ -95,24 +95,24 @@ class AE_Overview extends AE_Page
 
             if(!empty($daily_payment)) {
                 $daily_data[] = array(
-                    'label' => sprintf(__("Revenue(%s)", ET_DOMAIN), $currency) ,
+                    'label' => sprintf(__("Revenue(%s)", 'aecore-class-ae-overview-backend'), $currency) ,
                     'data' => $daily_payment ,
-                    'title' => __("Revenue", ET_DOMAIN)
+                    'title' => __("Revenue", 'aecore-class-ae-overview-backend')
                 );
             }
             
             if(!empty($weekly_payment)) {
                 $weekly_data[] = array(
-                    'label' => sprintf(__("Revenue(%s)", ET_DOMAIN), $currency) ,
+                    'label' => sprintf(__("Revenue(%s)", 'aecore-class-ae-overview-backend'), $currency) ,
                     'data' => $weekly_payment ,
-                    'title' => __("Revenue", ET_DOMAIN)
+                    'title' => __("Revenue", 'aecore-class-ae-overview-backend')
                 );
             }
             if(!empty($monthly_payment)) {
                 $monthly_data[] = array(
-                    'label' => sprintf(__("Revenue(%s)", ET_DOMAIN), $currency) ,
+                    'label' => sprintf(__("Revenue(%s)", 'aecore-class-ae-overview-backend'), $currency) ,
                     'data' => $monthly_payment,
-                    'title' => __("Revenue", ET_DOMAIN)
+                    'title' => __("Revenue", 'aecore-class-ae-overview-backend')
                 );
             }
         }

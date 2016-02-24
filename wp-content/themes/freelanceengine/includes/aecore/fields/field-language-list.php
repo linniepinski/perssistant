@@ -65,9 +65,9 @@ class AE_language_list {
         	</li>
         <?php }?>
         	<li class="new-language">
-        		<button class="add-lang"><?php _e('Add a new language', ET_DOMAIN) ?><span class="icon" data-icon="+"></span></button>
+        		<button class="add-lang"><?php _e('Add a new language', 'aecore-fields-backend') ?><span class="icon" data-icon="+"></span></button>
         		<div class="lang-field-wrap">
-        			<input id="" type="text" placeholder="<?php _e("Enter language name", ET_DOMAIN) ?>" name="lang_name" class="input-new-lang">
+        			<input id="" type="text" placeholder="<?php _e("Enter language name", 'aecore-fields-backend') ?>" name="lang_name" class="input-new-lang">
         		</div>
         	</li>
         </ul>
@@ -76,10 +76,10 @@ class AE_language_list {
 			<div class="show-new-language">
 				<div class="item form no-background no-padding no-margin">
 					<div class="form-item form-item-short">
-						<!-- <div class="label"><?php _e("Language name", ET_DOMAIN)?>:</div> -->
-						<input id="new-language-name" class="bg-grey-input" type="text" placeholder="<?php _e("Enter the language's name", ET_DOMAIN)?>" />
-						<button id="add-new-language" ><?php _e('Add language', ET_DOMAIN) ?><span class="icon" data-icon="+"></span></button>
-						<a class="cancel" id="cancel-add-lang"><?php _e('Cancel', ET_DOMAIN) ?></a>
+						<!-- <div class="label"><?php _e("Language name", 'aecore-fields-backend')?>:</div> -->
+						<input id="new-language-name" class="bg-grey-input" type="text" placeholder="<?php _e("Enter the language's name", 'aecore-fields-backend')?>" />
+						<button id="add-new-language" ><?php _e('Add language', 'aecore-fields-backend') ?><span class="icon" data-icon="+"></span></button>
+						<a class="cancel" id="cancel-add-lang"><?php _e('Cancel', 'aecore-fields-backend') ?></a>
 					</div>
 				</div>
 			</div>

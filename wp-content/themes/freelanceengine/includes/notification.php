@@ -13,18 +13,18 @@
  */
 function fre_register_notification() {
     $labels = array(
-        'name' => __('Notifications', ET_DOMAIN) ,
-        'singular_name' => __('Notification', ET_DOMAIN) ,
-        'add_new' => _x('Add New notification', ET_DOMAIN, ET_DOMAIN) ,
-        'add_new_item' => __('Add New notification', ET_DOMAIN) ,
-        'edit_item' => __('Edit notification', ET_DOMAIN) ,
-        'new_item' => __('New notification', ET_DOMAIN) ,
-        'view_item' => __('View notification', ET_DOMAIN) ,
-        'search_items' => __('Search notifications', ET_DOMAIN) ,
-        'not_found' => __('No notifications found', ET_DOMAIN) ,
-        'not_found_in_trash' => __('No notifications found in Trash', ET_DOMAIN) ,
-        'parent_item_colon' => __('Parent notification:', ET_DOMAIN) ,
-        'menu_name' => __('Notifications', ET_DOMAIN) ,
+        'name' => __('Notifications', 'notification-backend') ,
+        'singular_name' => __('Notification', 'notification-backend') ,
+        'add_new' => _x('Add New notification', 'notification-backend', 'notification-backend') ,
+        'add_new_item' => __('Add New notification', 'notification-backend') ,
+        'edit_item' => __('Edit notification', 'notification-backend') ,
+        'new_item' => __('New notification', 'notification-backend') ,
+        'view_item' => __('View notification', 'notification-backend') ,
+        'search_items' => __('Search notifications', 'notification-backend') ,
+        'not_found' => __('No notifications found', 'notification-backend') ,
+        'not_found_in_trash' => __('No notifications found in Trash', 'notification-backend') ,
+        'parent_item_colon' => __('Parent notification:', 'notification-backend') ,
+        'menu_name' => __('Notifications', 'notification-backend') ,
     );
     
     $args = array(
@@ -119,7 +119,7 @@ class Fre_Notification extends AE_PostAction
             'post_content' => $content,
             'post_excerpt' => $content,
             'post_author' => $project->post_author,
-            'post_title' => sprintf(__("New bid on %s", ET_DOMAIN) , get_the_title($project->ID)) ,
+            'post_title' => sprintf(__("New bid on %s", 'notification-backend') , get_the_title($project->ID)) ,
             'post_status' => 'publish',
             'post_parent' => $project->ID
         );
@@ -150,7 +150,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_status' => 'publish',
             'post_author' => $bid->post_author,
-            'post_title' => sprintf(__("Bid on project %s was accepted", ET_DOMAIN) , get_the_title($project->ID))
+            'post_title' => sprintf(__("Bid on project %s was accepted", 'notification-backend') , get_the_title($project->ID))
         );
         return $this->insert($notification);
     }
@@ -177,7 +177,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_author' => $bid_author,
             'post_status' => 'publish',
-            'post_title' => sprintf(__("Project %s was completed", ET_DOMAIN) , get_the_title($project->ID))
+            'post_title' => sprintf(__("Project %s was completed", 'notification-backend') , get_the_title($project->ID))
         );
         return $this->insert($notification);
     }
@@ -207,7 +207,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_author' => $project->post_author,
             'post_status' => 'publish',
-            'post_title' => sprintf(__("%s reviewed project %s", ET_DOMAIN) , $bidder_name, $project_title)
+            'post_title' => sprintf(__("%s reviewed project %s", 'notification-backend') , $bidder_name, $project_title)
         );
         return $this->insert($notification);
     }
@@ -229,7 +229,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_status' => 'publish',
             'post_type' => $this->post_type,
-            'post_title' => sprintf(__("New message on project %s", ET_DOMAIN) , get_the_title($project->ID)) ,
+            'post_title' => sprintf(__("New message on project %s", 'notification-backend') , get_the_title($project->ID)) ,
             'post_parent' => $project->ID
         );
         
@@ -274,7 +274,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_author' => $invited,
             'post_status' => 'publish',
-            'post_title' => sprintf(__("%s have a new invite from %s", ET_DOMAIN) , $author, $send_author)
+            'post_title' => sprintf(__("%s have a new invite from %s", 'notification-backend') , $author, $send_author)
         );
         $notify = $this->insert($notification);
         update_post_meta( $notify, 'project_list', $list_project );
@@ -376,7 +376,7 @@ class Fre_Notification extends AE_PostAction
                         </div>
                         </a>';
                 
-                $content.= sprintf(__("%s bid for your project %s", ET_DOMAIN) , $author, $project_link);
+                $content.= sprintf(__("%s bid for your project %s", 'notification-backend') , $author, $project_link);
                 break;
                 
                 // notify freelancer when his bid was accepted
@@ -391,7 +391,7 @@ class Fre_Notification extends AE_PostAction
                             ' . get_the_author_meta('display_name', $project_author) . '
                         </span>
                         </a>';
-                $content.= sprintf(__("Your bid at %s was accepted by %s", ET_DOMAIN) , $project_link, $author);
+                $content.= sprintf(__("Your bid at %s was accepted by %s", 'notification-backend') , $project_link, $author);
                 break;
                 
                 // notify freelancer when employer complete a project
@@ -407,7 +407,7 @@ class Fre_Notification extends AE_PostAction
                             ' . get_the_author_meta('display_name', $project_owner) . '
                         </span>
                         </a>';
-                $content.= sprintf(__("%s you worked on was completed by %s", ET_DOMAIN) , $project_link, $author);
+                $content.= sprintf(__("%s you worked on was completed by %s", 'notification-backend') , $project_link, $author);
                 break;
 
             case 'review_project':
@@ -421,7 +421,7 @@ class Fre_Notification extends AE_PostAction
                             ' . get_the_author_meta('display_name', $bid_author) . '
                         </span>
                         </a>';
-                $content.= sprintf(__("%s has reviewed on %s", ET_DOMAIN) , $author, $project_link);
+                $content.= sprintf(__("%s has reviewed on %s", 'notification-backend') , $author, $project_link);
                 break;
 
             case 'new_message':
@@ -440,7 +440,7 @@ class Fre_Notification extends AE_PostAction
                 
                 $workspace_link = '<a href="' . $workspace_link . '" >' . get_the_title($project) . '</a>';
                 
-                $content.= sprintf(__("%s sent you a message on %s workspace", ET_DOMAIN) , $author, $workspace_link);
+                $content.= sprintf(__("%s sent you a message on %s workspace", 'notification-backend') , $author, $workspace_link);
                 
                 break;
             case 'new_invite':
@@ -454,7 +454,7 @@ class Fre_Notification extends AE_PostAction
                         </a>';
                 $project_list = get_post_meta( $notify->ID, 'project_list', true );
                 if(!$project_list) {
-                    $content.= sprintf(__("You have an invite from %s", ET_DOMAIN) , $author );
+                    $content.= sprintf(__("You have an invite from %s", 'notification-backend') , $author );
                 }else{
                     $project = '';
                     foreach ($project_list as $key => $value) {
@@ -462,7 +462,7 @@ class Fre_Notification extends AE_PostAction
                         $project .= ', ';
                     }
                     $project = trim($project, ', ');
-                    $content.= sprintf(__("%s invited you to join project %s", ET_DOMAIN) , $author , $project );
+                    $content.= sprintf(__("%s invited you to join project %s", 'notification-backend') , $author , $project );
                 }
                 break;
 
@@ -470,9 +470,9 @@ class Fre_Notification extends AE_PostAction
                 break;
             }
             $content.= '&nbsp;';
-            $content.= sprintf(__("at %s", ET_DOMAIN) , get_the_time('', $notify->ID));
+            $content.= sprintf(__("at %s", 'notification-backend') , get_the_time('', $notify->ID));
             $content.= '&nbsp;';
-            $content.= sprintf(__("on %s", ET_DOMAIN) , get_the_date('', $notify));
+            $content.= sprintf(__("on %s", 'notification-backend') , get_the_date('', $notify));
             $content.= '<a data-action="delete" class="action delete" href="#"><i class="fa fa-trash-o"></i></a>';
             // return notification content
             return $content;
@@ -528,7 +528,7 @@ class Fre_Notification extends AE_PostAction
         wp_send_json(array(
             'success' => true,
             'data' => $result,
-            'msg' => __("Update project successful!", ET_DOMAIN)
+            'msg' => __("Update project successful!", 'notification-backend')
         ));
 
     }

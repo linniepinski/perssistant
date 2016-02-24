@@ -35,12 +35,12 @@
 			<?php do_action( 'ae_admin_before_user_details', $user ); ?>
 			<div class="et-mem-top">
 				<span class="name"><?php echo $user->display_name; ?></span>
-				<span class="thread icon" data-icon="w" title="<?php _e("Posts", ET_DOMAIN); ?>"><?php echo $user->post_count; ?></span>
-				<span class="comment icon" data-icon="q" title="<?php _e("Comments", ET_DOMAIN); ?>" ><?php echo $user->comment_count; ?></span>
+				<span class="thread icon" data-icon="w" title="<?php _e("Posts", 'aecore-other-backend'); ?>"><?php echo $user->post_count; ?></span>
+				<span class="comment icon" data-icon="q" title="<?php _e("Comments", 'aecore-other-backend'); ?>" ><?php echo $user->comment_count; ?></span>
 			</div>
 
 			<div class="et-mem-bottom">
-				<span class="date"><?php printf(__("Join on %s", ET_DOMAIN), (string)date(get_option('date_format'), strtotime($user->user_registered) )) ; ?></span>
+				<span class="date"><?php printf(__("Join on %s", 'aecore-other-backend'), (string)date(get_option('date_format'), strtotime($user->user_registered) )) ; ?></span>
 				<?php 
 				if($user->location) { 
 					echo '<span class="loc icon" data-icon="@">'. $user->location. '</span>';

@@ -33,7 +33,7 @@
                     if(is_single()){
                         the_content();
                         wp_link_pages( array(
-                            'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', ET_DOMAIN ) . '</span>',
+                            'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'post-item' ) . '</span>',
                             'after'       => '</div>',
                             'link_before' => '<span>',
                             'link_after'  => '</span>',
@@ -42,7 +42,7 @@
                         the_excerpt();
                 ?>
                 <a href="<?php the_permalink(); ?>" class="read-more">
-                    <?php _e("READ MORE",ET_DOMAIN) ?><i class="fa fa-arrow-circle-o-right"></i>
+                    <?php _e("READ MORE",'post-item') ?><i class="fa fa-arrow-circle-o-right"></i>
                 </a>
                 <?php } ?>
             </div>

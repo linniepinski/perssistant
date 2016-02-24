@@ -173,7 +173,7 @@ function ae_pagination( $query, $current = '', $type = 'page', $text = '') {
         ) );    
     }else {
         if($text == '') {
-            $text = __("Load more", ET_DOMAIN);
+            $text = __("Load more", 'aecore-template-backend');
         }
         echo '<a id="'.$query_var['post_type'].'-inview" class="inview load-more-post" >'. $text .'</a>';
     }
@@ -216,7 +216,7 @@ function ae_comments_pagination( $total, $current = '', $query_args = array()) {
         if($total > $current ) {
             $text = (isset($query_args['text'])) ? $query_args['text'] : '';
             if(!et_load_mobile() && !$text ){
-                 $text = __("Load more", ET_DOMAIN);
+                 $text = __("Load more", 'aecore-template-backend');
             }
             echo '<a id="'.$query_args['type'].'-inview" class="inview load-more-post" >'. $text .'</a>';
         }
@@ -259,7 +259,7 @@ function ae_user_pagination ($query_args = array(), $total, $current = '' ) {
     }else {
         if($total > $current ) {
             $text = 'load more';
-            if(!et_load_mobile()) $text = (isset($query_args['text'])) ? $query_args['text'] : __("Load more", ET_DOMAIN);
+            if(!et_load_mobile()) $text = (isset($query_args['text'])) ? $query_args['text'] : __("Load more", 'aecore-template-backend');
             echo '<a id="'.$query_args['type'].'-inview" class="inview load-more-post" >'. $text .'</a>';
         }
     }     

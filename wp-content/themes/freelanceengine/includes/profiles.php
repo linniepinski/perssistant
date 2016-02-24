@@ -22,29 +22,29 @@ function fre_register_profile() {
 
 	$labels = array(
 
-		'name'                => __( 'Profiles', ET_DOMAIN ),
+		'name'                => __( 'Profiles', 'profiles-backend' ),
 
-		'singular_name'       => __( 'Profile', ET_DOMAIN ),
+		'singular_name'       => __( 'Profile', 'profiles-backend' ),
 
-		'add_new'             => _x( 'Add New profile', ET_DOMAIN, ET_DOMAIN ),
+		'add_new'             => _x( 'Add New profile', 'profiles-backend', 'profiles-backend' ),
 
-		'add_new_item'        => __( 'Add New profile', ET_DOMAIN ),
+		'add_new_item'        => __( 'Add New profile', 'profiles-backend' ),
 
-		'edit_item'           => __( 'Edit profile', ET_DOMAIN ),
+		'edit_item'           => __( 'Edit profile', 'profiles-backend' ),
 
-		'new_item'            => __( 'New profile', ET_DOMAIN ),
+		'new_item'            => __( 'New profile', 'profiles-backend' ),
 
-		'view_item'           => __( 'View profile', ET_DOMAIN ),
+		'view_item'           => __( 'View profile', 'profiles-backend' ),
 
-		'search_items'        => __( 'Search Profiles', ET_DOMAIN ),
+		'search_items'        => __( 'Search Profiles', 'profiles-backend' ),
 
-		'not_found'           => __( 'No Profiles found', ET_DOMAIN ),
+		'not_found'           => __( 'No Profiles found', 'profiles-backend' ),
 
-		'not_found_in_trash'  => __( 'No Profiles found in Trash', ET_DOMAIN ),
+		'not_found_in_trash'  => __( 'No Profiles found in Trash', 'profiles-backend' ),
 
-		'parent_item_colon'   => __( 'Parent profile:', ET_DOMAIN ),
+		'parent_item_colon'   => __( 'Parent profile:', 'profiles-backend' ),
 
-		'menu_name'           => __( 'Profiles', ET_DOMAIN ),
+		'menu_name'           => __( 'Profiles', 'profiles-backend' ),
 
 	);
 
@@ -104,33 +104,33 @@ function fre_register_profile() {
 
     $labels = array(
 
-        'name'                  => _x('Countries', 'Taxonomy plural name', ET_DOMAIN) ,
+        'name'                  => _x('Countries', 'Taxonomy plural name', 'profiles-backend') ,
 
-        'singular_name'         => _x('Country', 'Taxonomy singular name', ET_DOMAIN) ,
+        'singular_name'         => _x('Country', 'Taxonomy singular name', 'profiles-backend') ,
 
-        'search_items'          => __('Search countries', ET_DOMAIN) ,
+        'search_items'          => __('Search countries', 'profiles-backend') ,
 
-        'popular_items'         => __('Popular countries', ET_DOMAIN) ,
+        'popular_items'         => __('Popular countries', 'profiles-backend') ,
 
-        'all_items'             => __('All countries', ET_DOMAIN) ,
+        'all_items'             => __('All countries', 'profiles-backend') ,
 
-        'parent_item'           => __('Parent country', ET_DOMAIN) ,
+        'parent_item'           => __('Parent country', 'profiles-backend') ,
 
-        'parent_item_colon'     => __('Parent country', ET_DOMAIN) ,
+        'parent_item_colon'     => __('Parent country', 'profiles-backend') ,
 
-        'edit_item'             => __('Edit country', ET_DOMAIN) ,
+        'edit_item'             => __('Edit country', 'profiles-backend') ,
 
-        'update_item'           => __('Update country ', ET_DOMAIN) ,
+        'update_item'           => __('Update country ', 'profiles-backend') ,
 
-        'add_new_item'          => __('Add New country ', ET_DOMAIN) ,
+        'add_new_item'          => __('Add New country ', 'profiles-backend') ,
 
-        'new_item_name'         => __('New country Name', ET_DOMAIN) ,
+        'new_item_name'         => __('New country Name', 'profiles-backend') ,
 
-        'add_or_remove_items'   => __('Add or remove country', ET_DOMAIN) ,
+        'add_or_remove_items'   => __('Add or remove country', 'profiles-backend') ,
 
-        'choose_from_most_used' => __('Choose from most used enginetheme', ET_DOMAIN) ,
+        'choose_from_most_used' => __('Choose from most used enginetheme', 'profiles-backend') ,
 
-        'menu_name'             => __('Countries', ET_DOMAIN) ,
+        'menu_name'             => __('Countries', 'profiles-backend') ,
 
     );
 
@@ -224,29 +224,29 @@ function fre_register_portfolio() {
 
     $labels = array(
 
-        'name'                => __( 'Portfolios', ET_DOMAIN ),
+        'name'                => __( 'Portfolios', 'profiles-backend' ),
 
-        'singular_name'       => __( 'Portfolio', ET_DOMAIN ),
+        'singular_name'       => __( 'Portfolio', 'profiles-backend' ),
 
-        'add_new'             => _x( 'Add New portfolio', ET_DOMAIN, ET_DOMAIN ),
+        'add_new'             => _x( 'Add New portfolio', 'profiles-backend', 'profiles-backend' ),
 
-        'add_new_item'        => __( 'Add New portfolio', ET_DOMAIN ),
+        'add_new_item'        => __( 'Add New portfolio', 'profiles-backend' ),
 
-        'edit_item'           => __( 'Edit portfolio', ET_DOMAIN ),
+        'edit_item'           => __( 'Edit portfolio', 'profiles-backend' ),
 
-        'new_item'            => __( 'New portfolio', ET_DOMAIN ),
+        'new_item'            => __( 'New portfolio', 'profiles-backend' ),
 
-        'view_item'           => __( 'View portfolio', ET_DOMAIN ),
+        'view_item'           => __( 'View portfolio', 'profiles-backend' ),
 
-        'search_items'        => __( 'Search portfolio', ET_DOMAIN ),
+        'search_items'        => __( 'Search portfolio', 'profiles-backend' ),
 
-        'not_found'           => __( 'No portfolio found', ET_DOMAIN ),
+        'not_found'           => __( 'No portfolio found', 'profiles-backend' ),
 
-        'not_found_in_trash'  => __( 'No portfolios found in Trash', ET_DOMAIN ),
+        'not_found_in_trash'  => __( 'No portfolios found in Trash', 'profiles-backend' ),
 
-        'parent_item_colon'   => __( 'Parent portfolio:', ET_DOMAIN ),
+        'parent_item_colon'   => __( 'Parent portfolio:', 'profiles-backend' ),
 
-        'menu_name'           => __( 'Portfolios', ET_DOMAIN ),
+        'menu_name'           => __( 'Portfolios', 'profiles-backend' ),
 
     );
 
@@ -351,33 +351,33 @@ function fre_register_tax_skill(){
 
     $labels = array(
 
-        'name'                  => _x('Skills', 'Taxonomy plural name', ET_DOMAIN) ,
+        'name'                  => _x('Skills', 'Taxonomy plural name', 'profiles-backend') ,
 
-        'singular_name'         => _x('Skill', 'Taxonomy singular name', ET_DOMAIN) ,
+        'singular_name'         => _x('Skill', 'Taxonomy singular name', 'profiles-backend') ,
 
-        'search_items'          => __('Search Skills', ET_DOMAIN) ,
+        'search_items'          => __('Search Skills', 'profiles-backend') ,
 
-        'popular_items'         => __('Popular Skills', ET_DOMAIN) ,
+        'popular_items'         => __('Popular Skills', 'profiles-backend') ,
 
-        'all_items'             => __('All Skills', ET_DOMAIN) ,
+        'all_items'             => __('All Skills', 'profiles-backend') ,
 
-        'parent_item'           => __('Parent Skill', ET_DOMAIN) ,
+        'parent_item'           => __('Parent Skill', 'profiles-backend') ,
 
-        'parent_item_colon'     => __('Parent Skill', ET_DOMAIN) ,
+        'parent_item_colon'     => __('Parent Skill', 'profiles-backend') ,
 
-        'edit_item'             => __('Edit Skill', ET_DOMAIN) ,
+        'edit_item'             => __('Edit Skill', 'profiles-backend') ,
 
-        'update_item'           => __('Update Skill ', ET_DOMAIN) ,
+        'update_item'           => __('Update Skill ', 'profiles-backend') ,
 
-        'add_new_item'          => __('Add New Skill ', ET_DOMAIN) ,
+        'add_new_item'          => __('Add New Skill ', 'profiles-backend') ,
 
-        'new_item_name'         => __('New Skill Name', ET_DOMAIN) ,
+        'new_item_name'         => __('New Skill Name', 'profiles-backend') ,
 
-        'add_or_remove_items'   => __('Add or remove skill', ET_DOMAIN) ,
+        'add_or_remove_items'   => __('Add or remove skill', 'profiles-backend') ,
 
-        'choose_from_most_used' => __('Choose from most used enginetheme', ET_DOMAIN) ,
+        'choose_from_most_used' => __('Choose from most used enginetheme', 'profiles-backend') ,
 
-        'menu_name'             => __('Skills', ET_DOMAIN) ,
+        'menu_name'             => __('Skills', 'profiles-backend') ,
 
     );
 
@@ -505,11 +505,11 @@ class Fre_ProfileAction extends AE_PostAction {
 
             if($result->et_experience > 1 ) {
 
-                $result->experience = sprintf(__("%d years", ET_DOMAIN), $result->et_experience);    
+                $result->experience = sprintf(__("%d years", 'profiles-backend'), $result->et_experience);    
 
             }else{
 
-                $result->experience = sprintf(__("%d year", ET_DOMAIN), $result->et_experience);    
+                $result->experience = sprintf(__("%d year", 'profiles-backend'), $result->et_experience);    
 
             }    
 
@@ -531,7 +531,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
         $result->author_name = get_the_author_meta( 'display_name', $result->post_author );
 
-        $result->hourly_rate_price = sprintf(__("%s/h", ET_DOMAIN), fre_price_format($result->hour_rate));
+        $result->hourly_rate_price = sprintf(__("%s/h", 'profiles-backend'), fre_price_format($result->hour_rate));
 
 
 
@@ -885,7 +885,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
                 'success' => false,
 
-                'msg'     => __("Your account is pending. You have to activate your account to create profile.", ET_DOMAIN)
+                'msg'     => __("Your account is pending. You have to activate your account to create profile.", 'profiles-backend')
 
                 )
 
@@ -923,7 +923,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
                         'success' => false,
 
-                        'msg'     => __("You only can have on profile.", ET_DOMAIN)
+                        'msg'     => __("You only can have on profile.", 'profiles-backend')
 
                         )
 
@@ -965,7 +965,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
                     'data' => $result,
 
-                    'msg' => __("Your profile has been created successfull.", ET_DOMAIN)
+                    'msg' => __("Your profile has been created successfull.", 'profiles-backend')
 
                 );
 
@@ -983,7 +983,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
                     'data' => $result,
 
-                    'msg' => __("Your profile has been updated successfully.", ET_DOMAIN)
+                    'msg' => __("Your profile has been updated successfully.", 'profiles-backend')
                     
                 );
 
@@ -1158,7 +1158,7 @@ class Fre_PortfolioAction extends AE_PostAction {
 
                     'data'         => $convert,
 
-                    'msg'          => __("Portfolio has been created successfully.", ET_DOMAIN)
+                    'msg'          => __("Portfolio has been created successfully.", 'profiles-backend')
 
                 );
 
@@ -1170,7 +1170,7 @@ class Fre_PortfolioAction extends AE_PostAction {
 
                     'success'      => true,
 
-                    'msg'          => __("Portfolio has been deleted successfully.", ET_DOMAIN)
+                    'msg'          => __("Portfolio has been deleted successfully.", 'profiles-backend')
 
                 );
 
@@ -1198,7 +1198,7 @@ class Fre_PortfolioAction extends AE_PostAction {
 
                     ) ,
 
-                    'msg'          => __("Portfolio has been updated successfully.", ET_DOMAIN)
+                    'msg'          => __("Portfolio has been updated successfully.", 'profiles-backend')
 
                 );
 

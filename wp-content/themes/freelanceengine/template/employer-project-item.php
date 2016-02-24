@@ -24,11 +24,11 @@ $status         = get_post_status($project->ID);
         <span><a href="<?php the_permalink($project->ID);?>"><?php echo $project->post_title;?> </a></span><br />
         <?php
         if($status =='complete'){
-            _e('Status : Finished<br /> list review here', ET_DOMAIN);
+            _e('Status : Finished<br /> list review here', 'employer-project-item');
         } else if($status == 'publish' && $bid_accept_id) {
-            _e('Status:Working', ET_DOMAIN);
+            _e('Status:Working', 'employer-project-item');
         } else if($status =='publish' && !$bid_accept_id ){
-            _e('Status:Hire opening',ET_DOMAIN);
+            _e('Status:Hire opening','employer-project-item');
         }
         ?>
         <div class="clearfix"></div>

@@ -4,22 +4,22 @@ add_action( 'init', 'rating_taxonomy', 0 );
 function rating_taxonomy() {
 
     $labels = array(
-        'name'                       => _x( 'Review_settings', 'taxonomy general name' ),
-        'singular_name'              => _x( 'Review_setting', 'taxonomy singular name' ),
-        'search_items'               => __( 'Search review setting' ),
-        'popular_items'              => __( 'Popular review setting' ),
-        'all_items'                  => __( 'All review setting' ),
+        'name'                       => _x( 'Review_settings', 'review-backend' ),
+        'singular_name'              => _x( 'Review_setting', 'review-backend'),
+        'search_items'               => __( 'Search review setting', 'review-backend' ),
+        'popular_items'              => __( 'Popular review setting', 'review-backend' ),
+        'all_items'                  => __( 'All review setting', 'review-backend' ),
         'parent_item'                => null,
         'parent_item_colon'          => null,
-        'edit_item'                  => __( 'Edit review setting' ),
-        'update_item'                => __( 'Update review setting' ),
-        'add_new_item'               => __( 'Add New review setting' ),
-        'new_item_name'              => __( 'New review setting Name' ),
-        'separate_items_with_commas' => __( 'Separate review setting with commas' ),
-        'add_or_remove_items'        => __( 'Add or remove review setting' ),
-        'choose_from_most_used'      => __( 'Choose from the most used review settings' ),
-        'not_found'                  => __( 'No review setting found.' ),
-        'menu_name'                  => __( 'Review settings' ),
+        'edit_item'                  => __( 'Edit review setting', 'review-backend' ),
+        'update_item'                => __( 'Update review setting', 'review-backend' ),
+        'add_new_item'               => __( 'Add New review setting', 'review-backend' ),
+        'new_item_name'              => __( 'New review setting Name', 'review-backend' ),
+        'separate_items_with_commas' => __( 'Separate review setting with commas', 'review-backend' ),
+        'add_or_remove_items'        => __( 'Add or remove review setting', 'review-backend' ),
+        'choose_from_most_used'      => __( 'Choose from the most used review settings', 'review-backend' ),
+        'not_found'                  => __( 'No review setting found.', 'review-backend' ),
+        'menu_name'                  => __( 'Review settings', 'review-backend' ),
     );
 
     $args = array(
@@ -172,7 +172,7 @@ class Fre_ReviewAction extends AE_Base
         if (!isset($args['project_id'])) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __('Invalid project id.', ET_DOMAIN)
+                'msg' => __('Invalid project id.', 'review-backend')
             ));
         }
         
@@ -182,7 +182,7 @@ class Fre_ReviewAction extends AE_Base
         
         $result = array(
             'succes' => false,
-            'msg' => __('You can\'t not access this action.', ET_DOMAIN)
+            'msg' => __('You can\'t not access this action.', 'review-backend')
         );
         
         $bid_id_accepted = get_post_meta($project_id, 'accepted', true);
@@ -197,7 +197,7 @@ class Fre_ReviewAction extends AE_Base
         if (!$bid_id_accepted) {
             $result = array(
                 'succes' => false,
-                'msg' => __('Please assign project before complete.', ET_DOMAIN)
+                'msg' => __('Please assign project before complete.', 'review-backend')
             );
             wp_send_json($result);
         }
@@ -205,14 +205,14 @@ class Fre_ReviewAction extends AE_Base
         if (!isset($args['score']) || empty($args['score'])) {
             $result = array(
                 'succes' => false,
-                'msg' => __('You have to rate for this profile.', ET_DOMAIN)
+                'msg' => __('You have to rate for this profile.', 'review-backend')
             );
             wp_send_json($result);
         }
         if (!isset($args['comment_content']) || empty($args['comment_content'])) {
             $result = array(
                 'succes' => false,
-                'msg' => __('Please post a review for this freelancer.', ET_DOMAIN)
+                'msg' => __('Please post a review for this freelancer.', 'review-backend')
             );
             wp_send_json($result);
         }
@@ -250,7 +250,7 @@ class Fre_ReviewAction extends AE_Base
             $freelancer_name = get_the_author_meta('display_name', $author_bid);
             wp_send_json(array(
                 'success' => true,
-                'msg' => sprintf(__("You have completed project %s and reviewed %s.", ET_DOMAIN) , $project_title, $freelancer_name)
+                'msg' => sprintf(__("You have completed project %s and reviewed %s.", 'review-backend') , $project_title, $freelancer_name)
             ));
         } else {
             wp_send_json(array(
@@ -282,14 +282,14 @@ class Fre_ReviewAction extends AE_Base
         if (!isset($args['score']) || empty($args['score'])) {
             $result = array(
                 'succes' => false,
-                'msg' => __('You have to rate this project.', ET_DOMAIN)
+                'msg' => __('You have to rate this project.', 'review-backend')
             );
             wp_send_json($result);
         }
         if (!isset($args['comment_content']) || empty($args['comment_content'])) {
             $result = array(
                 'succes' => false,
-                'msg' => __('Please post a review for this freelancer.', ET_DOMAIN)
+                'msg' => __('Please post a review for this freelancer.', 'review-backend')
             );
             wp_send_json($result);
         }
@@ -300,7 +300,7 @@ class Fre_ReviewAction extends AE_Base
         if ($user_ID !== $author_bid || !$user_ID) {
             wp_send_json(array(
                 'succes' => false,
-                'msg' => __('You don\'t have permission to review.', ET_DOMAIN)
+                'msg' => __('You don\'t have permission to review.', 'review-backend')
             ));
         }
         
@@ -310,7 +310,7 @@ class Fre_ReviewAction extends AE_Base
         if ($status !== 'complete') {
             wp_send_json(array(
                 'succes' => false,
-                'msg' => __('You can\'t not review on this project.', ET_DOMAIN)
+                'msg' => __('You can\'t not review on this project.', 'review-backend')
             ));
         }
         
@@ -333,7 +333,7 @@ class Fre_ReviewAction extends AE_Base
         if (!empty($comment)) {
             wp_send_json(array(
                 'succes' => false,
-                'msg' => __('You have reviewed on this project.', ET_DOMAIN)
+                'msg' => __('You have reviewed on this project.', 'review-backend')
             ));
         }
         
@@ -362,7 +362,7 @@ class Fre_ReviewAction extends AE_Base
             $this->update_after_fre_review($project_id, $comment);
             wp_send_json(array(
                 'success' => true,
-                'msg' => __("Your review has been submitted.", ET_DOMAIN)
+                'msg' => __("Your review has been submitted.", 'review-backend')
             ));
         } else {
             

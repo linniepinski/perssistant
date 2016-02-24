@@ -14,20 +14,20 @@
 				<button type="button" class="close" data-dismiss="modal">
 					<i class="fa fa-times"></i>
 				</button>
-				<h4 class="modal-title"><?php _e("Private Message!", ET_DOMAIN) ?></h4>
+				<h4 class="modal-title"><?php _e("Private Message!", 'modal-contact') ?></h4>
 			</div>
 			<div class="modal-body">
 				<form id="submit_contact" class="auth-form submit_contact">
 					<input type="hidden" name="send_to" id="send_to" value="<?php echo $send_to ?>" />
 					<div class="form-group textarea-form">
-						<label for="user_login"><?php _e('Your message', ET_DOMAIN) ?></label>
+						<label for="user_login"><?php _e('Your message', 'modal-contact') ?></label>
 						<p>
 							<textarea id="message" name="message"></textarea>
 						</p>
 					</div>	
 					<div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-						<?php _e("Send", ET_DOMAIN) ?>
+						<?php _e("Send", 'modal-contact') ?>
 					</button>
 				</form>	
 			</div>

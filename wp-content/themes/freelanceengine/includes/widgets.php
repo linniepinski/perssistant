@@ -12,7 +12,7 @@ class FRE_Social_Widget extends WP_Widget {
      * @return void
      **/
     function FRE_Social_Widget() {
-        $widget_ops = array( 'classname' => 'fre-social', 'description' => __("FRE Social Widget", ET_DOMAIN) );
+        $widget_ops = array( 'classname' => 'fre-social', 'description' => __("FRE Social Widget", 'widgets-backend') );
         $this->WP_Widget( 'fre-social', 'FRE Social', $widget_ops );
     }
 
@@ -32,14 +32,14 @@ class FRE_Social_Widget extends WP_Widget {
     ?>
         <ul class="social-list-footer">
             <?php if( ae_get_option('site_facebook') ) {
-                echo '<li><a href="'. ae_get_option('site_facebook') .'"><span><i class="fa fa-facebook"></i></span>'.__("Facebook", ET_DOMAIN).'</a></li>' ;   
+                echo '<li><a href="'. ae_get_option('site_facebook') .'"><span><i class="fa fa-facebook"></i></span>'.__("Facebook", 'widgets-backend').'</a></li>' ;   
             } ?>
             <?php if( ae_get_option('site_twitter') ) {
-                echo '<li><a href="'. ae_get_option('site_twitter') .'"><span><i class="fa fa-twitter"></i></span>'. __("Twitter", ET_DOMAIN).'</a></li>' ;   
+                echo '<li><a href="'. ae_get_option('site_twitter') .'"><span><i class="fa fa-twitter"></i></span>'. __("Twitter", 'widgets-backend').'</a></li>' ;   
             } ?>
 
             <?php if( ae_get_option('site_google') ) {
-                echo '<li><a href="'. ae_get_option('site_google') .'"><span><i class="fa fa-google-plus"></i></span>'.__("Google+", ET_DOMAIN).'</a></li>' ;   
+                echo '<li><a href="'. ae_get_option('site_google') .'"><span><i class="fa fa-google-plus"></i></span>'.__("Google+", 'widgets-backend').'</a></li>' ;   
             } ?>
         </ul>
     <?php    
@@ -68,11 +68,11 @@ class FRE_Social_Widget extends WP_Widget {
      * @return void Echoes it's output
      **/
     function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'title' => __("Keep in touch", ET_DOMAIN) ) );
+        $instance = wp_parse_args( (array) $instance, array( 'title' => __("Keep in touch", 'widgets-backend') ) );
         extract($instance);
     ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:',ET_DOMAIN ); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:','widgets-backend' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
         </p>
     <?php
@@ -91,7 +91,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Blog Sidebar', ET_DOMAIN ),
+        'name'          => __( 'Blog Sidebar', 'widgets-backend' ),
         'id'            => 'sidebar-blog',
         'description'   => '',
         'class'         => '',
@@ -108,7 +108,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Page Sidebar', ET_DOMAIN ),
+        'name'          => __( 'Page Sidebar', 'widgets-backend' ),
         'id'            => 'sidebar-page',
         'description'   => '',
         'class'         => '',
@@ -125,7 +125,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Footer 1', ET_DOMAIN ),
+        'name'          => __( 'Footer 1', 'widgets-backend' ),
         'id'            => 'fre-footer-1',
         'description'   => '',
         'class'         => '',
@@ -142,7 +142,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Footer 2', ET_DOMAIN ),
+        'name'          => __( 'Footer 2', 'widgets-backend' ),
         'id'            => 'fre-footer-2',
         'description'   => '',
         'class'         => '',
@@ -160,7 +160,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Footer 3', ET_DOMAIN ),
+        'name'          => __( 'Footer 3', 'widgets-backend' ),
         'id'            => 'fre-footer-3',
         'description'   => '',
         'class'         => '',
@@ -178,7 +178,7 @@ function fre_register_sidebars() {
     * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
     */
     $args = array(
-        'name'          => __( 'Footer 4', ET_DOMAIN ),
+        'name'          => __( 'Footer 4', 'widgets-backend' ),
         'id'            => 'fre-footer-4',
         'description'   => '',
         'class'         => '',

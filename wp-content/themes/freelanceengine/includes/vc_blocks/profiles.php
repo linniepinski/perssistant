@@ -236,13 +236,13 @@ vc_map( array(
 
     "base"      => "fre_block_profile",
 
-    "name"      => __("List profiles", ET_DOMAIN),
+    "name"      => __("List profiles", 'vc_blocks-profiles-backend'),
 
     "class"     => "",
 
     "icon"      => "",
 
-    "category" => __("FreelanceEngine", ET_DOMAIN),
+    "category" => __("FreelanceEngine", 'vc_blocks-profiles-backend'),
 
     "params"    => array(
 
@@ -252,7 +252,7 @@ vc_map( array(
 
             "type" => "textfield",
 
-            "heading" => __("Number of posts", ET_DOMAIN),
+            "heading" => __("Number of posts", 'vc_blocks-profiles-backend'),
 
             "class" => "input-title",
 
@@ -268,7 +268,7 @@ vc_map( array(
 
             "class"      => "",
 
-            "heading"    => __("Orderby", ET_DOMAIN),
+            "heading"    => __("Orderby", 'vc_blocks-profiles-backend'),
 
             "param_name" => "orderby",
 
@@ -282,7 +282,7 @@ vc_map( array(
 
         //     "class"      => "",
 
-        //     "heading"    => __("Query", ET_DOMAIN),
+        //     "heading"    => __("Query", 'vc_blocks-profiles-backend'),
 
         //     "param_name" => "query",
 
@@ -296,7 +296,7 @@ vc_map( array(
 
             "class"      => "",
 
-            "heading"    => __("Paginate", ET_DOMAIN),
+            "heading"    => __("Paginate", 'vc_blocks-profiles-backend'),
 
             "param_name" => "paginate",
 
@@ -310,13 +310,13 @@ vc_map( array(
 
         //     "type" => "checkbox",
 
-        //     //"heading" => __("Enable featured list", ET_DOMAIN),
+        //     //"heading" => __("Enable featured list", 'vc_blocks-profiles-backend'),
 
         //     "class" => "input-description",
 
         //     "param_name" => "featured",
 
-        //      "value"      => Array(__('Featured', ET_DOMAIN) =>true )
+        //      "value"      => Array(__('Featured', 'vc_blocks-profiles-backend') =>true )
 
         // )
 
@@ -352,7 +352,7 @@ class WPBakeryShortCode_fre_list_profiles extends WPBakeryShortCode {
 
             'el_class'      => '',
 
-            'title'         => __("Profiles", ET_DOMAIN),
+            'title'         => __("Profiles", 'vc_blocks-profiles-backend'),
 
             's_title'     => '',
 
@@ -390,7 +390,7 @@ class WPBakeryShortCode_fre_list_profiles extends WPBakeryShortCode {
 
                         <div class="col-md-12">
 
-                            <h2 class="number-profile"><?php printf(__("%d Profiles", ET_DOMAIN), $wp_query->found_posts ); ?></h2>
+                            <h2 class="number-profile"><?php printf(__("%d Profiles", 'vc_blocks-profiles-backend'), $wp_query->found_posts ); ?></h2>
 
                             <div class="nav-tabs-profile">
 
@@ -406,7 +406,7 @@ class WPBakeryShortCode_fre_list_profiles extends WPBakeryShortCode {
 
                                         <a href="#tab_lastest_profile" role="tab" data-toggle="tab">
 
-                                            <?php _e("Lastest Profile", ET_DOMAIN); ?>
+                                            <?php _e("Lastest Profile", 'vc_blocks-profiles-backend'); ?>
 
                                         </a>
 
@@ -416,7 +416,7 @@ class WPBakeryShortCode_fre_list_profiles extends WPBakeryShortCode {
 
                                         <a href="#tab_featured_profile" role="tab" data-toggle="tab">
 
-                                            <?php _e("Featured Profile", ET_DOMAIN); ?>
+                                            <?php _e("Featured Profile", 'vc_blocks-profiles-backend'); ?>
 
                                         </a>
 
@@ -516,13 +516,13 @@ vc_map( array(
 
     "base"      => "fre_list_profiles",
 
-    "name"      => __("List profiles", ET_DOMAIN),
+    "name"      => __("List profiles", 'vc_blocks-profiles-backend'),
 
     "class"     => "",
 
     "icon"      => "",
 
-    "category" => __("FreelanceEngine", ET_DOMAIN),
+    "category" => __("FreelanceEngine", 'vc_blocks-profiles-backend'),
 
     "params"    => array(
 
@@ -530,7 +530,7 @@ vc_map( array(
 
             "type" => "textfield",
 
-            "heading" => __("Title", ET_DOMAIN),
+            "heading" => __("Title", 'vc_blocks-profiles-backend'),
 
             "class" => "input-title",
 
@@ -544,7 +544,7 @@ vc_map( array(
 
             "type" => "textfield",
 
-            "heading" => __("Number of posts", ET_DOMAIN),
+            "heading" => __("Number of posts", 'vc_blocks-profiles-backend'),
 
             "class" => "input-title",
 
@@ -558,13 +558,13 @@ vc_map( array(
 
             "type" => "checkbox",
 
-            //"heading" => __("Enable featured list", ET_DOMAIN),
+            //"heading" => __("Enable featured list", 'vc_blocks-profiles-backend'),
 
             "class" => "input-description",
 
             "param_name" => "featured",
 
-             "value"      => Array(__('Use featured list', ET_DOMAIN) =>true )
+             "value"      => Array(__('Use featured list', 'vc_blocks-profiles-backend') =>true )
 
         )
 

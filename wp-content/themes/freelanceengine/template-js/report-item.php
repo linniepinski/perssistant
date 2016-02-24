@@ -17,7 +17,7 @@
                 {{= comment_content }}
             </div>
             <# if(file_list){ #>
-            <div class="title-attachment"><?php _e("Attachment", ET_DOMAIN); ?></div>
+            <div class="title-attachment"><?php _e("Attachment", 'modal-report-item'); ?></div>
             {{= file_list }}
             <# } #>
         </div>

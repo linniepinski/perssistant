@@ -48,7 +48,7 @@ class AE_image {
                 
                 <span class="et_ajaxnonce" id="<?php echo de_create_nonce( $uploaderID . '_et_uploader' ); ?>"></span>
                 <span class="bg-grey-button button btn-button" id="<?php echo $uploaderID;?>_browse_button" style="height:50px;margin-top:10px;">
-                    <?php _e('Browse', ET_DOMAIN);?>
+                    <?php _e('Browse', 'aecore-fields-backend');?>
                     <span class="icon" data-icon="o"></span>
                 </span>
 

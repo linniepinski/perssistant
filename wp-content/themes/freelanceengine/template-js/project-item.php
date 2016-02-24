@@ -42,7 +42,7 @@
                 <div class="col-md-2 col-sm-2 col-xs-5">
                     <p class="wrapper-btn">
                         <a href="{{=permalink}}" class="btn-sumary btn-apply-project">
-                        <?php _e('Apply',ET_DOMAIN);?>
+                        <?php _e('Apply','modal-project-item');?>
                     </a>
                     </p>
                 </div>

@@ -111,6 +111,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 		get_template_part( 'template-js/bid' , 'item' );        
         get_template_part( 'template-js/modal' , 'review');   
         get_template_part( 'template-js/modal' , 'bid' );
+        get_template_part( 'template-js/modal' , 'delete-bid' );
         get_template_part( 'template-js/modal' , 'bid-update' );
         get_template_part( 'template-js/modal' , 'accept-bid' );
               

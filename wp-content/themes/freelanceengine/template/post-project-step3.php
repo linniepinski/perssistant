@@ -26,7 +26,7 @@
 <div class="step-wrapper step-post" id="step-post">
 	<p class="step-heading active">
     	<span class="number-step"><?php if($step > 1 ) echo $step; else echo '<i class="fa fa-rocket"></i>'; ?></span>
-        <span class="text-heading-step"><?php _e("Enter your project details", ET_DOMAIN); ?></span>
+        <span class="text-heading-step"><?php _e("Enter your project details", 'post-project-step3'); ?></span>
     </p>
     <div class="step-content-wrapper content" style="<?php if($step != 1) echo "display:none;" ?>" >
     	<form class="post" role="form">
@@ -35,13 +35,13 @@
             	<div class="row">
                 	<div class="col-md-4">
                 		<label for="post_title" class="control-label title-plan">
-                            <?php _e("Project Title", ET_DOMAIN); ?>
+                            <?php _e("Project Title", 'post-project-step3'); ?>
                             <br/>
-                            <span><?php _e("Enter a short title for your project", ET_DOMAIN); ?></span>
+                            <span><?php _e("Enter a short title for your project", 'post-project-step3'); ?></span>
                         </label>
                     </div>
                     <div class="col-sm-8">
-                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="<?php _e("Project Title", ET_DOMAIN); ?>" name="post_title">
+                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="<?php _e("Project Title", 'post-project-step3'); ?>" name="post_title">
                     </div>
                 </div>
             </div>
@@ -52,13 +52,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="post_title" class="control-label title-plan">
-                            <?php _e("Project work type", ET_DOMAIN); ?>
+                            <?php _e("Project work type", 'post-project-step3'); ?>
                             <br/>
-                            <span><?php _e("Select ", ET_DOMAIN); ?></span>
+                            <span><?php _e("Select ", 'post-project-step3'); ?></span>
                         </label>
                     </div>
                     <div class="col-sm-8">
-<!--                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="--><?php //_e("Project Title", ET_DOMAIN); ?><!--" name="post_title">-->
+<!--                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="--><?php //_e("Project Title", 'post-project-step3'); ?><!--" name="post_title">-->
                     <select class="input-item form-control text-field" name="type_budget">
                         <option value="fixed">Fixed budget</option>
                         <option value="hourly_rate">Hourly rate budget</option>
@@ -73,11 +73,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="hours_limit" class="control-label title-plan">
-                            <?php printf(__("Limit hours per week", ET_DOMAIN) ); ?>
+                            <?php printf(__("Limit hours per week", 'post-project-step3') ); ?>
                         </label>
                     </div>
                     <div class="col-sm-8">
-                        <input step="1" min="1" disabled required type="number" class="input-item form-control text-field is_number" id="hours_limit" placeholder="<?php _e("Hours limit", ET_DOMAIN); ?>" name="hours_limit">
+                        <input step="1" min="1" disabled required type="number" class="input-item form-control text-field is_number" id="hours_limit" placeholder="<?php _e("Hours limit", 'post-project-step3'); ?>" name="hours_limit">
                     </div>
                 </div>
             </div>
@@ -88,11 +88,11 @@
             	<div class="row">
                 	<div class="col-md-4">
                     	<label for="et_budget" class="control-label title-plan">
-                            <?php printf(__("Budget (%s)", ET_DOMAIN), fre_currency_sign(false) ); ?>
+                            <?php printf(__("Budget (%s)", 'post-project-step3'), fre_currency_sign(false) ); ?>
                         </label>
                     </div>
                     <div class="col-sm-8">
-                        <input step="1" min="1" required type="number" class="input-item form-control text-field is_number" id="et_budget" placeholder="<?php _e("Budget", ET_DOMAIN); ?>" name="et_budget">
+                        <input step="1" min="1" required type="number" class="input-item form-control text-field is_number" id="et_budget" placeholder="<?php _e("Budget", 'post-project-step3'); ?>" name="et_budget">
                     </div>
                 </div>
             </div>
@@ -101,12 +101,12 @@
             <div class="form-group">
             	<div class="row">
                 	<div class="col-md-4">
-                    	<label for="project_category" class="control-label title-plan"><?php _e("Category", ET_DOMAIN); ?><br/><span><?php _e(" Select the best one(s) ", ET_DOMAIN); ?></span></label>
+                    	<label for="project_category" class="control-label title-plan"><?php _e("Category", 'post-project-step3'); ?><br/><span><?php _e(" Select the best one(s) ", 'post-project-step3'); ?></span></label>
                     </div>
                 
                     <div class="col-sm-8">
                        <?php ae_tax_dropdown( 'project_category' , 
-							  array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__("Choose categories", ET_DOMAIN).'"', 
+							  array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__("Choose categories", 'post-project-step3').'"', 
 									  'class' => 'chosen multi-tax-item tax-item required', 
 									  'hide_empty' => false, 
 									  'hierarchical' => true , 
@@ -123,9 +123,9 @@
             <div class="form-group skill-control">
             	<div class="row">
                 	<div class="col-md-4">
-                		<label for="skill" class="control-label title-plan"><?php _e("Skills", ET_DOMAIN); ?>
+                		<label for="skill" class="control-label title-plan"><?php _e("Skills", 'post-project-step3'); ?>
                             <br/>
-                            <span><?php _e("Press Enter to keep adding skills", ET_DOMAIN); ?></span>
+                            <span><?php _e("Press Enter to keep adding skills", 'post-project-step3'); ?></span>
                         </label>
                 	</div>
                     <div class="col-sm-8">
@@ -134,11 +134,11 @@
                         $switch_skill = ae_get_option('switch_skill');
                         if(!$switch_skill){
                             ?>
-                            <input type="text" class="form-control text-field skill" id="skill" placeholder="<?php _e("Skills", ET_DOMAIN); ?>" name=""  autocomplete="off" spellcheck="false" >
+                            <input type="text" class="form-control text-field skill" id="skill" placeholder="<?php _e("Skills", 'post-project-step3'); ?>" name=""  autocomplete="off" spellcheck="false" >
                             <ul class="skills-list" id="skills_list"></ul>
                             <?php
                         }else{
-                            ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 10)", ET_DOMAIN).'"',
+                            ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 10)", 'post-project-step3').'"',
                                                 'class' => 'sw_skill chosen multi-tax-item tax-item required', 
                                                 'hide_empty' => false, 
                                                 'hierarchical' => true , 
@@ -169,9 +169,9 @@
                 <div class="row" id="gallery_place">
                     <div class="col-md-4">
                         <label for="carousel_browse_button" class="control-label title-plan">
-                            <?php _e("Attachment", ET_DOMAIN); ?><br/>
+                            <?php _e("Attachment", 'post-project-step3'); ?><br/>
                             <span>
-                            <?php _e("File extension: Png, Jpg, Pdf, Zip, Ppt,Doc", ET_DOMAIN); ?>
+                            <?php _e("File extension: Png, Jpg, Pdf, Zip, Ppt,Doc", 'post-project-step3'); ?>
                             </span>
                         </label>
                     </div>
@@ -181,7 +181,7 @@
                             <li>
                                 <div class="plupload_buttons" id="carousel_container">
                                     <span class="img-gallery" id="carousel_browse_button">
-                                        <a href="#" class="add-img"><i class="fa fa-paperclip"></i> <?php _e("Attach file", ET_DOMAIN); ?></a>
+                                        <a href="#" class="add-img"><i class="fa fa-paperclip"></i> <?php _e("Attach file", 'post-project-step3'); ?></a>
                                     </span>
                                 </div>
                             </li>
@@ -197,9 +197,9 @@
             	<div class="row">
                     <div class="col-md-4">
                         <label for="post_content" class="control-label title-plan">
-                            <?php _e("Description", ET_DOMAIN); ?>
+                            <?php _e("Description", 'post-project-step3'); ?>
                             <br />
-                            <span><?php _e("Describe your project in a few paragraphs", ET_DOMAIN); ?></span>
+                            <span><?php _e("Describe your project in a few paragraphs", 'post-project-step3'); ?></span>
                         </label>
                     </div>
                     
@@ -215,7 +215,7 @@
             </div>
 
             <!--// project description -->						<!-- project is featured -->
-            <div class="form-group">            	<div class="row">                    <div class="col-md-4">                        <label for="post_content" class="control-label title-plan">                            <?php _e("Is Featured", ET_DOMAIN); ?>                            <br />                            <span><?php _e("Make this post featured in listing.", ET_DOMAIN); ?></span><span><?php _e("cost: 25eur", ET_DOMAIN); ?></span>                        </label>                    </div>                                        <div class="col-sm-8">						<input type="hidden" value="0" name="et_featured">
+            <div class="form-group">            	<div class="row">                    <div class="col-md-4">                        <label for="post_content" class="control-label title-plan">                            <?php _e("Is Featured", 'post-project-step3'); ?>                            <br />                            <span><?php _e("Make this post featured in listing.", 'post-project-step3'); ?></span><span><?php _e("cost: 25eur", 'post-project-step3'); ?></span>                        </label>                    </div>                                        <div class="col-sm-8">						<input type="hidden" value="0" name="et_featured">
 
 
 
@@ -224,7 +224,7 @@
 
                 <span class="switchery">
                     <small></small>
-                    <span id="et_featured_checkbox"><?php _e("Yes", ET_DOMAIN); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", ET_DOMAIN); ?></span>
+                    <span id="et_featured_checkbox"><?php _e("Yes", 'post-project-step3'); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", 'post-project-step3'); ?></span>
                 </span>
 
             </label>
@@ -278,7 +278,7 @@
             	<div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-sm-8">
-                        <button type="submit" class="btn btn-submit-login-form"><?php _e("Submit", ET_DOMAIN); ?></button>
+                        <button type="submit" class="btn btn-submit-login-form"><?php _e("Submit", 'post-project-step3'); ?></button>
                     </div>
                 </div>
             </div>

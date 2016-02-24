@@ -121,12 +121,12 @@ class AE_User_Front_Actions extends AE_Base
                     
                     $resp = array(
                         'success' => true,
-                        'msg'     => __('Your invite has been sent!', ET_DOMAIN)
+                        'msg'     => __('Your invite has been sent!', 'user-actions-backend')
                     );
                 }else {
                     $resp = array(
                         'success' => false,
-                        'msg'     => __('Currently, you do not have any project available to invite this user.', ET_DOMAIN)
+                        'msg'     => __('Currently, you do not have any project available to invite this user.', 'user-actions-backend')
                     );
                 }
             }

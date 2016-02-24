@@ -9,8 +9,8 @@
                 <span class="position-profile">{{= et_professional_title }}</span>
             </li>
             <li class="link-profile">
-                <a href="{{= author_link }}" class="btn btn-view-profile" title="<?php _e("View Profile", ET_DOMAIN); ?>">
-                <span><?php _e("View Profile", ET_DOMAIN); ?></span>
+                <a href="{{= author_link }}" class="btn btn-view-profile" title="<?php _e("View Profile", 'modal-profile-item'); ?>">
+                <span><?php _e("View Profile", 'modal-profile-item'); ?></span>
                 </a>
             </li>
         </ul>  

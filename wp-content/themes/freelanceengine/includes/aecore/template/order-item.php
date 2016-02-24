@@ -12,19 +12,19 @@ if($post->post_parent) {
 }
 
 $support_gateway = apply_filters('ae_support_gateway', array(
-    			'cash' => __("Cash", ET_DOMAIN),
-    			'paypal' => __("Paypal", ET_DOMAIN),
-    			'2checkout' => __("2Checkout", ET_DOMAIN),
+    			'cash' => __("Cash", 'aecore-other-backend'),
+    			'paypal' => __("Paypal", 'aecore-other-backend'),
+    			'2checkout' => __("2Checkout", 'aecore-other-backend'),
     		));
 ?>
 <li>
 	<div class="method">
 		<?php echo isset($support_gateway[$order_data['payment']]) ? $support_gateway[$order_data['payment']] : $order_data['payment']; 
 			if($post->post_status == 'pending') : ?> 
-				<a title="<?php _e("Approve", ET_DOMAIN); ?>" class="color-green action publish" data-id="<?php echo $post->ID; ?>" href="#">
+				<a title="<?php _e("Approve", 'aecore-other-backend'); ?>" class="color-green action publish" data-id="<?php echo $post->ID; ?>" href="#">
 					<span class="icon" data-icon="3"></span>
 				</a>
-				<a title="<?php _e("Decline", ET_DOMAIN); ?>" class="color-red action decline" data-id="<?php echo $post->ID; ?>" href="#">
+				<a title="<?php _e("Decline", 'aecore-other-backend'); ?>" class="color-red action decline" data-id="<?php echo $post->ID; ?>" href="#">
 					<span class="icon" data-icon="*"></span>
 				</a>
 		<?php 
@@ -36,13 +36,13 @@ $support_gateway = apply_filters('ae_support_gateway', array(
 		if( $post ) {  
 			switch ($post->post_status) {
 			case 'pending':
-				echo '<a title="' . __("Pending", ET_DOMAIN) . '" class="color-red error" href="#"><span class="icon" data-icon="!"></span></a>';
+				echo '<a title="' . __("Pending", 'aecore-other-backend') . '" class="color-red error" href="#"><span class="icon" data-icon="!"></span></a>';
 				break;
 			case 'publish':
-				echo '<a title="'. __("Confirmed", ET_DOMAIN) . '" class="color-green" href="#"><span class="icon" data-icon="2"></span></a>';
+				echo '<a title="'. __("Confirmed", 'aecore-other-backend') . '" class="color-green" href="#"><span class="icon" data-icon="2"></span></a>';
 				break;			
 			default:
-				echo '<a title="' .__("Failed", ET_DOMAIN) .'" class="color" style="color :grey;" href="#"><span class="icon" data-icon="*"></span></a>';
+				echo '<a title="' .__("Failed", 'aecore-other-backend') .'" class="color" style="color :grey;" href="#"><span class="icon" data-icon="*"></span></a>';
 				break;
 			}
 		?>	
@@ -63,7 +63,7 @@ $support_gateway = apply_filters('ae_support_gateway', array(
 				</a>
 			<?php
 			}
-			 _e(' by ', ET_DOMAIN);						        						
+			 _e(' by ', 'aecore-other-backend');						        						
 			?> 
 			<a target="_blank" href="<?php echo get_author_posts_url($post->post_author, $author_nicename = '') ?>" class="company">
 				<?php echo get_the_author_meta('display_name',$post->post_author) ?>
@@ -75,7 +75,7 @@ $support_gateway = apply_filters('ae_support_gateway', array(
 						'</a>'; 
 		?>
 			<span>
-				<?php printf (__("This post has been deleted by %s", ET_DOMAIN) , $author ); ?>
+				<?php printf (__("This post has been deleted by %s", 'aecore-other-backend') , $author ); ?>
 			</span>
 		<?php 
 			} 
