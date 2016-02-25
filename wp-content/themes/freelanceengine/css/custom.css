@@ -2419,7 +2419,7 @@ ul.info-item {
   border-top: 5px solid transparent;
   padding: 15px 25px 30px;
   position: relative;
-  bottom: -15px;
+  bottom: 20px;
   color: #bdc3c7; }
 
 /* line 2135, ../sass/custom.scss */
