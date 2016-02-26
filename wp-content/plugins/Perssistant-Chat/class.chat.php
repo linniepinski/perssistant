@@ -21,8 +21,11 @@ class chat
         //global $chat_require_capabilities;
         //var_dump(get_post_meta(1474,'unreadInvitation',true));
         //var_dump(get_post(get_post_meta(1481,'unreadInvitation',true)));
-
+        include 'templates-js/local_language.php';
         add_action('wp_footer', array('chat', 'popup_invate'));
+        add_action('wp_footer', array('chat', 'items_chat_js'));
+        add_action('wp_footer', array('chat', 'localize_responses_js'));
+
         add_shortcode('chat', array('chat', 'chat_view'));
 
         wp_register_style('ChatCss', plugin_dir_url(__FILE__) . 'css/chat.css');
@@ -30,10 +33,15 @@ class chat
 
         if (is_user_logged_in()) {
 
-            wp_enqueue_script('my-ajax-request', plugin_dir_url(__FILE__) . 'js/ajax_chat.js', array('jquery'));
-            wp_localize_script('my-ajax-request', 'MyAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+            wp_register_script( 'Chat-js', plugin_dir_url(__FILE__) . 'js/ajax_chat.js' );
+            wp_localize_script( 'Chat-js', 'chat_globals', $texts_chat_localized );
+            wp_enqueue_script('Chat-js', plugin_dir_url(__FILE__) . 'js/ajax_chat.js', array('jquery'),true);
+
+            wp_localize_script('Chat-js', 'MyAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
 
             wp_enqueue_script('jquery.form', plugin_dir_url(__FILE__) . 'js/jquery.form.js', array('jquery'));
+            wp_enqueue_script('jquery.tmpl', plugin_dir_url(__FILE__) . 'js/jquery.tmpl.js', array('jquery'));
+
             wp_enqueue_script('bootstrap.file-input.js', plugin_dir_url(__FILE__) . 'js/bootstrap.file-input.js', array('jquery'));
 
             wp_register_style('jquery.mCustomScrollbar', plugin_dir_url(__FILE__) . 'custom-scrollbar/jquery.mCustomScrollbar.css');
@@ -146,17 +154,30 @@ class chat
             }
             require 'templates/main_temp.php';
         } else {
-            echo '<div style="margin-top:7%" class="col-xs-12 bs-example bs-example-standalone">
-    <div class="alert alert-info" role="alert">' . 'You can\'t join the chat. Please login.' . '
-            </div></div>';
+            ?>
+            <div style="margin-top:7%" class="col-xs-12 bs-example bs-example-standalone">
+            <div class="alert alert-info" role="alert">
+                <?php __('You can\'t join the chat. Please login.','chat-frontend') ?>
+            </div>
+            </div>
+            <?php
             //get_footer();
         }
-
     }
 
     public static function popup_invate()
     {
         include 'templates/invate_freelancer.php';
+    }
+    public static function localize_responses_js(){
+
+//        $texts = apply_filters('chat_globals', $texts);
+//      wp_localize_script('ajax_chat', 'chat_globals', $texts);
+    }
+    public static function items_chat_js()
+    {
+        include 'templates-js/item-message.php';
+        include 'templates-js/list-item-contact.php';
     }
 
     public static function myajax_submit()
@@ -173,15 +194,16 @@ class chat
         }
         if ($contact_with_user == null or trim($edit_message) == '') {
             //$html_errors = 'Fail send.Message is empty.';
-            $response = array(
-                'what' => 'stuff',
-                'action' => 'delete_something',
-                'id' => new WP_Error('oops', 'I had an accident.'),
-                'data' => 'Whoops, there was a problem!'
-            );
-            $xmlResponse = new WP_Ajax_Response($response);
-            $xmlResponse->send();
-            exit;
+
+//            $response = array(
+//                'what' => 'stuff',
+//                'action' => 'delete_something',
+//                'id' => new WP_Error('oops', 'I had an accident.'),
+//                'data' => 'Whoops, there was a problem!'
+//            );
+//            $xmlResponse = new WP_Ajax_Response($response);
+//            $xmlResponse->send();
+//            exit;
         } else {
 
 
@@ -255,34 +277,19 @@ class chat
             }
         }
         $edit_message = preg_replace("/(\r\n){2,}/", "<br/><br/>", $edit_message); //если 2 и более подряд
-
         $edit_message = preg_replace("/(\r\n)/", "<br/>", $edit_message);
-        $respons = array(
-            'what' => 'chat_message',
-            'action' => 'send_message',
-            'data' => '<div class="row" chat_id="' . $post_id . '">
-    <div class="hidden-xs hidden-sm col-md-1 text-ellipsis the_author_chat">
-         ' . get_avatar($user_id, 50) . '
-    </div>
-    <div class="col-xs-8 col-sm-9 col-md-9 the_content_chat">
-        <p class="aut">' . $current_user->display_name . '</p>
-        <p class="cont">' . $edit_message . '</p>' . $html_link . '
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2 the_time_chat">
-                                <span class="time" data-toggle="tooltip" data-placement="top"
-                                      title="' . date('F d,Y ') . '">' . date('g:i a') . '</span>
-    </div>
-</div>',
-            'supplemental' => array(
-                //'data_message'=> 'sdfsdfdsf',
-                'sender' => $user_id,
-                'errors' => $html_errors,
-            )
 
-        );
-        $Response = new WP_Ajax_Response($respons);
-        $Response->send();
+        $response['status'] = true;
+        $response['message']['id'] = $post_id;
+        $response['message']['avatar'] = get_avatar($user_id, 50);
+        $response['message']['display_name'] = $current_user->display_name;
+        $response['message']['content'] = $edit_message;
+        $response['message']['link'] = $html_link;
+        $response['message']['date1'] = date('F d,Y ');
+        $response['message']['date2'] = date('g:i a');
+        $response['html_errors'] = $html_errors;
         unset($html_errors);
+        wp_send_json($response);
         exit;
     }
 
@@ -359,6 +366,8 @@ class chat
         $posts = new WP_Query($args);
         $array_rev = array_reverse($posts->posts);
         $posts->posts = $array_rev;
+        $count = 0;
+        $response = array();
         if ($posts->have_posts()) {
             while ($posts->have_posts()) {
                 $posts->the_post();
@@ -391,40 +400,30 @@ class chat
                     }
                 }
                 unset($attachments);
-                ?>
-                <div class="row" chat_id="<?php the_ID() ?>">
-                    <div class="hidden-xs hidden-sm col-md-1 text-ellipsis the_author_chat">
-                        <?php echo get_avatar(get_the_author_meta('ID'), 50); ?>
-                    </div>
-                    <div class="col-xs-8 col-sm-9 col-md-9 the_content_chat">
-                        <p class="aut"><?php the_author() ?></p>
-                        <?php
+                $date1 = new DateTime(get_the_date('', $id_post));
+                $date2 = new DateTime(date('F d,Y ', strtotime('-1 days')));
 
-                        $phrase = get_the_content();
-                        $phrase = apply_filters('the_content', $phrase);
-                        $replace = '<p class="cont">';
-                        echo str_replace('<p>', $replace, $phrase);
-                        echo $html_link;
-                        ?>
-
-                    </div>
-                    <div class="col-xs-4 col-sm-3 col-md-2 the_time_chat">
-                                <span class="time" data-toggle="tooltip" data-placement="top"
-                                      title="<?php the_modified_date() ?>"><?php the_modified_time() ?></span>
-                    </div>
-                </div>
-            <?php
+                $response['query'][$count]['id'] = $id_post;
+                $response['query'][$count]['avatar'] = get_avatar(get_the_author_meta('ID'), 50);
+                $response['query'][$count]['display_name'] = get_the_author();
+                $response['query'][$count]['content'] = get_the_content();
+                $response['query'][$count]['link'] = $html_link;
+                if ($date1 > $date2) {
+                    $response['query'][$count]['date1'] = get_the_date('', $id_post);
+                    $response['query'][$count]['date2'] = get_the_time('', $id_post);
+                } else {
+                    $response['query'][$count]['date1'] = get_the_time('', $id_post);
+                    $response['query'][$count]['date2'] = get_the_date('', $id_post);
+                }
+                $count++;
             }
+            wp_send_json($response);
+
         } else {
-//            echo '<div class="panell panel-primary">
-//                    <div class="panel-body">
-//                        <h5 style="text-align: center">No message here</h5>
-//                    </div>
-//                </div>';
             wp_send_json(array(
                 'status' => true,
                 'type' => 'empty',
-                'msg' => 'No messages',
+                'msg' =>  __("No messages", 'chat-frontend'),
             ));
         }
         exit;
@@ -459,11 +458,11 @@ class chat
             update_post_meta($post_id, 'unreadInvitation', $project_ID);
 
             $response['success'] = true;
-            $response['msg'] = __("Invitation sent successfully.", ET_DOMAIN);
+            $response['msg'] = __("Invitation sent successfully.", 'chat-frontend');
             wp_send_json($response);
             exit;
         } else {
-            $response['msg'] = __( 'An unknown error has occurred. Please try again later.' , ET_DOMAIN );
+            $response['msg'] = __( 'An unknown error has occurred. Please try again later.' , 'chat-frontend' );
             $response['success'] = false;
             wp_send_json($response);
             exit;
@@ -505,7 +504,8 @@ class chat
                 //$img_url = get_avatar_data();
                 if (get_post_meta($ID_post,'unreadInvitation',true)!==''){
                     $invate_post = get_post(get_post_meta($ID_post,'unreadInvitation',true));
-                    $message ="You've got an invitation from ".$author." to an interview on ".$invate_post->post_title.". Check messages!";
+//                    $message ="You've got an invitation from ".$author." to an interview on ".$invate_post->post_title.". Check messages!";
+                    $message = printf("You've got an invitation from %s to an interview on %s. Check messages!",$author,$invate_post->post_title);
                 }else
                 {
                     $message = get_the_content();
@@ -538,20 +538,15 @@ class chat
         $html_link = '';
         $last_chat_id = $_POST['last_chat_id'];
         $contact_with_user = $_POST['contact_with_user'];
-
         //$chat_id_count = $_POST['chat_id_count'];
-
         //echo 'last id : ' .$last_chat_id_getpost . ' contact:'. $contact_with_user;
         //if ($last_chat_id_getpost == '') $last_chat_id_getpost = 0;
         $current_user = wp_get_current_user();
         $user_id = $current_user->ID;
-        //$UI_private_room = $contact_with_user . '_' . $user_id;
-        //echo 'no data now';
         $args = array(
 
             'wpse_pid' => $last_chat_id, // Our custom post id argument
             'wpse_compare' => '>', // Out custom compare argument (<,>,<=,>=,!=,<>)
-            //'post_name' => $UI_private_room,
             'post_type' => 'chat_message',
             'post_status' => 'draft',
             'posts_per_page' => 1,
@@ -577,17 +572,11 @@ class chat
                 if (get_post_meta(get_the_ID(), 'receiver') == $user_id) {
                     update_post_meta(get_the_ID(), 'unread', '');
                 }
-                $author = get_the_author();
-                $ID_post = get_the_ID();
                 $url_meta = get_post_meta(get_the_ID(), 'wp_custom_attachment');
                 $type = get_post_meta(get_the_ID(), 'type');
-//var_dump($type);
                 $type_file = explode("/", $type[0]);
-//var_dump($type_file);
                 if ($type_file[0] == 'image') {
-
                     $html_link = '<a href="' . $url_meta[0]['url'] . '"><img class="img-responsive" src="' . $url_meta[0]['url'] . '"></a>';
-
                 } else {
                     $html_link = '<a href="' . $url_meta[0]['url'] . '">' . end(explode("/", $url_meta[0]['file'])) . '</a>';
                 }
@@ -598,38 +587,22 @@ class chat
                 $message = preg_replace("/(\r\n){2,}/", "<br/><br/>", $message); //если 2 и более подряд
 
                 $message = preg_replace("/(\r\n)/", "<br/>", $message);
-                $responsed = array(
-                    'what' => 'chat_message',
-                    'action' => 'check_updates',
-                    'id' => $contact_with_user . '_' . $user_id,
-                    'data' => '<div class="row" chat_id="' . $ID_post . '">
-    <div class="hidden-xs hidden-sm col-md-1 text-ellipsis the_author_chat">
-        ' . get_avatar(get_the_author_meta('ID'), 50) . '
-    </div>
-    <div class="col-xs-8 col-sm-9 col-md-9 the_content_chat">
-        <p class="aut">' . $author . '</p>
-        <p class="cont">' . $message . '</p>' . $html_link . '
-    </div>
-    <div class="col-xs-4 col-sm-3 col-md-2 the_time_chat">
-                                <span class="time" data-toggle="tooltip" data-placement="top"
-                                      title="' . $dateH . '">' . $dateD . '</span>
-    </div>
-</div>',
-                    'supplemental' => array(
-                        'id_message' => $ID_post,
-                        'message' => 'true',
-                        //'sender' => $author,
-                        //'message' => $message,
-                        //'dateD' => $dateD,
-                        //'dateH' => $dateH,
-                    )
-                );
-                $Response = new WP_Ajax_Response($responsed);
-                $Response->send();
-                exit;
+
+                $response['status'] = true;
+                $response['message']['id'] = get_the_ID();;
+                $response['message']['avatar'] = get_avatar(get_the_author_meta('ID'), 50);
+                $response['message']['display_name'] = get_the_author();
+                $response['message']['content'] = $message;
+                $response['message']['link'] = $html_link;
+                $response['message']['date1'] = $dateH;
+                $response['message']['date2'] = $dateD;
+                unset($html_errors);
+                wp_send_json($response);
 
             }
         } else {
+//            $response['status'] = true;
+//            wp_send_json($response);
             echo 'No new message here';
         }
         exit;

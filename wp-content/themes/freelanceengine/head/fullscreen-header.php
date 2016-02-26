@@ -142,7 +142,7 @@
                         </div> 
                         <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                             </div>
-                            <div style="display: inline-block;">
+                            <div class="language-selector-wpml-custom">
                                 <?php do_action('wpml_add_language_selector');?>
                             </div>
 
@@ -222,7 +222,7 @@
                         </div>
                          <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                              <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>&nbsp&nbsp<span class="badge count-chat"></span></a>
-                             <div style="display: inline-block;">
+                             <div class="language-selector-wpml-custom">
                                  <?php do_action('wpml_add_language_selector');?>
                              </div>
                         <div class="dropdown-info-acc-wrapper" style="margin-right:12px">

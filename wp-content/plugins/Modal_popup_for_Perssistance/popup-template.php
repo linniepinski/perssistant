@@ -1,27 +1,24 @@
-<?php
-
-?>
 <div class="modal modal-vcenter fade" id="popup_free_3">
     <div class="modal-dialog top-margin">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true" style="font-size: 28px;">&times;</span></button>
-                <h4 class="modal-title text-center text-color-popup">Perssistant Virtual Assistants Platform has
-                    launched!</h4>
+                <h4 class="modal-title text-center text-color-popup"><?php echo __("Perssistant Virtual Assistants Platform has
+                    launched!",'register-now-for-free-3-months') ?></h4>
                 <hr>
             </div>
             <div class="modal-body">
-                <h4 class="text-center">It’s time to celebrate this with you !</h4>
-                <h4 class="text-center">Register now 100% FOR FREE the coming 3 months!</h4>
+                <h4 class="text-center"><?php echo __("It’s time to celebrate this with you !",'register-now-for-free-3-months') ?></h4>
+                <h4 class="text-center"><?php echo __("Register now 100% FOR FREE the coming 3 months!",'register-now-for-free-3-months') ?></h4>
                 <h4 class="margin-28">
-                    <small class="text-center text-color-popup-sm">We do not take any commission, you do not need to
-                        enter any credit card details!
+                    <small class="text-center text-color-popup-sm"><?php echo __("We do not take any commission, you do not need to
+                        enter any credit card details!",'register-now-for-free-3-months') ?>
                     </small>
                 </h4>
-                <h4 class="text-center">We would appreciate your feedback on bugs/errors that you encounter the coming
+                <h4 class="text-center"><?php echo __("We would appreciate your feedback on bugs/errors that you encounter the coming
                     months. Please email
-                    us on <a href="mailto:info@perssistant.com">info@perssistant.com</a></h4>
+                    us on",'register-now-for-free-3-months') ?> <a href="mailto:info@perssistant.com">info@perssistant.com</a></h4>
 
                 <div class="row">
                     <!--mc_embed_signup-->
