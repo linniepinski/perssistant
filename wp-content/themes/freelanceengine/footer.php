@@ -47,7 +47,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 	<div class="container">
         <div class="row">
             <div class="col-sm-4 <?php echo $col ?>">
-            	<a href="<?php echo home_url(); ?>" class="logo-footer"><?php fre_logo('site_logo_white') ?></a>
+            	<a href="<?php echo home_url(); ?>" class="logo-footer"><?php fre_logo('site_logo_black') ?></a>
             </div>
             <?php if($has_nav_menu){ ?>
             <div class="col-sm-4 col-md-4">
@@ -56,7 +56,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
                 ?>
             </div>
             <?php }?>
-            <div class="<?php echo $col;?> col-sm-4">
+            <div class="col-sm-4 <?php echo $col;?>">
             	<p class="text-copyright">
                     <?php
                         if($copyright){ echo $copyright; }

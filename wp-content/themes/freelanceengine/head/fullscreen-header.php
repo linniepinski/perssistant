@@ -366,7 +366,7 @@
 
                         <div class="non-login">
                     
-                            <div class="pull-left mtop7" >
+                            <div class="navbar-left links-wrap" >
                             <a class="login login-btn" href="<?php echo site_url(); ?>/projekt-hinzuzufugen/"><?php _e("PROJEKT HINZUFÜGEN", ET_DOMAIN) ?></a>
                             
                             

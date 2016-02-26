@@ -55,7 +55,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                     <p>
                         <?php
                         ae_tax_dropdown('project_type',
-                            array('attr' => 'data-chosen-width="90%" data-chosen-disable-search="1" data-placeholder="' . __("All types", ET_DOMAIN) . '"',
+                            array('attr' => 'data-chosen-width="100%" data-chosen-disable-search="1" data-placeholder="' . __("All types", ET_DOMAIN) . '"',
                                 'class' => 'type-filter chosen-select',
                                 'hide_empty' => true,
                                 'hierarchical' => true,
