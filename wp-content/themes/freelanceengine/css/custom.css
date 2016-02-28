@@ -7671,6 +7671,10 @@ input[type=number]:hover {
 .time {
   margin-left: 0; }
   
+/* line 6576, ../sass/custom.scss */
+.dropdown-backdrop {
+  display: none; }
+
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
   /* line 451, ../sass/custom.scss */
   .mfp-img-mobile .mfp-image-holder {
