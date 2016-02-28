@@ -204,7 +204,7 @@ function chatroom_count() {
         beforeSend: function (xhr) {
         },
         success: function (data) {
-            console.log(data);
+//            console.log(data);
             jQuery(".count-chat").html(data.trim());
             setTimeout("chatroom_count()", 60000);
 
@@ -237,7 +237,7 @@ function chatroom_loadprev() {
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
         },
         success: function (data) {
-            console.log(data);
+//            console.log(data);
             if(data.status == true){
                 if(data.type == 'empty'){
                     jQuery("#loadprev").remove();
@@ -292,7 +292,7 @@ function OnKeyCodeEvents() {
 
         } else if (event.keyCode == 13) {
             event.preventDefault();
-            console.log('192');
+//            console.log('192');
             var options = {
                 url: MyAjax.ajaxurl,
                 type: 'post',
@@ -468,13 +468,13 @@ jQuery(document).ready(function () {
 /////sendNotification /\/\/\/\/\/\/\/\
 function sendNotification(title, options) {
     if (!("Notification" in window)) {
-        //alert('Ваш браузер не поддерживает HTML Notifications, его необходимо обновить.');
+        //alert('Ва�? бра�?зер не поддерживает HTML Notifications, его необходимо обновить.');
     }
     else if (Notification.permission === "granted") {
         var notification = new Notification(title, options);
 
         function clickFunc() {
-            //alert('Пользователь кликнул на уведомление');
+            //alert('Пользователь кликн�?л на �?ведомление');
         }
 
         notification.onclick = clickFunc;
@@ -484,7 +484,7 @@ function sendNotification(title, options) {
             if (permission === "granted") {
                 var notification = new Notification(title, options);
             } else {
-                // alert('Вы запретили показывать уведомления'); // Юзер отклонил наш запрос на показ уведомлений
+                // alert('Вы запретили показывать �?ведомления'); // Юзер отклонил на�? запро�? на показ �?ведомлений
             }
         });
     } else {
@@ -523,7 +523,7 @@ function sendNotification(title, options) {
                     return item.toggle(match);
                 },
                 complete: function () {
-                    console.log('wtf');
+//                    console.log('wtf');
                     CountSearchMatches();
                 }
             }, options);
