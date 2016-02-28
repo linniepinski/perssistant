@@ -227,7 +227,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 
         new WOW().init();
 
-        var xx= jQuery('#video-background-wrapper').height()-65;
+        var xx= jQuery('#video-background-wrapper').height();
         jQuery('.d-arrow').on('click',function () {
             jQuery('html, body').animate({scrollTop: xx}, 500);
         })

@@ -6694,7 +6694,7 @@ h2.wpb_tour_heading {
 /* line 5531, ../sass/custom.scss */
 .wpb_content_element .wpb_accordion_wrapper .wpb_accordion_header, .wpb_content_element.wpb_tabs .wpb_tour_tabs_wrapper .wpb_tab {
   background: transparent !important;
-  padding: 0 !important; }
+  padding: 15px 0 0 0 !important; }
 
 /* line 5535, ../sass/custom.scss */
 .inviteme-disable {
