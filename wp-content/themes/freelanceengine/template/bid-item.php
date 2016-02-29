@@ -195,7 +195,7 @@
             </div>
         <?php if($convert->post_content){ ?>
 <div class="row">
-    <p style="text-transform: uppercase" class="title-tab-project"><span>Posted on: <?php echo date('F d,Y g:i a',strtotime(get_post($convert->id)->post_date_gmt)) ?> (<?php echo get_option('timezone_string'); ?>)</span></p>
+    <p style="text-transform: uppercase" class="title-tab-project"><span>Posted on: <?php echo date('F d,Y g:i a',strtotime(get_post($convert->id)->post_date_gmt)) ?></span></p>
             <div class="col-xs-12">
 
                 <blockquote class="comment-author-history">
