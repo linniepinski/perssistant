@@ -169,7 +169,15 @@
             <div class="form-group-mobile">
                 <label><?php _e("Your Experience", ET_DOMAIN) ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
-                <input type="text" name="experience" value="<?php echo $experience; ?>" />
+                 <div class="row">
+                    <div class="col-xs-12">
+                        <input class="form-control number is_number"
+                               type="number" min="0" max="30"
+                               name="et_experience" placeholder="<?php _e("year(s)", ET_DOMAIN); ?>"
+                               value="<?php echo $experience; ?>"/>
+                    </div>
+                </div>
+                <!--<input type="text" name="experience" value="<?php echo $experience; ?>" />-->
             </div>
             <p class="btn-warpper-bid">
                 <input type="submit" class="btn-submit btn-sumary btn-bid" value="<?php _e("Update", ET_DOMAIN) ?>" />
