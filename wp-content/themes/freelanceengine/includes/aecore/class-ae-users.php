@@ -829,10 +829,31 @@ class AE_Users
             'meta_value' => $_GET['key']
         ));
 
+        if (ae_user_role($user[0]->ID) == FREELANCER) {
+            $subject = sprintf(__("Invitation to interview", ET_DOMAIN), get_option('blogname'));
+
+            if (ae_get_option('user_confirm')) {
+
+                $message = ae_get_option('register_mail_freelancer_template');
+                $wtf = new AE_Mailing();
+                $wtf->send_freelancer_interview($user[0],$subject,$message);
+//                wp_mail($user[0]->user_email, $subject, $message, array(
+//
+//                    'user_id' => $user[0]->ID
+//
+//                ));
+            } else {
+
+
+            }
+
+        }
+
         // user had activated 
         if(self::is_activate($user[0]->ID)) {
             return false;
         }
+
 
         $de_confirm = update_user_meta($user[0]->ID, 'register_status', '');
         //sign on user after active

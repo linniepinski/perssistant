@@ -340,7 +340,14 @@ class AE_Mailing extends AE_Base
         $this->wp_mail($admin_email, $subject, $message);
 
     }
+    function send_freelancer_interview($user,$subject,$message)
+    {
+        $this->wp_mail($user->user_email, $subject, $message, array(
 
+            'user_id' => $user->ID
+
+        ));
+    }
 
     /**
      *
@@ -360,7 +367,9 @@ class AE_Mailing extends AE_Base
 
             if (ae_get_option('user_confirm')) {
 
-                $message = ae_get_option('register_mail_freelancer_template');
+                $message = ae_get_option('confirm_mail_freelancer_template');
+
+//                $message = ae_get_option('register_mail_freelancer_template');
 
             } else {
 
