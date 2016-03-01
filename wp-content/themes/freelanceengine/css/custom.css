@@ -6743,6 +6743,11 @@ background-color: #fec600;
 
 .language-selector-wpml-custom {
     display: inline-block;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+.non-login .language-selector-wpml-custom {
+    display: inline-block;
     float: left;
 }
 .language-selector-wpml-custom .missing{
