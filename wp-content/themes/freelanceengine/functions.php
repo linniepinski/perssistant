@@ -2629,6 +2629,31 @@ if (!function_exists('verify_user_otp')) {
 		exit();
 	}
 }
+add_action('wpml_custom_language_switcher', 'custom_language_switcher_perssistant');
+
+function custom_language_switcher_perssistant($args)
+{
+    $array = icl_get_languages('skip_missing=0&orderby=id&order=ASC');
+    echo '<div class="language-selector-wpml-custom">';
+    echo '<ul>';
+    foreach ($array as $lang) {
+
+        if ($lang['active'] == '1' && $args['EscapeActive']) continue;
+        echo '<li>';
+        ?>
+        <a href="<?php echo $lang['url'] ?>">
+            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate']) echo 'missing'; ?>"
+                 src="<?php echo $lang['country_flag_url'] ?>" title="<?php echo $lang['native_name'] ?>">
+        </a>
+        <?php
+        echo '</li>';
+
+    }
+    echo '</ul>';
+    echo '</div>';
+
+
+}
 
 add_action("wp_ajax_update_user_mobile", "update_user_mobile");
 add_action("wp_ajax_nopriv_update_user_mobile", "update_user_mobile");

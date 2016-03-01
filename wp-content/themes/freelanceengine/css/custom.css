@@ -6739,3 +6739,18 @@ background-color: #fec600;
 }
 
 /* rating #2*/
+
+
+.language-selector-wpml-custom {
+    display: inline-block;
+    float: left;
+}
+.language-selector-wpml-custom .missing{
+    opacity: 0.2;
+}
+.language-selector-wpml-custom li{
+    display: inline;
+}
+.language-selector-wpml-custom ul{
+    list-style: none;
+}
