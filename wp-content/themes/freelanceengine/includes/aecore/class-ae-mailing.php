@@ -960,8 +960,12 @@ class AE_Mailing extends AE_Base
          */
 
         $content = str_ireplace('[display_name]', ucfirst($user->display_name), $content);
+
         $user_profile_link = '<a href="'.home_url().'/profile'.'">'.$user->display_name.'</a>';
         $content = str_ireplace('[display_name_with_profile_link]', $user_profile_link, $content);
+
+        $profile_link = '<a href="'.home_url().'/profile#tab_project_details'.'">Dashboard</a>';
+        $content = str_ireplace('[dashboard]', $user_profile_link, $content);
 
         $content = str_ireplace('[member]', ucfirst($user->display_name), $content);
 
