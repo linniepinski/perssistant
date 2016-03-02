@@ -64,7 +64,7 @@
                 this.profile = new Models.Profile();
             }
             //new skills view     
-            console.log('vaoo');
+//            console.log('vaoo');
             new Views.Skill_Control({
                 model: this.profile,
                 el: view.$('.skill-profile-control'),
@@ -415,7 +415,7 @@
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
                             return false;
                         }
 
