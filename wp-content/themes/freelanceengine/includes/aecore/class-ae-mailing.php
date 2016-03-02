@@ -828,7 +828,7 @@ class AE_Mailing extends AE_Base
 
                         </head>
 
-                        <body style="font-family: Raleway, sans-serif;font-size: 1em;margin: 0; padding: 0; color: rgb(102, 102, 102);">
+                        <body style="font-family: Arial, sans-serif;font-size: 14px;margin: 0; padding: 0; color: rgb(102, 102, 102);">
 
                         <div style="margin: 0px auto; width:600px; border: 1px solid ' . $customize['background'] . '">
 
@@ -990,6 +990,8 @@ vertical-align: middle;';
             'key' => md5($user->user_email)
 
         ), home_url());
+        $content = str_ireplace('[confirm_link]', $confirm_link, $content);
+
         $button_styles = 'font-size: 14px;
 font-weight: 600;
 padding: 12px 30px;
@@ -1003,7 +1005,7 @@ display: block;
 width: 30%;
 margin: auto;';
 
-        $confirm_link = '<br><div class="display:block;text-align:center;"><a style="'.$button_styles.'" href="' . $confirm_link . '" >' . __("Click verification link", ET_DOMAIN) . '</a></div><br>';
+        $confirm_button = '<br><div class="display:block;text-align:center;"><a style="'.$button_styles.'" href="' . $confirm_link . '" >' . __("Click verification link", ET_DOMAIN) . '</a></div><br>';
 
 
         /**
@@ -1011,7 +1013,7 @@ margin: auto;';
 
          */
 
-        $content = str_ireplace('[confirm_link]', $confirm_link, $content);
+        $content = str_ireplace('[confirm_button]', $confirm_button, $content);
 
 
         /**
