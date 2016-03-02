@@ -8180,3 +8180,33 @@ input[type=number]:hover {
   /* line 6564, ../sass/custom.scss */
   .info-bidding .ribbon {
     width: 50px !important; } }
+
+/* rating #2*/
+
+.icon-square{
+  content: '';
+  border: 1px solid #333;
+  padding: 0 8px;
+  font-size: 6px;
+}
+.icon-square-full{
+  background-color: #fec600;
+}
+.icon-square-half{
+  background: linear-gradient(90deg, #fec600 50%, white 50%);
+}
+.rating-list{
+  padding-left: 10px;
+}
+.rating-list li{
+  list-style: none;
+}
+.rating-list li label {
+  margin-bottom: 2px;
+}
+.rating-it_2{
+  display: inline-block;
+  float: right;
+}
+
+/* rating #2*/
