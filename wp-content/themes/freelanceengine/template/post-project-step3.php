@@ -215,23 +215,28 @@
             </div>
 
             <!--// project description -->						<!-- project is featured -->
-            <div class="form-group">            	<div class="row">                    <div class="col-md-4">                        <label for="post_content" class="control-label title-plan">                            <?php _e("Is Featured", ET_DOMAIN); ?>                            <br />                            <span><?php _e("Make this post featured in listing.", ET_DOMAIN); ?></span><span><?php _e("cost: 25eur", ET_DOMAIN); ?></span>                        </label>                    </div>                                        <div class="col-sm-8">						<input type="hidden" value="0" name="et_featured">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="post_content" class="control-label title-plan"><?php _e("Is Featured", ET_DOMAIN); ?><br />
+                            <span><?php _e("Make this post featured in listing.", ET_DOMAIN); ?></span>
+                            <span><?php _e("cost: ", ET_DOMAIN); ?> <strong><?php _e("25 EUR", ET_DOMAIN); ?></strong> </span>
+                        </label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="hidden" value="0" name="et_featured">
+                        <label id="checkbox_label">
+                        <input step="5" required type="checkbox" class="form-control text-field" id="et_featured" name="et_featured" style="display:none;">
 
+                            <span class="switchery">
+                                <small></small>
+                                <span id="et_featured_checkbox"><?php _e("Yes", ET_DOMAIN); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", ET_DOMAIN); ?></span>
+                            </span>
 
-
-            <label id="checkbox_label">
-            <input step="5" required type="checkbox" class="form-control text-field" id="et_featured" name="et_featured" style="display:none;">
-
-                <span class="switchery">
-                    <small></small>
-                    <span id="et_featured_checkbox"><?php _e("Yes", ET_DOMAIN); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("No", ET_DOMAIN); ?></span>
-                </span>
-
-            </label>
-
-
-
-                    </div>                </div>            </div>            <!--// project is featured -->
+                        </label>
+                    </div>
+                </div>
+            </div><!--// project is featured -->
 
 			
 	

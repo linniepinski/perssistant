@@ -7562,37 +7562,38 @@ img.mfp-img {
 /* line 6471, ../sass/custom.scss */
 .btn-skip-custom {
   padding: 5px 24px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  background-color: #dddddd; }
 
-/* line 6475, ../sass/custom.scss */
+/* line 6477, ../sass/custom.scss */
 .post-content-error i.fa.fa-exclamation-triangle,
 .skill-error i.fa.fa-exclamation-triangle {
   margin-left: 10px;
   position: initial; }
 
-/* line 6480, ../sass/custom.scss */
+/* line 6482, ../sass/custom.scss */
 #wp-link-close {
   width: 110px !important; }
 
-/* line 6483, ../sass/custom.scss */
+/* line 6485, ../sass/custom.scss */
 .featured-modal-footer {
   text-align: center; }
 
-/* line 6486, ../sass/custom.scss */
+/* line 6488, ../sass/custom.scss */
 .featured-modal-footer .btn {
   font-size: 14px;
   font-weight: 600;
   padding: 12px 30px;
   border: none; }
 
-/* line 6493, ../sass/custom.scss */
+/* line 6495, ../sass/custom.scss */
 .browse_cont {
   position: relative !important;
   cursor: pointer !important;
   width: 94px;
   height: 30px; }
 
-/* line 6499, ../sass/custom.scss */
+/* line 6501, ../sass/custom.scss */
 .upload_btn {
   position: absolute;
   top: 0px;
@@ -7602,16 +7603,16 @@ img.mfp-img {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0; }
 
-/* line 6508, ../sass/custom.scss */
+/* line 6510, ../sass/custom.scss */
 #paymill_modal .modal-header .close {
   width: 30px;
   height: 30px; }
 
-/* line 6512, ../sass/custom.scss */
+/* line 6514, ../sass/custom.scss */
 .fa-refresh-after::after {
   content: "\f021"; }
 
-/* line 6515, ../sass/custom.scss */
+/* line 6517, ../sass/custom.scss */
 #gallery_container .message::before {
   display: inline-block;
   font-family: FontAwesome;
@@ -7625,13 +7626,13 @@ img.mfp-img {
   color: #d22e1c;
   margin-right: 5px; }
 
-/* line 6528, ../sass/custom.scss */
+/* line 6530, ../sass/custom.scss */
 .eye-count {
   font-size: 13px;
   line-height: initial;
   margin-bottom: 0; }
 
-/* line 6534, ../sass/custom.scss */
+/* line 6536, ../sass/custom.scss */
 .custom-loader {
   margin-left: 7px;
   -webkit-animation: spin 3s linear infinite;
@@ -7648,15 +7649,15 @@ img.mfp-img {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-/* line 6544, ../sass/custom.scss */
+/* line 6546, ../sass/custom.scss */
 input[type=number] {
   -moz-appearance: textfield; }
 
-/* line 6547, ../sass/custom.scss */
+/* line 6549, ../sass/custom.scss */
 input[type=number]:hover {
   -moz-appearance: spinner; }
 
-/* line 6551, ../sass/custom.scss */
+/* line 6553, ../sass/custom.scss */
 .info-bidding .ribbon:after {
   border-bottom-color: transparent;
   border-style: solid;
@@ -7667,11 +7668,11 @@ input[type=number]:hover {
   border-right-width: 25px !important;
   border-left-color: #1c647a !important;
   border-right-color: #1c647a !important; }
-/* line 6569, ../sass/custom.scss */
+/* line 6571, ../sass/custom.scss */
 .time {
   margin-left: 0; }
   
-/* line 6576, ../sass/custom.scss */
+/* line 6578, ../sass/custom.scss */
 .dropdown-backdrop {
   display: none; }
 
@@ -7772,7 +7773,7 @@ input[type=number]:hover {
   /* line 6182, ../sass/custom.scss */
   .top-header nav {
     background: transparent; } 
-    /* line 6569, ../sass/custom.scss */
+    /* line 6571, ../sass/custom.scss */
     .time {
       margin-left: 10px; } }
 
@@ -8177,7 +8178,7 @@ input[type=number]:hover {
     padding-bottom: 15px; } }
 
 @media (max-width: 768px) {
-  /* line 6564, ../sass/custom.scss */
+  /* line 6566, ../sass/custom.scss */
   .info-bidding .ribbon {
     width: 50px !important; } }
 

@@ -377,7 +377,7 @@ $("a.popup-login").trigger('click');
                             $("a.btn-project-status").html(single_text.working);
                             $target.find("button.btn-bid-status").after('<span class="ribbon"><i class="fa fa-trophy"></i></span>');
                             $target.find('.confirm').remove();
-                            $target.find('.btn-invate-on-bid').removeClass('hidden')
+                            $target.find('.btn-invate-on-bid').removeClass('hidden');
                             $(".info-bidding").find("button.btn-bid-status").remove();
                             AE.pubsub.trigger('ae:notification', {
                                 msg: res.msg,

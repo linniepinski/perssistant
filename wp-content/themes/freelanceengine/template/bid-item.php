@@ -49,7 +49,7 @@
     <div class="info-bidding fade-out fade-in bid-item bid-<?php the_ID();?> bid-item-<?php echo $project_status;?>">
 
         <div class="row">
-        <div class="col-xs-12 col-md-4">
+        <div class="col-xs-4 col-md-4">
 
 
 
@@ -65,7 +65,7 @@
 
         </div>
 
-        <div class="col-xs-12 col-md-3">
+        <div class="col-xs-3 col-md-3">
 
         	<div class="rate-exp-wrapper">
 
@@ -77,7 +77,7 @@
 
         </div>
 
-        <div class="col-xs-6 col-md-2">
+        <div class="col-xs-2 col-md-2">
 
         <?php
 
@@ -162,7 +162,7 @@
 
 
         </div>
-        <div class="col-xs-6 col-md-3">
+        <div class="col-xs-3 col-md-3">
             <?php
                 if( $user_ID == (int) $project->post_author && $project_status == 'publish' ){?>
 

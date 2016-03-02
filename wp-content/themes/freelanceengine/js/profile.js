@@ -64,7 +64,7 @@
                 this.profile = new Models.Profile();
             }
             //new skills view     
-            console.log('vaoo');
+//            console.log('vaoo');
             new Views.Skill_Control({
                 model: this.profile,
                 el: view.$('.skill-profile-control'),
