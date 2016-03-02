@@ -37,6 +37,14 @@ $isEmployer = ($user_role == "employer");
                         get_template_part('mobile/search', 'profiles-form');
                 ?>
             </div>
+            <div class="container">
+                <div class="form-group">
+<!--                    <input type="button" value="--><?php //_e("Search", ET_DOMAIN); ?><!--" class="btn-sumary btn-search-advance search-mobile">-->
+                    <button class="btn-sumary btn-search-advance search-mobile"><?php _e("Search", ET_DOMAIN); ?></button>
+
+                </div>
+            </div>
+
         </div>
         
         <div class="list-project-wrapper">

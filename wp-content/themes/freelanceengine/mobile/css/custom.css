@@ -4259,3 +4259,19 @@ footer .widget ul li a:hover {
 #right_menu.navbar-toggle > .icon-bar{
   background-color: #FFFFFF;
 }
+.custom-loader {
+  margin-left: 7px;
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite; }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }

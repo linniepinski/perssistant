@@ -50,7 +50,12 @@
             <ul class="skills-list" id="skills_list"></ul>
         </div>
     </div>
+
     <div class="form-group">
-        <input type="submit" name="submit" value="<?php _e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?>" class="hide-advance-search btn-sumary btn-search-advance">
+        <button class="btn-sumary btn-search-advance reset-mobile"><?php _e("Reset", ET_DOMAIN); ?></button>
     </div>
+
+<!--    <div class="form-group">-->
+<!--        <input type="submit" name="submit" value="--><?php //_e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?><!--" class="hide-advance-search btn-sumary btn-search-advance">-->
+<!--    </div>-->
 </form>
