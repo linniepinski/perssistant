@@ -196,8 +196,11 @@ if (function_exists('fre_user_have_notify')) {
                                 <i class="fa fa-flag-o"></i>
                             </span>
                         </a>
-                        <a href="#" id="right_menu" class="logged-in">
-                            <?php echo get_avatar($user_ID, 30); ?>
+                        <a href="#" id="right_menu" class="navbar-toggle logged-in">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </a>
                     <?php } else { ?>
                         <a class="non-login right_menu" href="<?php echo et_get_page_link('auth') ?>">

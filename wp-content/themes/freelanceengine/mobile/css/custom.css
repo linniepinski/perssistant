@@ -1393,31 +1393,34 @@ b.currency {
 
 /* line 515, ../sass/custom.scss */
 #right_menu, .right_menu {
-  display: inline-block;
-  height: 30px;
-  text-align: right;
-  vertical-align: middle;
-  margin-left: 5px;
-  margin-right: 5px; }
+  /*display: inline-block;*/
+  /*height: 30px;*/
+  /*text-align: right;*/
+  /*vertical-align: middle;*/
+  /*margin-left: 5px;*/
+  /*margin-right: 5px; */
+}
 
 /* line 523, ../sass/custom.scss */
 a.logged-in {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  overflow: hidden;
-  display: inline-block;
-  text-align: right;
-  vertical-align: middle;
-  margin-left: 5px;
-  margin-right: 5px; }
+  /*height: 30px;*/
+  /*width: 30px;*/
+  /*border-radius: 50%;*/
+  /*-moz-border-radius: 50%;*/
+  /*-webkit-border-radius: 50%;*/
+  /*overflow: hidden;*/
+  /*display: inline-block;*/
+  /*text-align: right;*/
+  /*vertical-align: middle;*/
+  /*margin-left: 5px;*/
+  /*margin-right: 5px; */
+}
 
 /* line 536, ../sass/custom.scss */
 a.logged-in img {
-  height: 30px;
-  width: 30px; }
+  /*height: 30px;*/
+  /*width: 30px; */
+}
 
 /* line 540, ../sass/custom.scss */
 #left_menu {
@@ -4241,3 +4244,18 @@ footer .widget ul li a:hover {
   /* line 835, ../sass/custom.scss */
   .cbp-spmenu-push-toright {
     left: 190px; } }
+
+#right_menu.navbar-toggle.active > .icon-bar{
+  background-color: #5d5f5e;
+}
+#right_menu.navbar-toggle.active{
+  background-color: #ddd;
+}
+#right_menu.navbar-toggle{
+  margin: 0;
+  margin-left: 10px;
+  margin-top: -5px;
+}
+#right_menu.navbar-toggle > .icon-bar{
+  background-color: #FFFFFF;
+}
