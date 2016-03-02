@@ -7676,6 +7676,14 @@ input[type=number]:hover {
 .dropdown-backdrop {
   display: none; }
 
+/* line 6582, ../sass/custom.scss */
+.number-profile-wrapper .alert {
+  text-align: center; }
+  /* line 6584, ../sass/custom.scss */
+  .number-profile-wrapper .alert #activate_without_interview {
+    display: block;
+    margin: 0 auto; }
+  
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
   /* line 451, ../sass/custom.scss */
   .mfp-img-mobile .mfp-image-holder {
@@ -7829,7 +7837,16 @@ input[type=number]:hover {
       max-width: 85px; } 
   /* line 6002, ../sass/custom.scss */
   .container.search-form-top {
-    width: 100%; } }
+    width: 100%; } 
+    /* line 6582, ../sass/custom.scss */
+    .number-profile-wrapper .alert {
+      text-align: left; }
+      /* line 6591, ../sass/custom.scss */
+      .number-profile-wrapper .alert #activate_without_interview {
+        margin: 0;
+        float: right;
+        position: relative;
+        top: -7px; } }
 
 @media (max-width: 1020px) {
   /* line 1226, ../sass/custom.scss */
