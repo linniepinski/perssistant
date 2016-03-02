@@ -794,6 +794,8 @@ class AE_Mailing extends AE_Base
     {
 
 
+
+
         $mail_header = apply_filters('ae_get_mail_header', '');
 
         if ($mail_header != '') return $mail_header;
@@ -820,32 +822,26 @@ class AE_Mailing extends AE_Base
 
         $customize = et_get_customization();
 
-
         $mail_header = '<html>
 
-                        <head>              
+                        <head>
 
                         </head>
 
-                        <body style="font-family: Arial, sans-serif;font-size: 0.9em;margin: 0; padding: 0; color: #222222;">
+                        <body style="font-family: Raleway, sans-serif;font-size: 1em;margin: 0; padding: 0; color: rgb(102, 102, 102);">
 
                         <div style="margin: 0px auto; width:600px; border: 1px solid ' . $customize['background'] . '">
 
                             <table width="100%" cellspacing="0" cellpadding="0">
 
-                            <tr style="background: ' . $customize['header'] . '; height: 63px; vertical-align: middle;">
+                            <tr style="background: #54b3db; height: 63px; vertical-align: middle;">
 
-                                <td style="padding: 10px 5px 10px 20px; width: 20%;">
+                                <td style="padding: 10px 5px 10px 20px; width: 20%;text-align:center;">
 
-                                    <img style="max-height: 100px" src="' . $logo_url . '" alt="' . get_option('blogname') . '">
-
-                                </td>
-
-                                <td style="padding: 10px 20px 10px 5px">
-
-                                    <span style="text-shadow: 0 0 1px #151515; color: #b0b0b0;">' . get_option('blogdescription') . '</span>
+                                    <img style="max-height: 100px;" src="' . $logo_url . '" alt="' . get_option('blogname') . '">
 
                                 </td>
+
 
                             </tr>
 
@@ -853,13 +849,17 @@ class AE_Mailing extends AE_Base
 
                             <tr>
 
-                                <td colspan="2" style="background: #ffffff; color: #222222; line-height: 18px; padding: 10px 20px;">';
+                                <td colspan="2" style="background: #ffffff; color: rgb(102, 102, 102)!important; line-height: 18px; padding: 10px 20px;">';
 
         return $mail_header;
 
     }
-
-
+//
+//<td style="padding: 10px 20px 10px 5px">
+//
+//<span style="text-shadow: 0 0 1px #151515; color: #b0b0b0;">' . get_option('blogdescription') . '</span>
+//
+//</td>
     /**
      * return mail footer html template
 
@@ -879,6 +879,7 @@ class AE_Mailing extends AE_Base
                         ' . get_option('admin_email') . ' <br>');
 
 
+
         $customize = et_get_customization();
 
         $copyright = apply_filters('get_copyright', ae_get_option('copyright'));
@@ -890,15 +891,15 @@ class AE_Mailing extends AE_Base
 
                         <tr>
 
-                            <td colspan="2" style="background: ' . $customize['background'] . '; padding: 10px 20px; color: #666;">
+                            <td colspan="2" style="background: ' . $customize['background'] . '; padding: 10px 20px; color:rgb(102, 102, 102);">
 
                                 <table width="100%" cellspacing="0" cellpadding="0">
 
                                     <tr>
 
-                                        <td style="vertical-align: top; text-align: left; width: 50%;">' . $copyright . '</td>
+                                        <td style="vertical-align: top; text-align: left; width: 50%;color:rgb(102, 102, 102)">' . $copyright . '</td>
 
-                                        <td style="text-align: right; width: 50%;">' . $info . '</td>
+                                        <td style="text-align: right; width: 50%; color:rgb(102, 102, 102)!important;text-decoration:none;">' . $info . '</td>
 
                                     </tr>
 
@@ -959,8 +960,17 @@ class AE_Mailing extends AE_Base
          */
 
         $content = str_ireplace('[display_name]', ucfirst($user->display_name), $content);
+        $user_profile_link = '<a href="'.home_url().'/profile'.'">'.$user->display_name.'</a>';
+        $content = str_ireplace('[display_name_with_profile_link]', $user_profile_link, $content);
 
         $content = str_ireplace('[member]', ucfirst($user->display_name), $content);
+
+        $avatar_style='border-radius: 50%;
+width:70px;
+margin-right: 30px;
+vertical-align: middle;';
+        $avatar = '<img style="'.$avatar_style.'" src="'.get_avatar_url($user_id,70).'">';
+        $content = str_ireplace('[avatar]', $avatar, $content);
 
 
         /**
@@ -980,9 +990,20 @@ class AE_Mailing extends AE_Base
             'key' => md5($user->user_email)
 
         ), home_url());
+        $button_styles = 'font-size: 14px;
+font-weight: 600;
+padding: 12px 30px;
+border: medium none;
+border-radius: 4px;
+background: rgb(41, 128, 185) none repeat scroll 0% 0%;
+text-decoration: none;
+color: rgb(255, 255, 255);
+text-align: center;
+display: block;
+width: 30%;
+margin: auto;';
 
-
-        $confirm_link = '<a href="' . $confirm_link . '" >' . __("Click here to confirm link", ET_DOMAIN) . '</a>&nbsp;&nbsp;&nbsp;&nbsp;Or copy link and paste to browser.&nbsp;&nbsp;' . $confirm_link;
+        $confirm_link = '<br><div class="display:block;text-align:center;"><a style="'.$button_styles.'" href="' . $confirm_link . '" >' . __("Click verification link", ET_DOMAIN) . '</a></div><br>';
 
 
         /**
