@@ -87,7 +87,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <div class="skill-control">
-                        <h2 class="title-search-form-top"><?php _e('Your Skills', ET_DOMAIN) ?></h2>
+                        <h2 class="title-search-form-top"><?php _e('Skills', ET_DOMAIN) ?></h2>
 
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                                 data-target="#skillsmodal">

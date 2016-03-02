@@ -43,7 +43,7 @@
         <input type="hidden" name="budget" id="budget" value= "" />
     </div>
     <div class="form-group">
-        <label><?php _e("Your Skill", ET_DOMAIN); ?></label>
+        <label><?php _e("Skills", ET_DOMAIN); ?></label>
         <div class="skill-control">
             <input class="form-control skill" type="text" id="skill" placeholder="<?php _e("Type and enter", ET_DOMAIN); ?>" name=""  autocomplete="off" spellcheck="false" >
             <input type="hidden" class="skill_filter" name="filter_skill" value="1">
