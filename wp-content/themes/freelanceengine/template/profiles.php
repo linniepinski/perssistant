@@ -102,7 +102,7 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
 
         <!-- COUNTER -->
 
-        <section class="section-wrapper section-project-home">
+        <div class="section-wrapper section-project-home">
 
             <div class="list-profile-wrapper">
 
@@ -214,7 +214,7 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
 
             </div>
 
-        </section>
+        </div>
 
         <?php         
 

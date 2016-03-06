@@ -15,12 +15,6 @@
     }
 
 ?>
-
-<style>
-    #header-wrapper.sticky, #header-wrapper.not-page-home, #header-wrapper.not-page-home .top-header{
-        background-color:rgba(84,179,219,1) !important;
-    }
-    </style>
 <header id="header-wrapper" data-size="big" <?php echo $class_trans ;?> >
 
     <div class="top-header">
@@ -141,7 +135,7 @@
                                                     
                         </div> 
                         <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
-                        <div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div>
+                        <ul class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></ul>
                             </div>
                            
 
@@ -222,7 +216,7 @@
                         </div>
                          <a class="login login-btn" href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", ET_DOMAIN) ?></a>
                              <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a>  
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div></div>
+<ul class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></ul></div>
 
                         <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
 
@@ -429,7 +423,7 @@
                         </div> 
                         <a class="login login-btn" href="<?php echo site_url(); ?>/wie-es-funktioniert/"><?php _e("WIE ES FUNKTIONIERT", ET_DOMAIN) ?></a>
                         <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("NACHRICHTEN", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a>
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div>
+<ul class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></ul>
                             </div>
                            
 
@@ -509,7 +503,7 @@
                         </div>
                          <a class="login login-btn" href="<?php echo site_url(); ?>/wie-es-funktioniert/"><?php _e("WIE ES FUNKTIONIERT", ET_DOMAIN) ?></a>
                              <a class="login login-btn" href="<?php echo site_url(); ?>/chat-room/"><?php _e("NACHRICHTEN", ET_DOMAIN) ?>&nbsp&nbsp<span class="badge count-chat"></span></a> 
-<div class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></div> </div>
+<ul class="sitelang"><?php pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></ul> </div>
 
                         <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
 

@@ -160,7 +160,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
             <div class="modal-body">
                 <form id="quit_project_form" class="quit_project_form">
                     <div class="form-group">
-                        <label for="user_login"><?php _e('Please give us a clear report', ET_DOMAIN) ?></label>
+                        <label><?php _e('Please give us a clear report', ET_DOMAIN) ?></label>
                         <textarea name="comment_content"></textarea>
                     </div>
                     <div class="clearfix"></div>

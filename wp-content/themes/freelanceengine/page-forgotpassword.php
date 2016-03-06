@@ -94,7 +94,7 @@ get_header();
 
 					<div class="form-group">
 
-						<label for="forgot_user_email"><?php _e('Enter your email here', ET_DOMAIN) ?></label>
+						<label for="user_email"><?php _e('Enter your email here', ET_DOMAIN) ?></label>
 
 						<input type="text" class="form-control" id="user_email" name="user_email" />
 
