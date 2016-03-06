@@ -42,7 +42,7 @@
     <div class="form-group">
         <label><?php _e("Hourly Rate", ET_DOMAIN); ?></label>
         <input id="hour_rate" type="text" name="hour_rate" class="slider-ranger" value="" data-slider-min="<?php echo $min_value; ?>" 
-               data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5" 
+               data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5"
                data-slider-value="[<?php echo $min_value; ?>,<?php echo $max_value; ?>]"
                /> 
         <input type="hidden" name="et_hour_rate" id="et_hour_rate" value= "" />
@@ -56,6 +56,9 @@
         </div>
     </div>
     <div class="form-group">
-        <input type="submit" name="submit" value="<?php _e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?>" class="hide-advance-search btn-sumary btn-search-advance">
+        <button class="btn-sumary btn-search-advance reset-mobile"><?php _e("Reset", ET_DOMAIN); ?></button>
     </div>
+<!--    <div class="form-group">-->
+<!--        <input type="submit" name="submit" value="--><?php //_e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?><!--" class="hide-advance-search btn-sumary btn-search-advance">-->
+<!--    </div>-->
 </form>

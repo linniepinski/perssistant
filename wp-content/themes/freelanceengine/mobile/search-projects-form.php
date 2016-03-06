@@ -43,14 +43,19 @@
         <input type="hidden" name="budget" id="budget" value= "" />
     </div>
     <div class="form-group">
-        <label><?php _e("Your Skill", ET_DOMAIN); ?></label>
+        <label><?php _e("Skills", ET_DOMAIN); ?></label>
         <div class="skill-control">
             <input class="form-control skill" type="text" id="skill" placeholder="<?php _e("Type and enter", ET_DOMAIN); ?>" name=""  autocomplete="off" spellcheck="false" >
             <input type="hidden" class="skill_filter" name="filter_skill" value="1">
             <ul class="skills-list" id="skills_list"></ul>
         </div>
     </div>
+
     <div class="form-group">
-        <input type="submit" name="submit" value="<?php _e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?>" class="hide-advance-search btn-sumary btn-search-advance">
+        <button class="btn-sumary btn-search-advance reset-mobile"><?php _e("Reset", ET_DOMAIN); ?></button>
     </div>
+
+<!--    <div class="form-group">-->
+<!--        <input type="submit" name="submit" value="--><?php //_e("HIDE ADVANCED SEARCH", ET_DOMAIN); ?><!--" class="hide-advance-search btn-sumary btn-search-advance">-->
+<!--    </div>-->
 </form>

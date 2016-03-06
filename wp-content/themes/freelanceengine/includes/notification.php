@@ -78,8 +78,9 @@ class Fre_Notification extends AE_PostAction
         $this->add_action('ae_insert_bid', 'newBid', 10, 2);
         
         // catch action a bid accepted and notify freelancer
+        $this->add_action('fre_delete_bid', 'bidDeleted');
         $this->add_action('fre_accept_bid', 'bidAccepted');
-        
+
         // add action when employer complete project
         $this->add_action('fre_complete_project', 'completeProject', 10, 2);
         
@@ -154,7 +155,37 @@ class Fre_Notification extends AE_PostAction
         );
         return $this->insert($notification);
     }
-    
+
+    /**
+     * notify freelancer when his bid was accepted by employer
+     * @param int $bid_id the id of bid
+     * @since 1.2
+     * @author Dakachi
+     */
+    function bidDeleted($bid_id) {
+        $bid = get_post($bid_id);
+        if (!$bid || is_wp_error($bid)) return;
+
+        $project_id = $bid->post_parent;
+        $project = get_post($project_id);
+        if (!$project || is_wp_error($project)) return;
+
+        $content = 'type=bid_deleted&project=' . $project_id;
+
+        // insert notification
+        $notification = array(
+            'post_type' => $this->post_type,
+            'post_parent' => $project_id,
+            'post_content' => $content,
+            'post_excerpt' => $content,
+            'post_status' => 'publish',
+            'post_author' => $bid->post_author,
+            'post_title' => sprintf(__("Bid on project %s was deleted", ET_DOMAIN) , get_the_title($project->ID))
+        );
+        return $this->insert($notification);
+    }
+
+
     /**
      * notify freelancer after employer complete a project
      * @param int $project_id
@@ -380,7 +411,20 @@ class Fre_Notification extends AE_PostAction
                 break;
                 
                 // notify freelancer when his bid was accepted
-                
+
+            case 'bid_deleted':
+                $project_author = get_post_field('post_author', $project);
+                $author = '<a class="user-link" href="'. get_author_posts_url($project_author) .'" ><span class="avatar-notification">
+                            ' . get_avatar($project_author, 45) . '
+                        </span>&nbsp;&nbsp;
+                        <span class="date-notification name">
+                            ' . get_the_author_meta('display_name', $project_author) . '
+                        </span>
+                        </a>';
+                $content.= sprintf(__("Your bid at %s was deleted by %s", ET_DOMAIN) , $project_link, $author);
+                break;
+
+            // notify freelancer when employer complete a project
                 
             case 'bid_accept':
                 $project_author = get_post_field('post_author', $project);

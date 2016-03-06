@@ -31,8 +31,15 @@ et_get_mobile_header();
                     get_template_part('mobile/search', 'projects-form');
                 ?>
             </div>
+            <div class="container">
+                <div class="form-group">
+                    <button class="btn-sumary btn-search-advance search-mobile"><?php _e("Search", ET_DOMAIN); ?></button>
+
+                </div>
+            </div>
         </div>
-        
+
+
         <div class="list-project-wrapper">
             <?php get_template_part('mobile/list', 'projects'); ?>
         </div>

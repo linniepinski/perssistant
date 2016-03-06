@@ -149,7 +149,8 @@ class ET_Admin extends AE_Base
             
             // default confirm mail template
             'confirm_mail_template' => '<p>Hello [display_name],</p><p>You have successfully registered an account with &nbsp;&nbsp;[blogname].&nbsp;Here is your account information:</p><ol><li>Username: [user_login]</li><li>Email: [user_email]</li></ol><p>Please click the link below to confirm your email address.</p><p>[confirm_link]</p><p>Thank you and welcome to [blogname].</p>',
-            
+            'confirm_mail_freelancer_template' => '<p>Hello [display_name],</p><p>You have successfully registered an account with &nbsp;&nbsp;[blogname].&nbsp;Here is your account information:</p><ol><li>Username: [user_login]</li><li>Email: [user_email]</li></ol><p>Please click the link below to confirm your email address.</p><p>[confirm_link]</p><p>Thank you and welcome to [blogname].</p>',
+
             // default confirmed mail template
             'confirmed_mail_template' => "<p>Hi [display_name],</p><p>Your email address has been successfully confirmed.</p><p>Thank you and welcome to [blogname].</p>",
             
@@ -1622,7 +1623,26 @@ class ET_Admin extends AE_Base
                         )
                     )
                 ) ,
-                
+                array(
+                    'args' => array(
+                        'title' => __("Confirm Mail Freelancer Template", ET_DOMAIN) ,
+                        'id' => 'confirm-freelancer-mail',
+                        'class' => 'payment-gateway',
+                        'name' => '',
+                        'desc' => __("Send to users after he registered successfull when option confirm email is on.", ET_DOMAIN),
+                        'toggle' => true
+                    ) ,
+                    'fields' => array(
+                        array(
+                            'id' => 'confirm_mail_freelancer_template',
+                            'type' => 'editor',
+                            'title' => __("Confirmed Mail Freelancer", ET_DOMAIN) ,
+                            'name' => 'confirm_mail_freelancer_template',
+                            'class' => '',
+                            'reset' => 1
+                        )
+                    )
+                ) ,
                 array(
                     'args' => array(
                         'title' => __("Confirmed Mail Template", ET_DOMAIN) ,

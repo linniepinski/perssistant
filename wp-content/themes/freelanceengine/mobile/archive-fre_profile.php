@@ -14,19 +14,19 @@ et_get_mobile_header();
             <?php endif; ?>
         </div>
     </div>
-    <!-- <div class="advanced-search-wrapper">
+    <div class="advanced-search-wrapper">
         <div class="search-normal-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-8"> 
+                    <div class="col-xs-8">
                         <span class="title-advance-search"><?php _e("Search Advanced", ET_DOMAIN); ?></span>
                     </div>
                     <div class="col-xs-4"><a href="#" class="hide-search-advance"><?php _e("Cancel", ET_DOMAIN); ?></a></div>
                 </div>
             </div>
         </div>
-        
-    </div> -->
+
+    </div>
     <div class="profiles-wrapper">
         <div class="search-normal-wrapper">
             <div class="container-fluid">
@@ -36,13 +36,20 @@ et_get_mobile_header();
                         <input type="text" name="s" value="" placeholder="<?php _e("Type keyword", ET_DOMAIN); ?>" class="search-normal-input keyword search">
                     </div>
                     <div class="col-xs-4"><a href="#" class="show-search-advance"><?php _e("Advanced", ET_DOMAIN); ?></a></div>
-                    <div class="col-xs-4"><a href="#" class="hide-search-advance" style="display:none;"><?php _e("Cancel", ET_DOMAIN); ?></a></div>
+                    <div class="col-xs-4" style="display:none;"><a href="#" class="hide-search-advance"><?php _e("Cancel", ET_DOMAIN); ?></a></div>
                 </div>
             </div>
             <div class="container" id="advance-search" style="display:none; margin-top: 5px;">
                 <?php
                     get_template_part('mobile/search', 'profiles-form');
                 ?>
+            </div>
+            <div class="container">
+                <div class="form-group">
+<!--                    <input type="button" value="--><?php //_e("Search", ET_DOMAIN); ?><!--" class="btn-sumary btn-search-advance search-mobile">-->
+                    <button class="btn-sumary btn-search-advance search-mobile"><?php _e("Search", ET_DOMAIN); ?></button>
+
+                </div>
             </div>
         </div>
         

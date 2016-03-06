@@ -26,14 +26,11 @@ $last_post = array_shift($interview_post->posts);
 $interview_meta = get_post_meta($last_post->ID);
 
 $post_id = $last_post->ID;
-if ($post_id)
-
-
-
-
+//if ($post_id){
+//
+//}
 
 get_header();
-
 
 
 ?>
@@ -134,32 +131,7 @@ get_header();
                         </div>
 
 
-                        <script type="text/javascript">
-                            jQuery(function () {
-                                var icons_option = {
-                                    time: "fa fa-clock-o",
-                                    date: "fa fa-calendar",
-                                    up: "fa fa-arrow-up",
-                                    down: "fa fa-arrow-down",
-                                    previous: "fa fa-arrow-left",
-                                    next: "fa fa-arrow-right"
-                                };
-                                jQuery('#datetimepicker1').datetimepicker({
-                                    icons: icons_option,
-                                    minDate: '<?php echo date('m/d/Y',time())?>'
-                                });
-                                jQuery('#datetimepicker2').datetimepicker({
-                                    icons: icons_option,
-                                    minDate: '<?php echo date('m/d/Y',time())?>'
 
-                                });
-                                jQuery('#datetimepicker3').datetimepicker({
-                                    icons: icons_option,
-                                    minDate: '<?php echo date('m/d/Y',time())?>'
-
-                                });
-                            });
-                        </script>
                         <br>
 
 
@@ -195,3 +167,29 @@ get_header();
 get_footer();
 
 ?>
+<script type="text/javascript">
+    jQuery(function () {
+        var icons_option = {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down",
+            previous: "fa fa-arrow-left",
+            next: "fa fa-arrow-right"
+        };
+        jQuery('#datetimepicker1').datetimepicker({
+            icons: icons_option,
+            minDate: '<?php echo date('m/d/Y',time())?>'
+        });
+        jQuery('#datetimepicker2').datetimepicker({
+            icons: icons_option,
+            minDate: '<?php echo date('m/d/Y',time())?>'
+
+        });
+        jQuery('#datetimepicker3').datetimepicker({
+            icons: icons_option,
+            minDate: '<?php echo date('m/d/Y',time())?>'
+
+        });
+    });
+</script>
