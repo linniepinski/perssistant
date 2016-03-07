@@ -94,7 +94,7 @@ get_header();
                                 if (get_option('interview_system') == 'false') {
                                     ?>
                                     <button id="activate_without_interview"
-                                            class="btn btn-info pull-right">Activate without interview
+                                            class="btn btn-info">Activate without interview
                                     </button>
                                     <?php
                                 }

@@ -29,7 +29,7 @@ class WPBakeryShortCode_fre_block_project extends WPBakeryShortCode {
 
         ?>
         <!-- COUNTER -->
-        <section class="section-wrapper  section-project-home tab-project-home">
+        <div class="section-wrapper section-project-home tab-project-home">
             <div class="list-project-wrapper">
                 <div class="row">
                     <div class="col-md-12">
@@ -91,7 +91,7 @@ class WPBakeryShortCode_fre_block_project extends WPBakeryShortCode {
 
                 </div>
             </div>
-        </section>
+        </div>
         <?php         
         $output = ob_get_clean();
         /* ================  Render Shortcodes ================ */
