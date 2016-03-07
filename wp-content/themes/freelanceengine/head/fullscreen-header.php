@@ -17,7 +17,9 @@ if (is_page_template('page-home.php')) {
     $class_trans = 'class="not-page-home"';
 
 }
-
+$current_lang = '';
+if (ICL_LANGUAGE_CODE == 'en') $current_lang = '';
+else $current_lang = '/'.ICL_LANGUAGE_CODE;
 ?>
 
 <style>
@@ -88,7 +90,7 @@ if (is_page_template('page-home.php')) {
 
                                 <div class="navbar-left links-wrap">
                                     <a class="login login-btn"
-                                       href="<?php echo site_url(); ?>/submit-project/"><?php _e("POST A PROJECT", 'header') ?></a>
+                                       href="<?php echo site_url().$current_lang; ?>/submit-project/"><?php _e("POST A PROJECT", 'header') ?></a>
 
 
                                     <div class="dropdown-info-acc-wrapper">
@@ -127,7 +129,7 @@ if (is_page_template('page-home.php')) {
                                                     <li role="presentation">
 
                                                     <a tabindex="-1" role="menuitem"
-                                                       href="<?php echo site_url(); ?>/projects/" class="se-proj">
+                                                       href="<?php echo site_url().$current_lang; ?>/projects/" class="se-proj">
 
                                                         <?php _e("Search Projects", 'header') ?>
 
@@ -140,7 +142,7 @@ if (is_page_template('page-home.php')) {
                                                 <li role="presentation">
 
                                                     <a role="menuitem" tabindex="-1"
-                                                       href="<?php echo site_url(); ?>/profiles/" class="se-free">
+                                                       href="<?php echo site_url().$current_lang; ?>/profiles/" class="se-free">
 
                                                         <?php _e("Search Virtual Assistant", 'header') ?>
 
@@ -154,27 +156,27 @@ if (is_page_template('page-home.php')) {
 
                                     </div>
                                     <a class="login login-btn"
-                                       href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
+                                       href="<?php echo site_url().$current_lang; ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                                 </div>
                                 <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
-                                <a href="<?php echo site_url(); ?>/login"
+                                <a href="<?php echo site_url().$current_lang; ?>/login"
                                    class="login login-btn"><?php _e("LOGIN", 'header') ?></a>
 
-                                <a href="<?php echo site_url(); ?>/sign-up"
+                                <a href="<?php echo site_url().$current_lang; ?>/sign-up"
                                    class="register register-btn"><?php _e("SIGN UP", 'header') ?></a>
 
                                 <a class="register register-btn highlighted"
-                                   href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
+                                   href="<?php echo site_url().$current_lang; ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
                             </div>
 
 
                         <?php } else { ?>
                         <div class="navbar-left links-wrap">
                             <?php if (ae_user_role() == FREELANCER) { ?>
-                                <a href="<?php echo site_url(); ?>/projects/"
+                                <a href="<?php echo site_url().$current_lang; ?>/projects/"
                                    class="login login-btn"><?php _e("FIND A PROJECT", 'header') ?></a>
                             <?php } else { ?>
-                                <a href="<?php echo site_url(); ?>/submit-project/"
+                                <a href="<?php echo site_url().$current_lang; ?>/submit-project/"
                                    class="login login-btn"><?php _e("POST A PROJECT", 'header') ?></a>
                             <?php } ?>
 
@@ -212,7 +214,7 @@ if (is_page_template('page-home.php')) {
                                             <li role="presentation">
 
                                                 <a role="menuitem" tabindex="-1"
-                                                   href="<?php echo site_url(); ?>/projects/" class="se-proj">
+                                                   href="<?php echo site_url().$current_lang; ?>/projects/" class="se-proj">
 
                                                     <?php _e("Search Projects", 'header') ?>
 
@@ -225,7 +227,7 @@ if (is_page_template('page-home.php')) {
 
                                         <li role="presentation">
 
-                                            <a role="menuitem" tabindex="-1" href="<?php echo site_url(); ?>/profiles/"
+                                            <a role="menuitem" tabindex="-1" href="<?php echo site_url().$current_lang; ?>/profiles/"
                                                class="se-free">
 
                                                 </i><?php _e("Search Virtual Assistant", 'header') ?>
@@ -240,9 +242,9 @@ if (is_page_template('page-home.php')) {
 
                             </div>
                             <a class="login login-btn"
-                               href="<?php echo site_url(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
+                               href="<?php echo site_url().$current_lang; ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                             <a class="login login-btn"
-                               href="<?php echo site_url(); ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>
+                               href="<?php echo site_url().$current_lang; ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>
                                 &nbsp&nbsp<span class="badge count-chat"></span></a>
                             <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
                             <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
@@ -336,7 +338,7 @@ if (is_page_template('page-home.php')) {
 
                                         <li role="presentation">
 
-                                            <a href="<?php echo site_url(); ?>/profile/" class="trigger-notification">
+                                            <a href="<?php echo site_url().$current_lang; ?>/profile/" class="trigger-notification">
 
                                                 <i class="fa fa-flag"></i>
 
@@ -375,7 +377,7 @@ if (is_page_template('page-home.php')) {
 
                             </div>
                             <a class="register register-btn highlighted"
-                               href="<?php echo site_url(); ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
+                               href="<?php echo site_url().$current_lang; ?>/perssistant-hiring-services/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>
 
 
                             <?php } ?>
