@@ -242,16 +242,16 @@
 	
 			
 			
-		<div class="modal modal-vcenter fade in" id="modal">
-			<div class="modal-dialog top-margin">
-				<div class="modal-content" style="margin-top:150px; height:350px;">
+		<div class="modal modal-vcenter fade in" id="modal_featured">
+			<div class="modal-dialog modal_featured_margin">
+				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span aria-hidden="true" style="font-size: 18px;">X</span></button>
-						<h4 class="modal-title text-center text-color-popup" style="font-size:30px;">Featured Project</h4>
-						<hr>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span aria-hidden="true">X</span></button>
+						<h4 class="modal-title text-center text-color-popup">Featured Project</h4>
+						<hr class="hidden-xs">
 					</div>
 					<div class="modal-body">
-						<h4 class="text-center" style="font-size:25px; padding-top:50px;">The cost for a premium job is 25 eur, to be paid after confirmation of your job.</h4>
+						<h4 class="text-center">The cost for a premium job is 25 eur, to be paid after confirmation of your job.</h4>
 					</div>
                     <div class="modal-footer featured-modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
@@ -265,7 +265,7 @@
 		<script type="text/javascript">	
 			jQuery('document').ready(function(){
 				jQuery("#et_featured").click(function(){
-					if (jQuery("#et_featured").is(':checked')) { jQuery('#modal').modal('show'); }
+					if (jQuery("#et_featured").is(':checked')) { jQuery('#modal_featured').modal('show'); }
 				});
                 jQuery(".featured-cancel").on('click', function(){
                     jQuery("#et_featured").removeAttr('checked');

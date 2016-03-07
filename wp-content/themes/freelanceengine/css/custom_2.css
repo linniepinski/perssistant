@@ -27,3 +27,20 @@
 }
 
 /* rating #2*/
+#modal_featured{
+    padding-top: 20px;
+}
+#modal_featured .modal-body h4{
+    font-size:25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+#modal_featured .modal-title{
+    font-size:30px;
+}
+#modal_featured .modal-header{
+    font-size: 18px;
+}
+#modal_featured .modal-content{
+    margin-top:150px;
+}
