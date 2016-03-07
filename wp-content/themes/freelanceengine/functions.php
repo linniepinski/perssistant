@@ -1850,6 +1850,12 @@ class ET_FreelanceEngine extends AE_Base
 
         ) , ET_VERSION);
 
+        // theme custom_2.css
+        $this->add_style('custom_2', get_template_directory_uri() . '/css/custom_2.css', array(
+
+            'bootstrap'
+
+        ) , ET_VERSION);
         
 
         // style.css
