@@ -468,13 +468,13 @@ jQuery(document).ready(function () {
 /////sendNotification /\/\/\/\/\/\/\/\
 function sendNotification(title, options) {
     if (!("Notification" in window)) {
-        //alert('Ва�? бра�?зер не поддерживает HTML Notifications, его необходимо обновить.');
+        //alert('Ва�? бра�?зер не поддерживает HTML Notifications, его необходимо обновить.');
     }
     else if (Notification.permission === "granted") {
         var notification = new Notification(title, options);
 
         function clickFunc() {
-            //alert('Пользователь кликн�?л на �?ведомление');
+            //alert('Пользователь кликн�?л на �?ведомление');
         }
 
         notification.onclick = clickFunc;
@@ -484,7 +484,7 @@ function sendNotification(title, options) {
             if (permission === "granted") {
                 var notification = new Notification(title, options);
             } else {
-                // alert('Вы запретили показывать �?ведомления'); // Юзер отклонил на�? запро�? на показ �?ведомлений
+                // alert('Вы запретили показывать �?ведомления'); // Юзер отклонил на�? запро�? на показ �?ведомлений
             }
         });
     } else {
@@ -581,7 +581,8 @@ jQuery.fn.dataLoader = function (options) {
     }
 
     if (typeof(options.loader) == 'undefined') {
-        options.loader = '/wp-content/plugins/Perssistant-Chat/js/ajax-loader.gif';
+        options.loader = '/wp-content/themes/freelanceengine/includes/aecore/assets/img/loading.gif';
+        //options.loader = '/wp-content/plugins/Perssistant-Chat/js/ajax-loader.gif';
     }
 
     if (typeof(options.opacity) == 'undefined') {
@@ -603,6 +604,7 @@ jQuery.fn.dataLoader = function (options) {
     var blinder = jQuery('<div></div>')
         .css('opacity', options.opacity)
         .css('background-color', options.color)
+        .css('background-size', '40px')
         .css('background-image', 'url(' + options.loader + ')')
         .css('background-repeat', 'no-repeat')
         .css('background-position', '50% 50%')
