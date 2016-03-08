@@ -415,14 +415,14 @@
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
                             jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
 
 
                                 if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
                                     jQuery('.post-content-error').html('');
                                 } else {
-                                    jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+                                    jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
                                 }
                             })
                             return false;
