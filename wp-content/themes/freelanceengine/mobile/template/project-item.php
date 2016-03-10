@@ -12,7 +12,7 @@ $author_name = get_the_author_meta('display_name', $post->post_author);
                 <?php echo get_avatar($post->post_author, 25); ?>
             </a>
         </div>
-        <a href="<?php the_permalink(); ?>" class="title-project" title="<?php the_title(); ?>">
+        <a href="<?php echo get_the_permalink(); ?>" class="title-project" title="<?php the_title(); ?>">
             <?php the_title(); ?>
         </a>
         <?php if($current->et_featured) { ?>
@@ -23,10 +23,5 @@ $author_name = get_the_author_meta('display_name', $post->post_author);
     <div class="info-bottom">
         <span class="name-author"><?php printf(__("Posted by %s", ET_DOMAIN), $author_name); ?></span>
         <span class="price-project"><?php echo $current->budget; ?></span>
-    </div>
-    <div class="button-wrap">
-        <a href="<?php echo get_permalink();?>" class="btn-sumary btn-apply-project">
-           <?php _e('Apply',ET_DOMAIN);?>
-        </a>
     </div>
 </li>
