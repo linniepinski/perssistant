@@ -29,7 +29,7 @@
                     } else {
                         the_excerpt();
                 ?>
-                <a href="<?php the_permalink(); ?>" class="read-more">
+                <a href="<?php echo get_the_permalink(); ?>" class="read-more">
                     <?php _e("READ MORE",ET_DOMAIN) ?><i class="fa fa-arrow-circle-o-right"></i>
                 </a>
                 <?php } ?>
