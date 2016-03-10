@@ -415,14 +415,13 @@
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
                             jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
-
 
                                 if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
                                     jQuery('.post-content-error').html('');
                                 } else {
-                                    jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
                                 }
                             })
                             return false;
@@ -1049,18 +1048,20 @@
 })(jQuery, window.AE.Models, window.AE.Collections, window.AE.Views);
 
 jQuery(document).ready(function () {
-    if (window.location.pathname == '/profile/') {
+    if (window.location.pathname == '/profile/' && ae_globals.ae_is_mobile == '0') {
         //setInterval("start()", 2500);
         setTimeout("start_refresh_count()", 3500);
         //start_refresh_count();
     }
 });
 function start_refresh_count() {
-    if (jQuery('section').hasClass('freelancer')) {
-        refreshcountcompleteFreelancer();
-    }
-    else {
-        refreshcountcompleteEmployer();
+    if (ae_globals.ae_is_mobile == '0'){
+        if (jQuery('section').hasClass('freelancer')) {
+            refreshcountcompleteFreelancer();
+        }
+        else {
+            refreshcountcompleteEmployer();
+        }
     }
 }
 function focus_field(id, tab, container) {
@@ -1263,7 +1264,6 @@ function AnimRes(currentPer, percent) {
 
 jQuery(document).ready(function () {
     jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
-
 
         if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
             jQuery('.post-content-error').html('');
