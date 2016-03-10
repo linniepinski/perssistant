@@ -5,7 +5,7 @@
      *
      */
     Views.Profile = Backbone.View.extend({
-        el: '.list-profile-wrapper',
+        el: '.list-profile-wrapper , .section-user-profile',
         events: {
             // user account details
             'submit form#account_form': 'saveAccountDetails',
@@ -17,6 +17,7 @@
             'submit form#bank_form': 'saveBankDetails',
             // open modal add portfolio
             'click a.add-portfolio': 'openModalPorfolio',
+            'click a.add-porfolio-button': 'openModalPorfolio',
             // open modal add CV
             'click a.add-cv': 'openModalCv',
             // open modal change password
@@ -432,7 +433,9 @@
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
-                        start_refresh_count();
+                        if (ae_globals.ae_is_mobile == '0') {
+                            start_refresh_count();
+                        }
                         view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
                         // trigger event process authentication
@@ -692,6 +695,7 @@
          * init view setup Block Ui and Model User
          */
         initialize: function () {
+            console.log('fdsfsdf');
             this.user = AE.App.user;
             this.blockUi = new Views.BlockUi();
             this.LoadingButtonNew = new Views.LoadingButtonNew();
@@ -741,6 +745,8 @@
                     }
                 });
             }
+            console.log('end');
+
         },
         setModel: function (model) {
             this.portfolio = model; //new Models.Portfolio();
@@ -1049,9 +1055,7 @@
 
 jQuery(document).ready(function () {
     if (window.location.pathname == '/profile/' && ae_globals.ae_is_mobile == '0') {
-        //setInterval("start()", 2500);
         setTimeout("start_refresh_count()", 3500);
-        //start_refresh_count();
     }
 });
 function start_refresh_count() {
@@ -1065,7 +1069,6 @@ function start_refresh_count() {
     }
 }
 function focus_field(id, tab, container) {
-    console.log(container);
     if (container === undefined) {
         current_field = jQuery("[id='" + id + "']").focus();
         if (jQuery("[href='#" + tab + "']").parent().hasClass('active')) {
@@ -1341,7 +1344,7 @@ jQuery('#create_cv').on('submit', function (e) {
 });
 /* delete cv*/
 
-jQuery('.add-porfolio-button').on('click', '#del_cv', function (e) {
+jQuery('.add-porfolio-buttonhfghgfh').on('click', '#del_cv', function (e) {
 
     e.preventDefault();
     jQuery.ajax({

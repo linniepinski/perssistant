@@ -563,7 +563,7 @@ function sendNotification(title, options) {
 }).call(this);
 //// search contacts end \/\/\/\/\/\/\/\/
 
-//// loader hover /\/\//\/\/\/
+//// loader hover /\/\//\/\/\/TODO: remove... not used
 jQuery.fn.dataLoader = function (options) {
 
     if (!this.length) return this;

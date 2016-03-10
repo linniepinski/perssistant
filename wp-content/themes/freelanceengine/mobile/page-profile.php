@@ -12,6 +12,7 @@
             'showposts'   => 1,
             'post_status' => 'publish'
         ));
+//var_dump($posts);
     if(!empty($posts) && isset($posts[0])){
         $profile = $post_object->convert($posts[0]);    
     } else {
@@ -19,6 +20,7 @@
     }
     //get profile skills
     $current_skills = get_the_terms( $profile, 'skill' );
+//var_dump($profile);
     //define variables:
     $skills         = isset($profile->tax_input['skill']) ? $profile->tax_input['skill'] : array() ; 
     $job_title      = isset($profile->et_professional_title) ? $profile->et_professional_title : '';
