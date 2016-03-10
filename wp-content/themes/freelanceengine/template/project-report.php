@@ -43,12 +43,8 @@ $message_object = new Fre_Report('fre_report');
                             $reporter = $post->post_author;
                         }
                         $reporter_name = "<strong>".get_the_author_meta( 'display_name', $reporter ) ."</strong>";
-                        if($reporter == $post->post_author) {
-                            printf(__("This project has been closed by %s.", ET_DOMAIN), $reporter_name);
-                        }else{
-                            printf(__("This project has been quit by %s.", ET_DOMAIN), $reporter_name);
-                        }
-                        
+
+                        _e("This project has been paused.", ET_DOMAIN);
                         echo '<br/>';
                         _e("We will review both sides' reports to have the right decision. Please take your time to submit the report. All proofs such as emails, contracts, files,...will be accepted.", ET_DOMAIN);
                         echo '</br/>';

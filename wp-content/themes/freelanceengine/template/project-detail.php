@@ -92,7 +92,7 @@ if ($project_status == 'publish') {
                     <!--STATUS-->
                     <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 text-right  " style="padding:0; margin:0;">
                     <?php
-                    if(current_user_can( 'manage_options' ) && false) {
+                    if(current_user_can( 'manage_options' )) {
                         get_template_part( 'template/admin', 'project-control' );
                     }elseif( !$user_ID && $project_status == 'publish'){ ?>
                         <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid',ET_DOMAIN);?></a>  
