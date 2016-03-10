@@ -92,7 +92,7 @@
                         </label>
                     </div>
                     <div class="col-sm-8">
-                        <input step="1" min="1" required type="number" class="input-item form-control text-field is_number" id="et_budget" placeholder="<?php _e("Budget", ET_DOMAIN); ?>" name="et_budget">
+                        <input min="1" required type="number" class="input-item form-control text-field is_number" id="et_budget" placeholder="<?php _e("Budget", ET_DOMAIN); ?>" name="et_budget">
                     </div>
                 </div>
             </div>

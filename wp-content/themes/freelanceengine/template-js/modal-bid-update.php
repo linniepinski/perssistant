@@ -56,7 +56,7 @@ global $wp_query, $ae_post_factory, $user_ID, $post; ?><!-- MODAL BIG -->
 
 
                                 <input type="number" name="bid_budget" id="bid_budget_update"
-                                       class="form-control required number" min="0" value="<?php echo $bid_update; ?>"/></div>
+                                       class="form-control required number" min="1" value="<?php echo $bid_update; ?>"/></div>
                             <div class="clearfix"></div>
 
                             <input type="hidden" name="post_parent" value="<?php echo  $post_the_id; ?>" /> <input type="hidden"
