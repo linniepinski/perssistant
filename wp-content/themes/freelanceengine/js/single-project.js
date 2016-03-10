@@ -5,7 +5,7 @@
             el: 'body.single',
             events: {
                 'click a.btn-apply-project': 'modalBidProject',
-                //'click button.btn-accept-bid': 'confirmShow',                
+                'click button.btn-accept-bid': 'confirmShow',
                 'click button.btn-apply-project-item': 'confirmShow',
                 'click a.btn-complete-project': 'showReviewModal',
                 'click .confirm .btn-agree': 'acceptBid',
