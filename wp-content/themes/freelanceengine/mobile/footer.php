@@ -9,6 +9,7 @@
 
 		//if( is_page_template( 'page-profile.php' ) ){
 			get_template_part( 'mobile/template-js/modal' , 'add-portfolio' );
+			get_template_part( 'mobile/template-js/modal' , 'edit-portfolio' );
 		//}
 		
 		if(is_singular(PROJECT)){

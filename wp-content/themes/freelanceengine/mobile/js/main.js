@@ -46,7 +46,7 @@
         });
 
         function disableOther(button) {    
-            if (button !== 'showLeftPush') {        
+            if (showLeftPush && button !== 'showLeftPush') {        
                 classie.toggle(showLeftPush, 'disabled');    
             }    
             if (button !== 'showRightPush') {        
@@ -98,6 +98,8 @@
                 $('.comment-list-wrapper').fadeIn(300);
             });
         });
+
+
 
         $(".chosen").each(function(){
             var data_chosen_width = $(this).attr('data-chosen-width'),
@@ -276,30 +278,32 @@
         /**
          * list porfolio control
          */
-        if ($('.portfolio-container').length > 0) {
-            var $container = $('.portfolio-container');
+        if ($('.edit-portfolio-container').length > 0) {
+            var $container = $('.edit-portfolio-container');
             //portfolio list control
-            if ($('.portfolio-container').find('.postdata').length > 0) {
-                var postdata = JSON.parse($container.find('.postdata').html()),
-                    collection = new Collections.Portfolios(postdata);
+
+            if ($('.edit-portfolio-container').find('.portfolios-data').length > 0) {
+                var postdata = JSON.parse($container.find('.portfolios-data').html());
+                this.portfolios_collection = new Collections.Portfolios(postdata);
             } else {
-                var collection = new Collections.Portfolios();
+                this.portfolios_collection = new Collections.Portfolios();
             }
             /**
-             * init list blog view
+             * init list portfolio view
              */
             new ListPortfolios({
                 itemView: PortfolioItem,
-                collection: collection,
-                el: $container.find('.list-porfolio-author')
+                collection: this.portfolios_collection,
+                el: $container.find('.list-item-portfolio')
             });
             /**
              * init block control list blog
              */
             new Views.BlockControl({
-                collection: collection,
+                collection: this.portfolios_collection,
                 el: $container
             });
+
         } // end profile list control
         if ($('.bid-history').length > 0) {
             var $container = $('.bid-history');

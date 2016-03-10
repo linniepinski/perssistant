@@ -53,7 +53,8 @@
         },
         initialize: function(options) {
             AE.Views.Modal_Box.prototype.initialize.call();
-            this.blockUi = new AE.Views.BlockUi();
+            //this.blockUi = new AE.Views.BlockUi();
+            this.LoadingButtonNew = new Views.LoadingButtonNew();
             this.options = _.extend(this, options);
         },
         sendInvite: function(event) {
@@ -72,7 +73,7 @@
                 type: 'post',
                 data: {data : data, user_id: view.user_id ,action: 'ae-send-invite', },
                 beforeSend: function() {
-                	  view.blockUi.block($button);
+                    view.LoadingButtonNew.loading($button);
                       form.addClass('processing');
                 },
                 success: function(resp) {
@@ -91,7 +92,7 @@
                         view.closeModal();
                         form.trigger('reset');     
                     }
-                    view.blockUi.unblock();
+                    view.LoadingButtonNew.finish($button);
                 }
 	        });
         }

@@ -280,7 +280,7 @@ window.AE = window.AE || {};
 
      */
 
-    AE.Views.BlockUi = Backbone.View.extend({
+    AE.Views.BlockUi_old = Backbone.View.extend({
 
         defaults: {
 
@@ -367,11 +367,108 @@ window.AE = window.AE || {};
             this.isLoading = true;
 
             this.render().$el.show().appendTo($('body'));
-            
+
         },
 
         unblock: function() {
 
+            this.$el.remove();
+
+            this.isLoading = false;
+
+        },
+
+        finish: function() {
+            this.$el.fadeOut(500, function() {
+
+                $(this).remove();
+
+            });
+
+            this.isLoading = false;
+
+        }
+
+    });
+
+    AE.Views.BlockUi = Backbone.View.extend({
+
+        defaults: {
+
+            opacity: '0.5',
+
+            background_position: 'center center',
+
+            background_color: '#ffffff'
+
+        },
+
+        isLoading: false,
+
+        initialize: function(options) {
+
+
+            options = _.extend(_.clone(this.defaults), options);
+
+            this.overlay = $('<div class="loading-blur loading"><div class="loading-overlay"><div class=""><i class="fa fa-refresh loader-block-UI"></i></div></div></div>');
+
+            this.overlay.find('.loading-overlay').css({
+
+                'opacity': options.opacity,
+
+                'filter': 'alpha(opacity=' + options.opacity * 100 + ')',
+
+                'background-color': options.background_color
+
+            });
+
+            this.$el.html(this.overlay);
+
+            this.isLoading = false;
+
+        },
+
+        render: function() {
+
+            this.$el.html(this.overlay);
+
+            return this;
+
+        },
+
+        block: function(element) {
+
+            var $ele = $(element);
+
+            // if ( $ele.css('position') !== 'absolute' || $ele.css('position') !== 'relative'){
+
+            //         $ele.css('position', 'relative');
+
+            // }
+
+            this.overlay.css({
+
+                'position': 'absolute',
+
+                'z-index': 2000,
+
+                'top': $ele.offset().top,
+
+                'left': $ele.offset().left,
+
+                'width': $ele.outerWidth(),
+
+                'height': $ele.outerHeight()
+
+            });
+
+            this.isLoading = true;
+
+            this.render().$el.show().appendTo($('body'));
+
+        },
+
+        unblock: function() {
             this.$el.remove();
 
             this.isLoading = false;
@@ -1312,7 +1409,7 @@ window.AE = window.AE || {};
 
                 case 'delete':
 
-                    if (confirm(ae_globals.confirm_message)) {
+                    if (confirm(ae_globals.confirm_message_delete)) {
 
                         // archive a model
 
@@ -1893,6 +1990,7 @@ window.AE = window.AE || {};
             this.options = _.extend(this, options);
 
             this.blockUi = new Views.BlockUi();
+            //this.blockUi2 = new Views.BlockUi2();
             this.LoadingButtonNew = new Views.LoadingButtonNew();
 
             if (this.$('.ae_query').length > 0) {
@@ -3817,7 +3915,15 @@ window.AE = window.AE || {};
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
+                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            jQuery("#post_content_ifr").contents().bind("keyup change", function(e) {
+
+                                if (jQuery("#post_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
+                                    jQuery('.post-content-error').html('');
+                                } else {
+                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                                }
+                            })
                             return false;
                         }
                         view.LoadingButtonNew.loading($target.find('button.btn-submit-login-form'));

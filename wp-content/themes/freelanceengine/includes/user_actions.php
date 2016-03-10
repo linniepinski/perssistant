@@ -25,6 +25,7 @@ class AE_User_Front_Actions extends AE_Base
 
         //$this->add_ajax('ae_send_contact', 'ae_send_contact');
         $this->add_ajax('ae-send-invite','ae_send_invite');
+        $this->add_ajax('ae-decline-invite','ae_decline_invite');
 
     }
     
@@ -134,6 +135,31 @@ class AE_User_Front_Actions extends AE_Base
             $resp = array(
                 'success' => false,
                 'msg'     => $e->getMessage()
+            );
+        }
+        wp_send_json( $resp );
+    }
+    function ae_decline_invite(){
+        global $user_ID;
+        $project_id = $_POST['id_project'];
+        $IsInvitedToProject = (get_post_meta($project_id,"invited_{$user_ID}",true) == '1') ? true : false;
+        if ($IsInvitedToProject) {
+            $result = delete_post_meta($project_id,"invited_{$user_ID}");
+            if($result){
+                $resp = array(
+                    'success' => true,
+                    'msg' => __('Invitation has been declined!', ET_DOMAIN)
+                );
+            }else{
+                $resp = array(
+                    'success' => false,
+                    'msg' => __('Try again later', ET_DOMAIN)
+                );
+            }
+        } else {
+            $resp = array(
+                'success' => false,
+                'msg' => __('Invitation has been already declined!', ET_DOMAIN)
             );
         }
         wp_send_json( $resp );

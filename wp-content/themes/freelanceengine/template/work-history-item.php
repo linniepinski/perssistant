@@ -57,7 +57,16 @@ $status = array(
                     <?php 
                         _e('Job is closed', ET_DOMAIN);
                      ?>
-                </span> 
+                </span>
+            <?php } else if($current->post_status == 'disputing'){ ?>
+                <h5>
+                    <a href = "<?php echo $current->permalink; ?>"><?php echo $current->post_title; ?></a>
+                </h5>
+                <span class="stt-in-process">
+                    <?php
+                    _e('Job is paused', ET_DOMAIN);
+                    ?>
+                </span>
             <?php }else{ ?>
 
                 <h5>

@@ -5,7 +5,7 @@
      *
      */
     Views.Profile = Backbone.View.extend({
-        el: '.list-profile-wrapper',
+        el: '.list-profile-wrapper , .section-user-profile',
         events: {
             // user account details
             'submit form#account_form': 'saveAccountDetails',
@@ -17,6 +17,7 @@
             'submit form#bank_form': 'saveBankDetails',
             // open modal add portfolio
             'click a.add-portfolio': 'openModalPorfolio',
+            'click a.add-porfolio-button': 'openModalPorfolio',
             // open modal add CV
             'click a.add-cv': 'openModalCv',
             // open modal change password
@@ -406,23 +407,23 @@
             });
             // check form validate and process sign-in
             if (this.$('form#profile_form').valid() && !form.hasClass("processing")) {
+                if (ae_globals.ae_is_mobile == '0') {
                 this.profile.save('', '', {
                     beforeSend: function () {
-                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length
+                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
                         //count = count.replace(d, "");
 
                         if (count >= 250) {
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
-                            jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
-
+                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
 
                                 if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
                                     jQuery('.post-content-error').html('');
                                 } else {
-                                    jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
+                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
                                 }
                             })
                             return false;
@@ -433,7 +434,9 @@
                         form.addClass('processing');
                     },
                     success: function (profile, status, jqXHR) {
-                        start_refresh_count();
+                        if (ae_globals.ae_is_mobile == '0') {
+                            start_refresh_count();
+                        }
                         view.LoadingButtonNew.finish(button);
                         form.removeClass('processing');
                         // trigger event process authentication
@@ -453,6 +456,57 @@
                         }
                     }
                 });
+            }else{
+                    this.profile.save('', '', {
+                        beforeSend: function () {
+                            //count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
+                            //count = count.replace(d, "");
+
+                            //if (count >= 250) {
+                            //    jQuery('.post-content-error').html('');
+                            //
+                            //} else {
+                            //    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            //    jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
+                            //
+                            //        if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
+                            //            jQuery('.post-content-error').html('');
+                            //        } else {
+                            //            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            //        }
+                            //    })
+                            //    return false;
+                            //}
+
+                            view.LoadingButtonNew.loading(button);
+
+                            form.addClass('processing');
+                        },
+                        success: function (profile, status, jqXHR) {
+                            if (ae_globals.ae_is_mobile == '0') {
+                                start_refresh_count();
+                            }
+                            view.LoadingButtonNew.finish(button);
+                            form.removeClass('processing');
+                            // trigger event process authentication
+                            AE.pubsub.trigger('ae:user:profile', profile, status, jqXHR);
+                            // trigger event notification
+                            if (status.success) {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: status.msg,
+                                    notice_type: 'success',
+                                });
+                                //window.location.reload();
+                            } else {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: status.msg,
+                                    notice_type: 'error',
+                                });
+                            }
+                        }
+                    });
+                    alert('fsdfsd');
+                }
             }
         },
         openModalPorfolio: function (event) {
@@ -1049,22 +1103,21 @@
 })(jQuery, window.AE.Models, window.AE.Collections, window.AE.Views);
 
 jQuery(document).ready(function () {
-    if (window.location.pathname == '/profile/') {
-        //setInterval("start()", 2500);
+    if (window.location.pathname == '/profile/' && ae_globals.ae_is_mobile == '0') {
         setTimeout("start_refresh_count()", 3500);
-        //start_refresh_count();
     }
 });
 function start_refresh_count() {
-    if (jQuery('section').hasClass('freelancer')) {
-        refreshcountcompleteFreelancer();
-    }
-    else {
-        refreshcountcompleteEmployer();
+    if (ae_globals.ae_is_mobile == '0'){
+        if (jQuery('section').hasClass('freelancer')) {
+            refreshcountcompleteFreelancer();
+        }
+        else {
+            refreshcountcompleteEmployer();
+        }
     }
 }
 function focus_field(id, tab, container) {
-    console.log(container);
     if (container === undefined) {
         current_field = jQuery("[id='" + id + "']").focus();
         if (jQuery("[href='#" + tab + "']").parent().hasClass('active')) {
@@ -1264,11 +1317,10 @@ function AnimRes(currentPer, percent) {
 jQuery(document).ready(function () {
     jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
 
-
         if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
             jQuery('.post-content-error').html('');
         } else {
-            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
+            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
         }
     })
 
@@ -1341,7 +1393,7 @@ jQuery('#create_cv').on('submit', function (e) {
 });
 /* delete cv*/
 
-jQuery('.add-porfolio-button').on('click', '#del_cv', function (e) {
+jQuery('.add-porfolio-buttonhfghgfh').on('click', '#del_cv', function (e) {
 
     e.preventDefault();
     jQuery.ajax({

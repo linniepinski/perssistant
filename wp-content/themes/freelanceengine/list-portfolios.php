@@ -10,12 +10,6 @@ $post_object = $ae_post_factory->get('portfolio');
         while (have_posts()) { the_post();
             $convert = $post_object->convert($post,'thumbnail');
             $postdata[] = $convert;
-            //echo '<pre>';
-
-            //var_dump($postdata);
-            //var_dump($convert);
-            //echo '</pre>';
-           // var_dump($convert);
             get_template_part( 'template/portfolio', 'item' );
         }
         ?>

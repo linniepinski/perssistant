@@ -128,18 +128,18 @@ function ae_edit_post_button ($post) {
         <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-target="#" class="" href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
             <i class="fa fa-pencil"></i>
         </a>
-        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action archive" href="#">
+        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action delete" href="#">
             <i class="fa fa-times"></i>
         </a>
     <?php } ?>
-    <?php if($post->post_status == 'archive'){ ?>
-        <a title="<?php _e("Renew", ET_DOMAIN); ?>" data-target="#" class="" href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
-            <i class="fa fa-refresh"></i>
-        </a>
-        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action archive" href="#">
-            <i class="fa fa-times"></i>
-        </a>
-    <?php }
+<!--    --><?php //if($post->post_status == 'archive'){ ?>
+<!--        <a title="--><?php //_e("Renew", ET_DOMAIN); ?><!--" data-target="#" class="" href="--><?php //echo et_get_page_link('submit-project', array('id' => $post->ID)) ?><!--">-->
+<!--            <i class="fa fa-refresh"></i>-->
+<!--        </a>-->
+<!--        <a title="--><?php //_e("Delete", ET_DOMAIN); ?><!--" data-action="delete" class="action delete" href="#">-->
+<!--            <i class="fa fa-times"></i>-->
+<!--        </a>-->
+<!--    --><?php //}
     do_action( 'ae_edit_post_button', $post );
 }
 
@@ -169,7 +169,7 @@ function ae_js_edit_post_button () {
         	href="<?php echo et_get_page_link('submit-project') ?>?id={{= ID }}">
             <i class="fa fa-refresh"></i>
         </a>
-        <a data-action="delete" class="action archive" href="#">
+        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action delete" href="#">
             <i class="fa fa-times"></i>
         </a>
     <# } #>

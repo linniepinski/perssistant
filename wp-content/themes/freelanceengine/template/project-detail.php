@@ -11,6 +11,7 @@ $et_expired_date    = $convert->et_expired_date;
 $bid_accepted       = $convert->accepted;
 $project_status     = $convert->post_status;
 $profile_id         = get_user_meta($post->post_author,'user_profile_id', true);
+$IsInvitedToProject = (get_post_meta($convert->ID,"invited_{$user_ID}",true) == '1') ? true : false;
 
 $currency           = ae_get_option('content_currency',array('align' => 'left', 'code' => 'USD', 'icon' => '$'));
 
@@ -92,7 +93,7 @@ if ($project_status == 'publish') {
                     <!--STATUS-->
                     <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 text-right  " style="padding:0; margin:0;">
                     <?php
-                    if(current_user_can( 'manage_options' ) && false) {
+                    if(current_user_can( 'manage_options' )) {
                         get_template_part( 'template/admin', 'project-control' );
                     }elseif( !$user_ID && $project_status == 'publish'){ ?>
                         <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid',ET_DOMAIN);?></a>  
@@ -103,23 +104,37 @@ if ($project_status == 'publish') {
                             case 'publish':
                                 if( ( fre_share_role() || $role == FREELANCER ) && $user_ID != $project->post_author ){
                                     $has_bid = fre_has_bid( get_the_ID() );
-                                    if( $has_bid ) {                                                                   
+                                    if ($has_bid) {
                                         ?>
-                                        <a rel="<?php echo $project->ID;?>" href="#" id="<?php echo $has_bid;?>" title= "<?php _e('Cancel this bidding',ET_DOMAIN); ?>"  class="btn btn-apply-project-item btn-del-project-modal modal_bid_update" >
-                                            <?php  _e('Cancel',ET_DOMAIN);?>
+                                        <a rel="<?php echo $project->ID; ?>" href="#" id="<?php echo $has_bid; ?>"
+                                           title="<?php _e('Cancel this bidding', ET_DOMAIN); ?>"
+                                           class="btn btn-apply-project-item btn-del-project-modal modal_bid_update">
+                                            <?php _e('Cancel', ET_DOMAIN); ?>
                                         </a>
 
-                                        <a  href="#" class="btn btn-apply-project-item btn-project-status modal_bid_update" data-toggle="modal" data-target="#modal_bid_update">
-                                            <?php  _e(' Edit Bid ',ET_DOMAIN);?>
+                                        <a href="#"
+                                           class="btn btn-apply-project-item btn-project-status modal_bid_update"
+                                           data-toggle="modal" data-target="#modal_bid_update">
+                                            <?php _e(' Edit Bid ', ET_DOMAIN); ?>
                                         </a>
 
-                                    <?php
-                                    } else{ ?>
-                                        <a href="#"  class="btn btn-apply-project-item btn-project-status" data-toggle="modal" data-target="#modal_bid">
-                                            <?php  _e('Bid ',ET_DOMAIN);?>
+                                        <?php
+                                    } elseif ($IsInvitedToProject) { ?>
+                                        <a href="#" class="btn btn-apply-project-item btn-project-status"
+                                           data-toggle="modal" data-target="#modal_bid">
+                                            <?php _e('Accept', ET_DOMAIN); ?>
+                                        </a>
+                                        <a href="#"
+                                           class="btn btn-decline-invite btn-apply-project-item btn-project-status">
+                                            <?php _e('Decline', ET_DOMAIN); ?>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="#" class="btn btn-apply-project-item btn-project-status"
+                                           data-toggle="modal" data-target="#modal_bid">
+                                            <?php _e('Bid ', ET_DOMAIN); ?>
                                         </a>
                                     <?php }
-                                }else { ?>
+                                } else { ?>
 <!--                                    <a href="#" id="--><?php //the_ID();?><!--"  class="btn btn-apply-project-item" >--><?php // _e('Open',ET_DOMAIN);?><!--</a>-->
                                     <div class="alert alert-success alert-status-project" role="alert"><?php _e('Status:',ET_DOMAIN);?> <strong><?php _e('Open',ET_DOMAIN);?></strong></div>
 
