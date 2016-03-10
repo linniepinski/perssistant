@@ -367,7 +367,7 @@ window.AE = window.AE || {};
             this.isLoading = true;
 
             this.render().$el.show().appendTo($('body'));
-            
+
         },
 
         unblock: function() {
@@ -1312,7 +1312,7 @@ window.AE = window.AE || {};
 
                 case 'delete':
 
-                    if (confirm(ae_globals.confirm_message)) {
+                    if (confirm(ae_globals.confirm_message_delete)) {
 
                         // archive a model
 
@@ -3817,7 +3817,15 @@ window.AE = window.AE || {};
                             jQuery('.post-content-error').html('');
 
                         } else {
-                            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
+                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            jQuery("#post_content_ifr").contents().bind("keyup change", function(e) {
+
+                                if (jQuery("#post_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
+                                    jQuery('.post-content-error').html('');
+                                } else {
+                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                                }
+                            })
                             return false;
                         }
                         view.LoadingButtonNew.loading($target.find('button.btn-submit-login-form'));

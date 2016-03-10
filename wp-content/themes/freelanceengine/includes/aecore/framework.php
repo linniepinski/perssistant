@@ -164,6 +164,7 @@ class AppEngine extends AE_Base
             'max_cat' => ae_get_option('max_cat', 3) ,
             'confirm_delete_bid' => __("Are you sure you want to decline this bid?", ET_DOMAIN) ,
             'confirm_message' => __("Are you sure to archive this?", ET_DOMAIN) ,
+            'confirm_message_delete' => __("Are you sure to delete this?", ET_DOMAIN) ,
             'map_zoom' => ae_get_option('map_zoom_default', 8) ,
             'map_center' => ae_get_option('map_center_default', array(
                 'latitude' => 10,
