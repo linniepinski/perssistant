@@ -5,4 +5,7 @@
 	<a href="#" class="delete">
 		<i class="fa fa-trash-o"></i>
 	</a>
+	<a href="#" class="edit">
+		<i class="fa fa-pencil"></i>
+	</a>
 </script>

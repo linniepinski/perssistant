@@ -71,3 +71,37 @@
 }
 
 /* rating #2*/
+
+.list-item-portfolio li a.edit {
+    position: absolute;
+    color: #e74b3b;
+    top: 0;
+    right: 41px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: .7;
+    display: none;
+}
+.list-item-portfolio li a.delete {
+    position: absolute;
+    color: #e74b3b;
+    top: 0;
+    right: 15px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: .7;
+    display: none;
+}
+.list-item-portfolio li > a.delete, .list-item-portfolio li > a.edit {
+    display: block;
+}

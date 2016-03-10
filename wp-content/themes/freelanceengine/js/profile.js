@@ -407,9 +407,10 @@
             });
             // check form validate and process sign-in
             if (this.$('form#profile_form').valid() && !form.hasClass("processing")) {
+                if (ae_globals.ae_is_mobile == '0') {
                 this.profile.save('', '', {
                     beforeSend: function () {
-                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length
+                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
                         //count = count.replace(d, "");
 
                         if (count >= 250) {
@@ -417,7 +418,7 @@
 
                         } else {
                             jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                            jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
+                            jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
 
                                 if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
                                     jQuery('.post-content-error').html('');
@@ -455,6 +456,57 @@
                         }
                     }
                 });
+            }else{
+                    this.profile.save('', '', {
+                        beforeSend: function () {
+                            //count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
+                            //count = count.replace(d, "");
+
+                            //if (count >= 250) {
+                            //    jQuery('.post-content-error').html('');
+                            //
+                            //} else {
+                            //    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            //    jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
+                            //
+                            //        if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
+                            //            jQuery('.post-content-error').html('');
+                            //        } else {
+                            //            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
+                            //        }
+                            //    })
+                            //    return false;
+                            //}
+
+                            view.LoadingButtonNew.loading(button);
+
+                            form.addClass('processing');
+                        },
+                        success: function (profile, status, jqXHR) {
+                            if (ae_globals.ae_is_mobile == '0') {
+                                start_refresh_count();
+                            }
+                            view.LoadingButtonNew.finish(button);
+                            form.removeClass('processing');
+                            // trigger event process authentication
+                            AE.pubsub.trigger('ae:user:profile', profile, status, jqXHR);
+                            // trigger event notification
+                            if (status.success) {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: status.msg,
+                                    notice_type: 'success',
+                                });
+                                //window.location.reload();
+                            } else {
+                                AE.pubsub.trigger('ae:notification', {
+                                    msg: status.msg,
+                                    notice_type: 'error',
+                                });
+                            }
+                        }
+                    });
+                    alert('fsdfsd');
+                }
             }
         },
         openModalPorfolio: function (event) {
@@ -695,7 +747,6 @@
          * init view setup Block Ui and Model User
          */
         initialize: function () {
-            console.log('fdsfsdf');
             this.user = AE.App.user;
             this.blockUi = new Views.BlockUi();
             this.LoadingButtonNew = new Views.LoadingButtonNew();
@@ -745,8 +796,6 @@
                     }
                 });
             }
-            console.log('end');
-
         },
         setModel: function (model) {
             this.portfolio = model; //new Models.Portfolio();

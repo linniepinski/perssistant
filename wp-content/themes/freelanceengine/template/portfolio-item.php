@@ -23,6 +23,4 @@ if(!$current){
     <a href="#" class="edit">
 		<i class="fa fa-pencil"></i>
 	</a>
-<!--    <textarea>--><?php //echo $current->post_content?><!--</textarea>-->
-
 </li>
