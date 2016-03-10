@@ -309,6 +309,9 @@ class Fre_Notification extends AE_PostAction
         );
         $notify = $this->insert($notification);
         update_post_meta( $notify, 'project_list', $list_project );
+        foreach ($list_project as $item) {
+            update_post_meta($item, "invited_{$invited}", true);
+        }
         return $notify;
     }
     

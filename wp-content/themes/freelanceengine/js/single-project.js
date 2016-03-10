@@ -17,6 +17,9 @@
                 /*
                  * delete a bidding
                  */
+
+                'click a.btn-decline-invite': 'deleteProjectInvite',
+
                 'click .btn-del-project-modal': 'deleteBiddingModal',
                 'click .btn-del-project': 'deleteBidding',
                 /*
@@ -205,7 +208,7 @@ $("a.popup-login").trigger('click');
                     starOn:"icon-square icon-square-full",
                     scoreName: function() {
                         $(this).parent().find('label').text();
-                        console.log($(this).parent().find('label').text());
+                        //console.log($(this).parent().find('label').text());
                         return "list_scores["+$(this).parent().find('label').attr('attr-slug')+"]";
                     },
                     click: function(score, evt) {
@@ -296,7 +299,7 @@ $("a.popup-login").trigger('click');
 
                     return false;
                 } else {
-                    console.log('modal accept bid');
+                    //console.log('modal accept bid');
                     if (typeof view.acceptbid_modal == 'undefined') {
                         view.acceptbid_modal = new Views.Modal_AcceptBid();
                     }
@@ -309,7 +312,7 @@ $("a.popup-login").trigger('click');
                 var $target = $(event.currentTarget);
                 view = this;
                 //console.log(this);
-                console.log($target.attr('data-id'));
+                //console.log($target.attr('data-id'));
 //                console.log($target.find('data-id'));
 
 //                $target.parents('.info-bidding').removeClass('hide-accept');
@@ -330,7 +333,7 @@ $("a.popup-login").trigger('click');
                         },
                         success: function (res) {
                             view.blockUi.unblock();
-                            console.log(res);
+                            //console.log(res);
                             if (res.success) {
                                 $target.parents().find('.bid-item').remove();
 //                            $("a.btn-project-status").html(single_text.working);
@@ -411,6 +414,41 @@ $("a.popup-login").trigger('click');
                 view.modal_quit.openModal();
             },
             /*
+             * For freelancer delete a invite.
+             */
+            deleteProjectInvite: function(event) {
+                var view = this;
+                console.log(view);
+                console.log(view.project_id);
+               if(confirm(ae_globals.confirm_message_decline)){
+                   $.ajax({
+                       url: ae_globals.ajaxURL,
+                       type: 'post',
+                       data: {
+                           id_project: view.project_id ,
+                           action: 'ae-decline-invite'
+                       },
+                       beforeSend: function(event) {
+
+                       },
+                       success: function(res) {
+
+                           if (res.success) {
+                               AE.pubsub.trigger('ae:notification', {
+                                   msg: res.msg,
+                                   notice_type: 'success'
+                               });
+                           } else {
+                               AE.pubsub.trigger('ae:notification', {
+                                   msg: res.msg,
+                                   notice_type: 'error'
+                               });
+                           }
+                       }
+                   });
+               }
+            },
+            /*
              * For freelancer delete a bidding.
              */
             deleteBiddingModal: function(event) {
@@ -484,7 +522,7 @@ $("a.popup-login").trigger('click');
                             msg: res.msg,
                             notice_type: res.success
                         });
-                        console.log(res);
+                        //console.log(res);
                         if (res.success) {
                             location.reload();
                         } else {
