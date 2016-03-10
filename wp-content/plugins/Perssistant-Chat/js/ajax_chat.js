@@ -118,6 +118,7 @@ function chatroom_check_online() {
 
 }
 function chatroom_refresh() {
+    var chatblockUi = new AE.Views.BlockUi();
     jQuery.ajax({
         url: MyAjax.ajaxurl,
         type: 'POST',
@@ -126,14 +127,17 @@ function chatroom_refresh() {
             contact_with_user: contact_with_user
         },
         beforeSend: function (xhr) {
-            jQuery('.right-column-chat').dataLoader();
+            //jQuery('.right-column-chat').dataLoader();
+            chatblockUi.block(jQuery('.right-column-chat'));
         },
         success: function (data) {
             //console.log(contact_with_user);
             jQuery("div.chat_history .mCSB_container").empty();
             jQuery("div.chat_history .mCSB_container").html(data);
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
-            jQuery('.right-column-chat').dataLoader('loaded');
+            //jQuery('.right-column-chat').dataLoader('loaded');
+            chatblockUi.unblock(jQuery('.right-column-chat'));
+
             jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
         },
         complete: function () {
@@ -439,7 +443,6 @@ jQuery('.modal-vcenter').on('show.bs.modal', function(e) {
 jQuery(window).on('resize', centerModals);
 
 jQuery(document).ready(function () {
-
     chatroom_count();
     chatroom_notifications_everywhere();
 
