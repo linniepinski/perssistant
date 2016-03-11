@@ -54,3 +54,6 @@
     -moz-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
+.reset-rules #pswd_info{
+    margin-top: 20px;
+}

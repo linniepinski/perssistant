@@ -271,7 +271,7 @@ jQuery(document).ready(function(){
 	}
 
     //Validate signup form
-    jQuery('#register_user_pass').keyup(function () {
+    jQuery('#register_user_pass , #new_password').keyup(function () {
         var pswd = jQuery(this).val();
         if (pswd.length < 8) {
             jQuery('#length').removeClass('valid').removeClass('required').addClass('invalid');

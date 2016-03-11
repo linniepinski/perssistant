@@ -136,9 +136,6 @@ get_header();
 					</div>
                     <div id="pswd_info" style="display: none">
                         <h4>Security level: <strong class="strong-level">danger</strong></h4>
-<!--                        <ul>-->
-<!--                            <li class="level"></li>-->
-<!--                        </ul> -->
                         <h4>Password must meet the following requirements:</h4>
                         <ul>
                             <li id="letter" class="invalid">At least <strong>one letter</strong></li>
