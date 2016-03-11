@@ -132,6 +132,9 @@ function ae_edit_post_button ($post) {
             <i class="fa fa-times"></i>
         </a>
     <?php } ?>
+		<?php if($post->post_status == 'complete'){ ?>
+			<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
+		<?php } ?>
 <!--    --><?php //if($post->post_status == 'archive'){ ?>
 <!--        <a title="--><?php //_e("Renew", ET_DOMAIN); ?><!--" data-target="#" class="" href="--><?php //echo et_get_page_link('submit-project', array('id' => $post->ID)) ?><!--">-->
 <!--            <i class="fa fa-refresh"></i>-->

@@ -125,45 +125,53 @@
         	<div class="col-md-12 change-form">
             	<p class="text-policy"></p>
                 <a href="#" class="change-link-register"><?php _e("New? Click here to become a member", ET_DOMAIN); ?></a>
-                <?php 
-                $use_facebook = ae_get_option('facebook_login');
-                $use_twitter = ae_get_option('twitter_login');
-                $gplus_login = ae_get_option('gplus_login');
-                $linkedin_login = ae_get_option('linkedin_login') ;
-                if($linkedin_login || $use_facebook || $use_twitter || $gplus_login) { 
-                ?>
-                    <div class="socials-head"><?php _e("You can also sign in by:", ET_DOMAIN) ?></div>
-                    <ul class="list-social-login">
-                        <?php if($use_facebook){ ?>
-                        <li>
-                            <a href="#" class="fb facebook_auth_btn">
-                                <i class="fa fa-facebook"></i><?php _e("Facebook", ET_DOMAIN) ?>
-                            </a>
-                        </li>
-                        <?php } ?>
-                        <?php if($use_twitter){ ?>
-                        <li>
-                            <a href="<?php echo add_query_arg('action', 'twitterauth', home_url()) ?>" class="tw">
-                                <i class="fa fa-twitter"></i><?php _e("Twitter", ET_DOMAIN) ?>
-                            </a>
-                        </li>
-                        <?php } ?>
-                        <?php if($gplus_login){ ?>
-                        <li>
-                            <a href="#" class="gplus gplus_login_btn">
-                                <i class="fa fa-google-plus"></i><?php _e("Plus", ET_DOMAIN) ?>
-                            </a>
-                        </li>
-                        <?php } ?>
-                        <?php if($linkedin_login){ ?>
-                        <li>
-                            <a href="#" class="lkin">
-                                <i class="fa fa-linkedin"></i><?php _e("Linkedin", ET_DOMAIN) ?>
-                            </a>
-                        </li>
-                        <?php } ?>
-                    </ul> 
-                <?php } ?>
+
+		            <div class="socials-head"><?php _e("You can also sign in by:", ET_DOMAIN) ?></div>
+		            <?php do_action( 'wordpress_social_login' ); ?>
+				        <style>
+					        .wp-social-login-connect-with{
+						        display: none;
+					        }
+				        </style>
+<!--                --><?php //
+//                $use_facebook = ae_get_option('facebook_login');
+//                $use_twitter = ae_get_option('twitter_login');
+//                $gplus_login = ae_get_option('gplus_login');
+//                $linkedin_login = ae_get_option('linkedin_login') ;
+//                if($linkedin_login || $use_facebook || $use_twitter || $gplus_login) {
+//                ?>
+<!--                    <div class="socials-head">--><?php //_e("You can also sign in by:", ET_DOMAIN) ?><!--</div>-->
+<!--                    <ul class="list-social-login">-->
+<!--                        --><?php //if($use_facebook){ ?>
+<!--                        <li>-->
+<!--                            <a href="#" class="fb facebook_auth_btn">-->
+<!--                                <i class="fa fa-facebook"></i>--><?php //_e("Facebook", ET_DOMAIN) ?>
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        --><?php //} ?>
+<!--                        --><?php //if($use_twitter){ ?>
+<!--                        <li>-->
+<!--                            <a href="--><?php //echo add_query_arg('action', 'twitterauth', home_url()) ?><!--" class="tw">-->
+<!--                                <i class="fa fa-twitter"></i>--><?php //_e("Twitter", ET_DOMAIN) ?>
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        --><?php //} ?>
+<!--                        --><?php //if($gplus_login){ ?>
+<!--                        <li>-->
+<!--                            <a href="#" class="gplus gplus_login_btn">-->
+<!--                                <i class="fa fa-google-plus"></i>--><?php //_e("Plus", ET_DOMAIN) ?>
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        --><?php //} ?>
+<!--                        --><?php //if($linkedin_login){ ?>
+<!--                        <li>-->
+<!--                            <a href="#" class="lkin">-->
+<!--                                <i class="fa fa-linkedin"></i>--><?php //_e("Linkedin", ET_DOMAIN) ?>
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        --><?php //} ?>
+<!--                    </ul> -->
+<!--                --><?php //} ?>
             </div>
         </div>
     </div>
