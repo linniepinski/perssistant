@@ -3527,6 +3527,16 @@ window.AE = window.AE || {};
              * post form validate
 
              */
+            $.validator.addMethod('mceEditorMinLength', function (value, element, param) {
+                count = jQuery(element).val().replace(/(<([^>]+)>)/ig,"").length;
+                if (count >= param.length) {
+                    jQuery("."+ param.ErrorContainer).html('');
+                    return true;
+                } else {
+                    jQuery("."+ param.ErrorContainer).html('<span class="message"> Description should be at least 250 symbols</span>');
+                    return false;
+                }
+            }, '');
 
             $("form.post").validate({
 
@@ -3540,7 +3550,12 @@ window.AE = window.AE || {};
 
                     place_category: "required",
 
-                    //post_content: "required",
+                    post_content: {
+                        mceEditorMinLength: {
+                            ErrorContainer : 'post-content-error',
+                            length: 250
+                        }
+                    },
 
                     location: "required"
 
@@ -3914,24 +3929,6 @@ window.AE = window.AE || {};
 
                     beforeSend: function() {
 
-                        //view.blockUi.block($target);
-                        count = jQuery('#post_content_ifr').contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length;
-                        //count = count.replace(d, "");
-                        if (count >= 250) {
-                            jQuery('.post-content-error').html('');
-
-                        } else {
-                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                            jQuery("#post_content_ifr").contents().bind("keyup change", function(e) {
-
-                                if (jQuery("#post_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
-                                    jQuery('.post-content-error').html('');
-                                } else {
-                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                                }
-                            });
-                            return false;
-                        }
                         view.LoadingButtonNew.loading($target.find('button.btn-submit-login-form'));
 
                        // view.blockUi.block($target.find('button.btn-submit-login-form'));

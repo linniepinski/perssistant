@@ -57,3 +57,6 @@
 .reset-rules #pswd_info{
     margin-top: 20px;
 }
+.row-about-you.error > .message{
+    display: none!important;
+}

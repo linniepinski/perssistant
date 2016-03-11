@@ -24,7 +24,6 @@ var dologinuser = function () {
 		},
         success: function(status) { 
             form.removeClass('processing');
-			
 			if(status.success){
 				AE.pubsub.trigger('ae:notification', {
 					msg : status.msg,
@@ -32,7 +31,6 @@ var dologinuser = function () {
 				});
 
 				form.trigger('reset');
-
 				window.location.href='/';
 
 			} else {

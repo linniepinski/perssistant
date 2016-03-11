@@ -227,8 +227,13 @@
                         number: true,
                         min: 0,
                         max: 30
+                    },
+                    post_content: {
+                        mceEditorMinLength: {
+                            ErrorContainer : 'post-content-error',
+                            length: 250
+                        }
                     }
-
                 }
             });
             // credit card authorization
@@ -410,24 +415,6 @@
                 if (ae_globals.ae_is_mobile == '0') {
                 this.profile.save('', '', {
                     beforeSend: function () {
-                        count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
-                        //count = count.replace(d, "");
-
-                        if (count >= 250) {
-                            jQuery('.post-content-error').html('');
-
-                        } else {
-                            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                            jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
-
-                                if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
-                                    jQuery('.post-content-error').html('');
-                                } else {
-                                    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                                }
-                            })
-                            return false;
-                        }
 
                         view.LoadingButtonNew.loading(button);
 
@@ -459,24 +446,6 @@
             }else{
                     this.profile.save('', '', {
                         beforeSend: function () {
-                            //count = jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length
-                            //count = count.replace(d, "");
-
-                            //if (count >= 250) {
-                            //    jQuery('.post-content-error').html('');
-                            //
-                            //} else {
-                            //    jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                            //    jQuery("iframe#about_content_ifr").contents().bind("keyup change", function (e) {
-                            //
-                            //        if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
-                            //            jQuery('.post-content-error').html('');
-                            //        } else {
-                            //            jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
-                            //        }
-                            //    })
-                            //    return false;
-                            //}
 
                             view.LoadingButtonNew.loading(button);
 
@@ -505,7 +474,6 @@
                             }
                         }
                     });
-                    alert('fsdfsd');
                 }
             }
         },
@@ -1313,18 +1281,6 @@ function AnimRes(currentPer, percent) {
         width: percent + "%"
     }, 2000);
 }
-
-jQuery(document).ready(function () {
-    jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
-
-        if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
-            jQuery('.post-content-error').html('');
-        } else {
-            jQuery('.post-content-error').html('<span class="message"><i class="fa fa-exclamation-triangle"></i> Description should be at least 250 symbols</span>');
-        }
-    })
-
-})
 
 jQuery('#activate_without_interview').on('click',function(){
     var button = jQuery(this);
