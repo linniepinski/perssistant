@@ -180,7 +180,7 @@ class Fre_Notification extends AE_PostAction
             'post_excerpt' => $content,
             'post_status' => 'publish',
             'post_author' => $bid->post_author,
-            'post_title' => sprintf(__("Bid on project %s was deleted", ET_DOMAIN) , get_the_title($project->ID))
+            'post_title' => sprintf(__("Bid on project %s was declined", ET_DOMAIN) , get_the_title($project->ID))
         );
         return $this->insert($notification);
     }
