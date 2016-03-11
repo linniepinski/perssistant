@@ -2601,6 +2601,14 @@ window.AE = window.AE || {};
 
                     // view.collection.reset();
 
+                    if (res.total > 0){
+                        jQuery('.empty-projects-list').remove();
+                        jQuery('.empty-profile-list').remove();
+                    }else{
+                        jQuery('.project-list-container').html('<li class="empty-projects-list">No projects found</li>')
+                        jQuery('.profile-list-container').html('<div class="empty-profile-list">No profiles found</div>')
+                    }
+
                     if (res && !res.success) {
 
                         view.$('.paginations').remove();

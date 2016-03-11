@@ -606,20 +606,28 @@ function fre_user_notification($user_id = 0, $page = 1) {
     ));
     
     $postdata = array();
-    echo '<ul class="notification-list">';
-    while (have_posts()) {
-        the_post();
-        $notify = $post;
+    if (have_posts()) {
+        echo '<ul class="notification-list">';
+        while (have_posts()) {
+            the_post();
+            $notify = $post;
 
-        $project = get_post($post->post_parent);
-        if(!$project || is_wp_error( $project )) continue;
-        $notify = $notify_object->convert($post);
-        $postdata[] = $notify;
-        echo '<li class="notify-item">';
-        echo $notify->content;
+            $project = get_post($post->post_parent);
+            if (!$project || is_wp_error($project)) continue;
+            $notify = $notify_object->convert($post);
+            $postdata[] = $notify;
+            echo '<li class="notify-item">';
+            echo $notify->content;
+            echo '</li>';
+        }
+        echo '</ul>';
+    }else{
+        echo '<ul class="notification-list">';
+        echo '<li>';
+        _e('You have no notifications' ,ET_DOMAIN);
         echo '</li>';
+        echo '</ul>';
     }
-    echo '</ul>';
     echo '<script type="data/json" class="postdata" >' . json_encode($postdata) . '</script>';
     
     // pagination
