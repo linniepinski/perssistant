@@ -604,7 +604,6 @@ window.AE = window.AE || {};
 
             this.text_before = target.text();
 //if (target)
-    console.log(target.tagName);
             target.text("Loading");
             target.append('<i class="fa fa-refresh custom-loader"></i>');
 
@@ -3541,7 +3540,7 @@ window.AE = window.AE || {};
 
                     place_category: "required",
 
-                    post_content: "required",
+                    //post_content: "required",
 
                     location: "required"
 
@@ -3918,7 +3917,6 @@ window.AE = window.AE || {};
                         //view.blockUi.block($target);
                         count = jQuery('#post_content_ifr').contents().find('body').text().replace(/(<([^>]+)>)/ig,"").length;
                         //count = count.replace(d, "");
-
                         if (count >= 250) {
                             jQuery('.post-content-error').html('');
 
@@ -3931,7 +3929,7 @@ window.AE = window.AE || {};
                                 } else {
                                     jQuery('.post-content-error').html('<span class="message"> Description should be at least 250 symbols</span>');
                                 }
-                            })
+                            });
                             return false;
                         }
                         view.LoadingButtonNew.loading($target.find('button.btn-submit-login-form'));
