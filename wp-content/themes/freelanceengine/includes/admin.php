@@ -124,7 +124,7 @@ class ET_Admin extends AE_Base
         return array(
             'blogname' => get_option('blogname') ,
             'blogdescription' => get_option('blogdescription') ,
-            'copyright' => '<span class="enginethemes"> © 2015 Perssistant - Plugin Initiative </span>',
+            'copyright' => '<span class="enginethemes"> © 2015 Perssistant - <a href="http://www.plugin.ag/">Plugin Initiative</a> </span>',
             
             'project_demonstration' => array(
                 'home_page' => 'The best way to <br/>  find a professional',
