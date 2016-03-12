@@ -100,7 +100,7 @@
                         </div>           
                         <div class="clearfix"></div>   
 
-                        <?php $post = ''; do_action( 'ae_edit_post_form', PROJECT, $post ); ?>
+                        <?php //$post = ''; do_action( 'ae_edit_post_form', PROJECT, $post ); ?>
 
                         <div class="form-group">
                              <button type="submit" class="btn btn-submit-login-form"><?php _e("Submit", ET_DOMAIN); ?></button>
