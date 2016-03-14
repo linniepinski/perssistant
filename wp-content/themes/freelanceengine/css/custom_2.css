@@ -1,6 +1,6 @@
 /* rating #2*/
 
-.icon-square{
+/*.icon-square{
     content: '';
     border: 1px solid #333;
     padding: 0 8px;
@@ -24,10 +24,10 @@
 .rating-it_2{
     display: inline-block;
     float: right;
-}
+}*/
 
 /* rating #2*/
-#modal_featured{
+/*#modal_featured{
     padding-top: 20px;
 }
 #modal_featured .modal-body h4{
@@ -59,4 +59,4 @@
 }
 .row-about-you.error > .message{
     display: none!important;
-}
+}*/
