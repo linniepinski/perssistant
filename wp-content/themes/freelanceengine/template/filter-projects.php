@@ -70,15 +70,17 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
             </div>
 
             <?php
-            $max_slider = ae_get_option('fre_slide_max_budget', 2000);
+            $range = get_project_price_range();
+            $max_value = (int) $range->max_price;
+            $min_value = (int) $range->min_price;
             ?>
             <div class="col-md-2">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top"><?php _e("Budget", ET_DOMAIN); ?></h2>
                     <input id="et_budget" type="text" name="et_budget" class="slider-ranger" value=""
                            data-slider-min="0"
-                           data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5"
-                           data-slider-value="[0,<?php echo $max_slider; ?>]"
+                           data-slider-max="<?php echo $max_value; ?>" data-slider-step="5"
+                           data-slider-value="[0,<?php echo $max_value; ?>]"
                     />
                     <b class="currency"><?php echo fre_price_format($max_slider) ?></b>
                     <input type="hidden" name="budget" id="budget" value=""/>

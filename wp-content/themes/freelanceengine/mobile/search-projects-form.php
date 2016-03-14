@@ -31,14 +31,13 @@
         $range = get_project_price_range();
         $max_value = (int) $range->max_price;
         $min_value = (int) $range->min_price;
-
         $max_slider = ae_get_option('fre_slide_max_budget', $max_value);
         ?>
     <div class="form-group">
         <label><?php _e("Budget", ET_DOMAIN); ?></label>
         <input id="et_budget" type="text" name="et_budget" class="slider-ranger" value="" data-slider-min="0" 
-               data-slider-max="<?php echo $max_slider; ?>" data-slider-step="5" 
-               data-slider-value="[0,1500]"
+               data-slider-max="<?php echo $max_value; ?>" data-slider-step="5"
+               data-slider-value="[0,<?php echo $max_value; ?>]"
                /> 
         <input type="hidden" name="budget" id="budget" value= "" />
     </div>
