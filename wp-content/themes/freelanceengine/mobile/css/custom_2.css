@@ -1,1 +1,35 @@
-// Transfered to custom.css
+.navbar-toggle{
+    margin: 0;
+    margin-left: 10px;
+}
+.navbar-toggle{
+    display: inline-block;
+    border-color: #FFFFFF;
+}
+.navbar-toggle .icon-bar{
+    background-color: #FFFFFF;
+}
+.navbar-toggle.active{
+    background-color: #dddddd;
+}
+#right_menu, .right_menu {/*need to delete in custom.css*/
+    /*display: inline-block;*/
+    /*height: 30px;*/
+    /*text-align: right;*/
+    /*vertical-align: middle;*/
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+}
+a.logged-in {/*need to delete in custom.css*/
+    /* height: 30px; */
+    /* width: 30px; */
+    /* border-radius: 50%; */
+    /*-moz-border-radius: 50%;*/
+    /* -webkit-border-radius: 50%; */
+    /* overflow: hidden; */
+    /* display: inline-block; */
+    /* text-align: right; */
+    /* vertical-align: middle; */
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+}

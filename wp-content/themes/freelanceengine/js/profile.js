@@ -1282,18 +1282,6 @@ function AnimRes(currentPer, percent) {
     }, 2000);
 }
 
-jQuery(document).ready(function () {
-    jQuery("iframe#about_content_ifr").contents().bind("keyup change", function(e) {
-
-        if (jQuery("iframe#about_content_ifr").contents().find('body').text().replace(/(<([^>]+)>)/ig, "").length >= 250) {
-            jQuery('.post-content-error').html('');
-        } else {
-            jQuery('.post-content-error').html('<span class="message">Description should be at least 250 symbols</span>');
-        }
-    })
-
-})
-
 jQuery('#activate_without_interview').on('click',function(){
     var button = jQuery(this);
     button.attr('disabled','disabled');
