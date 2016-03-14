@@ -1,3 +1,7 @@
+<?php
+global $user_ID, $post;
+
+?>
 <form id="bid_form" class="bid-form bid-form-mobile" <?php if(!isset($_GET['bid'])) echo 'style="display:none"';?> >
                
     <?php
@@ -9,20 +13,73 @@
     </div>
 
     <div class="form-group">
-        <label for="bid_budget"><?php _e('Budget',ET_DOMAIN);?></label>
+        <label for="bid_budget">
+            <?php
+            if (get_post_meta($post->ID, 'type_budget', true) == 'hourly_rate') {
+                _e('Hourly rate', ET_DOMAIN);
+            } else {
+                _e('Budget', ET_DOMAIN);
+            }
+            ?></label>
+        <div class="checkbox" style="display: inline-block;margin-left: 20px;">
+            <label><input type="checkbox" name="decide_later" class="checkbox1">Decide
+                later</label>
+        </div>
+        <script>
+            jQuery(document).ready(function () {
+                jQuery('.checkbox1').change(function () {
+                    if (jQuery(this).is(':checked')) {
+                        jQuery('#bid_budget').removeClass('required').removeAttr('value').parent().hide();
+                    }
+                    else {
+                        jQuery('#bid_budget').addClass('required').removeAttr('value').parent().show();
+                    }
+
+                });
+
+            });
+
+        </script>
+        <div class="form-group">
         <input type="number" name="bid_budget" id="bid_budget" class="form-control required number" />
+            </div>
     </div>
 
     <div class="clearfix"></div>
 
     <div class="form-group">
         <label for="bid_time"><?php _e('Deadline',ET_DOMAIN);?></label>
-        <input type="number" name="bid_time" id="bid_time" class="form-control required number" />      
-        <div class="clearfix" style="height:12px;"></div>                
-        <select name="type_time" class="bid_time form-control">                           
-            <option value="day"><?php _e('days',ET_DOMAIN);?></option>
-            <option value="week"><?php _e('week',ET_DOMAIN);?></option>
-        </select>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row ">
+                    <div class="bid-time-group-addon">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <label class="sr-only" for="bid_time">Bid time</label>
+                                    <input type="number" name="bid_time" id="bid_time" min="1"
+                                           class="form-control required number"
+                                           placeholder="number"/>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">in</span>
+                                        <label class="sr-only" for="type_time">Type time</label>
+                                        <select name="type_time" class="form-control required">
+                                            <option value="day">days</option>
+                                            <option value="week">weeks</option>
+                                            <option value="month">months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="clearfix"></div>

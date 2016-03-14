@@ -27,15 +27,32 @@
     <div class="clearfix"></div>
     <div class="bid-price-wrapper">
         <div class="bid-price">
-            <?php if(  in_array($project_status, array('complete','close') ) 
-                        || ( $user_ID && $user_ID == $project->post_author ) 
-                        || ( $user_ID && $user_ID == $convert->post_author ) 
-                    ){ ?>
-                <span class="number">
-                    <?php echo $convert->bid_budget_text; ?></span> 
-                    <?php echo $convert->bid_time_text; ?>
-                </span>
-            <?php }else { ?>
+            <?php
+            if (in_array($project_status, array('complete', 'close', 'disputing'))
+
+                || ($user_ID && $user_ID == $project->post_author)
+
+                || ($user_ID && $user_ID == $convert->post_author)
+
+            ) {
+                if ($post_object->current_post->decide_later == 'on') {
+                    ?>
+                    <span class="number">Decide later</span>
+                    <?php
+                } else {
+                    if ($project->type_budget == 'hourly_rate') {
+                        ?>
+                        <span class="number"><?php echo $convert->bid_budget_text . '/h'; ?></span>
+                        <?php
+                    } else {
+                        ?>
+                        <span class="number"><?php echo $convert->bid_budget_text; ?></span>
+                        <?php
+                    }
+                }
+                echo $convert->bid_time_text;
+
+            } else { ?>
                 <span class="number"><?php _e("In Process", ET_DOMAIN); ?></span>
             <?php } ?>
         </div>

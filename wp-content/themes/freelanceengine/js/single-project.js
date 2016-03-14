@@ -26,6 +26,7 @@
                  *for mobile js
                  */
                 'click .btn-bid-mobile': 'toggleBidForm',
+                'click .btn-bid-update-mobile': 'toggleBidUpdateForm',
                 'submit form.bid-form-mobile': 'submitBidProject',
                 'click .btn-complete-mobile': 'toggleReviewForm',
                 'submit form.review-form-mobile': 'submitReview',
@@ -175,6 +176,8 @@
                 view.modal_bid_update = new AE.Views.Modal_Bid_Update();
 
                 // init block ui
+                view.LoadingButtonNew = new Views.LoadingButtonNew();
+
                 view.blockUi = new Views.BlockUi();
                 new SingleListBids({
                     //itemView: BidItem,
@@ -493,6 +496,13 @@ $("a.popup-login").trigger('click');
             /*
              * for mobile version. toggle bid form
              */
+            toggleBidUpdateForm: function(event) {
+                event.preventDefault();
+                var display = $('#bid_form_update').css('display');
+                if (display == 'block') $('#bid_form_update').slideUp();
+                else $('#bid_form_update').slideDown();
+                return false;
+            },
             toggleBidForm: function(event) {
                 event.preventDefault();
                 var display = $('#bid_form').css('display');
@@ -514,10 +524,10 @@ $("a.popup-login").trigger('click');
                     type: 'post',
                     data: data,
                     beforeSend: function() {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
                     },
                     success: function(res) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         AE.pubsub.trigger('ae:notification', {
                             msg: res.msg,
                             notice_type: res.success
@@ -726,7 +736,7 @@ $("a.popup-login").trigger('click');
                 event.preventDefault();
                 var view = this,
                     $target = $(event.currentTarget),
-                    button = $target.find('button.btn-submit');
+                    button = $target.find('button.btn-submit , .btn-submit-update');
                 data = $target.serializeObject() || [];
                 $.ajax({
                     url: ae_globals.ajaxURL,
@@ -734,7 +744,6 @@ $("a.popup-login").trigger('click');
                     data: data,
                     beforeSend: function() {
                         view.LoadingButtonNew.loading(button);
-//return false;
                     },
                     success: function(res) {
                         view.LoadingButtonNew.finish(button);
@@ -759,13 +768,13 @@ $("a.popup-login").trigger('click');
 
         //Modal for Update Bid
         AE.Views.Modal_Bid_Update = AE.Views.Modal_Box.extend({
-            el: '#modal_bid_update',
+            el: '#modal_bid_update , form#bid_form_update.bid-form-update',
             events: {
                 'submit form.bid-form-update': 'submitBidProject_Update',
             },
             initialize: function() {
                 AE.Views.Modal_Box.prototype.initialize.apply(this, arguments);
-                this.blockUi = new Views.BlockUi();
+                this.LoadingButtonNew = new Views.LoadingButtonNew();
                 $("form#bid_form_update").validate({
                     ignore: "",
                     rules: {
@@ -792,17 +801,21 @@ $("a.popup-login").trigger('click');
                     type: 'post',
                     data: data,
                     beforeSend: function() {
-                        view.blockUi.block(button);
+                        view.LoadingButtonNew.loading(button);
                     },
                     success: function(res) {
-                        view.blockUi.unblock();
+                        view.LoadingButtonNew.finish(button);
                         AE.pubsub.trigger('ae:notification', {
                             msg: res.msg,
                             notice_type: res.success
                         });
                         if (res.success) {
                             location.reload();
-                            view.closeModal();
+                            if(ae_globals.ae_is_mobile){
+
+                            }else{
+                                view.closeModal();
+                            }
                         } else {
                             AE.pubsub.trigger('ae:notification', {
                                 msg: res.msg,

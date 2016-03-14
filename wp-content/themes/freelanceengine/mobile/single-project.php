@@ -81,6 +81,10 @@
                                     ?>
                                     <a rel="<?php echo $project->ID; ?>" href="#" id="<?php echo $has_bid; ?>"
                                        title="<?php _e('Delete this bidding', ET_DOMAIN); ?>"
+                                       class="btn-bid btn-bid-update-mobile"><?php _e('Edit bid', ET_DOMAIN); ?></a>
+
+                                    <a rel="<?php echo $project->ID; ?>" href="#" id="<?php echo $has_bid; ?>"
+                                       title="<?php _e('Delete this bidding', ET_DOMAIN); ?>"
                                        class="btn-bid btn-del-project"><?php _e('Cancel', ET_DOMAIN); ?></a>
 
                                 <?php } elseif ($IsInvitedToProject) { ?>
@@ -188,6 +192,7 @@
         <!-- form bid !-->
         <div class="form-bid">           
             <?php get_template_part('mobile/template-js/form','bid-project'); ?>
+            <?php get_template_part('mobile/template-js/form','update-bid-project'); ?>
             <?php get_template_part('mobile/template-js/form','review-project'); ?>
         </div>
         <!-- end form bid !-->
