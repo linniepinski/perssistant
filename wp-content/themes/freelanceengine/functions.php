@@ -3005,4 +3005,11 @@ function upLoadCvUser(){
 	exit;
 }
 
+function custom_login_css() {
+	echo '<style type="text/css">
+        .login-action-login .wp-social-login-widget {display: none;}
+    </style>';
+}
+add_action('login_head', 'custom_login_css');
+
 include 'includes/price_range.php';
