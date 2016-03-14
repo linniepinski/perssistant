@@ -12,11 +12,11 @@ var dologinuser = function () {
 	var method = 'read';
 	var user_login = jQuery.trim(jQuery("#login_user_login").val());
 	var user_pass = jQuery.trim(jQuery("#login_user_pass").val());
-    var cptch_result = jQuery("input[name=cptch_result]").val();
-    var cptch_time = jQuery("input[name=cptch_time]").val();
-    var cptch_number = jQuery("input[name=cptch_number]").val();
-    var cntctfrm_contact_action = jQuery("input[name=cntctfrm_contact_action]").val();
     var form = jQuery("#user_signin_form");
+	var cptch_result = form.find("input[name=cptch_result]").val();
+	var cptch_time = form.find("input[name=cptch_time]").val();
+	var cptch_number = form.find("input[name=cptch_number]").val();
+	var cntctfrm_contact_action = form.find("input[name=cntctfrm_contact_action]").val();
 
     jQuery.ajax({
 		type : "post",
@@ -97,9 +97,9 @@ var doSendPassword = function() {
 	var method = 'read';
 	var user_login = jQuery.trim(jQuery("#user_email").val());
 	var form = jQuery("form.forgot_form");
-    var cptch_result = jQuery("input[name=cptch_result]").val();
-    var cptch_time = jQuery("input[name=cptch_time]").val();
-    var cptch_number = jQuery("#cptch_input").val();
+    var cptch_result = form.find("input[name=cptch_result]").val();
+    var cptch_time = form.find("input[name=cptch_time]").val();
+    var cptch_number = form.find("#cptch_input").val();
 
 	jQuery.ajax({
 		type : "post",
@@ -141,11 +141,11 @@ var doUserRegister = function() {
 	var user_email 	= jQuery.trim(jQuery("#register_user_email").val());
 	var user_login 	= jQuery.trim(jQuery("#user_login").val());
 	var user_pass 	= jQuery.trim(jQuery("#register_user_pass").val());
-    var cptch_result = jQuery("input[name=cptch_result]").val();
-    var cptch_time = jQuery("input[name=cptch_time]").val();
-    var cntctfrm_contact_action = jQuery("input[name=cntctfrm_contact_action]").val();
-    var cptch_number = jQuery("#cptch_input").val();
 	var form 		= jQuery("#user_signup_form");
+	var cptch_result = form.find("input[name=cptch_result]").val();
+	var cptch_time = form.find("input[name=cptch_time]").val();
+	var cntctfrm_contact_action = form.find("input[name=cntctfrm_contact_action]").val();
+	var cptch_number = form.find("#cptch_input").val();
 	
 	jQuery.ajax({
 		type : "post",
