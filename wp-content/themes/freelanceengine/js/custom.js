@@ -12,14 +12,18 @@ var dologinuser = function () {
 	var method = 'read';
 	var user_login = jQuery.trim(jQuery("#login_user_login").val());
 	var user_pass = jQuery.trim(jQuery("#login_user_pass").val());
-	var form = jQuery("#user_signin_form");
+    var cptch_result = jQuery("input[name=cptch_result]").val();
+    var cptch_time = jQuery("input[name=cptch_time]").val();
+    var cptch_number = jQuery("input[name=cptch_number]").val();
+    var cntctfrm_contact_action = jQuery("input[name=cntctfrm_contact_action]").val();
+    var form = jQuery("#user_signin_form");
 
-	jQuery.ajax({
+    jQuery.ajax({
 		type : "post",
         dataType : "json",
         url : myAjax.ajaxurl,
-        data : {action: action, do : doaction, method: method, user_login : user_login, user_pass : user_pass},
-		beforeSend: function() {
+        data : {action: action, do : doaction, method: method, user_login : user_login, user_pass : user_pass,cptch_number:cptch_number,cptch_time:cptch_time,cptch_result:cptch_result,cntctfrm_contact_action:cntctfrm_contact_action},
+        beforeSend: function() {
 			form.addClass('processing');			
 		},
         success: function(status) { 
@@ -45,7 +49,6 @@ var dologinuser = function () {
 
 var saveinterview = function() {
     var action = 'fetch-interview';
-   //var doaction = 'save';
     var form = jQuery("form.interview_form");
     var post_id = jQuery('#post_id').val();
     var date1 = jQuery('#date_interview_1').val();
@@ -60,7 +63,6 @@ var saveinterview = function() {
         data : {
             ID : post_id,
             action: action,
-           // doaction : doaction,
             date_interview_1 :date1,
             date_interview_2 :date2,
             date_interview_3 :date3,
@@ -95,7 +97,7 @@ var doSendPassword = function() {
 	var method = 'read';
 	var user_login = jQuery.trim(jQuery("#user_email").val());
 	var form = jQuery("form.forgot_form");
-	 var cptch_result = jQuery("input[name=cptch_result]").val();
+    var cptch_result = jQuery("input[name=cptch_result]").val();
     var cptch_time = jQuery("input[name=cptch_time]").val();
     var cptch_number = jQuery("#cptch_input").val();
 
@@ -139,7 +141,10 @@ var doUserRegister = function() {
 	var user_email 	= jQuery.trim(jQuery("#register_user_email").val());
 	var user_login 	= jQuery.trim(jQuery("#user_login").val());
 	var user_pass 	= jQuery.trim(jQuery("#register_user_pass").val());
-	var user_login  = jQuery.trim(jQuery("#user_login").val());
+    var cptch_result = jQuery("input[name=cptch_result]").val();
+    var cptch_time = jQuery("input[name=cptch_time]").val();
+    var cntctfrm_contact_action = jQuery("input[name=cntctfrm_contact_action]").val();
+    var cptch_number = jQuery("#cptch_input").val();
 	var form 		= jQuery("#user_signup_form");
 	
 	jQuery.ajax({
@@ -147,15 +152,20 @@ var doUserRegister = function() {
         dataType : "json",
         url : myAjax.ajaxurl,
         data : {
-					action	: action, 
-					do 		: doaction, 
-					method	: method, 
-					role 	: role, 
-					repeat_pass : repeat_pass,
-					user_email : user_email,
-					user_login : user_login,
-					user_pass : user_pass
-				},
+            action: action,
+            do: doaction,
+            method: method,
+            role: role,
+            repeat_pass: repeat_pass,
+            user_email: user_email,
+            user_login: user_login,
+            user_pass: user_pass,
+            cptch_number: cptch_number,
+            cptch_time: cptch_time,
+            cptch_result: cptch_result,
+            cntctfrm_contact_action: cntctfrm_contact_action
+
+        },
 		beforeSend: function() {
 			form.addClass('processing');
 		},
@@ -169,8 +179,7 @@ var doUserRegister = function() {
 				});
 
 				form.trigger('reset');
-				
-				window.location.href='/login';
+				location.reload();
 
 			} else {
 				AE.pubsub.trigger('ae:notification', {

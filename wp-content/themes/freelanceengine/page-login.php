@@ -109,6 +109,8 @@ get_header();
 					</div>		
 
                     <div class="clearfix"></div>
+					  <?php if( function_exists( 'cptch_display_captcha' ) ) { echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />"; echo cptch_display_captcha(); }?>
+					  <div class="clearfix"></div>
 
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
 

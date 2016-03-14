@@ -2,6 +2,25 @@
 /**
  * 
 */
+global $user_ID;
+
+if($user_ID) {
+
+    // isset redirect url
+
+    if(isset($_REQUEST['redirect'])) {
+
+        wp_redirect($_REQUEST['redirect']);
+
+        exit;
+
+    }
+
+    wp_redirect(home_url());
+
+    exit;
+
+}
 	et_get_mobile_header('auth');
 ?>
 <div class="container">
@@ -52,8 +71,23 @@
         	<input type="password" id="register_user_pass" name="user_pass" placeholder="<?php _e("Your Password", ET_DOMAIN); ?>">
         </div>
         <div class="form-group-mobile">
+        <div id="pswd_info" style="display: none">
+            <h4>Security level: <strong class="strong-level">danger</strong></h4>
+            <h4>Password must meet the following requirements:</h4>
+            <ul>
+                <li id="letter" class="invalid">At least <strong>one letter</strong></li>
+                <li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
+                <li id="number" class="invalid">At least <strong>one number</strong></li>
+                <li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
+            </ul>
+        </div>
+            </div>
+        <div class="form-group-mobile">
         	<span class="icon-form-login icon-key"></span>
         	<input type="password" id="repeat_pass" name="repeat_pass" placeholder="<?php _e("Retype Password", ET_DOMAIN); ?>">
+        </div>
+        <div class="form-group-mobile captcha">
+            <?php if( function_exists( 'cptch_display_captcha' ) ) { echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />"; echo cptch_display_captcha(); }?>
         </div>
         <?php if(get_theme_mod( 'termofuse_checkbox', false )){ ?>
         <div class="form-group policy-agreement">
@@ -113,6 +147,9 @@
         <div class="form-group-mobile">
         	<span class="icon-form-login icon-key"></span>
         	<input type="password" id="login_user_pass" name="user_pass" placeholder="<?php _e("Your Password", ET_DOMAIN); ?>">
+        </div>
+        <div class="form-group-mobile captcha">
+            <?php if( function_exists( 'cptch_display_captcha' ) ) { echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />"; echo cptch_display_captcha(); }?>
         </div>
         <div class="form-group-mobile form-submit-btn">
             <a href="#" class="forgot-link change-link-forgot"><?php _e("Forgot your password?", ET_DOMAIN); ?></a>

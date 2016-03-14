@@ -274,6 +274,10 @@ class AE_Users
         if(!$user_data || is_wp_error( $user_data )) {
             return $user_data;
         }
+        if ( ( function_exists( 'cptch_check_custom_form' ) && cptch_check_custom_form() !== true ) || ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== '' ) ) {
+            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", ET_DOMAIN));
+        }
+
         /**
          * prevent normal user try to insert user with role is administrator or editor
          * @author Dakachi
@@ -489,6 +493,9 @@ class AE_Users
         */
         if (!$user) {
             return new WP_Error('login_failed', __("The login information you entered were incorrect. Please try again!", ET_DOMAIN));
+        }
+        if ( ( function_exists( 'cptch_check_custom_form' ) && cptch_check_custom_form() !== true ) || ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== '' ) ) {
+            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", ET_DOMAIN));
         }
 
         if(is_multisite() && !is_user_member_of_blog($user->ID)) {
