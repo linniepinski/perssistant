@@ -3005,9 +3005,4 @@ function upLoadCvUser(){
 	exit;
 }
 
-function append_query_string($url) {
-    return add_query_arg('?r=1', $url);
-}
-add_filter('the_permalink', 'append_query_string');
-
 include 'includes/price_range.php';
