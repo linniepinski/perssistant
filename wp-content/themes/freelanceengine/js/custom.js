@@ -576,6 +576,11 @@ jQuery(document).ready(function () {
 			return false;
 		}
 	});
+	jQuery('.comment-form').validate({
+		rules: {
+			comment: "required"
+		}
+	});
 });
 
 jQuery(document).ready(function($) {
