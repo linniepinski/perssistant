@@ -816,40 +816,58 @@ class AE_Mailing extends AE_Base
 
         }
 
+        $logo_url = get_template_directory_uri() . "/img/logo-fre-white.png";
 
-        $logo_url = apply_filters('ae_mail_logo_url', $logo_url);
+        //$logo_url = apply_filters('ae_mail_logo_url', $logo_url);
 
-
+        $styles = '<style type="text/css">table.button:active td,table.button:hover td,table.button:visited td,table.large-button:hover td,table.medium-button:hover td,table.small-button:hover td,table.tiny-button:hover td{background:#2795b6!important}a:active,a:hover{color:#2795b6!important}a:visited{color:#2ba6cb!important}h1 a:active,h1 a:visited,h2 a:active,h2 a:visited,h3 a:active,h3 a:visited,h4 a:active,h4 a:visited,h5 a:active,h5 a:visited,h6 a:active,h6 a:visited{color:#3783c4!important}table.button td a:visited,table.button:active td a,table.button:hover td a,table.button:visited td a,table.large-button td a:visited,table.large-button:active td a,table.large-button:hover td a,table.medium-button td a:visited,table.medium-button:active td a,table.medium-button:hover td a,table.small-button td a:visited,table.small-button:active td a,table.small-button:hover td a,table.tiny-button td a:visited,table.tiny-button:active td a,table.tiny-button:hover td a{color:#fff!important}table.secondary:hover td{background:#d0d0d0!important;color:#555}table.secondary td a:visited,table.secondary:active td a,table.secondary:hover td a{color:#555!important}table.success:hover td{background:#457a1a!important}table.alert:hover td{background:#970b0e!important}@media only screen and (max-width:600px){table[class=body] img{width:auto!important;height:auto!important}table[class=body] center{min-width:0!important}table[class=body] .container{width:95%!important}table[class=body] .row{width:100%!important;display:block!important}table[class=body] .wrapper{display:block!important;padding-right:0!important}table[class=body] .column,table[class=body] .columns{table-layout:fixed!important;float:none!important;width:100%!important;padding-right:0!important;padding-left:0!important;display:block!important}table[class=body] .left-text-pad,table[class=body] .text-pad-left{padding-right:10px!important}table[class=body] .wrapper.first .column,table[class=body] .wrapper.first .columns{display:table!important}table[class=body] table.column td,table[class=body] table.columns td{width:100%!important}table[class=body] .column td.one,table[class=body] .columns td.one{width:8.333333%!important}table[class=body] .column td.two,table[class=body] .columns td.two{width:16.666666%!important}table[class=body] .column td.three,table[class=body] .columns td.three{width:25%!important}table[class=body] .column td.four,table[class=body] .columns td.four{width:33.333333%!important}table[class=body] .column td.five,table[class=body] .columns td.five{width:41.666666%!important}table[class=body] .column td.six,table[class=body] .columns td.six{width:50%!important}table[class=body] .column td.seven,table[class=body] .columns td.seven{width:58.333333%!important}table[class=body] .column td.eight,table[class=body] .columns td.eight{width:66.666666%!important}table[class=body] .column td.nine,table[class=body] .columns td.nine{width:75%!important}table[class=body] .column td.ten,table[class=body] .columns td.ten{width:83.333333%!important}table[class=body] .column td.eleven,table[class=body] .columns td.eleven{width:91.666666%!important}table[class=body] .column td.twelve,table[class=body] .columns td.twelve{width:100%!important}table[class=body] td.offset-by-eight,table[class=body] td.offset-by-eleven,table[class=body] td.offset-by-five,table[class=body] td.offset-by-four,table[class=body] td.offset-by-nine,table[class=body] td.offset-by-one,table[class=body] td.offset-by-seven,table[class=body] td.offset-by-six,table[class=body] td.offset-by-ten,table[class=body] td.offset-by-three,table[class=body] td.offset-by-two{padding-left:0!important}table[class=body] .right-text-pad,table[class=body] .text-pad-right{padding-left:10px!important}table[class=body] table.columns td.expander{width:1px!important}table[class=body] .hide-for-small,table[class=body] .show-for-desktop{display:none!important}table[class=body] .hide-for-desktop,table[class=body] .show-for-small{display:inherit!important}}</style>';
         $customize = et_get_customization();
 
-        $mail_header = '<html>
+        $mail_header = '
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
 
-                        <head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Perssistant</title>
+</head>
 
-                        </head>
+<body style="width: 100% !important; min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0; padding: 0;">
 
-                        <body style="font-family: Arial, sans-serif;font-size: 14px;margin: 0; padding: 0; color: rgb(102, 102, 102);">
-
-                        <div style="margin: 0px auto; width:600px; border: 1px solid ' . $customize['background'] . '">
-
-                            <table width="100%" cellspacing="0" cellpadding="0">
-
-                            <tr style="background: #54b3db; height: 63px; vertical-align: middle;">
-
-                                <td style="padding: 10px 5px 10px 20px; width: 20%;text-align:center;">
-
-                                    <img style="max-height: 100px;" src="' . $logo_url . '" alt="' . get_option('blogname') . '">
-
-                                </td>
-
-
-                            </tr>
-
-                            <tr><td colspan="2" style="height: 5px; background-color: ' . $customize['background'] . ';"></td></tr>
-
-                            <tr>
-
-                                <td colspan="2" style="background: #ffffff; color: rgb(102, 102, 102)!important; line-height: 18px; padding: 10px 20px;">';
+'.$styles.'
+    <table class="body" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; height: 100%; width: 100%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;">
+        <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+            <td class="center" align="center" valign="top" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: center; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;">
+                <center style="width: 100%; min-width: 580px;">
+                    <table class="row header" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; background: #54b3db; padding: 0px;" bgcolor="#54b3db">
+                        <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                            <td class="center" align="center" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: center; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" valign="middle">
+                                <center style="width: 100%; min-width: 580px;">
+                                    <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;">
+                                        <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                            <td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="middle">
+                                                <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                                    <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                        <td class="center" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: center; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="center" valign="middle">
+                                                            <center style="width: 100%; min-width: 580px;">
+                                                                <img class="center" src="'.$logo_url.'" alt="Perssistant" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: none; clear: both; display: block; margin: 0 auto;" align="none" />
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="container" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: inherit; width: 580px; margin: 0 auto; padding: 0;">
+                        <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                            <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle">
+                               ';
 
         return $mail_header;
 
@@ -885,37 +903,36 @@ class AE_Mailing extends AE_Base
         $copyright = apply_filters('get_copyright', ae_get_option('copyright'));
 
 
-        $mail_footer = '</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td colspan="2" style="background: ' . $customize['background'] . '; padding: 10px 20px; color:rgb(102, 102, 102);">
-
-                                <table width="100%" cellspacing="0" cellpadding="0">
-
-                                    <tr>
-
-                                        <td style="vertical-align: top; text-align: left; width: 50%;color:rgb(102, 102, 102)">' . $copyright . '</td>
-
-                                        <td style="text-align: right; width: 50%; color:rgb(102, 102, 102)!important;text-decoration:none;">' . $info . '</td>
-
+        $mail_footer = '<table class="row footer" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                    <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                        <td class="wrapper" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 10px 20px 0px 0px;" align="left" valign="middle">
+                                            <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                                <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                    <td class="six sub-columns" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 50%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 10px 10px 0px;" align="left" valign="middle">
+                                                        <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 1.1; font-size: 12px; margin: 0 0 10px; padding: 0;" align="left">
+                                                            <br class="hide-for-small" /> © 2016 Perssistant - Plugin Initiative</p>
+                                                    </td>
+                                                    <td class="six sub-columns last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 50%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                        <p class="text-right" style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: right; line-height: 1.1; font-size: 12px; margin: 0 0 10px; padding: 0;" align="right">Persisstant
+                                                            <br /><a href="mailto:info@persisstant.com" style="color: #737373; text-decoration: none;">info@persisstant.com</a>
+                                                        </p>
+                                                    </td>
+                                                    <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
                                     </tr>
-
                                 </table>
-
-                            </td>                       
-
+                            </td>
                         </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
 
-                        </table>                
-
-                    </div>          
-
-                    </body>
-
-                    </html>';
+</html>';
 
         return $mail_footer;
 
@@ -977,6 +994,67 @@ vertical-align: middle;';
         $content = str_ireplace('[avatar]', $avatar, $content);
 
 
+        $greeting = '
+        <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                    <td class="wrapper last space-up" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 40px 0px 0px;" align="left" valign="middle">
+                                        <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                            <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                <td class="three sub-columns" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 25%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 10px 10px 0px;" align="left" valign="middle">
+                                                    <img src="'.get_avatar_url($user_id,150).'" alt="Name" class="circle" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 70px; max-width: 100%; float: left; clear: both; display: block; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;" align="left" />
+                                                </td>
+                                                <td class="nine sub-columns last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 75%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                    <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Hi <a href="'.home_url().'/profile'.'" target="blank" style="color: #3783c4; text-decoration: none;">'.$user->display_name.'</a>, welcome to Perssistant!</p>
+                                                </td>
+                                                <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+        ';
+
+
+        $content = str_ireplace('[greeting]', $greeting, $content);
+
+
+        $main_content_body_start= '<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                        <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                            <td class="wrapper last space-up" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 40px 0px 0px;" align="left" valign="middle">
+                                                <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                                    <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                        <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                            <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">';
+
+        $main_content_body_end = '                          </p>
+                                                        </td>
+                                                        <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                   </table>';
+        $content = str_ireplace('[main_content_body]', $main_content_body_start, $content);
+        $content = str_ireplace('[/main_content_body]', $main_content_body_end, $content);
+
+
+        $before_footer_body_start= '<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                    <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                        <td class="wrapper last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 10px 0px 0px;" align="left" valign="middle">
+                                            <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                                <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                    <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                        <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">';
+
+        $before_footer_body_end = '                     </p>
+                                                    </td>
+                                                    <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>';
+        $content = str_ireplace('[before_footer_body]', $before_footer_body_start, $content);
+        $content = str_ireplace('[/before_footer_body]', $before_footer_body_end, $content);
         /**
          * author posts link
 
@@ -994,22 +1072,31 @@ vertical-align: middle;';
             'key' => md5($user->user_email)
 
         ), home_url());
+
         $content = str_ireplace('[confirm_link]', $confirm_link, $content);
 
-        $button_styles = 'font-size: 14px;
-font-weight: 600;
-padding: 12px 30px;
-border: medium none;
-border-radius: 4px;
-background: rgb(41, 128, 185) none repeat scroll 0% 0%;
-text-decoration: none;
-color: rgb(255, 255, 255);
-text-align: center;
-display: block;
-width: 30%;
-margin: auto;';
-
-        $confirm_button = '<br><div class="display:block;text-align:center;"><a style="'.$button_styles.'" href="' . $confirm_link . '" >' . __("Click verification link", ET_DOMAIN) . '</a></div><br>';
+        $block_button_confirm = '
+                                <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                    <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                        <td class="wrapper offset-by-four" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 10px 20px 0px 200px;" align="left" valign="middle">
+                                            <table class="four columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 180px; margin: 0 auto; padding: 0;">
+                                                <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                    <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                        <table class="button" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; overflow: hidden; padding: 0;">
+                                                            <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                                <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: center; color: #ffffff; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; display: block; width: auto !important; border-radius: 5px; -webkit-box-shadow: 0 2px 0 #124251; -moz-box-shadow: 0 2px 0 #124251; box-shadow: 0 2px 0 #124251; background: #3783c4; margin: 0 0 2px; padding: 8px 0; border: none;" align="center" bgcolor="#3783c4" valign="middle">
+                                                                    <a href="' . $confirm_link . '" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: bold; font-family: Arial, sans-serif; font-size: 14px;">' . __("Click verification link", ET_DOMAIN) . '</a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+        ';
 
 
         /**
@@ -1017,7 +1104,7 @@ margin: auto;';
 
          */
 
-        $content = str_ireplace('[confirm_button]', $confirm_button, $content);
+        $content = str_ireplace('[confirm_button]', $block_button_confirm, $content);
 
 
         /**

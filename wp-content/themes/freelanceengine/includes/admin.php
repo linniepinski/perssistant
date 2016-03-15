@@ -1575,7 +1575,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'register_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Register Mail", ET_DOMAIN) ,
                             'name' => 'register_mail_template',
                             'class' => '',
@@ -1595,7 +1595,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'register_mail_template_freelancer',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Register Mail", ET_DOMAIN) ,
                             'name' => 'register_mail_freelancer_template',
                             'class' => '',
@@ -1615,7 +1615,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'confirm_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Confirme Mail", ET_DOMAIN) ,
                             'name' => 'confirm_mail_template',
                             'class' => '',
@@ -1635,7 +1635,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'confirm_mail_freelancer_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Confirmed Mail Freelancer", ET_DOMAIN) ,
                             'name' => 'confirm_mail_freelancer_template',
                             'class' => '',
@@ -1655,7 +1655,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'confirmed_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Confirmed Mail", ET_DOMAIN) ,
                             'name' => 'confirmed_mail_template',
                             'class' => '',
@@ -1697,7 +1697,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'forgotpass_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Register Mail", ET_DOMAIN) ,
                             'name' => 'forgotpass_mail_template',
                             'class' => '',
@@ -1717,7 +1717,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'resetpass_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Resetpassword Mail", ET_DOMAIN) ,
                             'name' => 'resetpass_mail_template',
                             'class' => '',
