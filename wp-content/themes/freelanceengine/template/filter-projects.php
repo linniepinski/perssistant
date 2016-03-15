@@ -82,7 +82,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
                            data-slider-max="<?php echo $max_value; ?>" data-slider-step="5"
                            data-slider-value="[0,<?php echo $max_value; ?>]"
                     />
-                    <b class="currency"><?php echo fre_price_format($max_slider) ?></b>
+                    <b class="currency"><?php echo fre_price_format($max_value) ?></b>
                     <input type="hidden" name="budget" id="budget" value=""/>
                 </div>
             </div>
