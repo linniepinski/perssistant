@@ -424,7 +424,7 @@ class Fre_Notification extends AE_PostAction
                             ' . get_the_author_meta('display_name', $project_author) . '
                         </span>
                         </a>';
-                $content.= sprintf(__("Your bid at %s was deleted by %s", ET_DOMAIN) , $project_link, $author);
+                $content.= sprintf(__("Your bid at %s was declined by %s", ET_DOMAIN) , $project_link, $author);
                 break;
 
             // notify freelancer when employer complete a project

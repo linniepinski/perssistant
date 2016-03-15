@@ -699,30 +699,19 @@ $post_data['post_title'] = $title;
         $project_id = get_post_field('post_parent', $bid_id);
         $author_id = (int)get_post($project_id)->post_author;
         if($current_user->id === $author_id){
-           // var_dump($_POST);
             do_action('fre_delete_bid', $bid_id);
             wp_delete_post( $bid_id, true );
             wp_send_json(array(
-
                 'success' => true,
-
-                'msg' => 'OK'
-
+                'msg' => __("Decline bid successful.", ET_DOMAIN)
             ));
 
         }else{
             wp_send_json(array(
-
                 'success' => false,
-
                 'msg' => 'Error'
-
             ));
         }
-
-      // var_dump($current_user->id);
-      //  var_dump($project_id);
-       // var_dump($author_id);
 
         wp_die();
     }
