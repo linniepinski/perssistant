@@ -205,6 +205,7 @@ if (function_exists('fre_user_have_notify')) {
                     <?php } else { ?>
                         <a class="non-login right_menu" href="<?php echo et_get_page_link('auth') ?>">
                             <span class="icon-form-header icon-user-header"></span>
+                            <span class="text"><?php _e("LOGIN", ET_DOMAIN) ?></span>
                         </a>
                         <?php
                         // get template mobile header_login_template
