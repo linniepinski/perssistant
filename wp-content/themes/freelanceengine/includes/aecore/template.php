@@ -349,7 +349,8 @@ if(!function_exists('ae_favicon')) {
  * @return void
  */
 function ae_favicon () {
-    $img = get_template_directory_uri()."/img/favicon.png";
+    //$img = get_template_directory_uri()."/img/favicon.png";
+		$img = get_template_directory_uri()."/img/favicon.ico";
     $options = AE_Options::get_instance();
     // save this setting to theme options
     $mobile_icon = $options->mobile_icon;
