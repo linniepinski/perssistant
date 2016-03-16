@@ -569,6 +569,28 @@ jQuery(document).ready(function () {
 
         }
     });
+
+	if (jQuery.cookie('data_to_clone') !== undefined && window.location.pathname == '/submit-project/'){
+		var project_clone = jQuery.parseJSON(jQuery.cookie('data_to_clone'));
+		jQuery('#post_title').val(project_clone.data.title);
+		jQuery('#post_content').val(project_clone.data.description);
+		jQuery('select[name=type_budget] > option').removeAttr('selected');
+		jQuery('select[name=type_budget] > option[value='+project_clone.data.type_budget+']').attr('selected','selected').change();
+		if (project_clone.data.type_budget == 'hourly_rate'){
+			jQuery('#hours_limit').val(project_clone.data.hours_limit);
+		}
+		jQuery.each(project_clone.data.project_category, function (index, value) {
+			jQuery("#project_category").find("option[value='" + value + "']").attr('selected', true);
+		});
+		jQuery('#project_category').trigger('chosen:updated');
+
+		jQuery.each(project_clone.data.skill, function (index, value) {
+			jQuery("#skill").find("option[value='" + value + "']").attr('selected', true);
+		});
+		jQuery('#skill').trigger('chosen:updated');
+		jQuery.removeCookie('data_to_clone', { path: '/' });
+	}
+
 	jQuery('input[type="number"]').keypress(function (e) {
 		//if the letter is not digit then display error and don't type anything
 		console.log(e.which)
@@ -580,6 +602,37 @@ jQuery(document).ready(function () {
 		rules: {
 			comment: "required"
 		}
+	});
+	jQuery('#activate_without_interview').on('click',function(){
+		var button = jQuery(this);
+		button.attr('disabled','disabled');
+
+		jQuery.ajax({
+			type: "post",
+			dataType: "json",
+			url: ajaxurl,
+			data: {
+				action: 'activate_without_interview'
+			},
+			beforeSend: function () {
+
+			},
+			success: function (status) {
+				if(status.status){
+					button.fadeOut('slow');
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+				} else {
+					button.removeAttr('disabled');
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+				}
+			}
+		});
 	});
 });
 

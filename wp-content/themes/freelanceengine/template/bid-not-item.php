@@ -25,7 +25,7 @@
 				   
 				</div>
 				<div class="col-md-2">
-				   		<a href="#" class="btn btn-apply-project-item" data-toggle="modal" data-target="#modal_bid">
+				   		<a href="#" class="btn btn-apply-project-item" data-toggle="modal" data-target="#modal_bid" <?php if(interview_is_profile_activated()) echo'disabled'?>>
 				   			<?php _e("Bid", ET_DOMAIN); ?>
 				   		</a>
 				</div>

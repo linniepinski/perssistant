@@ -41,6 +41,26 @@ if ($project_status == 'publish') {
 
 <div class="col-md-12">
 	<div class="tab-content-project">
+        <?php if(interview_is_profile_activated())
+        {?>
+            <div class="col-md-12" style="margin-top: 25px">
+                <div class="alert alert-warning" role="alert">
+                    Your profile is not activated. To activate you profile you need to pass the interview -
+                    <a href="/interview">Interview details</a>
+                    <?php
+                    if (get_option('interview_system') == 'false') {
+                        ?>
+                        <button id="activate_without_interview"
+                                class="btn btn-info">Activate without interview
+                        </button>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     	<!-- Title -->
     	<div class="row title-tab-project">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -90,6 +110,19 @@ if ($project_status == 'publish') {
                         }
                         ?>
                     </div>
+                    <?php
+                    $data_project['data'] = array(
+                        'title' => get_the_title(),
+                        'type_budget' => $convert->type_budget,
+                        'description' => get_the_content(),
+                        'skill' => taxonomy_project_to_array(get_the_ID(), 'skill'),
+                        'project_category' => taxonomy_project_to_array(get_the_ID(), 'project_category'),
+                        'hours_limit' => $convert->hours_limit
+                    );
+                    ?>
+                    <script id="data_current_project" type="text/javascript">
+                     var current_project_data = <?php echo json_encode($data_project); ?>
+                    </script>
                     <!--STATUS-->
                     <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 text-right  " style="padding:0; margin:0;">
                     <?php
@@ -130,7 +163,7 @@ if ($project_status == 'publish') {
                                         </a>
                                     <?php } else { ?>
                                         <a href="#" class="btn btn-apply-project-item btn-project-status"
-                                           data-toggle="modal" data-target="#modal_bid">
+                                           data-toggle="modal" data-target="#modal_bid" <?php if(interview_is_profile_activated()) echo'disabled'?>>
                                             <?php _e('Bid ', ET_DOMAIN); ?>
                                         </a>
                                     <?php }

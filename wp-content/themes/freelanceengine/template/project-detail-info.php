@@ -101,12 +101,9 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                 </li>
                     <?php  if( fre_share_role() || ae_user_role() == 'employer' || ae_user_role() == 'administrator' ){ ?>
                 <li>
-
-                        <span class="link-clone">
-                    <a href="<?php echo et_get_page_link( array('page_type' => 'submit-project', 'post_title' => __("Submit project", ET_DOMAIN )) ); ?>" title="">
+                    <button id="clone_project" class="btn clone-button">
                         <i class="fa fa-plus-circle"></i><?php _e('Create a Project like this',ET_DOMAIN);?>
-                    </a>
-                </span>
+                    </button>
                 </li>
 
                     <?php }  ?>

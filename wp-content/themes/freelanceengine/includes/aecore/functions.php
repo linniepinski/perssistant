@@ -2681,3 +2681,9 @@ function ae_country_list() {
     
     return $arrCountry;
 }
+function interview_is_profile_activated(){
+    global $user_ID;
+    $return = (get_user_meta($user_ID,'interview_status',true) == 'unconfirm');
+
+    return $return;
+}
