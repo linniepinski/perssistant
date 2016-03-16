@@ -1014,6 +1014,13 @@ function list_tax_of_project($id, $title = '', $taxonomy = 'project_category', $
         <?php
     endif;
 }
+function taxonomy_project_to_array($id,$taxonomy){
+    $list = wp_get_post_terms($id,$taxonomy);
+    foreach( $list as $item){
+        $output[] = $item->term_id;
+    }
+    return $output;
+}
 
 if (!function_exists('fre_display_user_info')) {
 

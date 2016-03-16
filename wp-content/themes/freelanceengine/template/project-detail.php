@@ -110,6 +110,19 @@ if ($project_status == 'publish') {
                         }
                         ?>
                     </div>
+                    <?php
+                    $data_project['data'] = array(
+                        'title' => get_the_title(),
+                        'type_budget' => $convert->type_budget,
+                        'description' => get_the_content(),
+                        'skill' => taxonomy_project_to_array(get_the_ID(), 'skill'),
+                        'project_category' => taxonomy_project_to_array(get_the_ID(), 'project_category'),
+                        'hours_limit' => $convert->hours_limit
+                    );
+                    ?>
+                    <script id="data_current_project" type="text/javascript">
+                     var current_project_data = <?php echo json_encode($data_project); ?>
+                    </script>
                     <!--STATUS-->
                     <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 text-right  " style="padding:0; margin:0;">
                     <?php

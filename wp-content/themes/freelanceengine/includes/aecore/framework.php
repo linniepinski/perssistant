@@ -106,7 +106,8 @@ class AppEngine extends AE_Base
         $this->register_script('jquery-validator', ae_get_url() . '/assets/js/jquery.validate.min.js', 'jquery');
         
         $this->register_script('chosen', ae_get_url() . '/assets/js/chosen.js', 'jquery');
-        
+        $this->register_script('jquery.cookie.js', ae_get_url() . '/assets/js/jquery.cookie.js', 'jquery');
+
         $this->register_script('marionette', ae_get_url() . '/assets/js/marionette.js', array(
             'jquery',
             'backbone',
