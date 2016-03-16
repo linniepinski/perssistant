@@ -581,6 +581,37 @@ jQuery(document).ready(function () {
 			comment: "required"
 		}
 	});
+	jQuery('#activate_without_interview').on('click',function(){
+		var button = jQuery(this);
+		button.attr('disabled','disabled');
+
+		jQuery.ajax({
+			type: "post",
+			dataType: "json",
+			url: ajaxurl,
+			data: {
+				action: 'activate_without_interview'
+			},
+			beforeSend: function () {
+
+			},
+			success: function (status) {
+				if(status.status){
+					button.fadeOut('slow');
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+				} else {
+					button.removeAttr('disabled');
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+				}
+			}
+		});
+	});
 });
 
 jQuery(document).ready(function($) {
