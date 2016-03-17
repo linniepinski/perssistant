@@ -29,10 +29,10 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 
 	<h3 class="title et-comments-title">
-		<?php 
+		<?php
 			comments_number (
-				__('0 Comments on this article', ET_DOMAIN), 
-				__('1 Comment on this article', ET_DOMAIN), 
+				__('0 Comments on this article', ET_DOMAIN),
+				__('1 Comment on this article', ET_DOMAIN),
 				__('% Comments on this article', ET_DOMAIN)
 			);
 		?>
@@ -65,19 +65,20 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php endif; // have_comments() ?>
-	
+
 	<?php if ( ! comments_open() ) : ?>
 	<p class="no-comments et-comments-title">
 		<?php _e( 'Comments are closed.', ET_DOMAIN ); ?>
 	</p>
 	<?php endif; ?>
 	<div class="btm-comment-form">
-		<?php 
+		<?php
 			comment_form ( array(
-							'comment_field'        => ' <div class="form-item"><label for="comment">' . __( 'Your Comment', ET_DOMAIN ) . '</label><div class="input"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
+							'comment_field'        => ' <div class="form-item"><label for="comment">' . __( 'Your Comment', ET_DOMAIN ) . '</label><div class="input"><textarea class="form-control" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div></div>',
 							'comment_notes_before' => '',
 							'comment_notes_after'  => '',
 							'id_form'              => 'commentform',
+							'class_form'           => 'form-group',
 							'id_submit'            => 'submit',
 							'title_reply'          => __( "Comment", ET_DOMAIN),
 							'title_reply_to'       => __( 'Leave a Reply to %s', ET_DOMAIN),
@@ -100,7 +101,7 @@ function fre_comment_callback( $comment, $args, $depth ){
             </a>
             <div class="media-body">
                 <h4 class="media-heading">
-                <?php 
+                <?php
                     comment_author();
                 ?>
                 </h4>
@@ -113,11 +114,11 @@ function fre_comment_callback( $comment, $args, $depth ){
                 		<?php echo ae_the_time( strtotime($comment->comment_date)); ?>
                 	</time>
                 </span>
-                <?php 
+                <?php
                     comment_reply_link(array_merge($args, array(
 						'reply_text' => __( '&nbsp;&nbsp;|&nbsp;&nbsp; Reply ', ET_DOMAIN ).'<i class="fa fa-edit"></i>',
 						'depth'      => $depth,
-						'max_depth'  => $args['max_depth'] 
+						'max_depth'  => $args['max_depth']
                     )));
                 ?>
             </div>
