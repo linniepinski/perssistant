@@ -379,11 +379,20 @@ $country_list = ae_country_list();
     }
 
     jQuery('.btn-reset-filters').on('click', function () {
+        //reset location
+        var countries = jQuery('#country > option');
+        countries.each(function (index) {
+            jQuery(this).removeAttr('selected');
+        });
+        jQuery("#country > option[value='']").attr('selected', 'selected');
+        jQuery('#country').trigger('chosen:updated');
+
         //reset category list
         var categories = jQuery('#project_category > option');
         categories.each(function (index) {
             jQuery(this).removeAttr('selected');
         });
+
         jQuery('#category-all :checkbox').attr('checked', 'checked');
         jQuery("#category-parent-checkbox :checked").each(function (index) {
             jQuery(this).removeAttr('checked');
@@ -417,6 +426,7 @@ $country_list = ae_country_list();
         jQuery('.skill-item a.delete').click();
         jQuery('#skills_list').html('');
         //reset init
+        jQuery('#country').change();
         jQuery('#project_category').change();
 
     });
