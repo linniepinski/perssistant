@@ -1,10 +1,14 @@
+<?php
+$country_list = ae_country_list();
+
+?>
 <form class="form-search-wrapper">
     <div class="form-group">
         <label><?php _e("Category", ET_DOMAIN); ?></label>
         <?php
         ae_tax_dropdown('project_category', array('attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
             'class' => 'cat-filter chosen-select',
-            'hide_empty' => true,
+            'hide_empty' => false,
             'hierarchical' => true,
             'id' => 'project_category',
             'show_option_all' => __("All categories", ET_DOMAIN),
@@ -15,18 +19,19 @@
     </div>
     <div class="form-group">
         <label><?php _e('Location', ET_DOMAIN) ?></label>
-        <?php
-        ae_tax_dropdown('country', array('attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
-            'class' => 'cat-filter chosen-select',
-            'hide_empty' => true,
-            'hierarchical' => true,
-            'id' => 'country',
-            'show_option_all' => __("All locations", ET_DOMAIN),
-            'value' => 'slug'
-                )
-        );
-//        var_dump($GLOBALS['wp_query']->request);
-        ?>
+        <select data-chosen-width="100%" data-chosen-disable-search=""
+                data-placeholder="Choose categories" name="country" id="country"
+                class="location-filter chosen-select" style="display: none;">
+            <option value="" class="level-0" selected><?php _e('Choose country', ET_DOMAIN) ?></option>
+            <?php
+            if (!empty($country_list)) {
+                foreach ($country_list as $key => $value) {
+                    echo '<option value="' . $value->country_name . '" class=" ' . $value->country_name . '  level-0">' . $value->country_name . '</option>';
+                }
+
+            }
+            ?>
+        </select>
     </div>
     <?php
     

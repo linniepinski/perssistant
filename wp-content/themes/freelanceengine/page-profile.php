@@ -47,9 +47,8 @@ $hour_rate = isset($profile->hour_rate) ? $profile->hour_rate : '';
 $about = isset($profile->post_content) ? $profile->post_content : '';
 $display_name = $user_data->display_name;
 $user_available = isset($user_data->user_available) && $user_data->user_available == "on" ? 'checked' : '';
-$country = isset($profile->tax_input['country'][0]) ? $profile->tax_input['country'][0]->name : '';
+$country = isset($profile->country) ? $profile->country : '';
 $category = isset($profile->tax_input['project_category'][0]) ? $profile->tax_input['project_category'][0]->slug : '';
-
 $intProfileCompletion = 0;
 $totalPercent = 0;
 if (ae_user_role() != FREELANCER) {
@@ -215,7 +214,6 @@ get_header();
                                                     <div class="form-group-control">
                                                         <div class="form-group-control">
                                                             <label><?php _e('Location', ET_DOMAIN) ?></label>
-                                                            <?php if (ae_user_role() != FREELANCER) { ?>
                                                                 <select
                                                                     class="chosen multi-tax-item tax-item required cat_profile"
                                                                     id="location"
@@ -243,13 +241,6 @@ get_header();
                                                                     }
                                                                     ?>
                                                                 </select>
-                                                            <?php } else { ?>
-                                                                <input type="text" class="form-control" id="location"
-                                                                       name="location"
-                                                                       value="<?php echo $user_data->location ?>"
-                                                                       placeholder="<?php _e('Enter location', ET_DOMAIN) ?>">
-                                                            <?php } ?>
-
                                                         </div>
                                                     </div>
                                                 </div>

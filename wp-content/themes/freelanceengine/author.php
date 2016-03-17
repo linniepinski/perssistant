@@ -242,9 +242,9 @@ if($convert) {
                                     <i class="fa fa-map-marker"></i>
                                     <span class="text"><?php _e('Country:',ET_DOMAIN);?></span>
                                     <span class="text-right">
-                                        <?php 
-                                        if($convert->tax_input['country']){ 
-                                            echo $convert->tax_input['country']['0']->name;
+                                        <?php
+                                        if($convert->country){
+                                            echo $convert->country;
                                         } ?>
                                     </span>
                                 </li>

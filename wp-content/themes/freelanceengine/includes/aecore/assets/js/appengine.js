@@ -2067,7 +2067,7 @@ window.AE = window.AE || {};
             view.page = 1;
 
             if (ae_globals.ae_is_mobile == 0) {
-                view.fetch($target);
+                view.fetch(input_skill);
             }
 
         },

@@ -167,7 +167,7 @@ $biddata = array();
                 $currency = ae_get_option('content_currency', array('align' => 'left', 'code' => 'USD', 'icon' => '$'));
 
                 #get country code
-                $arrCountry = get_country_name_by_country_code($country);
+                //$arrCountry = get_country_name_by_country_code($country);
 
                 #get bid detail
                 query_posts(array('post_status' => array('complete'), 'post_type' => BID, 'author' => $bid_accepted_author, 'accepted' => 1));
@@ -244,7 +244,7 @@ $biddata = array();
                         <span class="text"><?php _e('Country:', ET_DOMAIN); ?></span>
                         <span class="text-right">
                             <?php
-                            echo $arrCountry->country_name;
+                            echo $country;
                             ?>
                         </span>
                     </li>

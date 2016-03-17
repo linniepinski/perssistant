@@ -182,7 +182,7 @@ function fre_register_profile() {
 
     global $ae_post_factory;
 
-    $ae_post_factory->set(PROFILE, new AE_Posts(PROFILE, array('project_category', 'skill', 'country') , array(
+    $ae_post_factory->set(PROFILE, new AE_Posts(PROFILE, array('project_category', 'skill') , array(
 
         'et_professional_title', 
 
@@ -192,7 +192,8 @@ function fre_register_profile() {
 
         'et_experience',
 
-        'currency'
+        'currency',
+        'country'
 
     )));
 
@@ -743,7 +744,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
             $join .= " INNER JOIN $wpdb->postmeta as prof_title ON ID = prof_title.post_id AND prof_title.meta_key='et_professional_title' ";    
 
-        }    
+        }
 
         return $join;
 
@@ -766,7 +767,7 @@ class Fre_ProfileAction extends AE_PostAction {
         if(isset($_REQUEST['query'])) {
 
             $query = $_REQUEST['query'];
-
+            $query_args['post_status']= array('draft','publish');
             $query_args= wp_parse_args($query_args, $query);
 
             // query profile base on skill
@@ -799,13 +800,11 @@ class Fre_ProfileAction extends AE_PostAction {
 
                 if(isset($query['meta_value'])) {
 
-                    $query_args['meta_value'] =  $query['meta_value'];    
+                    $query_args['meta_value'] =  $query['meta_value'];
 
-                }                
+                }
 
             }
-
-
 
             // add hour rate filter to query
 
@@ -817,25 +816,26 @@ class Fre_ProfileAction extends AE_PostAction {
 
                 $query_args['meta_query'][] =  array(   'key' =>'hour_rate',
 
-                                                        'value' => array((int)$hour_rate[0], 
+                                                        'value' => array((int)$hour_rate[0],
 
-                                                        (int)$hour_rate[1]), 
+                                                        (int)$hour_rate[1]),
 
-                                                        'type'    => 'numeric', 
+                                                        'type'    => 'numeric',
 
-                                                        'compare' => 'BETWEEN' 
+                                                        'compare' => 'BETWEEN'
 
                                                 );
 
             }
 
 
-
             if(isset($query['country']) && $query['country'] != '') {
-
-                $query_args['country'] = $query['country'];
-
+                $query_args['meta_query'][] =  array(
+                    'key' =>'country',
+                    'value' => $query['country'],
+                );
             }
+            unset($query_args['country']);
 
 
 
