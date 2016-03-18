@@ -536,9 +536,10 @@ class Fre_ProfileAction extends AE_PostAction {
 
 
 
-        $rating = Fre_Review::freelancer_rating_score($result->post_author);
-
-        $result->rating_score = $rating['rating_score'];
+//        $rating = Fre_Review::freelancer_rating_score($result->post_author);
+//var_dump($result->rating_score);
+//        $result->rating_score = $rating['rating_score'];
+//        var_dump($result->rating_score);
 
 
 
@@ -850,7 +851,6 @@ class Fre_ProfileAction extends AE_PostAction {
             }
 
         }
-
 
 
         return apply_filters( 'fre_profile_query_args', $query_args, $query );

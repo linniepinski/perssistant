@@ -9,9 +9,7 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
     protected function content($atts, $content = null) {
 
 
-
         $custom_css = $el_class = $title = $icon = $output = $s_content = $m_link = '';
-
 
 
         extract(shortcode_atts(array(
@@ -31,12 +29,11 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
         /* ================  Render Shortcodes ================ */
 
         ob_start();
+        $query_args = array(   'post_type' => PROFILE ,
 
-        $query_args = array(   'post_type' => PROFILE , 
+                                'post_status' => array('draft','publish') ,
 
-                                'post_status' => 'publish' , 
-
-                                'posts_per_page' => $showposts
+                                'posts_per_page' => 10
 
                             ) ;
 
@@ -115,11 +112,9 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
                     <div class="tab-content vc-block-profiles">
 
                         <!-- Tab panes -->
-
                         
 
                         <?php query_posts( $query_args); ?>
-
 
 
                         <div class="tab-pane fade in active tab-profile-home">
@@ -152,12 +147,12 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
 
                                         while(have_posts()) { the_post(); 
 
-                                            $convert = $post_object->convert($post);                                            
+                                            $convert = $post_object->convert($post);
                                             $current_user = $convert->post_author;
                                             $user = get_userdata( $current_user );
                                             $capabilities = $user->roles[0];
-                                            
-                                            if ($capabilities == 'freelancer' && get_user_meta($current_user,'interview_status',true) != 'unconfirm') {
+
+                                            if ($capabilities == 'freelancer' && get_user_meta($current_user,'interview_status',true) != 'unconfirm' ) {
                                                 $postdata[] = $convert;
 
                                                 get_template_part('template/profile', 'item' );                                            
