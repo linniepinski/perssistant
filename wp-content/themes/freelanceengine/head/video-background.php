@@ -9,7 +9,7 @@
 <div id="video-background-wrapper" class="covervid-wrapper" style="width: 100%; height:800px;position: relative;
 min-width: 500px; background: url(<?php echo $fall_back; ?>) no-repeat center center; background-size :cover;" >
 <?php if(!et_load_tablet()) { ?> 
-    <video id="covervid-video" style="height:100%;" class="covervid-video" autoplay <?php if(ae_get_option('header_video_loop', true)) { echo 'loop'; } ?> poster="<?php echo $fall_back; ?>">
+    <video id="covervid-video" style="height:100%;" class="covervid-video" autoplay <?php if(ae_get_option('header_video_loop', true)) { echo 'loop'; } ?> <?php if(!empty($fall_back)) { ?> poster="<?php echo $fall_back; ?> <?php } ?>">
         <?php if( $video ) { ?>
         <source src="<?php echo $video; ?>" type="video/mp4">
         <?php } ?>
