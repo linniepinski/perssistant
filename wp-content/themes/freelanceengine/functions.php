@@ -2642,24 +2642,25 @@ function contains($str, array $arr)
 function custom_language_switcher_perssistant($args)
 {
     global $wp;
-    $current_page_url = $temp_url = add_query_arg( '', '', home_url( $wp->request ));
+    //$current_page_url = $temp_url = add_query_arg( '', '', home_url( $wp->request ));
     $array = icl_get_languages('skip_missing=0&orderby=id&order=ASC');
     $exclude = array('profile','profiles','project','projects','author');
     echo '<div class="language-selector-wpml-custom">';
     echo '<ul>';
     foreach ($array as $lang) {
-        if ($lang['language_code'] == 'de' && strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
-            $temp_url = $current_page_url;
-        }elseif($lang['language_code'] == 'en' && !strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
-            $temp_url = apply_filters( 'wpml_permalink', $current_page_url(), 'de' );
-        }else{
-            $temp_url = str_replace('/de/','/',$current_page_url);
-        }
+//        if ($lang['language_code'] == 'de' && strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
+//            $temp_url = $current_page_url;
+//        }elseif($lang['language_code'] == 'en' && !strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
+//            $temp_url = apply_filters( 'wpml_permalink', $current_page_url(), 'de' );
+//        }else{
+//            $temp_url = str_replace('/de/','/',$current_page_url);
+//        }
         if ($lang['active'] == '1' && $args['EscapeActive']) continue;
         echo '<li>';
+//        && contains($current_page_url,$exclude)
         ?>
-        <a href="<?php echo $temp_url ?>">
-            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && contains($current_page_url,$exclude)) echo 'missing'; ?>"
+        <a href="<?php echo $lang['url'] ?>">
+            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] ) echo 'missing'; ?>"
                  src="<?php echo $lang['country_flag_url'] ?>" title="<?php echo $lang['native_name'] ?>">
         </a>
         <?php
