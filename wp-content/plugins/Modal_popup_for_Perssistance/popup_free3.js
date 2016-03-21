@@ -1,5 +1,5 @@
 jQuery(document).ready(function () {
-    if ( jQuery.cookie('popup_free') !== "1" && window.location.pathname == '/'){
+    if ( jQuery.cookie('popup_free') !== "1" && (window.location.pathname == '/' || window.location.pathname == '/de/')){
         setTimeout("popup_in()",5000);
     }
     jQuery('#popup_free_3').on('hidden.bs.modal', function (e) {
@@ -7,7 +7,6 @@ jQuery(document).ready(function () {
             jQuery.cookie('popup_free', '1', { expires: 1, path: '/' });
     })
 });
-
 function popup_in (){
     jQuery('#popup_free_3').modal('show');
     centerModals(jQuery("#popup_free_3"));
