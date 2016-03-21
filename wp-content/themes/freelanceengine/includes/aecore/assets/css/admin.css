@@ -10,7 +10,9 @@
 
 .et-body .color-grey, .et-body .color-grey > * { color: grey !important; }
 
-
+#icl_po_file{
+	width: 100%;
+}
 .et-main-header {
 	padding: 30px;
 	border-bottom: 1px solid #ebebf2;
