@@ -507,7 +507,7 @@ jQuery(document).ready(function () {
     chatroom_notifications_everywhere();
 
     //alert(window.location.pathname);
-    if (window.location.pathname == '/chat-room/') {
+    if (window.location.pathname == '/chat-room/' || window.location.pathname == '/de/chat-room/') {
 
         InitGUI();
         if (jQuery('#contact_with').val() != '') {

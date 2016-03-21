@@ -110,4 +110,3 @@ abstract class AE_Plugin_Updater{
 }
 
 }
-?>

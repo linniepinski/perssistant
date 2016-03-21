@@ -1,4 +1,4 @@
-    <?php
+<?php
     $texts_chat_localized = array(
         'error' => __("Error.", 'chat-frontend') ,
         'select_contact' => __("Select a contact.", 'chat-frontend') ,

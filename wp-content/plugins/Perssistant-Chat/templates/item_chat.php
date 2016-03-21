@@ -41,7 +41,6 @@ if ($chat_query) {
             'post_type' => 'attachment',
             'post_status' => 'inherit',
             'posts_per_page' => 1,
-
         );
 
         $attachments = get_children($args, 'ARRAY_A');
@@ -60,7 +59,7 @@ if ($chat_query) {
         }
         unset($attachments);
 
-        $date1 = new DateTime(get_the_date('', $post->ID));
+        $date1 = new DateTime(get_the_time($post->ID ,'U'));
         $date2 = new DateTime(date('F d,Y ', strtotime('-1 days')));
 
         $response['query'][$key]['id'] = $post->ID;

@@ -570,6 +570,7 @@ class Fre_ProjectAction extends AE_PostAction
         $result->bid_budget_text = fre_price_format(get_post_meta($result->accepted, 'bid_budget', true));
 
         $result->rating_score = (float)get_post_meta($result->ID, 'rating_score', true);
+        $result->permalink = apply_filters( 'wpml_permalink', get_permalink(), ICL_LANGUAGE_CODE );
 
         $comment = get_comments(array(
             'post_id' => $result->ID,

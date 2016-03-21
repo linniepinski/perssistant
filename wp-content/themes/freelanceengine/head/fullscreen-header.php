@@ -41,18 +41,17 @@ else $current_lang = '/'.ICL_LANGUAGE_CODE;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <?php $sufx = (is_user_logged_in()) ? '?r=1' : ''; ?>
                     <?php if (is_page_template('page-home.php')) { ?>
 
-                        <a href="<?php echo home_url(). $sufx; ?>"
+                        <a href="<?php echo home_url()?>"
                            class="logo site_logo_white"><?php fre_logo('site_logo_white') ?></a>
 
-                        <a href="<?php echo home_url() . $sufx; ?>"
+                        <a href="<?php echo home_url()?>"
                            class="logo site_logo_black"><?php fre_logo('site_logo_black') ?></a>
 
                     <?php } else { ?>
 
-                        <a href="<?php echo home_url(). $sufx; ?>"
+                        <a href="<?php echo home_url()?>"
                            class="logo"><?php fre_logo('site_logo_black') ?></a>
 
                     <?php } ?>

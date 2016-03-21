@@ -157,5 +157,3 @@ function et_check_update(){
 	$update_path = ET_UPDATE_PATH . '&product='.THEME_NAME.'&type=theme';
 	new ET_Theme_Updater(ET_VERSION, $update_path, THEME_NAME, 'http://enginethemes.com');
 }
-
-?>
