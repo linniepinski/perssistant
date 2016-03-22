@@ -643,5 +643,13 @@ jQuery(document).ready(function($) {
       $(this).attr('target', '_blank');
     }
   });
+
+  $('input.wpcf7-submit').click(function(){
+    $(this).parents('form').find('textarea').each(function () {
+      var val = $(this).val();
+      $(this).val(val.trim());
+    });
+  });
+
 });
 
