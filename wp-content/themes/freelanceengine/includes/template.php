@@ -113,28 +113,35 @@ if(!function_exists('fre_project_button')) {
 		
 }
 
-function ae_edit_post_button ($post) {
-	if($post->post_status == 'pending'){ ?>
-        <a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
-    <?php } ?>
+function ae_edit_post_button($post)
+{
+	if ($post->post_status == 'pending') { ?>
+		<a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit"
+		   href="#edit_place"><i class="fa fa-pencil"></i></a>
+		<a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>" class="post-views" href="#"><i
+				class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
+	<?php } ?>
 
-    <?php if($post->post_status == 'publish'){ ?>
-        <a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
-        <a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
-    <?php } ?>
-    <?php if($post->post_status == 'archive'){ ?>
-        <a title="<?php _e("Edit", 'template-backend'); ?>" data-target="#" class="" href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
-            <i class="fa fa-pencil"></i>
-        </a>
-        <a title="<?php _e("Delete", 'template-backend'); ?>" data-action="delete" class="action delete" href="#">            <i class="fa fa-times"></i>
-        </a>
-    <?php } ?>
-<?php if($post->post_status == 'complete'){ ?>
-			<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
-		<?php }
-	do_action( 'ae_edit_post_button', $post );
+	<?php if ($post->post_status == 'publish') { ?>
+	<a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit"
+	   href="#edit_place"><i class="fa fa-pencil"></i></a>
+	<a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>" class="post-views" href="#"><i
+			class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
+	<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
+<?php } ?>
+	<?php if ($post->post_status == 'archive') { ?>
+	<a title="<?php _e("Edit", 'template-backend'); ?>" data-target="#" class=""
+	   href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
+		<i class="fa fa-pencil"></i>
+	</a>
+	<a title="<?php _e("Delete", 'template-backend'); ?>" data-action="delete" class="action delete" href="#"> <i
+			class="fa fa-times"></i>
+	</a>
+<?php } ?>
+	<?php if ($post->post_status == 'complete') { ?>
+	<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
+<?php }
+	do_action('ae_edit_post_button', $post);
 }
 
 function ae_js_edit_post_button () {
