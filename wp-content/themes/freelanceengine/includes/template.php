@@ -133,7 +133,8 @@ function ae_edit_post_button ($post) {
     <?php } ?>
 <?php if($post->post_status == 'complete'){ ?>
 			<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
-		<?php } ?>    do_action( 'ae_edit_post_button', $post );
+		<?php }
+	do_action( 'ae_edit_post_button', $post );
 }
 
 function ae_js_edit_post_button () {

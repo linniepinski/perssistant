@@ -10,7 +10,7 @@ wp_reset_query();
  * @since FreelanceEngine 1.0
  */
 ?>
-<?php 
+<?php
 if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' ) 
     || is_active_sidebar( 'fre-footer-3' ) || is_active_sidebar( 'fre-footer-4' )
     )
@@ -141,9 +141,10 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
     if(is_singular( PROJECT )) {
         get_template_part( 'template-js/message' , 'item' );   
         get_template_part( 'template-js/report' , 'item' );   
-    }
 
-	wp_footer(); 
+}
+
+	wp_footer();
 ?>
 <script type="text/template" id="ae_carousel_template">
     <li class="image-item" id="{{= attach_id }}">
