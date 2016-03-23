@@ -45,7 +45,7 @@ class AE_translator {
 		<div class="f-left-all width100p clearfix">
 			<div class="" >
 				<select id="base-language">
-					<option class="empty" value=""><?php _e('Choose a Language', ET_DOMAIN) ?></option>
+					<option class="empty" value=""><?php _e('Choose a Language', 'aecore-fields-backend') ?></option>
 					<?php foreach ($langArr as $value) {?>
 						<option value="<?php echo $value?>"><?php echo $value ?></option>
 					<?php }?>
@@ -53,11 +53,11 @@ class AE_translator {
 			</div>
 
 			<div class="btn-language">
-				<button id="save-language"><?php _e('Save', ET_DOMAIN) ?> <span class="icon" data-icon="~"></span></button>
+				<button id="save-language"><?php _e('Save', 'aecore-fields--backend') ?> <span class="icon" data-icon="~"></span></button>
 			</div>
 		</div>
         <p>
-            <?php _e("You should save your translation after every 20 strings to make sure they won't lost ", ET_DOMAIN); ?>
+            <?php _e("You should save your translation after every 20 strings to make sure they won't lost ", 'aecore-fields-backend'); ?>
         </p>
 		<div id="translate-form" style="height: 600px;overflow-y: scroll;margin-top: 30px;" >		        			
 

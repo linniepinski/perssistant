@@ -29,8 +29,8 @@ if(!$current){
 
             </li>
             <li class="link-profile">
-                <a href="<?php echo $current->permalink; ?>" class="btn btn-view-profile" title="<?php _e('View Profile', ET_DOMAIN);?>">
-                    <span><?php _e('View Profile', ET_DOMAIN);?></span>
+                <a href="<?php echo $current->permalink; ?>" class="btn btn-view-profile" title="<?php _e('View Profile', 'profile-item');?>">
+                    <span><?php _e('View Profile', 'profile-item');?></span>
                 </a>
             </li>
         </ul>  

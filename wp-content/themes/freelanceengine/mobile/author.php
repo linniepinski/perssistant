@@ -98,19 +98,19 @@
                 <span class="number">
                     <?php $convert->hourly_rate_price; ?>
                 </span>
-                <?php _e('Hourly Rate', ET_DOMAIN) ?>
+                <?php _e('Hourly Rate', 'author') ?>
             </li>
             <li>
                 <span class="number">
                     <div class="rate-it" data-score="<?php echo $convert->rating_score ; ?>"></div>
                 </span>
-                <?php _e('Rating', ET_DOMAIN) ?>
+                <?php _e('Rating', 'author') ?>
             </li>
             <li>
                 <span class="number">
                     <?php echo $convert->experience; ?>
                 </span>
-                <?php _e('Experience', ET_DOMAIN) ?>
+                <?php _e('Experience', 'author') ?>
             </li>
         </ul>
 
@@ -121,15 +121,15 @@
         <ul class="bid-top">  
             <li>
                 <span class="number"><?php echo $bid_posts; ?></span>
-                <?php _e('Projects Worked', ET_DOMAIN) ?>
+                <?php _e('Projects Worked', 'author') ?>
             </li>
             <li>
                 <span class="number"><?php echo fre_price_format(fre_count_total_user_earned($author_id)); ?></span>
-                <?php _e('Total earned', ET_DOMAIN) ?>
+                <?php _e('Total earned', 'author') ?>
             </li>
             <li>
                 <span class="number"><?php if($convert->tax_input['country']){ echo $convert->tax_input['country']['0']->name;} ?></span>
-                <?php _e('Location', ET_DOMAIN) ?>
+                <?php _e('Location', 'author') ?>
             </li>
         </ul>
 
@@ -142,17 +142,17 @@
             <ul class="bid-top">
                 <li>
                     <span class="number"><?php echo fre_count_user_posts_by_type($author_id,'project','"publish","complete","close" ', true); ?></span>
-                    <?php _e("Project posted", ET_DOMAIN); ?>          
+                    <?php _e("Project posted", 'author'); ?>          
                 </li>
                 <li>
                     <span class="number"><?php echo   fre_price_format(fre_count_total_user_spent($author_id));;?></span>
-                    <?php _e('Total spent ', ET_DOMAIN) ?>
+                    <?php _e('Total spent ', 'author') ?>
                 </li>
                 <li>
                     <span class="number">
                         <?php echo fre_count_user_posts_by_type($author_id,'project', 'complete');?>
                     </span>
-                    <?php _e('Hired', ET_DOMAIN) ?>
+                    <?php _e('Hired', 'author') ?>
                 </li>
             </ul>
             <div class="clearfix"></div>
@@ -163,7 +163,7 @@
     <!-- Author overview -->
     <div class="content-project-wrapper">
    		<h2 class="title-content">
-            <?php _e('Overview:', ET_DOMAIN) ?>
+            <?php _e('Overview:', 'author') ?>
         </h2>
         <?php 
             echo $convert->post_content;

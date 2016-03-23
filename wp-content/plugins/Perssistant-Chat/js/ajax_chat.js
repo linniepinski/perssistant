@@ -13,11 +13,10 @@ jQuery(document).ready(function () {
         data: {
             action: 'myajax_submit'
         },
-        dataType: 'xml',
-        target: '#chat_his',
+        //target: '#chat_his',
+        clearForm: true,
         beforeSubmit: showRequest,
         success: showResponse,
-        clearForm: true
     };
     jQuery('#chat').submit(function () {
         jQuery(this).ajaxSubmit(options);
@@ -29,35 +28,56 @@ jQuery(document).ready(function () {
 
 
 function showRequest(formData, jqForm, options) {
-      //  console.log(jQuery('#contact_with').val());
-    if (jQuery('#contact_with').val() == ''){
-        status_chat('Error.', ' Select a contact.', 'alert-danger');
+    //  console.log(jQuery('#contact_with').val());
+    if (jQuery('#contact_with').val() == '') {
+        status_chat( chat_globals.error, chat_globals.select_contact, 'alert-danger');
         return false;
-    }else{
-        status_chat('Wait...', ' Message sending.', 'alert-info');
+    } else {
+        status_chat(chat_globals.wait, chat_globals.message_sending, 'alert-info');
         return true;
     }
 }
+
 function showResponse(responseText, statusText, xhr, $form) {
+
+    var template_chat_item = jQuery('#message-item');
+
     jQuery('.panell').remove();
     jQuery("#send").removeClass("disabled");
-    if (jQuery(responseText).find("errors").text() !== '') {
-        status_chat('File upload failed!', jQuery(responseText).find("errors").text() + ' <strong>Message sent.</strong>', 'alert-warning');
+    //if (jQuery(responseText).find("errors").text() !== '') {
+    //}
+    //else {
+    //}
+    console.log(responseText);
+    if (responseText.status) {
+        if(responseText.html_errors !== ''){
+            status_chat('File upload failed!', jQuery(responseText).find("errors").text() + ' <strong>Message sent.</strong>', 'alert-warning');
+
+        }else{
+            setTimeout("status_chat('Success!',' Message sent.','alert-success')", 2500);
+        }
+        //if(data.isPrevExist) alert('fsdf');
+        template_chat_item.tmpl(responseText.message).appendTo("div.chat_history .mCSB_container");
+        jQuery('.right-column-chat').dataLoader('loaded');
+    } else {
+        //if (response = 'no_messages') {
+        //    jQuery("div.chat_history .mCSB_container").empty();
+        //
+        //    jQuery('.right-column-chat').dataLoader('loaded');
+        //
+        //}
     }
-    else {
-        setTimeout("status_chat('Success!',' Message sent.','alert-success')", 2500);
-    }
-    var htmlItem = jQuery(responseText).find("response_data").text();
-    jQuery("div.chat_history .mCSB_container").append(htmlItem);
-    jQuery('#chat').clearForm();
+    jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
     jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
 }
+
 
 
 function chatroom_check_updates() {
 //    chat_id_count = jQuery("div[chat_id]").length;
     last_chat_id = jQuery("div[chat_id]:last").attr('chat_id');
     contact_with_user = jQuery('#contact_with').val();
+    var template_chat_item = jQuery('#message-item');
 
     jQuery.ajax({
         url: MyAjax.ajaxurl,
@@ -75,9 +95,23 @@ function chatroom_check_updates() {
             update_request = 1;
         },
         success: function (data) {
-            var htmlItem = jQuery(data).find("response_data").text();
-            jQuery("div.chat_history .mCSB_container").append(htmlItem);
+            //var htmlItem = jQuery(data).find("response_data").text();
+            //jQuery("div.chat_history .mCSB_container").append(htmlItem);
+            if (data.status) {
+
+                //if(data.isPrevExist) alert('fsdf');
+                template_chat_item.tmpl(data.message).appendTo("div.chat_history .mCSB_container");
+                jQuery('.right-column-chat').dataLoader('loaded');
+            } else {
+
+            }
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+
+            //jQuery("div.chat_history")
+            //    .mouseout(function() {
+            //        jQuery(this).mCustomScrollbar("scrollTo", "bottom");
+            //    })
+
 
         },
         complete: function () {
@@ -85,14 +119,14 @@ function chatroom_check_updates() {
             setTimeout("chatroom_check_updates()", 5000);
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
             setTimeout("chatroom_check_updates()", 20000);
         }
     });
 }
-
 function chatroom_check_online() {
+    var template_contact_item = jQuery('#list-contact-item');
 
     jQuery.ajax({
         url: MyAjax.ajaxurl,
@@ -104,12 +138,22 @@ function chatroom_check_online() {
 
         },
         success: function (data) {
-            jQuery("section.sieve-custom .mCSB_container").html(data);
+            //jQuery("section.sieve-custom .mCSB_container").html(data);
+            if (data.status) {
+                jQuery('section.sieve-custom .mCSB_container').empty();
+                jQuery.each(data.query, function (i, item) {
+                    jQuery(template_contact_item.tmpl(item)).appendTo("section.sieve-custom .mCSB_container");
+                });
+            } else {
+                if (data.code_response = 'no_messages') {
+
+                }
+            }
             CountSearchMatches();
             setTimeout("chatroom_check_online()", 60000);
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
             setTimeout("chatroom_check_online()", 10000);
         }
@@ -118,8 +162,7 @@ function chatroom_check_online() {
 
 }
 function chatroom_refresh() {
-    var chatblockUi = new AE.Views.BlockUi();
-    jQuery.ajax({
+    var template_chat_item = jQuery('#message-item');   var chatblockUi = new AE.Views.BlockUi();    jQuery.ajax({
         url: MyAjax.ajaxurl,
         type: 'POST',
         data: {
@@ -131,20 +174,28 @@ function chatroom_refresh() {
             chatblockUi.block(jQuery('.right-column-chat'));
         },
         success: function (data) {
-            //console.log(contact_with_user);
-            jQuery("div.chat_history .mCSB_container").empty();
-            jQuery("div.chat_history .mCSB_container").html(data);
-            jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
-            //jQuery('.right-column-chat').dataLoader('loaded');
-            chatblockUi.unblock(jQuery('.right-column-chat'));
+if (data.status) {
+                jQuery("div.chat_history .mCSB_container").empty();
+                //if(data.isPrevExist) alert('fsdf');
+                jQuery.each(data.query, function (i, item) {
+                    jQuery(template_chat_item.tmpl(item)).appendTo("div.chat_history .mCSB_container");
+                });
+                jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+                jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
+                            chatblockUi.unblock(jQuery('.right-column-chat'));
+            } else {
+                if (data.code_response = 'no_messages') {
+                    jQuery("div.chat_history .mCSB_container").empty();
 
-            jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
-        },
+
+            chatblockUi.unblock(jQuery('.right-column-chat'));
+                }
+            }        },
         complete: function () {
             setTimeout("chatroom_check_updates()", 5000);
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
             setTimeout("chatroom_check_updates()", 5000);
         }
@@ -164,7 +215,7 @@ function chatroom_contact() {
             jQuery("#contact").html(data);
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
         }
     });
@@ -192,7 +243,7 @@ function chatroom_notifications_everywhere() {
         complete: function () {
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
             setTimeout("chatroom_notifications_everywhere()", 30000);
         }
@@ -216,13 +267,15 @@ function chatroom_count() {
         complete: function () {
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
             setTimeout("chatroom_count()", 120000);
         }
     });
 }
 function chatroom_loadprev() {
+    var template_chat_item = jQuery('#message-item');
+
     var prev_chat_id = jQuery("div[chat_id]:first").attr('chat_id');
     contact_with_user = jQuery('#contact_with').val();
     jQuery.ajax({
@@ -236,25 +289,30 @@ function chatroom_loadprev() {
         beforeSend: function (xhr) {
             jQuery('.panell').remove();
             jQuery("#loadprev").addClass("disabled");
-            status_chat('Loading...', 'Wait...', 'alert-info');
+
+            status_chat(chat_globals.loading, chat_globals.wait, 'alert-info');
             //jQuery('#loadprev').button('loading');
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
         },
         success: function (data) {
-//            console.log(data);
             if(data.status == true){
                 if(data.type == 'empty'){
                     jQuery("#loadprev").remove();
                     status_chat('', data.msg, 'alert-warning');
                 }
-            }else{
-                jQuery("#loadprev").after(data);
-                status_chat('Success!', ' Message history loaded.', 'alert-success');
+            } else {
+                    jQuery.each(data.query, function (i, item) {
+                        jQuery(template_chat_item.tmpl(item)).prependTo('div.chat_history .mCSB_container');
+                    });
+                    jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+                    jQuery("div.chat_history").mCustomScrollbar("scrollTo", "top");
+
+                status_chat( chat_globals.success, chat_globals.history_loaded, 'alert-success');
                 jQuery("#loadprev").removeClass("disabled");
             }
         },
         error: function (errorThrown) {
-            status_chat('Error!', 'Something went wrong.', 'alert-danger');
+            status_chat(chat_globals.error, chat_globals.something_wrong, 'alert-danger');
             console.log(errorThrown);
         }
     });
@@ -262,7 +320,7 @@ function chatroom_loadprev() {
 function status_chat(strong, message, cclass) {
     jQuery("#status-alert").show();
     jQuery("#status-alert").addClass(cclass);
-    jQuery(".alert-status").html('<strong>' + strong + '</strong>' + message);
+    jQuery(".alert-status").html('<strong>' + strong + '</strong> ' + message);
     jQuery("#status-alert").fadeTo(2000, 500).slideUp(500, function () {
         jQuery("#status-alert").hide().removeClass(cclass);
     });
@@ -281,8 +339,8 @@ function resizeChat() {
     }
 }
 function OnKeyCodeEvents() {
-    jQuery('input.inter-search').keydown(function(e) {
-        if(e.keyCode == 13) {
+    jQuery('input.inter-search').keydown(function (e) {
+        if (e.keyCode == 13) {
             return false;
         }
     });
@@ -303,16 +361,15 @@ function OnKeyCodeEvents() {
                 data: {
                     action: 'myajax_submit'
                 },
-                dataType: 'xml',
-                target: '#chat_his',
+                //target: '#chat_his',
+                clearForm: true,
                 beforeSubmit: showRequest,
                 success: showResponse,
-                clearForm: true
             };
 
             jQuery(this.form).ajaxSubmit(options);
             jQuery("#send").addClass("disabled");
-            jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
+            //jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
             return false;
         }
     });
@@ -343,23 +400,23 @@ function showRequestInvate(formData, jqForm, options) {
     return true;
 }
 function showResponseInvate(responseText, statusText, xhr, $form) {
-    if(responseText.success){
+    if (responseText.success) {
         AE.pubsub.trigger('ae:notification', {
-            msg : responseText.msg,
+            msg: responseText.msg,
             notice_type: 'success'
         });
     } else {
-    AE.pubsub.trigger('ae:notification', {
-        msg : responseText.msg,
-        notice_type: 'error'
-    });
-}
+        AE.pubsub.trigger('ae:notification', {
+            msg: responseText.msg,
+            notice_type: 'error'
+        });
+    }
 }
 function invate_freelancer(user_id_receiver, user_id_sender, project_id_invate, display_name_sender) {
 
     var href = window.location.href;
     //var htmllinkToProject = '<a href="' + href + '" target="_blank">'+ jQuery('.content-title-project-item').text() +'</a>';
-    var textInvate ='Hello!My name is ' + display_name_sender + ' and I would like to discuss "'+ jQuery('.content-title-project-item').text() +'" project with you!';
+    var textInvate = chat_globals.before_display_name + ' ' + display_name_sender + ' '+ chat_globals.before_display_name + ' ' + chat_globals.after_display_name + ' "' + jQuery('.content-title-project-item').text() + '" ' + chat_globals.after_project_title;
     jQuery('#popup_invate_freelancer_to_chat .invate-to-chat-message').text(textInvate);
     jQuery('#sender_id').val(user_id_sender);
     jQuery('#guid').val(href);
@@ -370,7 +427,7 @@ function invate_freelancer(user_id_receiver, user_id_sender, project_id_invate, 
     jQuery('#popup_invate_freelancer_to_chat').modal('show');
     centerModals(jQuery("#popup_invate_freelancer_to_chat"));
 }
-function Init_CountSearchMatches(){
+function Init_CountSearchMatches() {
     jQuery('.inter-search').focus(function () {
         if (jQuery('.inter-search').val().length > 0) {
             jQuery('.count-matches').fadeIn('slow');
@@ -381,14 +438,14 @@ function Init_CountSearchMatches(){
 
 }
 
-function CountSearchMatches(){
+function CountSearchMatches() {
     var label_output = jQuery('.count-matches');
     var count_search_result = jQuery('.sieve .item_contact:visible').length;
-    text_output = 'Matching results : <span>' + count_search_result + '</span>';
+    text_output = chat_globals.match_results + ' : <span>' + count_search_result + '</span>';
     label_output.html(text_output);
     if (jQuery('.inter-search').val().length > 0) {
         label_output.fadeIn('slow');
-    }else{
+    } else {
         label_output.fadeOut('fast');
     }
 }
@@ -413,7 +470,7 @@ function InitGUI() {
     jQuery('#chat').tooltip({
         selector: '[data-toggle=tooltip]'
     });
-    jQuery("section.sieve").sieve({ itemSelector: "div" });
+    jQuery("section.sieve").sieve({itemSelector: "div.item_contact"});
     Init_CountSearchMatches();
 
 }
@@ -429,7 +486,7 @@ function centerModals($element) {
     } else {
         $modals = jQuery('.modal-vcenter:visible');
     }
-    $modals.each( function(i) {
+    $modals.each(function (i) {
         var $clone = jQuery(this).clone().css('display', 'block').appendTo('body');
         var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
         top = top > 0 ? top : 0;
@@ -437,7 +494,7 @@ function centerModals($element) {
         jQuery(this).find('.modal-content').css("margin-top", top);
     });
 }
-jQuery('.modal-vcenter').on('show.bs.modal', function(e) {
+jQuery('.modal-vcenter').on('show.bs.modal', function (e) {
     centerModals(jQuery(this));
 });
 jQuery(window).on('resize', centerModals);
@@ -447,7 +504,8 @@ jQuery(document).ready(function () {
     chatroom_notifications_everywhere();
 
     //alert(window.location.pathname);
-    if (window.location.pathname == '/chat-room/') {
+    if (window.location.pathname == '/chat-room/' || window.location.pathname == '/de/chat-room/') {
+
         InitGUI();
         if (jQuery('#contact_with').val() != '') {
             contact_with_user = jQuery('#contact_with').val();
@@ -455,7 +513,7 @@ jQuery(document).ready(function () {
             chatroom_contact();
         }
         chatroom_check_online();
-        jQuery("#right-column-chat > div.chat_history").on('click', '#loadprev', function () {
+        jQuery("#right-column-chat").on('click', '#loadprev', function () {
             chatroom_loadprev();
         });
         jQuery("#contacts > section").on('click', '.item_contact', function () {
@@ -519,14 +577,13 @@ function sendNotification(title, options) {
             container = $(this);
             settings = $.extend({
                 searchInput: null,
-                searchTemplate: "<div id='search_chat' class='form-group'><label>Search contact:</label> <input type='text' class='inter-search form-control'><div class='count-matches'></div></div>",
+                searchTemplate: "<div id='search_chat' class='form-group'><label>"+ chat_globals.search+":</label> <input type='text' class='inter-search form-control'><div class='count-matches'></div></div>",
                 itemSelector: "tbody tr",
                 textSelector: null,
                 toggle: function (item, match) {
                     return item.toggle(match);
                 },
                 complete: function () {
-//                    console.log('wtf');
                     CountSearchMatches();
                 }
             }, options);

@@ -7,19 +7,19 @@ function fre_init_bid_plan() {
     
     register_post_type('bid_plan', array(
         'labels' => array(
-            'name' => __('Bid plan', ET_DOMAIN) ,
-            'singular_name' => __('Bid plan', ET_DOMAIN) ,
-            'add_new' => __('Add New', ET_DOMAIN) ,
-            'add_new_item' => __('Add New Bid plan', ET_DOMAIN) ,
-            'edit_item' => __('Edit Bid plan', ET_DOMAIN) ,
-            'new_item' => __('New Bid plan', ET_DOMAIN) ,
-            'all_items' => __('All Bid plans', ET_DOMAIN) ,
-            'view_item' => __('View Bid plan', ET_DOMAIN) ,
-            'search_items' => __('Search Bid plans', ET_DOMAIN) ,
-            'not_found' => __('No Bid plan found', ET_DOMAIN) ,
-            'not_found_in_trash' => __('No Bid plans found in Trash', ET_DOMAIN) ,
+            'name' => __('Bid plan', 'bid-plans-backend') ,
+            'singular_name' => __('Bid plan', 'bid-plans-backend') ,
+            'add_new' => __('Add New', 'bid-plans-backend') ,
+            'add_new_item' => __('Add New Bid plan', 'bid-plans-backend') ,
+            'edit_item' => __('Edit Bid plan', 'bid-plans-backend') ,
+            'new_item' => __('New Bid plan', 'bid-plans-backend') ,
+            'all_items' => __('All Bid plans', 'bid-plans-backend') ,
+            'view_item' => __('View Bid plan', 'bid-plans-backend') ,
+            'search_items' => __('Search Bid plans', 'bid-plans-backend') ,
+            'not_found' => __('No Bid plan found', 'bid-plans-backend') ,
+            'not_found_in_trash' => __('No Bid plans found in Trash', 'bid-plans-backend') ,
             'parent_item_colon' => '',
-            'menu_name' => __('Bid plans', ET_DOMAIN)
+            'menu_name' => __('Bid plans', 'bid-plans-backend')
         ) ,
         'public' => false,
         'publicly_queryable' => true,
@@ -52,7 +52,7 @@ function fre_init_bid_plan() {
         ),
         array(
             'backend_text' => array(
-                'text' => __('%s for %d days', ET_DOMAIN) ,
+                'text' => __('%s for %d days', 'bid-plans-backend') ,
                 'data' => array(
                     'et_price',
                     'et_number_posts'

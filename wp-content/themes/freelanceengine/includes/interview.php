@@ -4,18 +4,18 @@ function register_interview()
     add_option('interview_system',false,null,true);
 
     $labels = array(
-        'name' => __('interview', ET_DOMAIN),
-        'singular_name' => __('interview', ET_DOMAIN),
-        'add_new' => _x('Add New interview', ET_DOMAIN, ET_DOMAIN),
-        'add_new_item' => __('Add New interview', ET_DOMAIN),
-        'edit_item' => __('Edit interview', ET_DOMAIN),
-        'new_item' => __('New interview', ET_DOMAIN),
-        'view_item' => __('View interview', ET_DOMAIN),
-        'search_items' => __('Search interview', ET_DOMAIN),
-        'not_found' => __('No interviews found', ET_DOMAIN),
-        'not_found_in_trash' => __('No interviews found in Trash', ET_DOMAIN),
-        'parent_item_colon' => __('Parent interview:', ET_DOMAIN),
-        //'menu_name' => __('interviews', ET_DOMAIN) ,
+        'name' => __('interview', 'interview-backend'),
+        'singular_name' => __('interview', 'interview-backend'),
+        'add_new' => _x('Add New interview', 'interview-backend', 'interview-backend'),
+        'add_new_item' => __('Add New interview', 'interview-backend'),
+        'edit_item' => __('Edit interview', 'interview-backend'),
+        'new_item' => __('New interview', 'interview-backend'),
+        'view_item' => __('View interview', 'interview-backend'),
+        'search_items' => __('Search interview', 'interview-backend'),
+        'not_found' => __('No interviews found', 'interview-backend'),
+        'not_found_in_trash' => __('No interviews found in Trash', 'interview-backend'),
+        'parent_item_colon' => __('Parent interview:', 'interview-backend'),
+        //'menu_name' => __('interviews', 'interview-backend') ,
     );
 
     $args = array(
@@ -65,32 +65,14 @@ add_action('init', 'register_interview');
 // action function for above hook
 function mt_add_pages()
 {
-    // Add a new submenu under Settings:
-    // add_options_page(__('Test Settings','menu-test'), __('Test Settings','menu-test'), 'manage_options', 'testsettings', 'mt_settings_page');
-
-    // Add a new submenu under Tools:
-    // add_management_page( __('Test Tools','menu-test'), __('Test Tools','menu-test'), 'manage_options', 'testtools', 'mt_tools_page');
-
-    // Add a new top-level menu (ill-advised):
-    add_menu_page(__('Interview', 'menu-test'), __('Interview', 'menu-test'), 'manage_options', 'mt-top-level-handle', 'mt_toplevel_page');
-
-    // Add a submenu to the custom top-level menu:
-  //  add_submenu_page('mt-top-level-handle', __('Expired interviews', 'menu-test'), __('Expired interviews', 'menu-test'), 'manage_options', 'sub-page', 'mt_sublevel_page');
-
-    // Add a second submenu to the custom top-level menu:
-  //  add_submenu_page('mt-top-level-handle', __('Future interviews', 'menu-test'), __('Future interviews', 'menu-test'), 'manage_options', 'sub-page2', 'mt_sublevel_page2');
+    add_menu_page(__('Interview', 'interview-backend'), __('Interview', 'interview-backend'), 'manage_options', 'mt-top-level-handle', 'mt_toplevel_page');
 }
 
-// mt_settings_page() displays the page content for the Test settings submenu
-
-
-// mt_tools_page() displays the page content for the Test Tools submenu
 function mt_tools_page()
 {
-    echo "<h2>" . __('Test Tools', 'menu-test') . "</h2>";
+    echo "<h2>" . __('Test Tools', 'interview-backend') . "</h2>";
 }
 
-// mt_toplevel_page() displays the page content for the custom Test Toplevel menu
 function mt_toplevel_page()
 {
 
@@ -98,7 +80,7 @@ function mt_toplevel_page()
 
 <div class="interview-settings">
     <?php
-    echo "<h2>" . __('Settings', 'interview-setting') . "</h2>";
+    echo "<h2>" . __('Settings', 'interview-backend') . "</h2>";
     ?>
 <label for="interview_system">Activate interview system</label>
     <input type="checkbox" id="interview_system" name="interview_system" <?php if (get_option('interview_system') == 'true'){ echo 'checked';}?>>
@@ -107,7 +89,7 @@ function mt_toplevel_page()
 
     </div>
     <?php
-    echo "<h2>" . __('Interviews', 'menu-test') . "</h2>";
+    echo "<h2>" . __('Interviews', 'interview-backend') . "</h2>";
 
     $tabs = array('today' => 'Interviews today', 'future' => 'Future interviews', 'expired' => 'Expired interviews');
     echo '<div id="icon-themes" class="icon32"><br></div>';
@@ -537,14 +519,14 @@ function today_page(){
 // of the custom Test Toplevel menu
 //function mt_sublevel_page()
 //{
-//    echo "<h2>" . __('Test Sublevel', 'menu-test') . "</h2>";
+//    echo "<h2>" . __('Test Sublevel', 'interview-backend') . "</h2>";
 //}
 //
 //// mt_sublevel_page2() displays the page content for the second submenu
 //// of the custom Test Toplevel menu
 //function mt_sublevel_page2()
 //{
-//    echo "<h2>" . __('Test Sublevel2', 'menu-test') . "</h2>";
+//    echo "<h2>" . __('Test Sublevel2', 'interview-backend') . "</h2>";
 //}
 
 
@@ -659,11 +641,11 @@ class interview extends AE_PostAction
 
         } else {
 
-            $message = __("Update interview successful.", ET_DOMAIN);
+            $message = __("Update interview successful.", 'interview-backend');
 
             if ($request['method'] == 'create') {
 
-                $message = __("Create interview successful.", ET_DOMAIN);
+                $message = __("Create interview successful.", 'interview-backend');
 
             }
 

@@ -27,7 +27,7 @@ if ($project_status == 'publish') {
         $has_bid = fre_has_bid( get_the_ID() );
         if( $has_bid ) {
 ?>
-            <div class="single-projects info-project-item-details content-require-project h4"><?php  _e('You submitted this proposal',ET_DOMAIN);?></div>
+            <div class="single-projects info-project-item-details content-require-project h4"><?php  _e('You submitted this proposal','projects-page');?></div>
 <?php
         }
     }
@@ -64,16 +64,16 @@ if ($project_status == 'publish') {
     	<!-- Title -->
     	<div class="row title-tab-project">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <span><?php _e("PROJECT TITLE", ET_DOMAIN); ?></span>
+                <span><?php _e("PROJECT TITLE", 'projects-page'); ?></span>
             </div>
             <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">
-                <span><?php _e("BY", ET_DOMAIN); ?></span>
+                <span><?php _e("BY", 'projects-page'); ?></span>
             </div>
             <div class="hidden-xs hidden-sm hidden-md col-lg-2">
-                <span><?php _e("POSTED DATE", ET_DOMAIN); ?></span>
+                <span><?php _e("POSTED DATE", 'projects-page'); ?></span>
             </div>
             <div class="hidden-xs col-sm-6 col-md-6 col-lg-2">
-                <span><?php _e("BUDGET", ET_DOMAIN); ?></span>
+                <span><?php _e("BUDGET", 'projects-page'); ?></span>
             </div>
         </div>
         <!-- Title / End -->
@@ -129,7 +129,7 @@ if ($project_status == 'publish') {
                     if(current_user_can( 'manage_options' )) {
                         get_template_part( 'template/admin', 'project-control' );
                     }elseif( !$user_ID && $project_status == 'publish'){ ?>
-                        <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid',ET_DOMAIN);?></a>  
+                        <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid','projects-page');?></a>  
                         <a href="#" class="popup-login" style="display:none;">Open Login Popup</a>
                     <?php } else {
                         $role = ae_user_role();
@@ -140,36 +140,36 @@ if ($project_status == 'publish') {
                                     if ($has_bid) {
                                         ?>
                                         <a rel="<?php echo $project->ID; ?>" href="#" id="<?php echo $has_bid; ?>"
-                                           title="<?php _e('Cancel this bidding', ET_DOMAIN); ?>"
+                                           title="<?php _e('Cancel this bidding', 'projects-page'); ?>"
                                            class="btn btn-apply-project-item btn-del-project-modal modal_bid_update">
-                                            <?php _e('Cancel', ET_DOMAIN); ?>
+                                            <?php _e('Cancel', 'projects-page'); ?>
                                         </a>
 
                                         <a href="#"
                                            class="btn btn-apply-project-item btn-project-status modal_bid_update"
                                            data-toggle="modal" data-target="#modal_bid_update">
-                                            <?php _e(' Edit Bid ', ET_DOMAIN); ?>
+                                            <?php _e(' Edit Bid ', 'projects-page'); ?>
                                         </a>
 
                                         <?php
                                     } elseif ($IsInvitedToProject) { ?>
                                         <a href="#" class="btn btn-apply-project-item btn-project-status"
                                            data-toggle="modal" data-target="#modal_bid">
-                                            <?php _e('Accept', ET_DOMAIN); ?>
+                                            <?php _e('Accept', 'projects-page'); ?>
                                         </a>
                                         <a href="#"
                                            class="btn btn-decline-invite btn-apply-project-item btn-project-status">
-                                            <?php _e('Decline', ET_DOMAIN); ?>
+                                            <?php _e('Decline', 'projects-page'); ?>
                                         </a>
                                     <?php } else { ?>
                                         <a href="#" class="btn btn-apply-project-item btn-project-status"
                                            data-toggle="modal" data-target="#modal_bid" <?php if(interview_is_profile_activated()) echo'disabled'?>>
-                                            <?php _e('Bid ', ET_DOMAIN); ?>
+                                            <?php _e('Bid ', 'projects-page'); ?>
                                         </a>
                                     <?php }
                                 } else { ?>
-<!--                                    <a href="#" id="--><?php //the_ID();?><!--"  class="btn btn-apply-project-item" >--><?php // _e('Open',ET_DOMAIN);?><!--</a>-->
-                                    <div class="alert alert-success alert-status-project" role="alert"><?php _e('Status:',ET_DOMAIN);?> <strong><?php _e('Open',ET_DOMAIN);?></strong></div>
+<!--                                    <a href="#" id="--><?php //the_ID();?><!--"  class="btn btn-apply-project-item" >--><?php // _e('Open','projects-page');?><!--</a>-->
+                                    <div class="alert alert-success alert-status-project" role="alert"><?php _e('Status:','projects-page');?> <strong><?php _e('Open','projects-page');?></strong></div>
 
                                 <?php
                                 }
@@ -177,19 +177,19 @@ if ($project_status == 'publish') {
                             case 'close':
                                 if( (int)$project->post_author == $user_ID){ ?>
                                 
-                                    <a title="<?php  _e('Finish',ET_DOMAIN);?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" >
-                                        <?php  _e('Finish',ET_DOMAIN);?>
+                                    <a title="<?php  _e('Finish','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" >
+                                        <?php  _e('Finish','projects-page');?>
                                     </a>
-                                    <a title="<?php _e('Close',ET_DOMAIN);?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-close-project" >
-                                        <?php _e('Close',ET_DOMAIN);?>
+                                    <a title="<?php _e('Close','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-close-project" >
+                                        <?php _e('Close','projects-page');?>
                                     </a>
                                     <?php 
                                 }else{ 
                                     $bid_accepted_author = get_post_field( 'post_author', $bid_accepted);
                                     if($bid_accepted_author == $user_ID) {
                                 ?>
-                                    <a title="<?php  _e('Quit',ET_DOMAIN);?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-quit-project" >
-                                        <?php  _e('Quit',ET_DOMAIN);?>
+                                    <a title="<?php  _e('Quit','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-quit-project" >
+                                        <?php  _e('Quit','projects-page');?>
                                     </a>
                                 <?php } 
                                 }
@@ -200,23 +200,23 @@ if ($project_status == 'publish') {
                                 $comment = get_comments( array('status'=> 'approve', 'type' => 'fre_review', 'post_id'=> get_the_ID() ) );
 
                                 if( $user_ID == $freelan_id && empty( $comment ) ){ ?>
-                                    <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" ><?php  _e('Review',ET_DOMAIN);?></a>
+                                    <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" ><?php  _e('Review','projects-page');?></a>
                                     <?php 
                                 } else { ?>
 
-<!--                                <a href="#" id="--><?php //the_ID();?><!--"   class="btn btn-apply-project-item project-complete" >--><?php // _e('Completed',ET_DOMAIN);?><!--</a>-->
-                                    <div class="alert alert-danger alert-status-project" role="alert"><?php _e('Status:',ET_DOMAIN);?> <strong><?php _e('Closed',ET_DOMAIN);?></strong></div>
+<!--                                <a href="#" id="--><?php //the_ID();?><!--"   class="btn btn-apply-project-item project-complete" >--><?php // _e('Completed','projects-page');?><!--</a>-->
+                                    <div class="alert alert-danger alert-status-project" role="alert"><?php _e('Status:','projects-page');?> <strong><?php _e('Closed','projects-page');?></strong></div>
                                 <?php
                                 }
                                 break;
                             default:
-                                $text_status =   array( 'pending'   => __('Pending',ET_DOMAIN),
-                                                        'draft'     => __('Draft',ET_DOMAIN),
-                                                        'archive'   => __('Draft',ET_DOMAIN),
-                                                        'reject'    => __('Reject', ET_DOMAIN),
-                                                        'trash'     => __('Trash', ET_DOMAIN), 
-                                                        'close'     => __('Working', ET_DOMAIN), 
-                                                        'complete'  => __('Completed', ET_DOMAIN), 
+                                $text_status =   array( 'pending'   => __('Pending','projects-page'),
+                                                        'draft'     => __('Draft','projects-page'),
+                                                        'archive'   => __('Draft','projects-page'),
+                                                        'reject'    => __('Reject', 'projects-page'),
+                                                        'trash'     => __('Trash', 'projects-page'), 
+                                                        'close'     => __('Working', 'projects-page'), 
+                                                        'complete'  => __('Completed', 'projects-page'), 
                                                         );
                                 if(isset($text_status[$project_status])){ ?>
                                     <a href="#"  class="btn btn-apply-project-item" ><?php  echo isset($text_status[$convert->post_status]) ? $text_status[$convert->post_status] : ''; ;?></a>
@@ -268,10 +268,10 @@ if ($project_status == 'publish') {
                 <h4 class="text-center" style="font-size:25px; padding-top:10px;">Are you sure, you want to delete the Bid?</h4>
                 <div style="padding-top:25px;">
                     <a style="margin:10px;" href="#" class="btn btn-apply-project-item" data-dismiss="modal">
-                        <?php  _e('No',ET_DOMAIN);?>
+                        <?php  _e('No','projects-page');?>
                     </a>
                     <a style="margin:10px;" rel="<?php echo $project->ID;?>" href="#" id="<?php echo $has_bid;?>" class="btn btn-apply-project-item btn-del-project" >
-                        <?php  _e('Delete',ET_DOMAIN);?>
+                        <?php  _e('Delete','projects-page');?>
                     </a>
                 </div>
             </div>

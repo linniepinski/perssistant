@@ -54,27 +54,27 @@ et_get_mobile_header();
         </div>
         <form class="form-mobile-wrapper form-user-profile" id="account_form">
             <div class="form-group-mobile">
-                <label><?php _e("Your Fullname", ET_DOMAIN) ?></label>
+                <label><?php _e("Your Fullname", 'page-profile-mobile') ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
-                <input type="text" id="display_name" name="display_name" value="<?php echo $user_data->display_name ?>" placeholder="<?php _e("Full name", ET_DOMAIN); ?>">
+                <input type="text" id="display_name" name="display_name" value="<?php echo $user_data->display_name ?>" placeholder="<?php _e("Full name", 'page-profile-mobile'); ?>">
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Location", ET_DOMAIN) ?></label>
-                <input type="text" id="location" name="location" value="<?php echo $user_data->location ?>" placeholder="<?php _e("Location", ET_DOMAIN); ?>">
+                <label><?php _e("Location", 'page-profile-mobile') ?></label>
+                <input type="text" id="location" name="location" value="<?php echo $user_data->location ?>" placeholder="<?php _e("Location", 'page-profile-mobile'); ?>">
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Email Address", ET_DOMAIN) ?></label>
-                <input type="text" id="user_email" value="<?php echo $user_data->user_email ?>" name="user_email" placeholder="<?php _e("Email", ET_DOMAIN); ?>">
+                <label><?php _e("Email Address", 'page-profile-mobile') ?></label>
+                <input type="text" id="user_email" value="<?php echo $user_data->user_email ?>" name="user_email" placeholder="<?php _e("Email", 'page-profile-mobile'); ?>">
             </div>
             <div class="form-group-mobile">
                 <?php if (true) { //ae_get_option('use_escrow', false)?>
                     <div class="form-group">
                         <div class="form-group-control">
-                            <label><?php _e('Your Paypal Account', ET_DOMAIN) ?></label>
+                            <label><?php _e('Your Paypal Account', 'page-profile-mobile') ?></label>
                             <input type="email" class="form-control" id="paypal"
                                    name="paypal"
                                    value="<?php echo get_user_meta($user_ID, 'paypal', true); ?>"
-                                   placeholder="<?php _e('Enter your paypal email', ET_DOMAIN) ?>">
+                                   placeholder="<?php _e('Enter your paypal email', 'page-profile-mobile') ?>">
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -92,7 +92,7 @@ et_get_mobile_header();
                         ?>
                         <div class="form-group">
                             <div class="form-group-control">
-                                <label><?php _e('Primary Account', ET_DOMAIN) ?></label>
+                                <label><?php _e('Primary Account', 'page-profile-mobile') ?></label>
                                 <select
                                     class="chosen multi-tax-item tax-item required cat_profile"
                                     id="default_payment_option"
@@ -139,7 +139,7 @@ et_get_mobile_header();
 
                         <div class="form-group">
                             <div class="form-group-control">
-                                <label><?php _e('Primary Account', ET_DOMAIN) ?></label>
+                                <label><?php _e('Primary Account', 'page-profile-mobile') ?></label>
                                 <select
                                     class="chosen multi-tax-item tax-item required cat_profile"
                                     id="default_payment_option"
@@ -164,7 +164,7 @@ et_get_mobile_header();
                 } ?>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', ET_DOMAIN) ?></button>
+                <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', 'page-profile-mobile') ?></button>
             </div>
         </form>
     </div>
@@ -172,21 +172,21 @@ et_get_mobile_header();
     <div class="tabs-profile-details tab-profile collapse" id="tab_profile">
     	<form class="form-mobile-wrapper form-user-profile" id="profile_form">
             <div class="form-group-mobile edit-profile-title">
-                <label><?php _e("Your Professional Title", ET_DOMAIN) ?></label>
+                <label><?php _e("Your Professional Title", 'page-profile-mobile') ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
-                <input type="text" id="et_professional_title" value="<?php echo $job_title; ?>" name="et_professional_title" placeholder="<?php _e("Title", ET_DOMAIN); ?>">
+                <input type="text" id="et_professional_title" value="<?php echo $job_title; ?>" name="et_professional_title" placeholder="<?php _e("Title", 'page-profile-mobile'); ?>">
             </div>            
             <div class="form-group-mobile">
                 <div class="form-group">
                     <div class="form-group-control">
-                        <label><?php _e('Your Hourly Rate', ET_DOMAIN) ?></label>
+                        <label><?php _e('Your Hourly Rate', 'page-profile-mobile') ?></label>
 
                         <div class="row">
                             <div class="col-xs-8">
                                 <input class="form-control" type="text" id="hour_rate"
                                        name="hour_rate"
                                        value="<?php echo $hour_rate ?>"
-                                       placeholder="<?php _e('e.g:30', ET_DOMAIN) ?>">
+                                       placeholder="<?php _e('e.g:30', 'page-profile-mobile') ?>">
                             </div>
                             <div class="col-xs-4">
                                                         <span class="profile-exp-year">
@@ -194,7 +194,7 @@ et_get_mobile_header();
                                                         if ($currency) {
                                                             echo $currency['code'];
                                                         } else {
-                                                            _e('USD', ET_DOMAIN);
+                                                            _e('USD', 'page-profile-mobile');
                                                         } ?>
                                                         </span>
                             </div>
@@ -210,9 +210,9 @@ et_get_mobile_header();
                 if(!$switch_skill){
                     ?>
                     <div class="wrapper-skill">
-                        <label><?php _e("Your Skills", ET_DOMAIN) ?></label>
-                        <a href="#" class="btn-sumary btn-add-skill add-skill"><?php _e("Add", ET_DOMAIN) ?></a>
-                        <input type="text" id="skill" class="skill" placeholder="<?php _e("Skills", ET_DOMAIN); ?>">
+                        <label><?php _e("Your Skills", 'page-profile-mobile') ?></label>
+                        <a href="#" class="btn-sumary btn-add-skill add-skill"><?php _e("Add", 'page-profile-mobile') ?></a>
+                        <input type="text" id="skill" class="skill" placeholder="<?php _e("Skills", 'page-profile-mobile'); ?>">
                     </div>
                     <div class="clearfix"></div>
                     <ul class="list-skill skills-list" id="skills_list"></ul>
@@ -220,7 +220,7 @@ et_get_mobile_header();
                 }else{
                     ?>
                     <div class="wrapper-skill">
-                        <label><?php _e("Your Skills", ET_DOMAIN) ?></label>
+                        <label><?php _e("Your Skills", 'page-profile-mobile') ?></label>
                     </div>
                     <?php
                     $c_skills = array();
@@ -229,7 +229,7 @@ et_get_mobile_header();
                             $c_skills[] = $value->term_id;
                         };
                     }
-                    ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 5)", ET_DOMAIN).'"', 
+                    ae_tax_dropdown( 'skill' , array(  'attr' => 'data-chosen-width="95%" data-chosen-disable-search="" multiple data-placeholder="'.__(" Skills (max is 5)", 'page-profile-mobile').'"', 
                                         'class' => 'form-control required', 
                                         'hide_empty' => false, 
                                         'hierarchical' => true , 
@@ -242,11 +242,11 @@ et_get_mobile_header();
                 ?>
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Category", ET_DOMAIN) ?></label>
+                <label><?php _e("Category", 'page-profile-mobile') ?></label>
                 <?php 
                     ae_tax_dropdown( 'project_category' , 
                           array(  
-                                'attr'            => 'data-chosen-width="95%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", ET_DOMAIN).'"', 
+                                'attr'            => 'data-chosen-width="95%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", 'page-profile-mobile').'"', 
                                 'class'           => 'experience-form chosen multi-tax-item tax-item required', 
                                 'hide_empty'      => false, 
                                 'hierarchical'    => true , 
@@ -258,30 +258,30 @@ et_get_mobile_header();
                 ?>
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Country", ET_DOMAIN) ?></label>
+                <label><?php _e("Country", 'page-profile-mobile') ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
-                <input class="form-control" type="text" id="country" placeholder="<?php _e("Country", ET_DOMAIN); ?>" name="country" value="<?php if($country){echo $country;} ?>" autocomplete="off" class="country" spellcheck="false" >
+                <input class="form-control" type="text" id="country" placeholder="<?php _e("Country", 'page-profile-mobile'); ?>" name="country" value="<?php if($country){echo $country;} ?>" autocomplete="off" class="country" spellcheck="false" >
             </div>                        
             <div class="form-group-mobile about-form">
-                <label><?php _e("About You", ET_DOMAIN) ?></label>
+                <label><?php _e("About You", 'page-profile-mobile') ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
-                <textarea name="post_content" id="post_content" placeholder="<?php _e("About", ET_DOMAIN); ?>" rows="7"><?php echo trim(strip_tags($about)) ?></textarea>
+                <textarea name="post_content" id="post_content" placeholder="<?php _e("About", 'page-profile-mobile'); ?>" rows="7"><?php echo trim(strip_tags($about)) ?></textarea>
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Your Experience", ET_DOMAIN) ?></label>
+                <label><?php _e("Your Experience", 'page-profile-mobile') ?></label>
                 <!-- <a href="#" class="icon-edit-profile-user edit-info-user"><i class="fa fa-pencil"></i></a> -->
                  <div class="row">
                     <div class="col-xs-12">
                         <input class="form-control number is_number"
                                type="number" min="0" max="30"
-                               name="et_experience" placeholder="<?php _e("year(s)", ET_DOMAIN); ?>"
+                               name="et_experience" placeholder="<?php _e("year(s)", 'page-profile-mobile'); ?>"
                                value="<?php echo $experience; ?>"/>
                     </div>
                 </div>
                 <!--<input type="text" name="experience" value="<?php echo $experience; ?>" />-->
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Your Porfolio", ET_DOMAIN) ?></label>
+                <label><?php _e("Your Porfolio", 'page-profile-mobile') ?></label>
                 <div class="edit-portfolio-container">
                     <?php
                     // list portfolio
@@ -296,7 +296,7 @@ et_get_mobile_header();
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', ET_DOMAIN) ?></button>
+                <button type="submit" class="btn-submit btn-sumary"><?php _e('Save Details', 'page-profile-mobile') ?></button>
             </div>
         </form>            
 
@@ -308,7 +308,7 @@ et_get_mobile_header();
                 <?php if($user_role == FREELANCER){ ?>
                 <!-- BIDDING -->
                 <label>
-                    <?php _e("Your Bidding", ET_DOMAIN) ?>
+                    <?php _e("Your Bidding", 'page-profile-mobile') ?>
                 </label>
                 <?php 
                         query_posts( array(
@@ -320,13 +320,13 @@ et_get_mobile_header();
                             get_template_part( 'mobile/list', 'user-bids' );
                         } else {
                             echo '<span class="no-results">';
-                            _e( "You are not bidding any project.", ET_DOMAIN );
+                            _e( "You are not bidding any project.", 'page-profile-mobile' );
                             echo '</span>';
                         }
                         wp_reset_query();
                 ?>
                 <label>
-                    <?php _e('Your Worked History and Reviews', ET_DOMAIN) ?>
+                    <?php _e('Your Worked History and Reviews', 'page-profile-mobile') ?>
                 </label>
                 <?php
                     query_posts( array(  'post_status' => array('publish', 'complete'), 
@@ -360,19 +360,19 @@ et_get_mobile_header();
     <div class="tabs-acc-details tab-profile collapse" id="tab_change_pw">
         <form class="form-mobile-wrapper form-user-profile chane_pass_form" id="chane_pass_form">
             <div class="form-group-mobile edit-profile-title">
-                <label><?php _e("Your Old Password", ET_DOMAIN) ?></label>
-                <input type="password" id="old_password" name="old_password" placeholder="<?php _e("Old password", ET_DOMAIN); ?>">
+                <label><?php _e("Your Old Password", 'page-profile-mobile') ?></label>
+                <input type="password" id="old_password" name="old_password" placeholder="<?php _e("Old password", 'page-profile-mobile'); ?>">
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Your New Password", ET_DOMAIN) ?></label>
-                <input type="password" id="new_password" name="new_password" placeholder="<?php _e("New password", ET_DOMAIN); ?>">
+                <label><?php _e("Your New Password", 'page-profile-mobile') ?></label>
+                <input type="password" id="new_password" name="new_password" placeholder="<?php _e("New password", 'page-profile-mobile'); ?>">
             </div>
             <div class="form-group-mobile">
-                <label><?php _e("Retype New Password", ET_DOMAIN) ?></label>
-                <input type="password" id="renew_password" name="renew_password" placeholder="<?php _e("Retype again", ET_DOMAIN); ?>">
+                <label><?php _e("Retype New Password", 'page-profile-mobile') ?></label>
+                <input type="password" id="renew_password" name="renew_password" placeholder="<?php _e("Retype again", 'page-profile-mobile'); ?>">
             </div>
             <p class="btn-warpper-bid">
-                <input type="submit" class="btn-submit btn-sumary btn-bid" value="<?php _e("Change", ET_DOMAIN) ?>" />
+                <input type="submit" class="btn-submit btn-sumary btn-bid" value="<?php _e("Change", 'page-profile-mobile') ?>" />
             </p>
         </form>
     </div>    

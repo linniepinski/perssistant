@@ -22,15 +22,15 @@ $args = array(
 );
 
 $chat_query = get_posts($args);
-
+$response = array();
 if ($chat_query) {
-    echo '<a id="loadprev" class="btn btn-default btn-sm btn-block">Load previous messages</a>';
-    foreach (array_reverse($chat_query) as $post) {
-
+//    echo '<a id="loadprev" class="btn btn-default btn-sm btn-block">Load previous messages</a>';
+    $response['status'] = true;
+    $response['msg'] = __('No message here', '');
+    $response['isPrevExist'] = false;
+    foreach (array_reverse($chat_query) as $key => $post) {
         setup_postdata($post);
-
         $receiver = get_post_meta($post->ID, 'receiver');
-        //var_dump($receiver[0]);
         if ($receiver[0] == $user_id) {
             update_post_meta($post->ID, 'unread', 'false');
         }
@@ -41,92 +41,46 @@ if ($chat_query) {
             'post_type' => 'attachment',
             'post_status' => 'inherit',
             'posts_per_page' => 1,
-
         );
+
         $attachments = get_children($args, 'ARRAY_A');
+        $html_link = '';
+        if ($attachments) {
+            foreach ($attachments as $attachment) {
 
-        ?>
-        <div class="row" chat_id="<?php echo $post->ID ?>">
-            <div class="hidden-xs hidden-sm col-md-1 text-ellipsis the_author_chat">
-                <?php echo get_avatar(get_the_author_meta('ID'), 50); ?>
-            </div>
-            <div class="col-xs-8 col-sm-9 col-md-9 the_content_chat">
-                <p class="aut"><?php the_author() ?></p>
-                <?php
+                $type_file = explode("/", $attachment['post_mime_type']);
 
-                $phrase = get_the_content();
-                $phrase = apply_filters('the_content', $phrase);
-                $replace = '<p class="cont">';
-                echo str_replace('<p>', $replace, $phrase);
-
-                $attachments = get_children($args, 'ARRAY_A');
-                if ($attachments) {
-                    foreach ($attachments as $attachment) {
-
-                        $type_file = explode("/", $attachment['post_mime_type']);
-
-                            if ($type_file[0] == 'image') {
-                                $html_link = '<a href="' . $attachment['guid'] . '" download>' . wp_get_attachment_image($attachment['ID'], array(320, 320)) . '</a>';
-                            } else {
-                                $html_link = '<a href="' . $attachment['guid'] . '" download>' . end(explode("/", $attachment['guid'])) . '</a>';
-
-                            }
-
-                    }
+                if ($type_file[0] == 'image') {
+                    $html_link = '<a href="' . $attachment['guid'] . '" download>' . wp_get_attachment_image($attachment['ID'], array(320, 320)) . '</a>';
+                } else {
+                    $html_link = '<a href="' . $attachment['guid'] . '" download>' . end(explode("/", $attachment['guid'])) . '</a>';
                 }
-                unset($attachments);
-                echo $html_link ;
-                ?>
+            }
+        }
+        unset($attachments);
 
-            </div>
+        $date1 = new DateTime(get_the_time($post->ID ,'U'));
+        $date2 = new DateTime(date('F d,Y ', strtotime('-1 days')));
 
-
-            <div class="col-xs-4 col-sm-3 col-md-2 the_time_chat">
-                <?php
-
-                /*echo get_the_date('',$post->ID);
-                echo get_the_time('',$post->ID);*/
-                //echo '<br>';
-                /*$date_message = get_the_date('',$post->ID);
-                $date = );*/
-
-                $date1 = new DateTime(get_the_date('',$post->ID));
-                $date2 = new DateTime(date('F d,Y ', strtotime('-1 days')));
-
-                //var_dump($date1 == $date2);
-               // var_dump($date1 < $date2);
-                //var_dump($date1 > $date2);
-
-                if ($date1 > $date2) {
-                    ?>
-                    <span class="time" data-toggle="tooltip" data-placement="top"
-                          title="<?php echo get_the_date('', $post->ID) ?>"><?php echo get_the_time('', $post->ID) ?></span>
-
-                <?php
-                } else {?>
-                    <span data-toggle="tooltip" data-placement="top"
-                          title="<?php echo get_the_time('', $post->ID) ?>"><?php echo get_the_date('', $post->ID) ?></span>
-                <?php
-                }
-                echo $date;
-                ?>
-
-
-            </div>
-
-        </div>
-
-   <?php
-
-
+        $response['query'][$key]['id'] = $post->ID;
+        $response['query'][$key]['avatar'] = get_avatar(get_the_author_meta('ID'), 50);
+        $response['query'][$key]['display_name'] = get_the_author();
+        $response['query'][$key]['content'] = get_the_content();
+        $response['query'][$key]['link'] = $html_link;
+        if ($date1 > $date2) {
+            $response['query'][$key]['date1'] = get_the_date('', $post->ID);
+            $response['query'][$key]['date2'] = get_the_time('', $post->ID);
+        } else {
+            $response['query'][$key]['date1'] = get_the_time('', $post->ID);
+            $response['query'][$key]['date2'] = get_the_date('', $post->ID);
+        }
     }
+    wp_send_json($response);
     wp_reset_postdata();
 } else {
-
-    echo '<div class="panell panel-primary">
-                    <div class="panel-body">
-                        <h5 style="text-align: center">No message here</h5>
-                    </div>
-                </div>';
+    $response['status'] = false;
+    $response['code_response'] = 'no_messages';
+    $response['msg'] = __('No message here', 'chat-frontend');
+    wp_send_json($response);
 }
 exit;

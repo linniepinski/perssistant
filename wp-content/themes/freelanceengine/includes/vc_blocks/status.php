@@ -8,7 +8,7 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
 
         extract(shortcode_atts(array(
             'el_class'      => '',
-            'title'         => __("Status", ET_DOMAIN),
+            'title'         => __("Status", 'vc_blocks-status-backend'),
             's_title'       => '',
             's_description' => '',
         ), $atts));
@@ -39,7 +39,7 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
                             </div>
                             <div class="counter-content">
                                 <div class="odometer" data-number="<?php echo $count_project->publish; ?>">0</div>
-                                <h3 class="title"><?php _e('Projects', ET_DOMAIN);?></h3>
+                                <h3 class="title"><?php _e('Projects', 'vc_blocks-status-backend');?></h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -53,7 +53,7 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
                             </div>
                             <div class="counter-content">
                                 <div class="odometer" data-number="<?php echo $count_profile->publish;//$result['avail_roles']['freelancer']; ?>">0</div>
-                                <h3 class="title"><?php _e('Profiles', ET_DOMAIN);?></h3>
+                                <h3 class="title"><?php _e('Profiles', 'vc_blocks-status-backend');?></h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -67,7 +67,7 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
                             </div>
                             <div class="counter-content">
                                 <div class="odometer" data-number="<?php echo $result['avail_roles']['employer'];?>">0</div>
-                                <h3 class="title"><?php _e('Employers', ET_DOMAIN);?></h3>
+                                <h3 class="title"><?php _e('Employers', 'vc_blocks-status-backend');?></h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -81,7 +81,7 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
                             </div>
                             <div class="counter-content">
                                 <div class="odometer" data-number="<?php echo $result['total_users'];?>">0</div>
-                                <h3 class="title"><?php _e('Users', ET_DOMAIN);?></h3>
+                                <h3 class="title"><?php _e('Users', 'vc_blocks-status-backend');?></h3>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -101,21 +101,21 @@ class WPBakeryShortCode_fre_status_block extends WPBakeryShortCode {
 
 vc_map( array(
     "base"      => "fre_status_block",
-    "name"      => __("Site Status", ET_DOMAIN),
+    "name"      => __("Site Status", 'vc_blocks-status-backend'),
     "class"     => "",
     "icon"      => "",
-    "category" => __("FreelanceEngine", ET_DOMAIN),
+    "category" => __("FreelanceEngine", 'vc_blocks-status-backend'),
     "params"    => array(
         array(
             "type" => "textfield",
-            "heading" => __("Title", ET_DOMAIN),
+            "heading" => __("Title", 'vc_blocks-status-backend'),
             "class" => "input-title",
             "param_name" => "s_title",
             "value"     => 'THE FREELANCE MARKETPLACE WP THEME MADE BY ENGINETHEMES'
         ),
         array(
             "type" => "textfield",
-            "heading" => __("Description", ET_DOMAIN),
+            "heading" => __("Description", 'vc_blocks-status-backend'),
             "class" => "input-description",
             "param_name" => "s_description",
             "value"     => 'We love building awesome solutions for your business. <br/> With all our passion and experience in WP.'

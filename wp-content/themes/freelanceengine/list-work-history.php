@@ -9,7 +9,7 @@ if(ae_user_role($author_id) == FREELANCER) {
 }
 
 ?>
-<h4 class="title-big-info-project-items"><?php printf(__("Work history and Reviews (%d)", ET_DOMAIN), $wp_query->found_posts) ?></h4>
+<h4 class="title-big-info-project-items"><?php printf(__("Work history and Reviews (%d)", 'list-work-history'), $wp_query->found_posts) ?></h4>
 <ul class="list-history-profile">
 	<?php
 	$postdata = array();

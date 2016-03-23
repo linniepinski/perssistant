@@ -17,25 +17,25 @@
 		if($project->post_status == 'publish' ){
 		 	if( (int) $project->post_author == $user_ID || $role != FREELANCER ){
 		 		echo '<div class="col-md-12">';
-				_e('There are no bids yet.',ET_DOMAIN);
+				_e('There are no bids yet.','bid-not-item');
 				echo '</div>';
 			} else if( $role == 'freelancer' || !$user_ID ) { ?>
 				<div class="col-md-10" style="line-height:26px;">
-				   <?php _e('There are no bids yet. Be the first one now!',ET_DOMAIN);?>
+				   <?php _e('There are no bids yet. Be the first one now!','bid-not-item');?>
 				   
 				</div>
 				<div class="col-md-2">
 				   		<a href="#" class="btn btn-apply-project-item" data-toggle="modal" data-target="#modal_bid" <?php if(interview_is_profile_activated()) echo'disabled'?>>
-				   			<?php _e("Bid", ET_DOMAIN); ?>
+				   			<?php _e("Bid", 'bid-not-item'); ?>
 				   		</a>
 				</div>
 				<div class="clearfix"></div>
 			<?php }
 		}  else {
 			echo '<div class="col-md-12" >';
-			$status = 	array(	'pending' => __('This project is pending', ET_DOMAIN),
-								'archive' => __('This project has been archived',ET_DOMAIN) ,
-								'reject'  => __('This project has been rejected',ET_DOMAIN) );
+			$status = 	array(	'pending' => __('This project is pending', 'bid-not-item'),
+								'archive' => __('This project has been archived','bid-not-item') ,
+								'reject'  => __('This project has been rejected','bid-not-item') );
 			if(isset($status[$project->post_status]))
 				printf($status[$project->post_status]);
 

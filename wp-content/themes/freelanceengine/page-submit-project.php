@@ -72,7 +72,7 @@ get_header();
                 if($tos) { ?>
                     <div class="term-of-use">                           
                     <?php 
-                        printf(__('By posting your project, you agree to our <a href="%s">Term of Use and Privacy policy</a>', ET_DOMAIN), et_get_page_link('tos') );
+                        printf(__('By posting your project, you agree to our <a href="%s">Term of Use and Privacy policy</a>', 'page-submit-project'), et_get_page_link('tos') );
                     ?>
                     </div>
                 <?php } ?>

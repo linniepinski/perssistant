@@ -280,7 +280,7 @@ class ET_Admin extends AE_Base
          */
         $sections['general-settings'] = array(
             'args' => array(
-                'title' => __("General", ET_DOMAIN) ,
+                'title' => __("General", 'admin-backend') ,
                 'id' => 'general-settings',
                 'icon' => 'y',
                 'class' => ''
@@ -288,17 +288,17 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Website Title", ET_DOMAIN) ,
+                        'title' => __("Website Title", 'admin-backend') ,
                         'id' => 'site-name',
                         'class' => '',
-                        'desc' => __("Enter your website title.", ET_DOMAIN)
+                        'desc' => __("Enter your website title.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'blogname',
                             'type' => 'text',
-                            'title' => __("Website Title", ET_DOMAIN) ,
+                            'title' => __("Website Title", 'admin-backend') ,
                             'name' => 'blogname',
                             'class' => 'option-item bg-grey-input'
                         )
@@ -306,17 +306,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Website Description", ET_DOMAIN) ,
+                        'title' => __("Website Description", 'admin-backend') ,
                         'id' => 'site-description',
                         'class' => '',
-                        'desc' => __("Enter your website description", ET_DOMAIN)
+                        'desc' => __("Enter your website description", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'blogdescription',
                             'type' => 'text',
-                            'title' => __("Website Title", ET_DOMAIN) ,
+                            'title' => __("Website Title", 'admin-backend') ,
                             'name' => 'blogdescription',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -324,17 +324,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Copyright", ET_DOMAIN) ,
+                        'title' => __("Copyright", 'admin-backend') ,
                         'id' => 'site-copyright',
                         'class' => '',
-                        'desc' => __("This copyright information will appear in the footer.", ET_DOMAIN)
+                        'desc' => __("This copyright information will appear in the footer.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'copyright',
                             'type' => 'text',
-                            'title' => __("Copyright", ET_DOMAIN) ,
+                            'title' => __("Copyright", 'admin-backend') ,
                             'name' => 'copyright',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -342,17 +342,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Google Analytics Script", ET_DOMAIN) ,
+                        'title' => __("Google Analytics Script", 'admin-backend') ,
                         'id' => 'site-analytics',
                         'class' => '',
-                        'desc' => __("Google analytics is a service offered by Google that generates detailed statistics about the visits to a website.", ET_DOMAIN)
+                        'desc' => __("Google analytics is a service offered by Google that generates detailed statistics about the visits to a website.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'textarea',
-                            'title' => __("Google Analytics Script", ET_DOMAIN) ,
+                            'title' => __("Google Analytics Script", 'admin-backend') ,
                             'name' => 'google_analytics',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -360,17 +360,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Email Confirmation ", ET_DOMAIN) ,
+                        'title' => __("Email Confirmation ", 'admin-backend') ,
                         'id' => 'user-confirm',
                         'class' => '',
-                        'desc' => __("Enabling this will require users to confirm their email addresses after registration.", ET_DOMAIN)
+                        'desc' => __("Enabling this will require users to confirm their email addresses after registration.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'user_confirm',
                             'type' => 'switch',
-                            'title' => __("Email Confirmation", ET_DOMAIN) ,
+                            'title' => __("Email Confirmation", 'admin-backend') ,
                             'name' => 'user_confirm',
                             'class' => ''
                         )
@@ -378,17 +378,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Login in admin panel", ET_DOMAIN) ,
+                        'title' => __("Login in admin panel", 'admin-backend') ,
                         'id' => 'login_init',
                         'class' => '',
-                        'desc' => __("Prevent directly login to admin page.", ET_DOMAIN)
+                        'desc' => __("Prevent directly login to admin page.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'login-init',
                             'type' => 'switch',
-                            'label' => __("Enable this option will prevent directly login to admin page.", ET_DOMAIN) ,
+                            'label' => __("Enable this option will prevent directly login to admin page.", 'admin-backend') ,
                             'name' => 'login_init',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -396,10 +396,10 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Social Links", ET_DOMAIN) ,
+                        'title' => __("Social Links", 'admin-backend') ,
                         'id' => 'Social-Links',
                         'class' => 'Social-Links',
-                        'desc' => __("Social links are displayed in the footer and in your blog sidebar..", ET_DOMAIN) ,
+                        'desc' => __("Social links are displayed in the footer and in your blog sidebar..", 'admin-backend') ,
                         
                         // 'name' => 'currency'
                         
@@ -409,11 +409,11 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Twitter URL", ET_DOMAIN) ,
+                        'title' => __("Twitter URL", 'admin-backend') ,
                         'id' => 'site-twitter',
                         'class' => 'payment-gateway',
                         
-                        //'desc' => __("Your twitter link .", ET_DOMAIN)
+                        //'desc' => __("Your twitter link .", 'admin-backend')
                         
                     ) ,
                     
@@ -421,7 +421,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'site-twitter',
                             'type' => 'text',
-                            'title' => __("Twitter URL", ET_DOMAIN) ,
+                            'title' => __("Twitter URL", 'admin-backend') ,
                             'name' => 'site_twitter',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -429,11 +429,11 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Facebook URL", ET_DOMAIN) ,
+                        'title' => __("Facebook URL", 'admin-backend') ,
                         'id' => 'site-facebook',
                         'class' => 'payment-gateway',
                         
-                        //'desc' => __(".", ET_DOMAIN)
+                        //'desc' => __(".", 'admin-backend')
                         
                     ) ,
                     
@@ -441,7 +441,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'site-facebook',
                             'type' => 'text',
-                            'title' => __("Copyright", ET_DOMAIN) ,
+                            'title' => __("Copyright", 'admin-backend') ,
                             'name' => 'site_facebook',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -449,11 +449,11 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Google Plus URL", ET_DOMAIN) ,
+                        'title' => __("Google Plus URL", 'admin-backend') ,
                         'id' => 'site-google',
                         'class' => 'payment-gateway',
                         
-                        // 'desc' => __("This copyright information will appear in the footer.", ET_DOMAIN)
+                        // 'desc' => __("This copyright information will appear in the footer.", 'admin-backend')
                         
                     ) ,
                     
@@ -461,7 +461,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'site-google',
                             'type' => 'text',
-                            'title' => __("Google Plus URL", ET_DOMAIN) ,
+                            'title' => __("Google Plus URL", 'admin-backend') ,
                             'name' => 'site_google',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -476,7 +476,7 @@ class ET_Admin extends AE_Base
         $sections['branding'] = array(
             
             'args' => array(
-                'title' => __("Branding", ET_DOMAIN) ,
+                'title' => __("Branding", 'admin-backend') ,
                 'id' => 'branding-settings',
                 'icon' => 'b',
                 'class' => ''
@@ -485,18 +485,18 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Site logo ", ET_DOMAIN) ,
+                        'title' => __("Site logo ", 'admin-backend') ,
                         'id' => 'site-logo-black',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", ET_DOMAIN)
+                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'image',
-                            'title' => __("Site Logo", ET_DOMAIN) ,
+                            'title' => __("Site Logo", 'admin-backend') ,
                             'name' => 'site_logo_black',
                             'class' => '',
                             'size' => array(
@@ -508,18 +508,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Site logo in front page", ET_DOMAIN) ,
+                        'title' => __("Site logo in front page", 'admin-backend') ,
                         'id' => 'site-logo-while',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", ET_DOMAIN)
+                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'image',
-                            'title' => __("Site Logo while", ET_DOMAIN) ,
+                            'title' => __("Site Logo while", 'admin-backend') ,
                             'name' => 'site_logo_white',
                             'class' => '',
                             'size' => array(
@@ -531,18 +531,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Mobile logo", ET_DOMAIN) ,
+                        'title' => __("Mobile logo", 'admin-backend') ,
                         'id' => 'mobile-logo',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", ET_DOMAIN)
+                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'image',
-                            'title' => __("Mobile Logo", ET_DOMAIN) ,
+                            'title' => __("Mobile Logo", 'admin-backend') ,
                             'name' => 'mobile_logo',
                             'class' => '',
                             'size' => array(
@@ -555,18 +555,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Mobile Icon", ET_DOMAIN) ,
+                        'title' => __("Mobile Icon", 'admin-backend') ,
                         'id' => 'mobile-icon',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("This icon will be used as a launcher icon for iPhone and Android smartphones and also as the website favicon. The image dimensions should be 57x57px.", ET_DOMAIN)
+                        'desc' => __("This icon will be used as a launcher icon for iPhone and Android smartphones and also as the website favicon. The image dimensions should be 57x57px.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'image',
-                            'title' => __("Mobile Icon", ET_DOMAIN) ,
+                            'title' => __("Mobile Icon", 'admin-backend') ,
                             'name' => 'mobile_icon',
                             'class' => '',
                             'size' => array(
@@ -578,18 +578,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("User default logo & avtar", ET_DOMAIN) ,
+                        'title' => __("User default logo & avtar", 'admin-backend') ,
                         'id' => 'default-logo',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", ET_DOMAIN)
+                        'desc' => __("Your logo should be in PNG, GIF or JPG format, within 150x50px and less than 1500Kb.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'opt-ace-editor-js',
                             'type' => 'image',
-                            'title' => __("User default logo & avtar", ET_DOMAIN) ,
+                            'title' => __("User default logo & avtar", 'admin-backend') ,
                             'name' => 'default_avatar',
                             'class' => '',
                             'size' => array(
@@ -602,18 +602,18 @@ class ET_Admin extends AE_Base
                 
                 // array(
                 //     'args' => array(
-                //         'title' => __("Pre Loading Icon", ET_DOMAIN) ,
+                //         'title' => __("Pre Loading Icon", 'admin-backend') ,
                 //         'id' => 'pre-loading-icon',
                 //         'class' => '',
                 //         'name' => '',
-                //         'desc' => __("Preloading Image. The image dimensions should be 57x57px.", ET_DOMAIN)
+                //         'desc' => __("Preloading Image. The image dimensions should be 57x57px.", 'admin-backend')
                 //     ) ,
                 
                 //     'fields' => array(
                 //         array(
                 //             'id' => 'opt-ace-editor-js',
                 //             'type' => 'image',
-                //             'title' => __("Mobile Icon", ET_DOMAIN) ,
+                //             'title' => __("Mobile Icon", 'admin-backend') ,
                 //             'name' => 'pre_loading',
                 //             'class' => '',
                 //             'size' => array(
@@ -629,7 +629,7 @@ class ET_Admin extends AE_Base
         
         $sections['content'] = array(
             'args' => array(
-                'title' => __("Content", ET_DOMAIN) ,
+                'title' => __("Content", 'admin-backend') ,
                 'id' => 'content-settings',
                 'icon' => 'l',
                 'class' => ''
@@ -638,16 +638,16 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Sharing Role Capabilities", ET_DOMAIN) ,
+                        'title' => __("Sharing Role Capabilities", 'admin-backend') ,
                         'id' => 'fre-share-role',
                         'class' => 'fre-share-role',
-                        'desc' => __("Enabling this will make employer and freelancer have the same capabilities.", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will make employer and freelancer have the same capabilities.", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_share_role',
                             'type' => 'switch',
-                            'title' => __("Shared Roles", ET_DOMAIN) ,
+                            'title' => __("Shared Roles", 'admin-backend') ,
                             'name' => 'fre_share_role',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -655,54 +655,54 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Currency", ET_DOMAIN) ,
+                        'title' => __("Currency", 'admin-backend') ,
                         'id' => 'content-payment-currency',
                         'class' => 'content-list-package',
-                        'desc' => __("Enter currency code and sign ....", ET_DOMAIN) ,
+                        'desc' => __("Enter currency code and sign ....", 'admin-backend') ,
                         'name' => 'content_currency'
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'content-currency-code',
                             'type' => 'text',
-                            'title' => __("Code", ET_DOMAIN) ,
+                            'title' => __("Code", 'admin-backend') ,
                             'name' => 'code',
-                            'placeholder' => __("Code", ET_DOMAIN) ,
+                            'placeholder' => __("Code", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'content-currency-code',
                             'type' => 'text',
-                            'title' => __("Sign", ET_DOMAIN) ,
+                            'title' => __("Sign", 'admin-backend') ,
                             'name' => 'icon',
-                            'placeholder' => __("Sign", ET_DOMAIN) ,
+                            'placeholder' => __("Sign", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'currency-align',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'align',
                             'class' => 'option-item bg-grey-input ',
-                            'label_1' => __("Left", ET_DOMAIN) ,
-                            'label_2' => __("Right", ET_DOMAIN) ,
+                            'label_1' => __("Left", 'admin-backend') ,
+                            'label_2' => __("Right", 'admin-backend') ,
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Budget limitation", ET_DOMAIN) ,
+                        'title' => __("Budget limitation", 'admin-backend') ,
                         'id' => 'pending-post',
                         'class' => 'pending-post',
-                        'desc' => __("Set up the limitation for the 'Budget' filter in 'Projects' page.", ET_DOMAIN) ,
+                        'desc' => __("Set up the limitation for the 'Budget' filter in 'Projects' page.", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre-slide-max-budget',
                             'type' => 'text',
-                            'title' => __("Slide max budget", ET_DOMAIN) ,
+                            'title' => __("Slide max budget", 'admin-backend') ,
                             'name' => 'fre_slide_max_budget',
-                            'placeholder' => __("Slide max budget", ET_DOMAIN) ,
+                            'placeholder' => __("Slide max budget", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         )
                     )
@@ -710,16 +710,16 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Pending Post", ET_DOMAIN) ,
+                        'title' => __("Pending Post", 'admin-backend') ,
                         'id' => 'pending-post',
                         'class' => 'pending-post',
-                        'desc' => __("Enabling this will make every new project posted pending until you review and approve it manually.", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will make every new project posted pending until you review and approve it manually.", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'use_pending',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'use_pending',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -728,16 +728,16 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Maximum Number of Categories", ET_DOMAIN) ,
+                        'title' => __("Maximum Number of Categories", 'admin-backend') ,
                         'id' => 'max-categories',
                         'class' => 'max-categories',
-                        'desc' => __("Set a maximum number of categories a project can assign to", ET_DOMAIN)
+                        'desc' => __("Set a maximum number of categories a project can assign to", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'max_cat',
                             'type' => 'text',
-                            'title' => __("Max Number Of Project Categories", ET_DOMAIN) ,
+                            'title' => __("Max Number Of Project Categories", 'admin-backend') ,
                             'name' => 'max_cat',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -745,10 +745,10 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Project Category Order", ET_DOMAIN) ,
+                        'title' => __("Project Category Order", 'admin-backend') ,
                         'id' => 'unit_measurement',
                         'class' => '',
-                        'desc' => __("Order list project categories by.", ET_DOMAIN)
+                        'desc' => __("Order list project categories by.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
@@ -756,24 +756,24 @@ class ET_Admin extends AE_Base
                             'id' => 'order-project-category',
                             'type' => 'select',
                             'data' => array(
-                                'name' => __("Name", ET_DOMAIN) ,
-                                'slug' => __("Slug", ET_DOMAIN) ,
-                                'id' => __("ID", ET_DOMAIN) ,
-                                'count' => __("Count", ET_DOMAIN)
+                                'name' => __("Name", 'admin-backend') ,
+                                'slug' => __("Slug", 'admin-backend') ,
+                                'id' => __("ID", 'admin-backend') ,
+                                'count' => __("Count", 'admin-backend')
                             ) ,
-                            'title' => __("Project Category Order", ET_DOMAIN) ,
+                            'title' => __("Project Category Order", 'admin-backend') ,
                             'name' => 'project_category_order',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __("Project Category Order", ET_DOMAIN)
+                            'placeholder' => __("Project Category Order", 'admin-backend')
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Project Type Order", ET_DOMAIN) ,
+                        'title' => __("Project Type Order", 'admin-backend') ,
                         'id' => 'unit_measurement',
                         'class' => '',
-                        'desc' => __("Order list project types by.", ET_DOMAIN)
+                        'desc' => __("Order list project types by.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
@@ -781,81 +781,81 @@ class ET_Admin extends AE_Base
                             'id' => 'order-project-type',
                             'type' => 'select',
                             'data' => array(
-                                'name' => __("Name", ET_DOMAIN) ,
-                                'slug' => __("Slug", ET_DOMAIN) ,
-                                'id' => __("ID", ET_DOMAIN) ,
-                                'count' => __("Count", ET_DOMAIN)
+                                'name' => __("Name", 'admin-backend') ,
+                                'slug' => __("Slug", 'admin-backend') ,
+                                'id' => __("ID", 'admin-backend') ,
+                                'count' => __("Count", 'admin-backend')
                             ) ,
-                            'title' => __("Project Type Order", ET_DOMAIN) ,
+                            'title' => __("Project Type Order", 'admin-backend') ,
                             'name' => 'project_type_order',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __("Project Type Order", ET_DOMAIN)
+                            'placeholder' => __("Project Type Order", 'admin-backend')
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Disable Comment", ET_DOMAIN) ,
+                        'title' => __("Disable Comment", 'admin-backend') ,
                         'id' => 'disable-project-comment',
                         'class' => '',
-                        'desc' => __("Disable comment on project page.", ET_DOMAIN)
+                        'desc' => __("Disable comment on project page.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'disable_project_comment',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'disable_project_comment',
                             
-                            // 'label' => __("Code", ET_DOMAIN),
+                            // 'label' => __("Code", 'admin-backend'),
                             'class' => 'option-item bg-grey-input ',
-                            'label_1' => __("Yes", ET_DOMAIN) ,
-                            'label_2' => __("No", ET_DOMAIN) ,
+                            'label_1' => __("Yes", 'admin-backend') ,
+                            'label_2' => __("No", 'admin-backend') ,
                         )
                     )
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Invited To Bid", ET_DOMAIN) ,
+                        'title' => __("Invited To Bid", 'admin-backend') ,
                         'id' => 'invited-to-bid',
                         'class' => '',
-                        'desc' => __("If you enable this option, freelancers have to be invited first before bidding a project.", ET_DOMAIN)
+                        'desc' => __("If you enable this option, freelancers have to be invited first before bidding a project.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'invited_to_bid',
                             'type' => 'switch',
-                            'title' => __("Invited To Bid", ET_DOMAIN) ,
+                            'title' => __("Invited To Bid", 'admin-backend') ,
                             'name' => 'invited_to_bid',
                             
-                            // 'label' => __("Code", ET_DOMAIN),
+                            // 'label' => __("Code", 'admin-backend'),
                             'class' => 'option-item bg-grey-input ',
-                            'label_1' => __("Yes", ET_DOMAIN) ,
-                            'label_2' => __("No", ET_DOMAIN) ,
+                            'label_1' => __("Yes", 'admin-backend') ,
+                            'label_2' => __("No", 'admin-backend') ,
                         )
                     )
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Select Skill From Predefined List", ET_DOMAIN) ,
+                        'title' => __("Select Skill From Predefined List", 'admin-backend') ,
                         'id' => 'switch-skill',
                         'class' => '',
-                        'desc' => __("Enabling this will force user select skill from the predefined list.", ET_DOMAIN)
+                        'desc' => __("Enabling this will force user select skill from the predefined list.", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'switch_skill',
                             'type' => 'switch',
-                            'title' => __("Switch Skill", ET_DOMAIN) ,
+                            'title' => __("Switch Skill", 'admin-backend') ,
                             'name' => 'switch_skill',
                             
-                            // 'label' => __("Code", ET_DOMAIN),
+                            // 'label' => __("Code", 'admin-backend'),
                             'class' => 'option-item bg-grey-input ',
-                            'label_1' => __("Yes", ET_DOMAIN) ,
-                            'label_2' => __("No", ET_DOMAIN) ,
+                            'label_1' => __("Yes", 'admin-backend') ,
+                            'label_2' => __("No", 'admin-backend') ,
                         )
                     )
                 )
@@ -864,7 +864,7 @@ class ET_Admin extends AE_Base
 
         // $sections['freelancer'] = array(
         //     'args' => array(
-        //         'title' => __("Freelancer", ET_DOMAIN) ,
+        //         'title' => __("Freelancer", 'admin-backend') ,
         //         'id' => 'freelancer-settings',
         //         'icon' => 'U',
         //         'class' => ''
@@ -873,16 +873,16 @@ class ET_Admin extends AE_Base
         //     'groups' => array(
         //         array(
         //             'args' => array(
-        //                 'title' => __("Pay to Bid", ET_DOMAIN) ,
+        //                 'title' => __("Pay to Bid", 'admin-backend') ,
         //                 'id' => 'pay-to-bid',
         //                 'class' => 'pay-to-bid',
-        //                 'desc' => __("Enabling this will require freelancer pay to bid.", ET_DOMAIN) ,
+        //                 'desc' => __("Enabling this will require freelancer pay to bid.", 'admin-backend') ,
         //             ) ,
         //             'fields' => array(
         //                 array(
         //                     'id' => 'pay_to_bid',
         //                     'type' => 'switch',
-        //                     'title' => __("Pay to Bid", ET_DOMAIN) ,
+        //                     'title' => __("Pay to Bid", 'admin-backend') ,
         //                     'name' => 'pay_to_bid',
         //                     'class' => 'option-item bg-grey-input '
         //                 )
@@ -894,7 +894,7 @@ class ET_Admin extends AE_Base
         //         array(
         //             'type' => 'list',
         //             'args' => array(
-        //                 'title' => __("Bid Plans", ET_DOMAIN) ,
+        //                 'title' => __("Bid Plans", 'admin-backend') ,
         //                 'id' => 'list-package',
         //                 'class' => 'list-package',
         //                 'desc' => '',
@@ -917,7 +917,7 @@ class ET_Admin extends AE_Base
          */
         $sections['url_slug'] = array(
             'args' => array(
-                'title' => __("Url slug", ET_DOMAIN) ,
+                'title' => __("Url slug", 'admin-backend') ,
                 'id' => 'Url-Slug',
                 'icon' => 'i',
                 'class' => ''
@@ -925,18 +925,18 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Project", ET_DOMAIN) ,
+                        'title' => __("Project", 'admin-backend') ,
                         'id' => 'project-slug',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Single Project page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Single Project page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_project_slug',
                             'type' => 'text',
-                            'title' => __("Single Project page Slug", ET_DOMAIN) ,
+                            'title' => __("Single Project page Slug", 'admin-backend') ,
                             'name' => 'fre_project_slug',
-                            'placeholder' => __("Single Project page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Single Project page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'project'
                         )
@@ -944,18 +944,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Project Listing", ET_DOMAIN) ,
+                        'title' => __("Project Listing", 'admin-backend') ,
                         'id' => 'project-archive_slug',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Projects listing page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Projects listing page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_project_archive',
                             'type' => 'text',
-                            'title' => __("Projects listing page Slug", ET_DOMAIN) ,
+                            'title' => __("Projects listing page Slug", 'admin-backend') ,
                             'name' => 'fre_project_archive',
-                            'placeholder' => __("Projects listing page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Projects listing page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'projects'
                         )
@@ -964,18 +964,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Project Category", ET_DOMAIN) ,
+                        'title' => __("Project Category", 'admin-backend') ,
                         'id' => 'Project-Category',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Project Category page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Project Category page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'project_category_slug',
                             'type' => 'text',
-                            'title' => __("Project Category page Slug", ET_DOMAIN) ,
+                            'title' => __("Project Category page Slug", 'admin-backend') ,
                             'name' => 'project_category_slug',
-                            'placeholder' => __("Project Category page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Project Category page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'project_category',
                         )
@@ -984,18 +984,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Project Type", ET_DOMAIN) ,
+                        'title' => __("Project Type", 'admin-backend') ,
                         'id' => 'Project-Type',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Project Type page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Project Type page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'project_type_slug',
                             'type' => 'text',
-                            'title' => __("Project Type page Slug", ET_DOMAIN) ,
+                            'title' => __("Project Type page Slug", 'admin-backend') ,
                             'name' => 'project_type_slug',
-                            'placeholder' => __("Project Type page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Project Type page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'project_type'
                         )
@@ -1004,18 +1004,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Profile", ET_DOMAIN) ,
+                        'title' => __("Profile", 'admin-backend') ,
                         'id' => 'Profile-slug',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your User Profile page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your User Profile page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_profile_slug',
                             'type' => 'text',
-                            'title' => __("User Profile page Slug", ET_DOMAIN) ,
+                            'title' => __("User Profile page Slug", 'admin-backend') ,
                             'name' => 'author_base',
-                            'placeholder' => __("User Profile page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("User Profile page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'profile'
                         )
@@ -1023,18 +1023,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Profiles Listing", ET_DOMAIN) ,
+                        'title' => __("Profiles Listing", 'admin-backend') ,
                         'id' => 'profiles-archive_slug',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Profiles listing page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Profiles listing page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_profile_archive',
                             'type' => 'text',
-                            'title' => __(" Profiles listing page Slug", ET_DOMAIN) ,
+                            'title' => __(" Profiles listing page Slug", 'admin-backend') ,
                             'name' => 'fre_profile_archive',
-                            'placeholder' => __("Profiles listing page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Profiles listing page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'profiles'
                         )
@@ -1043,18 +1043,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Country", ET_DOMAIN) ,
+                        'title' => __("Country", 'admin-backend') ,
                         'id' => 'profile-Country',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Country tag page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Country tag page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'country_slug',
                             'type' => 'text',
-                            'title' => __("Country tag page Slug", ET_DOMAIN) ,
+                            'title' => __("Country tag page Slug", 'admin-backend') ,
                             'name' => 'country_slug',
-                            'placeholder' => __("Country tag page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Country tag page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'country'
                         )
@@ -1063,18 +1063,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Skill", ET_DOMAIN) ,
+                        'title' => __("Skill", 'admin-backend') ,
                         'id' => 'profile-Skill',
                         'class' => 'list-package',
-                        'desc' => __("Enter slug for your Skill tag page", ET_DOMAIN) ,
+                        'desc' => __("Enter slug for your Skill tag page", 'admin-backend') ,
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'skill_slug',
                             'type' => 'text',
-                            'title' => __("Skill tag page Slug", ET_DOMAIN) ,
+                            'title' => __("Skill tag page Slug", 'admin-backend') ,
                             'name' => 'skill_slug',
-                            'placeholder' => __("Skill tag page Slug", ET_DOMAIN) ,
+                            'placeholder' => __("Skill tag page Slug", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input ',
                             'default' => 'skill'
                         )
@@ -1089,7 +1089,7 @@ class ET_Admin extends AE_Base
         $sections['header_video'] = array(
             
             'args' => array(
-                'title' => __("Header Video", ET_DOMAIN) ,
+                'title' => __("Header Video", 'admin-backend') ,
                 'id' => 'header-settings',
                 'icon' => 'V',
                 'class' => ''
@@ -1099,71 +1099,71 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Video Background Url", ET_DOMAIN) ,
+                        'title' => __("Video Background Url", 'admin-backend') ,
                         'id' => 'header-slider-settings',
                         'class' => '',
-                        'desc' => __("Enter your video background url in page-home.php template (.mp4)", ET_DOMAIN)
+                        'desc' => __("Enter your video background url in page-home.php template (.mp4)", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'header-video',
                             'type' => 'text',
-                            'title' => __("header video url", ET_DOMAIN) ,
+                            'title' => __("header video url", 'admin-backend') ,
                             'name' => 'header_video',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Enter your header video url', ET_DOMAIN)
+                            'placeholder' => __('Enter your header video url', 'admin-backend')
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Video Background Via Youtube ID", ET_DOMAIN) ,
+                        'title' => __("Video Background Via Youtube ID", 'admin-backend') ,
                         'id' => 'header-youtube_id',
                         'class' => '',
-                        'desc' => __("Enter youtube ID for background video instead of video url", ET_DOMAIN)
+                        'desc' => __("Enter youtube ID for background video instead of video url", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'youtube_id-video',
                             'type' => 'text',
-                            'title' => __("header video url", ET_DOMAIN) ,
+                            'title' => __("header video url", 'admin-backend') ,
                             'name' => 'header_youtube_id',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Enter youtube video ID', ET_DOMAIN)
+                            'placeholder' => __('Enter youtube video ID', 'admin-backend')
                         )
                     )
                 ) ,
                 
                 array(
                     'args' => array(
-                        'title' => __("Video Background Fallback", ET_DOMAIN) ,
+                        'title' => __("Video Background Fallback", 'admin-backend') ,
                         'id' => 'header-slider-settings',
                         'class' => '',
-                        'desc' => __("Fallback image for video background when browser not support", ET_DOMAIN)
+                        'desc' => __("Fallback image for video background when browser not support", 'admin-backend')
                     ) ,
                     
                     'fields' => array(
                         array(
                             'id' => 'header-video',
                             'type' => 'text',
-                            'title' => __("header video url", ET_DOMAIN) ,
+                            'title' => __("header video url", 'admin-backend') ,
                             'name' => 'header_video_fallback',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Enter your header video fallback image url', ET_DOMAIN)
+                            'placeholder' => __('Enter your header video fallback image url', 'admin-backend')
                         )
                     )
                 ) ,
                 
                 array(
                     'args' => array(
-                        'title' => __("Project Demonstration", ET_DOMAIN) ,
+                        'title' => __("Project Demonstration", 'admin-backend') ,
                         'id' => 'header-slider-settings',
                         'class' => '',
                         'name' => 'project_demonstration'
                         
-                        // 'desc' => __("Enter your header slider setting", ET_DOMAIN)
+                        // 'desc' => __("Enter your header slider setting", 'admin-backend')
                         
                     ) ,
                     
@@ -1171,30 +1171,30 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'header-left-text',
                             'type' => 'text',
-                            'title' => __("header left text", ET_DOMAIN) ,
+                            'title' => __("header left text", 'admin-backend') ,
                             'name' => 'home_page',
                             'class' => 'option-item bg-grey-input ',
-                            'label' => __('Project demonstration on header video background which can be view by employer', ET_DOMAIN)
+                            'label' => __('Project demonstration on header video background which can be view by employer', 'admin-backend')
                         ) ,
                         array(
                             'id' => 'header-right-text',
                             'type' => 'text',
-                            'title' => __("header right text", ET_DOMAIN) ,
+                            'title' => __("header right text", 'admin-backend') ,
                             'name' => 'list_project',
                             'class' => 'option-item bg-grey-input ',
-                            'label' => __('Project demonstration on header video background which can be view by freelancer', ET_DOMAIN)
+                            'label' => __('Project demonstration on header video background which can be view by freelancer', 'admin-backend')
                         )
                     )
                 ) ,
                 
                 array(
                     'args' => array(
-                        'title' => __("Profile Demonstration", ET_DOMAIN) ,
+                        'title' => __("Profile Demonstration", 'admin-backend') ,
                         'id' => 'header-slider-settings',
                         'class' => '',
                         'name' => 'profile_demonstration'
                         
-                        // 'desc' => __("Enter your header slider setting", ET_DOMAIN)
+                        // 'desc' => __("Enter your header slider setting", 'admin-backend')
                         
                     ) ,
                     
@@ -1202,33 +1202,33 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'header-left-text',
                             'type' => 'text',
-                            'title' => __("header left text", ET_DOMAIN) ,
+                            'title' => __("header left text", 'admin-backend') ,
                             'name' => 'home_page',
                             'class' => 'option-item bg-grey-input ',
-                            'label' => __('Profile demonstration on header video background which can be view by freelancer', ET_DOMAIN)
+                            'label' => __('Profile demonstration on header video background which can be view by freelancer', 'admin-backend')
                         ) ,
                         array(
                             'id' => 'header-right-text',
                             'type' => 'text',
-                            'title' => __("header right text", ET_DOMAIN) ,
+                            'title' => __("header right text", 'admin-backend') ,
                             'name' => 'list_profile',
                             'class' => 'option-item bg-grey-input ',
-                            'label' => __('Profiles demonstration on list profiles page which can be view by employer', ET_DOMAIN)
+                            'label' => __('Profiles demonstration on list profiles page which can be view by employer', 'admin-backend')
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Loop Header Video", ET_DOMAIN) ,
+                        'title' => __("Loop Header Video", 'admin-backend') ,
                         'id' => 'header-video-loop-option',
                         'class' => '',
-                        'desc' => __(" Enabling this will make the video on the header automatically repeated.", ET_DOMAIN)
+                        'desc' => __(" Enabling this will make the video on the header automatically repeated.", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'header-video-loop',
                             'type' => 'switch',
-                            'title' => __("Select video loop", ET_DOMAIN) ,
+                            'title' => __("Select video loop", 'admin-backend') ,
                             'name' => 'header_video_loop',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -1242,7 +1242,7 @@ class ET_Admin extends AE_Base
          */
         $sections['payment_settings'] = array(
             'args' => array(
-                'title' => __("Payment", ET_DOMAIN) ,
+                'title' => __("Payment", 'admin-backend') ,
                 'id' => 'payment-settings',
                 'icon' => '%',
                 'class' => ''
@@ -1252,77 +1252,77 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Payment Currency", ET_DOMAIN) ,
+                        'title' => __("Payment Currency", 'admin-backend') ,
                         'id' => 'payment-currency',
                         'class' => 'list-package',
-                        'desc' => __("Enter currency code and sign ....", ET_DOMAIN) ,
+                        'desc' => __("Enter currency code and sign ....", 'admin-backend') ,
                         'name' => 'currency'
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'currency-code',
                             'type' => 'text',
-                            'title' => __("Code", ET_DOMAIN) ,
+                            'title' => __("Code", 'admin-backend') ,
                             'name' => 'code',
-                            'placeholder' => __("Code", ET_DOMAIN) ,
+                            'placeholder' => __("Code", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'currency-sign',
                             'type' => 'text',
-                            'title' => __("Sign", ET_DOMAIN) ,
+                            'title' => __("Sign", 'admin-backend') ,
                             'name' => 'icon',
-                            'placeholder' => __("Sign", ET_DOMAIN) ,
+                            'placeholder' => __("Sign", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'currency-align',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'align',
                             
-                            // 'label' => __("Code", ET_DOMAIN),
+                            // 'label' => __("Code", 'admin-backend'),
                             'class' => 'option-item bg-grey-input ',
-                            'label_1' => __("Left", ET_DOMAIN) ,
-                            'label_2' => __("Right", ET_DOMAIN) ,
+                            'label_1' => __("Left", 'admin-backend') ,
+                            'label_2' => __("Right", 'admin-backend') ,
                         ) ,
                     )
                 ),
 
                 array(
                     'args' => array(
-                        'title' => __("Number Format", ET_DOMAIN) ,
+                        'title' => __("Number Format", 'admin-backend') ,
                         'id' => 'number-format',
                         'class' => 'list-package',
-                        'desc' => __("Format a number with grouped thousands", ET_DOMAIN) ,
+                        'desc' => __("Format a number with grouped thousands", 'admin-backend') ,
                         'name' => 'number_format'
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'decimal-point',
                             'type' => 'text',
-                            'title' => __("Decimal point", ET_DOMAIN) ,
-                            'label' => __("Decimal point", ET_DOMAIN) ,
+                            'title' => __("Decimal point", 'admin-backend') ,
+                            'label' => __("Decimal point", 'admin-backend') ,
                             'name' => 'dec_point',
-                            'placeholder' => __("Decimal point", ET_DOMAIN) ,
+                            'placeholder' => __("Decimal point", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ),
                         array(
                             'id' => 'thousand_sep',
                             'type' => 'text',
-                            'label' => __("Thousand separator", ET_DOMAIN) ,
-                            'title' => __("Thousand separator", ET_DOMAIN) ,
+                            'label' => __("Thousand separator", 'admin-backend') ,
+                            'title' => __("Thousand separator", 'admin-backend') ,
                             'name' => 'thousand_sep',
-                            'placeholder' => __("Thousand separator", ET_DOMAIN) ,
+                            'placeholder' => __("Thousand separator", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input '
                         ),
                         array(
                             'id' => 'et_decimal',
                             'type' => 'text',
-                            'label' => __("Number of decimal points", ET_DOMAIN) ,
-                            'title' => __("Number of decimal points", ET_DOMAIN) ,
+                            'label' => __("Number of decimal points", 'admin-backend') ,
+                            'title' => __("Number of decimal points", 'admin-backend') ,
                             'name' => 'et_decimal',
-                            'placeholder' => __("Sets the number of decimal points.", ET_DOMAIN) ,
+                            'placeholder' => __("Sets the number of decimal points.", 'admin-backend') ,
                             'class' => 'option-item bg-grey-input positive_int',
                             'default' => 2
                         ),
@@ -1331,10 +1331,10 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Free to submit listing", ET_DOMAIN) ,
+                        'title' => __("Free to submit listing", 'admin-backend') ,
                         'id' => 'free-to-submit-listing',
                         'class' => 'free-to-submit-listing',
-                        'desc' => __("Enabling this will allow users to submit listing free.", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will allow users to submit listing free.", 'admin-backend') ,
                         
                         // 'name' => 'currency'
                         
@@ -1344,7 +1344,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'disable-plan',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'disable_plan',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -1354,10 +1354,10 @@ class ET_Admin extends AE_Base
                 /* payment test mode settings */
                 array(
                     'args' => array(
-                        'title' => __("Payment Test Mode", ET_DOMAIN) ,
+                        'title' => __("Payment Test Mode", 'admin-backend') ,
                         'id' => 'payment-test-mode',
                         'class' => 'payment-test-mode',
-                        'desc' => __("Enabling this will allow you to test payment without charging your account.", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will allow you to test payment without charging your account.", 'admin-backend') ,
                         
                         // 'name' => 'currency'
                         
@@ -1367,7 +1367,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'test-mode',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'test_mode',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -1378,10 +1378,10 @@ class ET_Admin extends AE_Base
                 /* payment gateways settings */
                 array(
                     'args' => array(
-                        'title' => __("Payment Gateways", ET_DOMAIN) ,
+                        'title' => __("Payment Gateways", 'admin-backend') ,
                         'id' => 'payment-gateways',
                         'class' => 'payment-gateways',
-                        'desc' => __("Set payment plans your users can choose when posting new project.", ET_DOMAIN) ,
+                        'desc' => __("Set payment plans your users can choose when posting new project.", 'admin-backend') ,
                         
                         // 'name' => 'currency'
                         
@@ -1391,10 +1391,10 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Paypal", ET_DOMAIN) ,
+                        'title' => __("Paypal", 'admin-backend') ,
                         'id' => 'Paypal',
                         'class' => 'payment-gateway',
-                        'desc' => __("Enabling this will allow your users to pay through PayPal", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will allow your users to pay through PayPal", 'admin-backend') ,
                         
                         'name' => 'paypal'
                     ) ,
@@ -1402,27 +1402,27 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'paypal',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'enable',
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'paypal_mode',
                             'type' => 'text',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'api_username',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Enter your PayPal email address', ET_DOMAIN)
+                            'placeholder' => __('Enter your PayPal email address', 'admin-backend')
                         )
                     )
                 ) ,
                 
                 array(
                     'args' => array(
-                        'title' => __("2Checkout", ET_DOMAIN) ,
+                        'title' => __("2Checkout", 'admin-backend') ,
                         'id' => '2Checkout',
                         'class' => 'payment-gateway',
-                        'desc' => __("Enabling this will allow your users to pay through 2Checkout", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will allow your users to pay through 2Checkout", 'admin-backend') ,
                         
                         'name' => '2checkout'
                     ) ,
@@ -1430,34 +1430,34 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => '2Checkout_mode',
                             'type' => 'switch',
-                            'title' => __("2Checkout mode", ET_DOMAIN) ,
+                            'title' => __("2Checkout mode", 'admin-backend') ,
                             'name' => 'enable',
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'sid',
                             'type' => 'text',
-                            'title' => __("Sid", ET_DOMAIN) ,
+                            'title' => __("Sid", 'admin-backend') ,
                             'name' => 'sid',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Your 2Checkout Seller ID', ET_DOMAIN)
+                            'placeholder' => __('Your 2Checkout Seller ID', 'admin-backend')
                         ) ,
                         array(
                             'id' => 'secret_key',
                             'type' => 'text',
-                            'title' => __("Secret Key", ET_DOMAIN) ,
+                            'title' => __("Secret Key", 'admin-backend') ,
                             'name' => 'secret_key',
                             'class' => 'option-item bg-grey-input ',
-                            'placeholder' => __('Your 2Checkout Secret Key', ET_DOMAIN)
+                            'placeholder' => __('Your 2Checkout Secret Key', 'admin-backend')
                         )
                     )
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Cash", ET_DOMAIN) ,
+                        'title' => __("Cash", 'admin-backend') ,
                         'id' => 'Cash',
                         'class' => 'payment-gateway',
-                        'desc' => __("Enabling this will allow your user to send cash to your bank account.", ET_DOMAIN) ,
+                        'desc' => __("Enabling this will allow your user to send cash to your bank account.", 'admin-backend') ,
                         
                         'name' => 'cash'
                     ) ,
@@ -1465,18 +1465,18 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'cash_message_enable',
                             'type' => 'switch',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'enable',
                             'class' => 'option-item bg-grey-input '
                         ) ,
                         array(
                             'id' => 'cash_message',
                             'type' => 'editor',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'cash_message',
                             'class' => 'option-item bg-grey-input ',
                             
-                            // 'placeholder' => __('Enter your PayPal email address', ET_DOMAIN)
+                            // 'placeholder' => __('Enter your PayPal email address', 'admin-backend')
                             
                         )
                     )
@@ -1487,7 +1487,7 @@ class ET_Admin extends AE_Base
                 array(
                     'type' => 'list',
                     'args' => array(
-                        'title' => __("Payment Plans", ET_DOMAIN) ,
+                        'title' => __("Payment Plans", 'admin-backend') ,
                         'id' => 'list-package',
                         'class' => 'list-package',
                         'desc' => '',
@@ -1505,16 +1505,16 @@ class ET_Admin extends AE_Base
                 // limit_free_plan
                 array(
                     'args' => array(
-                        'title' => __("Limit Free Plan Use", ET_DOMAIN) ,
+                        'title' => __("Limit Free Plan Use", 'admin-backend') ,
                         'id' => 'limit_free_plan',
                         'class' => 'limit_free_plan',
-                        'desc' => __("Enter the maximum number allowed for employers to use your Free plan", ET_DOMAIN)
+                        'desc' => __("Enter the maximum number allowed for employers to use your Free plan", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'cash_message_enable',
                             'type' => 'text',
-                            'title' => __("Align", ET_DOMAIN) ,
+                            'title' => __("Align", 'admin-backend') ,
                             'name' => 'limit_free_plan',
                             'class' => 'option-item bg-grey-input '
                         )
@@ -1528,7 +1528,7 @@ class ET_Admin extends AE_Base
          */
         $sections['mailing'] = array(
             'args' => array(
-                'title' => __("Mailing", ET_DOMAIN) ,
+                'title' => __("Mailing", 'admin-backend') ,
                 'id' => 'mail-settings',
                 'icon' => 'M',
                 'class' => ''
@@ -1537,7 +1537,7 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Authentication Mail Template", ET_DOMAIN) ,
+                        'title' => __("Authentication Mail Template", 'admin-backend') ,
                         'id' => 'mail-description-group',
                         'class' => '',
                         'name' => ''
@@ -1546,14 +1546,14 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'mail-description',
                             'type' => 'desc',
-                            'title' => __("Mail description here", ET_DOMAIN) ,
-                            'text' => __("Email templates for authentication process. You can use placeholders to include some specific content.", ET_DOMAIN) . '<a class="icon btn-template-help payment" data-icon="?" href="#" title="View more details"></a>' . '<div class="cont-template-help payment-setting">
-                                                    [user_login],[display_name],[user_email] : ' . __("user's details you want to send mail", ET_DOMAIN) . '<br />
-                                                    [dashboard] : ' . __("member dashboard url ", ET_DOMAIN) . '<br />
-                                                    [title], [link], [excerpt],[desc], [author] : ' . __("project title, link, details, author", ET_DOMAIN) . ' <br />
-                                                    [activate_url] : ' . __("activate link is require for user to renew their pass", ET_DOMAIN) . ' <br />
-                                                    [site_url],[blogname],[admin_email] : ' . __(" site info, admin email", ET_DOMAIN) . '
-                                                    [project_list] : ' . __("list projects employer send to freelancer when invite him to join", ET_DOMAIN) . '
+                            'title' => __("Mail description here", 'admin-backend') ,
+                            'text' => __("Email templates for authentication process. You can use placeholders to include some specific content.", 'admin-backend') . '<a class="icon btn-template-help payment" data-icon="?" href="#" title="View more details"></a>' . '<div class="cont-template-help payment-setting">
+                                                    [user_login],[display_name],[user_email] : ' . __("user's details you want to send mail", 'admin-backend') . '<br />
+                                                    [dashboard] : ' . __("member dashboard url ", 'admin-backend') . '<br />
+                                                    [title], [link], [excerpt],[desc], [author] : ' . __("project title, link, details, author", 'admin-backend') . ' <br />
+                                                    [activate_url] : ' . __("activate link is require for user to renew their pass", 'admin-backend') . ' <br />
+                                                    [site_url],[blogname],[admin_email] : ' . __(" site info, admin email", 'admin-backend') . '
+                                                    [project_list] : ' . __("list projects employer send to freelancer when invite him to join", 'admin-backend') . '
 
                                                 </div>',
                             
@@ -1565,18 +1565,18 @@ class ET_Admin extends AE_Base
 
                 array(
                     'args' => array(
-                        'title' => __("Register Mail Template", ET_DOMAIN) ,
+                        'title' => __("Register Mail Template", 'admin-backend') ,
                         'id' => 'register-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when he register successfull.", ET_DOMAIN),
+                        'desc' => __("Send to users when he register successfull.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'register_mail_template',
                             'type' => 'textarea',
-                            'title' => __("Register Mail", ET_DOMAIN) ,
+                            'title' => __("Register Mail", 'admin-backend') ,
                             'name' => 'register_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1585,18 +1585,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Register Mail Template", ET_DOMAIN) ,
+                        'title' => __("Register Mail Template", 'admin-backend') ,
                         'id' => 'register-mail-freelancer',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to user-freelancers when he register successfull.", ET_DOMAIN),
+                        'desc' => __("Send to user-freelancers when he register successfull.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'register_mail_template_freelancer',
                             'type' => 'textarea',
-                            'title' => __("Register Mail", ET_DOMAIN) ,
+                            'title' => __("Register Mail", 'admin-backend') ,
                             'name' => 'register_mail_freelancer_template',
                             'class' => '',
                             'reset' => 1
@@ -1605,18 +1605,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Confirm Mail Template", ET_DOMAIN) ,
+                        'title' => __("Confirm Mail Template", 'admin-backend') ,
                         'id' => 'confirm-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users after he registered successfull when option confirm email is on.", ET_DOMAIN),
+                        'desc' => __("Send to users after he registered successfull when option confirm email is on.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'confirm_mail_template',
                             'type' => 'textarea',
-                            'title' => __("Confirme Mail", ET_DOMAIN) ,
+                            'title' => __("Confirme Mail", 'admin-backend') ,
                             'name' => 'confirm_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1625,18 +1625,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Confirm Mail Freelancer Template", ET_DOMAIN) ,
                         'id' => 'confirm-freelancer-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users after he registered successfull when option confirm email is on.", ET_DOMAIN),
+                        'desc' => __("Send to users after he registered successfull when option confirm email is on.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'confirm_mail_freelancer_template',
                             'type' => 'textarea',
-                            'title' => __("Confirmed Mail Freelancer", ET_DOMAIN) ,
+                            'title' => __("Confirmed Mail Freelancer", 'admin-backend') ,
                             'name' => 'confirm_mail_freelancer_template',
                             'class' => '',
                             'reset' => 1
@@ -1645,18 +1644,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Confirmed Mail Template", ET_DOMAIN) ,
+                        'title' => __("Confirmed Mail Template", 'admin-backend') ,
                         'id' => 'confirmed-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users to notify that he was confirm email successfull.", ET_DOMAIN),
+                        'desc' => __("Send to users to notify that he was confirm email successfull.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'confirmed_mail_template',
                             'type' => 'textarea',
-                            'title' => __("Confirmed Mail", ET_DOMAIN) ,
+                            'title' => __("Confirmed Mail", 'admin-backend') ,
                             'name' => 'confirmed_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1666,18 +1665,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Confirmed Phone No Template", ET_DOMAIN) ,
+                        'title' => __("Confirmed Phone No Template", 'admin-backend') ,
                         'id' => 'confirmed-phone',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users to notify that he was confirm phone no successfull.", ET_DOMAIN),
+                        'desc' => __("Send to users to notify that he was confirm phone no successfull.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'confirmed_phone_template',
                             'type' => 'editor',
-                            'title' => __("Confirmed Phone", ET_DOMAIN) ,
+                            'title' => __("Confirmed Phone", 'admin-backend') ,
                             'name' => 'confirmed_phone_template',
                             'class' => '',
                             'reset' => 1
@@ -1687,18 +1686,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Forgotpass Mail Template", ET_DOMAIN) ,
+                        'title' => __("Forgotpass Mail Template", 'admin-backend') ,
                         'id' => 'forgotpass-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when he request resetpass.", ET_DOMAIN),
+                        'desc' => __("Send to users when he request resetpass.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'forgotpass_mail_template',
                             'type' => 'textarea',
-                            'title' => __("Register Mail", ET_DOMAIN) ,
+                            'title' => __("Register Mail", 'admin-backend') ,
                             'name' => 'forgotpass_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1707,18 +1706,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Resetpass Mail Template", ET_DOMAIN) ,
+                        'title' => __("Resetpass Mail Template", 'admin-backend') ,
                         'id' => 'resetpass-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to user to notify him has resetpass successfully.", ET_DOMAIN),
+                        'desc' => __("Send to user to notify him has resetpass successfully.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'resetpass_mail_template',
                             'type' => 'textarea',
-                            'title' => __("Resetpassword Mail", ET_DOMAIN) ,
+                            'title' => __("Resetpassword Mail", 'admin-backend') ,
                             'name' => 'resetpass_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1728,7 +1727,7 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Project Related Mail Template", ET_DOMAIN) ,
+                        'title' => __("Project Related Mail Template", 'admin-backend') ,
                         'id' => 'mail-description-group',
                         'class' => '',
                         'name' => ''
@@ -1737,8 +1736,8 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'mail-description',
                             'type' => 'desc',
-                            'title' => __("Mail description here", ET_DOMAIN) ,
-                            'text' => __("Email templates used for project-related event. You can use placeholders to include some specific content", ET_DOMAIN) ,
+                            'title' => __("Mail description here", 'admin-backend') ,
+                            'text' => __("Email templates used for project-related event. You can use placeholders to include some specific content", 'admin-backend') ,
                             'class' => '',
                             'name' => 'mail_description'
                         )
@@ -1747,18 +1746,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("New Message Mail Template", ET_DOMAIN) ,
+                        'title' => __("New Message Mail Template", 'admin-backend') ,
                         'id' => 'new-message-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when he have a new message on workspace.", ET_DOMAIN),
+                        'desc' => __("Send to users when he have a new message on workspace.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'new_message_mail_template',
                             'type' => 'editor',
-                            'title' => __("Inbox Mail", ET_DOMAIN) ,
+                            'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'new_message_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1768,18 +1767,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Inbox Mail Template", ET_DOMAIN) ,
+                        'title' => __("Inbox Mail Template", 'admin-backend') ,
                         'id' => 'inbox-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when someone contact him.", ET_DOMAIN),
+                        'desc' => __("Send to users when someone contact him.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'inbox_mail_template',
                             'type' => 'editor',
-                            'title' => __("Inbox Mail", ET_DOMAIN) ,
+                            'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'inbox_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1789,18 +1788,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Invite Mail Template", ET_DOMAIN) ,
+                        'title' => __("Invite Mail Template", 'admin-backend') ,
                         'id' => 'invite-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when someone invite him join a project", ET_DOMAIN),
+                        'desc' => __("Send to users when someone invite him join a project", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'invite_mail_template',
                             'type' => 'editor',
-                            'title' => __("Invite Mail", ET_DOMAIN) ,
+                            'title' => __("Invite Mail", 'admin-backend') ,
                             'name' => 'invite_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1809,18 +1808,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Cash Notification Mail Template", ET_DOMAIN) ,
+                        'title' => __("Cash Notification Mail Template", 'admin-backend') ,
                         'id' => 'cash-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to user cash message when they pay by cash", ET_DOMAIN),
+                        'desc' => __("Send to user cash message when they pay by cash", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'cash_notification_mail',
                             'type' => 'editor',
-                            'title' => __("Cash Notification Mail", ET_DOMAIN) ,
+                            'title' => __("Cash Notification Mail", 'admin-backend') ,
                             'name' => 'cash_notification_mail',
                             'class' => '',
                             'reset' => 1
@@ -1830,18 +1829,18 @@ class ET_Admin extends AE_Base
 
                 array(
                     'args' => array(
-                        'title' => __("Receipt Mail Template", ET_DOMAIN) ,
+                        'title' => __("Receipt Mail Template", 'admin-backend') ,
                         'id' => 'ae-receipt_mail',
                         'class' => 'payment-gateway',
                         'name' => '',
                         'toggle' => true, 
-                        'desc' => __("Send to users after they finish a payment", ET_DOMAIN)
+                        'desc' => __("Send to users after they finish a payment", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'ae_receipt_mail',
                             'type' => 'editor',
-                            'title' => __("Receipt Mail Template", ET_DOMAIN) ,
+                            'title' => __("Receipt Mail Template", 'admin-backend') ,
                             'name' => 'ae_receipt_mail',
                             'class' => '',
                             'reset' => 1
@@ -1851,18 +1850,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Publish Mail Template", ET_DOMAIN) ,
+                        'title' => __("Publish Mail Template", 'admin-backend') ,
                         'id' => 'publish-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Sent to users to notify that one of their listing has been published.", ET_DOMAIN),
+                        'desc' => __("Sent to users to notify that one of their listing has been published.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'publish_mail_template',
                             'type' => 'editor',
-                            'title' => __("publish Mail", ET_DOMAIN) ,
+                            'title' => __("publish Mail", 'admin-backend') ,
                             'name' => 'publish_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1871,18 +1870,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Archive Mail Template", ET_DOMAIN) ,
+                        'title' => __("Archive Mail Template", 'admin-backend') ,
                         'id' => 'archive-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Sent to users to notify that one of their listing has been archived due to expiration or manual administrative action.", ET_DOMAIN),
+                        'desc' => __("Sent to users to notify that one of their listing has been archived due to expiration or manual administrative action.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'archive_mail_template',
                             'type' => 'editor',
-                            'title' => __("archive Mail", ET_DOMAIN) ,
+                            'title' => __("archive Mail", 'admin-backend') ,
                             'name' => 'archive_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1891,18 +1890,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Reject Mail Template", ET_DOMAIN) ,
+                        'title' => __("Reject Mail Template", 'admin-backend') ,
                         'id' => 'reject-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Sent to users to notify that one of their listing has been rejected.", ET_DOMAIN),
+                        'desc' => __("Sent to users to notify that one of their listing has been rejected.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'reject_mail_template',
                             'type' => 'editor',
-                            'title' => __("reject Mail", ET_DOMAIN) ,
+                            'title' => __("reject Mail", 'admin-backend') ,
                             'name' => 'reject_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1911,18 +1910,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("New Bid Mail Template", ET_DOMAIN) ,
+                        'title' => __("New Bid Mail Template", 'admin-backend') ,
                         'id' => 'bid-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Sent to users when a candidate bid their projects.", ET_DOMAIN),
+                        'desc' => __("Sent to users when a candidate bid their projects.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'bid_mail_template',
                             'type' => 'editor',
-                            'title' => __("Bid Mail", ET_DOMAIN) ,
+                            'title' => __("Bid Mail", 'admin-backend') ,
                             'name' => 'bid_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1932,18 +1931,18 @@ class ET_Admin extends AE_Base
                 
                 array(
                     'args' => array(
-                        'title' => __("Bid Accepted Mail Template", ET_DOMAIN) ,
+                        'title' => __("Bid Accepted Mail Template", 'admin-backend') ,
                         'id' => 'bid_accepted_-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to freelancer when his bid was accepted.", ET_DOMAIN),
+                        'desc' => __("Send to freelancer when his bid was accepted.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'bid_accepted_template',
                             'type' => 'editor',
-                            'title' => __("Bid Accepted Mail", ET_DOMAIN) ,
+                            'title' => __("Bid Accepted Mail", 'admin-backend') ,
                             'name' => 'bid_accepted_template',
                             'class' => '',
                             'reset' => 1
@@ -1952,18 +1951,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Complete Project Mail Template", ET_DOMAIN) ,
+                        'title' => __("Complete Project Mail Template", 'admin-backend') ,
                         'id' => 'complete-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to user when project he worked on was marked complete.", ET_DOMAIN),
+                        'desc' => __("Send to user when project he worked on was marked complete.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'complete_mail_template',
                             'type' => 'editor',
-                            'title' => __("Complete Mail", ET_DOMAIN) ,
+                            'title' => __("Complete Mail", 'admin-backend') ,
                             'name' => 'complete_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -1972,7 +1971,7 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Project Report Mail Template", ET_DOMAIN) ,
+                        'title' => __("Project Report Mail Template", 'admin-backend') ,
                         'id' => 'mail-description-group',
                         'class' => '',
                         'name' => ''
@@ -1981,8 +1980,8 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'mail-description',
                             'type' => 'desc',
-                            'title' => __("Mail description here", ET_DOMAIN) ,
-                            'text' => __("Email templates used for project-report event. You can use placeholders to include some specific content", ET_DOMAIN) ,
+                            'title' => __("Mail description here", 'admin-backend') ,
+                            'text' => __("Email templates used for project-report event. You can use placeholders to include some specific content", 'admin-backend') ,
                             'class' => '',
                             'name' => 'mail_description'
                         )
@@ -1990,18 +1989,18 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Project was Reported by Employer", ET_DOMAIN) ,
+                        'title' => __("Project was Reported by Employer", 'admin-backend') ,
                         'id' => 'employer-report-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to freelancer when employer sends a report on the project.", ET_DOMAIN),
+                        'desc' => __("Send to freelancer when employer sends a report on the project.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'employer_report_mail_template',
                             'type' => 'editor',
-                            'title' => __("Employer Report  Mail", ET_DOMAIN) ,
+                            'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_report_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2010,18 +2009,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Employer closed the project", ET_DOMAIN) ,
+                        'title' => __("Employer closed the project", 'admin-backend') ,
                         'id' => 'employer-close-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to freelancer when employer close project.", ET_DOMAIN),
+                        'desc' => __("Send to freelancer when employer close project.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'employer_close_mail_template',
                             'type' => 'editor',
-                            'title' => __("Employer Report  Mail", ET_DOMAIN) ,
+                            'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_close_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2030,18 +2029,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Project Reported by Freelancer", ET_DOMAIN) ,
+                        'title' => __("Project Reported by Freelancer", 'admin-backend') ,
                         'id' => 'freelancer-report-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to employer when freelancer send report on project.", ET_DOMAIN),
+                        'desc' => __("Send to employer when freelancer send report on project.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'freelancer_report_mail_template',
                             'type' => 'editor',
-                            'title' => __("Freelancer Report  Mail", ET_DOMAIN) ,
+                            'title' => __("Freelancer Report  Mail", 'admin-backend') ,
                             'name' => 'freelancer_report_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2050,18 +2049,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Freelancer Quit The Project", ET_DOMAIN) ,
+                        'title' => __("Freelancer Quit The Project", 'admin-backend') ,
                         'id' => 'freelancer-quit-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to the employer when the freelancer quits the project", ET_DOMAIN),
+                        'desc' => __("Send to the employer when the freelancer quits the project", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'freelancer_quit_mail_template',
                             'type' => 'editor',
-                            'title' => __("Freelancer Quit  Mail", ET_DOMAIN) ,
+                            'title' => __("Freelancer Quit  Mail", 'admin-backend') ,
                             'name' => 'freelancer_quit_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2071,18 +2070,18 @@ class ET_Admin extends AE_Base
                 //admin_report_mail_template
                 array(
                     'args' => array(
-                        'title' => __("New Report was sent to Admin", ET_DOMAIN) ,
+                        'title' => __("New Report was sent to Admin", 'admin-backend') ,
                         'id' => 'admin-new-report-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to admin when user sends a report.", ET_DOMAIN),
+                        'desc' => __("Send to admin when user sends a report.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'admin_report_mail_template',
                             'type' => 'editor',
-                            'title' => __("Admin New Report Mail", ET_DOMAIN) ,
+                            'title' => __("Admin New Report Mail", 'admin-backend') ,
                             'name' => 'admin_report_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2091,18 +2090,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Admin Refunded The Payment", ET_DOMAIN) ,
+                        'title' => __("Admin Refunded The Payment", 'admin-backend') ,
                         'id' => 'admin-refund-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to users when admin refunds the escrow payment to the project's owner.", ET_DOMAIN),
+                        'desc' => __("Send to users when admin refunds the escrow payment to the project's owner.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_refund_mail_template',
                             'type' => 'editor',
-                            'title' => __("Admin Refund Payment", ET_DOMAIN) ,
+                            'title' => __("Admin Refund Payment", 'admin-backend') ,
                             'name' => 'fre_refund_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2111,18 +2110,18 @@ class ET_Admin extends AE_Base
                 ),
                 array(
                     'args' => array(
-                        'title' => __("Admin Executed The Payment", ET_DOMAIN) ,
+                        'title' => __("Admin Executed The Payment", 'admin-backend') ,
                         'id' => 'admin-execute-payment-mail',
                         'class' => 'payment-gateway',
                         'name' => '',
-                        'desc' => __("Send to user when admin executes the escrow payment and send to the freelancer.", ET_DOMAIN),
+                        'desc' => __("Send to user when admin executes the escrow payment and send to the freelancer.", 'admin-backend'),
                         'toggle' => true
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'fre_execute_mail_template',
                             'type' => 'editor',
-                            'title' => __("Admin Execute Payment Mail", ET_DOMAIN) ,
+                            'title' => __("Admin Execute Payment Mail", 'admin-backend') ,
                             'name' => 'fre_execute_mail_template',
                             'class' => '',
                             'reset' => 1
@@ -2138,7 +2137,7 @@ class ET_Admin extends AE_Base
          */
         $sections['language'] = array(
             'args' => array(
-                'title' => __("Language", ET_DOMAIN) ,
+                'title' => __("Language", 'admin-backend') ,
                 'id' => 'language-settings',
                 'icon' => 'G',
                 'class' => ''
@@ -2147,17 +2146,17 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("Website Language", ET_DOMAIN) ,
+                        'title' => __("Website Language", 'admin-backend') ,
                         'id' => 'website-language',
                         'class' => '',
                         'name' => '',
-                        'desc' => __("Select the language you want to use for your website.", ET_DOMAIN)
+                        'desc' => __("Select the language you want to use for your website.", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'forgotpass_mail_template',
                             'type' => 'language_list',
-                            'title' => __("Register Mail", ET_DOMAIN) ,
+                            'title' => __("Register Mail", 'admin-backend') ,
                             'name' => 'website_language',
                             'class' => ''
                         )
@@ -2165,17 +2164,17 @@ class ET_Admin extends AE_Base
                 ) ,
                 array(
                     'args' => array(
-                        'title' => __("Translator", ET_DOMAIN) ,
+                        'title' => __("Translator", 'admin-backend') ,
                         'id' => 'translator',
                         'class' => '',
                         'name' => 'translator',
-                        'desc' => __("Translate a language", ET_DOMAIN)
+                        'desc' => __("Translate a language", 'admin-backend')
                     ) ,
                     'fields' => array(
                         array(
                             'id' => 'translator-field',
                             'type' => 'translator',
-                            'title' => __("Register Mail", ET_DOMAIN) ,
+                            'title' => __("Register Mail", 'admin-backend') ,
                             'name' => 'translate',
                             'class' => ''
                         )
@@ -2189,7 +2188,7 @@ class ET_Admin extends AE_Base
          */
         $sections['update'] = array(
             'args' => array(
-                'title' => __("Update", ET_DOMAIN) ,
+                'title' => __("Update", 'admin-backend') ,
                 'id' => 'update-settings',
                 'icon' => '~',
                 'class' => ''
@@ -2198,7 +2197,7 @@ class ET_Admin extends AE_Base
             'groups' => array(
                 array(
                     'args' => array(
-                        'title' => __("License Key", ET_DOMAIN) ,
+                        'title' => __("License Key", 'admin-backend') ,
                         'id' => 'license-key',
                         'class' => '',
                         'desc' => ''
@@ -2207,7 +2206,7 @@ class ET_Admin extends AE_Base
                         array(
                             'id' => 'et_license_key',
                             'type' => 'text',
-                            'title' => __("License Key", ET_DOMAIN) ,
+                            'title' => __("License Key", 'admin-backend') ,
                             'name' => 'et_license_key',
                             'class' => ''
                         )
@@ -2233,18 +2232,18 @@ class ET_Admin extends AE_Base
         ) , true);
         
         //$statics      =   array();
-        // $header      =   new AE_Head( array( 'page_title'    => __('Overview', ET_DOMAIN),
-        //                                  'menu_title'    => __('OVERVIEW', ET_DOMAIN),
-        //                                  'desc'          => __("Overview", ET_DOMAIN) ) );
+        // $header      =   new AE_Head( array( 'page_title'    => __('Overview', 'admin-backend'),
+        //                                  'menu_title'    => __('OVERVIEW', 'admin-backend'),
+        //                                  'desc'          => __("Overview", 'admin-backend') ) );
         $pages['overview'] = array(
             'args' => array(
                 'parent_slug' => 'et-overview',
-                'page_title' => __('Overview', ET_DOMAIN) ,
-                'menu_title' => __('OVERVIEW', ET_DOMAIN) ,
+                'page_title' => __('Overview', 'admin-backend') ,
+                'menu_title' => __('OVERVIEW', 'admin-backend') ,
                 'cap' => 'administrator',
                 'slug' => 'et-overview',
                 'icon' => 'L',
-                'desc' => sprintf(__("%s overview", ET_DOMAIN) , $options->blogname)
+                'desc' => sprintf(__("%s overview", 'admin-backend') , $options->blogname)
             ) ,
             'container' => $container,
             
@@ -2263,12 +2262,12 @@ class ET_Admin extends AE_Base
         $pages['settings'] = array(
             'args' => array(
                 'parent_slug' => 'et-overview',
-                'page_title' => __('Settings', ET_DOMAIN) ,
-                'menu_title' => __('SETTINGS', ET_DOMAIN) ,
+                'page_title' => __('Settings', 'admin-backend') ,
+                'menu_title' => __('SETTINGS', 'admin-backend') ,
                 'cap' => 'administrator',
                 'slug' => 'et-settings',
                 'icon' => 'y',
-                'desc' => __("Manage how your FreelanceEngine looks and feels", ET_DOMAIN)
+                'desc' => __("Manage how your FreelanceEngine looks and feels", 'admin-backend')
             ) ,
             'container' => $container
         );
@@ -2285,12 +2284,12 @@ class ET_Admin extends AE_Base
         $pages['members'] = array(
             'args' => array(
                 'parent_slug' => 'et-overview',
-                'page_title' => __('Members', ET_DOMAIN) ,
-                'menu_title' => __('MEMBERS', ET_DOMAIN) ,
+                'page_title' => __('Members', 'admin-backend') ,
+                'menu_title' => __('MEMBERS', 'admin-backend') ,
                 'cap' => 'administrator',
                 'slug' => 'et-users',
                 'icon' => 'g',
-                'desc' => __("Overview of registered members", ET_DOMAIN)
+                'desc' => __("Overview of registered members", 'admin-backend')
             ) ,
             'container' => $container
         );
@@ -2302,12 +2301,12 @@ class ET_Admin extends AE_Base
         $pages['payments'] = array(
             'args' => array(
                 'parent_slug' => 'et-overview',
-                'page_title' => __('Payments', ET_DOMAIN) ,
-                'menu_title' => __('PAYMENTS', ET_DOMAIN) ,
+                'page_title' => __('Payments', 'admin-backend') ,
+                'menu_title' => __('PAYMENTS', 'admin-backend') ,
                 'cap' => 'administrator',
                 'slug' => 'et-payments',
                 'icon' => '%',
-                'desc' => __("Overview of all payments", ET_DOMAIN)
+                'desc' => __("Overview of all payments", 'admin-backend')
             ) ,
             'container' => $orderlist
         );
@@ -2320,12 +2319,12 @@ class ET_Admin extends AE_Base
         // $pages[] = array(
         //     'args' => array(
         //         'parent_slug' => 'et-overview',
-        //         'page_title'  => __('Setup Wizard', ET_DOMAIN) ,
-        //         'menu_title'  => __('Setup Wizard', ET_DOMAIN) ,
+        //         'page_title'  => __('Setup Wizard', 'admin-backend') ,
+        //         'menu_title'  => __('Setup Wizard', 'admin-backend') ,
         //         'cap'         => 'administrator',
         //         'slug'        => 'et-wizard',
         //         'icon'        => 'help',
-        //         'desc'        => __("Set up and manage every content of your site", ET_DOMAIN)
+        //         'desc'        => __("Set up and manage every content of your site", 'admin-backend')
         //     ) ,
         //     'container' => $container
         // );

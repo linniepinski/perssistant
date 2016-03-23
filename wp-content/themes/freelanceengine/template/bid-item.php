@@ -140,7 +140,7 @@
 
             <?php }else{ ?>
 
-                <span class="number-price"><?php _e("In Process", ET_DOMAIN); ?></span>
+                <span class="number-price"><?php _e("In Process", 'bid-item'); ?></span>
 
             <?php }
 
@@ -168,14 +168,14 @@
 
                 <button style="display:block !important;" href="#" id="<?php the_ID();?>" rel="<?php echo $project->ID;?>" class="btn btn-apply-project-item">
 
-                    <?php _e('Accept',ET_DOMAIN) ; ?>
+                    <?php _e('Accept','bid-item') ; ?>
 
                 </button>
 <?php
                     $invate_id = get_the_author_ID();
                     ?>
                     <button class="btn btn-success pull-right btn-invate-on-bid" onclick="invate_freelancer(<?php echo $invate_id.",".$project->post_author.",".$project->ID.",'".$project->author_name."'"?>);">
-                        <?php _e('Invite to chat',ET_DOMAIN) ;
+                        <?php _e('Invite to chat','bid-item') ;
                         ?>
                     </button>
                 <span class="confirm pull-right"><button class="btn btn-skip btn-skip-custom" data-id="<?php the_ID();?>">Decline</button></span>

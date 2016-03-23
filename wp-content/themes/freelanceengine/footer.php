@@ -37,7 +37,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 <?php }else{ $flag = false;} ?>
 <div class="copyright-wrapper <?php if(!$flag){ echo 'copyright-wrapper-margin-top'; } ?> ">
 <?php
-    $copyright = ae_get_option('copyright');
+    $copyright = ae_get_option('copyright'); //__("© 2016 Perssistant - Plugin Initiative",'footer');
     $has_nav_menu = has_nav_menu( 'et_footer' );
     $col = 'col-md-6';
     if($has_nav_menu) {
@@ -111,6 +111,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 		get_template_part( 'template-js/bid' , 'item' );        
         get_template_part( 'template-js/modal' , 'review');   
         get_template_part( 'template-js/modal' , 'bid' );
+        get_template_part( 'template-js/modal' , 'delete-bid' );
         get_template_part( 'template-js/modal' , 'bid-update' );
         get_template_part( 'template-js/modal' , 'accept-bid' );
               
@@ -147,7 +148,7 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 <script type="text/template" id="ae_carousel_template">
     <li class="image-item" id="{{= attach_id }}">
         <a href="#"><i class="fa fa-paperclip"></i> {{= name }}</a>
-        <a href="" title="<?php _e("Delete", ET_DOMAIN); ?>" class="delete-img delete"><i class="fa fa-times"></i></a>
+        <a href="" title="<?php _e("Delete", 'footer'); ?>" class="delete-img delete"><i class="fa fa-times"></i></a>
     </li>
 </script>
 <!-- MODAL QUIT PROJECT-->
@@ -158,21 +159,20 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
                 <button type="button" class="close" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                 </button>
-                <h4 class="modal-title alert-color"><?php _e("Awww! Why quit?", ET_DOMAIN) ?></h4>
+                <h4 class="modal-title alert-color"><?php _e("Awww! Why quit?", 'footer') ?></h4>
                 <p class="alert-color">
-                    <?php _e("You're going to quit this project, you won't be able to access the workspace anymore.", ET_DOMAIN); ?>
+                    <?php _e("You're going to quit this project, you won't be able to access the workspace anymore.", 'footer'); ?>
                 </p>
             </div>
             <div class="modal-body">
                 <form id="quit_project_form" class="quit_project_form">
                     <div class="form-group">
-                        <label><?php _e('Please give us a clear report', ET_DOMAIN) ?></label>
-                        <textarea name="comment_content"></textarea>
+                        <label><?php _e('Please give us a clear report', 'footer') ?></label>                        <textarea name="comment_content"></textarea>
                     </div>
                     <div class="clearfix"></div>
                     <div class="form-group">
                         <button type="submit" class="btn-submit btn-sumary btn-sub-create">
-                            <?php _e('Quit', ET_DOMAIN) ?>
+                            <?php _e('Quit', 'footer') ?>
                         </button>
                     </div>
                 </form> 
@@ -194,10 +194,10 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
             <div class="modal-body">
                 <div class="content-close-wrapper">
                     <p class="alert-close-text">
-                        <?php _e("We will review the reports from both freelancer and employer to give the best decision. It will take 3-5 business days for reviewing after receiving two reports.", ET_DOMAIN) ?> 
+                        <?php _e("We will review the reports from both freelancer and employer to give the best decision. It will take 3-5 business days for reviewing after receiving two reports.", 'footer') ?> 
                     </p>  
                     <button type="submit" class="btn btn-ok">
-                        <?php _e('OK', ET_DOMAIN) ?>
+                        <?php _e('OK', 'footer') ?>
                     </button> 
                 </div>
             </div>

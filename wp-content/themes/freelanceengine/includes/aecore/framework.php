@@ -125,11 +125,11 @@ class AppEngine extends AE_Base
         
         wp_localize_script('chosen', 'raty', array(
             'hint' => array(
-                __('bad', ET_DOMAIN) ,
-                __('poor', ET_DOMAIN) ,
-                __('nice', ET_DOMAIN) ,
-                __('good', ET_DOMAIN) ,
-                __('gorgeous', ET_DOMAIN)
+                __('bad', 'aecore-class-ae-framework-backend') ,
+                __('poor', 'aecore-class-ae-framework-backend') ,
+                __('nice', 'aecore-class-ae-framework-backend') ,
+                __('good', 'aecore-class-ae-framework-backend') ,
+                __('gorgeous', 'aecore-class-ae-framework-backend')
             )
         ));
         $adminurl = admin_url('admin-ajax.php');
@@ -141,8 +141,8 @@ class AppEngine extends AE_Base
             'ajaxURL' => $adminurl ,
             'imgURL' => ae_get_url() . '/assets/img/',
             'jsURL' => ae_get_url() . '/assets/js/',
-            'loadingImg' => '<img class="loading loading-wheel" src="' . ae_get_url() . '/assets/img/loading.gif" alt="' . __('Loading...', ET_DOMAIN) . '">',
-            'loading' => __('Loading', ET_DOMAIN) ,
+            'loadingImg' => '<img class="loading loading-wheel" src="' . ae_get_url() . '/assets/img/loading.gif" alt="' . __('Loading...', 'aecore-class-ae-framework-backend') . '">',
+            'loading' => __('Loading', 'aecore-class-ae-framework-backend') ,
             'ae_is_mobile'    => et_load_mobile() ? 1 : 0,
             'plupload_config' => array(
                 'max_file_size' => '3mb',
@@ -151,7 +151,7 @@ class AppEngine extends AE_Base
                 'silverlight_xap_url' => includes_url('js/plupload/plupload.silverlight.xap') ,
                 'filters' => array(
                     array(
-                        'title' => __('Image Files', ET_DOMAIN) ,
+                        'title' => __('Image Files', 'aecore-class-ae-framework-backend') ,
                         'extensions' => 'jpg,jpeg,gif,png'
                     )
                 )
@@ -163,79 +163,79 @@ class AppEngine extends AE_Base
             'max_images' => ae_get_option('max_carousel', 5) ,
             'user_confirm' => ae_get_option('user_confirm') ? 1 : 0,
             'max_cat' => ae_get_option('max_cat', 3) ,
-            'confirm_delete_bid' => __("Are you sure you want to decline this bid?", ET_DOMAIN) ,
-            'confirm_message' => __("Are you sure to archive this?", ET_DOMAIN) ,
-            'confirm_message_delete' => __("Are you sure to delete this?", ET_DOMAIN) ,
-            'confirm_message_decline' => __("Are you sure to decline this?", ET_DOMAIN) ,
+            'confirm_delete_bid' => __("Are you sure you want to decline this bid?", 'aecore-class-ae-framework-backend') ,
+            'confirm_message' => __("Are you sure to archive this?", 'aecore-class-ae-framework-backend') ,
+            'confirm_message_delete' => __("Are you sure to delete this?", 'aecore-class-ae-framework-backend') ,
+            'confirm_message_decline' => __("Are you sure to decline this?", 'aecore-class-ae-framework-backend') ,
             'map_zoom' => ae_get_option('map_zoom_default', 8) ,
             'map_center' => ae_get_option('map_center_default', array(
                 'latitude' => 10,
                 'longitude' => 106
             )) ,
             'fitbounds' => ae_get_option('fitbounds', ''),
-            'limit_free_msg' => __("You have reached the maximum number of Free posts. Please select another plan.", ET_DOMAIN) ,
-            'error' => __("Please fill all require fields.", ET_DOMAIN) ,
+            'limit_free_msg' => __("You have reached the maximum number of Free posts. Please select another plan.", 'aecore-class-ae-framework-backend') ,
+            'error' => __("Please fill all require fields.", 'aecore-class-ae-framework-backend') ,
             'geolocation' => ae_get_option('geolocation', 0) ,
             'date_format' => get_option( 'date_format' ),
             'time_format' => get_option( 'time_format' ),
             'dates' => array(
                 'days' => array(
-                    __("Sunday", ET_DOMAIN) ,
-                    __("Monday", ET_DOMAIN) ,
-                    __("Tuesday", ET_DOMAIN) ,
-                    __("Wednesday", ET_DOMAIN) ,
-                    __("Thursday", ET_DOMAIN) ,
-                    __("Friday", ET_DOMAIN) ,
-                    __("Saturday", ET_DOMAIN) ,
-                    __("Sunday", ET_DOMAIN)
+                    __("Sunday", 'aecore-class-ae-framework-backend') ,
+                    __("Monday", 'aecore-class-ae-framework-backend') ,
+                    __("Tuesday", 'aecore-class-ae-framework-backend') ,
+                    __("Wednesday", 'aecore-class-ae-framework-backend') ,
+                    __("Thursday", 'aecore-class-ae-framework-backend') ,
+                    __("Friday", 'aecore-class-ae-framework-backend') ,
+                    __("Saturday", 'aecore-class-ae-framework-backend') ,
+                    __("Sunday", 'aecore-class-ae-framework-backend')
                 ) ,
                 'daysShort' => array(
-                    __("Sun", ET_DOMAIN) ,
-                    __("Mon", ET_DOMAIN) ,
-                    __("Tue", ET_DOMAIN) ,
-                    __("Wed", ET_DOMAIN) ,
-                    __("Thu", ET_DOMAIN) ,
-                    __("Fri", ET_DOMAIN) ,
-                    __("Sat", ET_DOMAIN) ,
-                    __("Sun", ET_DOMAIN)
+                    __("Sun", 'aecore-class-ae-framework-backend') ,
+                    __("Mon", 'aecore-class-ae-framework-backend') ,
+                    __("Tue", 'aecore-class-ae-framework-backend') ,
+                    __("Wed", 'aecore-class-ae-framework-backend') ,
+                    __("Thu", 'aecore-class-ae-framework-backend') ,
+                    __("Fri", 'aecore-class-ae-framework-backend') ,
+                    __("Sat", 'aecore-class-ae-framework-backend') ,
+                    __("Sun", 'aecore-class-ae-framework-backend')
                 ) ,
                 'daysMin' => array(
-                    __("Su", ET_DOMAIN),
-                    __("Mo", ET_DOMAIN),
-                    __("Tu", ET_DOMAIN),
-                    __("We", ET_DOMAIN),
-                    __("Th", ET_DOMAIN),
-                    __("Fr", ET_DOMAIN),
-                    __("Sa", ET_DOMAIN),
-                    __("Su", ET_DOMAIN)
+                    __("Su", 'aecore-class-ae-framework-backend'),
+                    __("Mo", 'aecore-class-ae-framework-backend'),
+                    __("Tu", 'aecore-class-ae-framework-backend'),
+                    __("We", 'aecore-class-ae-framework-backend'),
+                    __("Th", 'aecore-class-ae-framework-backend'),
+                    __("Fr", 'aecore-class-ae-framework-backend'),
+                    __("Sa", 'aecore-class-ae-framework-backend'),
+                    __("Su", 'aecore-class-ae-framework-backend')
                 ) ,
                 'months' => array(
-                    __("January", ET_DOMAIN) ,
-                    __("February", ET_DOMAIN) ,
-                    __("March", ET_DOMAIN) ,
-                    __("April", ET_DOMAIN) ,
-                    __("May", ET_DOMAIN) ,
-                    __("June", ET_DOMAIN) ,
-                    __("July", ET_DOMAIN) ,
-                    __("August", ET_DOMAIN) ,
-                    __("September", ET_DOMAIN) ,
-                    __("October", ET_DOMAIN) ,
-                    __("November", ET_DOMAIN) ,
-                    __("December", ET_DOMAIN)
+                    __("January", 'aecore-class-ae-framework-backend') ,
+                    __("February", 'aecore-class-ae-framework-backend') ,
+                    __("March", 'aecore-class-ae-framework-backend') ,
+                    __("April", 'aecore-class-ae-framework-backend') ,
+                    __("May", 'aecore-class-ae-framework-backend') ,
+                    __("June", 'aecore-class-ae-framework-backend') ,
+                    __("July", 'aecore-class-ae-framework-backend') ,
+                    __("August", 'aecore-class-ae-framework-backend') ,
+                    __("September", 'aecore-class-ae-framework-backend') ,
+                    __("October", 'aecore-class-ae-framework-backend') ,
+                    __("November", 'aecore-class-ae-framework-backend') ,
+                    __("December", 'aecore-class-ae-framework-backend')
                 ) ,
                 'monthsShort' => array(
-                    __("Jan", ET_DOMAIN),
-                    __("Feb", ET_DOMAIN),
-                    __("Mar", ET_DOMAIN),
-                    __("Apr", ET_DOMAIN),
-                    __("May", ET_DOMAIN),
-                    __("Jun", ET_DOMAIN),
-                    __("Jul", ET_DOMAIN),
-                    __("Aug", ET_DOMAIN),
-                    __("Sep", ET_DOMAIN),
-                    __("Oct", ET_DOMAIN),
-                    __("Nov", ET_DOMAIN),
-                    __("Dec", ET_DOMAIN)
+                    __("Jan", 'aecore-class-ae-framework-backend'),
+                    __("Feb", 'aecore-class-ae-framework-backend'),
+                    __("Mar", 'aecore-class-ae-framework-backend'),
+                    __("Apr", 'aecore-class-ae-framework-backend'),
+                    __("May", 'aecore-class-ae-framework-backend'),
+                    __("Jun", 'aecore-class-ae-framework-backend'),
+                    __("Jul", 'aecore-class-ae-framework-backend'),
+                    __("Aug", 'aecore-class-ae-framework-backend'),
+                    __("Sep", 'aecore-class-ae-framework-backend'),
+                    __("Oct", 'aecore-class-ae-framework-backend'),
+                    __("Nov", 'aecore-class-ae-framework-backend'),
+                    __("Dec", 'aecore-class-ae-framework-backend')
                 )
             )
         );
@@ -275,17 +275,17 @@ class AppEngine extends AE_Base
                 if(typeof $.validator !== 'undefined' ) {
                     $.extend($.validator.messages, {
                         required: "<?php
-        _e("This field is required.", ET_DOMAIN) ?>",
+        _e("This field is required.", 'aecore-class-ae-framework-backend') ?>",
                         email: "<?php
-        _e("Please enter a valid email address.", ET_DOMAIN) ?>",
+        _e("Please enter a valid email address.", 'aecore-class-ae-framework-backend') ?>",
                         url: "<?php
-        _e("Please enter a valid URL.", ET_DOMAIN) ?>",
+        _e("Please enter a valid URL.", 'aecore-class-ae-framework-backend') ?>",
                         number: "<?php
-        _e("Please enter a valid number.", ET_DOMAIN) ?>",
+        _e("Please enter a valid number.", 'aecore-class-ae-framework-backend') ?>",
                         digits: "<?php
-        _e("Please enter only digits.", ET_DOMAIN) ?>",
+        _e("Please enter only digits.", 'aecore-class-ae-framework-backend') ?>",
                         equalTo: "<?php
-        _e("Please enter the same value again.", ET_DOMAIN) ?>"
+        _e("Please enter the same value again.", 'aecore-class-ae-framework-backend') ?>"
                     });
                 }
                 
@@ -309,7 +309,7 @@ class AppEngine extends AE_Base
                         (function ($ , Views, Models, AE) {
                             $(document).ready(function(){
                                 AE.pubsub.trigger('ae:notification', {
-                                    msg: "<?php _e("Your account has been confirmed successfully!",ET_DOMAIN)  ?>",
+                                    msg: "<?php _e("Your account has been confirmed successfully!",'aecore-class-ae-framework-backend')  ?>",
                                     notice_type: 'success',
                                 }); 
                                 window.location.href = "<?php echo home_url(); ?>"                                        
@@ -349,7 +349,7 @@ class AppEngine extends AE_Base
         
         // Add a page number if necessary.
         if ($paged >= 2 || $page >= 2) {
-            $title = "$title $sep " . sprintf(__('Page %s', ET_DOMAIN) , max($paged, $page));
+            $title = "$title $sep " . sprintf(__('Page %s', 'aecore-class-ae-framework-backend') , max($paged, $page));
         }
         
         return $title;
@@ -419,7 +419,7 @@ class AppEngine extends AE_Base
             $post = get_post($_REQUEST['id']);
             if ($user_ID != $post->post_author) wp_send_json(array(
                 'success' => false,
-                'msg' => __("Not owned this image!", ET_DOMAIN)
+                'msg' => __("Not owned this image!", 'aecore-class-ae-framework-backend')
             ));
         }
         wp_delete_post($_REQUEST['id'], true);

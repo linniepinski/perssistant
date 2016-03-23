@@ -25,7 +25,7 @@ $postdata    = array();
 			ae_pagination($wp_query, get_query_var('paged'));
 			echo '</div>';	
 	} else {
-		_e( 'No posts yet!', ET_DOMAIN );
+		_e( 'No posts yet!', 'list-posts' );
 	}		
 ?>
 <!--// pagination -->

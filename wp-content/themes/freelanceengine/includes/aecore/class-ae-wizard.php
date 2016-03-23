@@ -35,7 +35,7 @@ class AE_Wizard extends AE_Page
             </style>
             <div id="notice_wizard" class="et-updated">
                 <p>
-                    <?php printf( __("You have just installed DirectoryEngine theme, we recommend you follow through our <a href='%s'>setup wizard</a> to set up the basic configuration for your website! <a href='%s'>Close this message</a>", ET_DOMAIN), admin_url('admin.php?page=et-wizard'), add_query_arg('close_notices', '1'))?>
+                    <?php printf( __("You have just installed DirectoryEngine theme, we recommend you follow through our <a href='%s'>setup wizard</a> to set up the basic configuration for your website! <a href='%s'>Close this message</a>", 'aecore-class-ae-wizards-backend'), admin_url('admin.php?page=et-wizard'), add_query_arg('close_notices', '1'))?>
                 </p>
             </div>
         <?php
@@ -55,7 +55,7 @@ class AE_Wizard extends AE_Page
             $response = array(
                 'success'    => true, 
                 'redirect'   => admin_url('admin.php?page=revslider'), 
-                'msg'        => __("Import Data Successfully.",ET_DOMAIN), 
+                'msg'        => __("Import Data Successfully.",'aecore-class-ae-wizards-backend'), 
                 'updated_op' => true
             );
 
@@ -75,7 +75,7 @@ class AE_Wizard extends AE_Page
             $import_xml->depatch();
             $response = array(
                 'success'    => true, 
-                'msg'        => __("Delete Data Successfully.",ET_DOMAIN), 
+                'msg'        => __("Delete Data Successfully.",'aecore-class-ae-wizards-backend'), 
                 'updated_op' => false
             );
         }       
@@ -91,10 +91,10 @@ class AE_Wizard extends AE_Page
             'ae-wizard', 
             'ae_wizard', 
             array(
-                'insert_sample_data' => __("Insert sample data", ET_DOMAIN),
-                'delete_sample_data' => __("Delete sample data", ET_DOMAIN),
-                'insert_fail'        => __('Insert sample data false',ET_DOMAIN),
-                'delete_fail'        => __('Delete sample data false',ET_DOMAIN),
+                'insert_sample_data' => __("Insert sample data", 'aecore-class-ae-wizards-backend'),
+                'delete_sample_data' => __("Delete sample data", 'aecore-class-ae-wizards-backend'),
+                'insert_fail'        => __('Insert sample data false','aecore-class-ae-wizards-backend'),
+                'delete_fail'        => __('Delete sample data false','aecore-class-ae-wizards-backend'),
                 'wr_uploading'       => __("It would take up to a few minutes for your images to be uploaded to the server. Please don't close or reload this page.")
                 )
             );        
@@ -109,18 +109,18 @@ class AE_Wizard extends AE_Page
                 <div class="et-main-main clearfix inner-content" id="wizard-sample">
                     
                     <div class="title font-quicksand" style="padding-top:0;">
-                        <h3><?php _e('SAMPLE DATA',ET_DOMAIN) ?></h3>
+                        <h3><?php _e('SAMPLE DATA','aecore-class-ae-wizards-backend') ?></h3>
 
-                        <div class="desc small"><?php _e('The sample data include some items from the list below: places, comments, etc.',ET_DOMAIN) ?></div>
+                        <div class="desc small"><?php _e('The sample data include some items from the list below: places, comments, etc.','aecore-class-ae-wizards-backend') ?></div>
 
                         <div class="btn-language padding-top10 f-left-all" style="padding-bottom:15px;height:65px;margin:0;">
                         <?php  
                             $sample_data_op = get_option('option_sample_data');
                             if (!$sample_data_op) {
-                                echo '<button class="primary-button" id="install_sample_data">'.__("Install sample data", ET_DOMAIN).'</button>';
+                                echo '<button class="primary-button" id="install_sample_data">'.__("Install sample data", 'aecore-class-ae-wizards-backend').'</button>';
                             }
                             else{
-                                echo '<button class="primary-button" id="delete_sample_data">'.__("Delete sample data", ET_DOMAIN).'</button>';
+                                echo '<button class="primary-button" id="delete_sample_data">'.__("Delete sample data", 'aecore-class-ae-wizards-backend').'</button>';
                             }
                         ?>
                         </div>      
@@ -128,19 +128,19 @@ class AE_Wizard extends AE_Page
 
                     <div class="desc" style="padding-top:0px;">
                         <div class="title font-quicksand sample-title">
-                            <a target="_blank" href="<?php echo admin_url( 'edit.php?post_type=place' ); ?>" ><?php _e('Places',ET_DOMAIN) ?></a> <span class="description"><?php _e('Add new place types or modify the sample ones to suit your site style.',ET_DOMAIN) ?></span>
+                            <a target="_blank" href="<?php echo admin_url( 'edit.php?post_type=place' ); ?>" ><?php _e('Places','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Add new place types or modify the sample ones to suit your site style.','aecore-class-ae-wizards-backend') ?></span>
                         </div>
                         <div class="title font-quicksand sample-title">
-                            <a target="_blank" href="<?php echo admin_url( 'edit-tags.php?taxonomy=place_category&post_type=place' ); ?>" ><?php _e('Place Categories',ET_DOMAIN) ?></a> <span class="description"><?php _e('Add new categories or modify the sample data to match your directory business.',ET_DOMAIN) ?></span>
+                            <a target="_blank" href="<?php echo admin_url( 'edit-tags.php?taxonomy=place_category&post_type=place' ); ?>" ><?php _e('Place Categories','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Add new categories or modify the sample data to match your directory business.','aecore-class-ae-wizards-backend') ?></span>
                         </div>
                         <div class="title font-quicksand sample-title">
-                            <a target="_blank" href="<?php echo admin_url( 'edit-tags.php?taxonomy=location&post_type=place' ); ?>" ><?php _e('Place Locations',ET_DOMAIN) ?></a> <span class="description"><?php _e('Add new locations or modify the sample data to match your directory business.',ET_DOMAIN) ?></span>
+                            <a target="_blank" href="<?php echo admin_url( 'edit-tags.php?taxonomy=location&post_type=place' ); ?>" ><?php _e('Place Locations','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Add new locations or modify the sample data to match your directory business.','aecore-class-ae-wizards-backend') ?></span>
                         </div>
                         <div class="title font-quicksand sample-title">
-                            <a target="_blank" href="<?php echo admin_url( 'edit.php?post_type=page' ); ?>" ><?php _e('Pages',ET_DOMAIN) ?></a> <span class="description"><?php _e('Modify the sample "About us, Contact us, ..." pages or add your extra pages when needed.',ET_DOMAIN) ?></span>
+                            <a target="_blank" href="<?php echo admin_url( 'edit.php?post_type=page' ); ?>" ><?php _e('Pages','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Modify the sample "About us, Contact us, ..." pages or add your extra pages when needed.','aecore-class-ae-wizards-backend') ?></span>
                         </div>
                         <div class="title font-quicksand sample-title">
-                            <a target="_blank" href="<?php echo admin_url( 'edit.php' ); ?>" ><?php _e('Posts',ET_DOMAIN) ?></a> <span class="description"><?php _e('A couple of news & event posts have been added for your review. You can delete it or add your own posts here.',ET_DOMAIN) ?></span>
+                            <a target="_blank" href="<?php echo admin_url( 'edit.php' ); ?>" ><?php _e('Posts','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('A couple of news & event posts have been added for your review. You can delete it or add your own posts here.','aecore-class-ae-wizards-backend') ?></span>
                         </div>
                     </div>
                 </div>
@@ -148,26 +148,26 @@ class AE_Wizard extends AE_Page
                 <div class="et-main-main clearfix inner-content <?php if (!$sample_data_op) echo 'hide'; ?>" id="overview-listplaces">
 
                     <div class="title font-quicksand" style="padding-bottom:60px;">
-                        <h3><?php _e('MORE SETTINGS',ET_DOMAIN) ?></h3>
-                        <div class="desc small"><?php _e('Enhance your site by customizing these other features',ET_DOMAIN) ?></div>
+                        <h3><?php _e('MORE SETTINGS','aecore-class-ae-wizards-backend') ?></h3>
+                        <div class="desc small"><?php _e('Enhance your site by customizing these other features','aecore-class-ae-wizards-backend') ?></div>
                     </div>
 
                     <div style="clear:both;"></div>
 
                     <div class="title font-quicksand  sample-title">
-                        <a target="_blank"  href="admin.php?page=et-settings" ><?php _e('General Settings',ET_DOMAIN) ?></a> <span class="description"><?php _e('Modify your site information, social links, analytics script, or add a language, etc.',ET_DOMAIN) ?></span>
+                        <a target="_blank"  href="admin.php?page=et-settings" ><?php _e('General Settings','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Modify your site information, social links, analytics script, or add a language, etc.','aecore-class-ae-wizards-backend') ?></span>
                     </div>
 
                     <div class="title font-quicksand sample-title">
-                        <a target="_blank"  href="edit.php?post_type=page" ><?php _e('Front Page',ET_DOMAIN) ?></a> <span class="description"><?php _e('Rearrange content elements or add more information in your front page to suit your needs.',ET_DOMAIN) ?></span>
+                        <a target="_blank"  href="edit.php?post_type=page" ><?php _e('Front Page','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Rearrange content elements or add more information in your front page to suit your needs.','aecore-class-ae-wizards-backend') ?></span>
                     </div>
 
                     <div class="title font-quicksand sample-title">
-                        <a target="_blank" href="nav-menus.php" ><?php _e('Menus',ET_DOMAIN) ?></a> <span class="description"><?php _e('Edit all available menus in your site here.',ET_DOMAIN) ?></span>
+                        <a target="_blank" href="nav-menus.php" ><?php _e('Menus','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Edit all available menus in your site here.','aecore-class-ae-wizards-backend') ?></span>
                     </div>
 
                     <div class="title font-quicksand sample-title">
-                        <a href="widgets.php" target="_blank"><?php _e('Sidebars & Widgets',ET_DOMAIN) ?></a> <span class="description"><?php _e('Add or remove widgets in sidebars throughout the site to best suit your need.',ET_DOMAIN) ?></span>
+                        <a href="widgets.php" target="_blank"><?php _e('Sidebars & Widgets','aecore-class-ae-wizards-backend') ?></a> <span class="description"><?php _e('Add or remove widgets in sidebars throughout the site to best suit your need.','aecore-class-ae-wizards-backend') ?></span>
                     </div>
 
                 </div>

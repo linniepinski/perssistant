@@ -233,7 +233,7 @@ abstract class AE_Payment extends AE_Base
             $job = get_post($adID);
             
             if ($author != $job->post_author && !current_user_can('manage_options')) {
-                $author_error = __("Post author information is incorrect!", ET_DOMAIN);
+                $author_error = __("Post author information is incorrect!", 'aecore-class-ae-payments-backend');
                 $errors[] = $author_error;
             }
         }
@@ -287,7 +287,7 @@ abstract class AE_Payment extends AE_Base
         if (empty($plans)) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("There is no payment plan.", ET_DOMAIN)
+                'msg' => __("There is no payment plan.", 'aecore-class-ae-payments-backend')
             ));
         }
         
@@ -307,7 +307,7 @@ abstract class AE_Payment extends AE_Base
         
         // if($adID) $plan->post_id = $adID;
         
-        // $ship    =   array( 'street_address' => isset($company_location['full_location']) ? $company_location['full_location'] : __("No location", ET_DOMAIN));
+        // $ship    =   array( 'street_address' => isset($company_location['full_location']) ? $company_location['full_location'] : __("No location", 'aecore-class-ae-payments-backend'));
         // filter shipping
         $ship = apply_filters('ae_payment_ship', array() , $order_data, $_POST);
         
@@ -362,7 +362,7 @@ abstract class AE_Payment extends AE_Base
             $response = array(
                 'success' => false,
                 'paymentType' => $paymentType,
-                'msg' => __("Invalid payment gateway", ET_DOMAIN)
+                'msg' => __("Invalid payment gateway", 'aecore-class-ae-payments-backend')
             );
         }
         

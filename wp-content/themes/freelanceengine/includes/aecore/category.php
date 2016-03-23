@@ -272,13 +272,13 @@ class AE_Category extends AE_Term {
 			$this->update_term_color($_REQUEST['content']['term_id'], $_REQUEST['content']['color']);
 			$resp = array(
 				'success'   => true,
-				'msg'       => sprintf(__('%s color has been updated', ET_DOMAIN), $this->_tax_label )
+				'msg'       => sprintf(__('%s color has been updated', 'aecore-category-backend'), $this->_tax_label )
 				);
 		}
 		else {
 			$resp = array(
 				'success'   => false,
-				'msg'       => __("An error has occurred!", ET_DOMAIN)
+				'msg'       => __("An error has occurred!", 'aecore-category-backend')
 				);
 		}
 		return $resp;
@@ -290,13 +290,13 @@ class AE_Category extends AE_Term {
 			$this->update_term_icon($_REQUEST['content']['term_id'], $_REQUEST['content']['icon']);
 			$resp = array(
 				'success'   => true,
-				'msg'       => sprintf(__('%s icon has been updated', ET_DOMAIN), $this->_tax_label )
+				'msg'       => sprintf(__('%s icon has been updated', 'aecore-category-backend'), $this->_tax_label )
 				);
 		}
 		else {
 			$resp = array(
 				'success'   => false,
-				'msg'       => __("An error has occurred!", ET_DOMAIN)
+				'msg'       => __("An error has occurred!", 'aecore-category-backend')
 				);
 		}
 		return $resp;
@@ -371,7 +371,7 @@ class AE_BackendCategory extends AE_Category{
 						<?php if($this->is_use_icon){ ?>
 						<div class="icon trigger" data="fa-map-marker"><i class="fa fa-map-marker"></i></div>
 						<?php } ?>
-						<input style="color:#000000;" class="bg-grey-input tax-name <?php echo $class_no_icon.' '.$class_no_color ?>" name="name" data-tax="<?php echo $this->taxonomy ?>" autocomplete="off" placeholder="<?php _e('Add a category', ET_DOMAIN) ?>" type="text" />
+						<input style="color:#000000;" class="bg-grey-input tax-name <?php echo $class_no_icon.' '.$class_no_color ?>" name="name" data-tax="<?php echo $this->taxonomy ?>" autocomplete="off" placeholder="<?php _e('Add a category', 'aecore-category-backend') ?>" type="text" />
 					</div>
 				</div>
 			</li>
@@ -394,7 +394,7 @@ class AE_BackendCategory extends AE_Category{
 				<div class="container">
 					<div class="<?php echo $class_no_hierarchical;?> "></div>
 					<div class="controls controls-2">
-						<a class="button act-open-form" rel="<?php echo $job_pos->term_id ?>"  title="<?php _e('Add sub tax for this tax', ET_DOMAIN) ?>">
+						<a class="button act-open-form" rel="<?php echo $job_pos->term_id ?>"  title="<?php _e('Add sub tax for this tax', 'aecore-category-backend') ?>">
 							<span class="icon" data-icon="+"></span>
 						</a>
 						<a class="button act-del" rel="<?php echo $job_pos->term_id ?>">
@@ -437,7 +437,7 @@ class AE_BackendCategory extends AE_Category{
 	?>
 		<script type="text/template" id="temp_<?php echo $this->taxonomy ?>_delete_confirm">
 			<div class="moved-tax">
-				<span><?php _e('Move jobs to', ET_DOMAIN) ?></span>
+				<span><?php _e('Move jobs to', 'aecore-category-backend') ?></span>
 				<div class="select-style et-button-select">
 					<select name="move_<?php echo $this->taxonomy ?>" id="move_<?php  echo $this->taxonomy ?>">
 					
@@ -447,7 +447,7 @@ class AE_BackendCategory extends AE_Category{
 					
 					</select>
 				</div>
-				<button class="backend-button accept-btn"><?php _e("Accept", ET_DOMAIN); ?></button>
+				<button class="backend-button accept-btn"><?php _e("Accept", 'aecore-category-backend'); ?></button>
 				<a class="icon cancel-del" data-icon="*"></a>
 			</div>
 		</script>
@@ -466,7 +466,7 @@ class AE_CategoryAjax extends AE_Base{
 	function sync_term () {
 		try {
 			// return false if request method is empty
-			if ( empty($_REQUEST['method']) ) throw new Exception(__('There is an error occurred', ET_DOMAIN), 400);
+			if ( empty($_REQUEST['method']) ) throw new Exception(__('There is an error occurred', 'aecore-category-backend'), 400);
 
 			$method = empty( $_REQUEST['method'] ) ? '' : $_REQUEST['method'] ;
 			$data   = $_REQUEST['content'];
@@ -481,7 +481,7 @@ class AE_CategoryAjax extends AE_Base{
 					$children = get_terms($taxonomy, array('parent' => $term, 'hide_empty' => false));
 
 					if ( !empty($children) )
-						throw new Exception(__('You cannot delete a parent category. You need to delete its sub-categories first.', ET_DOMAIN));
+						throw new Exception(__('You cannot delete a parent category. You need to delete its sub-categories first.', 'aecore-category-backend'));
 
 					// delete
 					$result   	= $this->tax->delete ( $term, $taxonomy, $default );
@@ -494,7 +494,7 @@ class AE_CategoryAjax extends AE_Base{
 							'success' => true
 						);
 					} else {
-						throw new Exception(__("Can't delete category", ET_DOMAIN));
+						throw new Exception(__("Can't delete category", 'aecore-category-backend'));
 					}
 					break;
 
@@ -502,7 +502,7 @@ class AE_CategoryAjax extends AE_Base{
 					$term  		= $_POST['content']['name'];
 					$args 		= array('color' => 0,'icon' => 'fa-map-marker');
 
-					if ( empty($term) ) throw new Exception( __('Category name is required', ET_DOMAIN) );
+					if ( empty($term) ) throw new Exception( __('Category name is required', 'aecore-category-backend') );
 
 					if ( isset($_REQUEST['content']['color']) ) $args['color'] = $_REQUEST['content']['color'];
 					if ( isset($_REQUEST['content']['icon']) ) $args['icon'] = $_REQUEST['content']['icon'];
@@ -531,7 +531,7 @@ class AE_CategoryAjax extends AE_Base{
 					$term  	= $_REQUEST['content']['id'];
 					$args 	= array();
 
-					if ( empty($term) ) throw new Exception( __("Cannot find category", ET_DOMAIN) );
+					if ( empty($term) ) throw new Exception( __("Cannot find category", 'aecore-category-backend') );
 
 					if ( isset($_REQUEST['content']['name']) ) $args['name'] 		= $_REQUEST['content']['name'];
 					if ( isset($_REQUEST['content']['color']) ) $args['color'] 		= $_REQUEST['content']['color'];
@@ -581,7 +581,7 @@ class AE_CategoryAjax extends AE_Base{
 					break;
 
 				default:
-					throw new Exception(__('There is an error occurred', ET_DOMAIN), 400);
+					throw new Exception(__('There is an error occurred', 'aecore-category-backend'), 400);
 					break;
 			}   
 			// refresh sorted job categories

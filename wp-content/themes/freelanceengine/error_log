@@ -1,7 +1,0 @@
-[15-Jul-2015 03:12:02 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/fleurdf8/public_html/perssistant/website/wp-content/themes/freelanceengine/404.php on line 10
-[26-Oct-2015 06:38:00 America/Denver] PHP Warning:  PHP Startup: imagick: Unable to initialize module
-Module compiled with module API=20131226
-PHP    compiled with module API=20100525
-These options need to match
- in Unknown on line 0
-[26-Oct-2015 06:38:00 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home1/fleurdf8/public_html/perssistant/website/wp-content/themes/freelanceengine/index.php on line 16

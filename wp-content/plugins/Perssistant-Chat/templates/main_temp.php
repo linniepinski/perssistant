@@ -5,11 +5,9 @@ $current_user = wp_get_current_user();
 <form ID="chat" enctype="multipart/form-data">
     <div class="row height-inherit">
         <div id="contacts" class="col-xs-12 col-sm-4 col-md-3 col-lg-3 height-inherit">
-
             <section class="sieve sieve-custom">
 
             </section>
-
         </div>
 
         <div id="right-column-chat" class="col-xs-12 col-sm-8 col-md-9 col-lg-9 right-column-chat">
@@ -17,11 +15,11 @@ $current_user = wp_get_current_user();
 
             </div>
             <hr class="hr-chat">
-
+            <a id="loadprev" class="btn btn-default btn-sm btn-block"><?php echo __("Load previous messages", 'chat-frontend') ?></a>
+            <hr class="hr-chat">
             <div id="chat_his" class="chat_history">
-
                 <div class="panell">
-                    <h1 style="text-align: center">Select a contact to start a chat</h1>
+                    <h3 style="text-align: center"><?php echo __("Select a contact to start a chat", 'chat-frontend') ?></h3>
                 </div>
             </div>
 
@@ -45,14 +43,14 @@ $current_user = wp_get_current_user();
                         <input type="hidden" name="contact_with" id="contact_with" class="contact_with"
                                value="<?php echo $chat_contact; ?>">
                         <input id="send" class="btn btn-view-profile send_button_chat" type="submit"
-                               value="Send message">
+                               value="<?php echo __("Send message", 'chat-frontend') ?>">
 
 
                        <?php
                         wp_nonce_field(plugin_basename(__FILE__), 'wp_custom_attachment_nonce');
 
 
-                        $html = '<input type="file" id="wp_custom_attachment" data-filename-placement="inside" name="wp_custom_attachment" class="btn btn-primary pull-right" value="" size="25" title="Attach file" />';
+                        $html = '<input type="file" id="wp_custom_attachment" data-filename-placement="inside" name="wp_custom_attachment" class="btn btn-primary pull-right" value="" size="25" title="'.__("Attach file",'chat-frontend').'" />';
 
                         echo $html;
 

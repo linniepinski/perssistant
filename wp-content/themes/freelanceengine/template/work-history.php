@@ -16,21 +16,21 @@ if(is_page_template('page-profile.php')) {
 
     $status = array(    
 
-        'reject'  => __("REJECTED", ET_DOMAIN) , 
+        'reject'  => __("REJECTED", 'work-history') , 
 
-        'pending' => __("PENDING", ET_DOMAIN) , 
+        'pending' => __("PENDING", 'work-history') , 
 
-        'publish' => __("ACTIVE", ET_DOMAIN), 
+        'publish' => __("ACTIVE", 'work-history'), 
 
-        'close' => __("HIRED", ET_DOMAIN),
+        'close' => __("HIRED", 'work-history'),
 
-        'complete' => __("COMPLETED", ET_DOMAIN),
+        'complete' => __("COMPLETED", 'work-history'),
 
-        'draft'   => __("DRAFT", ET_DOMAIN), 
+        'draft'   => __("DRAFT", 'work-history'), 
 
-        'archive' => __("ARCHIVED", ET_DOMAIN), 
+        'archive' => __("ARCHIVED", 'work-history'), 
 
-        'disputing' => __( "DISPUTE" , ET_DOMAIN )
+        'disputing' => __( "DISPUTE" , 'work-history' )
 
     );
 
@@ -38,9 +38,9 @@ if(is_page_template('page-profile.php')) {
 
     $status = array(    
 
-        'publish' => __("ACTIVE", ET_DOMAIN), 
+        'publish' => __("ACTIVE", 'work-history'), 
 
-        'complete' => __("COMPLETED", ET_DOMAIN)
+        'complete' => __("COMPLETED", 'work-history')
 
     );
 
@@ -98,11 +98,11 @@ $bid_posts   = $wp_query->found_posts;
 
             if(fre_share_role() ) {
 
-                printf(__("Posted projects (%d)", ET_DOMAIN), $wp_query->found_posts);
+                printf(__("Posted projects (%d)", 'work-history'), $wp_query->found_posts);
 
             }else{
 
-                printf(__("Work history and Reviews (%d)", ET_DOMAIN), $wp_query->found_posts);
+                printf(__("Work history and Reviews (%d)", 'work-history'), $wp_query->found_posts);
 
             }
 
@@ -114,9 +114,9 @@ $bid_posts   = $wp_query->found_posts;
 
             <select class="status-filter chosen-select" name="post_status" data-chosen-width="100%" data-chosen-disable-search="1" 
 
-                data-placeholder="<?php _e("Select a status", ET_DOMAIN); ?>">
+                data-placeholder="<?php _e("Select a status", 'work-history'); ?>">
 
-                <option value=""><?php _e("Select a status", ET_DOMAIN); ?></option>
+                <option value=""><?php _e("Select a status", 'work-history'); ?></option>
 
                 <?php foreach ($status as $key => $stat) {
 
@@ -142,9 +142,9 @@ $bid_posts   = $wp_query->found_posts;
 
         else :
             if (fre_share_role() || ae_user_role($author_id) != FREELANCER) {
-                echo '<ul style="list-style:none;padding:0;"><li><span class="no-results">'.__('No work history.', ET_DOMAIN).'</span></li></ul>';
+                echo '<ul style="list-style:none;padding:0;"><li><span class="no-results">'.__('No work history.', 'work-history').'</span></li></ul>';
             } else {
-                echo '<ul style="list-style:none;padding:0;"><li><span class="no-results">'.__('You have not worked on any project yet.', ET_DOMAIN).'</span></li></ul>';
+                echo '<ul style="list-style:none;padding:0;"><li><span class="no-results">'.__('You have not worked on any project yet.', 'work-history').'</span></li></ul>';
             }
 
         endif;

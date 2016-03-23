@@ -26,7 +26,7 @@
 <div class="add-porfolio-button">
 	<a href="#" class="add-portfolio">
 		<i class="fa fa-plus"></i>
-		<?php _e("Add your work", ET_DOMAIN) ?>
+		<?php _e("Add your work", 'list-portfolios-mobile') ?>
 	</a>
 </div>
 <?php } ?>

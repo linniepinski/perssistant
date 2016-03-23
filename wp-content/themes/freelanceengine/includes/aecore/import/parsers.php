@@ -39,8 +39,8 @@ class WXR_Parser_yw {
 				echo $error[0] . ':' . $error[1] . ' ' . esc_html( $error[2] );
 			}
 			echo '</pre>';
-			echo '<p><strong>' . __( 'There was an error when reading this WXR file', ET_DOMAIN ) . '</strong><br />';
-			echo __( 'Details are shown above. The importer will now try again with a different parser...', ET_DOMAIN ) . '</p>';
+			echo '<p><strong>' . __( 'There was an error when reading this WXR file', 'aecore-import-parsers-backend' ) . '</strong><br />';
+			echo __( 'Details are shown above. The importer will now try again with a different parser...', 'aecore-import-parsers-backend' ) . '</p>';
 		}
 
 		// use regular expressions if nothing else available or this is bad XML
@@ -60,16 +60,16 @@ class WXR_Parser_SimpleXML_yw {
 		$xml = simplexml_load_file( $file );
 		// halt if loading produces an error
 		if ( ! $xml )
-			return new WP_Error( 'SimpleXML_parse_error', __( 'There was an error when reading this WXR file', ET_DOMAIN), libxml_get_errors() );
+			return new WP_Error( 'SimpleXML_parse_error', __( 'There was an error when reading this WXR file', 'aecore-import-parsers-backend'), libxml_get_errors() );
 
 		$wxr_version = $xml->xpath('/rss/channel/wp:wxr_version');
 		if ( ! $wxr_version )
-			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', ET_DOMAIN ) );
+			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'aecore-import-parsers-backend' ) );
 
 		$wxr_version = (string) trim( $wxr_version[0] );
 		// confirm that we are dealing with the correct file format
 		if ( ! preg_match( '/^\d+\.\d+$/', $wxr_version ) )
-			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', ET_DOMAIN ) );
+			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'aecore-import-parsers-backend' ) );
 
 		$base_url = $xml->xpath('/rss/channel/wp:base_site_url');
 		$base_url = (string) trim( $base_url[0] );
@@ -259,7 +259,7 @@ class WXR_Parser_XML_yw {
 		xml_parser_free( $xml );
 
 		if ( ! preg_match( '/^\d+\.\d+$/', $this->wxr_version ) )
-			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', ET_DOMAIN ) );
+			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'aecore-import-parsers-backend' ) );
 
 		return array(
 			'authors' => $this->authors,
@@ -449,7 +449,7 @@ class WXR_Parser_Regex_yw {
 		}
 
 		if ( ! $wxr_version )
-			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', ET_DOMAIN ) );
+			return new WP_Error( 'WXR_parse_error', __( 'This does not appear to be a WXR file, missing/invalid WXR version number', 'aecore-import-parsers-backend' ) );
 
 		return array(
 			'authors' => $this->authors,

@@ -51,7 +51,7 @@ if(!function_exists('fre_profile_button')) {
 		/* user have not logged in */
 		if(!$user_ID) { ?>
 			<a href="<?php echo et_get_page_link('auth'); ?>" class="btn btn-sumary btn-post-profile">
-		        <i class="fa fa-plus-circle"></i><?php _e("Create a Profile", ET_DOMAIN); ?>
+		        <i class="fa fa-plus-circle"></i><?php _e("Create a Profile", 'template-backend'); ?>
 		    </a>
 		<?php
 			return ;
@@ -59,8 +59,8 @@ if(!function_exists('fre_profile_button')) {
 		// current user is a freelancer
 		if( fre_share_role() || ae_user_role() == FREELANCER ) { 
 		?>
-			<a href="<?php echo et_get_page_link( array('page_type' => 'profile', 'post_title' => __("Profile", ET_DOMAIN )) ); ?>" class="btn btn-sumary btn-post-profile">
-	            <i class="fa fa-plus-circle"></i><?php _e("Review your Profile", ET_DOMAIN); ?>
+			<a href="<?php echo et_get_page_link( array('page_type' => 'profile', 'post_title' => __("Profile", 'template-backend' )) ); ?>" class="btn btn-sumary btn-post-profile">
+	            <i class="fa fa-plus-circle"></i><?php _e("Review your Profile", 'template-backend'); ?>
 	        </a>
 		<?php
 			return '';
@@ -69,7 +69,7 @@ if(!function_exists('fre_profile_button')) {
 		// current user is an employer
 		?>
 			<a href="<?php echo get_post_type_archive_link(PROFILE) ?>" class="btn btn-sumary btn-post-profile">
-	            <i class="fa fa-plus-circle"></i><?php _e("Find a Freelancer", ET_DOMAIN); ?>
+	            <i class="fa fa-plus-circle"></i><?php _e("Find a Freelancer", 'template-backend'); ?>
 	        </a>
 		<?php
 
@@ -88,7 +88,7 @@ if(!function_exists('fre_project_button')) {
 		/* user have not logged in */
 		if(!$user_ID) { ?>
 			<a href="<?php echo et_get_page_link('submit-project'); ?>" class="btn btn-sumary btn-post-project">
-		        <i class="fa fa-plus-circle"></i><?php _e("Post a Project", ET_DOMAIN); ?>
+		        <i class="fa fa-plus-circle"></i><?php _e("Post a Project", 'template-backend'); ?>
 		    </a>
 		<?php
 			return ;
@@ -96,8 +96,8 @@ if(!function_exists('fre_project_button')) {
 		// current user is a freelancer
 		if( ae_user_role() != FREELANCER ) { 
 		?>
-			<a href="<?php echo et_get_page_link( array('page_type' => 'submit-project', 'post_title' => __("Post a Project", ET_DOMAIN )) ); ?>" class="btn btn-sumary btn-post-project">
-				<i class="fa fa-plus-circle"></i><?php _e("Post a Project", ET_DOMAIN); ?>
+			<a href="<?php echo et_get_page_link( array('page_type' => 'submit-project', 'post_title' => __("Post a Project", 'template-backend' )) ); ?>" class="btn btn-sumary btn-post-project">
+				<i class="fa fa-plus-circle"></i><?php _e("Post a Project", 'template-backend'); ?>
 			</a>
 		<?php
 			return '';
@@ -106,7 +106,7 @@ if(!function_exists('fre_project_button')) {
 		// current user is an employer
 		?>
 			<a href="<?php echo get_post_type_archive_link(PROJECT) ?>" class="btn btn-sumary btn-post-project"><i class="fa fa-plus-circle"></i>
-	            <?php _e("Find a Project", ET_DOMAIN); ?>
+	            <?php _e("Find a Project", 'template-backend'); ?>
 	        </a>
 		<?php
 	}
@@ -115,51 +115,41 @@ if(!function_exists('fre_project_button')) {
 
 function ae_edit_post_button ($post) {
 	if($post->post_status == 'pending'){ ?>
-        <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
+        <a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
+        <a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
     <?php } ?>
 
     <?php if($post->post_status == 'publish'){ ?>
-        <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="<?php printf(__("%d views", ET_DOMAIN), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
+        <a title="<?php _e("Edit", 'template-backend'); ?>" data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
+        <a title="<?php printf(__("%d views", 'template-backend'), $post->post_views) ?>"  class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count"><?php echo $post->post_views; ?></label></a>
         <a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
     <?php } ?>
     <?php if($post->post_status == 'archive'){ ?>
-        <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-target="#" class="" href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
+        <a title="<?php _e("Edit", 'template-backend'); ?>" data-target="#" class="" href="<?php echo et_get_page_link('submit-project', array('id' => $post->ID)) ?>">
             <i class="fa fa-pencil"></i>
         </a>
-        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action delete" href="#">
-            <i class="fa fa-times"></i>
+        <a title="<?php _e("Delete", 'template-backend'); ?>" data-action="delete" class="action delete" href="#">            <i class="fa fa-times"></i>
         </a>
     <?php } ?>
-		<?php if($post->post_status == 'complete'){ ?>
+<?php if($post->post_status == 'complete'){ ?>
 			<a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
-		<?php } ?>
-<!--    --><?php //if($post->post_status == 'archive'){ ?>
-<!--        <a title="--><?php //_e("Renew", ET_DOMAIN); ?><!--" data-target="#" class="" href="--><?php //echo et_get_page_link('submit-project', array('id' => $post->ID)) ?><!--">-->
-<!--            <i class="fa fa-refresh"></i>-->
-<!--        </a>-->
-<!--        <a title="--><?php //_e("Delete", ET_DOMAIN); ?><!--" data-action="delete" class="action delete" href="#">-->
-<!--            <i class="fa fa-times"></i>-->
-<!--        </a>-->
-<!--    --><?php //}
-    do_action( 'ae_edit_post_button', $post );
+		<?php } ?>    do_action( 'ae_edit_post_button', $post );
 }
 
 function ae_js_edit_post_button () {
 ?>
 	<# if(post_status == 'pending'){ #>
         <a data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
+        <a title="{{= post_views }} <?php _e("views", 'template-backend'); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
     <# } #>
 
     <# if(post_status == 'publish'){ #>
         <a data-action="edit" data-target="#" class="action edit" href="#edit_place"><i class="fa fa-pencil"></i></a>
-        <a title="{{= post_views }} <?php _e("views", ET_DOMAIN); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
+        <a title="{{= post_views }} <?php _e("views", 'template-backend'); ?>" class="post-views" href="#"><i class="fa fa-eye"></i> <label class="eye-count">{{= post_views }}</label></a>
         <a data-action="archive" class="action archive" href="#"><i class="fa fa-trash-o"></i></a>
     <# } #>
     <# if(post_status == 'draft'){ #>
-        <a title="<?php _e("Edit", ET_DOMAIN); ?>" data-target="#" class="" 
+        <a title="<?php _e("Edit", 'template-backend'); ?>" data-target="#" class="" 
         	href="<?php echo et_get_page_link('submit-project') ?>?id={{= ID }}">
             <i class="fa fa-pencil"></i>
         </a>
@@ -168,11 +158,11 @@ function ae_js_edit_post_button () {
         </a>
     <# } #>
     <# if(post_status == 'archive'){ #>
-        <a title="<?php _e("Renew", ET_DOMAIN); ?>" data-target="#" class="" 
+        <a title="<?php _e("Renew", 'template-backend'); ?>" data-target="#" class="" 
         	href="<?php echo et_get_page_link('submit-project') ?>?id={{= ID }}">
             <i class="fa fa-refresh"></i>
         </a>
-        <a title="<?php _e("Delete", ET_DOMAIN); ?>" data-action="delete" class="action delete" href="#">
+        <a title="<?php _e("Delete", 'template-backend'); ?>" data-action="delete" class="action delete" href="#">
             <i class="fa fa-times"></i>
         </a>
     <# } #>

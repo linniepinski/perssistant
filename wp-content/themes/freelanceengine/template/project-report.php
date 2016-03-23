@@ -22,7 +22,7 @@ $comments = get_comments( $query_args );
 $total_messages = count($all_cmts);
 $comment_pages  =   ceil( $total_messages/$query_args['number'] );
 $query_args['total'] = $comment_pages;
-$query_args['text'] = __("Load older message", ET_DOMAIN);
+$query_args['text'] = __("Load older message", 'project-report');
 
 $messagedata = array();
 $message_object = new Fre_Report('fre_report');
@@ -32,7 +32,7 @@ $message_object = new Fre_Report('fre_report');
     <div class="row">
         <div class="col-md-8 col-xs-12 report-container">
             <div class="report-attention">
-                <div class="icon-attention"><i class="fa fa-exclamation-triangle"></i> <?php _e("Attention", ET_DOMAIN); ?></div>
+                <div class="icon-attention"><i class="fa fa-exclamation-triangle"></i> <?php _e("Attention", 'project-report'); ?></div>
                 <div class="attention-content">
                     <p>
                     <?php
@@ -44,11 +44,11 @@ $message_object = new Fre_Report('fre_report');
                         }
                         $reporter_name = "<strong>".get_the_author_meta( 'display_name', $reporter ) ."</strong>";
 
-                        _e("This project has been paused.", ET_DOMAIN);
+                        _e("This project has been paused.", 'project-report');
                         echo '<br/>';
-                        _e("We will review both sides' reports to have the right decision. Please take your time to submit the report. All proofs such as emails, contracts, files,...will be accepted.", ET_DOMAIN);
+                        _e("We will review both sides' reports to have the right decision. Please take your time to submit the report. All proofs such as emails, contracts, files,...will be accepted.", 'project-report');
                         echo '</br/>';
-                        _e("We will be back with the final result as soon as possible.  ", ET_DOMAIN);
+                        _e("We will be back with the final result as soon as possible.  ", 'project-report');
                     ?>
                     </p>    
                 </div>
@@ -60,19 +60,19 @@ $message_object = new Fre_Report('fre_report');
                     	<div class="form-group-work-place " id="report_docs_container">
                             <span class="et_ajaxnonce" id="<?php echo wp_create_nonce( 'file_et_uploader' ) ?>"></span>
                             <div class="content-report-wrapper">
-                            	<span class="text-your-report"><?php _e("Your report", ET_DOMAIN); ?></span>
+                            	<span class="text-your-report"><?php _e("Your report", 'project-report'); ?></span>
                                 <div class="form-group">
                                     <textarea name="comment_content" class="content-chat"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" name="submit" value="<?php _e( "Send" , ET_DOMAIN ); ?>" class="submit-chat-content">
+                                    <input type="submit" name="submit" value="<?php _e( "Send" , 'project-report' ); ?>" class="submit-chat-content">
                                     <input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
                                 </div>
                             </div>
                             <div class="file-attachment-wrapper">
-                                <div class="title-attachment"><?php _e("Attachment", ET_DOMAIN); ?></div>
+                                <div class="title-attachment"><?php _e("Attachment", 'project-report'); ?></div>
                                 <a href="#" class="attach-file-button" id="report_docs_browse_button">
-                                    <i class="fa fa-paperclip"></i><?php _e("Attach file", ET_DOMAIN); ?>
+                                    <i class="fa fa-paperclip"></i><?php _e("Attach file", 'project-report'); ?>
                                 </a>
                                 <ul class="file-attack-report apply_docs_file_list" id="apply_docs_file_list">
                                     <!-- report file list -->
@@ -86,15 +86,15 @@ $message_object = new Fre_Report('fre_report');
 
                     if(current_user_can( 'manage_options' ) && ae_get_option('use_escrow') && $post->post_status == 'disputing') { ?>
                         <form class="transfer-escrow">
-                            <span class="text-transfer-escrow"><?php _e("Escrow transfer to", ET_DOMAIN); ?></span>
+                            <span class="text-transfer-escrow"><?php _e("Escrow transfer to", 'project-report'); ?></span>
                             <div class="form-group">
                                 <select class="transfer-select">
-                                    <option value="freelancer"><?php _e("Freelancer", ET_DOMAIN); ?></option>
-                                    <option value="employer"><?php _e("Employer", ET_DOMAIN); ?></option>
+                                    <option value="freelancer"><?php _e("Freelancer", 'project-report'); ?></option>
+                                    <option value="employer"><?php _e("Employer", 'project-report'); ?></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" value="<?php _e( "Proceed" , ET_DOMAIN ); ?>" class="btn submit-proceed-report">
+                                <input type="submit" name="submit" value="<?php _e( "Proceed" , 'project-report' ); ?>" class="btn submit-proceed-report">
                             </div>
                         </form>
                 
@@ -114,7 +114,7 @@ $message_object = new Fre_Report('fre_report');
 									<?php echo $message->avatar; ?>
                                 </a>
                                 <div class="info-report">
-                                    <span class="name-report"><?php printf(__("%s's report", ET_DOMAIN), $display_name); ?></span>
+                                    <span class="name-report"><?php printf(__("%s's report", 'project-report'), $display_name); ?></span>
                                     <div class="date-chat-report">
                                         <?php 
                                             echo $message->message_time;
@@ -129,7 +129,7 @@ $message_object = new Fre_Report('fre_report');
                                 </div>
                                 <?php 
                                     if( $convert->file_list) { ?>
-                                        <div class="title-attachment"><?php _e("Attachment", ET_DOMAIN); ?></div>
+                                        <div class="title-attachment"><?php _e("Attachment", 'project-report'); ?></div>
                                     <?php 
                                         echo $convert->file_list; 
                                     }
@@ -154,11 +154,11 @@ $message_object = new Fre_Report('fre_report');
                 if(fre_access_workspace($post)) {
                     $project_link = get_permalink( $post->ID );
                     echo '<a style="font-weight:600;" href="'.add_query_arg(array('workspace' => 1), $project_link).'">'
-                            .__("Open workspace", ET_DOMAIN).' <i class="fa fa-arrow-right"></i>
+                            .__("Open workspace", 'project-report').' <i class="fa fa-arrow-right"></i>
                         </a>';
                 }
                 ?>
-                <h4><?php _e('Project description:',ET_DOMAIN);?></h4>
+                <h4><?php _e('Project description:','project-report');?></h4>
                 <?php the_content(); ?>
 
             </div>

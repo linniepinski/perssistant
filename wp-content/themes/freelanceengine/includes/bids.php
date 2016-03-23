@@ -8,29 +8,29 @@ function fre_register_bid() {
 
     $bid_labels = array(
 
-        'name' => __('Bids', ET_DOMAIN) ,
+        'name' => __('Bids', 'bids-backend') ,
 
-        'singular_name' => __('Bid', ET_DOMAIN) ,
+        'singular_name' => __('Bid', 'bids-backend') ,
 
-        'add_new' => _x('Add New Bid', ET_DOMAIN, ET_DOMAIN) ,
+        'add_new' => _x('Add New Bid', 'bids-backend', 'bids-backend') ,
 
-        'add_new_item' => __('Add New Bid', ET_DOMAIN) ,
+        'add_new_item' => __('Add New Bid', 'bids-backend') ,
 
-        'edit_item' => __('Edit Bid', ET_DOMAIN) ,
+        'edit_item' => __('Edit Bid', 'bids-backend') ,
 
-        'new_item' => __('New bid', ET_DOMAIN) ,
+        'new_item' => __('New bid', 'bids-backend') ,
 
-        'view_item' => __('View bid', ET_DOMAIN) ,
+        'view_item' => __('View bid', 'bids-backend') ,
 
-        'search_items' => __('Search Bids', ET_DOMAIN) ,
+        'search_items' => __('Search Bids', 'bids-backend') ,
 
-        'not_found' => __('No Bids found', ET_DOMAIN) ,
+        'not_found' => __('No Bids found', 'bids-backend') ,
 
-        'not_found_in_trash' => __('No Bids found in Trash', ET_DOMAIN) ,
+        'not_found_in_trash' => __('No Bids found in Trash', 'bids-backend') ,
 
-        'parent_item_colon' => __('Parent bid:', ET_DOMAIN) ,
+        'parent_item_colon' => __('Parent bid:', 'bids-backend') ,
 
-        'menu_name' => __('Bids', ET_DOMAIN) ,
+        'menu_name' => __('Bids', 'bids-backend') ,
 
     );
 
@@ -362,7 +362,7 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
             $result->et_professional_title = '';
 
-            $result->experience = __('Unknow', ET_DOMAIN);
+            $result->experience = __('Unknow', 'bids-backend');
 
             $result->profile_display = get_the_author_meta('display_name', $result->post_author);
 
@@ -376,11 +376,11 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                 if ($result->bid_time > 1) {
 
-                    $result->bid_time_text = sprintf(__("in %d days", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d days", 'bids-backend') , $result->bid_time);
 
                 } else {
 
-                    $result->bid_time_text = sprintf(__("in %d day", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d day", 'bids-backend') , $result->bid_time);
 
                 }
 
@@ -388,21 +388,21 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                 if ($result->bid_time > 1) {
 
-                    $result->bid_time_text = sprintf(__("in %d weeks", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d weeks", 'bids-backend') , $result->bid_time);
 
                 } else {
 
-                    $result->bid_time_text =sprintf(__("in %d week", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text =sprintf(__("in %d week", 'bids-backend') , $result->bid_time);
 
                 }
             }else{
                 if ($result->bid_time > 1) {
 
-                    $result->bid_time_text = sprintf(__("in %d months", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d months", 'bids-backend') , $result->bid_time);
 
                 } else {
 
-                    $result->bid_time_text =sprintf(__("in %d month", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text =sprintf(__("in %d month", 'bids-backend') , $result->bid_time);
 
                 }
             }
@@ -412,11 +412,11 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                 if ($result->bid_time > 1) {
 
-                    $result->bid_time_text = sprintf(__("in %d days", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d days", 'bids-backend') , $result->bid_time);
 
                 } else {
 
-                    $result->bid_time_text = sprintf(__("in %d day", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d day", 'bids-backend') , $result->bid_time);
 
                 }
 
@@ -424,11 +424,11 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                 if ($result->bid_time > 1) {
 
-                    $result->bid_time_text = sprintf(__("in %d weeks", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text = sprintf(__("in %d weeks", 'bids-backend') , $result->bid_time);
 
                 } else {
 
-                    $result->bid_time_text =sprintf(__("in %d week", ET_DOMAIN) , $result->bid_time);
+                    $result->bid_time_text =sprintf(__("in %d week", 'bids-backend') , $result->bid_time);
 
                 }
 
@@ -499,7 +499,7 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                 // hide bid text
 
-                $result->bid_budget_text = __("In Progress", ET_DOMAIN);
+                $result->bid_budget_text = __("In Progress", 'bids-backend');
 
                 
 
@@ -631,7 +631,7 @@ if (get_post_meta($result->ID, 'comment_employer', true) != 0){
 
                     'success' => false,
 
-                    'msg' => __('Error. You have been accepted for this project', ET_DOMAIN)
+                    'msg' => __('Error. You have been accepted for this project', 'bids-backend')
 
                 ));
 
@@ -672,11 +672,11 @@ $post_data['post_title'] = $title;
 
         } else {
 
-            $message = __("Update bid successful.", ET_DOMAIN);
+            $message = __("Update bid successful.", 'bids-backend');
 
             if ($method == 'create') {
 
-                $message = __("Create bid successful.", ET_DOMAIN);
+                $message = __("Create bid successful.", 'bids-backend');
 
             }
 
@@ -703,13 +703,13 @@ $post_data['post_title'] = $title;
             wp_delete_post( $bid_id, true );
             wp_send_json(array(
                 'success' => true,
-                'msg' => __("Decline bid successful.", ET_DOMAIN)
+                'msg' => __("Decline bid successful.", 'bids-backend')
             ));
 
         }else{
             wp_send_json(array(
                 'success' => false,
-                'msg' => 'Error'
+                'msg' => __("Error.", 'bids-backend')
             ));
         }
 
@@ -764,7 +764,7 @@ $post_data['post_title'] = $title;
 
                 'success' => true,
 
-                'msg' => __('Project has been assign successful.', ET_DOMAIN)
+                'msg' => __('Project has been assign successful.', 'bids-backend')
 
             ));
 
@@ -825,12 +825,12 @@ $post_data['post_title'] = $title;
 
         if(in_array('bid_content', $args) && !isset($args['bid_content'])) {
 
-            return new WP_Error('empty_content', __('Please enter your bid message.', ET_DOMAIN));
+            return new WP_Error('empty_content', __('Please enter your bid message.', 'bids-backend'));
 
         }
         if(get_user_meta($user_ID,'interview_status',true) == 'unconfirm') {
 
-            return new WP_Error('interview_unconfirm', __('You are not able to bid on the projects, your profile is not activated.', ET_DOMAIN));
+            return new WP_Error('interview_unconfirm', __('You are not able to bid on the projects, your profile is not activated.', 'bids-backend'));
 
         }
 
@@ -853,7 +853,7 @@ $post_data['post_title'] = $title;
 
         if (in_array('bid_budget', $bid_required_field) && (!isset($args['bid_budget'])) && $args['decide_later'] == false) {
 
-            return new WP_Error('empty_bid', __('You have to set the bid budget.' , ET_DOMAIN));
+            return new WP_Error('empty_bid', __('You have to set the bid budget.' , 'bids-backend'));
 
         }
 
@@ -861,7 +861,7 @@ $post_data['post_title'] = $title;
 
         if (in_array('bid_time', $bid_required_field) && (!isset($args['bid_time']) || empty($args['bid_time'])) ) {
 
-            return new WP_Error('empty_time', __('You have to set the time to finish project.', ET_DOMAIN));
+            return new WP_Error('empty_time', __('You have to set the time to finish project.', 'bids-backend'));
 
         }
 
@@ -869,7 +869,7 @@ $post_data['post_title'] = $title;
 
         if ((in_array('bid_budget', $bid_required_field) && $args['bid_budget'] < 0) && $args['decide_later'] == false) {
 
-            return new WP_Error('budget_less_than_zero', __("Your budget have to greater than zero!", ET_DOMAIN));
+            return new WP_Error('budget_less_than_zero', __("Your budget have to greater than zero!", 'bids-backend'));
 
         }
 
@@ -877,17 +877,17 @@ $post_data['post_title'] = $title;
         //  || (in_array('bid_time', $bid_required_field) && !is_numeric($args['bid_time']))
         if ((in_array('bid_budget', $bid_required_field) && !is_numeric($args['bid_budget']) ) && $args['decide_later'] == false) {
 
-            return new WP_Error('invalid_input', __('Please enter a valid number in budget or bid time', ET_DOMAIN));
+            return new WP_Error('invalid_input', __('Please enter a valid number in budget or bid time', 'bids-backend'));
 
         }
 
         
 
-        if (!$user_ID) return new WP_Error('no_permission', __('Please login to bid a project', ET_DOMAIN));
+        if (!$user_ID) return new WP_Error('no_permission', __('Please login to bid a project', 'bids-backend'));
 
         
 
-        if (get_post_status($project_id) != 'publish') return new WP_Error('invalid_input', __('This project is not publish.', ET_DOMAIN));
+        if (get_post_status($project_id) != 'publish') return new WP_Error('invalid_input', __('This project is not publish.', 'bids-backend'));
 
         
 
@@ -897,11 +897,11 @@ $post_data['post_title'] = $title;
 
         // if($accepted || 'complete' ==  get_post_status($project_id) )
 
-        //    return new  WP_Error (200 ,__('The project has been accepted', ET_DOMAIN));
+        //    return new  WP_Error (200 ,__('The project has been accepted', 'bids-backend'));
 
         
 
-        if (fre_has_bid($project_id)) return new WP_Error(200, __('You have bid on this project', ET_DOMAIN));
+        if (fre_has_bid($project_id)) return new WP_Error(200, __('You have bid on this project', 'bids-backend'));
 
         
 
@@ -911,7 +911,7 @@ $post_data['post_title'] = $title;
 
         if ($user_ID == $post_author) {
 
-            return new WP_Error(200, __('You can\'t bid on your project', ET_DOMAIN));
+            return new WP_Error(200, __('You can\'t bid on your project', 'bids-backend'));
 
         }
 
@@ -921,7 +921,7 @@ $post_data['post_title'] = $title;
 
         $role = ae_user_role();
 
-        if (!fre_share_role() && $role != FREELANCER) return new WP_Error(200, __('You have to be a freelancer to bid a project.', ET_DOMAIN));
+        if (!fre_share_role() && $role != FREELANCER) return new WP_Error(200, __('You have to be a freelancer to bid a project.', 'bids-backend'));
 
         
 
@@ -941,7 +941,7 @@ $post_data['post_title'] = $title;
 
         if (!$profile || !is_numeric($profile_id)) {
 
-            return new WP_Error(200, __('You must complete your profile to bid on a project.', ET_DOMAIN));
+            return new WP_Error(200, __('You must complete your profile to bid on a project.', 'bids-backend'));
 
         }
 
@@ -955,7 +955,7 @@ $post_data['post_title'] = $title;
 
             if (!$paypal_account) {
 
-                return new WP_Error('dont_have_paypal', __('You must setup your paypal account in profile to receive money.', ET_DOMAIN));
+                return new WP_Error('dont_have_paypal', __('You must setup your paypal account in profile to receive money.', 'bids-backend'));
 
             }
 
@@ -1016,7 +1016,7 @@ $post_data['post_title'] = $title;
 
             'success' => true,
 
-            'msg' => __('You are bid successful', ET_DOMAIN)
+            'msg' => __('You are bid successful', 'bids-backend')
 
         ));
 
@@ -1094,7 +1094,7 @@ $post_data['post_title'] = $title;
 
             'success' => true,
 
-            'msg' => __('Bid has been deleted successful', ET_DOMAIN)
+            'msg' => __('Bid has been deleted successful', 'bids-backend')
 
         ));
 
@@ -1120,13 +1120,13 @@ $post_data['post_title'] = $title;
 
         
 
-        $result = new WP_Error($code = '200', $message = __('You don\'t have perminsion to accept this project.', ET_DOMAIN) , array());
+        $result = new WP_Error($code = '200', $message = __('You don\'t have perminsion to accept this project.', 'bids-backend') , array());
 
         
 
         // check authenticate
 
-        if (!$user_ID) return new WP_Error($code = '200', $message == __(' You must login to accept bid.', ET_DOMAIN));
+        if (!$user_ID) return new WP_Error($code = '200', $message == __(' You must login to accept bid.', 'bids-backend'));
 
         
 
@@ -1136,7 +1136,7 @@ $post_data['post_title'] = $title;
 
             // a project have to published when bidding
 
-            return new WP_Error($code = '200', $message = __('Your project was not pubished. You can not accept a bid!', ET_DOMAIN));
+            return new WP_Error($code = '200', $message = __('Your project was not pubished. You can not accept a bid!', 'bids-backend'));
 
         }
 
@@ -1234,7 +1234,7 @@ $post_data['post_title'] = $title;
 
             // change title
 
-            $title = sprintf(__('%s bid for project "%s"', ET_DOMAIN) , $author, get_the_title($project_id));
+            $title = sprintf(__('%s bid for project "%s"', 'bids-backend') , $author, get_the_title($project_id));
 
         }
 
@@ -1256,7 +1256,7 @@ $post_data['post_title'] = $title;
 
         return array_merge($columns, array(
 
-            'project_title' => __('Project', ET_DOMAIN)
+            'project_title' => __('Project', 'bids-backend')
 
         ));
 

@@ -23,7 +23,7 @@
             <p class="btn-warpper-bid col-md-3 number-price-project">
             <# if( post_status =='publish' &&  current_user == project_author  ){ #>
                     <button class="btn-sumary btn-accept-bid btn-bid-status btn-bid" rel="{{= post_parent }}" href="#"> 
-                        <?php _e('Accept', ET_DOMAIN); ?> 
+                        <?php _e('Accept', 'bid-item-mobile'); ?>
                     </button> 
                     <span class="confirm"></span>
             <# } else if( (post_status == 'close' || post_status == 'complete') && accepted == ID){ #>                

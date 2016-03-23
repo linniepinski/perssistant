@@ -1,6 +1,6 @@
 <?php
 
-// if(!defined('ET_DOMAIN')) {
+// if(!defined(''aecore-class-ae-post-backend'')) {
 //  wp_die('API NOT SUPPORT');
 //}
 
@@ -109,12 +109,12 @@ class AE_Posts
         
         // array statuses
         $status = array(
-            'reject' => __("REJECTED", ET_DOMAIN) ,
-            'archive' => __("ARCHIVED", ET_DOMAIN) ,
-            'pending' => __("PENDING", ET_DOMAIN) ,
-            'draft' => __("DRAFT", ET_DOMAIN) ,
-            'publish' => __("ACTIVE", ET_DOMAIN) ,
-            'trash' => __("TRASHED", ET_DOMAIN)
+            'reject' => __("REJECTED", 'aecore-class-ae-post-backend') ,
+            'archive' => __("ARCHIVED", 'aecore-class-ae-post-backend') ,
+            'pending' => __("PENDING", 'aecore-class-ae-post-backend') ,
+            'draft' => __("DRAFT", 'aecore-class-ae-post-backend') ,
+            'publish' => __("ACTIVE", 'aecore-class-ae-post-backend') ,
+            'trash' => __("TRASHED", 'aecore-class-ae-post-backend')
         );
         
         $result['status_text'] = isset($status[$result['post_status']]) ? $status[$result['post_status']] : '';
@@ -269,12 +269,12 @@ class AE_Posts
         
         // could not create with an ID
         if (isset($args['ID'])) {
-            return new WP_Error('invalid_data', __("The ID already existed!", ET_DOMAIN));
+            return new WP_Error('invalid_data', __("The ID already existed!", 'aecore-class-ae-post-backend'));
         }
         
         if (!isset($args['post_author']) || empty($args['post_author'])) $args['post_author'] = $current_user->ID;
         
-        if ( empty( $args['post_author'] ) ) return new WP_Error('missing_author', __('You must login to submit listing.', ET_DOMAIN));
+        if ( empty( $args['post_author'] ) ) return new WP_Error('missing_author', __('You must login to submit listing.', 'aecore-class-ae-post-backend'));
         
         // filter tax_input
         $args = $this->_filter_tax_input($args);
@@ -462,12 +462,12 @@ class AE_Posts
         if (is_wp_error($args)) return $args;
         
         // if missing ID, return errors
-        if (empty($args['ID'])) return new WP_Error('ae_missing_ID', __('Post not found!', ET_DOMAIN));
+        if (empty($args['ID'])) return new WP_Error('ae_missing_ID', __('Post not found!', 'aecore-class-ae-post-backend'));
         
         if (!ae_user_can('edit_others_posts')) {
             $post = get_post($args['ID']);
             if ($post->post_author != $user_ID) {
-                return new WP_Error('permission_deny', __('You can not edit other posts!', ET_DOMAIN));
+                return new WP_Error('permission_deny', __('You can not edit other posts!', 'aecore-class-ae-post-backend'));
             }
             
             /**
@@ -583,7 +583,7 @@ class AE_Posts
             global $user_ID;
             $post = get_post($ID);
             if ($user_ID != $post->post_author) {
-                return new WP_Error('permission_deny', __("You do not have permission to delete post.", ET_DOMAIN));
+                return new WP_Error('permission_deny', __("You do not have permission to delete post.", 'aecore-class-ae-post-backend'));
             }
         }
         
@@ -639,7 +639,7 @@ class AE_Posts
                 break;
 
             default:
-                return new WP_Error('invalid_method', __("Invalid method", ET_DOMAIN));
+                return new WP_Error('invalid_method', __("Invalid method", 'aecore-class-ae-post-backend'));
         }
         
         return $result;
@@ -653,7 +653,7 @@ class AE_Posts
      * @since 1.0
      */
     public function fetch($args) {
-        
+
         $args['post_type'] = $this->post_type;
         if (isset($args['radius']) && $args['radius']) {
             $query = $this->nearbyPost($args);
@@ -961,7 +961,7 @@ class AE_PostAction extends AE_Base
             wp_send_json(array(
                 'data' => $data['posts'],
                 'paginate' => $paginate,
-                'msg' => __("Successs", ET_DOMAIN) ,
+                'msg' => __("Successs", 'aecore-class-ae-post-backend') ,
                 'success' => true,
                 'max_num_pages' => $data['max_num_pages'],
                 'total' => $data['query']->found_posts

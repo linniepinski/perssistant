@@ -6,19 +6,19 @@ global $user_ID, $post;
                
     <?php
     if(!is_user_logged_in()){ ?>
-    <p><?php printf(__('You must <a href="%s">login</a> to bid on this project',ET_DOMAIN), et_get_page_link( array('page_type' => 'auth', 'post_title' => __("Login page", ET_DOMAIN ) ) ).'?redirect='.get_permalink() ); ?> </p>
+    <p><?php printf(__('You must <a href="%s">login</a> to bid on this project','form-bid-project-mobile'), et_get_page_link( array('page_type' => 'auth', 'post_title' => __("Login page", 'form-bid-project-mobile' ) ) ).'?redirect='.get_permalink() ); ?> </p>
     <?php } else{?>
     <div class="form-group">
-        <h3 class="title-content"> <?php _e('Set your bid:',ET_DOMAIN); ?> </h3>
+        <h3 class="title-content"> <?php _e('Set your bid:','form-bid-project-mobile'); ?> </h3>
     </div>
 
     <div class="form-group">
         <label for="bid_budget">
             <?php
             if (get_post_meta($post->ID, 'type_budget', true) == 'hourly_rate') {
-                _e('Hourly rate', ET_DOMAIN);
+                _e('Hourly rate', 'form-bid-project-mobile');
             } else {
-                _e('Budget', ET_DOMAIN);
+                _e('Budget', 'form-bid-project-mobile');
             }
             ?></label>
         <div class="checkbox" style="display: inline-block;margin-left: 20px;">
@@ -48,7 +48,7 @@ global $user_ID, $post;
     <div class="clearfix"></div>
 
     <div class="form-group">
-        <label for="bid_time"><?php _e('Deadline',ET_DOMAIN);?></label>
+        <label for="bid_time"><?php _e('Deadline','form-bid-project-mobile');?></label>
         <div class="row">
             <div class="col-xs-12">
                 <div class="row ">
@@ -85,7 +85,7 @@ global $user_ID, $post;
     <div class="clearfix"></div>
 
     <div class="form-group">
-        <label for="post_content"><?php _e('Notes',ET_DOMAIN); ?></label>
+        <label for="post_content"><?php _e('Notes','form-bid-project-mobile'); ?></label>
         <textarea id="bid_content" name="bid_content"></textarea>
     </div>      
 
@@ -98,7 +98,7 @@ global $user_ID, $post;
     <?php do_action('after_bid_form'); ?>   
 
     <button type="submit" class="btn btn-primary btn-submit btn-sub-create">
-        <?php _e('Submit', ET_DOMAIN) ?>
+        <?php _e('Submit', 'form-bid-project-mobile') ?>
     </button>
     <?php } ?>
 </form> 

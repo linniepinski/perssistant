@@ -6,12 +6,12 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i>
                 </button> <?php if (!(ae_get_option('invited_to_bid') && !fre_check_invited($user_ID, $post->ID))) { ?>
-                    <h4 class="modal-title"><?php _e('Set your bid:', ET_DOMAIN); ?></h4>                <?php } ?>
+                    <h4 class="modal-title"><?php _e('Set your bid:', 'modal-add-bid'); ?></h4>                <?php } ?>
             </div>
             <div
                 class="modal-body">                <?php if (ae_get_option('invited_to_bid') && !fre_check_invited($user_ID, $post->ID)) {
                     echo '<p class="lead  warning">';
-                    _e("Oops, You must be invited to bid this project", ET_DOMAIN);
+                    _e("Oops, You must be invited to bid this project", 'modal-add-bid');
                     echo '</p>';
                 } else { ?>
                     <div>
@@ -19,9 +19,9 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                             <div class="form-group"><label for="bid_budget">
                                     <?php
                                     if (get_post_meta($post->ID, 'type_budget', true) == 'hourly_rate') {
-                                        _e('Hourly rate', ET_DOMAIN);
+                                        _e('Hourly rate', 'modal-add-bid');
                                     } else {
-                                        _e('Budget', ET_DOMAIN);
+                                        _e('Budget', 'modal-add-bid');
                                     }
                                     ?>
                                 </label>
@@ -51,7 +51,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                             </div>
 
                             <div class="clearfix"></div>
-                            <div class="form-group"><label for="bid_time"><?php _e('Deadline', ET_DOMAIN); ?></label>
+                            <div class="form-group"><label for="bid_time"><?php _e('Deadline', 'modal-add-bid'); ?></label>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="row ">
@@ -85,7 +85,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="form-group"><label
-                                        for="post_content"><?php _e('Proposal', ET_DOMAIN); ?></label> <textarea
+                                        for="post_content"><?php _e('Proposal', 'modal-add-bid'); ?></label> <textarea
                                         id="bid_content"
                                         name="bid_content"></textarea>
                                     <?php //wp_editor('', 'bid_content', ae_editor_settings() );  ?>
@@ -99,7 +99,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                 <input type="hidden" name="action"
                                        value="ae-sync-bid"/> <?php do_action('after_bid_form'); ?>
                                 <button type="submit"
-                                        class="btn-submit btn-sumary btn-sub-create">                            <?php _e('Submit', ET_DOMAIN) ?>                        </button>
+                                        class="btn-submit btn-sumary btn-sub-create">                            <?php _e('Submit', 'modal-add-bid') ?>                        </button>
                         </form>
                     </div>            <?php } ?>            </div>
         </div>

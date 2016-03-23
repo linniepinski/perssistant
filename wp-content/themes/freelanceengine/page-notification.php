@@ -55,7 +55,7 @@ $notifications = query_posts(array(
             <div class="row">
                 <div class="col-md-12 blog-classic-top">
 
-                <h2 class="title-search-form-top"><?php _e("NOTIFICATIONS", ET_DOMAIN); ?> </h2>
+                <h2 class="title-search-form-top"><?php _e("NOTIFICATIONS", 'page-notification'); ?> </h2>
 
             </div>
               </div>  </div>  </div>

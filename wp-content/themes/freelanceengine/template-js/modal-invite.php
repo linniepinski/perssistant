@@ -27,8 +27,8 @@ query_posts( array('post_status' => 'publish', 'post_type' => 'project', 'author
 					<i class="fa fa-times"></i>
 				</button>
 				<h4 class="modal-title">
-					<?php _e('Invite', ET_DOMAIN); ?> 
-					<a href="#"><?php echo get_the_author_meta('display_name', $author_id); ?></a> <?php _e('to join your project (choose one or more projects below):', ET_DOMAIN) ?>
+					<?php _e('Invite', 'modal-invite'); ?>
+					<a href="#"><?php echo get_the_author_meta('display_name', $author_id); ?></a> <?php _e('to join your project (choose one or more projects below):', 'modal-invite') ?>
 				</h4>
 			</div>
 			<div class="modal-body">
@@ -54,13 +54,13 @@ query_posts( array('post_status' => 'publish', 'post_type' => 'project', 'author
 					</div>	
                     <div class="clearfix"></div>	
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create" <?php if($wp_query->found_posts == 0){echo 'disabled="disabled"';} ?> >
-						<?php _e('Invite', ET_DOMAIN) ?>
+						<?php _e('Invite', 'modal-invite') ?>
 					</button>
 				</form>	
 				<?php }else {
 					echo '<p class="lead text-info">';
-					_e("Currently, you do not have any project available to invite this user.", ET_DOMAIN);
-					echo ' <a href="'.et_get_page_link('submit-project').'" >'.__("Create a project now", ET_DOMAIN).'</a>';
+					_e("Currently, you do not have any project available to invite this user.", 'modal-invite');
+					echo ' <a href="'.et_get_page_link('submit-project').'" >'.__("Create a project now", 'modal-invite').'</a>';
 					echo '</p>';
 				} ?>
 			</div>

@@ -1,6 +1,6 @@
 <?php
 
-// if(!defined('ET_DOMAIN')) {
+// if(!defined(''aecore-class-ae-users-backend'')) {
 //  wp_die('API NOT SUPPORT');
 //}
 
@@ -62,7 +62,7 @@ class AE_Users
      */
     public function get($id) {
         $user = get_userdata($id);
-        $user->msg = __('Get user data successfully!', ET_DOMAIN);
+        $user->msg = __('Get user data successfully!', 'aecore-class-ae-users-backend');
         return $this->convert($user);
     }
     
@@ -76,7 +76,7 @@ class AE_Users
      */
     public function convert($user) {
         global $current_user, $user_ID;
-        if (!isset($user->ID) || !$user->ID ) return new WP_Error('ae_invalid_user_data', __("Input invalid", ET_DOMAIN));
+        if (!isset($user->ID) || !$user->ID ) return new WP_Error('ae_invalid_user_data', __("Input invalid", 'aecore-class-ae-users-backend'));
         $result = isset($user->data) ? $user->data : $user;
         
         foreach ($this->meta_data as $key) {
@@ -85,7 +85,7 @@ class AE_Users
         
         $result->avatar = get_avatar($user->ID, '150');
         
-        $result->join_date = sprintf(__("Join on %s", ET_DOMAIN) , (string)date(get_option('date_format') , strtotime($user->user_registered)));
+        $result->join_date = sprintf(__("Join on %s", 'aecore-class-ae-users-backend') , (string)date(get_option('date_format') , strtotime($user->user_registered)));
         
         /**
          * get user role
@@ -110,7 +110,7 @@ class AE_Users
             $result->$author_meta = get_the_author_meta($author_meta, $result->ID);
         }
         
-        $result->label = sprintf(__('Logged in as <span class="name">%s<span>', ET_DOMAIN) , $result->display_name);
+        $result->label = sprintf(__('Logged in as <span class="name">%s<span>', 'aecore-class-ae-users-backend') , $result->display_name);
         $result->author_url = get_author_posts_url($result->ID);
         
         // update ajax nonce
@@ -259,23 +259,23 @@ class AE_Users
     public function insert($user_data) {
         
         if (!$user_data['user_login'] || !preg_match('/^[a-z\d_]{2,20}$/i', $user_data['user_login'])) {
-            return new WP_Error('username_invalid', __("For username, letters (A-z), numbers(0-9) and underscore are allowed.", ET_DOMAIN));
+            return new WP_Error('username_invalid', __("For username, letters (A-z), numbers(0-9) and underscore are allowed.", 'aecore-class-ae-users-backend'));
         }
         if (!isset($user_data['user_email']) || !$user_data['user_email'] || $user_data['user_email'] == '' || !is_email($user_data['user_email']) ) {
-            return new WP_Error('email_invalid', __("Email field is invalid.", ET_DOMAIN));
+            return new WP_Error('email_invalid', __("Email field is invalid.", 'aecore-class-ae-users-backend'));
         }
         if (!isset($user_data['user_pass']) || !$user_data['user_pass'] || $user_data['user_pass'] == '' ) {
-            return new WP_Error('pass_invalid', __("Password field is required.", ET_DOMAIN));
+            return new WP_Error('pass_invalid', __("Password field is required.", 'aecore-class-ae-users-backend'));
         }
         if (isset($user_data['repeat_pass']) && $user_data['user_pass'] != $user_data['repeat_pass']) {
-            return new WP_Error('pass_invalid', __("Repeat Passwords mismatch.", ET_DOMAIN));
+            return new WP_Error('pass_invalid', __("Repeat Passwords mismatch.", 'aecore-class-ae-users-backend'));
         }
         $user_data = apply_filters( 'ae_pre_insert_user', $user_data );
         if(!$user_data || is_wp_error( $user_data )) {
             return $user_data;
         }
         if ( ( function_exists( 'cptch_check_custom_form' ) && cptch_check_custom_form() !== true ) || ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== '' ) ) {
-            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", ET_DOMAIN));
+            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", 'aecore-class-ae-users-backend'));
         }
 
         /**
@@ -284,7 +284,7 @@ class AE_Users
          */
         if( isset( $user_data['role'] ) ){
             if(  strtolower($user_data['role']) == 'administrator' || strtolower($user_data['role']) == 'editor' ) {
-                return new WP_Error('user_role_error', __("You can't create an administrator account.", ET_DOMAIN));
+                return new WP_Error('user_role_error', __("You can't create an administrator account.", 'aecore-class-ae-users-backend'));
                 exit();
             }
         }
@@ -327,7 +327,7 @@ class AE_Users
         }
         //set return message
         //if(isset($result->msg)){
-            $result->msg = !ae_get_option('user_confirm') ? __("You have registered successfully!", ET_DOMAIN) : __("You have registered successfully. Please check your mailbox to activate your account.", ET_DOMAIN);
+            $result->msg = !ae_get_option('user_confirm') ? __("You have registered successfully!", 'aecore-class-ae-users-backend') : __("You have registered successfully. Please check your mailbox to activate your account.", 'aecore-class-ae-users-backend');
         //}
 
         return apply_filters( 'ae_after_insert_user', $result);
@@ -353,7 +353,7 @@ class AE_Users
          * prevent user edit other user profile
          */
         if (!ae_user_can('edit_users') && $user_data['ID'] != $user_ID) {
-            return new WP_Error('denied', __("Permission Denied!", ET_DOMAIN));
+            return new WP_Error('denied', __("Permission Denied!", 'aecore-class-ae-users-backend'));
         }
         
         /**
@@ -364,11 +364,11 @@ class AE_Users
             if($validate){
                 $user_data['user_pass'] = $user_data['new_password'];
             } else {
-                return new WP_Error('wrong_pass', __("Old password does not match!", ET_DOMAIN));
+                return new WP_Error('wrong_pass', __("Old password does not match!", 'aecore-class-ae-users-backend'));
             }
             
             if($user_data['new_password'] !== $user_data['renew_password']) {
-                return new WP_Error('pass_mismatch', __("Retype password is not equal.", ET_DOMAIN));   
+                return new WP_Error('pass_mismatch', __("Retype password is not equal.", 'aecore-class-ae-users-backend'));   
             }
         }
         
@@ -380,7 +380,7 @@ class AE_Users
              */
             if ($user_ID == $user_data['ID'] && $email != $current_user->user_email) {
                 if (email_exists($email)) {
-                    return new WP_Error('email_existed', __("This email is already used. Please enter a new email.", ET_DOMAIN));
+                    return new WP_Error('email_existed', __("This email is already used. Please enter a new email.", 'aecore-class-ae-users-backend'));
                 }
             }
         }
@@ -451,17 +451,17 @@ class AE_Users
         if (isset($user_data['do'])) {
             switch ($user_data['do']) {
                 case 'profile':
-                    $result->msg = __("Your profile has been saved successfully!", ET_DOMAIN);
+                    $result->msg = __("Your profile has been saved successfully!", 'aecore-class-ae-users-backend');
                     break;
                 case 'changepass':
-                    $result->msg = __("Your password has been changed successfully!", ET_DOMAIN);
+                    $result->msg = __("Your password has been changed successfully!", 'aecore-class-ae-users-backend');
                     break;
                 default:
-                    $result->msg = __("User's data update successfully!", ET_DOMAIN);
+                    $result->msg = __("User's data update successfully!", 'aecore-class-ae-users-backend');
                     break;
             }
         } else {
-            $result->msg = __("User's data update successfully!", ET_DOMAIN);
+            $result->msg = __("User's data update successfully!", 'aecore-class-ae-users-backend');
         }
         return $result;
     }
@@ -492,10 +492,10 @@ class AE_Users
          * check user infomation
         */
         if (!$user) {
-            return new WP_Error('login_failed', __("The login information you entered were incorrect. Please try again!", ET_DOMAIN));
+            return new WP_Error('login_failed', __("The login information you entered were incorrect. Please try again!", 'aecore-class-ae-users-backend'));
         }
         if ( ( function_exists( 'cptch_check_custom_form' ) && cptch_check_custom_form() !== true ) || ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== '' ) ) {
-            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", ET_DOMAIN));
+            return new WP_Error('cptch_check_custom_form', __("Please complete the CAPTCHA.", 'aecore-class-ae-users-backend'));
         }
 
         if(is_multisite() && !is_user_member_of_blog($user->ID)) {
@@ -528,7 +528,7 @@ class AE_Users
             do_action('ae_login_user', $result);
         }
         if(!isset($result->msg)){
-            $result->msg = __("You have signed in successfully!", ET_DOMAIN);
+            $result->msg = __("You have signed in successfully!", 'aecore-class-ae-users-backend');
         }
         return apply_filters( 'ae_after_login_user', $result);
     }
@@ -544,12 +544,12 @@ class AE_Users
         global $current_user;
         
         if ((int)$data['ID'] !== $current_user->ID && !current_user_can('remove_users')) {
-            return new WP_Error('ae_permission_denied', __("You cannot change other user password", ET_DOMAIN));
+            return new WP_Error('ae_permission_denied', __("You cannot change other user password", 'aecore-class-ae-users-backend'));
         }
         
         if ($data['renew_password'] != $data['new_password']) {
             // password missmatch
-            return new WP_Error('ae_pass_mismatch', __("Retype password is not equal.", ET_DOMAIN));    
+            return new WP_Error('ae_pass_mismatch', __("Retype password is not equal.", 'aecore-class-ae-users-backend'));    
         }        
         
         $old_pass = $data['old_password'];
@@ -576,12 +576,12 @@ class AE_Users
          * validate user input
          */
         if (empty($user_data['user_login'])) {
-            $errors->add('empty_username', __('ERROR: Enter username or email address.', ET_DOMAIN));
+            $errors->add('empty_username', __('ERROR: Enter username or email address.', 'aecore-class-ae-users-backend'));
         } else if (strpos($user_data['user_login'], '@')) {
             $user_data = get_user_by('email', trim($user_data['user_login']));
             
             // user is not exist
-            if (empty($user_data)) $errors->add('invalid_email', __('ERROR: There is no user registered with that email address.', ET_DOMAIN));
+            if (empty($user_data)) $errors->add('invalid_email', __('ERROR: There is no user registered with that email address.', 'aecore-class-ae-users-backend'));
         } else {
             $login = trim($user_data['user_login']);
             $user_data = get_user_by('login', $login);
@@ -592,7 +592,7 @@ class AE_Users
         if ($errors->get_error_code()) return $errors;
         
         if (!$user_data) {
-            $errors->add('invalidcombo', __('ERROR: Invalid username or email address.', ET_DOMAIN));
+            $errors->add('invalidcombo', __('ERROR: Invalid username or email address.', 'aecore-class-ae-users-backend'));
             return $errors;
         }
         
@@ -604,7 +604,7 @@ class AE_Users
         
         $allow = apply_filters('allow_password_reset', true, $user_data->ID);
         
-        if (!$allow) return new WP_Error('no_password_reset', __('Password reset is not allowed for this user', ET_DOMAIN));
+        if (!$allow) return new WP_Error('no_password_reset', __('Password reset is not allowed for this user', 'aecore-class-ae-users-backend'));
         else if (is_wp_error($allow)) return $allow;
         
         $key = $wpdb->get_var($wpdb->prepare("SELECT user_activation_key FROM $wpdb->users WHERE user_login = %s", $user_login));
@@ -626,7 +626,7 @@ class AE_Users
 
         return array(
                 'success' => true,
-                'msg'     => __("We have sent an reset password mail to your mailbox. Please check your mail.", ET_DOMAIN)
+                'msg'     => __("We have sent an reset password mail to your mailbox. Please check your mail.", 'aecore-class-ae-users-backend')
             );
     }
 
@@ -641,13 +641,13 @@ class AE_Users
         
         $key = preg_replace('/[^a-z0-9]/i', '', $key);
         
-        if (empty($key) || !is_string($key)) return new WP_Error('invalid_key', __('Invalid Activation Key.', ET_DOMAIN));
+        if (empty($key) || !is_string($key)) return new WP_Error('invalid_key', __('Invalid Activation Key.', 'aecore-class-ae-users-backend'));
         
-        if (empty($login) || !is_string($login)) return new WP_Error('invalid_key', __('Invalid User Name', ET_DOMAIN));
+        if (empty($login) || !is_string($login)) return new WP_Error('invalid_key', __('Invalid User Name', 'aecore-class-ae-users-backend'));
         
         $user = $wpdb->get_row($wpdb->prepare("SELECT * FROM $wpdb->users WHERE user_activation_key = %s AND user_login = %s", esc_sql($key) , esc_sql($login)));
         
-        if (empty($user)) return new WP_Error('invalid_key', __('Invalid Activation Key.', ET_DOMAIN));
+        if (empty($user)) return new WP_Error('invalid_key', __('Invalid Activation Key.', 'aecore-class-ae-users-backend'));
         
         return $user;
     }
@@ -664,9 +664,9 @@ class AE_Users
      */
     function resetpass($args) {
         try {
-            if (empty($args['user_login'])) throw new Exception(__("Username is empty.", ET_DOMAIN));
-            if (empty($args['user_key'])) throw new Exception(__("Invalid Activation Key", ET_DOMAIN));
-            if (empty($args['new_password'])) throw new Exception(__("Please enter your new password", ET_DOMAIN));
+            if (empty($args['user_login'])) throw new Exception(__("Username is empty.", 'aecore-class-ae-users-backend'));
+            if (empty($args['user_key'])) throw new Exception(__("Invalid Activation Key", 'aecore-class-ae-users-backend'));
+            if (empty($args['new_password'])) throw new Exception(__("Please enter your new password", 'aecore-class-ae-users-backend'));
             
             $args['user_pass'] = $args['new_password'];
             // validate activation key
@@ -703,7 +703,7 @@ class AE_Users
         do_action('ae_user_inbox', $author, $request['message']);
         return array(
                 'success' => true,
-                'msg'     => __("Your message has been sent successfully!", ET_DOMAIN)
+                'msg'     => __("Your message has been sent successfully!", 'aecore-class-ae-users-backend')
             );
     }
     
@@ -814,7 +814,7 @@ class AE_Users
                 break;
 
             default:
-                return new WP_Error('invalid_method', __("Invalid method", ET_DOMAIN));
+                return new WP_Error('invalid_method', __("Invalid method", 'aecore-class-ae-users-backend'));
         }
         
         /**
@@ -837,7 +837,7 @@ class AE_Users
         ));
 
         if (ae_user_role($user[0]->ID) == FREELANCER) {
-            $subject = sprintf(__("Invitation to interview", ET_DOMAIN), get_option('blogname'));
+            $subject = sprintf(__("Invitation to interview", 'aecore-class-ae-users-backend'), get_option('blogname'));
 
             if (ae_get_option('user_confirm')) {
 
@@ -944,12 +944,12 @@ class AE_UserAction extends AE_Base
             'pages'   => $users['pages'],
             'paginate' => $users['paginate'],
             'paged'   => $request['paged'] + 1,
-            'msg'     => __("Get users successfull", ET_DOMAIN),
+            'msg'     => __("Get users successfull", 'aecore-class-ae-users-backend'),
             'total'=> $users['total']
         );
         
         if (empty($users['data'])) {
-            $response['msg'] = __("No user found by your query", ET_DOMAIN);
+            $response['msg'] = __("No user found by your query", 'aecore-class-ae-users-backend');
         }
         
         wp_send_json($response);
@@ -980,7 +980,7 @@ class AE_UserAction extends AE_Base
                     $mailing = AE_Mailing::get_instance();
                     $send_mail = $mailing->request_confirm_mail($user_ID);
                     if($send_mail) {
-                        $response['msg'] = __( 'New confirm email already send to your email account.' , ET_DOMAIN );
+                        $response['msg'] = __( 'New confirm email already send to your email account.' , 'aecore-class-ae-users-backend' );
                         $secure = ( 'https' === parse_url( site_url(), PHP_URL_SCHEME ) && 'https' === parse_url( home_url(), PHP_URL_SCHEME ) );
                         setcookie( 'ae_sent_activation_code', 1, time() + 300, COOKIEPATH, COOKIE_DOMAIN, $secure );
                         if ( SITECOOKIEPATH != COOKIEPATH )
@@ -988,14 +988,14 @@ class AE_UserAction extends AE_Base
                             setcookie( 'ae_sent_activation_code', 1, time() + 300, SITECOOKIEPATH, COOKIE_DOMAIN, $secure );
                         }
                     }else {
-                        $response['msg'] = __( 'An unknown error has occurred. Please try again later.' , ET_DOMAIN );
+                        $response['msg'] = __( 'An unknown error has occurred. Please try again later.' , 'aecore-class-ae-users-backend' );
                         $response['success'] = false;
                     }
                 }
                 else{
                     $response = array(
                         'success' => false,
-                        'msg'     => __('Please wait 5 minutes to resend an activation code!', ET_DOMAIN)
+                        'msg'     => __('Please wait 5 minutes to resend an activation code!', 'aecore-class-ae-users-backend')
                     );
                 }
             } 

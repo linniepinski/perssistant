@@ -14,7 +14,7 @@ get_header(); ?>
 		<!-- blog header -->
 		<div class="row">
 		    <div class="col-md-12 blog-classic-top">
-		        <h2><?php _e("Not Found", ET_DOMAIN); ?></h2>
+		        <h2><?php _e("Not Found", '404'); ?></h2>
 		    </div>
 		</div>      
 		<!--// blog header  -->	
@@ -26,7 +26,7 @@ get_header(); ?>
 	<div class="row block-posts block-page">
 		<div class="col-md-9 col-sm-12 col-ms-12 posts-container" id="left_content">
             <div class="page-notfound-content">
-                <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', ET_DOMAIN ); ?></p>
+                <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', '404' ); ?></p>
 				<?php get_search_form(); ?>
             </div><!-- end page content -->
 		</div><!-- LEFT CONTENT -->

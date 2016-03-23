@@ -43,19 +43,19 @@ $biddata = array();
 
             <div class="col-xs-4 col-md-4">
 
-                <span><?php printf(__('FREELANCER BIDDING (%s)', ET_DOMAIN), $number_bids); ?></span>
+                <span><?php printf(__('FREELANCER BIDDING (%s)', 'list-bids'), $number_bids); ?></span>
 
             </div>
 
             <div class="col-xs-3 col-md-3">
 
-                <span><?php _e('REPUTATION', ET_DOMAIN); ?></span>
+                <span><?php _e('REPUTATION', 'list-bids'); ?></span>
 
             </div>
 
             <div class="col-xs-5 col-md-5">
 
-                <span><?php _e('BID', ET_DOMAIN); ?></span>
+                <span><?php _e('BID', 'list-bids'); ?></span>
 
             </div>
 
@@ -120,9 +120,9 @@ $biddata = array();
 
                 <div class="col-md-12">
                     <?php if ((ae_user_role($user_ID) == FREELANCER) || !is_user_logged_in()) { ?>
-                        <span><?php _e('ABOUT EMPLOYER', ET_DOMAIN); ?></span>
+                        <span><?php _e('ABOUT EMPLOYER', 'list-bids'); ?></span>
                     <?php } else { ?>
-                        <span><?php _e('ABOUT VIRTUAL ASSISTANT', ET_DOMAIN); ?></span>
+                        <span><?php _e('ABOUT VIRTUAL ASSISTANT', 'list-bids'); ?></span>
                     <?php } ?>
 
                 </div>
@@ -184,7 +184,7 @@ $biddata = array();
                     <div class="info-company">
                         <h3 class="info-company-name"><?php echo $user_data->display_name; ?></h3>
                         <span class="time-since">
-                           <?php printf(__('Member Since %s', ET_DOMAIN), date(get_option('date_format'), strtotime($user_data->user_registered))); ?>
+                           <?php printf(__('Member Since %s', 'list-bids'), date(get_option('date_format'), strtotime($user_data->user_registered))); ?>
                         </span>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ $biddata = array();
 
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <span class="text"><?php _e('Email Verified:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Email Verified:', 'list-bids'); ?></span>
                         <span class="text-right verified"><?php if ($author_email_verified) {
                                 echo "<i class='fa fa-check'></i> Verified";
                             } else {
@@ -203,7 +203,7 @@ $biddata = array();
 
                     <li>
                         <i class="fa fa-phone"></i>
-                        <span class="text"><?php _e('Phone Verified:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Phone Verified:', 'list-bids'); ?></span>
                         <span class="text-right verified"><?php if ($author_phone_verified) {
                                 echo "<i class='fa fa-check'></i> Verified";
                             } else {
@@ -213,35 +213,35 @@ $biddata = array();
 
                     <li>
                         <i class="fa fa-dollar"></i>
-                        <span class="text"><?php _e('Hourly Rate:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Hourly Rate:', 'list-bids'); ?></span>
                         <span class="text-right"><?php echo $hourly_rate_price . $currency['icon'] . '/h'; ?></span>
                     </li>
                     <li>
                         <i class="fa fa-star"></i>
-                        <span class="text"><?php _e('Rating:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Rating:', 'list-bids'); ?></span>
                         <div class="rate-it" data-score="<?php echo $rating['rating_score']; ?>"></div>
                     </li>
                     <li>
                         <i class="fa fa-pagelines"></i>
-                        <span class="text"><?php _e('Experience:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Experience:', 'list-bids'); ?></span>
                         <span class="text-right"><?php echo $experience . ' years'; ?></span>
                     </li>
                     <li>
                         <i class="fa fa-briefcase"></i>
-                        <span class="text"><?php _e('Projects worked:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Projects worked:', 'list-bids'); ?></span>
                         <span class="text-right"><?php echo $bid_posts; ?></span>
                     </li>
 
                     <li>
                         <i class="fa fa-money"></i>
-                        <span class="text"><?php _e('Total earned:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Total earned:', 'list-bids'); ?></span>
                         <span
                             class="text-right"><?php echo fre_price_format(fre_count_total_user_earned($user_data->ID)); ?></span>
                     </li>
 
                     <li>
                         <i class="fa fa-map-marker"></i>
-                        <span class="text"><?php _e('Country:', ET_DOMAIN); ?></span>
+                        <span class="text"><?php _e('Country:', 'list-bids'); ?></span>
                         <span class="text-right">
                             <?php
                             echo $country;

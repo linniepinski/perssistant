@@ -12,18 +12,18 @@ function fre_register_project()
 {
 
     $labels = array(
-        'name' => __('Projects', ET_DOMAIN),
-        'singular_name' => __('Project', ET_DOMAIN),
-        'add_new' => _x('Add New project', ET_DOMAIN, ET_DOMAIN),
-        'add_new_item' => __('Add New project', ET_DOMAIN),
-        'edit_item' => __('Edit project', ET_DOMAIN),
-        'new_item' => __('New project', ET_DOMAIN),
-        'view_item' => __('View project', ET_DOMAIN),
-        'search_items' => __('Search Projects', ET_DOMAIN),
-        'not_found' => __('No Projects found', ET_DOMAIN),
-        'not_found_in_trash' => __('No Projects found in Trash', ET_DOMAIN),
-        'parent_item_colon' => __('Parent project:', ET_DOMAIN),
-        'menu_name' => __('Projects', ET_DOMAIN),
+        'name' => __('Projects', 'projects-backend'),
+        'singular_name' => __('Project', 'projects-backend'),
+        'add_new' => _x('Add New project', 'projects-backend', 'projects-backend'),
+        'add_new_item' => __('Add New project', 'projects-backend'),
+        'edit_item' => __('Edit project', 'projects-backend'),
+        'new_item' => __('New project', 'projects-backend'),
+        'view_item' => __('View project', 'projects-backend'),
+        'search_items' => __('Search Projects', 'projects-backend'),
+        'not_found' => __('No Projects found', 'projects-backend'),
+        'not_found_in_trash' => __('No Projects found in Trash', 'projects-backend'),
+        'parent_item_colon' => __('Parent project:', 'projects-backend'),
+        'menu_name' => __('Projects', 'projects-backend'),
     );
 
     $args = array(
@@ -67,20 +67,20 @@ function fre_register_project()
      * @uses  Inserts new taxonomy project category  object into the list
      */
     $labels = array(
-        'name' => _x('Project Categories', 'Taxonomy plural name', ET_DOMAIN),
-        'singular_name' => _x('Project Category', 'Taxonomy singular name', ET_DOMAIN),
-        'search_items' => __('Search Project Categories', ET_DOMAIN),
-        'popular_items' => __('Popular Project Categories', ET_DOMAIN),
-        'all_items' => __('All Project Categories', ET_DOMAIN),
-        'parent_item' => __('Parent Project Category', ET_DOMAIN),
-        'parent_item_colon' => __('Parent Project Category', ET_DOMAIN),
-        'edit_item' => __('Edit Project Category', ET_DOMAIN),
-        'update_item' => __('Update Project Category', ET_DOMAIN),
-        'add_new_item' => __('Add New Project Category', ET_DOMAIN),
-        'new_item_name' => __('New Project Category Name', ET_DOMAIN),
-        'add_or_remove_items' => __('Add or remove Project Categories', ET_DOMAIN),
-        'choose_from_most_used' => __('Choose from most used enginetheme', ET_DOMAIN),
-        'menu_name' => __('Project Category', ET_DOMAIN),
+        'name' => _x('Project Categories', 'Taxonomy plural name', 'projects-backend'),
+        'singular_name' => _x('Project Category', 'Taxonomy singular name', 'projects-backend'),
+        'search_items' => __('Search Project Categories', 'projects-backend'),
+        'popular_items' => __('Popular Project Categories', 'projects-backend'),
+        'all_items' => __('All Project Categories', 'projects-backend'),
+        'parent_item' => __('Parent Project Category', 'projects-backend'),
+        'parent_item_colon' => __('Parent Project Category', 'projects-backend'),
+        'edit_item' => __('Edit Project Category', 'projects-backend'),
+        'update_item' => __('Update Project Category', 'projects-backend'),
+        'add_new_item' => __('Add New Project Category', 'projects-backend'),
+        'new_item_name' => __('New Project Category Name', 'projects-backend'),
+        'add_or_remove_items' => __('Add or remove Project Categories', 'projects-backend'),
+        'choose_from_most_used' => __('Choose from most used enginetheme', 'projects-backend'),
+        'menu_name' => __('Project Category', 'projects-backend'),
     );
 
     $args = array(
@@ -116,20 +116,20 @@ function fre_register_project()
      */
 
     $labels = array(
-        'name' => _x('Project Types', 'Taxonomy plural name', ET_DOMAIN),
-        'singular_name' => _x('Project Type', 'Taxonomy singular name', ET_DOMAIN),
-        'search_items' => __('Search Project Types', ET_DOMAIN),
-        'popular_items' => __('Popular Project Types', ET_DOMAIN),
-        'all_items' => __('All Project Types', ET_DOMAIN),
-        'parent_item' => __('Parent Project Type', ET_DOMAIN),
-        'parent_item_colon' => __('Parent Project Type', ET_DOMAIN),
-        'edit_item' => __('Edit Project Type', ET_DOMAIN),
-        'update_item' => __('Update Project Type', ET_DOMAIN),
-        'add_new_item' => __('Add New Project Type', ET_DOMAIN),
-        'new_item_name' => __('New Project Type Name', ET_DOMAIN),
-        'add_or_remove_items' => __('Add or remove Project Types', ET_DOMAIN),
-        'choose_from_most_used' => __('Choose from most used enginetheme', ET_DOMAIN),
-        'menu_name' => __('Project Type', ET_DOMAIN),
+        'name' => _x('Project Types', 'Taxonomy plural name', 'projects-backend'),
+        'singular_name' => _x('Project Type', 'Taxonomy singular name', 'projects-backend'),
+        'search_items' => __('Search Project Types', 'projects-backend'),
+        'popular_items' => __('Popular Project Types', 'projects-backend'),
+        'all_items' => __('All Project Types', 'projects-backend'),
+        'parent_item' => __('Parent Project Type', 'projects-backend'),
+        'parent_item_colon' => __('Parent Project Type', 'projects-backend'),
+        'edit_item' => __('Edit Project Type', 'projects-backend'),
+        'update_item' => __('Update Project Type', 'projects-backend'),
+        'add_new_item' => __('Add New Project Type', 'projects-backend'),
+        'new_item_name' => __('New Project Type Name', 'projects-backend'),
+        'add_or_remove_items' => __('Add or remove Project Types', 'projects-backend'),
+        'choose_from_most_used' => __('Choose from most used enginetheme', 'projects-backend'),
+        'menu_name' => __('Project Type', 'projects-backend'),
     );
 
     $args = array(
@@ -412,20 +412,20 @@ class Fre_ProjectAction extends AE_PostAction
         if (!AE_Users::is_activate($user_ID)) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("Your account is pending. You have to activate your account to continue this step.", ET_DOMAIN)
+                'msg' => __("Your account is pending. You have to activate your account to continue this step.", 'projects-backend')
             ));
         };
         if (check_existing_post_name($request['post_title']) && $request['method'] != 'update') {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("Current title name already exists", ET_DOMAIN)
+                'msg' => __("Current title name already exists", 'projects-backend')
             ));
         }
         // prevent freelancer submit project
         if (!fre_share_role() && ae_user_role() == FREELANCER) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("You need an employer account to post a project.", ET_DOMAIN)
+                'msg' => __("You need an employer account to post a project.", 'projects-backend')
             ));
         }
 
@@ -518,7 +518,7 @@ class Fre_ProjectAction extends AE_PostAction
                         // set redirect url
                         'redirect_url' => $result->permalink
                     ),
-                    'msg' => __("Submit place successfull.", ET_DOMAIN)
+                    'msg' => __("Submit place successfull.", 'projects-backend')
                 );
 
                 // send response
@@ -529,7 +529,7 @@ class Fre_ProjectAction extends AE_PostAction
             wp_send_json(array(
                 'success' => true,
                 'data' => $result,
-                'msg' => __("Update project successful!", ET_DOMAIN)
+                'msg' => __("Update project successful!", 'projects-backend')
             ));
         } else {
 
@@ -570,6 +570,7 @@ class Fre_ProjectAction extends AE_PostAction
         $result->bid_budget_text = fre_price_format(get_post_meta($result->accepted, 'bid_budget', true));
 
         $result->rating_score = (float)get_post_meta($result->ID, 'rating_score', true);
+        $result->permalink = apply_filters( 'wpml_permalink', get_permalink(), ICL_LANGUAGE_CODE );
 
         $comment = get_comments(array(
             'post_id' => $result->ID,
@@ -582,14 +583,14 @@ class Fre_ProjectAction extends AE_PostAction
         }
 
         // project is disputing
-        if ($result->post_status == 'disputing') $result->status_text = __("DISPUTE", ET_DOMAIN);
+        if ($result->post_status == 'disputing') $result->status_text = __("DISPUTE", 'projects-backend');
 
         // project completed text status
-        if ($result->post_status == 'complete') $result->status_text = __("COMPLETED", ET_DOMAIN);
+        if ($result->post_status == 'complete') $result->status_text = __("COMPLETED", 'projects-backend');
 
         // project close for working when accepted a bids
         if ($result->post_status == 'close') {
-            $result->status_text = __("HIRED", ET_DOMAIN);
+            $result->status_text = __("HIRED", 'projects-backend');
             if ($user_ID == $result->post_author) {
                 $result->workspace_link = add_query_arg(array(
                     'workspace' => 1
@@ -623,7 +624,7 @@ class Fre_ProjectAction extends AE_PostAction
             }
         }
 
-        $result->posted_by = sprintf(__("Posted by %s", ET_DOMAIN), $result->author_name);
+        $result->posted_by = sprintf(__("Posted by %s", 'projects-backend'), $result->author_name);
         return $result;
     }
 
@@ -710,28 +711,28 @@ class Fre_ProjectAction extends AE_PostAction
 
                 // if not disable package plan
             ) {
-                return new WP_Error('empty_package', __("Cannot create a place with an empty package.", ET_DOMAIN));
+                return new WP_Error('empty_package', __("Cannot create a place with an empty package.", 'projects-backend'));
             }
 
             if (!isset($data['post_content']) || $data['post_content'] == '') {
-                return new WP_Error('ad_empty_content', __("You should enter short description for your place.", ET_DOMAIN));
+                return new WP_Error('ad_empty_content', __("You should enter short description for your place.", 'projects-backend'));
             }
 
             if (!isset($data['post_title']) || $data['post_title'] == '') {
-                return new WP_Error('ad_empty_content', __("Your place should have a title.", ET_DOMAIN));
+                return new WP_Error('ad_empty_content', __("Your place should have a title.", 'projects-backend'));
             }
 
             if (!isset($data['project_category']) && in_array('project_category', $require_fields) && !is_admin()) {
-                return new WP_Error('invalid_category', __("Your project should has a category!", ET_DOMAIN));
+                return new WP_Error('invalid_category', __("Your project should has a category!", 'projects-backend'));
             }
 
             if (!isset($data['et_budget']) && in_array('et_budget', $require_fields)) {
-                return new WP_Error('invalid_budget', __("Your have to enter a budget for your requirement!", ET_DOMAIN));
+                return new WP_Error('invalid_budget', __("Your have to enter a budget for your requirement!", 'projects-backend'));
             }
         }
 
         if (in_array('et_budget', $require_fields) && $data['et_budget'] <= 0) {
-            return new WP_Error('budget_less_than_zero', __("Your budget have to greater than zero!", ET_DOMAIN));
+            return new WP_Error('budget_less_than_zero', __("Your budget have to greater than zero!", 'projects-backend'));
         }
 
         /**
@@ -758,7 +759,7 @@ class Fre_ProjectAction extends AE_PostAction
             $package = $ae_post_factory->get('pack');
 
             $plan = $package->get($data['et_payment_package']);
-            if (!$plan) return new WP_Error('invalid_plan', __("You have selected an invalid plan.", ET_DOMAIN));
+            if (!$plan) return new WP_Error('invalid_plan', __("You have selected an invalid plan.", 'projects-backend'));
 
             /**
              * if user can not edit others posts the et_featured will no be unset and check,
@@ -1050,7 +1051,7 @@ if (!function_exists('fre_display_user_info')) {
                     echo $user_data->display_name; ?></h3>
                 <span class="time-since">
                     <?php
-                    printf(__('Member Since %s', ET_DOMAIN), date(get_option('date_format'), strtotime($user_data->user_registered))); ?>
+                    printf(__('Member Since %s', 'projects-backend'), date(get_option('date_format'), strtotime($user_data->user_registered))); ?>
                 </span>
             </div>
         </div>
@@ -1061,7 +1062,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="address"><i class="fa fa-map-marker"></i>
                         <?php
-                        _e('Location:', ET_DOMAIN); ?>
+                        _e('Location:', 'projects-backend'); ?>
                         <span class="info" title="<?php
                         echo $user_data->location; ?>">
                             <?php
@@ -1072,7 +1073,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="spent"><i class="fa fa-money"></i>
                         <?php
-                        _e('Earning:', ET_DOMAIN); ?>
+                        _e('Earning:', 'projects-backend'); ?>
                         <span class="info">
                             <?php
                             echo fre_price_format(fre_count_meta_value_by_user($user_id, 'bid', 'bid_budget')); ?>
@@ -1082,7 +1083,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="briefcase"><i class="fa fa-briefcase"></i>
                         <?php
-                        _e('Project complete:', ET_DOMAIN); ?>
+                        _e('Project complete:', 'projects-backend'); ?>
                         <span class="info">
                             <?php
                             echo fre_count_user_posts_by_type($user_id, BID, 'complete'); ?>
@@ -1094,7 +1095,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="address"><i class="fa fa-map-marker"></i>
                         <?php
-                        _e('Location:', ET_DOMAIN); ?>
+                        _e('Location:', 'projects-backend'); ?>
                         <span class="info" title="<?php
                         echo $user_data->location; ?>">
                             <?php
@@ -1105,7 +1106,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="spent"><i class="fa fa-money"></i>
                         <?php
-                        _e('Total spent:', ET_DOMAIN); ?>
+                        _e('Total spent:', 'projects-backend'); ?>
                         <span class="info"><?php
                             echo fre_price_format(fre_count_total_user_spent($user_id)); ?></span>
                     </div>
@@ -1113,7 +1114,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="briefcase"><i class="fa fa-briefcase"></i>
                         <?php
-                        _e('Project posted:', ET_DOMAIN); ?>
+                        _e('Project posted:', 'projects-backend'); ?>
                         <span class="info"><?php
                             echo fre_count_user_posts_by_type($user_id, 'project', '"publish","complete","close" ', true); ?></span>
 
@@ -1122,7 +1123,7 @@ if (!function_exists('fre_display_user_info')) {
                 <li>
                     <div class="hired"><i class="fa fa-send"></i>
                         <?php
-                        _e('Hires:', ET_DOMAIN); ?>
+                        _e('Hires:', 'projects-backend'); ?>
                         <span class="info"><?php
                             echo fre_count_user_posts_by_type($user_id, 'project', 'complete'); ?></span>
                     </div>

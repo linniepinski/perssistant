@@ -78,7 +78,7 @@ class AE_list {
 			echo '</ul>';	
 
 		?>	
-			<input id="confirm_delete_<?php echo $this->params['name']; ?>" value="<?php _e("Are you sure you want to delete this?", ET_DOMAIN); ?>" type="hidden" />
+			<input id="confirm_delete_<?php echo $this->params['name']; ?>" value="<?php _e("Are you sure you want to delete this?", 'aecore-fields-backend'); ?>" type="hidden" />
 			<!-- add new item form -->
 			<div class="item">
 				<?php load_template( $this->form_template ); ?>

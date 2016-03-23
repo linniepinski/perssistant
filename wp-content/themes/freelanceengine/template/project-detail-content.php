@@ -13,7 +13,7 @@ $convert = $project = $post_object->current_post;
     <div class="row">
         <div class="col-md-8">
             <div class="content-require-project">
-                <h4><?php _e('Project description:',ET_DOMAIN);?></h4>
+                <h4><?php _e('Project description:','project-detail-content');?></h4>
                 <?php the_content(); ?>
             </div>
             <?php if(!ae_get_option('disable_project_comment')) { ?>
@@ -29,8 +29,8 @@ $convert = $project = $post_object->current_post;
                 
                 do_action('before_sidebar_single_project', $project);
 
-                list_tax_of_project( get_the_ID(), __('Skills required:',ET_DOMAIN), 'skill' );                                                                                     
-                list_tax_of_project( get_the_ID(), __('Category:',ET_DOMAIN)  );
+                list_tax_of_project( get_the_ID(), __('Skills required:','project-detail-content'), 'skill' );                                                                                     
+                list_tax_of_project( get_the_ID(), __('Category:','project-detail-content')  );
 
                 // list project attachment
                 $attachment = get_children( array(
@@ -40,7 +40,7 @@ $convert = $project = $post_object->current_post;
                         'post_type' => 'attachment'
                       ), OBJECT );
                 if(!empty($attachment)) {
-                    echo '<h3 class="title-content">'. __("Attachment:", ET_DOMAIN) .'</h3>';
+                    echo '<h3 class="title-content">'. __("Attachment:", 'project-detail-content') .'</h3>';
                     echo '<ul class="list-file-attack-report">';
                     foreach ($attachment as $key => $att) {
                         $file_type = wp_check_filetype($att->post_title, array('jpg' => 'image/jpeg',

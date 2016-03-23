@@ -19,7 +19,7 @@ $post_object = $ae_post_factory->get('portfolio');
     <div class="col-md-4 col-sm-4 col-xs-4 list-item-portfolio-last add-porfolio-button">
         <a href="#" class="add-portfolio">
             <i class="fa fa-plus"></i>
-            <?php _e('Add you work', ET_DOMAIN); ?>
+            <?php _e('Add you work', 'list-portfolios'); ?>
         </a>
     </div>
 </div>

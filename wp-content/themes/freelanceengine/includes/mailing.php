@@ -34,7 +34,7 @@ Class Fre_Mailing extends AE_Mailing
             $message = ae_get_option('bid_mail_template');
             $bid_msg = get_post_field('post_content', $bid_id);
             $message = str_replace('[message]', $bid_msg, $message);
-            $subject = sprintf(__("Your project posted on %s has a new bid.", ET_DOMAIN) , get_option('blogname'));
+            $subject = sprintf(__("Your project posted on %s has a new bid.", 'mailing-backend') , get_option('blogname'));
             
             return $this->wp_mail($author->user_email, $subject, $message, array(
                 'post' => $project_id,
@@ -61,7 +61,7 @@ Class Fre_Mailing extends AE_Mailing
         }
         $message = str_replace('[review]', $replace, $message);
         
-        $subject = __("Project you joined has a review.", ET_DOMAIN);
+        $subject = __("Project you joined has a review.", 'mailing-backend');
         $bid_id = get_post_meta($project_id, 'accepted', true);
         $freelancer_id = get_post_field('post_author', $bid_id);
         $author = get_userdata($freelancer_id);
@@ -83,7 +83,7 @@ Class Fre_Mailing extends AE_Mailing
         $message = ae_get_option('complete_mail_template');
         $message = str_replace('[review]', '', $message);
         
-        $subject = __("Your posted project has a review.", ET_DOMAIN);
+        $subject = __("Your posted project has a review.", 'mailing-backend');
         
         // $bid_id = get_post_meta($project_id, 'accepted', true);
         $employer_id = get_post_field('post_author', $project_id);
@@ -111,7 +111,7 @@ Class Fre_Mailing extends AE_Mailing
             $user_email = get_the_author_meta('user_email', $user_id);
             
             // mail subject
-            $subject = sprintf(__("You have a new invitation to join project from %s.", ET_DOMAIN) , get_option('blogname'));
+            $subject = sprintf(__("You have a new invitation to join project from %s.", 'mailing-backend') , get_option('blogname'));
             
             // build list of project send to freelancer
             $project_info = '';
@@ -158,7 +158,7 @@ Class Fre_Mailing extends AE_Mailing
         $user_email = get_the_author_meta('user_email', $freelancer_id);
         
         // mail subject
-        $subject = sprintf(__("Your bid on project %s has been accepted.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("Your bid on project %s has been accepted.", 'mailing-backend') , get_the_title($project_id));
         
         // get mail template
         $message = '';
@@ -170,7 +170,7 @@ Class Fre_Mailing extends AE_Mailing
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         $message = str_replace('[workspace]', $workspace_link, $message);
         
         return $this->wp_mail($user_email, $subject, $message, array(
@@ -191,7 +191,7 @@ Class Fre_Mailing extends AE_Mailing
         $user_email = get_the_author_meta('user_email', $receiver);
         
         // mail subject
-        $subject = sprintf(__("You have a new message on %s workspace.", ET_DOMAIN) , get_the_title($project));
+        $subject = sprintf(__("You have a new message on %s workspace.", 'mailing-backend') , get_the_title($project));
         $workspace_link = add_query_arg(array(
             'workspace' => 1
         ) , get_permalink($project));
@@ -202,7 +202,7 @@ Class Fre_Mailing extends AE_Mailing
         $mail_template = str_replace('[message]', $message->comment_content, $mail_template);
         
         // replace workspace place holder
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
         
         // send mail
@@ -224,7 +224,7 @@ Class Fre_Mailing extends AE_Mailing
         $project = get_post($project_id);
         
         // email subject
-        $subject = sprintf(__("Have a new report on project %s.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("Have a new report on project %s.", 'mailing-backend') , get_the_title($project_id));
         
         if ($project->post_author == $user_ID) {
             
@@ -250,7 +250,7 @@ Class Fre_Mailing extends AE_Mailing
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         // replace workspace place holder
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
         
@@ -282,7 +282,7 @@ Class Fre_Mailing extends AE_Mailing
         $project = get_post($project_id);
         
         // email subject
-        $subject = sprintf(__("Project %s was closed.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("Project %s was closed.", 'mailing-backend') , get_the_title($project_id));
         
         // mail to freelancer when project owner send a report
         $mail_template = ae_get_option('employer_close_mail_template');
@@ -296,7 +296,7 @@ Class Fre_Mailing extends AE_Mailing
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         // replace workspace place holder
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
         
@@ -328,7 +328,7 @@ Class Fre_Mailing extends AE_Mailing
         $project = get_post($project_id);
         
         // email subject
-        $subject = sprintf(__("User quit your project %s.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("User quit your project %s.", 'mailing-backend') , get_the_title($project_id));
         
         // mail to employer when freelancer working on project send a new report
         $mail_template = ae_get_option('freelancer_quit_mail_template');
@@ -340,7 +340,7 @@ Class Fre_Mailing extends AE_Mailing
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
 
         // replace workspace place holder
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
@@ -377,13 +377,13 @@ Class Fre_Mailing extends AE_Mailing
         
         // mail to project owner
         $user_email = get_the_author_meta('user_email', $project_owner);
-        $subject = sprintf(__("You have got a refund on project %s.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("You have got a refund on project %s.", 'mailing-backend') , get_the_title($project_id));
 
         $workspace_link = add_query_arg(array(
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         // replace workspace place holder
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
 
@@ -394,7 +394,7 @@ Class Fre_Mailing extends AE_Mailing
         
         // mail to freelancer
         $user_email = get_the_author_meta('user_email', $bid_owner);
-        $subject = sprintf(__("Project %s you worked on has refunded.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("Project %s you worked on has refunded.", 'mailing-backend') , get_the_title($project_id));
         $this->wp_mail($user_email, $subject, $mail_template, array(
             'user_id' => $bid_owner,
             'post' => $project_id
@@ -416,13 +416,13 @@ Class Fre_Mailing extends AE_Mailing
         
         // mail to project owner
         $user_email = get_the_author_meta('user_email', $project_owner);
-        $subject = sprintf(__("Your presend payment on project %s has been transfer.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("Your presend payment on project %s has been transfer.", 'mailing-backend') , get_the_title($project_id));
         
         $workspace_link = add_query_arg(array(
             'workspace' => 1
         ) , get_permalink($project_id));
 
-        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", ET_DOMAIN) . '</a>';
+        $workspace_link = '<a href="' . $workspace_link . '">' . __("Workspace", 'mailing-backend') . '</a>';
         // replace workspace place holder
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
 
@@ -433,7 +433,7 @@ Class Fre_Mailing extends AE_Mailing
         
         // mail to freelancer
         $user_email = get_the_author_meta('user_email', $bid_owner);
-        $subject = sprintf(__("You have been sent payment base on project %s.", ET_DOMAIN) , get_the_title($project_id));
+        $subject = sprintf(__("You have been sent payment base on project %s.", 'mailing-backend') , get_the_title($project_id));
         $this->wp_mail($user_email, $subject, $mail_template, array(
             'user_id' => $bid_owner,
             'post' => $project_id
@@ -451,11 +451,11 @@ Class Fre_Mailing extends AE_Mailing
         if (!ae_get_option('manual_transfer')) {
             
             // mail to admin
-            $subject = sprintf(__("Project %s has been completed and money has transfered.", ET_DOMAIN) , get_the_title($project_id));
-            $admin_template = sprintf(__("Project %s has been completed and money has transfered. You can check workspace and project details", ET_DOMAIN) , get_the_title($project_id));
+            $subject = sprintf(__("Project %s has been completed and money has transfered.", 'mailing-backend') , get_the_title($project_id));
+            $admin_template = sprintf(__("Project %s has been completed and money has transfered. You can check workspace and project details", 'mailing-backend') , get_the_title($project_id));
         } else {
-            $subject = sprintf(__("Project %s has been completed and waiting your confirm.", ET_DOMAIN) , get_the_title($project_id));
-            $admin_template = sprintf(__("Project %s has been completed. Please check it and transfer money to freelancer.", ET_DOMAIN) , get_the_title($project_id));
+            $subject = sprintf(__("Project %s has been completed and waiting your confirm.", 'mailing-backend') , get_the_title($project_id));
+            $admin_template = sprintf(__("Project %s has been completed. Please check it and transfer money to freelancer.", 'mailing-backend') , get_the_title($project_id));
         }
         
         $admin_template.= get_permalink($project_id);

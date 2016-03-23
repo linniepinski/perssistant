@@ -194,7 +194,7 @@ abstract class AE_Payment extends AE_Base
         $job = get_post($adID);
         
         if ($author != $job->post_author && !current_user_can('manage_options')) {
-            $author_error = __("Post author information is incorrect!", ET_DOMAIN);
+            $author_error = __("Post author information is incorrect!", 'aecore-membership-backend');
             $errors[] = $author_error;
         }
         
@@ -237,7 +237,7 @@ abstract class AE_Payment extends AE_Base
         
         $plan->ID = $adID;
         
-        // $ship    =   array( 'street_address' => isset($company_location['full_location']) ? $company_location['full_location'] : __("No location", ET_DOMAIN));
+        // $ship    =   array( 'street_address' => isset($company_location['full_location']) ? $company_location['full_location'] : __("No location", 'aecore-membership-backend'));
         // filter shipping
         $ship = apply_filters('ae_payment_ship', array());
         
@@ -283,7 +283,7 @@ abstract class AE_Payment extends AE_Base
             $response = array(
                 'success' => false,
                 'paymentType' => $paymentType,
-                'msg' => __("Invalid payment gateway", ET_DOMAIN)
+                'msg' => __("Invalid payment gateway", 'aecore-membership-backend')
             );
         }
         
@@ -382,7 +382,7 @@ class AE_FreeVisitor extends ET_PaymentVisitor
                 return array(
                     'ACK' => false,
                     'payment_type' => 'free',
-                    'msg' => __("Invalid Payment package", ET_DOMAIN)
+                    'msg' => __("Invalid Payment package", 'aecore-membership-backend')
                 );
             }
             
@@ -400,7 +400,7 @@ class AE_FreeVisitor extends ET_PaymentVisitor
         return array(
             'ACK' => false,
             'payment_type' => 'free',
-            'msg' => __("Invalid Post ID", ET_DOMAIN)
+            'msg' => __("Invalid Post ID", 'aecore-membership-backend')
         );
     }
 }
@@ -463,7 +463,7 @@ class AE_UsePackageVisitor extends ET_PaymentVisitor
                         return array(
                             'ACK' => false,
                             'payment_type' => 'usePackage',
-                            'msg' => __("Invalid Order or Package", ET_DOMAIN)
+                            'msg' => __("Invalid Order or Package", 'aecore-membership-backend')
                         );
                     }
                     
@@ -510,7 +510,7 @@ class AE_UsePackageVisitor extends ET_PaymentVisitor
         return array(
             'ACK' => false,
             'payment_type' => 'usePackage',
-            'msg' => __("Invalid Ad ID", ET_DOMAIN)
+            'msg' => __("Invalid Ad ID", 'aecore-membership-backend')
         );
     }
 }
@@ -772,7 +772,7 @@ class AE_Package extends AE_Pack
         // backend text
         $this->localize = array(
             'backend_text' => array(
-                'text' => __('%s for %d days', ET_DOMAIN) ,
+                'text' => __('%s for %d days', 'aecore-membership-backend') ,
                 'data' => array(
                     'et_price',
                     'et_number_posts'
@@ -813,9 +813,9 @@ class AE_Package extends AE_Pack
             $align = ae_currency_align(false);
             
             if($align) {
-                $result->backend_text = sprintf(__("(%s)%s for %d days", ET_DOMAIN), $currency, $result->et_price,  $result->et_duration);
+                $result->backend_text = sprintf(__("(%s)%s for %d days", 'aecore-membership-backend'), $currency, $result->et_price,  $result->et_duration);
             }else {
-                $result->backend_text = sprintf(__("%s(%s) for %d days", ET_DOMAIN), $result->et_price, $currency, $result->et_duration);    
+                $result->backend_text = sprintf(__("%s(%s) for %d days", 'aecore-membership-backend'), $result->et_price, $currency, $result->et_duration);    
             }
             
         }
@@ -988,7 +988,7 @@ class AE_Package extends AE_Pack
             if ($number > $limit_free_plan) {
                 
                 $response['success'] = true;
-                $response['msg'] = __("You have reached the maximum number of Free posts. Please select another plan.", ET_DOMAIN);
+                $response['msg'] = __("You have reached the maximum number of Free posts. Please select another plan.", 'aecore-membership-backend');
                 
                 return $response;
             }

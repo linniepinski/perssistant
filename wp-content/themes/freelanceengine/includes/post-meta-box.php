@@ -45,7 +45,7 @@ class AE_PostMeta extends AE_Base
      * All about meta boxes in backend
      */
     public function add_meta_boxes() {
-        add_meta_box('place_info', __('Project Information', ET_DOMAIN) , array(
+        add_meta_box('place_info', __('Project Information', 'post-meta-box-backend') , array(
             $this,
             'meta_view'
         ) , $this->post_type, 'normal', 'high');
@@ -172,7 +172,7 @@ class AE_PostMeta extends AE_Base
             <input type="hidden" name="_et_nonce" value="<?php echo wp_create_nonce($this->nonce) ?>">
             <tbody>
             <tr valign="top">
-                <th scope="row"><label for=""><strong><?php _e("Packages:", ET_DOMAIN); ?></strong></label></th>
+                <th scope="row"><label for=""><strong><?php _e("Packages:", 'post-meta-box-backend'); ?></strong></label></th>
                 <td>
                     <?php
                     if(!empty($payment_package)) {
@@ -196,20 +196,20 @@ class AE_PostMeta extends AE_Base
             </tr>
 
             <tr valign="top">
-                <th scope="row"><label for="et_featured"><strong><?php _e("Featured post:", ET_DOMAIN); ?></strong></label></th>
+                <th scope="row"><label for="et_featured"><strong><?php _e("Featured post:", 'post-meta-box-backend'); ?></strong></label></th>
                 <td>
                     <input type="hidden" value="0" name="et_featured" />
                     <input value="1"  name="et_featured" type="checkbox" id="et_featured" <?php checked(1, $ad['et_featured'], true); ?> >
-                    <p class="description"><label for="et_featured" ><?php _e("Make this post featured in listing.", ET_DOMAIN); ?></label></p>
+                    <p class="description"><label for="et_featured" ><?php _e("Make this post featured in listing.", 'post-meta-box-backend'); ?></label></p>
                 </td>
                 
             </tr>
 
             <tr valign="top">
-                <th scope="row"><label for="et_expired_date"><strong><?php _e("Expired Date:", ET_DOMAIN); ?></strong></label></th>
+                <th scope="row"><label for="et_expired_date"><strong><?php _e("Expired Date:", 'post-meta-box-backend'); ?></strong></label></th>
                 <td>
                     <input  name="et_expired_date" type="text" id="et_expired_date" value="<?php echo $ad['et_expired_date'] ?>" class="regular-text">
-                    <p class="description"><?php _e("Specify a date when ad will be archived.", ET_DOMAIN); ?></p>
+                    <p class="description"><?php _e("Specify a date when ad will be archived.", 'post-meta-box-backend'); ?></p>
                 </td>
                 
             </tr>
@@ -218,11 +218,11 @@ class AE_PostMeta extends AE_Base
 
             <!-- <tr valign="top">
                 <?php $user = get_user_by('id', $ad['post_author']); ?> 
-                <th scope="row"><label for="seller"><strong><?php _e("Assign to a author:", ET_DOMAIN); ?></strong> </label></th>
+                <th scope="row"><label for="seller"><strong><?php _e("Assign to a author:", 'post-meta-box-backend'); ?></strong> </label></th>
                 <td>
                     <input name="seller" type="text" id="seller" value="<?php echo $user->display_name; ?>" class="regular-text ltr">
                     <input type="hidden" id="et_author" name="post_author_override" value="<?php echo $post->post_author ?>"> 
-                    <p class="description"><?php _e("Choose a seller to make him become the author of this item.", ET_DOMAIN); ?></p>
+                    <p class="description"><?php _e("Choose a seller to make him become the author of this item.", 'post-meta-box-backend'); ?></p>
                 </td>
             </tr> -->
             </tbody>

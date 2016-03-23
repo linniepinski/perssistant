@@ -12,7 +12,7 @@
 				<button type="button" class="close" data-dismiss="modal">
 				<i class="fa fa-times"></i>
 				</button>
-				<h4 class="modal-title"><?php _e("Add CV To Your Profile", ET_DOMAIN) ?></h4>
+				<h4 class="modal-title"><?php _e("Add CV To Your Profile", 'modal-add-CV') ?></h4>
 				<div class="loading-img" style="display:none; background-image: url(http://www.perssistant.com/wp-content/themes/freelanceengine/includes/aecore/assets/img//loading.gif); background-position: 50% 65%;"></div>
 			</div>
 			<div class="modal-body">
@@ -27,7 +27,7 @@
 						<div class="clearfix"></div>
 						<br />
 						<button type="submit" class="btn-submit btn-sumary btn-sub-create">
-							<?php _e("Add CV", ET_DOMAIN) ?>
+							<?php _e("Add CV", 'modal-add-CV') ?>
 						</button>
 					</div>
 				</form>	

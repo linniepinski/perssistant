@@ -11,19 +11,19 @@ function ae_init_testimonial() {
      */
     register_post_type('testimonial', array(
         'labels' => array(
-            'name'               => __('Testimonials', ET_DOMAIN) ,
-            'singular_name'      => __('Testimonial', ET_DOMAIN) ,
-            'add_new'            => __('Add New', ET_DOMAIN) ,
-            'add_new_item'       => __('Add New Testimonial', ET_DOMAIN) ,
-            'edit_item'          => __('Edit Testimonial', ET_DOMAIN) ,
-            'new_item'           => __('New Testimonial', ET_DOMAIN) ,
-            'all_items'          => __('All Testimonials', ET_DOMAIN) ,
-            'view_item'          => __('View Testimonial', ET_DOMAIN) ,
-            'search_items'       => __('Search Testimonials', ET_DOMAIN) ,
-            'not_found'          => __('No testimon found', ET_DOMAIN) ,
-            'not_found_in_trash' => __('No Testimonials found in Trash', ET_DOMAIN) ,
+            'name'               => __('Testimonials', 'testimonials-backend') ,
+            'singular_name'      => __('Testimonial', 'testimonials-backend') ,
+            'add_new'            => __('Add New', 'testimonials-backend') ,
+            'add_new_item'       => __('Add New Testimonial', 'testimonials-backend') ,
+            'edit_item'          => __('Edit Testimonial', 'testimonials-backend') ,
+            'new_item'           => __('New Testimonial', 'testimonials-backend') ,
+            'all_items'          => __('All Testimonials', 'testimonials-backend') ,
+            'view_item'          => __('View Testimonial', 'testimonials-backend') ,
+            'search_items'       => __('Search Testimonials', 'testimonials-backend') ,
+            'not_found'          => __('No testimon found', 'testimonials-backend') ,
+            'not_found_in_trash' => __('No Testimonials found in Trash', 'testimonials-backend') ,
             'parent_item_colon'  => '',
-            'menu_name'          => __('Testimonials', ET_DOMAIN)
+            'menu_name'          => __('Testimonials', 'testimonials-backend')
         ) ,
         'public'             => true,
         'publicly_queryable' => false,
@@ -54,7 +54,7 @@ function test_add_meta_box() {
 
         add_meta_box(
             'testimonial_sectionid',
-            __( 'Testimonials Infomation', ET_DOMAIN ),
+            __( 'Testimonials Infomation', 'testimonials-backend' ),
             'test_meta_box_callback',
             $screen
         );
@@ -79,7 +79,7 @@ function test_meta_box_callback( $post ) {
     $value = get_post_meta( $post->ID, '_test_category', true );
 
     echo '<label for="test_new_field">';
-    _e( 'Category:', ET_DOMAIN );
+    _e( 'Category:', 'testimonials-backend' );
     echo '</label> ';
     echo '<input type="text" id="test_new_field" name="_test_category" value="' . esc_attr( $value ) . '" size="45" />';
 }

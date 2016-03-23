@@ -21,7 +21,7 @@ $author_name = get_the_author_meta('display_name', $post->post_author);
         <div class="clearfix"></div>
     </div>
     <div class="info-bottom">
-        <span class="name-author"><?php printf(__("Posted by %s", ET_DOMAIN), $author_name); ?></span>
+        <span class="name-author"><?php printf(__("Posted by %s", 'project-item-mobile'), $author_name); ?></span>
         <span class="price-project"><?php echo $current->budget; ?></span>
     </div>
 </li>

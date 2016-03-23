@@ -49,7 +49,7 @@ class Fre_Message extends AE_Comments
 
         unset($comment->comment_author_email);
         
-        $comment->message_time = sprintf(__('on %s', ET_DOMAIN) , get_comment_date($date_format, $comment)) . '&nbsp;' . sprintf(__('at %s', ET_DOMAIN) , get_comment_date($time_format, $comment));
+        $comment->message_time = sprintf(__('on %s', 'messages-backend') , get_comment_date($date_format, $comment)) . '&nbsp;' . sprintf(__('at %s', 'messages-backend') , get_comment_date($time_format, $comment));
 
         $file_arr = get_comment_meta( $comment->comment_ID, 'fre_comment_file', true );
         $comment->file_list = '';
@@ -102,21 +102,21 @@ class Fre_MessageAction extends AE_Base
         if (empty($_REQUEST['comment_post_ID'])) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("Error! Can not specify which project you are working on.", ET_DOMAIN)
+                'msg' => __("Error! Can not specify which project you are working on.", 'messages-backend')
             ));
         }
         
         if (empty($_REQUEST['comment_content'])) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("You cannot send an empty message.", ET_DOMAIN)
+                'msg' => __("You cannot send an empty message.", 'messages-backend')
             ));
         }
         
         if (!$user_ID) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("You have to login.", ET_DOMAIN)
+                'msg' => __("You have to login.", 'messages-backend')
             ));
         }
         
@@ -133,7 +133,7 @@ class Fre_MessageAction extends AE_Base
         if ($user_ID != $project->post_author && $user_ID != $bid->post_author) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("You are not working on this project.", ET_DOMAIN)
+                'msg' => __("You are not working on this project.", 'messages-backend')
             ));
         }
         
@@ -242,7 +242,7 @@ class Fre_MessageAction extends AE_Base
         $permission = fre_access_workspace($project);
         $project_link = get_permalink( $project->ID );
         if($permission){
-            echo '<a style="font-weight:600;" href='.add_query_arg(array('workspace' => 1), $project_link).'>'.__("Open Workspace", ET_DOMAIN).' <i class="fa fa-arrow-right"></i></a>';
+            echo '<a style="font-weight:600;" href='.add_query_arg(array('workspace' => 1), $project_link).'>'.__("Open Workspace", 'messages-backend').' <i class="fa fa-arrow-right"></i></a>';
         }
     }
 

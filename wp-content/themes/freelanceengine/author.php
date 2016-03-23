@@ -62,14 +62,14 @@ if($convert) {
     			<div class="row">
                 	<div class="col-md-6 col-xs-8">
                     	<ol class="breadcrumb">
-                            <li><a href="<?php echo home_url(); ?>"><?php _e("Home", ET_DOMAIN); ?></a></li>
-                            <li class="active"><?php printf(__("Profile of %s", ET_DOMAIN), $author_name); ?></li>
+                            <li><a href="<?php echo home_url(); ?>"><?php _e("Home", 'author'); ?></a></li>
+                            <li class="active"><?php printf(__("Profile of %s", 'author'), $author_name); ?></li>
                         </ol>
                     </div>
 
                     <?php /* if($next_post) { ?>
                         <div class="col-md-6 col-xs-4">
-                        	<a title="<?php the_author_meta('display_name', $next_post->post_author) ?>" href="<?php echo get_author_posts_url($next_post->post_author);  ?>" class="prj-next-link"><?php _e('Next Profile', ET_DOMAIN);?> <i class="fa fa-angle-double-right"></i></a>
+                        	<a title="<?php the_author_meta('display_name', $next_post->post_author) ?>" href="<?php echo get_author_posts_url($next_post->post_author);  ?>" class="prj-next-link"><?php _e('Next Profile', 'author');?> <i class="fa fa-angle-double-right"></i></a>
                         </div>
                     <?php }*/ ?>
                 </div>
@@ -84,7 +84,7 @@ if($convert) {
                     	<!-- Title -->
                     	<div class="row title-tab-profile">
                             <div class="col-md-12">
-                                <h2><?php printf(__('ABOUT %s', ET_DOMAIN), strtoupper($author_name) ); ?></h2>
+                                <h2><?php printf(__('ABOUT %s', 'author'), strtoupper($author_name) ); ?></h2>
                             </div>
                         </div>
                         <!-- Title / End -->
@@ -100,7 +100,7 @@ if($convert) {
                                         <span class="position-profile"><?php echo $convert->et_professional_title; ?></span>
                                     <?php } ?> 
 
-                                        <span class="number-review-profile"><?php if($count_review < 2) printf(__('%d review', ET_DOMAIN), $count_review ); else printf(__('%d reviews', ET_DOMAIN), $count_review );?></span>
+                                        <span class="number-review-profile"><?php if($count_review < 2) printf(__('%d review', 'author'), $count_review ); else printf(__('%d reviews', 'author'), $count_review );?></span>
                                     </li>
                                     
                                 </ul>  
@@ -121,7 +121,7 @@ if($convert) {
                                 <?php if($convert) { ?>
                                 <!-- overview -->
                                 <div class="profile-overview">
-                                	<h4 class="title-single-profile"><?php _e('Overview', ET_DOMAIN);?></h4>
+                                	<h4 class="title-single-profile"><?php _e('Overview', 'author');?></h4>
                                     <p><?php echo $convert->post_content; ?></p>
                                     <?php 
                                     if(function_exists('et_the_field')) {
@@ -170,7 +170,7 @@ if($convert) {
                     <!-- Title -->
                     <div class="row title-tab-profile">
                         <div class="col-md-12">
-                            <h2><?php _e('INFO', ET_DOMAIN);?></h2>
+                            <h2><?php _e('INFO', 'author');?></h2>
                         </div>
                     </div>
                     <?php if( ae_user_role($author_id) == FREELANCER ){
@@ -183,12 +183,12 @@ if($convert) {
                         <?php if($author_available == 'on' || $author_available == '' ){ ?>
                             <div class="contact-link">
                                 <a href="#" data-toggle="modal" class="invite-freelancer btn-sumary <?php if ( is_user_logged_in() ) { echo 'invite-open';}else{ echo 'login-btn';} ?>"  data-user="<?php echo $convert->post_author ?>">
-                                    <?php _e("Invite me to join", ET_DOMAIN) ?>
+                                    <?php _e("Invite me to join", 'author') ?>
                                 </a> 
-                                 <!--  <span><?php /*_e("Or", ET_DOMAIN); */?></span>-->
+                                 <!--  <span><?php /*_e("Or", 'author'); */?></span>-->
                                 <?php if ( is_user_logged_in() ){?>
                                 <a href="<?php if ( is_user_logged_in() ) {echo '/chat-room?chat_contact='.$convert->post_author;} else{ echo '#" data-toggle="modal';} ?>" class="<?php if ( is_user_logged_in() ) {} else{ echo 'login-btn';} ?> btn-sumary contact-me-chat">
-                                    <?php _e("Contact me", ET_DOMAIN) ?>
+                                    <?php _e("Contact me", 'author') ?>
                                 </a>
                                 <?php } ?>
                             </div>
@@ -201,46 +201,46 @@ if($convert) {
                             <ul class="list-detail-info">
 				<li>
                                     <i class="fa fa-envelope"></i>
-                                    <span class="text"><?php _e('Email Verified:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Email Verified:','author');?></span>
                                     <span class="text-right verified"><?php if( $author_email_verified ) { echo "<i class='fa fa-check'></i> Verified"; } else { echo "Not Verified"; } ?></span>
                                 </li>
 								
 				<li>
                                     <i class="fa fa-phone"></i>
-                                    <span class="text"><?php _e('Phone Verified:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Phone Verified:','author');?></span>
                                     <span class="text-right verified"><?php if( $author_phone_verified ) { echo "<i class='fa fa-check'></i> Verified"; } else { echo "Not Verified"; } ?></span>
                                 </li>
 
                             	<li>
                                     <i class="fa fa-dollar"></i>
-                                    <span class="text"><?php _e('Hourly Rate:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Hourly Rate:','author');?></span>
                                     <span class="text-right"><?php echo $convert->hourly_rate_price;  ?></span>
                                 </li>
                                 <li>
                                 	<i class="fa fa-star"></i>
-                                    <span class="text"><?php _e('Rating:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Rating:','author');?></span>
                                 	<div class="rate-it" data-score="<?php echo $rating['rating_score']; ?>"></div>
                                 </li>
                                 <li>
                                     <i class="fa fa-pagelines"></i>
-                                    <span class="text"><?php _e('Experience:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Experience:','author');?></span>
                                     <span class="text-right"><?php echo $convert->experience; ?></span>
                                 </li>
                                 <li>
                                     <i class="fa fa-briefcase"></i>
-                                    <span class="text"><?php _e('Projects worked:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Projects worked:','author');?></span>
                                     <span class="text-right"><?php echo $bid_posts; ?></span>
                                 </li>
                                 
                                 <li>
                                     <i class="fa fa-money"></i>
-                                    <span class="text"><?php _e('Total earned:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Total earned:','author');?></span>
                                     <span class="text-right"><?php echo fre_price_format(fre_count_total_user_earned($author_id)); ?></span>
                                 </li>
                                 
                                 <li>
                                     <i class="fa fa-map-marker"></i>
-                                    <span class="text"><?php _e('Country:',ET_DOMAIN);?></span>
+                                    <span class="text"><?php _e('Country:','author');?></span>
                                     <span class="text-right">
                                         <?php
                                         if($convert->country){

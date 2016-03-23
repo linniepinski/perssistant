@@ -51,7 +51,7 @@ $comment_pages  =   ceil( $total_messages/$query_args['number'] );
 
 $query_args['total'] = $comment_pages;
 
-$query_args['text'] = __("Load older message", ET_DOMAIN);
+$query_args['text'] = __("Load older message", 'project-workspaces');
 
 
 
@@ -93,7 +93,7 @@ $message_object = Fre_Message::get_instance();
 
                             <textarea name="comment_content" class="content-chat"></textarea>
 
-                            <input type="submit" name="submit" value="<?php _e( "Send" , ET_DOMAIN ); ?>" class="submit-chat-content">
+                            <input type="submit" name="submit" value="<?php _e( "Send" , 'project-workspaces' ); ?>" class="submit-chat-content">
 
                             <input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
 
@@ -191,7 +191,7 @@ $message_object = Fre_Message::get_instance();
 
                     echo '<a style="font-weight:600;" href="'.get_permalink( $post->ID ).'">
 
-                            <i class="fa fa-arrow-left"></i> '.__("Back To Project Page", ET_DOMAIN).
+                            <i class="fa fa-arrow-left"></i> '.__("Back To Project Page", 'project-workspaces').
 
                         '</a>';
 
@@ -199,7 +199,7 @@ $message_object = Fre_Message::get_instance();
 
                 ?>
 
-                <h4><?php _e('Project description:',ET_DOMAIN);?></h4>
+                <h4><?php _e('Project description:','project-workspaces');?></h4>
 
                 <?php the_content(); ?>
 
@@ -260,7 +260,7 @@ $message_object = Fre_Message::get_instance();
                                     <div class="info-company">
                                         <h3 class="info-company-name"><?php echo $user_data->display_name; ?></h3>
                                         <span class="time-since">
-                                           <?php printf(__('Member Since %s', ET_DOMAIN) , date(get_option('date_format') , strtotime($user_data->user_registered))); ?>
+                                           <?php printf(__('Member Since %s', 'project-workspaces') , date(get_option('date_format') , strtotime($user_data->user_registered))); ?>
                                         </span>
                                     </div>
                                 </div>
@@ -269,46 +269,46 @@ $message_object = Fre_Message::get_instance();
                                    
                                     <li>
                                         <i class="fa fa-envelope"></i>
-                                        <span class="text"><?php _e('Email Verified:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Email Verified:','project-workspaces');?></span>
                                         <span class="text-right verified"><?php if( $author_email_verified ) { echo "<i class='fa fa-check'></i> Verified"; } else { echo "Not Verified"; } ?></span>
                                     </li>
 
                                     <li>
                                         <i class="fa fa-phone"></i>
-                                        <span class="text"><?php _e('Phone Verified:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Phone Verified:','project-workspaces');?></span>
                                         <span class="text-right verified"><?php if( $author_phone_verified ) { echo "<i class='fa fa-check'></i> Verified"; } else { echo "Not Verified"; } ?></span>
                                     </li>
 
                                     <li>
                                         <i class="fa fa-dollar"></i>
-                                        <span class="text"><?php _e('Hourly Rate:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Hourly Rate:','project-workspaces');?></span>
                                         <span class="text-right"><?php echo $hourly_rate_price . $currency['icon'] . '/h';  ?></span>
                                     </li>
                                     <li>
                                             <i class="fa fa-star"></i>
-                                        <span class="text"><?php _e('Rating:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Rating:','project-workspaces');?></span>
                                             <div class="rate-it" data-score="<?php echo $rating['rating_score']; ?>"></div>
                                     </li>
                                     <li>
                                         <i class="fa fa-pagelines"></i>
-                                        <span class="text"><?php _e('Experience:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Experience:','project-workspaces');?></span>
                                         <span class="text-right"><?php echo $experience . ' years'; ?></span>
                                     </li>
                                     <li>
                                         <i class="fa fa-briefcase"></i>
-                                        <span class="text"><?php _e('Projects worked:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Projects worked:','project-workspaces');?></span>
                                         <span class="text-right"><?php echo $bid_posts; ?></span>
                                     </li>
 
                                     <li>
                                         <i class="fa fa-money"></i>
-                                        <span class="text"><?php _e('Total earned:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Total earned:','project-workspaces');?></span>
                                         <span class="text-right"><?php echo fre_price_format(fre_count_total_user_earned($user_data->ID)); ?></span>
                                     </li>
 
                                     <li>
                                         <i class="fa fa-map-marker"></i>
-                                        <span class="text"><?php _e('Country:',ET_DOMAIN);?></span>
+                                        <span class="text"><?php _e('Country:','project-workspaces');?></span>
                                         <span class="text-right">
                                             <?php 
                                                 echo $arrCountry->country_name;

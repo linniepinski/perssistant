@@ -5,9 +5,9 @@ global $wp_query, $ae_post_factory, $user_ID, $post;
 
     <div class="form-group"><label for="bid_budget"><?php
             if(get_post_meta($post->ID,'type_budget',true) == 'hourly_rate'){
-                _e('Hourly rate', ET_DOMAIN);
+                _e('Hourly rate', 'form-update-bid-project-mobile');
             }else{
-                _e('Budget', ET_DOMAIN);
+                _e('Budget', 'form-update-bid-project-mobile');
             }
             ?>
         </label>
@@ -51,5 +51,5 @@ global $wp_query, $ae_post_factory, $user_ID, $post;
     <input type="hidden" name="action"
            value="ae-sync-bid"/>                        <?php do_action('after_bid_form'); ?>
     <button type="submit"
-            class="btn-submit-update btn-sumary btn-sub-create">                            <?php _e('Submit', ET_DOMAIN) ?>                        </button>
+            class="btn-submit-update btn-sumary btn-sub-create">                            <?php _e('Submit', 'form-update-bid-project-mobile') ?>                        </button>
 </form>

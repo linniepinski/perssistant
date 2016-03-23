@@ -18,7 +18,7 @@ $post_object = $ae_post_factory->get( BID );
             get_template_part( 'template/user', 'bid-item' );
         }
     } else {
-        echo '<li><span class="no-results">'.__('You are not bidding any project.', ET_DOMAIN).'</span></li>';
+        echo '<li><span class="no-results">'.__('You are not bidding any project.', 'list-user-bids').'</span></li>';
     }
 ?>
 	

@@ -481,7 +481,7 @@ function fre_upload_file() {
 
         'success' => false,
 
-        'msg' => __('There is an error occurred', ET_DOMAIN) ,
+        'msg' => __('There is an error occurred', 'theme-backend') ,
 
         'code' => 400,
 
@@ -493,7 +493,7 @@ function fre_upload_file() {
 
     if (!isset($_POST['fileID']) || empty($_POST['fileID'])) {
 
-        $res['msg'] = __('Missing image ID', ET_DOMAIN);
+        $res['msg'] = __('Missing image ID', 'theme-backend');
 
     } else {
 
@@ -507,7 +507,7 @@ function fre_upload_file() {
 
         if (!de_check_ajax_referer('file_et_uploader', false, false) && !check_ajax_referer('file_et_uploader', false, false)) {
 
-            $res['msg'] = __('Security error!', ET_DOMAIN);
+            $res['msg'] = __('Security error!', 'theme-backend');
 
         } elseif (isset($_FILES[$fileID])) {
 
@@ -589,7 +589,7 @@ function fre_upload_file() {
 
                         'success' => true,
 
-                        'msg' => __('File has been uploaded successfully', ET_DOMAIN) ,
+                        'msg' => __('File has been uploaded successfully', 'theme-backend') ,
 
                         'data' => $attach_data
 
@@ -599,7 +599,7 @@ function fre_upload_file() {
 
                 catch(Exception $e) {
 
-                    $res['msg'] = __('Error when updating settings.', ET_DOMAIN);
+                    $res['msg'] = __('Error when updating settings.', 'theme-backend');
 
                 }
 
@@ -611,7 +611,7 @@ function fre_upload_file() {
 
         } else {
 
-            $res['msg'] = __('Uploaded file not found', ET_DOMAIN);
+            $res['msg'] = __('Uploaded file not found', 'theme-backend');
 
         }
 

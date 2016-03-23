@@ -125,7 +125,7 @@ class AE_Language extends AE_Base
         if ($lang_name == "" || in_array($lang_name, $lang_arr)) {
             $return = array(
                 'success' => false,
-                'msg' => __("Invalid file name!", ET_DOMAIN)
+                'msg' => __("Invalid file name!", 'aecore-class-ae-languages')
             );
         } else {
             if ($this->generate_mo($lang_name)) {
@@ -136,7 +136,7 @@ class AE_Language extends AE_Base
                 
                 $return = array(
                     'success' => true,
-                    'msg' => __("Adding new language successfully.", ET_DOMAIN) ,
+                    'msg' => __("Adding new language successfully.", 'aecore-class-ae-languages') ,
                     'data' => array(
                         'lang_name' => $lang_name,
                         'ID' => $lang_name
@@ -196,7 +196,7 @@ class AE_Language extends AE_Base
         <div id="notice_wizard" class="et-create-folder-notice">
             <p>
             <?php 
-                printf( __("Theme functions required to create a folder wp-content/et-content. Please set chmod folder wp-content to 755.", ET_DOMAIN)) ;
+                printf( __("Theme functions required to create a folder wp-content/et-content. Please set chmod folder wp-content to 755.", 'aecore-class-ae-languages')) ;
             ?>
             </p>
         </div>
@@ -327,8 +327,8 @@ class AE_Language extends AE_Base
         $options = AE_Options::get_instance();
         $selected_lang = $options->website_language;
         
-        if (in_array($selected_lang, get_available_languages(THEME_LANGUAGE_PATH))) load_textdomain(ET_DOMAIN, THEME_LANGUAGE_PATH . "/$selected_lang.mo");
-        else load_textdomain(ET_DOMAIN, DEFAULT_LANGUAGE_PATH . "/$selected_lang.mo");
+        if (in_array($selected_lang, get_available_languages(THEME_LANGUAGE_PATH))) load_textdomain('aecore-class-ae-languages', THEME_LANGUAGE_PATH . "/$selected_lang.mo");
+        else load_textdomain('aecore-class-ae-languages', DEFAULT_LANGUAGE_PATH . "/$selected_lang.mo");
     }
     
     /** 
@@ -344,7 +344,7 @@ class AE_Language extends AE_Base
         if ($selected_lang == '' || $selected_lang == null || $selected_lang == 'null' || !in_array($selected_lang, $langArr)) {
             wp_send_json(array(
                 'success' => false,
-                'msg' => __("Invalid file name!", ET_DOMAIN)
+                'msg' => __("Invalid file name!", 'aecore-class-ae-languages')
             ));
             exit;
         }
@@ -356,7 +356,7 @@ class AE_Language extends AE_Base
         if (empty($singular) || empty($translation) || empty($context)) {
             wp_send_json(array(
                 'success' => true,
-                'msg' => __("There was no changes in your translation.", ET_DOMAIN)
+                'msg' => __("There was no changes in your translation.", 'aecore-class-ae-languages')
             ));
         }
         
@@ -429,7 +429,7 @@ class AE_Language extends AE_Base
         
         wp_send_json(array(
             'success' => true,
-            'msg' => __("Translation saved! ", ET_DOMAIN)
+            'msg' => __("Translation saved! ", 'aecore-class-ae-languages')
         ));
     }
     
@@ -484,7 +484,7 @@ class AE_Language extends AE_Base
 					<input type="hidden" value="' . $singular . '" name="singular[]">
 					<input type="hidden" value="' . $value->context . '" name="context[]">
 					<textarea type="text"  name="translations[]" class="autosize" row="1" style="height: auto;overflow: visible;"
-						placeholder="' . __("Type the translation in your language", ET_DOMAIN) . '" >' . $translate_txt . '</textarea>
+						placeholder="' . __("Type the translation in your language", 'aecore-class-ae-languages') . '" >' . $translate_txt . '</textarea>
 				</div>';
             
             $i++;
@@ -515,7 +515,7 @@ class AE_Language extends AE_Base
 					<input type="hidden" value="' . $singular . '" name="singular[]">
 					<input type="hidden" value="' . $value->context . '" name="context[]">
 					<textarea  type="text"  name="translations[]" class="autosize" row="1" style="height: auto;overflow: visible;"
-					placeholder="' . __("Type the translation in your language", ET_DOMAIN) . '" >' . $translate_txt . '</textarea>
+					placeholder="' . __("Type the translation in your language", 'aecore-class-ae-languages') . '" >' . $translate_txt . '</textarea>
 				</div>';
             
             $i++;
@@ -528,7 +528,7 @@ class AE_Language extends AE_Base
         $return = array(
             'success' => true,
             'data' => $data,
-            'msg' => __("Loading successfully!", ET_DOMAIN) ,
+            'msg' => __("Loading successfully!", 'aecore-class-ae-languages') ,
             'tran_arr' => $trans_arr
         );
         

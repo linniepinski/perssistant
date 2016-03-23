@@ -81,8 +81,8 @@ function ae_user_package_info($user_ID) {
         <?php
             $number_of_post = $package_data[$sku]['qty'];
             
-            if ($order->post_status == 'publish') printf(__("You purchased package <strong>%s</strong> and have %d post/s left.", ET_DOMAIN) , $package->post_title, $number_of_post);
-            if ($order->post_status == 'pending') printf(__("You purchased package <strong>%s</strong> and have %d post/s left. Your posted post is pending until payment.", ET_DOMAIN) , $package->post_title, $number_of_post);
+            if ($order->post_status == 'publish') printf(__("You purchased package <strong>%s</strong> and have %d post/s left.", 'aecore-payments-backend') , $package->post_title, $number_of_post);
+            if ($order->post_status == 'pending') printf(__("You purchased package <strong>%s</strong> and have %d post/s left. Your posted post is pending until payment.", 'aecore-payments-backend') , $package->post_title, $number_of_post);
 ?>
         </p>
     

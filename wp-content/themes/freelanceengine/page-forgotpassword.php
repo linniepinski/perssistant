@@ -44,7 +44,7 @@ get_header();
 
     <ol class="breadcrumb">
 
-        <li><a href="<?php echo home_url() ?>" title="<?php echo get_bloginfo( 'name' ); ?>" ><?php _e("Home", ET_DOMAIN); ?></a></li>
+        <li><a href="<?php echo home_url() ?>" title="<?php echo get_bloginfo( 'name' ); ?>" ><?php _e("Home", 'page-forgot-password'); ?></a></li>
 
         <li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
 
@@ -94,8 +94,7 @@ get_header();
 
 					<div class="form-group">
 
-						<label for="user_email"><?php _e('Enter your email here', ET_DOMAIN) ?></label>
-
+						<label><?php _e('Enter your email here', 'page-forgot-password') ?></label>
 						<input type="text" class="form-control" id="user_email" name="user_email" />
 
 					</div>
@@ -105,7 +104,7 @@ get_header();
 
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
 
-						<?php _e('Send', ET_DOMAIN) ?>
+						<?php _e('Send', 'page-forgot-password') ?>
 
 					</button>
 

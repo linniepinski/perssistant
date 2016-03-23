@@ -95,49 +95,48 @@ if (function_exists('fre_user_have_notify')) {
                 <?php if (ae_user_role($current_user->ID) == FREELANCER) { ?>
                     <li>
                         <a href="/projects" class="link-menu-nav">
-                            <?php _e('Find project', ET_DOMAIN) ?>
+                            <?php _e('Find project', 'header-mobile') ?>
                         </a>
                     </li>
                 <?php } else { ?>
                     <li>
                         <a href="/submit-project" class="link-menu-nav">
-                            <?php _e('Post project', ET_DOMAIN) ?>
+                            <?php _e('Post project', 'header-mobile') ?>
                         </a>
                     </li>
                 <?php } ?>
 
                 <li>
                     <a href="/how-it-works" class="link-menu-nav">
-                        <?php _e('How it works', ET_DOMAIN) ?>
+                        <?php _e('How it works', 'header-mobile') ?>
                     </a>
                 </li>
                 <li>
                     <a href="/chat-room" class="link-menu-nav">
-                        <?php _e('Messages', ET_DOMAIN) ?>
+                        <?php _e('Messages', 'header-mobile') ?>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo et_get_page_link('profile'); ?>#tab_account" class="link-menu-nav">
-                        <?php _e('Account Details', ET_DOMAIN) ?>
+                        <?php _e('Account Details', 'header-mobile') ?>
                     </a>
                 </li>
                 <?php if (ae_user_role($current_user->ID) == FREELANCER) { ?>
                     <li>
                         <a href="<?php echo et_get_page_link('profile'); ?>#tab_profile" class="link-menu-nav">
-                            <?php _e('Profile Details', ET_DOMAIN) ?>
+                            <?php _e('Profile Details', 'header-mobile') ?>
                         </a>
                     </li>
                 <?php } ?>
                 <li>
                     <a href="<?php echo et_get_page_link('profile'); ?>#tab_project" class="link-menu-nav">
-                        <?php _e('My project', ET_DOMAIN) ?>
-                    </a>
+                        <?php _e('My project', 'header-mobile') ?>                    </a>
                 </li>
                 <li>
                     <a href="<?php echo et_get_page_link('profile'); ?>#tab_notification"
                        class="link-menu-nav trigger-notification">
                         <?php
-                        _e("Notifications", ET_DOMAIN);
+                        _e("Notifications", 'header-mobile');
                         if ($notify_number) echo ' <span class="notify-number">(' . $notify_number . ')</span>';
                         ?>
                     </a>
@@ -145,18 +144,18 @@ if (function_exists('fre_user_have_notify')) {
                 <li>
                     <a href="<?php echo et_get_page_link('profile'); ?>#tab_change_pw" class="mb-change-password">
                         <i class="fa fa-key"></i>
-                        <?php _e('Change Password', ET_DOMAIN) ?>
+                        <?php _e('Change Password', 'header-mobile') ?>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo wp_logout_url(home_url()); ?>" class="logout-link">
-                        <i class="fa fa-sign-out"></i><?php _e('Log out', ET_DOMAIN) ?>
+                        <i class="fa fa-sign-out"></i><?php _e('Log out', 'header-mobile') ?>
                     </a>
                 </li>
             <?php } else { ?>
                 <li>
                     <a href="<?php echo et_get_page_link('auth') ?>" class="creat-team-link">
-                        <i class="fa fa-sign-in"></i><?php _e('Sign in', ET_DOMAIN) ?>
+                        <i class="fa fa-sign-in"></i><?php _e('Sign in', 'header-mobile') ?>
                     </a>
                 </li>
             <?php } ?>
@@ -205,7 +204,7 @@ if (function_exists('fre_user_have_notify')) {
                     <?php } else { ?>
                         <a class="non-login right_menu" href="<?php echo et_get_page_link('auth') ?>">
                             <span class="icon-form-header icon-user-header"></span>
-                            <span class="text"><?php _e("LOGIN", ET_DOMAIN) ?></span>
+                            <span class="text"><?php _e("LOGIN", 'header-mobile') ?></span>
                         </a>
                         <?php
                         // get template mobile header_login_template

@@ -27,11 +27,11 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                 <?php 
                     $total_count = get_comments(array( 'post_id' => $post->ID, 'type' => 'comment', 'count' => true, 'status' => 'approve' ));
                     if($total_count == 0){
-                        _e('0 <span class="text-normal">Comments</span>', ET_DOMAIN);
+                        _e('0 <span class="text-normal">Comments</span>', 'project-detail-info');
                     }elseif($total_count == 1) {
-                        _e('1 <span class="text-normal">Comment</span>', ET_DOMAIN);
+                        _e('1 <span class="text-normal">Comment</span>', 'project-detail-info');
                     }else {
-                        printf(__('%d <span class="text-normal">Comments</span>', ET_DOMAIN), $total_count);
+                        printf(__('%d <span class="text-normal">Comments</span>', 'project-detail-info'), $total_count);
                     } 
                 ?>
                 </li>
@@ -39,11 +39,11 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                     <span class="number-blue">
                         <?php 
                             if( $convert->total_bids == 0 ) {
-                                _e('0 <span class="text-normal">bids</span>', ET_DOMAIN);
+                                _e('0 <span class="text-normal">bids</span>', 'project-detail-info');
                             }elseif($convert->total_bids == 1) {
-                                _e('1 <span class="text-normal">bid</span>', ET_DOMAIN);
+                                _e('1 <span class="text-normal">bid</span>', 'project-detail-info');
                             }else{
-                                printf(__('%s <span class="text-normal">bids</span>', ET_DOMAIN),$convert->total_bids );
+                                printf(__('%s <span class="text-normal">bids</span>', 'project-detail-info'),$convert->total_bids );
                             }
                         ?>
                     </span>
@@ -57,22 +57,22 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                     ?>
                     </span>
                     <span class="text-normal">
-                        <?php printf(__("Avg Bid (%s)",ET_DOMAIN), $currency['code']);?>
+                        <?php printf(__("Avg Bid (%s)",'project-detail-info'), $currency['code']);?>
                     </span>
                 </li>
                 <li>
                     <?php if($post->post_status == 'publish') { ?>
                         <span class="number-blue"> 
-                            <?php _e("Open", ET_DOMAIN); ?> 
+                            <?php _e("Open", 'project-detail-info'); ?> 
                         </span> 
                         <span class="text-normal">
                         <?php
 //                            if( empty($et_expired_date) ) {
-//                                printf(__('%s ago',ET_DOMAIN), human_time_diff( get_post_time('U', true), time() ) );
+//                                printf(__('%s ago','project-detail-info'), human_time_diff( get_post_time('U', true), time() ) );
 //                            }else{
-//                                printf(__('%s left',ET_DOMAIN), human_time_diff( time(), strtotime($et_expired_date)) );
+//                                printf(__('%s left','project-detail-info'), human_time_diff( time(), strtotime($et_expired_date)) );
 //                            }
-                        printf(__('%s ago',ET_DOMAIN), human_time_diff( get_post_time('U', true), time() ) );
+                        printf(__('%s ago','project-detail-info'), human_time_diff( get_post_time('U', true), time() ) );
 
                         ?>
                         </span>
@@ -80,16 +80,16 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                         echo '<span class="number-blue">';
                         switch ($post->post_status) {
                             case 'complete':
-                                _e("Completed", ET_DOMAIN); 
+                                _e("Completed", 'project-detail-info'); 
                                 break;
                             case 'close':
-                                _e("Working", ET_DOMAIN); 
+                                _e("Working", 'project-detail-info'); 
                                 break;
                             case 'disputing':
-                                _e("Disputing", ET_DOMAIN); 
+                                _e("Disputing", 'project-detail-info'); 
                                 break;
                             case 'complete':
-                                _e("Completed", ET_DOMAIN); 
+                                _e("Completed", 'project-detail-info'); 
                                 break;
                             default:
                                 # code...
@@ -102,7 +102,7 @@ $currency           = ae_get_option('content_currency',array('align' => 'left', 
                     <?php  if( fre_share_role() || ae_user_role() == 'employer' || ae_user_role() == 'administrator' ){ ?>
                 <li>
                     <button id="clone_project" class="btn clone-button">
-                        <i class="fa fa-plus-circle"></i><?php _e('Create a Project like this',ET_DOMAIN);?>
+                        <i class="fa fa-plus-circle"></i><?php _e('Create a Project like this','project-detail-info');?>
                     </button>
                 </li>
 

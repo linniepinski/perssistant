@@ -17,7 +17,7 @@
                 {{= comment_content }}
             </div>
             <# if(file_list){ #>
-            <div class="title-attachment"><?php _e("Attachment", ET_DOMAIN); ?></div>
+            <div class="title-attachment"><?php _e("Attachment", 'report-item-mobile'); ?></div>
             {{= file_list }}
             <# } #>
         </div>
@@ -32,7 +32,7 @@
                     <i class="fa fa-times"></i>
                 </button>
                 <h4 class="modal-title">
-                    <?php _e("Bid acceptance", ET_DOMAIN) ?>
+                    <?php _e("Bid acceptance", 'report-item-mobile') ?>
                 </h4>
             </div>
             <div class="modal-body">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn-submit btn btn-primary btn-sumary btn-sub-create">
-                            <?php _e('Accept Bid', ET_DOMAIN) ?>
+                            <?php _e('Accept Bid', 'report-item-mobile') ?>
                         </button>
                     </div>
                 </form>
@@ -52,20 +52,20 @@
 </div><!-- /.modal -->
 <!-- MODAL BID acceptance PROJECT-->
 <script type="text/template" id="bid-info-template">
-    <label style="line-height:2.5;"><?php _e( 'You are about to accept this bid for' , ET_DOMAIN ); ?></label>
+    <label style="line-height:2.5;"><?php _e( 'You are about to accept this bid for' , 'report-item-mobile' ); ?></label>
     <p><strong class="color-green">{{=budget}}</strong><strong class="color-green"><i class="fa fa-check"></i></strong></p>
     <br>
-    <label style="line-height:2.5;"><?php _e( 'You have to pay' , ET_DOMAIN ); ?><br></label>
+    <label style="line-height:2.5;"><?php _e( 'You have to pay' , 'report-item-mobile' ); ?><br></label>
     <p class="text-credit-small">
-        <?php _e( 'Budget' , ET_DOMAIN ); ?> &nbsp; 
+        <?php _e( 'Budget' , 'report-item-mobile' ); ?> &nbsp; 
         <strong>{{= budget }}</strong>
     </p>
     <# if(commission){ #>
-    <p class="text-credit-small"><?php _e( 'Commission' , ET_DOMAIN ); ?> &nbsp;
+    <p class="text-credit-small"><?php _e( 'Commission' , 'report-item-mobile' ); ?> &nbsp;
         <strong style="color: #1faf67;">{{= commission }}</strong>
     </p>
     <# } #>
-    <p class="text-credit-small"><?php _e( 'Total' , ET_DOMAIN ); ?> &nbsp;
+    <p class="text-credit-small"><?php _e( 'Total' , 'report-item-mobile' ); ?> &nbsp;
         <strong style="color:#e74c3c;">{{=total}}</strong>
     </p>
     <br>

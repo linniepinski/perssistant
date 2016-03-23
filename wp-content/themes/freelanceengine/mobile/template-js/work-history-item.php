@@ -20,9 +20,9 @@ $author_id = get_query_var('author');
                 <div class="rate-it" data-score="{{= rating_score }}"></div>
             </span>            
         <# } else if(project_status == 'close'){ #>
-            <span class="status"><?php _e('Job is closed', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job is closed', 'work-history-item-mobile');?></span>
         <# } else { #>
-            <span class="status"><?php _e('Job in process', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job in process', 'work-history-item-mobile');?></span>
         <# } #>
         <div class="clearfix"></div>
     </div>
@@ -50,9 +50,9 @@ $author_id = get_query_var('author');
                 <div class="rate-it" data-score="{{= rating_score }}"></div>
             </span>            
         <# } else if(post_status == 'close'){ #>
-            <span class="status"><?php _e('Job is closed', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job is closed', 'work-history-item-mobile');?></span>
         <# } else { #>
-            <span class="status"><?php _e('Job in process', ET_DOMAIN);?></span>
+            <span class="status"><?php _e('Job in process', 'work-history-item-mobile');?></span>
         <# } #>
     </div>
 </script>

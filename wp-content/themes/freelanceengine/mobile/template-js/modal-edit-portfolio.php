@@ -9,7 +9,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                 <button type="button" class="close" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                 </button>
-                <h4 class="modal-title"><?php _e("Edit item for your Portfolio", ET_DOMAIN) ?></h4>
+                <h4 class="modal-title"><?php _e("Edit item for your Portfolio", 'modal-edit-portfolio-mobile') ?></h4>
             </div>
             <div class="modal-body">
                 <form id="edit_portfolio" class="auth-form edit_portfolio">
@@ -25,9 +25,9 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                         <span class="et_ajaxnonce hidden"
                               id="<?php echo wp_create_nonce('portfolio_img_edit_et_uploader'); ?>"></span>
 
-                        <p class="add-file"><?php _e('ADD FILES', ET_DOMAIN) ?></p>
+                        <p class="add-file"><?php _e('ADD FILES', 'modal-edit-portfolio-mobile') ?></p>
 
-                        <p class="drag-drop"><?php _e('Simply Drag & Drop', ET_DOMAIN) ?></p>
+                        <p class="drag-drop"><?php _e('Simply Drag & Drop', 'modal-edit-portfolio-mobile') ?></p>
 
                         <p class="browser-image">
                             <input type="button" id="portfolio_img_edit_browse_button"
@@ -36,17 +36,17 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                     </div>
                     <div class="clearfix"></div>
                     <div class="form-group">
-                        <label><?php _e('Portfolio Title', ET_DOMAIN) ?></label>
+                        <label><?php _e('Portfolio Title', 'modal-edit-portfolio-mobile') ?></label>
 
                         <p><input type="text" name="post_title" id="post_title"/></p>
                     </div>
                     <div class="form-group">
-                        <label><?php _e('Portfolio Description', ET_DOMAIN) ?></label>
+                        <label><?php _e('Portfolio Description', 'modal-edit-portfolio-mobile') ?></label>
                         <textarea name="post_content" id="post_content"></textarea>
                     </div>
                     <div class="clearfix"></div>
                     <div class="form-group portfolio-skills">
-                        <label><?php _e('Select Skill', ET_DOMAIN) ?></label>
+                        <label><?php _e('Select Skill', 'modal-edit-portfolio-mobile') ?></label>
 
 <!--                        <p>-->
 <!--                            <select id="skills" name="skill">-->
@@ -77,7 +77,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                             if (!$switch_skill) {
                                 ?>
                                 <input class="form-control skill" type="text" id="skill"
-                                       placeholder="<?php _e("Skills (max is 10)", ET_DOMAIN); ?>"
+                                       placeholder="<?php _e("Skills (max is 10)", 'modal-edit-portfolio-mobile'); ?>"
                                        name=""
                                        autocomplete="off" class="skill" spellcheck="false">
                                 <ul class="skills-list" id="skills_list"></ul>
@@ -89,7 +89,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
                                         $c_skills[] = $value->term_id;
                                     };
                                 }
-                                ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" multiple data-chosen-disable-search="" data-placeholder="' . __(" Skills (max is 10)", ET_DOMAIN) . '"',
+                                ae_tax_dropdown('skill', array('attr' => 'data-chosen-width="95%" multiple data-chosen-disable-search="" data-placeholder="' . __(" Skills (max is 10)", 'modal-edit-portfolio-mobile') . '"',
                                         'class' => 'sw_skill modal-skills required',
                                         'hide_empty' => false,
                                         'hierarchical' => true,
@@ -105,7 +105,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
 
                     <div class="clearfix"></div>
                     <button type="submit" class="btn-submit btn-sumary btn-sub-create">
-                        <?php _e('Add item', ET_DOMAIN) ?>
+                        <?php _e('Add item', 'modal-edit-portfolio-mobile') ?>
                     </button>
                 </form>
             </div>

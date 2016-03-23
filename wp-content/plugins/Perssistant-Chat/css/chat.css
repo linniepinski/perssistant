@@ -8,6 +8,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -54,12 +55,18 @@
     /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-ok-circled:before { content: '\e800'; } /* '' */
-.icon-circle:before { content: '\e801'; } /* '' */
+.icon-ok-circled:before {
+    content: '\e800';
+}
 
+/* '' */
+.icon-circle:before {
+    content: '\e801';
+}
 
+/* '' */
 
-form#chat{
+form#chat {
 
     /*margin-left: 10px;*/
     /*margin-right: 10px;*/
@@ -68,138 +75,188 @@ form#chat{
     border: 1px solid #ccc;
     /*box-shadow: 0 0 8px 1px #ccc;*/
 }
-.modal-vcenter{
-    padding-top: 0!important;
+
+.modal-vcenter {
+    padding-top: 0 !important;
 }
-.chat_history{
+
+.chat_history {
     overflow-y: auto;
     overflow-x: hidden;
     height: 53%;
 }
+
 /*a href class=" btn-sumary contact-me"*/
-.contact-me-chat{
-    background-color: green!important;
-    padding: 12px 25px!important;
+.contact-me-chat {
+    background-color: green !important;
+    padding: 12px 25px !important;
 }
+
 /**/
-.control-row{
+.control-row {
     margin-bottom: 5px;
 }
-.hr-chat{
+
+.hr-chat {
     margin: 10px 0;
 }
-.height-inherit{
+
+.height-inherit {
     height: inherit;
 }
-.send_button_chat{
-margin-left: 10px;
+
+.send_button_chat {
+    margin-left: 10px;
     margin-right: 10px;
 }
-.attach_file_chat{
+
+.attach_file_chat {
 
 }
-.message_box_chat{
+
+.message_box_chat {
     height: initial;
 }
-#search_chat .count-matches{
+
+#search_chat .count-matches {
     display: none;
 }
-.item_contact{
 
+.item_contact {
+    cursor: pointer;
+    margin-bottom: 5px;
 }
+
+.item_contact div {
+    display: inline-block;
+}
+
+.item_contact > .status {
+    float: right;
+}
+.item_contact > .count {
+    float: right;
+    margin-right: 4px;
+}
+
 #status-chat > .alert {
     padding: 5px;
     margin-bottom: 0;
 }
-.right-column-chat{
+
+.right-column-chat {
     height: 95%;
     border-left: 1px solid #ccc;
 }
 
-.sieve-custom{
+.sieve-custom {
     /*height: 425px;*/
     overflow-y: auto;
     height: 80%;
 
 }
-.the_author_chat{
+
+.the_author_chat {
 
 }
-.the_content_chat{
+
+.the_content_chat {
 
 }
-.the_time_chat{
+
+.the_time_chat {
 
 }
-.time{
+
+.time {
     margin-left: 23px;
 }
-.aut{
+
+.aut {
 
 }
-.cont{
+
+.cont {
 
 }
-.invate-to-chat-message{
+
+.invate-to-chat-message {
 
 }
-.btn-invate-on-bid{
- margin-top: 10px;
-    padding: 5px 7px!important;
+
+.btn-invate-on-bid {
+    margin-top: 10px;
+    padding: 5px 7px !important;
 }
-.btn-invate{
+
+.btn-invate {
     margin: 10px 10px 0px 0px;
 }
-.btn-invate-cancel{
+
+.btn-invate-cancel {
     margin-top: 10px;
 }
-.text-color-popup{
-    color: rgba(55,131,196,0.9)!important;
+
+.text-color-popup {
+    color: rgba(55, 131, 196, 0.9) !important;
 }
-.top-margin{
-    margin-top: 0!important;
+
+.top-margin {
+    margin-top: 0 !important;
 }
-.count-chat{
- background-color: #e74b3b!important;
+
+.count-chat {
+    background-color: #e74b3b !important;
 }
-.count-chat:after{
+
+.count-chat:after {
     /*content: "new";*/
 }
-.status-online{
-    margin-right: 10px;
+
+.status-online {
 }
-.online{
-color: green;
+
+.online {
+    color: green;
 }
-.afk{
+
+.afk {
     color: #ffca22;
 }
-.offline{
+
+.offline {
     color: #808080;
 }
+
 @media (max-width: 991px) {
 
-    .chat_history{
+    .chat_history {
         height: 35%;
     }
-    .sieve-custom{
+
+    .sieve-custom {
         height: 75%;
     }
+
     #status-chat > .alert {
         margin-bottom: 5px;
     }
 }
+
 @media (max-width: 767px) {
-    .sieve-custom{
+    .sieve-custom {
         /*height: 425px*/
     }
-    .chat_history{
+
+    .chat_history {
         height: 500px
     }
-    form#chat{
+
+    form#chat {
         border: none;
     }
-    .right-column-chat{
+
+    .right-column-chat {
         border-left: none;
     }
 }

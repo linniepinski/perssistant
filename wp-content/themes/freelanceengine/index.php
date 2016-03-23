@@ -21,10 +21,10 @@
 		<!-- blog header -->
 		<div class="row">
 		    <div class="col-md-12 blog-classic-top">
-		        <h2><?php _e("Blog",ET_DOMAIN) ?></h2>
+		        <h2><?php _e("Blog",'index') ?></h2>
 		        <form id="search-bar" action="<?php echo home_url() ?>">
 		            <i class="fa fa-search"></i>
-		            <input type="text" name="s" placeholder="<?php _e("Search at blog",ET_DOMAIN) ?>">
+		            <input type="text" name="s" placeholder="<?php _e("Search at blog",'index') ?>">
 		        </form>
 		    </div>
 		</div>      
@@ -40,7 +40,7 @@
 			if(have_posts()){
 				get_template_part( 'list', 'posts' );
 			} else {
-				echo '<h2>'.__( 'There is no posts yet', ET_DOMAIN ).'</h2>';
+				echo '<h2>'.__( 'There is no posts yet', 'index' ).'</h2>';
 			}
 		?>
 		</div><!-- LEFT CONTENT -->
@@ -52,4 +52,3 @@
 </div>
 <?php
 	get_footer();
-?>

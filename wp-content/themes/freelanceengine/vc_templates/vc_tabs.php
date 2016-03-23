@@ -75,7 +75,7 @@ if($element == 'wpb_tour') {
 // tab content
 $output .= "\n\t\t\t" . wpb_js_remove_wpautop( $content );
 
-$output .= "\n\t\t\t" . '<div class="wpb_tour_next_prev_nav vc_clearfix"> <span class="wpb_prev_slide"><a href="#prev" title="' . __( 'Previous tab', ET_DOMAIN ) . '">' . __( 'Previous tab', ET_DOMAIN ) . '</a></span> <span class="wpb_next_slide"><a href="#next" title="' . __( 'Next tab', ET_DOMAIN ) . '">' . __( 'Next tab', ET_DOMAIN ) . '</a></span></div>';
+$output .= "\n\t\t\t" . '<div class="wpb_tour_next_prev_nav vc_clearfix"> <span class="wpb_prev_slide"><a href="#prev" title="' . __( 'Previous tab', 'vc_tabs' ) . '">' . __( 'Previous tab', 'vc_tabs' ) . '</a></span> <span class="wpb_next_slide"><a href="#next" title="' . __( 'Next tab', 'vc_tabs' ) . '">' . __( 'Next tab', 'vc_tabs' ) . '</a></span></div>';
 
 }
 

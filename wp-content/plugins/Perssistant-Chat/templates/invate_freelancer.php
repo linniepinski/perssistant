@@ -1,13 +1,10 @@
-<?php
-
-?>
 <div class="modal modal-vcenter fade" id="popup_invate_freelancer_to_chat">
     <div class="modal-dialog top-margin">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true" style="font-size: 28px;">&times;</span></button>
-                <h4 class="modal-title text-center text-color-popup">Invite freelancer</h4>
+                <h4 class="modal-title text-center text-color-popup"><?php echo __("Invite freelancer", 'chat-frontend') ?></h4>
             </div>
             <hr>
             <form id="invate_freelancer_form">
@@ -16,7 +13,7 @@
                         <div class="col-xs-12">
 
 
-                            <label>Invitation message</label>
+                            <label><?php echo __("Invitation message", 'chat-frontend') ?></label>
                             <textarea id="invate_message_id" name="invate_message"
                                       class="form-control invate-to-chat-message">
 
@@ -30,9 +27,9 @@
 
 
                             <button type="button" class="btn btn-info pull-right btn-invate-cancel" data-dismiss="modal">
-                                Cancel
+                                <?php echo __("Cancel", 'chat-frontend') ?>
                             </button>
-                            <button type="submit" class="btn btn-primary pull-right btn-invate">Send invitation</button>
+                            <button type="submit" class="btn btn-primary pull-right btn-invate"><?php echo __("Send invitation", 'chat-frontend') ?></button>
                         </div>
                     </div>
                 </div>

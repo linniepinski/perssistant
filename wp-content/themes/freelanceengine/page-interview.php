@@ -139,7 +139,7 @@ get_header();
 
                         <button type="submit" class="btn-submit btn-sumary btn-sub-create">
 
-                            <?php _e('Update possible dates', ET_DOMAIN) ?>
+                            <?php _e('Update possible dates', 'page-interview') ?>
 
                         </button>
 

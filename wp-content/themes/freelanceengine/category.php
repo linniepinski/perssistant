@@ -24,7 +24,7 @@
 		        <h2><?php single_cat_title( '', true ); ?></h2>
 		        <form id="search-bar" action="<?php echo home_url() ?>">
 		            <i class="fa fa-search"></i>
-		            <input type="text" name="s" placeholder="<?php _e("Search at blog",ET_DOMAIN) ?>">
+		            <input type="text" name="s" placeholder="<?php _e("Search at blog",'category') ?>">
 		        </form>
 		    </div>
 		</div>      
@@ -40,7 +40,7 @@
 			if(have_posts()){
 				get_template_part( 'list', 'posts' );
 			} else {
-				echo '<h2>'.__( 'There is no posts yet', ET_DOMAIN ).'</h2>';
+				echo '<h2>'.__( 'There is no posts yet', 'category' ).'</h2>';
 			}
 		?>
 		</div><!-- LEFT CONTENT -->

@@ -10,7 +10,7 @@
                 <div class="col-md-6">
                 <# if(post_status == 'publish') {#>
                 <a class="btn btn-apply-project-item" href="{{= project_link }}">
-                   <?php _e('Cancel',ET_DOMAIN);?>
+                   <?php _e('Cancel','modal-user-bid-item');?>
                 </a>
                 <# } #>
                 </div>
@@ -19,10 +19,10 @@
         <div class="user-bid-item-info">
             <ul class="info-item">
                 <li>
-                    <span class="number-blue"> {{=total_bids}}</span> <# if(total_bids >1) { #> <?php _e('Bids',ET_DOMAIN);?> <# } else { #> <?php _e('Bid',ET_DOMAIN) ?> <# } #>  </li>
+                    <span class="number-blue"> {{=total_bids}}</span> <# if(total_bids >1) { #> <?php _e('Bids','modal-user-bid-item');?> <# } else { #> <?php _e('Bid','modal-user-bid-item') ?> <# } #>  </li>
                 <li>
                     <span class="number-blue">
-                       {{=bid_average}}     </span> <?php printf(__('Avg Bid (%s)',ET_DOMAIN), $currency['code']);?>            </li>
+                       {{=bid_average}}     </span> <?php printf(__('Avg Bid (%s)','modal-user-bid-item'), $currency['code']);?>            </li>
                 <li>
                     <span class="number-blue">
                         {{=status_text}}
@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <span>
-                        <?php _e('Bidding',ET_DOMAIN);?>: {{=bid_budget_text}}
+                        <?php _e('Bidding','modal-user-bid-item');?>: {{=bid_budget_text}}
                     </span>
                     <span class="number-blue"> 
                         

@@ -33,7 +33,7 @@ $post_object = $ae_post_factory->get('project');
                 get_template_part( 'template/project', 'item-pending' );
             }
         } else {
-            _e("No place found", ET_DOMAIN);
+            _e("No place found", 'list-pending');
         }
       
     ?>

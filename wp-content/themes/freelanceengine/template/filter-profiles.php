@@ -10,16 +10,16 @@ $country_list = ae_country_list();
         <div class="row">
             <div class="col-md-2 col-sm-6">
                 <div class="content-search-form-top-wrapper">
-                    <h2 class="title-search-form-top"><?php _e('Category', ET_DOMAIN); ?></h2>
+                    <h2 class="title-search-form-top"><?php _e('Category', 'filter-profiles'); ?></h2>
 <!--                    <p>-->
 <!--                        --><?php //
 //                            ae_tax_dropdown( 'project_category' ,
-//                                  array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", ET_DOMAIN).'"',
+//                                  array(  'attr' => 'data-chosen-width="100%" data-chosen-disable-search="" data-placeholder="'.__("Choose categories", 'filter-profiles').'"',
 //                                          'class' => 'cat-filter chosen-select',
 //                                          'hide_empty' => false,
 //                                          'hierarchical' => true ,
 //                                          'id' => 'project_category' ,
-//                                          'show_option_all' => __("All categories", ET_DOMAIN),
+//                                          'show_option_all' => __("All categories", 'filter-profiles'),
 //                                          'value' => 'slug'
 //                                      )
 //                            );
@@ -27,7 +27,7 @@ $country_list = ae_country_list();
 <!--                    </p>-->
                     <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                             data-target="#category-modal">
-                        Select the category
+<?php _e('Select the category', 'filter-profiles'); ?>
                     </button>
                 </div>
             </div>
@@ -35,12 +35,12 @@ $country_list = ae_country_list();
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Location', ET_DOMAIN) ?>
+                            <?php _e('Location', 'filter-profiles') ?>
                         </h2>
                         <select data-chosen-width="100%" data-chosen-disable-search=""
                                 data-placeholder="Choose categories" name="country" id="country"
                                 class="location-filter chosen-select" style="display: none;">
-                            <option value="" class="level-0" selected><?php _e('Choose country', ET_DOMAIN) ?></option>
+                            <option value="" class="level-0" selected><?php _e('Choose country', 'filter-profiles') ?></option>
                             <?php
                             if (!empty($country_list)) {
                                 foreach ($country_list as $key => $value) {
@@ -57,10 +57,10 @@ $country_list = ae_country_list();
                 <div class="content-search-form-top-wrapper">
                     <div class="search-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Keyword', ET_DOMAIN) ?>
+                            <?php _e('Keyword', 'filter-profiles') ?>
                         </h2>
                         <div class="skills-wrap">
-                            <input class="form-control keyword search" type="text" id="s" placeholder="<?php _e("Keyword", ET_DOMAIN); ?>" name="s"  autocomplete="off" spellcheck="false" >
+                            <input class="form-control keyword search" type="text" id="s" placeholder="<?php _e("Keyword", 'filter-profiles'); ?>" name="s"  autocomplete="off" spellcheck="false" >
                             <i class="fa fa-search"></i>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ $country_list = ae_country_list();
             <div class="col-md-2 col-sm-6 ">
                 <div class="content-search-form-top-wrapper">
                     <h2 class="title-search-form-top">
-                        <?php _e('Hourly rate', ET_DOMAIN);?>
+                        <?php _e('Hourly rate', 'filter-profiles');?>
                     </h2>
                     <input id="hour_rate" type="text" name="hour_rate" class="slider-ranger" value="" data-slider-min="0" 
                         data-slider-max="<?php echo $max_value; ?>" data-slider-step="5"
@@ -93,11 +93,11 @@ $country_list = ae_country_list();
                 <div class="content-search-form-top-wrapper">
                     <div class="skill-control">
                         <h2 class="title-search-form-top">
-                            <?php _e('Skills Required', ET_DOMAIN) ?>
+                            <?php _e('Skills Required', 'filter-profiles') ?>
                         </h2>
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
                                 data-target="#skillsmodal">
-                            Select skills
+                            <?php _e('Select skills', 'filter-profiles'); ?>
                         </button>
                     </div>
                 </div>
@@ -105,9 +105,9 @@ $country_list = ae_country_list();
             <div class="col-md-2 col-sm-6">
                 <div class="content-search-form-top-wrapper">
                     <div class="reset-control">
-                        <h2 class="title-search-form-top"><?php _e('Reset filters', ET_DOMAIN) ?></h2>
+                        <h2 class="title-search-form-top"><?php _e('Reset filters', 'filter-profiles') ?></h2>
                         <button type="button" class="btn btn-primary btn-block btn-reset-filters">
-                            Reset
+<?php _e('Reset', 'filter-profiles'); ?>
                         </button>
                     </div>
                 </div>
@@ -134,8 +134,8 @@ $country_list = ae_country_list();
                   <h2 class="number-profile">
                   <?php 
                         $found_posts = '<span class="found_post">'.$wp_query->found_posts.'</span>';
-                        $plural = sprintf(__('%s Profiles ',ET_DOMAIN), $found_posts);
-                        $singular = sprintf(__('%s Profile',ET_DOMAIN),$found_posts);
+                        $plural = sprintf(__('%s Profiles ','filter-profiles'), $found_posts);
+                        $singular = sprintf(__('%s Profile','filter-profiles'),$found_posts);
                     ?>
                         <span class="plural <?php if( $wp_query->found_posts <= 1 ) { echo 'hide'; } ?>" >
                             <?php echo $plural; ?>
@@ -156,14 +156,14 @@ $country_list = ae_country_list();
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Select skills</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php _e('Select skills', 'filter-profiles'); ?></h4>
             </div>
             <div class="modal-body">
                 <div class="skill-control">
                     <div class="row">
                         <div class="col-xs-6">
                             <input class="form-control skill" type="text" id="skill"
-                                   placeholder="<?php _e("Type here", ET_DOMAIN); ?>" name="" autocomplete="off"
+                                   placeholder="<?php _e("Type here", 'filter-profiles'); ?>" name="" autocomplete="off"
                                    spellcheck="false">
                         </div>
                         <div class="col-xs-6">
@@ -174,7 +174,7 @@ $country_list = ae_country_list();
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><?php _e('Ok', 'filter-profiles'); ?></button>
 
             </div>
         </div>
@@ -187,18 +187,18 @@ $country_list = ae_country_list();
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Select the category</h4>
+                <h4 class="modal-title" id="myModalLabel"><?php _e('Select the category', 'filter-profiles'); ?></h4>
             </div>
             <div class="modal-body">
                 <?php
 
                 ae_tax_dropdown('project_category',
-                    array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" multiple data-placeholder="' . __("Choose categories", ET_DOMAIN) . '"',
+                    array('attr' => 'data-chosen-width="70%" data-chosen-disable-search="" multiple data-placeholder="' . __("Choose categories", 'filter-profiles') . '"',
                         'class' => 'cat-filter hidden',
                         'hide_empty' => false,
                         'hierarchical' => true,
                         'id' => 'project_category',
-                        'show_option_all' => __("All categories", ET_DOMAIN),
+                        'show_option_all' => __("All categories", 'filter-profiles'),
                         'value' => 'slug'
                     )
                 );
@@ -214,7 +214,7 @@ $country_list = ae_country_list();
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><?php _e('Ok', 'filter-profiles'); ?></button>
             </div>
         </div>
     </div>
@@ -356,7 +356,7 @@ $country_list = ae_country_list();
         }
 
         AE.pubsub.trigger('ae:notification', {
-            msg: 'Query processing, please wait a bit.',
+            msg: <?php _e('Query processing, please wait a bit.', 'filter-profiles'); ?>,
             notice_type: 'success'
         });
     });
