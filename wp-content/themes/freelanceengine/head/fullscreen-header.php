@@ -301,7 +301,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                         <li role="presentation">
 
                                             <a role="menuitem" tabindex="-1"
-                                               href="<?php echo site_url().$current_lang; ?>/profile/ ?>" class="display-name">
+                                               href="<?php echo site_url().$current_lang; ?>/profile/" class="display-name">
 
                                                 <i class="fa fa-user"></i><?php _e("Your Profile", 'header') ?>
 
