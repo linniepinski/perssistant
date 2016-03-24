@@ -2666,8 +2666,12 @@ function custom_language_switcher_perssistant($args)
         if ($isExcude){
             if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'en'){
                 $temp_url = '/'.explode('/de/',$current_page_url)[1];
-            }elseif ($lang['language_code'] == ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE != 'en'){
+            }
+            if ($lang['language_code'] == ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE != 'en'){
                 $temp_url = '/'.ICL_LANGUAGE_CODE.'/'.explode('/de/',$current_page_url)[1];
+            }
+            if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'de'){
+                $temp_url = '/de' . $current_page_url;
             }
         }else{
             $temp_url = $lang['url'];
