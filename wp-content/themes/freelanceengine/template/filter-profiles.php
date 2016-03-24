@@ -356,7 +356,7 @@ $country_list = ae_country_list();
         }
 
         AE.pubsub.trigger('ae:notification', {
-            msg: <?php _e('Query processing, please wait a bit.', 'filter-profiles'); ?>,
+            msg: '<?php _e('Query processing, please wait a bit.', 'filter-profiles'); ?>',
             notice_type: 'success'
         });
     });

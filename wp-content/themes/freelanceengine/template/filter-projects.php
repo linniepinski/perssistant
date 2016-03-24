@@ -375,7 +375,7 @@ $currency = ae_get_option('content_currency', array('align' => 'left', 'code' =>
         }
 
         AE.pubsub.trigger('ae:notification', {
-            msg: <?php _e('Query processing, please wait a bit.', 'filter-projects'); ?>,
+            msg: '<?php _e('Query processing, please wait a bit.', 'filter-projects'); ?>',
             notice_type: 'success'
         });
     });
