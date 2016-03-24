@@ -2650,41 +2650,40 @@ add_action('wpml_custom_language_switcher', 'custom_language_switcher_perssistan
 function contains($str, array $arr)
 {
     foreach($arr as $a) {
-        if (stripos($a,$str) !== false) return true;
+        if (stripos($a,$str) !== false) return false;
     }
-    return false;
+    return true;
 }
 function custom_language_switcher_perssistant($args)
 {
-//    $current_page_url = $temp_url = $_SERVER["REQUEST_URI"];
+    $current_page_url = $temp_url = $_SERVER["REQUEST_URI"];
     $array = icl_get_languages('skip_missing=0&orderby=id&order=ASC');
-//    $exclude = array('profile','profiles','project','projects','author');
+    $exclude = array('/profiles/','/projects/','/project/','/author/');
+    $isExcude = contains($current_page_url,$exclude);
     echo '<div class="language-selector-wpml-custom">';
     echo '<ul>';
     foreach ($array as $lang) {
-//        if ($lang['language_code'] == 'de' && strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
-//            $temp_url = $current_page_url;
-//        }elseif($lang['language_code'] == 'en' && !strpos($current_page_url,'/'.ICL_LANGUAGE_CODE.'/')){
-//            $temp_url = apply_filters( 'wpml_permalink', $current_page_url(), 'de' );
-//        }else{
-//            $temp_url = str_replace('/de/','/',$current_page_url);
-//        }
+        if ($isExcude){
+            if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'en'){
+                $temp_url = '/'.explode('/de/',$current_page_url)[1];
+            }elseif ($lang['language_code'] == ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE != 'en'){
+                $temp_url = '/'.ICL_LANGUAGE_CODE.'/'.explode('/de/',$current_page_url)[1];
+            }
+        }else{
+            $temp_url = $lang['url'];
+        }
         if ($lang['active'] == '1' && $args['EscapeActive']) continue;
         echo '<li>';
-//        && contains($current_page_url,$exclude)
         ?>
-        <a href="<?php echo $lang['url'] ?>">
-            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] ) echo 'missing'; ?>"
+        <a href="<?php echo $temp_url ?>">
+            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && !$isExcude) echo 'missing'; ?>"
                  src="<?php echo $lang['country_flag_url'] ?>" title="<?php echo $lang['native_name'] ?>">
         </a>
         <?php
         echo '</li>';
-
     }
     echo '</ul>';
     echo '</div>';
-
-
 }
 
 add_action("wp_ajax_update_user_mobile", "update_user_mobile");

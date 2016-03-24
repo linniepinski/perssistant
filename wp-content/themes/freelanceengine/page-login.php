@@ -118,7 +118,7 @@ get_header();
 
 					</button>
 
-                    <a class="show-forgot-form" href="<?php echo site_url() . '/forgotpassword'?>"><?php _e("Forgot Password?", 'login-page') ?></a> |<a class="show-forgot-form" href="<?php echo site_url() . '/sign-up'?>"><?php _e("Register", 'login-page') ?></a>
+                    <a class="show-forgot-form" href="<?php echo site_url() . ae_current_lang() . '/forgotpassword'?>"><?php _e("Forgot Password?", 'login-page') ?></a> |<a class="show-forgot-form" href="<?php echo site_url() . ae_current_lang() . '/sign-up'?>"><?php _e("Register", 'login-page') ?></a>
 <?php
 
 //			                if( function_exists('ae_render_social_button')){

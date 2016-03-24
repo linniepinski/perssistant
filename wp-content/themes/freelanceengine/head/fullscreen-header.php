@@ -17,9 +17,6 @@ if (is_page_template('page-home.php')) {
     $class_trans = 'class="not-page-home"';
 
 }
-$current_lang = '';
-if (ICL_LANGUAGE_CODE == 'en') $current_lang = '';
-else $current_lang = '/' . ICL_LANGUAGE_CODE;
 ?>
 <header id="header-wrapper" data-size="big" <?php echo $class_trans; ?> >
 
@@ -62,7 +59,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
 
                                 <div class="navbar-left links-wrap">
                                     <a class="login login-btn"
-                                       href="<?php echo site_url().$current_lang; ?>/submit-project/"><?php _e("POST A PROJECT", 'header') ?></a>
+                                       href="<?php echo site_url().ae_current_lang(); ?>/submit-project/"><?php _e("POST A PROJECT", 'header') ?></a>
 
 
                                     <div class="dropdown-info-acc-wrapper">
@@ -100,7 +97,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                                     <li role="presentation">
 
                                                     <a tabindex="-1" role="menuitem"
-                                                       href="<?php echo site_url(); ?>/projects/" class="se-proj">
+                                                       href="<?php echo site_url().ae_current_lang(); ?>/projects/" class="se-proj">
 
                                                         <?php _e("Search Projects", 'header') ?>
 
@@ -113,7 +110,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                                 <li role="presentation">
 
                                                     <a role="menuitem" tabindex="-1"
-                                                       href="<?php echo site_url().$current_lang; ?>/profiles/" class="se-free">
+                                                       href="<?php echo site_url().ae_current_lang(); ?>/profiles/" class="se-free">
 
                                                         <?php _e("Search Virtual Assistant", 'header') ?>
 
@@ -127,15 +124,15 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
 
                                     </div>
                                     <a class="login login-btn"
-                                       href="<?php echo site_url().$current_lang; ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
+                                       href="<?php echo site_url().ae_current_lang(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                                     <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
                                 </div>
 
 
-                                <a href="<?php echo site_url().$current_lang; ?>/login"
+                                <a href="<?php echo site_url().ae_current_lang(); ?>/login"
                                    class="login login-btn"><?php _e("LOGIN", 'header') ?></a>
 
-                                <a href="<?php echo site_url().$current_lang; ?>/sign-up"
+                                <a href="<?php echo site_url().ae_current_lang(); ?>/sign-up"
                                    class="register register-btn"><?php _e("SIGN UP", 'header') ?></a>
 
                                 <!--<a class="perssistant register register-btn highlighted" href="<?php echo site_url(); ?>/perssistant-plus/"><?php _e("PERSSISTANT<span>+</span>", 'header') ?></a>-->
@@ -145,10 +142,10 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                         <?php } else { ?>
                             <div class="navbar-left links-wrap">
                                 <?php if (ae_user_role() == FREELANCER) { ?>
-                                    <a href="<?php echo site_url().$current_lang; ?>/projects/"
+                                    <a href="<?php echo site_url().ae_current_lang(); ?>/projects/"
                                        class="login login-btn"><?php _e("FIND A PROJECT", 'header') ?></a>
                                 <?php } else { ?>
-                                    <a href="<?php echo site_url().$current_lang; ?>/submit-project/"
+                                    <a href="<?php echo site_url().ae_current_lang(); ?>/submit-project/"
                                        class="login login-btn"><?php _e("POST A PROJECT", 'header') ?></a>
                                 <?php } ?>
 
@@ -185,7 +182,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                                 <li role="presentation">
 
                                                     <a role="menuitem" tabindex="-1"
-                                                       href="<?php echo site_url().$current_lang; ?>/projects/" class="se-proj">
+                                                       href="<?php echo site_url().ae_current_lang(); ?>/projects/" class="se-proj">
 
                                                         <?php _e("Search Projects", 'header') ?>
 
@@ -199,7 +196,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                             <li role="presentation">
 
                                                 <a role="menuitem" tabindex="-1"
-                                                   href="<?php echo site_url().$current_lang; ?>/profiles/" class="se-free">
+                                                   href="<?php echo site_url().ae_current_lang(); ?>/profiles/" class="se-free">
 
                                                     </i><?php _e("Search Virtual Assistant", 'header') ?>
 
@@ -213,9 +210,9 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
 
                                 </div>
                                 <a class="login login-btn"
-                                   href="<?php echo site_url().$current_lang; ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
+                                   href="<?php echo site_url().ae_current_lang(); ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
                                 <a class="login login-btn"
-                                   href="<?php echo site_url().$current_lang; ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>
+                                   href="<?php echo site_url().ae_current_lang(); ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>
                                     &nbsp&nbsp<span class="badge count-chat"></span></a>
                                 <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
 
@@ -300,7 +297,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                         <li role="presentation">
 
                                             <a role="menuitem" tabindex="-1"
-                                               href="<?php echo site_url().$current_lang; ?>/profile/" class="display-name">
+                                               href="<?php echo site_url().ae_current_lang(); ?>/profile/" class="display-name">
 
                                                 <i class="fa fa-user"></i><?php _e("Your Profile", 'header') ?>
 
@@ -312,7 +309,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
 
                                         <li role="presentation">
 
-                                            <a href="<?php echo site_url().$current_lang; ?>/profile/" class="trigger-notification">
+                                            <a href="<?php echo site_url().ae_current_lang(); ?>/profile/" class="trigger-notification">
 
                                                 <i class="fa fa-flag"></i>
 

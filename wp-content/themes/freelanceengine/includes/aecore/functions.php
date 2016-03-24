@@ -2687,3 +2687,9 @@ function interview_is_profile_activated(){
 
     return $return;
 }
+function ae_current_lang(){
+    $current_lang = '';
+    if (ICL_LANGUAGE_CODE == 'en') $current_lang = '';
+    else $current_lang = '/' . ICL_LANGUAGE_CODE;
+    return $current_lang;
+}
