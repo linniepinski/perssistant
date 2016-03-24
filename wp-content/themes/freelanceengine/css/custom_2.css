@@ -67,7 +67,7 @@
 }
 .non-login .language-selector-wpml-custom {
     display: inline-block;
-    float: left;
+    float: right;
 }
 .language-selector-wpml-custom .missing{
     opacity: 0.2;

@@ -128,8 +128,7 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                     </div>
                                     <a class="login login-btn"
                                        href="<?php echo site_url().$current_lang; ?>/how-it-works/"><?php _e("HOW IT WORKS", 'header') ?></a>
-                                    <ul class="sitelang">                                <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
-                                    </ul>
+                                    <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
                                 </div>
 
 
@@ -218,8 +217,8 @@ else $current_lang = '/' . ICL_LANGUAGE_CODE;
                                 <a class="login login-btn"
                                    href="<?php echo site_url().$current_lang; ?>/chat-room/"><?php _e("MESSAGES", 'header') ?>
                                     &nbsp&nbsp<span class="badge count-chat"></span></a>
-                                <ul class="sitelang">                                <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
-                                </ul>
+                                <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
+
                             </div>
 
                             <div class="dropdown-info-acc-wrapper" style="margin-right:12px">
