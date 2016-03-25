@@ -51,16 +51,9 @@
 						<div class="row">
 							<div class="col-sm-4"></div>
 							<div class="col-sm-8 reset-rules">
-								<div id="pswd_info" style="display: none">
-									<h4>Security level: <strong class="strong-level">danger</strong></h4>
-									<h4>Password must meet the following requirements:</h4>
-									<ul>
-										<li id="letter" class="invalid">At least <strong>one letter</strong></li>
-										<li id="capital" class="invalid">At least <strong>one capital letter</strong></li>
-										<li id="number" class="invalid">At least <strong>one number</strong></li>
-										<li id="length" class="invalid">Be at least <strong>8 characters</strong></li>
-									</ul>
-								</div>
+								<?php
+								render_security_check_pass_info();
+								?>
 							</div>
 						</div>
 	                </div>

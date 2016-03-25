@@ -156,6 +156,12 @@ class AppEngine extends AE_Base
                     )
                 )
             ) ,
+            'security_level'=>array(
+              'danger'=>  __("danger", 'aecore-class-ae-framework-backend'),
+              'minimum'=>  __("minimum", 'aecore-class-ae-framework-backend'),
+              'medium'=>  __("medium", 'aecore-class-ae-framework-backend'),
+              'strong'=>  __("strong", 'aecore-class-ae-framework-backend'),
+            ),
             'empty_projects'=>__("No projects found", 'aecore-class-ae-framework-backend'),
             'empty_profiles'=>__("No profiles found", 'aecore-class-ae-framework-backend'),
             'validator_messages' => array(

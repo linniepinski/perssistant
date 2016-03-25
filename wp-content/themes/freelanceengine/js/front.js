@@ -1842,16 +1842,16 @@
                     var count_valid = jQuery('#pswd_info li.valid').length;
                     if (count_valid && jQuery('#pswd_info li.required').length >= 1) {
                         if (count_valid >= 2) {
-                            jQuery('.strong-level').text('minimum')
+                            jQuery('.strong-level').text(ae_globals.security_level.minimum)
                         }
                         if (count_valid >= 3) {
-                            jQuery('.strong-level').text('medium')
+                            jQuery('.strong-level').text(ae_globals.security_level.medium)
                         }
                         if (count_valid >= 4) {
-                            jQuery('.strong-level').text('strong')
+                            jQuery('.strong-level').text(ae_globals.security_level.strong)
                         }
                     } else {
-                        jQuery('.strong-level').text('danger')
+                        jQuery('.strong-level').text(ae_globals.security_level.danger)
                     }
                 }).focus(function() {
                     jQuery('#pswd_info').fadeIn('slow');
@@ -3114,6 +3114,7 @@
                 //                },
                 markupParse: function(template, values, item) {
                     values.description = item.el.data('description'); // or item.img.data('description');
+                    console.log(values);
                 }
             }
         });
