@@ -205,10 +205,10 @@
                 messages: {
                     //name: "Please specify your name",
                     paypal: {
-                        email: "Email address seems invalid"
+                        email: ae_globals.validator_messages.paypal
                     },
                     user_email: {
-                        email: "Email address seems invalid"
+                        email: ae_globals.validator_messages.user_email
                     }
                 }
             });

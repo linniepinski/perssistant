@@ -156,6 +156,15 @@ class AppEngine extends AE_Base
                     )
                 )
             ) ,
+            'validator_messages' => array(
+                'paypal' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),
+                'user_email' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),
+                'interview_dates' => __("Fill some dates", 'aecore-class-ae-framework-backend'),
+                'interview_contacts' => __("Fill some contacts", 'aecore-class-ae-framework-backend'),
+                'max_skills' => __("You've added maximum number of skills", 'aecore-class-ae-framework-backend'),
+                'old_pass_equal_new_error' => __("Your new password matches the old one!", 'aecore-class-ae-framework-backend'),
+
+            ),
             'profile_completion' => array(
                 'name'=> __("Fill your full name", 'aecore-class-ae-framework-backend') ,
                 'location'=> __('Fill in the "Location"', 'aecore-class-ae-framework-backend') ,

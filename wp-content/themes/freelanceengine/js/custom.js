@@ -232,13 +232,13 @@ jQuery(document).ready(function(){
             }else{
                 if(count_dates == 3){
                     AE.pubsub.trigger('ae:notification', {
-                        msg : 'Fill some dates',
+                        msg : ae_globals.validator_messages.interview_dates,
                         notice_type: 'error'
                     });
                 }
                 if(count_contacts == 2){
                     AE.pubsub.trigger('ae:notification', {
-                        msg : 'Fill some contacts',
+                        msg : ae_globals.validator_messages.interview_contacts,
                         notice_type: 'error'
                     });
                 }
@@ -353,11 +353,9 @@ jQuery(document).ready(function(){
        console.log('changed')
         parent = jQuery(this).parent().find('.error');
         if(jQuery('.sw_skill > option:selected').length < 10){
-            console.log('change2d');
             jQuery('.skill-error').html('');
         }else{
-            console.log('cha2nge2d');
-            jQuery('.skill-error').html('<span class="message"> You\'ve added maximum number of skills</span>');
+            jQuery('.skill-error').html('<span class="message">'+ae_globals.validator_messages.max_skills+'</span>');
         }
     });
 });
