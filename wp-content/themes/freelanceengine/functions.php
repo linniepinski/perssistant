@@ -2962,7 +2962,7 @@ function add_cv_upload(){
 	<style>.delete#del_cv{ display: block; position: absolute; height: 20px; width: 20px; float: right; background: rgba(0,0,0,0.2); bottom: 0; padding: 0px 2px; } .delete#del_cv i{ float: left; font-size: 20px; }</style>
 	<div class="form-group portfolios-wrapper"> 
 		<div class="form-group-control">
-			<label><?php __("Your CV", 'functions') ?></label>
+			<label><?php _e("Your CV", 'functions') ?></label>
 			<div class="edit-portfolio-container">
 				<div class="row">
 					<ul class="list-item-cv"></ul>
@@ -2971,13 +2971,13 @@ function add_cv_upload(){
 							<iframe src="http://docs.google.com/gview?url=<?php echo $fcv_url; ?>&embedded=true" class="cv_preview" id="iframe_cv" style="width:200px; height:200px;" frameborder="0"></iframe>
 							<?php $displayDel = 'display: block;'; ?>
 						<?php }else{ ?>
-							<a href="#" class="add-cv" data-toggle="modal" data-target="#port_modal" style="position:absolute; top:2%;"><i class="fa fa-plus"></i><?php __("Add your CV", 'functions') ?></a>
+							<a href="#" class="add-cv" data-toggle="modal" data-target="#port_modal" style="position:absolute; top:2%;"><i class="fa fa-plus"></i><?php _e("Add your CV", 'functions') ?></a>
 							<?php $displayDel = 'display: none;'; ?>
 
 						<?php } ?>
-							<a href="<?php echo ($fcv_url!='')?$fcv_url:'#'; ?>" target="_blank" class="preview_cv_link" style="<?php echo $displayDel; ?> position:absolute; top:0%;"><?php __("Preview", 'functions') ?></a>
+							<a href="<?php echo ($fcv_url!='')?$fcv_url:'#'; ?>" target="_blank" class="preview_cv_link" style="<?php echo $displayDel; ?> position:absolute; top:0%;"><?php _e("Preview", 'functions') ?></a>
 							<a href="#" class="delete" id="del_cv" style="<?php echo $displayDel; ?>"><i class="fa fa-trash-o fa-2"></i></a>
-							<a href="#" class="add-cv_f" data-toggle="modal" data-target="#port_modal" style="display:none; position:absolute; top:0%;"><i class="fa fa-plus"></i><?php __("Add your CV", 'functions') ?></a>
+							<a href="#" class="add-cv_f" data-toggle="modal" data-target="#port_modal" style="display:none; position:absolute; top:0%;"><i class="fa fa-plus"></i><?php _e("Add your CV", 'functions') ?></a>
 					</div>
 				</div>
 				<div class="error_cv" style="display: none;"></div>

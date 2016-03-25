@@ -156,6 +156,18 @@ class AppEngine extends AE_Base
                     )
                 )
             ) ,
+            'profile_completion' => array(
+                'name'=> __("Fill your full name", 'aecore-class-ae-framework-backend') ,
+                'location'=> __('Fill in the "Location"', 'aecore-class-ae-framework-backend') ,
+                'e_mail'=> __('Fill in the "E-Mail"', 'aecore-class-ae-framework-backend') ,
+                'paypal'=> __('Fill in the "Paypal Account"', 'aecore-class-ae-framework-backend') ,
+                'phone_no'=> __('Fill in the "Phone no"', 'aecore-class-ae-framework-backend') ,
+                'prof_title'=> __('Fill in the "Professional Title"', 'aecore-class-ae-framework-backend') ,
+                'hourly_rate'=> __('Fill in the "Hourly Rate"', 'aecore-class-ae-framework-backend') ,
+                'skills'=> __('Fill in the "Skills"', 'aecore-class-ae-framework-backend') ,
+                'country'=> __('Fill in the "Country"', 'aecore-class-ae-framework-backend') ,
+                'about'=> __('Fill in the "About"', 'aecore-class-ae-framework-backend') ,
+            ),
             'homeURL' => home_url() ,
             'is_submit_post' => is_page_template('page-post-place.php') ? true : false,
             'is_submit_project' => is_page_template('page-submit-project.php') ? true : false,

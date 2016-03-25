@@ -1131,21 +1131,21 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('#display_name').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill your full name (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.name+' (+10%)</p>';
     }
     if (jQuery('#location').val().trim() !== '') {
         percent += 10;
     }
     else {
         temp = "'" + jQuery('#location').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Location" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.location+' (+10%)</p>';
     }
     if (jQuery('#user_email').val().trim() !== '') {
         percent += 10;
     }
     else {
         temp = "'" + jQuery('#user_email').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "E-Mail" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.e_mail+' (+10%)</p>';
     }
     if (jQuery('#paypal').val().trim() !== '') {
         //percent += 10;
@@ -1153,7 +1153,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('#paypal').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+20%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.paypal+' (+20%)</p>';
     }
 
     if (jQuery('#user_mobile').val().trim() !== '') {
@@ -1161,7 +1161,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('#user_mobile').attr('id') + "'";
-        //htmlIncludeDescription += '<p class="focus-field"  onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+10%)</p>';
+        //htmlIncludeDescription += '<p class="focus-field"  onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.phone_no+' (+10%)</p>';
     }
 
     if (jQuery('[name = "et_professional_title"]').val().trim() !== '') {
@@ -1169,7 +1169,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('[name = "et_professional_title"]').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Professional Title" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">'+ae_globals.profile_completion.prof_title+' (+10%)</p>';
     }
 
     if (jQuery('[name = "hour_rate"]').val().trim() !== '') {
@@ -1177,7 +1177,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('[name = "hour_rate"]').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Hourly Rate" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">'+ae_globals.profile_completion.hourly_rate+' (+10%)</p>';
     }
 
     if (jQuery('ul.chosen-choices li').length > 1) {
@@ -1185,7 +1185,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('[id="skill"]').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Skills" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">'+ae_globals.profile_completion.skills+' (+10%)</p>';
     }
 
     if (jQuery('div#country_chosen span').text() !== '') {
@@ -1193,7 +1193,7 @@ function refreshcountcompleteFreelancer() {
     }
     else {
         temp = "'" + jQuery('[id="country_chosen"]').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">Fill in the "Country" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ')">'+ae_globals.profile_completion.country+' (+10%)</p>';
     }
 
     if (jQuery("iframe#about_content_ifr").contents().find('body').text().trim() !== '' && jQuery("iframe#about_content_ifr").contents().find('body').text().trim().length > 250) {
@@ -1202,7 +1202,7 @@ function refreshcountcompleteFreelancer() {
     else {
         temp = "'" + jQuery('iframe#about_content_ifr').attr('id') + "'";
         temp2 = "'about'"
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ',' + temp2 + ')">Fill in the "About" (+10%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_profile + ',' + temp2 + ')">'+ae_globals.profile_completion.about+' (+10%)</p>';
     }
     if (htmlIncludeDescription != '') {
         htmlIncludeDescription = '<br>' + htmlIncludeDescription;
@@ -1224,7 +1224,7 @@ function refreshcountcompleteEmployer() {
     else {
         temp = "'" + jQuery('#display_name').attr('id') + "'";
 
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill your full name (+20%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.name+' (+20%)</p>';
     }
 
     if (jQuery('#location').val().trim() !== '') {
@@ -1232,7 +1232,7 @@ function refreshcountcompleteEmployer() {
     }
     else {
         temp = "'" + jQuery('#location').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Location" (+20%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.location+' (+20%)</p>';
     }
 
     if (jQuery('#user_email').val().trim() !== '') {
@@ -1240,7 +1240,7 @@ function refreshcountcompleteEmployer() {
     }
     else {
         temp = "'" + jQuery('#user_email').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "E-Mail" (+20%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.e_mail+' (+20%)</p>';
     }
 
     if (jQuery('#paypal').val().trim() !== '') {
@@ -1249,7 +1249,7 @@ function refreshcountcompleteEmployer() {
     }
     else {
         temp = "'" + jQuery('#paypal').attr('id') + "'";
-        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Paypal Account" (+40%)</p>';
+        htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.paypal+' (+40%)</p>';
     }
 
     if (jQuery('#user_mobile').val().trim() !== '') {
@@ -1257,7 +1257,7 @@ function refreshcountcompleteEmployer() {
     }
     else {
         //temp = "'" + jQuery('#user_mobile').attr('id') + "'";
-        //htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">Fill in the "Phone no" (+20%)</p>';
+        //htmlIncludeDescription += '<p class="focus-field" onclick="focus_field(' + temp + ',' + tab_account + ')">'+ae_globals.profile_completion.phone_no+' (+20%)</p>';
     }
     if (htmlIncludeDescription != '') {
         htmlIncludeDescription = '<br>' + htmlIncludeDescription;
