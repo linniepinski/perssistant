@@ -1,73 +1,7 @@
-/* rating #2*/
-
-/*.icon-square{
-    content: '';
-    border: 1px solid #333;
-    padding: 0 8px;
-    font-size: 6px;
-}
-.icon-square-full{
-    background-color: #fec600;
-}
-.icon-square-half{
-    background: linear-gradient(90deg, #fec600 50%, white 50%);
-}
-.rating-list{
-    padding-left: 10px;
-}
-.rating-list li{
-    list-style: none;
-}
-.rating-list li label {
-    margin-bottom: 2px;
-}
-.rating-it_2{
-    display: inline-block;
-    float: right;
-}*/
-
-/* rating #2*/
-/*#modal_featured{
-    padding-top: 20px;
-}
-#modal_featured .modal-body h4{
-    font-size:25px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-#modal_featured .modal-title{
-    font-size:30px;
-}
-#modal_featured .modal-header{
-    font-size: 18px;
-}
-#modal_featured .modal-content{
-    margin-top:150px;
-}
-.loader-block-UI{
-    position: absolute;
-    top: 50%;
-    margin-top: -8px;
-    left: 50%;
-    margin-left: -8px;
-    -webkit-animation: spin 3s linear infinite;
-    -moz-animation: spin 3s linear infinite;
-    animation: spin 3s linear infinite;
-}
-.reset-rules #pswd_info{
-    margin-top: 20px;
-}
-.row-about-you.error > .message{
-    display: none!important;
-}*/
 .language-selector-wpml-custom {
     display: inline-block;
     margin-top: 6px;
     margin-right: 10px;
-}
-.non-login .language-selector-wpml-custom {
-    display: inline-block;
-    float: right;
 }
 .language-selector-wpml-custom .missing{
     opacity: 0.2;

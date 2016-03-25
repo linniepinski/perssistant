@@ -1317,7 +1317,7 @@ jQuery('#create_cv').on('submit', function (e) {
 });
 /* delete cv*/
 
-jQuery('.add-porfolio-buttonhfghgfh').on('click', '#del_cv', function (e) {
+jQuery('.add-porfolio-CV-button').on('click', '#del_cv', function (e) {
 
     e.preventDefault();
     jQuery.ajax({

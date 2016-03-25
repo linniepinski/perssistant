@@ -35,8 +35,7 @@ var dologinuser = function () {
 				});
 
 				form.trigger('reset');
-				window.location.href='/';
-
+				location.reload();
 			} else {
 				AE.pubsub.trigger('ae:notification', {
 					msg : status.msg,

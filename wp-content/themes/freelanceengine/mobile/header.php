@@ -13,6 +13,10 @@ if ($user_ID) {
         $profile = $post_object->convert($profile);
     }
 }
+$switcher_options = array(
+    'EscapeActive' => true,
+    'MissingTranslate' => true
+);
 ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
@@ -166,13 +170,15 @@ if (function_exists('fre_user_have_notify')) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-3">
-                <?php if (has_nav_menu('et_mobile')) { ?>
-                    <div id="left_menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                <?php } ?>
+                <?php do_action('wpml_custom_language_switcher', $switcher_options); ?>
+
+<!--                --><?php //if (has_nav_menu('et_mobile')) { ?>
+<!--                    <div id="left_menu">-->
+<!--                        <span></span>-->
+<!--                        <span></span>-->
+<!--                        <span></span>-->
+<!--                    </div>-->
+<!--                --><?php //} ?>
             </div>
             <div class="col-xs-5">
                 <div class="header-title">
@@ -182,7 +188,9 @@ if (function_exists('fre_user_have_notify')) {
                 </div>
             </div>
             <div class="col-xs-4">
+
                 <div class="user-avatar avatar login-form-header-wrapper">
+
                     <?php if (is_user_logged_in()) { ?>
                         <a href="<?php echo et_get_page_link('profile'); ?>#tab_notification"
                            class="trigger-notification">
