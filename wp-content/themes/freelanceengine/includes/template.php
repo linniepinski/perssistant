@@ -179,7 +179,7 @@ function ae_js_edit_post_button () {
 function render_security_check_pass_info(){
 	?>
 	<div id="pswd_info" style="display: none">
-      <h4><?php _e("Security level: <strong class='strong-level'>danger</strong>", 'template-backend'); ?></h4>
+      <h4><?php _e("Security level:", 'template-backend'); ?><strong class="strong-level"><?php _e("danger", 'template-backend'); ?></strong></h4>
                         <h4><?php _e("Password must meet the following requirements:", 'template-backend'); ?></h4>
                         <ul>
                             <li id="letter" class="invalid"><?php _e("At least <strong>one letter</strong>", 'template-backend'); ?></li>
