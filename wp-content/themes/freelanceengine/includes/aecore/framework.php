@@ -156,9 +156,12 @@ class AppEngine extends AE_Base
                     )
                 )
             ) ,
+            'empty_projects'=>__("No projects found", 'aecore-class-ae-framework-backend'),
+            'empty_profiles'=>__("No profiles found", 'aecore-class-ae-framework-backend'),
             'validator_messages' => array(
                 'paypal' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),
                 'user_email' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),
+                'max_symbols_mce' => __("Description should be at least 250 symbols", 'aecore-class-ae-framework-backend'),
                 'interview_dates' => __("Fill some dates", 'aecore-class-ae-framework-backend'),
                 'interview_contacts' => __("Fill some contacts", 'aecore-class-ae-framework-backend'),
                 'max_skills' => __("You've added maximum number of skills", 'aecore-class-ae-framework-backend'),

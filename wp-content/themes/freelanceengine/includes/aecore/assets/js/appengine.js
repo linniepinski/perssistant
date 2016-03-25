@@ -604,7 +604,7 @@ window.AE = window.AE || {};
 
             this.text_before = target.text();
 //if (target)
-            target.text("Loading");
+            target.text(ae_globals.loading);
             target.append('<i class="fa fa-refresh custom-loader"></i>');
 
         },
@@ -2604,8 +2604,8 @@ window.AE = window.AE || {};
                         jQuery('.empty-projects-list').remove();
                         jQuery('.empty-profile-list').remove();
                     }else{
-                        jQuery('.project-list-container').html('<li class="empty-projects-list">No projects found</li>')
-                        jQuery('.profile-list-container').html('<div class="empty-profile-list">No profiles found</div>')
+                        jQuery('.project-list-container').html('<li class="empty-projects-list">'+ae_globals.empty_projects+'</li>')
+                        jQuery('.profile-list-container').html('<div class="empty-profile-list">'+ae_globals.empty_profiles+'</div>')
                     }
 
                     if (res && !res.success) {
@@ -3533,7 +3533,7 @@ window.AE = window.AE || {};
                     jQuery("."+ param.ErrorContainer).html('');
                     return true;
                 } else {
-                    jQuery("."+ param.ErrorContainer).html('<span class="message"> Description should be at least 250 symbols</span>');
+                    jQuery("."+ param.ErrorContainer).html('<span class="message">'+ae_globals.validator_messages.max_symbols_mce+'</span>');
                     return false;
                 }
             }, '');
