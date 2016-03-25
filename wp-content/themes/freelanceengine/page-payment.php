@@ -74,22 +74,22 @@ the_post();
                             $new_user_balance = (float)$user_balance + $transaction['amount'];
                             update_user_meta($current_user->ID,'account_cash_balance', $new_user_balance);
                         }
-                        var_dump(get_user_meta($current_user->ID,'account_cash_balance',true));
+//                        var_dump(get_user_meta($current_user->ID,'account_cash_balance',true));
 
                         wpdb_add_history_account_balance($current_user->ID,$current_user->ID,$user_balance,$transaction['amount'],$new_user_balance,null,$_SERVER["HTTP_REFERER"],serialize($transaction),'account recharge',null);
 
-                        echo "<pre>";
-                        var_dump($transaction);
-                        echo "</pre>";
+//                        echo "<pre>";
+//                        var_dump($transaction);
+//                        echo "</pre>";
 
 
                     } else {
                         echo '<strong>Transaction not successful!</strong> <br />';
 
 
-                        echo "<pre>";
-                        var_dump($transaction);
-                        echo "</pre>";
+//                        echo "<pre>";
+//                        var_dump($transaction);
+//                        echo "</pre>";
                     }
                 }
                 ?>
