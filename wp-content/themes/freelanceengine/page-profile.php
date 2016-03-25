@@ -88,7 +88,7 @@ get_header();
                         <div class="col-md-12" style="margin-top: 25px">
                             <div class="alert alert-warning" role="alert">
                                 <?php  _e('Your profile is not activated. To activate you profile you need to pass the interview - ','projects-page');?>
-                                <a href="/interview"><?php  _e('Interview details','projects-page');?></a>
+                                <a href="<?php echo ae_current_lang(); ?>/interview"><?php  _e('Interview details','projects-page');?></a>
                                 <?php
                                 if (get_option('interview_system') == 'false') {
                                     ?>

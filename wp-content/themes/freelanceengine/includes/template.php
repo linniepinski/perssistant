@@ -182,10 +182,10 @@ function render_security_check_pass_info(){
       <h4><?php _e("Security level:", 'template-backend'); ?><strong class="strong-level"><?php _e("danger", 'template-backend'); ?></strong></h4>
                         <h4><?php _e("Password must meet the following requirements:", 'template-backend'); ?></h4>
                         <ul>
-                            <li id="letter" class="invalid"><?php _e("At least <strong>one letter</strong>", 'template-backend'); ?></li>
-                            <li id="capital" class="invalid"><?php _e("At least <strong>one capital letter</strong>", 'template-backend'); ?></li>
-                            <li id="number" class="invalid"><?php _e("At least <strong>one number</strong>", 'template-backend'); ?></li>
-                            <li id="length" class="invalid"><?php _e("Be at least <strong>8 characters</strong>", 'template-backend'); ?></li>
+                            <li id="letter" class="invalid"><?php _e("At least", 'template-backend'); ?> <strong><?php _e("one letter", 'template-backend'); ?></strong></li>
+                            <li id="capital" class="invalid"><?php _e("At least", 'template-backend'); ?> <strong><?php _e("one capital letter", 'template-backend'); ?></strong></li>
+                            <li id="number" class="invalid"><?php _e("At least", 'template-backend'); ?> <strong><?php _e("one number", 'template-backend'); ?></strong></li>
+                            <li id="length" class="invalid"><?php _e("Be at least", 'template-backend'); ?> <strong><?php _e("8 characters", 'template-backend'); ?></strong></li>
                         </ul>
     </div>
 	<?php
