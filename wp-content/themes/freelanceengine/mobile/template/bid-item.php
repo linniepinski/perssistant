@@ -42,7 +42,7 @@
                 } else {
                     if ($project->type_budget == 'hourly_rate') {
                         ?>
-                        <span class="number"><?php echo $convert->bid_budget_text . '/h'; ?></span>
+                        <span class="number"><?php echo $convert->bid_budget_text . __("/h", 'bid-item-mobile'); ?></span>
                         <?php
                     } else {
                         ?>

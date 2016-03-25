@@ -21,7 +21,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
 						<span class="et_ajaxnonce hidden" id="<?php echo wp_create_nonce( 'portfolio_img_et_uploader' ); ?>"></span>
 						<p class="add-file"><?php _e('ADD FILES', 'modal-add-portfolio-mobile') ?></p>
 						<p class="browser-image">
-							<input type="button" id="portfolio_img_browse_button" class="btn btn-default btn-submit" value="Browse" />
+							<input type="button" id="portfolio_img_browse_button" class="btn btn-default btn-submit" value="<?php _e('Browse', 'modal-add-portfolio-mobile') ?>" />
 						</p>
 					</div>
 					<div class="clearfix"></div>

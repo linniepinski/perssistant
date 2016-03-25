@@ -22,7 +22,7 @@
                 		<p class="add-file"><?php _e('ADD FILES', 'modal-add-portfolio') ?></p>
                 		<p class="drag-drop"><?php _e('Simply Drag & Drop', 'modal-add-portfolio') ?></p>
                 		<p class="browser-image">
-                			<input type="button" id="portfolio_img_browse_button" class="btn btn-default btn-submit" value="Browse" />
+                			<input type="button" id="portfolio_img_browse_button" class="btn btn-default btn-submit" value="<?php _e('Browse', 'modal-add-portfolio') ?>" />
                 		</p>
                 	</div>
                 	<div class="clearfix"></div>

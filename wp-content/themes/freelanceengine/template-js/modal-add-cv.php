@@ -21,7 +21,7 @@
 						<input type="hidden" name="action" value="upLoadCvUser" />
 						<input type="hidden" name="user_id" value="<?php echo $user_ID; ?>" />
 						<input type="hidden" name="post_thumbnail" id="post_thumbnail" value="0" />
-						<p class="browser-image btn btn-default browse_cont">Browse
+						<p class="browser-image btn btn-default browse_cont"><?php _e("Browse", 'modal-add-CV') ?>
 							<input type="file" id="cv_img_browse_button" name="cv_upload" class="btn-submit upload_btn" required>
 						</p>
 						<div class="clearfix"></div>

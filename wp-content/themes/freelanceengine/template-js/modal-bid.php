@@ -27,8 +27,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                 </label>
 
                                 <div class="checkbox" style="display: inline-block;margin-left: 20px;">
-                                    <label><input type="checkbox" name="decide_later" class="checkbox1">Decide
-                                        later</label>
+                                    <label><input type="checkbox" name="decide_later" class="checkbox1"><?php _e('Decide later', 'modal-add-bid'); ?></label>
                                 </div>
                                 <script>
                                     jQuery(document).ready(function () {
@@ -68,12 +67,12 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="input-group">
-                                                                <span class="input-group-addon">in</span>
-                                                                <label class="sr-only" for="type_time">Type time</label>
+                                                                <span class="input-group-addon"><?php _e('in', 'modal-add-bid'); ?></span>
+                                                                <label class="sr-only" for="type_time"><?php _e('Type time','modal-add-bid'); ?></label>
                                                                 <select name="type_time" class="form-control required">
-                                                                    <option value="day">days</option>
-                                                                    <option value="week">weeks</option>
-                                                                    <option value="month">months</option>
+                                                                    <option value="day"><?php _e('days', 'modal-add-bid'); ?></option>
+                                                                    <option value="week"><?php _e('weeks', 'modal-add-bid'); ?></option>
+                                                                    <option value="month"><?php _e('months', 'modal-add-bid'); ?></option>
                                                                 </select>
                                                             </div>
                                                         </div>

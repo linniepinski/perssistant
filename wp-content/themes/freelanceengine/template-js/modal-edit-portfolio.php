@@ -31,7 +31,7 @@ $profile_id = get_user_meta($user_ID, 'user_profile_id', true);
 
                         <p class="browser-image">
                             <input type="button" id="portfolio_img_edit_browse_button"
-                                   class="btn btn-default btn-submit" value="Change"/>
+                                   class="btn btn-default btn-submit" value="<?php _e('Change', 'modal-edit-portfolio') ?>"/>
                         </p>
                     </div>
                     <div class="clearfix"></div>

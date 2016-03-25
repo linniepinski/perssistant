@@ -45,20 +45,20 @@ $status         = get_post_status($project->ID);
             $type_time      = get_post_meta($bid_accept_id,'type_time', true);
         ?>    
             
-            <li> <span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; ?> ago </li>
+            <li> <span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; _e('ago', 'employer-project-item');?></li>
             <li> <span> </span> </li>
             <li><span> <?php echo $project->et_budget; ?> </span>$ </li>
 
         <?php        
         } else if($status == 'complete'){ ?>           
           
-            <li><span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; ?> ago </li>
+            <li><span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; _e('ago', 'employer-project-item');?> </li>
             <li><span> <?php echo $project->et_budget; ?> </span>$ </li>
 
             <?php           
         } 
     } else { ?>
-        <li> <span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; ?> ago </li>        
+        <li> <span> <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) ; _e('ago', 'employer-project-item');?> </li>
         <li> <span> <?php echo $project->et_budget; ?> </span>$ </li>
         <?php        
     }

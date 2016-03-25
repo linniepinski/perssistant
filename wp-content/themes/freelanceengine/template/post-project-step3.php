@@ -60,8 +60,8 @@
                     <div class="col-sm-8">
 <!--                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="--><?php //_e("Project Title", 'post-project-step3'); ?><!--" name="post_title">-->
                     <select class="input-item form-control text-field" name="type_budget">
-                        <option value="fixed">Fixed budget</option>
-                        <option value="hourly_rate">Hourly rate budget</option>
+                        <option value="fixed"><?php _e("Fixed budget", 'post-project-step3'); ?></option>
+                        <option value="hourly_rate"><?php _e("Hourly rate budget", 'post-project-step3'); ?></option>
                     </select>
                     </div>
                 </div>
@@ -247,15 +247,15 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span aria-hidden="true">X</span></button>
-						<h4 class="modal-title text-center text-color-popup">Featured Project</h4>
+						<h4 class="modal-title text-center text-color-popup"><?php _e("Featured Project", 'post-project-step3'); ?></h4>
 						<hr class="hidden-xs">
 					</div>
 					<div class="modal-body">
-						<h4 class="text-center">The cost for a premium job is 25 eur, to be paid after confirmation of your job.</h4>
+						<h4 class="text-center"><?php _e("The cost for a premium job is 25 eur, to be paid after confirmation of your job.", 'post-project-step3'); ?></h4>
 					</div>
                     <div class="modal-footer featured-modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                        <button type="button" class="btn btn-default featured-cancel" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><?php _e("Ok", 'post-project-step3'); ?></button>
+                        <button type="button" class="btn btn-default featured-cancel" data-dismiss="modal"><?php _e("Cancel", 'post-project-step3'); ?></button>
                     </div>
 				</div>
 			</div>

@@ -22,8 +22,7 @@ global $user_ID, $post;
             }
             ?></label>
         <div class="checkbox" style="display: inline-block;margin-left: 20px;">
-            <label><input type="checkbox" name="decide_later" class="checkbox1">Decide
-                later</label>
+            <label><input type="checkbox" name="decide_later" class="checkbox1"><?php _e('Decide later', 'form-bid-project-mobile'); ?></label>
         </div>
         <script>
             jQuery(document).ready(function () {
@@ -58,19 +57,19 @@ global $user_ID, $post;
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <label class="sr-only" for="bid_time">Bid time</label>
+                                    <label class="sr-only" for="bid_time"><?php _e('Bid time', 'form-bid-project-mobile'); ?></label>
                                     <input type="number" name="bid_time" id="bid_time" min="1"
                                            class="form-control required number"
                                            placeholder="number"/>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="input-group">
-                                        <span class="input-group-addon">in</span>
-                                        <label class="sr-only" for="type_time">Type time</label>
+                                        <span class="input-group-addon"><?php _e('in', 'form-bid-project-mobile'); ?></span>
+                                        <label class="sr-only" for="type_time"><?php _e('Type time','form-bid-project-mobile'); ?></label>
                                         <select name="type_time" class="form-control required">
-                                            <option value="day">days</option>
-                                            <option value="week">weeks</option>
-                                            <option value="month">months</option>
+                                            <option value="day"><?php _e('days', 'form-bid-project-mobile'); ?></option>
+                                            <option value="week"><?php _e('weeks', 'form-bid-project-mobile'); ?></option>
+                                            <option value="month"><?php _e('months', 'form-bid-project-mobile'); ?></option>
                                         </select>
                                     </div>
                                 </div>

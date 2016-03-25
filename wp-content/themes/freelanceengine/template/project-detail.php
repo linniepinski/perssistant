@@ -45,13 +45,13 @@ if ($project_status == 'publish') {
         {?>
             <div class="col-md-12" style="margin-top: 25px">
                 <div class="alert alert-warning" role="alert">
-                    Your profile is not activated. To activate you profile you need to pass the interview -
-                    <a href="/interview">Interview details</a>
+                    <?php  _e('Your profile is not activated. To activate you profile you need to pass the interview - ','projects-page');?>
+                    <a href="/interview"><?php  _e('Interview details','projects-page');?></a>
                     <?php
                     if (get_option('interview_system') == 'false') {
                         ?>
                         <button id="activate_without_interview"
-                                class="btn btn-info">Activate without interview
+                                class="btn btn-info"><?php  _e('Activate without interview','projects-page');?>
                         </button>
                         <?php
                     }
@@ -101,7 +101,7 @@ if ($project_status == 'publish') {
                         <?php
                         if ($convert->type_budget == 'hourly_rate'){
                            ?>
-                            <span class="budget-project-item"> <?php echo $convert->budget . ' / hour'; ?></span>
+                            <span class="budget-project-item"> <?php echo $convert->budget . __(" / hour", 'projects-page'); ?></span>
                         <?php
                         }else{
                             ?>
@@ -254,27 +254,29 @@ if ($project_status == 'publish') {
     </div><!-- tab-content-project !-->
 </div>  <!--col-md-12 !-->
 
-
+<?php
+// TODO: delete this
+?>
 <!--Modal Window For Deleting Bid!-->
-<div class="modal modal-vcenter fade in" id="modal-deleting-bid">
-    <div class="modal-dialog top-margin">
-        <div class="modal-content" style="margin-top:150px; height:250px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span aria-hidden="true" style="font-size: 18px;">X</span></button>
-                <h4 class="modal-title text-center text-color-popup" style="font-size:30px;">Deleting Bid</h4>
-                <hr>
-            </div>
-            <div class="modal-body">
-                <h4 class="text-center" style="font-size:25px; padding-top:10px;">Are you sure, you want to delete the Bid?</h4>
-                <div style="padding-top:25px;">
-                    <a style="margin:10px;" href="#" class="btn btn-apply-project-item" data-dismiss="modal">
-                        <?php  _e('No','projects-page');?>
-                    </a>
-                    <a style="margin:10px;" rel="<?php echo $project->ID;?>" href="#" id="<?php echo $has_bid;?>" class="btn btn-apply-project-item btn-del-project" >
-                        <?php  _e('Delete','projects-page');?>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal modal-vcenter fade in" id="modal-deleting-bid">-->
+<!--    <div class="modal-dialog top-margin">-->
+<!--        <div class="modal-content" style="margin-top:150px; height:250px;">-->
+<!--            <div class="modal-header">-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"><span aria-hidden="true" style="font-size: 18px;">X</span></button>-->
+<!--                <h4 class="modal-title text-center text-color-popup" style="font-size:30px;">--><?php // _e('NoDeleting Bid','projects-page');?><!--</h4>-->
+<!--                <hr>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <h4 class="text-center" style="font-size:25px; padding-top:10px;">--><?php // _e('NoAre you sure, you want to delete the Bid?','projects-page');?><!--</h4>-->
+<!--                <div style="padding-top:25px;">-->
+<!--                    <a style="margin:10px;" href="#" class="btn btn-apply-project-item" data-dismiss="modal">-->
+<!--                        --><?php // _e('No','projects-page');?>
+<!--                    </a>-->
+<!--                    <a style="margin:10px;" rel="--><?php //echo $project->ID;?><!--" href="#" id="--><?php //echo $has_bid;?><!--" class="btn btn-apply-project-item btn-del-project" >-->
+<!--                        --><?php // _e('Delete','projects-page');?>
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

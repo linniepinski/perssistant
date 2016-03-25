@@ -26,9 +26,6 @@ $last_post = array_shift($interview_post->posts);
 $interview_meta = get_post_meta($last_post->ID);
 
 $post_id = $last_post->ID;
-//if ($post_id){
-//
-//}
 
 get_header();
 
@@ -36,11 +33,8 @@ get_header();
 ?>
 
 
-    <!--    <script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>-->
     <script type="text/javascript" src="/wp-content/themes/freelanceengine/js/moment.js"></script>
-    <!--    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="/wp-content/themes/freelanceengine/js/bootstrap-datetimepicker.min.js"></script>
-    <!--    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />-->
     <link rel="stylesheet" href="/wp-content/themes/freelanceengine/css/bootstrap-datetimepicker.min.css"/>
 
 
@@ -55,7 +49,7 @@ get_header();
                 <div class="col-md-12 blog-classic-top">
 
                     <h2><?php the_title(); ?></h2>
-                    <div class="alert alert-warning" role="alert">If your plans or contact information changed, you can always refresh this page and update needed fields! Thank you!</div>
+                    <div class="alert alert-warning" role="alert"><?php _e('If your plans or contact information changed, you can always refresh this page and update needed fields! Thank you!', 'page-interview') ?></div>
                 </div>
 
             </div>
@@ -80,7 +74,7 @@ get_header();
                     <form id="interview_form" class="interview_form">
                         <input type="hidden" id="post_id" name="post_id" value="<?php echo $post_id;?>">
 
-                        <label>Please enter 3 possible dates and times to talk to us on Skype or call:</label>
+                        <label><?php _e('Please enter 3 possible dates and times to talk to us on Skype or call:', 'page-interview') ?></label>
 
                         <div class="form-group">
 
@@ -119,11 +113,11 @@ get_header();
                             <div class='col-sm-6'>
 
                                 <div class="form-group">
-                                    <label for="interview_skype">Please fill in your skype ID :</label>
+                                    <label for="interview_skype"><?php _e('Please fill in your skype ID :', 'page-interview') ?></label>
                                     <input type="text" value="<?php echo $interview_meta['skype_id'][0]; ?>" id="interview_skype" name="interview_skype" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="interview_tel">or telephone nr :</label>
+                                    <label for="interview_tel"><?php _e('or telephone nr :', 'page-interview') ?></label>
                                     <input type="tel" value="<?php echo $interview_meta['tel'][0]; ?>" id="interview_tel" name="interview_tel" class="form-control">
                                 </div>
                             </div>

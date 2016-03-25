@@ -121,7 +121,7 @@
                 else {
                     if ($project->type_budget == 'hourly_rate'){
                         ?>
-                        <span class="number-price"><?php echo $convert->bid_budget_text.'/h'; ?></span>
+                        <span class="number-price"><?php echo $convert->bid_budget_text.__("/h", 'bid-item'); ?></span>
                     <?php
                     }else{
                         ?>
@@ -195,7 +195,7 @@
             </div>
         <?php if($convert->post_content){ ?>
 <div class="row">
-    <p style="text-transform: uppercase" class="title-tab-project"><span>Posted on: <?php echo date('F d,Y g:i a',strtotime(get_post($convert->id)->post_date_gmt)) ?></span></p>
+    <p style="text-transform: uppercase" class="title-tab-project"><span><?php _e("Posted on:", 'bid-item'); ?> <?php echo date('F d,Y g:i a',strtotime(get_post($convert->id)->post_date_gmt)) ?></span></p>
             <div class="col-xs-12">
 
                 <blockquote class="comment-author-history">

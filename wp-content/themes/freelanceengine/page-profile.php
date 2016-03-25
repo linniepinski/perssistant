@@ -87,13 +87,13 @@ get_header();
                         ?>
                         <div class="col-md-12" style="margin-top: 25px">
                             <div class="alert alert-warning" role="alert">
-                                Your profile is not activated. To activate you profile you need to pass the interview -
-                                <a href="/interview">Interview details</a>
+                                <?php  _e('Your profile is not activated. To activate you profile you need to pass the interview - ','projects-page');?>
+                                <a href="/interview"><?php  _e('Interview details','projects-page');?></a>
                                 <?php
                                 if (get_option('interview_system') == 'false') {
                                     ?>
                                     <button id="activate_without_interview"
-                                            class="btn btn-info">Activate without interview
+                                            class="btn btn-info"><?php  _e('Activate without interview','projects-page');?>
                                     </button>
                                     <?php
                                 }
