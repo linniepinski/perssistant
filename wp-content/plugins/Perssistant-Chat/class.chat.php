@@ -157,7 +157,7 @@ class chat
             ?>
             <div style="margin-top:7%" class="col-xs-12 bs-example bs-example-standalone">
             <div class="alert alert-info" role="alert">
-                <?php __('You can\'t join the chat. Please login.','chat-frontend') ?>
+                <?php _e('You can\'t join the chat. Please login.','chat-frontend') ?>
             </div>
             </div>
             <?php
