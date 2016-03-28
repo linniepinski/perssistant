@@ -1,4 +1,4 @@
-.language-selector-wpml-custom {
+/*.language-selector-wpml-custom {
     display: inline-block;
     margin-top: 6px;
     margin-right: 10px;
@@ -11,6 +11,6 @@
 }
 .language-selector-wpml-custom ul{
     list-style: none;
-}
+}*/
 
 /*need to rename => add-porfolio-button -> add-porfolio-CV-button in custom.css*/
