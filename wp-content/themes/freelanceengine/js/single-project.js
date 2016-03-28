@@ -1004,6 +1004,6 @@ jQuery(document).ready(function () {
         var button = jQuery(this);
         button.attr('disabled','disabled');
         jQuery.cookie('data_to_clone', JSON.stringify(current_project_data),{ expires: 7, path: '/' });
-        window.location.href = '/submit-project';
+        window.location.href = ae_globals.homeURL+'/submit-project';
     });
 });
