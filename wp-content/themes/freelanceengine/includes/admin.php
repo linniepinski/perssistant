@@ -1716,7 +1716,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'confirmed_phone_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Confirmed Phone", 'admin-backend') ,
                             'name' => 'confirmed_phone_template_en',
                             'class' => '',
@@ -1724,7 +1724,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'confirmed_phone_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Confirmed Phone", 'admin-backend') ,
                             'name' => 'confirmed_phone_template_de',
                             'class' => '',
@@ -1821,7 +1821,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'new_message_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'new_message_mail_template_en',
                             'class' => '',
@@ -1829,7 +1829,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'new_message_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'new_message_mail_template_de',
                             'class' => '',
@@ -1850,7 +1850,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'inbox_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'inbox_mail_template_en',
                             'class' => '',
@@ -1858,7 +1858,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'inbox_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Inbox Mail", 'admin-backend') ,
                             'name' => 'inbox_mail_template_de',
                             'class' => '',
@@ -1879,7 +1879,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'invite_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Invite Mail", 'admin-backend') ,
                             'name' => 'invite_mail_template_en',
                             'class' => '',
@@ -1887,7 +1887,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'invite_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Invite Mail", 'admin-backend') ,
                             'name' => 'invite_mail_template_de',
                             'class' => '',
@@ -1907,7 +1907,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'cash_notification_mail',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Cash Notification Mail", 'admin-backend') ,
                             'name' => 'cash_notification_mail_en',
                             'class' => '',
@@ -1915,7 +1915,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'cash_notification_mail',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Cash Notification Mail", 'admin-backend') ,
                             'name' => 'cash_notification_mail_de',
                             'class' => '',
@@ -1936,7 +1936,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'ae_receipt_mail',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Receipt Mail Template", 'admin-backend') ,
                             'name' => 'ae_receipt_mail_en',
                             'class' => '',
@@ -1944,7 +1944,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'ae_receipt_mail',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Receipt Mail Template", 'admin-backend') ,
                             'name' => 'ae_receipt_mail_de',
                             'class' => '',
@@ -1965,7 +1965,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'publish_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("publish Mail", 'admin-backend') ,
                             'name' => 'publish_mail_template_en',
                             'class' => '',
@@ -1973,7 +1973,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'publish_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("publish Mail", 'admin-backend') ,
                             'name' => 'publish_mail_template_de',
                             'class' => '',
@@ -1993,7 +1993,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'archive_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("archive Mail", 'admin-backend') ,
                             'name' => 'archive_mail_template_en',
                             'class' => '',
@@ -2001,7 +2001,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'archive_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("archive Mail", 'admin-backend') ,
                             'name' => 'archive_mail_template_de',
                             'class' => '',
@@ -2021,7 +2021,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'reject_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("reject Mail", 'admin-backend') ,
                             'name' => 'reject_mail_template_en',
                             'class' => '',
@@ -2029,7 +2029,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'reject_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("reject Mail", 'admin-backend') ,
                             'name' => 'reject_mail_template_de',
                             'class' => '',
@@ -2049,7 +2049,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'bid_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Bid Mail", 'admin-backend') ,
                             'name' => 'bid_mail_template_en',
                             'class' => '',
@@ -2057,7 +2057,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'bid_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Bid Mail", 'admin-backend') ,
                             'name' => 'bid_mail_template_de',
                             'class' => '',
@@ -2078,7 +2078,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'bid_accepted_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Bid Accepted Mail", 'admin-backend') ,
                             'name' => 'bid_accepted_template_en',
                             'class' => '',
@@ -2086,7 +2086,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'bid_accepted_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Bid Accepted Mail", 'admin-backend') ,
                             'name' => 'bid_accepted_template_de',
                             'class' => '',
@@ -2106,7 +2106,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'complete_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Complete Mail", 'admin-backend') ,
                             'name' => 'complete_mail_template_en',
                             'class' => '',
@@ -2114,7 +2114,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'complete_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Complete Mail", 'admin-backend') ,
                             'name' => 'complete_mail_template_de',
                             'class' => '',
@@ -2152,7 +2152,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'employer_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_report_mail_template_en',
                             'class' => '',
@@ -2160,7 +2160,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'employer_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_report_mail_template_de',
                             'class' => '',
@@ -2180,7 +2180,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'employer_close_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_close_mail_template_en',
                             'class' => '',
@@ -2188,7 +2188,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'employer_close_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Employer Report  Mail", 'admin-backend') ,
                             'name' => 'employer_close_mail_template_de',
                             'class' => '',
@@ -2208,7 +2208,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'freelancer_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Freelancer Report  Mail", 'admin-backend') ,
                             'name' => 'freelancer_report_mail_template_en',
                             'class' => '',
@@ -2216,7 +2216,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'freelancer_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Freelancer Report  Mail", 'admin-backend') ,
                             'name' => 'freelancer_report_mail_template_de',
                             'class' => '',
@@ -2236,7 +2236,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'freelancer_quit_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Freelancer Quit  Mail", 'admin-backend') ,
                             'name' => 'freelancer_quit_mail_template_en',
                             'class' => '',
@@ -2244,7 +2244,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'freelancer_quit_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Freelancer Quit  Mail", 'admin-backend') ,
                             'name' => 'freelancer_quit_mail_template_de',
                             'class' => '',
@@ -2265,7 +2265,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'admin_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin New Report Mail", 'admin-backend') ,
                             'name' => 'admin_report_mail_template_en',
                             'class' => '',
@@ -2273,7 +2273,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'admin_report_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin New Report Mail", 'admin-backend') ,
                             'name' => 'admin_report_mail_template_de',
                             'class' => '',
@@ -2293,7 +2293,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'fre_refund_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin Refund Payment", 'admin-backend') ,
                             'name' => 'fre_refund_mail_template_en',
                             'class' => '',
@@ -2301,7 +2301,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'fre_refund_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin Refund Payment", 'admin-backend') ,
                             'name' => 'fre_refund_mail_template_de',
                             'class' => '',
@@ -2321,7 +2321,7 @@ class ET_Admin extends AE_Base
                     'fields' => array(
                         array(
                             'id' => 'fre_execute_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin Execute Payment Mail", 'admin-backend') ,
                             'name' => 'fre_execute_mail_template_en',
                             'class' => '',
@@ -2329,7 +2329,7 @@ class ET_Admin extends AE_Base
                         ),
                         array(
                             'id' => 'fre_execute_mail_template',
-                            'type' => 'editor',
+                            'type' => 'textarea',
                             'title' => __("Admin Execute Payment Mail", 'admin-backend') ,
                             'name' => 'fre_execute_mail_template_de',
                             'class' => '',
