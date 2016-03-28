@@ -1017,6 +1017,28 @@ vertical-align: middle;';
 
         $content = str_ireplace('[greeting]', $greeting, $content);
 
+        $hello = '
+        <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
+                                <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                    <td class="wrapper last space-up" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; position: relative; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 40px 0px 0px;" align="left" valign="middle">
+                                        <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 580px; margin: 0 auto; padding: 0;">
+                                            <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
+                                                <td class="three sub-columns" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 25%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 10px 10px 0px;" align="left" valign="middle">
+                                                    <img src="'.get_avatar_url($user_id,150).'" alt="Name" class="circle" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 70px; max-width: 100%; float: left; clear: both; display: block; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;" align="left" />
+                                                </td>
+                                                <td class="nine sub-columns last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 75%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
+                                                    <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">'.__('Hello','aecore-class-ae-mailing-backend') . ' <a href="'.home_url().'/profile'.'" target="blank" style="color: #3783c4; text-decoration: none;">'.$user->display_name.'</a></p>
+                                                </td>
+                                                <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+        ';
+
+
+        $content = str_ireplace('[hello]', $hello, $content);
 
         $main_content_body_start= '<table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
                                         <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">

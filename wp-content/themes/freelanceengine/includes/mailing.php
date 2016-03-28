@@ -31,7 +31,7 @@ Class Fre_Mailing extends AE_Mailing
         $post_author = get_post_field('post_author', $project_id);
         $author = get_userdata($post_author);
         if ($author) {
-            $message = ae_get_option('bid_mail_template');
+            $message = ae_get_option('bid_mail_template_'.ICL_LANGUAGE_CODE);
             $bid_msg = get_post_field('post_content', $bid_id);
             $message = str_replace('[message]', $bid_msg, $message);
             $subject = sprintf(__("Your project posted on %s has a new bid.", 'mailing-backend') , get_option('blogname'));
@@ -52,7 +52,7 @@ Class Fre_Mailing extends AE_Mailing
      */
     function review_freelancer_email($project_id) {
         
-        $message = ae_get_option('complete_mail_template');
+        $message = ae_get_option('complete_mail_template_'.ICL_LANGUAGE_CODE);
         global $wp_rewrite;
         if ($wp_rewrite->using_permalinks()) {
             $replace = '?review=1';
@@ -80,7 +80,7 @@ Class Fre_Mailing extends AE_Mailing
      */
     function review_employer_email($project_id) {
         
-        $message = ae_get_option('complete_mail_template');
+        $message = ae_get_option('complete_mail_template_'.ICL_LANGUAGE_CODE);
         $message = str_replace('[review]', '', $message);
         
         $subject = __("Your posted project has a review.", 'mailing-backend');
@@ -131,8 +131,8 @@ Class Fre_Mailing extends AE_Mailing
             
             // get mail template
             $message = '';
-            if (ae_get_option('invite_mail_template')) {
-                $message = ae_get_option('invite_mail_template');
+            if (ae_get_option('invite_mail_template_'.ICL_LANGUAGE_CODE)) {
+                $message = ae_get_option('invite_mail_template_'.ICL_LANGUAGE_CODE);
             }
             
             // replace project list by placeholder
@@ -162,8 +162,8 @@ Class Fre_Mailing extends AE_Mailing
         
         // get mail template
         $message = '';
-        if (ae_get_option('bid_accepted_template')) {
-            $message = ae_get_option('bid_accepted_template');
+        if (ae_get_option('bid_accepted_template_'.ICL_LANGUAGE_CODE)) {
+            $message = ae_get_option('bid_accepted_template_'.ICL_LANGUAGE_CODE);
         }
         
         $workspace_link = add_query_arg(array(
@@ -196,7 +196,7 @@ Class Fre_Mailing extends AE_Mailing
             'workspace' => 1
         ) , get_permalink($project));
         
-        $mail_template = ae_get_option('new_message_mail_template');
+        $mail_template = ae_get_option('new_message_mail_template_'.ICL_LANGUAGE_CODE);
         
         // replace message content place holder
         $mail_template = str_replace('[message]', $message->comment_content, $mail_template);
@@ -229,7 +229,7 @@ Class Fre_Mailing extends AE_Mailing
         if ($project->post_author == $user_ID) {
             
             // mail to freelancer when project owner send a report
-            $mail_template = ae_get_option('employer_report_mail_template');
+            $mail_template = ae_get_option('employer_report_mail_template_'.ICL_LANGUAGE_CODE);
             $mail_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $mail_template);
             
             $bid_id = get_post_meta($project_id, 'accepted', true);
@@ -239,7 +239,7 @@ Class Fre_Mailing extends AE_Mailing
         } else {
             
             // mail to employer when freelancer working on project send a new report
-            $mail_template = ae_get_option('freelancer_report_mail_template');
+            $mail_template = ae_get_option('freelancer_report_mail_template_'.ICL_LANGUAGE_CODE);
             $mail_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $mail_template);
             
             $user_email = get_the_author_meta('user_email', $project->post_author);
@@ -255,7 +255,7 @@ Class Fre_Mailing extends AE_Mailing
         $mail_template = str_replace('[workspace]', $workspace_link, $mail_template);
         
         // mail to admin
-        $admin_template = ae_get_option('admin_report_mail_template');
+        $admin_template = ae_get_option('admin_report_mail_template_'.ICL_LANGUAGE_CODE);
         $admin_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $admin_template);
         
         // send mail to freelancer / employer
@@ -285,7 +285,7 @@ Class Fre_Mailing extends AE_Mailing
         $subject = sprintf(__("Project %s was closed.", 'mailing-backend') , get_the_title($project_id));
         
         // mail to freelancer when project owner send a report
-        $mail_template = ae_get_option('employer_close_mail_template');
+        $mail_template = ae_get_option('employer_close_mail_template_'.ICL_LANGUAGE_CODE);
         $mail_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $mail_template);
         
         $bid_id = get_post_meta($project_id, 'accepted', true);
@@ -307,7 +307,7 @@ Class Fre_Mailing extends AE_Mailing
         ));
         
         // mail to admin
-        $admin_template = ae_get_option('admin_report_mail_template');
+        $admin_template = ae_get_option('admin_report_mail_template_'.ICL_LANGUAGE_CODE);
         $admin_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $admin_template);
         
         // send mail to admin
@@ -331,7 +331,7 @@ Class Fre_Mailing extends AE_Mailing
         $subject = sprintf(__("User quit your project %s.", 'mailing-backend') , get_the_title($project_id));
         
         // mail to employer when freelancer working on project send a new report
-        $mail_template = ae_get_option('freelancer_quit_mail_template');
+        $mail_template = ae_get_option('freelancer_quit_mail_template_'.ICL_LANGUAGE_CODE);
         $mail_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $mail_template);
         
         $user_email = get_the_author_meta('user_email', $project->post_author);
@@ -352,7 +352,7 @@ Class Fre_Mailing extends AE_Mailing
         ));
         
         // mail to admin
-        $admin_template = ae_get_option('admin_report_mail_template');
+        $admin_template = ae_get_option('admin_report_mail_template_'.ICL_LANGUAGE_CODE);
         $admin_template = str_replace('[reporter]', get_the_author_meta('display_name', $user_ID) , $admin_template);
         
         // send mail to admin
@@ -372,7 +372,7 @@ Class Fre_Mailing extends AE_Mailing
         $project_owner = get_post_field('post_author', $project_id);
         $bid_owner = get_post_field('post_author', $bid_accepted);
         
-        $mail_template = ae_get_option('fre_refund_mail_template');
+        $mail_template = ae_get_option('fre_refund_mail_template_'.ICL_LANGUAGE_CODE);
         if (!$mail_template) return;
         
         // mail to project owner
@@ -411,7 +411,7 @@ Class Fre_Mailing extends AE_Mailing
         $project_owner = get_post_field('post_author', $project_id);
         $bid_owner = get_post_field('post_author', $bid_accepted);
         
-        $mail_template = ae_get_option('fre_execute_mail_template');
+        $mail_template = ae_get_option('fre_execute_mail_template_'.ICL_LANGUAGE_CODE);
         if (!$mail_template) return;
         
         // mail to project owner
