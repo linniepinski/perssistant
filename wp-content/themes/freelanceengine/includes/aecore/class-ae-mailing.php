@@ -1075,8 +1075,6 @@ vertical-align: middle;';
 
         $content = str_ireplace('[confirm_link]', $confirm_link, $content);
 
-        $confirm_link = '<a href="' . $confirm_link . '" >' . __("Click here to confirm link", 'aecore-class-ae-mailing-backend') . '</a>&nbsp;&nbsp;&nbsp;&nbsp;Or copy link and paste to browser.&nbsp;&nbsp;' . $confirm_link;
-
         $block_button_confirm = '
                                 <table class="row" style="border-spacing: 0; border-collapse: collapse; vertical-align: middle; text-align: left; width: 100%; position: relative; display: block; padding: 0px;">
                                     <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
