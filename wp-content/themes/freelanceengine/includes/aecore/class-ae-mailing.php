@@ -54,7 +54,7 @@ class AE_Mailing extends AE_Base
 
         $subject = __("Congratulations! Your account has been verified successfully.", 'aecore-class-ae-mailing-backend');
 
-        $message = ae_get_option('confirmed_mail_template');
+        $message = ae_get_option('confirmed_mail_template_'.ICL_LANGUAGE_CODE);
 
 
         $this->wp_mail($user_email, $subject, $message, array(
@@ -82,7 +82,7 @@ class AE_Mailing extends AE_Base
 
         $subject = __("Congratulations! Your phone has been verified successfully.", 'aecore-class-ae-mailing-backend');
 
-        $message = ae_get_option('confirmed_phone_template');
+        $message = ae_get_option('confirmed_phone_template_'.ICL_LANGUAGE_CODE);
 
         $this->wp_mail($user_email, $subject, $message, array(
 
@@ -117,7 +117,7 @@ class AE_Mailing extends AE_Base
 
         $subject = sprintf(__('[%s]New Private Message From %s', 'aecore-class-ae-mailing-backend'), get_bloginfo('blogname'), $current_user->display_name);
 
-        $message = ae_get_option('inbox_mail_template');
+        $message = ae_get_option('inbox_mail_template_'.ICL_LANGUAGE_CODE);
 
         $inbox_message = stripslashes(str_replace("\n", "<br>", $inbox_message));
 
@@ -167,7 +167,7 @@ class AE_Mailing extends AE_Base
         $user_login = $user->user_login;
 
 
-        $message = ae_get_option('forgotpass_mail_template');
+        $message = ae_get_option('forgotpass_mail_template_'.ICL_LANGUAGE_CODE);
 
 
         $activate_url = add_query_arg(array(
@@ -221,7 +221,7 @@ class AE_Mailing extends AE_Base
         $subject = sprintf(__("[%s]New report message from %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'), $user->display_name);
 
 
-        $message = ae_get_option('ae_report_mail');
+        $message = ae_get_option('ae_report_mail_'.ICL_LANGUAGE_CODE);
 
         $message = str_replace('[place_title]', $place->post_title, $message);
 
@@ -256,7 +256,7 @@ class AE_Mailing extends AE_Base
         $subject = sprintf(__("[%s]Your claim request has been approved.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
 
-        $message = ae_get_option('ae_approve_claim_mail');
+        $message = ae_get_option('ae_approve_claim_mail_'.ICL_LANGUAGE_CODE);
 
         $message = str_replace('[place_title]', $place->post_title, $message);
 
@@ -287,7 +287,7 @@ class AE_Mailing extends AE_Base
         $subject = sprintf(__("[%s]Your claim request has been rejected.", 'aecore-class-ae-mailing-backend'), get_option('blogname'));
 
 
-        $message = ae_get_option('ae_reject_claim_mail');
+        $message = ae_get_option('ae_reject_claim_mail_'.ICL_LANGUAGE_CODE);
 
         $message = str_replace('[place_title]', $place->post_title, $message);
 
@@ -316,7 +316,7 @@ class AE_Mailing extends AE_Base
         $subject = sprintf(__("[%s]New claim request from %s.", 'aecore-class-ae-mailing-backend'), get_option('blogname'), $user->display_name);
 
 
-        $message = ae_get_option('ae_claim_mail');
+        $message = ae_get_option('ae_claim_mail_'.ICL_LANGUAGE_CODE);
 
         $message = str_replace('[place_title]', $place->post_title, $message);
 
@@ -367,13 +367,13 @@ class AE_Mailing extends AE_Base
 
             if (ae_get_option('user_confirm')) {
 
-                $message = ae_get_option('confirm_mail_freelancer_template');
+                $message = ae_get_option('confirm_mail_freelancer_template_'.ICL_LANGUAGE_CODE);
 
 //                $message = ae_get_option('register_mail_freelancer_template');
 
             } else {
 
-                $message = ae_get_option('register_mail_freelancer_template');
+                $message = ae_get_option('register_mail_freelancer_template_'.ICL_LANGUAGE_CODE);
 
             }
         } else {
@@ -381,11 +381,11 @@ class AE_Mailing extends AE_Base
 
             if (ae_get_option('user_confirm')) {
 
-                $message = ae_get_option('confirm_mail_template');
+                $message = ae_get_option('confirm_mail_template_'.ICL_LANGUAGE_CODE);
 
             } else {
 
-                $message = ae_get_option('register_mail_template');
+                $message = ae_get_option('register_mail_template_'.ICL_LANGUAGE_CODE);
 
             }
         }
@@ -428,7 +428,7 @@ class AE_Mailing extends AE_Base
 
         //if (ae_get_option('user_confirm')) {
 
-        $message = ae_get_option('confirm_mail_template');
+        $message = ae_get_option('confirm_mail_template_'.ICL_LANGUAGE_CODE);
 
 
         // }
@@ -470,7 +470,7 @@ class AE_Mailing extends AE_Base
 
                     $subject = sprintf(__("Your post '%s' has been approved.", 'aecore-class-ae-mailing-backend'), get_the_title($post->ID));
 
-                    $message = ae_get_option('publish_mail_template');
+                    $message = ae_get_option('publish_mail_template_'.ICL_LANGUAGE_CODE);
 
 
                     //send mail
@@ -494,7 +494,7 @@ class AE_Mailing extends AE_Base
 
                     $subject = sprintf(__('Your post "%s" has been archived', 'aecore-class-ae-mailing-backend'), get_the_title($post->ID));
 
-                    $message = ae_get_option('archive_mail_template');
+                    $message = ae_get_option('archive_mail_template_'.ICL_LANGUAGE_CODE);
 
 
                     // send mail
@@ -551,7 +551,7 @@ class AE_Mailing extends AE_Base
 
         // get reject mail template
 
-        $message = ae_get_option('reject_mail_template');
+        $message = ae_get_option('reject_mail_template_'.ICL_LANGUAGE_CODE);
 
 
         // filter reject message
@@ -620,7 +620,7 @@ class AE_Mailing extends AE_Base
         }
 
 
-        $mail_template = ae_get_option('cash_notification_mail');
+        $mail_template = ae_get_option('cash_notification_mail_'.ICL_LANGUAGE_CODE);
 
         $message = str_replace('[cash_message]', $message, $mail_template);
 
@@ -651,7 +651,7 @@ class AE_Mailing extends AE_Base
         $user = get_userdata($user_id);
 
 
-        $content = ae_get_option('ae_receipt_mail');
+        $content = ae_get_option('ae_receipt_mail_'.ICL_LANGUAGE_CODE);
 
         $products = $order['products'];
 
@@ -910,7 +910,7 @@ class AE_Mailing extends AE_Base
                                                 <tr style="vertical-align: middle; text-align: left; padding: 0;" align="left">
                                                     <td class="six sub-columns" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 50%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 10px 10px 0px;" align="left" valign="middle">
                                                         <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 1.1; font-size: 12px; margin: 0 0 10px; padding: 0;" align="left">
-                                                            <br class="hide-for-small" /> � 2016 Perssistant - Plugin Initiative</p>
+                                                            <br class="hide-for-small" /> © 2016 Perssistant - Plugin Initiative</p>
                                                     </td>
                                                     <td class="six sub-columns last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 50%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
                                                         <p class="text-right" style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: right; line-height: 1.1; font-size: 12px; margin: 0 0 10px; padding: 0;" align="right">Persisstant
@@ -1004,7 +1004,7 @@ vertical-align: middle;';
                                                     <img src="'.get_avatar_url($user_id,150).'" alt="Name" class="circle" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 70px; max-width: 100%; float: left; clear: both; display: block; height: auto; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;" align="left" />
                                                 </td>
                                                 <td class="nine sub-columns last" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; min-width: 0px; width: 75%; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="left" valign="middle">
-                                                    <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">Hi <a href="'.home_url().'/profile'.'" target="blank" style="color: #3783c4; text-decoration: none;">'.$user->display_name.'</a>, welcome to Perssistant!</p>
+                                                    <p style="color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; text-align: left; line-height: 24px; font-size: 14px; margin: 0 0 10px; padding: 0;" align="left">'.__('Hi','aecore-class-ae-mailing-backend') . ' <a href="'.home_url().'/profile'.'" target="blank" style="color: #3783c4; text-decoration: none;">'.$user->display_name.'</a>'.__(', welcome to Perssistant!','aecore-class-ae-mailing-backend') . '</p>
                                                 </td>
                                                 <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: middle; text-align: left; visibility: hidden; width: 0px; color: #737373; font-family: \'Arial\', sans-serif; font-weight: normal; line-height: 24px; font-size: 14px; margin: 0; padding: 0;" align="left" valign="middle"></td>
                                             </tr>
