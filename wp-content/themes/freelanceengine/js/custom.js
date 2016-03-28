@@ -567,7 +567,7 @@ jQuery(document).ready(function () {
         }
     });
 
-	if (jQuery.cookie('data_to_clone') !== undefined && window.location.pathname == '/submit-project/'){
+	if (jQuery.cookie('data_to_clone') !== undefined && window.location.href == ae_globals.homeURL + '/submit-project/'){
 		var project_clone = jQuery.parseJSON(jQuery.cookie('data_to_clone'));
 		jQuery('#post_title').val(project_clone.data.title);
 		jQuery('#post_content').val(project_clone.data.description);

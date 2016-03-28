@@ -509,14 +509,16 @@ class Fre_ProjectAction extends AE_PostAction
              * check disable plan and submit place to view details
              */
             if ($this->disable_plan && $request['method'] == 'create') {
-
+                if (ICL_LANGUAGE_CODE != 'en'){
+                   $redirect = apply_filters( 'wpml_permalink',  $result->permalink,  ICL_LANGUAGE_CODE );
+                }else $redirect = $result->permalink;
                 // disable plan, free to post place
                 $response = array(
                     'success' => true,
                     'data' => array(
                         'ID' => $result->ID,
                         // set redirect url
-                        'redirect_url' => $result->permalink
+                        'redirect_url' => $redirect
                     ),
                     'msg' => __("Submit place successfull.", 'projects-backend')
                 );
