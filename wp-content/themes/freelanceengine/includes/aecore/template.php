@@ -599,7 +599,9 @@ function the_taxonomy_list( $taxonomy = 'category', $link_before = '', $link_aft
         if(!is_wp_error( $product_terms )){
             echo '<ul>';
             foreach($product_terms as $term){
-                echo '<li><a href="'.get_term_link($term->slug, $taxonomy).'"">'.$link_before.$term->name.$link_after.'</a></li>';
+                if (ICL_LANGUAGE_CODE == 'en') $link = apply_filters( 'wpml_permalink', get_term_link($term->slug, $taxonomy), '' );
+                else $link = apply_filters( 'wpml_permalink', get_term_link($term->slug, $taxonomy), ICL_LANGUAGE_CODE );
+                echo '<li><a href="'.$link.'"">'.$link_before.$term->name.$link_after.'</a></li>';
             }
             echo '</ul>';
         }

@@ -178,7 +178,7 @@
                         <?php _e('Invite to chat','bid-item') ;
                         ?>
                     </button>
-                <span class="confirm pull-right"><button class="btn btn-skip btn-skip-custom" data-id="<?php the_ID();?>">Decline</button></span>
+                <span class="confirm pull-right"><button class="btn btn-skip btn-skip-custom" data-id="<?php the_ID();?>"><?php _e('Decline','bid-item') ; ?></button></span>
 				<?php
 
 
