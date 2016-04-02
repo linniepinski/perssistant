@@ -172,7 +172,7 @@
 
                 </button>
 <?php
-                    $invate_id = get_the_author_ID();
+                    $invate_id = get_the_author_meta('ID');
                     ?>
                     <button class="btn btn-success pull-right btn-invate-on-bid" onclick="invate_freelancer(<?php echo $invate_id.",".$project->post_author.",".$project->ID.",'".$project->author_name."'"?>);">
                         <?php _e('Invite to chat','bid-item') ;
