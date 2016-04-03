@@ -138,6 +138,17 @@
 
                 </span>
 
+	            <?php if($post_object->current_post->decide_later!= 'on' && $project->type_budget != 'hourly_rate') { ?>
+		            <?php if( $bid_accept && $project->accepted == $convert->ID && in_array($project_status, array('complete','close', 'disputing') ) ) { ?>
+			            <?php $bid_paid_by_stripe = get_post_meta($convert->ID, 'bid_paid_by_stripe', true); ?>
+			            <?php if($bid_paid_by_stripe != 'yes') { ?>
+			              <?php printStripePaymentForm($convert->post_author, $convert->ID, $convert->bid_budget, $project->post_name); ?>
+				          <?php } else { ?>
+				            <p><strong><?php _e("Paid", 'bid-item'); ?></strong></p>
+			            <?php } ?>
+		            <?php } ?>
+	            <?php } ?>
+
             <?php }else{ ?>
 
                 <span class="number-price"><?php _e("In Process", 'bid-item'); ?></span>

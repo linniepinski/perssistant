@@ -3057,3 +3057,48 @@ function custom_login_css() {
 add_action('login_head', 'custom_login_css');
 
 include 'includes/price_range.php';
+
+
+require_once('inc/admin-menu-extended.inc.php');
+
+$page_args = array('name' => 'stripe-result-page', 'post_type' => 'page');
+$stripe_result_page = get_posts($page_args);
+if($stripe_result_page){
+	$page_id = $stripe_result_page[0]->ID;
+	if(get_post_meta($page_id, '_wp_page_template', true) != 'page-stripe-results.php'){
+		update_post_meta($page_id, '_wp_page_template', 'page-stripe-results.php');
+	}
+} else {
+	$new_page_id = wp_insert_post(
+		array(
+			'comment_status'	=>	'closed',
+			'ping_status'		=>	'closed',
+			'post_author'		=>	1,
+			'post_name'		=>	'stripe-result-page',
+			'post_title'		=>	'Stripe Result Page',
+			'post_status'		=>	'publish',
+			'post_type'		=>	'page'
+		)
+	);
+	update_post_meta($new_page_id, '_wp_page_template', 'page-stripe-results.php');
+}
+
+function printStripePaymentForm($user_id, $bid_id, $price, $project_slug) {
+	$settings_stripe_public_key = get_option('settings_stripe_public_key');
+	$users_stripe_account_id = get_user_meta($user_id, 'stripe_account_id', true);
+	$stripePrice = $price * 100;
+
+	$form = '';
+	if(!empty($settings_stripe_public_key) && !empty($users_stripe_account_id)){
+		$form .= '<form action="'.site_url().'/stripe-result-page" class="made_stripe_payment_js" method="post" style="min-width: 130px;">';
+		$form .= '<script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="'.$settings_stripe_public_key.'" data-amount="'.$stripePrice.'" data-description="Perssistant payment"></script>';
+		$form .= '<input name="stripe_price" value="'.$stripePrice.'" type="hidden" />';
+		$form .= '<input name="user_stripe_acc" value="'.$users_stripe_account_id.'" type="hidden" />';
+		$form .= '<input name="bid_id" value="'.$bid_id.'" type="hidden" />';
+		$form .= '<input name="project_slug" value="'.$project_slug.'" type="hidden" />';
+		$form .= '</form>';
+	} elseif(empty($users_stripe_account_id)){
+		$form .= '<p>User hasn\'t connect stripe account</p>';
+	}
+  echo $form;
+}

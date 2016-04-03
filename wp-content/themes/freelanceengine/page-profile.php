@@ -325,6 +325,28 @@ get_header();
                                                         }
                                                         ?>
 
+		                                                    <div class="form-group">
+			                                                    <div class="form-group-control">
+				                                                    <label><?php _e('Stripe Account', 'page-profile') ?></label>
+			                                                      <?php $user_stripe_account_id = get_user_meta($current_user->ID, 'stripe_account_id', true); ?>
+				                                                    <?php
+				                                                    $settings_stripe_secret_key = get_option('settings_stripe_secret_key');
+				                                                    $settings_stripe_public_key = get_option('settings_stripe_public_key');
+				                                                    $settings_stripe_client_id = get_option('settings_stripe_client_id');
+				                                                    ?>
+				                                                    <?php if(!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key) && !empty($settings_stripe_client_id)) { ?>
+				                                                      <?php if(!empty($user_stripe_account_id)) { ?>
+					                                                      <input type="text" class="form-control" value="<?php echo $user_stripe_account_id; ?>" readonly/>
+					                                                      <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Reconect stripe account', 'page-profile') ?></a>
+				                                                      <?php } else { ?>
+					                                                      <br />
+					                                                      <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Conect stripe account', 'page-profile') ?></a>
+					                                                    <?php } ?>
+		                                                        <?php } ?>
+			                                                    </div>
+		                                                    </div>
+		                                                    <div class="clearfix"></div>
+
                                                         <div class="form-group">
                                                             <div class="form-group-control">
                                                                 <label><?php _e('Primary Account', 'page-profile') ?></label>
