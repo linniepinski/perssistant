@@ -7,7 +7,7 @@ global $wp_query, $ae_post_factory, $post, $user_ID;
 $post_object    = $ae_post_factory->get(PROJECT);
 $convert = $project = $post_object->current_post;
 
-$et_expired_date    = $convert->et_expired_date;    
+$et_expired_date    = $convert->et_expired_date;
 $bid_accepted       = $convert->accepted;
 $project_status     = $convert->post_status;
 $profile_id         = get_user_meta($post->post_author,'user_profile_id', true);
@@ -129,7 +129,7 @@ if ($project_status == 'publish') {
                     if(current_user_can( 'manage_options' )) {
                         get_template_part( 'template/admin', 'project-control' );
                     }elseif( !$user_ID && $project_status == 'publish'){ ?>
-                        <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid','projects-page');?></a>  
+                        <a href="#"  class="btn btn-apply-project-item btn-login-trigger" ><?php  _e('Bid','projects-page');?></a>
                         <a href="#" class="popup-login" style="display:none;">Open Login Popup</a>
                     <?php } else {
                         $role = ae_user_role();
@@ -158,7 +158,7 @@ if ($project_status == 'publish') {
                                             <?php _e('Accept', 'projects-page'); ?>
                                         </a>
                                         <a href="#"
-                                           class="btn btn-decline-invite btn-apply-project-item btn-project-status">
+                                           class="btn btn-apply-project-item btn-decline-invite btn-project-status">
                                             <?php _e('Decline', 'projects-page'); ?>
                                         </a>
                                     <?php } else { ?>
@@ -176,32 +176,32 @@ if ($project_status == 'publish') {
                                 break;
                             case 'close':
                                 if( (int)$project->post_author == $user_ID){ ?>
-                                
+
                                     <a title="<?php  _e('Finish','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" >
                                         <?php  _e('Finish','projects-page');?>
                                     </a>
                                     <a title="<?php _e('Close','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-close-project" >
                                         <?php _e('Close','projects-page');?>
                                     </a>
-                                    <?php 
-                                }else{ 
+                                    <?php
+                                }else{
                                     $bid_accepted_author = get_post_field( 'post_author', $bid_accepted);
                                     if($bid_accepted_author == $user_ID) {
                                 ?>
                                     <a title="<?php  _e('Quit','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-quit-project" >
                                         <?php  _e('Quit','projects-page');?>
                                     </a>
-                                <?php } 
+                                <?php }
                                 }
                                 break;
                             case 'complete' :
                                 $freelan_id  = (int)get_post_field('post_author',$project->accepted);
-                        
+
                                 $comment = get_comments( array('status'=> 'approve', 'type' => 'fre_review', 'post_id'=> get_the_ID() ) );
 
                                 if( $user_ID == $freelan_id && empty( $comment ) ){ ?>
                                     <a href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" ><?php  _e('Review','projects-page');?></a>
-                                    <?php 
+                                    <?php
                                 } else { ?>
 
 <!--                                <a href="#" id="--><?php //the_ID();?><!--"   class="btn btn-apply-project-item project-complete" >--><?php // _e('Completed','projects-page');?><!--</a>-->
@@ -214,9 +214,9 @@ if ($project_status == 'publish') {
                                                         'draft'     => __('Draft','projects-page'),
                                                         'archive'   => __('Draft','projects-page'),
                                                         'reject'    => __('Reject', 'projects-page'),
-                                                        'trash'     => __('Trash', 'projects-page'), 
-                                                        'close'     => __('Working', 'projects-page'), 
-                                                        'complete'  => __('Completed', 'projects-page'), 
+                                                        'trash'     => __('Trash', 'projects-page'),
+                                                        'close'     => __('Working', 'projects-page'),
+                                                        'complete'  => __('Completed', 'projects-page'),
                                                         );
                                 if(isset($text_status[$project_status])){ ?>
                                     <a href="#"  class="btn btn-apply-project-item" ><?php  echo isset($text_status[$convert->post_status]) ? $text_status[$convert->post_status] : ''; ;?></a>
@@ -229,9 +229,9 @@ if ($project_status == 'publish') {
                     </div>
                 </div>
             </div>
-                <?php if( Fre_ReportForm::AccessReport() 
-                        && ($post->post_status == 'disputing' || $post->post_status == 'disputed') 
-                        && !isset($_REQUEST['workspace']) 
+                <?php if( Fre_ReportForm::AccessReport()
+                        && ($post->post_status == 'disputing' || $post->post_status == 'disputed')
+                        && !isset($_REQUEST['workspace'])
                     ) { ?>
                     <div class="workplace-container">
                         <?php get_template_part('template/project', 'report') ?>
@@ -244,7 +244,7 @@ if ($project_status == 'publish') {
                     get_template_part('template/project-detail' , 'info');
                     get_template_part('template/project-detail' , 'content');
                 } ?>
-                            
+
                 </div>
 
 
