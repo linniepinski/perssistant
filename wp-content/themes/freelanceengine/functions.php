@@ -377,7 +377,7 @@ class ET_FreelanceEngine extends AE_Base
 
          */
 
-        $this->add_filter('logout_url', 'logout_home', 10, 2);
+        //$this->add_filter('logout_url', 'logout_home', 10, 2);
 
         
 
@@ -853,13 +853,13 @@ class ET_FreelanceEngine extends AE_Base
 
      */
 
-    public function logout_home($logouturl, $redir) {
-
-        $redir = get_option('siteurl');
-
-        return $logouturl . '&amp;redirect_to=' . urlencode($redir);
-
-    }
+//    public function logout_home($logouturl, $redir) {
+//
+//        $redir = get_option('siteurl');
+//
+//        return $logouturl . '&amp;redirect_to=' . urlencode($redir);
+//
+//    }
 
     
 
@@ -1975,6 +1975,18 @@ class ET_FreelanceEngine extends AE_Base
                 'complete'
 
             ));
+
+        }
+        if (is_post_type_archive(PROFILE) && $query->is_main_query()) {
+
+            $query->set('post_status', array(
+
+                'publish',
+
+                'draft'
+
+            ));
+            var_dump($query);
 
         }
 
