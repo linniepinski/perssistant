@@ -1986,7 +1986,6 @@ class ET_FreelanceEngine extends AE_Base
                 'draft'
 
             ));
-            var_dump($query);
 
         }
 
