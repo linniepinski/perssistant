@@ -15,4 +15,6 @@
         'search' => __("Search contact", 'chat-frontend') ,
         'match_results' => __("Matching results", 'chat-frontend') ,
         'upload_failed' => __('File upload failed!', 'chat-frontend') ,
+        'send_button' => __("Send message", 'chat-frontend') ,
+
     );

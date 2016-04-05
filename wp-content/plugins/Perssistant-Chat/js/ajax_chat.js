@@ -44,13 +44,9 @@ function showResponse(responseText, statusText, xhr, $form) {
 
     jQuery('.panell').remove();
     jQuery("#send").removeClass("disabled");
-    //if (jQuery(responseText).find("errors").text() !== '') {
-    //}
-    //else {
-    //}
     console.log(responseText);
     if (responseText.status) {
-        if (responseText.html_errors !== '') {
+        if (responseText.html_errors) {
             status_chat(chat_globals.upload_failed, responseText.html_errors + ' <strong>'+ chat_globals.message_sent +'</strong>', 'alert-warning');
         } else {
             setTimeout("status_chat(chat_globals.success,chat_globals.message_sent,'alert-success')", 2500);
@@ -58,6 +54,7 @@ function showResponse(responseText, statusText, xhr, $form) {
         //if(data.isPrevExist) alert('fsdf');
         template_chat_item.tmpl(responseText.message).appendTo("div.chat_history .mCSB_container");
         jQuery('.right-column-chat').dataLoader('loaded');
+        reset_custom_file_input();
     } else {
         //if (response = 'no_messages') {
         //    jQuery("div.chat_history .mCSB_container").empty();
@@ -65,6 +62,8 @@ function showResponse(responseText, statusText, xhr, $form) {
         //    jQuery('.right-column-chat').dataLoader('loaded');
         //
         //}
+        reset_custom_file_input();
+
     }
     jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
     jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
@@ -448,6 +447,12 @@ function CountSearchMatches() {
         label_output.fadeIn('slow');
     } else {
         label_output.fadeOut('fast');
+    }
+}
+function reset_custom_file_input(){
+    //chat_globals.send_button
+    if(jQuery('.file-input-wrapper input').val()==''){
+        jQuery('.file-input-wrapper span').text(chat_globals.send_button);
     }
 }
 
