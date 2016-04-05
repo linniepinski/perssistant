@@ -500,8 +500,9 @@ class chat
                 $last_post->the_post();
                 $author = get_the_author();
                 $ID_post = get_the_ID();
+                $author_ID = get_the_author_meta('ID');
                 update_user_meta($current_user->ID, 'last_check_chat_id', $ID_post);
-                //$img_url = get_avatar_data();
+                $img_url = get_user_meta($author_ID, 'et_avatar_url', true);
                 if (get_post_meta($ID_post,'unreadInvitation',true)!==''){
                     $invate_post = get_post(get_post_meta($ID_post,'unreadInvitation',true));
 //                    $message ="You've got an invitation from ".$author." to an interview on ".$invate_post->post_title.". Check messages!";
@@ -519,7 +520,7 @@ class chat
                         'sender' => $author,
                         'message' => $message,
                         'status' => 'success',
-                        // 'img' => $img_url['url'],
+                        'img' => $img_url,
                     )
                 );
                 $Response = new WP_Ajax_Response($responsed);
