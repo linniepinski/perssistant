@@ -1991,38 +1991,7 @@ class ET_FreelanceEngine extends AE_Base
         }
         if (is_post_type_archive(PROFILE) && $query->is_main_query()) {
             $this->add_filter('posts_join', 'fre_join_select_confirmed_posts', 10, 2);
-//            $this->add_filter('posts_where', 'fre_where_select_confirmed_posts', 10, 2);
-//            $select_available_users = array(
-//                'role' => 'freelancer',
-//                'number' => 100,
-//                'meta_query' => array(
-//                    'relation' => 'AND',
-//                    array(
-//                        'key'     => 'user_available',
-//                        'value'   => 'on',
-//                        'compare' => '='
-//                    ),
-//                    array(
-//                        'key'     => 'interview_status',
-//                        'value'   => array('confirmed' ),
-//                        'compare' => 'OR'
-//                    ),
-////                    array(
-////                        'key'     => 'wp_capabilities',
-////                        'value'   => 'a:1:{s:10:\"freelancer\";b:1;}',
-////                        'compare' => '='
-////                    )
-//                ),
-//
-//                'fields' => 'ID'
-//
-//            );
-//            $result = new WP_User_Query($select_available_users);
-////            var_dump($result->found_posts);
-////            var_dump($result->get_results());
-//            foreach ($result->get_results() as $item){
-//                var_dump($item);
-//            }
+
             $query->set('post_status', array(
 
                 'publish',
@@ -2033,17 +2002,18 @@ class ET_FreelanceEngine extends AE_Base
 
         }
 
-        
 
         return $query;
 
     }
-    function fre_join_select_confirmed_posts($join, $query){
+
+    function fre_join_select_confirmed_posts($join, $query)
+    {
         global $wpdb;
 
-$join .= " INNER JOIN $wpdb->usermeta AS s1 ON wp_posts.post_author = s1.user_id AND s1.meta_key = 'interview_status' AND (s1.meta_value ='confirmed' OR s1.meta_value = '' ) ";
-$join .= " INNER JOIN $wpdb->usermeta AS s2 ON wp_posts.post_author = s2.user_id AND s2.meta_key = 'user_available' AND s2.meta_value ='on' ";
-$join .= " INNER JOIN $wpdb->usermeta AS s3 ON wp_posts.post_author = s3.user_id AND s3.meta_value ='a:1:{s:10:\"freelancer\";b:1;}' ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s1 ON wp_posts.post_author = s1.user_id AND s1.meta_key = 'interview_status' AND (s1.meta_value ='confirmed' OR s1.meta_value = '' ) ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s2 ON wp_posts.post_author = s2.user_id AND s2.meta_key = 'user_available' AND s2.meta_value ='on' ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s3 ON wp_posts.post_author = s3.user_id AND s3.meta_value ='a:1:{s:10:\"freelancer\";b:1;}' ";
 
         return $join;
 
@@ -2724,11 +2694,11 @@ function custom_language_switcher_perssistant($args)
     $current_page_url = $temp_url = $_SERVER["REQUEST_URI"];
     $array = icl_get_languages('skip_missing=0&orderby=id&order=ASC');
     $exclude = array('/profiles/','/projects/','/project/','/author/');
-    $isExcude = contains($current_page_url,$exclude);
+    $isExclude = contains($current_page_url,$exclude);
     echo '<div class="language-selector-wpml-custom">';
     echo '<ul>';
     foreach ($array as $lang) {
-        if ($isExcude){
+//        if ($isExclude){
             if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'en'){
                 $temp_url = '/'.explode('/de/',$current_page_url)[1];
             }
@@ -2738,14 +2708,14 @@ function custom_language_switcher_perssistant($args)
             if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'de'){
                 $temp_url = '/de' . $current_page_url;
             }
-        }else{
-            $temp_url = $lang['url'];
-        }
+//        }else{
+//            $temp_url = $lang['url'];
+//        }
         if ($lang['active'] == '1' && $args['EscapeActive']) continue;
         echo '<li>';
         ?>
         <a href="<?php echo $temp_url ?>">
-            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && !$isExcude) echo 'missing'; ?>"
+            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && !$isExclude) echo 'missing'; ?>"
                  src="<?php echo $lang['country_flag_url'] ?>" title="<?php echo $lang['native_name'] ?>">
         </a>
         <?php
