@@ -27,13 +27,34 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
         ), $atts));
 
         /* ================  Render Shortcodes ================ */
+        $select_available_users = array(
+                'role' => 'freelancer',
+                'number' => 100,
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key'     => 'user_available',
+                        'value'   => 'on',
+                        'compare' => '='
+                    ),
+                    array(
+                        'key'     => 'interview_status',
+                        'value'   => array('confirmed' ),
+                        'compare' => 'OR'
+                    ),
+                ),
 
+                'fields' => 'ID'
+
+            );
+            $result = new WP_User_Query($select_available_users);
         ob_start();
         $query_args = array(   'post_type' => PROFILE ,
 
                                 'post_status' => array('draft','publish') ,
 
-                                'posts_per_page' => 10
+                                'posts_per_page' => 10,
+                                'author__in' => $result->get_results()
 
                             ) ;
 
@@ -128,7 +149,6 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
                                  * Template list profiles
 
                                 */
-
                                 global $wp_query, $ae_post_factory, $post;
 
                                 $post_object = $ae_post_factory->get( PROFILE );
@@ -151,12 +171,12 @@ class WPBakeryShortCode_fre_block_profile extends WPBakeryShortCode {
                                             $current_user = $convert->post_author;
                                             $user = get_userdata( $current_user );
                                             $capabilities = $user->roles[0];
-
-                                            if ($capabilities == 'freelancer' && get_user_meta($current_user,'interview_status',true) != 'unconfirm' ) {
+//SELECT * FROM wp_posts INNER JOIN wp_usermeta ON wp_posts.post_author=wp_usermeta.user_id WHERE post_type = 'fre_profile' AND meta_key = 'unconfirm'
+//                                            if ($capabilities == 'freelancer' && get_user_meta($current_user,'interview_status',true) != 'unconfirm' ) {
                                                 $postdata[] = $convert;
 
                                                 get_template_part('template/profile', 'item' );                                            
-                                            }
+//                                            }
                                         }
 
                                         /**

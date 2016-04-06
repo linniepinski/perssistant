@@ -34,13 +34,12 @@ $post_object = $ae_post_factory->get( PROFILE );
                 
                 $user_data = $ae_users->convert($user->data); 
                 $user_available = isset($user_data->user_available) && $user_data->user_available == "on" ? 'checked' : '';
-
-                if ($capabilities == 'freelancer' && $user_available=='checked' && get_user_meta($current_user,'interview_status',true) != 'unconfirm') {
+//                if ($capabilities == 'freelancer' && $user_available=='checked' && get_user_meta($current_user,'interview_status',true) != 'unconfirm') {
                     $postdata[] = $convert;
 
                     get_template_part('template/profile', 'item' );
                 
-                }
+//                }
 
             }
 

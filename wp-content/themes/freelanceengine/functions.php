@@ -521,6 +521,18 @@ class ET_FreelanceEngine extends AE_Base
 
         }
 
+        if (!get_option('fix_interview_default')) {
+
+            $users = new WP_User_Query(array('role' => 'freelancer', 'fields' => 'ID'));
+            foreach ($users->get_results() as $item) {
+                add_user_meta($item, 'interview_status', '', true);
+            }
+            update_option('fix_interview_default', 1);
+
+            echo 'fixed db interview detail - reload page pls';
+
+        }
+
         
 
         
@@ -1978,7 +1990,39 @@ class ET_FreelanceEngine extends AE_Base
 
         }
         if (is_post_type_archive(PROFILE) && $query->is_main_query()) {
-
+            $this->add_filter('posts_join', 'fre_join_select_confirmed_posts', 10, 2);
+//            $this->add_filter('posts_where', 'fre_where_select_confirmed_posts', 10, 2);
+//            $select_available_users = array(
+//                'role' => 'freelancer',
+//                'number' => 100,
+//                'meta_query' => array(
+//                    'relation' => 'AND',
+//                    array(
+//                        'key'     => 'user_available',
+//                        'value'   => 'on',
+//                        'compare' => '='
+//                    ),
+//                    array(
+//                        'key'     => 'interview_status',
+//                        'value'   => array('confirmed' ),
+//                        'compare' => 'OR'
+//                    ),
+////                    array(
+////                        'key'     => 'wp_capabilities',
+////                        'value'   => 'a:1:{s:10:\"freelancer\";b:1;}',
+////                        'compare' => '='
+////                    )
+//                ),
+//
+//                'fields' => 'ID'
+//
+//            );
+//            $result = new WP_User_Query($select_available_users);
+////            var_dump($result->found_posts);
+////            var_dump($result->get_results());
+//            foreach ($result->get_results() as $item){
+//                var_dump($item);
+//            }
             $query->set('post_status', array(
 
                 'publish',
@@ -1994,8 +2038,17 @@ class ET_FreelanceEngine extends AE_Base
         return $query;
 
     }
+    function fre_join_select_confirmed_posts($join, $query){
+        global $wpdb;
 
-    
+$join .= " INNER JOIN $wpdb->usermeta AS s1 ON wp_posts.post_author = s1.user_id AND s1.meta_key = 'interview_status' AND (s1.meta_value ='confirmed' OR s1.meta_value = '' ) ";
+$join .= " INNER JOIN $wpdb->usermeta AS s2 ON wp_posts.post_author = s2.user_id AND s2.meta_key = 'user_available' AND s2.meta_value ='on' ";
+$join .= " INNER JOIN $wpdb->usermeta AS s3 ON wp_posts.post_author = s3.user_id AND s3.meta_value ='a:1:{s:10:\"freelancer\";b:1;}' ";
+
+        return $join;
+
+    }
+
 
     /*
 
@@ -2026,6 +2079,7 @@ class ET_FreelanceEngine extends AE_Base
         return $orderby;
 
     }
+
 
     
 
