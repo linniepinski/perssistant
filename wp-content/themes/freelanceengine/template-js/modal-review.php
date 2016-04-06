@@ -4,8 +4,7 @@ $bid = get_post_meta( $post->ID, 'accepted', true );
 $bid_author = get_post_field( 'post_author', $bid );
 $bid_budget = get_post_meta( $bid, 'bid_budget', true );
 $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
-
-
+$project = get_post($post->post_parent);
 ?>
 <!-- MODAL FINISH PROJECT-->
 <div class="modal fade" id="modal_review" role="dialog" aria-labelledby="modal_review" aria-hidden="true">
@@ -19,7 +18,7 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
 			</div>
 			<div class="modal-body">
 			<form id="review_form" class="review-form">
-			<?php if($post->post_author == $user_ID) {  // employer finish project form ?>
+			<?php if($project->post_author == $user_ID) {  // employer finish project form ?>
 				<input type="hidden" name="action" value="ae-employer-review" />
             	<label style="line-height:2.5;">
 
@@ -68,8 +67,8 @@ $bid_author_name = get_the_author_meta( 'display_name', $bid_author );
                     </button>
 				</div>
 				
-			 <?php }else { // freelancer finish project form
-			 	$employer_name = get_the_author_meta( 'display_name', $post->post_author );
+			 <?php } else { // freelancer finish project form
+			 	$employer_name = get_the_author_meta( 'display_name', $project->post_author );
 			  ?>
 			  	<input type="hidden" name="action" value="ae-freelancer-review" />
             	<label style="line-height:2.5;">
