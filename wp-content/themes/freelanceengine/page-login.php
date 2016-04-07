@@ -129,10 +129,9 @@ get_header();
 //
 //			                }
 
-?><div class="socials-head"><?php echo __("You can also sign in by:", 'login-page'); ?></div><?php
-
-do_action( 'wordpress_social_login' );
-			            ?>
+?>
+<!--					  <div class="socials-head">--><?php //_e("You can also sign in by:", 'login-page'); ?><!--</div>-->
+					  <?php do_action( 'wordpress_social_login' ); ?>
 				</form>	           
 
 				<div class="clearfix"></div>
