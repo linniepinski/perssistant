@@ -764,7 +764,7 @@ $post_data['post_title'] = $title;
 
                 'success' => true,
 
-                'msg' => __('Project has been assign successful.', 'bids-backend')
+                'msg' => __('Bid accepted successfully.', 'bids-backend')
 
             ));
 
