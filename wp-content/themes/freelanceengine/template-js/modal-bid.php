@@ -26,7 +26,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                     ?>
                                 </label>
 
-                                <div class="checkbox" style="display: inline-block;margin-left: 20px;">
+                                <div class="checkbox hidden" style="display: inline-block;margin-left: 20px;">
                                     <label><input type="checkbox" name="decide_later" class="checkbox1"><?php _e('Decide later', 'modal-add-bid'); ?></label>
                                 </div>
                                 <script>
@@ -42,7 +42,6 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                         });
 
                                     });
-
                                 </script>
                                 <div class="form-group">
                                     <input type="number" name="bid_budget" id="bid_budget"

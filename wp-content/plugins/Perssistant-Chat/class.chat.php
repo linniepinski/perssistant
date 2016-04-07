@@ -187,12 +187,15 @@ class chat
         $current_user = wp_get_current_user();
         $user_id = $current_user->ID;
         $edit_message = $_POST['name_edit_message'];
-
+        $isEmptyMessage = trim($edit_message);
         $contact_with_user = $_POST['contact_with'];
         if (isset($contact_with_user)) {
             update_user_meta($current_user->ID, 'contact_with_user', $contact_with_user);
         }
-        if ($contact_with_user == null or trim($edit_message) == '') {
+        if ($isEmptyMessage == '' && !empty($_FILES['wp_custom_attachment']['name']) ){
+            $edit_message = ' ';
+        }
+        if ($contact_with_user == null) {
             //$html_errors = 'Fail send.Message is empty.';
 
 //            $response = array(
@@ -203,7 +206,8 @@ class chat
 //            );
 //            $xmlResponse = new WP_Ajax_Response($response);
 //            $xmlResponse->send();
-//            exit;
+//            exi
+//t;
         } else {
 
 
@@ -278,7 +282,6 @@ class chat
         }
         $edit_message = preg_replace("/(\r\n){2,}/", "<br/><br/>", $edit_message); //если 2 и более подряд
         $edit_message = preg_replace("/(\r\n)/", "<br/>", $edit_message);
-
         $response['status'] = true;
         $response['message']['id'] = $post_id;
         $response['message']['avatar'] = get_avatar($user_id, 50);
@@ -500,15 +503,18 @@ class chat
                 $last_post->the_post();
                 $author = get_the_author();
                 $ID_post = get_the_ID();
+                $author_ID = get_the_author_meta('ID');
                 update_user_meta($current_user->ID, 'last_check_chat_id', $ID_post);
-                //$img_url = get_avatar_data();
+                $img_url = get_user_meta($author_ID, 'et_avatar_url', true);
                 if (get_post_meta($ID_post,'unreadInvitation',true)!==''){
                     $invate_post = get_post(get_post_meta($ID_post,'unreadInvitation',true));
 //                    $message ="You've got an invitation from ".$author." to an interview on ".$invate_post->post_title.". Check messages!";
-                    $message = printf("You've got an invitation from %s to an interview on %s. Check messages!",$author,$invate_post->post_title);
-                }else
-                {
+                    $message = sprintf( __("You've got an invitation from %s to an interview on %s. Check messages!", 'chat-frontend'),$author,$invate_post->post_title);
+                }else{
                     $message = get_the_content();
+                    if ($message == ' '){
+                        $message = sprintf( __("You've got an attachment from %s. Check messages!", 'chat-frontend'),$author);
+                    }
                 }
                 //var_dump(get_avatar_url());
                 $responsed = array(
@@ -519,7 +525,7 @@ class chat
                         'sender' => $author,
                         'message' => $message,
                         'status' => 'success',
-                        // 'img' => $img_url['url'],
+                        'img' => $img_url,
                     )
                 );
                 $Response = new WP_Ajax_Response($responsed);
@@ -572,14 +578,30 @@ class chat
                 if (get_post_meta(get_the_ID(), 'receiver') == $user_id) {
                     update_post_meta(get_the_ID(), 'unread', '');
                 }
-                $url_meta = get_post_meta(get_the_ID(), 'wp_custom_attachment');
-                $type = get_post_meta(get_the_ID(), 'type');
-                $type_file = explode("/", $type[0]);
-                if ($type_file[0] == 'image') {
-                    $html_link = '<a href="' . $url_meta[0]['url'] . '"><img class="img-responsive" src="' . $url_meta[0]['url'] . '"></a>';
-                } else {
-                    $html_link = '<a href="' . $url_meta[0]['url'] . '">' . end(explode("/", $url_meta[0]['file'])) . '</a>';
+                $args = array(
+                    'post_parent' => get_the_ID(),
+                    'post_type' => 'attachment',
+                    //'numberposts' => 1,
+                    'post_status' => 'inherit',
+                    'posts_per_page' => 1,
+
+                );
+                $attachments = get_children($args, 'ARRAY_A');
+
+                if ($attachments) {
+                    foreach ($attachments as $attachment) {
+
+                        $type_file = explode("/", $attachment['post_mime_type']);
+
+                        if ($type_file[0] == 'image') {
+                            $html_link = '<a href="' . $attachment['guid'] . '" download>' . wp_get_attachment_image($attachment['ID'], array(320, 320)) . '</a>';
+                        } else {
+                            $html_link = '<a href="' . $attachment['guid'] . '" download>' . end(explode("/", $attachment['guid'])) . '</a>';
+                        }
+
+                    }
                 }
+                unset($attachments);
 
                 $message = get_the_content();
                 $dateH = get_the_modified_date();
@@ -589,7 +611,7 @@ class chat
                 $message = preg_replace("/(\r\n)/", "<br/>", $message);
 
                 $response['status'] = true;
-                $response['message']['id'] = get_the_ID();;
+                $response['message']['id'] = get_the_ID();
                 $response['message']['avatar'] = get_avatar(get_the_author_meta('ID'), 50);
                 $response['message']['display_name'] = get_the_author();
                 $response['message']['content'] = $message;

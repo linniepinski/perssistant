@@ -764,7 +764,7 @@ $post_data['post_title'] = $title;
 
                 'success' => true,
 
-                'msg' => __('Project has been assign successful.', 'bids-backend')
+                'msg' => __('Bid accepted successfully.', 'bids-backend')
 
             ));
 
@@ -1036,7 +1036,7 @@ $post_data['post_title'] = $title;
 
     function fre_delete_bid($bid_id) {
 
-        
+        global $wpdb;
 
         //$wpdb->query( $wpdb->prepare("DELETE FROM $wpdb->posts WHERE post_id = %d AND post_type = %s  ", $bid_id, BID  ) );
 
@@ -1044,7 +1044,7 @@ $post_data['post_title'] = $title;
 
         $project_id = get_post_field('post_parent', $bid_id);
 
-        
+        $result = $wpdb->get_results("SELECT ID FROM `wp_posts` WHERE `post_content` LIKE '%bid=".$bid_id."%'");
 
         $bid_budget = (float)get_post_meta($bid_id, 'bid_budget', true);
 
@@ -1058,7 +1058,6 @@ $post_data['post_title'] = $title;
 
         
 
-        wp_delete_post($bid_id, true);
 
         
 
@@ -1084,11 +1083,9 @@ $post_data['post_title'] = $title;
 
         update_post_meta($project_id, 'bid_average', number_format($new_avg, 2));
 
-        
 
         wp_delete_post($bid_id, true);
-
-        
+        wp_delete_post($result[0]->ID, true); //delete empty notify
 
         wp_send_json(array(
 

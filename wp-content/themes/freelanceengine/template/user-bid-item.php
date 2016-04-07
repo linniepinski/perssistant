@@ -40,7 +40,7 @@ $status_text    = $bid->status_text;
         </div>
     <?php if($project->post_status == "publish"){ ?>
         <div class="col-md-6">
-        	<a href="<?php echo $project->permalink ?>" class="btn btn-apply-project-item">
+        	<a href="<?php echo add_query_arg(array('workspace' => 1), get_permalink($project->ID)); ?>" class="btn btn-apply-project-item">
                 <?php _e("Cancel", 'user-bid-item') ?>
             </a>
         </div>
@@ -53,7 +53,7 @@ $status_text    = $bid->status_text;
         </div>
         <?php  } else if($project->post_status == 'close' && ae_user_role() == 'freelancer' && $bid->ID == $project->accepted ){ ?>
         <div class="col-md-6">
-            <a href="<?php echo add_query_arg(array('workspace' => 1), $project->permalink); ?>" class="btn btn-apply-project-item">
+            <a href="<?php echo add_query_arg(array('workspace' => 1), get_permalink($project->ID)); ?>" class="btn btn-apply-project-item">
                 <?php _e("Open Workspace", 'user-bid-item') ?>
             </a>
         </div>

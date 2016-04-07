@@ -4,6 +4,7 @@
         'select_contact' => __("Select a contact.", 'chat-frontend') ,
         'wait' => __("Wait...", 'chat-frontend') ,
         'message_sending' => __("Message sending.", 'chat-frontend') ,
+        'message_sent' => __("Message sent.", 'chat-frontend') ,
         'something_wrong' => __("Something went wrong.", 'chat-frontend') ,
         'loading' => __("Loading...", 'chat-frontend') ,
         'success' => __("Success!", 'chat-frontend') ,
@@ -13,4 +14,7 @@
         'after_project_title' => __("project with you!", 'chat-frontend') ,
         'search' => __("Search contact", 'chat-frontend') ,
         'match_results' => __("Matching results", 'chat-frontend') ,
+        'upload_failed' => __('File upload failed!', 'chat-frontend') ,
+        'send_button' => __("Send message", 'chat-frontend') ,
+
     );

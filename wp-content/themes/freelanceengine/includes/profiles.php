@@ -737,6 +737,7 @@ class Fre_ProfileAction extends AE_PostAction {
 
      */
 
+
     function fre_join_post($join, $query){
 
         global $wpdb;
@@ -751,7 +752,17 @@ class Fre_ProfileAction extends AE_PostAction {
 
     }
 
+    function fre_join_select_confirmed_posts($join, $query)
+    {
+        global $wpdb;
 
+        $join .= " INNER JOIN $wpdb->usermeta AS s1 ON wp_posts.post_author = s1.user_id AND s1.meta_key = 'interview_status' AND (s1.meta_value ='confirmed' OR s1.meta_value = '' ) ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s2 ON wp_posts.post_author = s2.user_id AND s2.meta_key = 'user_available' AND s2.meta_value ='on' ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s3 ON wp_posts.post_author = s3.user_id AND s3.meta_value ='a:1:{s:10:\"freelancer\";b:1;}' ";
+
+        return $join;
+
+    }
 
     /**
 
@@ -766,6 +777,7 @@ class Fre_ProfileAction extends AE_PostAction {
         
 
         if(isset($_REQUEST['query'])) {
+            $this->add_filter('posts_join', 'fre_join_select_confirmed_posts', 10, 2);
 
             $query = $_REQUEST['query'];
             $query_args['post_status']= array('draft','publish');

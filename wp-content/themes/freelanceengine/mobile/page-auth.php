@@ -113,10 +113,10 @@ if($user_ID) {
                     <?php _e("You have account ? Click here !", 'page-auth-mobile'); ?>
                 </a>
           <?php
-                if( function_exists('ae_render_social_button')){
-                    $before_string = __("You can also sign in by:", 'page-auth-mobile');
-                    ae_render_social_button( array(), array(), $before_string ); 
-                }
+//                if( function_exists('ae_render_social_button')){
+//                    $before_string = __("You can also sign in by:", 'page-auth-mobile');
+//                    ae_render_social_button( array(), array(), $before_string );
+//                }
             ?>
             </div>
         </div>
@@ -156,7 +156,7 @@ if($user_ID) {
             	<p class="text-policy"></p>
                 <a href="#" class="change-link-register"><?php _e("New? Click here to become a member", 'page-auth-mobile'); ?></a>
 
-		            <div class="socials-head"><?php _e("You can also sign in by:", 'page-auth-mobile') ?></div>
+<!--		            <div class="socials-head">--><?php //_e("You can also sign in by:", 'page-auth-mobile') ?><!--</div>-->
 		            <?php do_action( 'wordpress_social_login' ); ?>
 				        <style>
 					        .wp-social-login-connect-with{

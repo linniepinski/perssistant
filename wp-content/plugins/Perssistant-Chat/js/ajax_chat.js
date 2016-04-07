@@ -30,7 +30,7 @@ jQuery(document).ready(function () {
 function showRequest(formData, jqForm, options) {
     //  console.log(jQuery('#contact_with').val());
     if (jQuery('#contact_with').val() == '') {
-        status_chat( chat_globals.error, chat_globals.select_contact, 'alert-danger');
+        status_chat(chat_globals.error, chat_globals.select_contact, 'alert-danger');
         return false;
     } else {
         status_chat(chat_globals.wait, chat_globals.message_sending, 'alert-info');
@@ -44,21 +44,17 @@ function showResponse(responseText, statusText, xhr, $form) {
 
     jQuery('.panell').remove();
     jQuery("#send").removeClass("disabled");
-    //if (jQuery(responseText).find("errors").text() !== '') {
-    //}
-    //else {
-    //}
     console.log(responseText);
     if (responseText.status) {
-        if(responseText.html_errors !== ''){
-            status_chat('File upload failed!', jQuery(responseText).find("errors").text() + ' <strong>Message sent.</strong>', 'alert-warning');
-
-        }else{
-            setTimeout("status_chat('Success!',' Message sent.','alert-success')", 2500);
+        if (responseText.html_errors) {
+            status_chat(chat_globals.upload_failed, responseText.html_errors + ' <strong>'+ chat_globals.message_sent +'</strong>', 'alert-warning');
+        } else {
+            setTimeout("status_chat(chat_globals.success,chat_globals.message_sent,'alert-success')", 2500);
         }
         //if(data.isPrevExist) alert('fsdf');
         template_chat_item.tmpl(responseText.message).appendTo("div.chat_history .mCSB_container");
         jQuery('.right-column-chat').dataLoader('loaded');
+        reset_custom_file_input();
     } else {
         //if (response = 'no_messages') {
         //    jQuery("div.chat_history .mCSB_container").empty();
@@ -66,11 +62,12 @@ function showResponse(responseText, statusText, xhr, $form) {
         //    jQuery('.right-column-chat').dataLoader('loaded');
         //
         //}
+        reset_custom_file_input();
+
     }
     jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
     jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
 }
-
 
 
 function chatroom_check_updates() {
@@ -162,7 +159,9 @@ function chatroom_check_online() {
 
 }
 function chatroom_refresh() {
-    var template_chat_item = jQuery('#message-item');   var chatblockUi = new AE.Views.BlockUi();    jQuery.ajax({
+    var template_chat_item = jQuery('#message-item');
+    var chatblockUi = new AE.Views.BlockUi();
+    jQuery.ajax({
         url: MyAjax.ajaxurl,
         type: 'POST',
         data: {
@@ -174,7 +173,7 @@ function chatroom_refresh() {
             chatblockUi.block(jQuery('.right-column-chat'));
         },
         success: function (data) {
-if (data.status) {
+            if (data.status) {
                 jQuery("div.chat_history .mCSB_container").empty();
                 //if(data.isPrevExist) alert('fsdf');
                 jQuery.each(data.query, function (i, item) {
@@ -182,15 +181,16 @@ if (data.status) {
                 });
                 jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
                 jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
-                            chatblockUi.unblock(jQuery('.right-column-chat'));
+                chatblockUi.unblock(jQuery('.right-column-chat'));
             } else {
                 if (data.code_response = 'no_messages') {
                     jQuery("div.chat_history .mCSB_container").empty();
 
 
-            chatblockUi.unblock(jQuery('.right-column-chat'));
+                    chatblockUi.unblock(jQuery('.right-column-chat'));
                 }
-            }        },
+            }
+        },
         complete: function () {
             setTimeout("chatroom_check_updates()", 5000);
         },
@@ -234,7 +234,7 @@ function chatroom_notifications_everywhere() {
             if (jQuery(data).find("status").text() == 'success') {
                 sendNotification(jQuery(data).find("sender").text(), {
                     body: jQuery(data).find("message").text(),
-                    icon: 'icon.jpg',
+                    icon: jQuery(data).find("img").text(),
                     dir: 'auto'
                 });
             }
@@ -295,19 +295,19 @@ function chatroom_loadprev() {
             jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
         },
         success: function (data) {
-            if(data.status == true){
-                if(data.type == 'empty'){
+            if (data.status == true) {
+                if (data.type == 'empty') {
                     jQuery("#loadprev").remove();
                     status_chat('', data.msg, 'alert-warning');
                 }
             } else {
-                    jQuery.each(data.query, function (i, item) {
-                        jQuery(template_chat_item.tmpl(item)).prependTo('div.chat_history .mCSB_container');
-                    });
-                    jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
-                    jQuery("div.chat_history").mCustomScrollbar("scrollTo", "top");
+                jQuery.each(data.query, function (i, item) {
+                    jQuery(template_chat_item.tmpl(item)).prependTo('div.chat_history .mCSB_container');
+                });
+                jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+                jQuery("div.chat_history").mCustomScrollbar("scrollTo", "top");
 
-                status_chat( chat_globals.success, chat_globals.history_loaded, 'alert-success');
+                status_chat(chat_globals.success, chat_globals.history_loaded, 'alert-success');
                 jQuery("#loadprev").removeClass("disabled");
             }
         },
@@ -416,7 +416,7 @@ function invate_freelancer(user_id_receiver, user_id_sender, project_id_invate, 
 
     var href = window.location.href;
     //var htmllinkToProject = '<a href="' + href + '" target="_blank">'+ jQuery('.content-title-project-item').text() +'</a>';
-    var textInvate = chat_globals.before_display_name + ' ' + display_name_sender + ' '+ chat_globals.before_display_name + ' ' + chat_globals.after_display_name + ' "' + jQuery('.content-title-project-item').text() + '" ' + chat_globals.after_project_title;
+    var textInvate = chat_globals.before_display_name + ' ' + display_name_sender + ' ' + chat_globals.before_display_name + ' ' + chat_globals.after_display_name + ' "' + jQuery('.content-title-project-item').text() + '" ' + chat_globals.after_project_title;
     jQuery('#popup_invate_freelancer_to_chat .invate-to-chat-message').text(textInvate);
     jQuery('#sender_id').val(user_id_sender);
     jQuery('#guid').val(href);
@@ -447,6 +447,12 @@ function CountSearchMatches() {
         label_output.fadeIn('slow');
     } else {
         label_output.fadeOut('fast');
+    }
+}
+function reset_custom_file_input(){
+    //chat_globals.send_button
+    if(jQuery('.file-input-wrapper input').val()==''){
+        jQuery('.file-input-wrapper span').text(chat_globals.send_button);
     }
 }
 
@@ -577,7 +583,7 @@ function sendNotification(title, options) {
             container = $(this);
             settings = $.extend({
                 searchInput: null,
-                searchTemplate: "<div id='search_chat' class='form-group'><label>"+ chat_globals.search+":</label> <input type='text' class='inter-search form-control'><div class='count-matches'></div></div>",
+                searchTemplate: "<div id='search_chat' class='form-group'><label>" + chat_globals.search + ":</label> <input type='text' class='inter-search form-control'><div class='count-matches'></div></div>",
                 itemSelector: "tbody tr",
                 textSelector: null,
                 toggle: function (item, match) {

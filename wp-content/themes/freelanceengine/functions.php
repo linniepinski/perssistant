@@ -377,7 +377,7 @@ class ET_FreelanceEngine extends AE_Base
 
          */
 
-        $this->add_filter('logout_url', 'logout_home', 10, 2);
+        //$this->add_filter('logout_url', 'logout_home', 10, 2);
 
         
 
@@ -518,6 +518,18 @@ class ET_FreelanceEngine extends AE_Base
             update_option( 'change_profile_namess', 1 );
 
             echo 1;
+
+        }
+
+        if (!get_option('fix_interview_default')) {
+
+            $users = new WP_User_Query(array('role' => 'freelancer', 'fields' => 'ID'));
+            foreach ($users->get_results() as $item) {
+                add_user_meta($item, 'interview_status', '', true);
+            }
+            update_option('fix_interview_default', 1);
+
+            echo 'fixed db interview detail - reload page pls';
 
         }
 
@@ -853,13 +865,13 @@ class ET_FreelanceEngine extends AE_Base
 
      */
 
-    public function logout_home($logouturl, $redir) {
-
-        $redir = get_option('siteurl');
-
-        return $logouturl . '&amp;redirect_to=' . urlencode($redir);
-
-    }
+//    public function logout_home($logouturl, $redir) {
+//
+//        $redir = get_option('siteurl');
+//
+//        return $logouturl . '&amp;redirect_to=' . urlencode($redir);
+//
+//    }
 
     
 
@@ -1977,14 +1989,36 @@ class ET_FreelanceEngine extends AE_Base
             ));
 
         }
+        if (is_post_type_archive(PROFILE) && $query->is_main_query()) {
+            $this->add_filter('posts_join', 'fre_join_select_confirmed_posts', 10, 2);
 
-        
+            $query->set('post_status', array(
+
+                'publish',
+
+                'draft'
+
+            ));
+
+        }
+
 
         return $query;
 
     }
 
-    
+    function fre_join_select_confirmed_posts($join, $query)
+    {
+        global $wpdb;
+
+        $join .= " INNER JOIN $wpdb->usermeta AS s1 ON wp_posts.post_author = s1.user_id AND s1.meta_key = 'interview_status' AND (s1.meta_value ='confirmed' OR s1.meta_value = '' ) ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s2 ON wp_posts.post_author = s2.user_id AND s2.meta_key = 'user_available' AND s2.meta_value ='on' ";
+        $join .= " INNER JOIN $wpdb->usermeta AS s3 ON wp_posts.post_author = s3.user_id AND s3.meta_value ='a:1:{s:10:\"freelancer\";b:1;}' ";
+
+        return $join;
+
+    }
+
 
     /*
 
@@ -2015,6 +2049,7 @@ class ET_FreelanceEngine extends AE_Base
         return $orderby;
 
     }
+
 
     
 
@@ -2659,11 +2694,11 @@ function custom_language_switcher_perssistant($args)
     $current_page_url = $temp_url = $_SERVER["REQUEST_URI"];
     $array = icl_get_languages('skip_missing=0&orderby=id&order=ASC');
     $exclude = array('/profiles/','/projects/','/project/','/author/');
-    $isExcude = contains($current_page_url,$exclude);
+    $isExclude = contains($current_page_url,$exclude);
     echo '<div class="language-selector-wpml-custom">';
     echo '<ul>';
     foreach ($array as $lang) {
-        if ($isExcude){
+//        if ($isExclude){
             if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'en'){
                 $temp_url = '/'.explode('/de/',$current_page_url)[1];
             }
@@ -2673,14 +2708,14 @@ function custom_language_switcher_perssistant($args)
             if ($lang['language_code'] != ICL_LANGUAGE_CODE && $lang['language_code'] == 'de'){
                 $temp_url = '/de' . $current_page_url;
             }
-        }else{
-            $temp_url = $lang['url'];
-        }
+//        }else{
+//            $temp_url = $lang['url'];
+//        }
         if ($lang['active'] == '1' && $args['EscapeActive']) continue;
         echo '<li>';
         ?>
         <a href="<?php echo $temp_url ?>">
-            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && !$isExcude) echo 'missing'; ?>"
+            <img class="<?php if ($lang['missing'] == 1 && $args['MissingTranslate'] && !$isExclude) echo 'missing'; ?>"
                  src="<?php echo $lang['country_flag_url'] ?>" title="<?php echo $lang['native_name'] ?>">
         </a>
         <?php

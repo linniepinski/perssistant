@@ -333,7 +333,7 @@ if (is_page_template('page-home.php')) {
 
                                         <li role="presentation">
 
-                                            <a role="menuitem" tabindex="-1" href="<?php echo wp_logout_url(); ?>"
+                                            <a role="menuitem" tabindex="-1" href="<?php echo wp_logout_url(site_url().ae_current_lang()); ?>"
                                                class="logout">
 
                                                 <i class="fa fa-sign-out"></i><?php _e("Logout", 'header') ?>
