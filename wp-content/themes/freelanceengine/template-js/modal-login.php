@@ -17,7 +17,9 @@
 						<label for="login_user_pass"><?php _e('Your Password', 'modal-login') ?></label>
 						<input type="password" class="form-control" id="login_user_pass" name="user_pass" placeholder="<?php _e('Password', 'modal-login') ?>">
 					</div>		
-                    <div class="clearfix"></div>
+					<div class="clearfix"></div>
+					<?php if( function_exists( 'cptch_display_captcha' ) ) { echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />"; echo cptch_display_captcha(); }?>
+					<div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
 						<?php _e('Sign in', 'modal-login') ?>
 					</button>

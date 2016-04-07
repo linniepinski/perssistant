@@ -13,7 +13,9 @@
 						<label for="forgot_user_email"><?php _e('Enter your email here', 'modal-forgot-password') ?></label>
 						<input type="text" class="form-control" id="user_email" name="user_email" />
 					</div>
-                    <div class="clearfix"></div>
+					<div class="clearfix"></div>
+					<?php if( function_exists( 'cptch_display_captcha' ) ) { echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />"; echo cptch_display_captcha(); }?>
+					<div class="clearfix"></div>
 					<button type="submit" class="btn-submit btn-sumary btn-sub-create">
 						<?php _e('Send', 'modal-forgot-password') ?>
 					</button>

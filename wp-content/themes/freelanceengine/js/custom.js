@@ -116,10 +116,8 @@ var doSendPassword = function() {
 					msg : status.msg,
 					notice_type: 'success'
 				});
-
 				form.trigger('reset');
-				
-				window.location.href='/login';
+				window.location.href= ae_globals.homeURL + '/login';
 
 			} else {
 				AE.pubsub.trigger('ae:notification', {
@@ -556,7 +554,6 @@ jQuery(document).ready(function () {
     var div_for_type_budget = jQuery('.for_type_budget');
     jQuery('select[name="type_budget"]').change(function () {
 
-        console.log(jQuery(this).val());
         if ( jQuery(this).val() == 'hourly_rate'){
             jQuery('#hours_limit').removeAttr('disabled');
             div_for_type_budget.fadeIn();
