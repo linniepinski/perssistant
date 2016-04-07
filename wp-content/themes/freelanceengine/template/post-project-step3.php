@@ -48,7 +48,7 @@
             <!--// project title -->
 
             <!-- project type payment fixed/per_hour -->
-            <div class="form-group">
+            <div class="form-group hidden">
                 <div class="row">
                     <div class="col-md-4">
                         <label for="post_title" class="control-label title-plan">
@@ -58,7 +58,6 @@
                         </label>
                     </div>
                     <div class="col-sm-8">
-<!--                        <input type="text" class="input-item form-control text-field" id="post_title" placeholder="--><?php //_e("Project Title", 'post-project-step3'); ?><!--" name="post_title">-->
                     <select class="input-item form-control text-field" name="type_budget">
                         <option value="fixed"><?php _e("Fixed budget", 'post-project-step3'); ?></option>
                         <option value="hourly_rate"><?php _e("Hourly rate budget", 'post-project-step3'); ?></option>
