@@ -1087,22 +1087,19 @@ get_header();
                             ?>
                             <div class="account-balance">
                                 <label>Your account balance:</label>
-        <span class="<?php echo $account_balance['style'] ?>">
-            <?php echo $account_balance['string_balance'] ?>
-            </span>
+                                <span class="<?php echo $account_balance['style'] ?>">
+                                <?php echo $account_balance['string_balance'] ?>
+                                 </span>
                             </div>
                             <?php
-
                         } elseif ($user_role == EMPLOYER) {
                             ?>
-
                             <div class="account-balance">
                                 <label>Your account balance:</label>
-        <span class="<?php echo $account_balance['style'] ?>">
-            <?php echo $account_balance['string_balance'] ?>
-            </span>
+                                <span class="<?php echo $account_balance['style'] ?>">
+                                <?php echo $account_balance['string_balance'] ?>
+                                </span>
                             </div>
-
                             <button type="button" style="margin-top: 9px;"
                                     class="btn btn-primary btn-block btn-custom-price" data-toggle="modal"
                                     data-target="#stripe_modal"
@@ -1110,8 +1107,6 @@ get_header();
                             </button>
                             <?php
                             echo do_shortcode('[modal_paymill]');
-
-
                         }
                         ?>
                         <div class="setting-profile-wrapper <?php echo $user_role; ?>">
@@ -1186,7 +1181,7 @@ get_header();
 
                             <?php } ?>
 
-                            <form name="verify_user_phone" id="verify_user_phone">
+                            <form name="verify_user_phone" id="verify_user_phone" class="hidden">
                                 <div class="form-group confirm-request"
                                      id="verify" <?php if ($user_mobile) { ?> style="display:none;" <?php } ?>>
                     <span class="text-small"><label
