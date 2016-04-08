@@ -50,6 +50,7 @@ if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key) || e
 			} else {
 				add_post_meta($bid_id, 'bid_paid_by_stripe', 'yes');
 			}
+			$notification = Fre_Notification::bidPaid($bid_id);
 			wp_redirect(get_home_url().'/project/'.$project_slug , 301); exit;
 		}
 
