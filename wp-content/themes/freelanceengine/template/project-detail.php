@@ -176,7 +176,9 @@ if ($project_status == 'publish') {
                                 break;
                             case 'close':
                                 if( (int)$project->post_author == $user_ID){ ?>
-
+                                    <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
+                                        <?php _e('Open disput', 'projects-page'); ?>
+                                    </a>
                                     <a title="<?php  _e('Finish','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-complete-project" >
                                         <?php  _e('Finish','projects-page');?>
                                     </a>
@@ -188,6 +190,9 @@ if ($project_status == 'publish') {
                                     $bid_accepted_author = get_post_field( 'post_author', $bid_accepted);
                                     if($bid_accepted_author == $user_ID) {
                                 ?>
+                                        <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
+                                            <?php _e('Open disput', 'projects-page'); ?>
+                                        </a>
                                     <a title="<?php  _e('Quit','projects-page');?>" href="#" id="<?php the_ID();?>"   class="btn btn-apply-project-item btn-project-status btn-quit-project" >
                                         <?php  _e('Quit','projects-page');?>
                                     </a>
