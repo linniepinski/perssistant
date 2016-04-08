@@ -1103,7 +1103,7 @@ get_header();
                             <button type="button" style="margin-top: 9px;"
                                     class="btn btn-primary btn-block btn-custom-price" data-toggle="modal"
                                     data-target="#stripe_modal"
-                                    data-title="Custom amount"><?php _e("Account recharge",'page-profile');?>
+                                    data-title="<?php _e("Custom amount",'account_balance_plugin');?>"><?php _e("Account recharge",'page-profile');?>
                             </button>
                             <?php
                             echo do_shortcode('[modal_paymill]');
