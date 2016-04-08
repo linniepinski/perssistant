@@ -25,10 +25,10 @@
 					</button>
                     <a class="show-forgot-form" href="#"><?php _e("Forgot Password?", 'modal-login') ?></a>
                         <?php
-			                if( function_exists('ae_render_social_button')){
-			                    $before_string = __("You can also sign in by:", 'modal-login');
-			                    ae_render_social_button( array(), array(), $before_string ); 
-			                }
+//			                if( function_exists('ae_render_social_button')){
+//			                    $before_string = __("You can also sign in by:", 'modal-login');
+//			                    ae_render_social_button( array(), array(), $before_string );
+//			                }
 			            ?>
 				</form>	
 			</div>
