@@ -9,10 +9,11 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
             </div>
             <div class="modal-body">
                 <?php
-                echo do_shortcode('[contact-form-7 id="2336" title="disput"]');
-                ?>
-                <pre>
-                <?php
+                if (ICL_LANGUAGE_CODE == 'en') {
+                    echo do_shortcode('[contact-form-7 id="2279" title="Disput EN"]');
+                } else {
+                    echo do_shortcode('[contact-form-7 id="2280" title="Disput DE"]');
+                }
                 $project_info_output = array();
 
                 $project_info_output['ID'] = $post->ID;
@@ -30,9 +31,8 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                 $project_info_output['type_budget'] = $project_meta['type_budget'][0];
                 $project_info_output['accepted'] = $project_meta['accepted'][0];
 
-//                $project_info_output = get_post_meta($post->ID));
                 $bid_post_id = get_post_meta($post->ID)['accepted'][0];
-                if ($bid_post_id){
+                if ($bid_post_id) {
                     $bid_post = get_post($bid_post_id);
                     $project_info_output['bid_post_date_gmt'] = $bid_post->post_date_gmt;
                     $project_info_output['bid_post_author'] = $bid_post->post_author;
@@ -42,18 +42,15 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                     $project_info_output['bid_time'] = $project_bid_meta['bid_time'][0];
                     $project_info_output['bid_type_time'] = $project_bid_meta['type_time'][0];
                 }
-//                $project_info_output = $bid_post);
 
-echo '<script type="application/javascript">var $project_info_output = '.json_encode($project_info_output).'</script>';
-                var_dump($project_info_output);
+                echo '<script type="application/javascript">var $project_info_output = ' . json_encode($project_info_output) . '</script>';
                 ?>
-                    </pre>
                 <script type="application/javascript">
                     var disput_modal = jQuery('#modal_contact_form_disput');
                     disput_modal.on('show.bs.modal', function () {
                         jQuery.each($project_info_output, function (i, item) {
                             console.log(i + item);
-                            disput_modal.find('input[name="'+i+'"]').val(item);
+                            disput_modal.find('input[name="' + i + '"]').val(item);
                         });
                     })
                 </script>

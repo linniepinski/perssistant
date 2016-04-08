@@ -1086,7 +1086,7 @@ get_header();
                         if ($user_role == FREELANCER) {
                             ?>
                             <div class="account-balance">
-                                <label>Your account balance:</label>
+                                <label><?php _e("Your account balance:",'page-profile');?></label>
                                 <span class="<?php echo $account_balance['style'] ?>">
                                 <?php echo $account_balance['string_balance'] ?>
                                  </span>
@@ -1095,7 +1095,7 @@ get_header();
                         } elseif ($user_role == EMPLOYER) {
                             ?>
                             <div class="account-balance">
-                                <label>Your account balance:</label>
+                                <label><?php _e("Your account balance:",'page-profile');?></label>
                                 <span class="<?php echo $account_balance['style'] ?>">
                                 <?php echo $account_balance['string_balance'] ?>
                                 </span>
@@ -1103,7 +1103,7 @@ get_header();
                             <button type="button" style="margin-top: 9px;"
                                     class="btn btn-primary btn-block btn-custom-price" data-toggle="modal"
                                     data-target="#stripe_modal"
-                                    data-title="Custom amount">Account recharge
+                                    data-title="Custom amount"><?php _e("Account recharge",'page-profile');?>
                             </button>
                             <?php
                             echo do_shortcode('[modal_paymill]');
