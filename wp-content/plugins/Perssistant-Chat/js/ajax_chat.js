@@ -452,7 +452,7 @@ function CountSearchMatches() {
 function reset_custom_file_input(){
     //chat_globals.send_button
     if(jQuery('.file-input-wrapper input').val()==''){
-        jQuery('.file-input-wrapper span').text(chat_globals.send_button);
+        jQuery('.file-input-wrapper span').text(chat_globals.attach_file);
     }
 }
 
