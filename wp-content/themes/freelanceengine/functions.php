@@ -3137,3 +3137,26 @@ function printStripePaymentForm($user_id, $bid_id, $price, $project_slug) {
 	}
   echo $form;
 }
+
+add_action("wp_ajax_send_payment_request", "send_payment_request");
+add_action("wp_ajax_nopriv_send_payment_request", "send_payment_request");
+
+if (!function_exists('send_payment_request')) {
+	function send_payment_request() {
+
+		$response['status'] = 'aaa';
+		$bid_id = trim($_POST['bid_id']);
+		if($bid_id != '') {
+			$bid_payment_request_sent = get_post_meta($bid_id, 'bid_payment_request_sent', true);
+			if(!empty($bid_payment_request_sent)){
+				update_post_meta($bid_id, 'bid_payment_request_sent', 'yes');
+			} else {
+				add_post_meta($bid_id, 'bid_payment_request_sent', 'yes');
+			}
+
+			Fre_Notification::bidPaymentRequest($bid_id);
+			$response['status'] = '01';
+		}
+		die(json_encode($response));
+	}
+}

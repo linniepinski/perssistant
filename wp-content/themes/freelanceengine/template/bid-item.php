@@ -140,15 +140,27 @@
 
 	            <?php if($post_object->current_post->decide_later!= 'on' && $project->type_budget != 'hourly_rate') { ?>
 
-		            <?php if( $bid_accept && $project->accepted == $convert->ID && in_array($project_status, array('complete','close', 'disputing') ) ) { ?>
-			            <?php if($role == FREELANCER) { ?>
-				            <div><a href="javascript:void(0)" class="send_payment_request_js btn btn-apply-project-item" data-bid-id="<?php echo $convert->ID; ?>" style="min-width: 130px; margin-left: -58px; float: none; margin-top: 3px;"><?php _e("Send payment request", 'bid-item'); ?></a></div>
-			            <?php } else { ?>
-				            <?php $bid_paid_by_stripe = get_post_meta($convert->ID, 'bid_paid_by_stripe', true); ?>
-				            <?php if($bid_paid_by_stripe != 'yes') { ?>
-				              <?php printStripePaymentForm($convert->post_author, $convert->ID, $convert->bid_budget, $project->post_name); ?>
-					          <?php } else { ?>
-					            <p><strong><?php _e("Paid", 'bid-item'); ?></strong></p>
+		            <?php
+		            $settings_stripe_secret_key = get_option('settings_stripe_secret_key');
+		            $settings_stripe_public_key = get_option('settings_stripe_public_key');
+		            if(!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key)){
+		            ?>
+
+			            <?php if( $bid_accept && $project->accepted == $convert->ID && in_array($project_status, array('complete','close', 'disputing') ) ) { ?>
+				            <?php if($role == FREELANCER) { ?>
+					            <?php $bid_payment_request_sent = get_post_meta($convert->ID, 'bid_payment_request_sent', true); ?>
+					            <?php if($bid_payment_request_sent == 'yes') { ?>
+			                  <div style="min-width: 210px; margin-left: -58px; float: none; margin-top: 3px;"><b>Payment request was sent.</b></div>
+					            <?php } else { ?>
+					              <div style="min-width: 210px; margin-left: -58px; float: none; margin-top: 3px;"><a href="javascript:void(0)" class="send_payment_request_js btn btn-apply-project-item" data-project-id="<?php echo $project->ID; ?>" data-bid-id="<?php echo $convert->ID; ?>"><?php _e("Send payment request", 'bid-item'); ?></a></div>
+				              <?php } ?>
+				            <?php } else { ?>
+					            <?php $bid_paid_by_stripe = get_post_meta($convert->ID, 'bid_paid_by_stripe', true); ?>
+					            <?php if($bid_paid_by_stripe != 'yes') { ?>
+					              <?php printStripePaymentForm($convert->post_author, $convert->ID, $convert->bid_budget, $project->post_name); ?>
+						          <?php } else { ?>
+						            <p><strong><?php _e("Paid", 'bid-item'); ?></strong></p>
+					            <?php } ?>
 				            <?php } ?>
 			            <?php } ?>
 		            <?php } ?>
