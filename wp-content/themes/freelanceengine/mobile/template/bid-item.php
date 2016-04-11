@@ -65,14 +65,21 @@
 				            <?php if($role == FREELANCER) { ?>
 					            <?php $bid_payment_request_sent = get_post_meta($convert->ID, 'bid_payment_request_sent', true); ?>
 					            <?php if($bid_payment_request_sent == 'yes') { ?>
-						            <div style="min-width: 210px; margin-left: -58px; float: none; margin-top: 3px;"><b>Payment request was sent.</b></div>
+						            <?php $bid_paid_by_stripe = get_post_meta($convert->ID, 'bid_paid_by_stripe', true); ?>
+						            <?php if($bid_paid_by_stripe != 'yes') { ?>
+						              <div style="min-width: 210px; margin-left: -58px; float: none; margin-top: 3px;"><b><?php _e("Payment request was sent.", 'bid-item'); ?></b></div>
+						            <?php } else { ?>
+							            <p><strong><?php _e("Paid", 'bid-item'); ?></strong></p>
+						            <?php } ?>
 					            <?php } else { ?>
 						            <div style="min-width: 210px; margin-left: -58px; float: none; margin-top: 3px;"><a href="javascript:void(0)" class="send_payment_request_js btn btn-apply-project-item" data-project-id="<?php echo $project->ID; ?>" data-bid-id="<?php echo $convert->ID; ?>"><?php _e("Send payment request", 'bid-item'); ?></a></div>
 					            <?php } ?>
 				            <?php } else { ?>
 					            <?php $bid_paid_by_stripe = get_post_meta($convert->ID, 'bid_paid_by_stripe', true); ?>
 					            <?php if($bid_paid_by_stripe != 'yes') { ?>
-						            <?php printStripePaymentForm($convert->post_author, $convert->ID, $convert->bid_budget, $project->post_name); ?>
+						            <?php if($user_ID && $user_ID == $project->post_author){ ?>
+						              <?php printStripePaymentForm($convert->post_author, $convert->ID, $convert->bid_budget, $project->post_name); ?>
+						            <?php } ?>
 					            <?php } else { ?>
 						            <p><strong><?php _e("Paid", 'bid-item'); ?></strong></p>
 					            <?php } ?>
