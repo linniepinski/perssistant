@@ -164,6 +164,8 @@ class AppEngine extends AE_Base
             ),
             'empty_projects'=>__("No projects found", 'aecore-class-ae-framework-backend'),
             'empty_profiles'=>__("No profiles found", 'aecore-class-ae-framework-backend'),
+            'payment_was_sent' => __("Payment request was sent.", 'aecore-class-ae-framework-backend'),
+            'fee_and_tax' => __("For you, without taxes and fees", 'aecore-class-ae-framework-backend'),
             'validator_messages' => array(
                 'paypal' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),
                 'user_email' => __("Email address seems invalid", 'aecore-class-ae-framework-backend'),

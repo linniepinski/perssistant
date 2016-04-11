@@ -660,7 +660,7 @@ jQuery(document).ready(function($) {
       dataType: 'json',
       success: function(response) {
         if(response.status == '01'){
-          me.parent().html('<b>Payment request was sent.</b>');
+          me.parent().html('<b>'+ ae_globals.payment_was_sent +'</b>');
           me.remove();
         }
       }
@@ -676,7 +676,7 @@ jQuery(document).ready(function($) {
       var stripe_fixed_fee = 0.33;
       if(me.val() != '' && me.val() != 0) {
         var price = Math.ceil(me.val() * 100 - ((Math.ceil(me.val() * persentage)) + stripe_fixed_fee * 100)) / 100;
-        jQuery('.calc_price_without_fees').html('For you, without taxes and fees ' + price );
+        jQuery('.calc_price_without_fees').html(ae_globals.fee_and_tax + ' ' + price );
       }
 
     });

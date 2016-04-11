@@ -3133,7 +3133,7 @@ function printStripePaymentForm($user_id, $bid_id, $price, $project_slug) {
 		$form .= '<input name="project_slug" value="'.$project_slug.'" type="hidden" />';
 		$form .= '</form>';
 	} elseif(empty($users_stripe_account_id)){
-		$form .= '<p>User hasn\'t connect stripe account</p>';
+		$form .= '<p>'. __("User hasn't connect stripe account", 'functions') .'</p>';
 	}
   echo $form;
 }
