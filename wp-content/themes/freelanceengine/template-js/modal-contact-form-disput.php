@@ -15,6 +15,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                     echo do_shortcode('[contact-form-7 id="2280" title="Disput DE"]');
                 }
                 $project_info_output = array();
+                $project_info_output['current_display_name'] = get_userdata($user_ID)->display_name;
 
                 $project_info_output['ID'] = $post->ID;
                 $project_info_output['post_status'] = $post->post_status;
