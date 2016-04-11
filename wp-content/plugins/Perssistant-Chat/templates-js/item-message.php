@@ -1,6 +1,6 @@
 <script type="text/template" id="message-item">
     <div class="message-item row" chat_id="{{= id }}">
-        <div class="hidden-xs hidden-sm col-md-1 text-ellipsis the_author_chat">
+        <div class="hidden-xs hidden-sm col-md-1 the_author_chat">
             {{html avatar }}
         </div>
         <div class="col-xs-8 col-sm-9 col-md-9 the_content_chat">

@@ -58,8 +58,7 @@ if ($chat_query) {
             }
         }
         unset($attachments);
-
-        $date1 = new DateTime(get_the_time($post->ID ,'U'));
+        $date1 = new DateTime($post->post_date);
         $date2 = new DateTime(date('F d,Y ', strtotime('-1 days')));
 
         $response['query'][$key]['id'] = $post->ID;

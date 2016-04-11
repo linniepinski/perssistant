@@ -83,7 +83,7 @@ form#chat {
 .chat_history {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 53%;
+    /*height: 53%;*/
 }
 
 /*a href class=" btn-sumary contact-me"*/
@@ -145,14 +145,14 @@ form#chat {
 }
 
 .right-column-chat {
-    height: 95%;
+    /*height: 100%;*/
     border-left: 1px solid #ccc;
 }
 
 .sieve-custom {
     /*height: 425px;*/
-    overflow-y: auto;
-    height: 80%;
+    /*overflow-y: auto;*/
+    /*height: 100%;*/
 
 }
 
@@ -227,25 +227,52 @@ form#chat {
 .offline {
     color: #808080;
 }
+#search_chat{
+    min-height: 78px;
+    margin-bottom: 0;
+}
+#search_chat label, #search_chat input {
+    margin: 0;
+}
+.right-column-chat {
+    margin: 0;
+    /*padding: 0 15px;*/
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+.main-container{
+    width: 100%;
+    margin: auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+.control-row{
+    width: 100%;
+    margin: auto;
+    /*padding: 15px;*/
+    box-sizing: border-box;
+}
 
 @media (max-width: 991px) {
 
     .chat_history {
-        height: 35%;
+        /*height: 35%;*/
     }
 
     .sieve-custom {
-        height: 75%;
+        /*height: 75%;*/
     }
 
     #status-chat > .alert {
-        margin-bottom: 5px;
+        /*margin-bottom: 5px;*/
     }
 }
 
 @media (max-width: 767px) {
     .sieve-custom {
-        /*height: 425px*/
+        height: 425px
     }
 
     .chat_history {
@@ -260,3 +287,7 @@ form#chat {
         border-left: none;
     }
 }
+.message-item{
+    margin-bottom: 4px;
+}
+
