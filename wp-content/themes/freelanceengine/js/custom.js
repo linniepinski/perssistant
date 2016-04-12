@@ -631,14 +631,14 @@ jQuery(document).ready(function () {
 });
 
 jQuery(document).ready(function($) {
-  $('a').not('[href*="mailto:"]').each(function () {
-    if(!$(this).hasClass('disable-new-window-opening')){
-      var isInternalLink = new RegExp('/' + window.location.host + '/');
-      if ( ! isInternalLink.test(this.href) ) {
-        $(this).attr('target', '_blank');
-      }
-    }
-  });
+//  $('a').not('[href*="mailto:"]').each(function () {
+//    if(!$(this).hasClass('disable-new-window-opening')){
+//      var isInternalLink = new RegExp('/' + window.location.host + '/');
+//      if ( ! isInternalLink.test(this.href) ) {
+//        $(this).attr('target', '_blank');
+//      }
+//    }
+//  });
 
   $('input.wpcf7-submit').click(function(){
     $(this).parents('form').find('textarea').each(function () {

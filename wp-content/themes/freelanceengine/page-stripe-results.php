@@ -44,6 +44,29 @@ if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key) || e
 
 
 		if($charge['status'] == 'succeeded') {
+
+			$this_bid = array(
+				'ID'           => $bid_id,
+				'post_status'  => 'complete',
+			);
+			wp_update_post($this_bid);
+
+			$this_bid_post = get_post($bid_id);
+			$this_bid = array(
+				'ID'           => $this_bid_post->post_parent,
+				'post_status'  => 'complete',
+			);
+			wp_update_post($this_bid);
+
+			$curent_account_cash_balance = get_user_meta($this_bid_post->post_author, 'account_cash_balance', true);
+			if($curent_account_cash_balance != ''){
+				$new_balance = (int)$curent_account_cash_balance + ((int)$stripe_price - (int)$comp_fee - 33);
+				update_user_meta($this_bid_post->post_author, 'account_cash_balance', $new_balance);
+			} else {
+				$new_balance = (int)$stripe_price - (int)$comp_fee - 33;
+				add_user_meta($this_bid_post->post_author, 'account_cash_balance', $new_balance);
+			}
+			
 			$bid_paid_by_stripe = get_post_meta($bid_id, 'bid_paid_by_stripe', true);
 			if(!empty($bid_paid_by_stripe)){
 				update_post_meta($bid_id, 'bid_paid_by_stripe', 'yes');
