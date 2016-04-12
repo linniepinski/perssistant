@@ -1086,7 +1086,7 @@ get_header();
                         if ($user_role == FREELANCER) {
                             ?>
                             <div class="account-balance">
-                                <label><?php _e("Your account balance:",'page-profile');?></label>
+                                <label><?php _e("Total earned:",'page-profile');?></label>
                                 <span class="<?php echo $account_balance['style'] ?>">
                                 <?php echo $account_balance['string_balance'] ?>
                                  </span>
@@ -1094,19 +1094,19 @@ get_header();
                             <?php
                         } elseif ($user_role == EMPLOYER) {
                             ?>
-                            <div class="account-balance">
-                                <label><?php _e("Your account balance:",'page-profile');?></label>
-                                <span class="<?php echo $account_balance['style'] ?>">
-                                <?php echo $account_balance['string_balance'] ?>
+                            <!--<div class="account-balance">
+                                <label><?php //_e("Your account balance:",'page-profile');?></label>
+                                <span class="<?php //echo $account_balance['style'] ?>">
+                                <?php //echo $account_balance['string_balance'] ?>
                                 </span>
                             </div>
                             <button type="button" style="margin-top: 9px;"
                                     class="btn btn-primary btn-block btn-custom-price" data-toggle="modal"
                                     data-target="#stripe_modal"
-                                    data-title="<?php _e("Custom amount",'account_balance_plugin');?>"><?php _e("Account recharge",'page-profile');?>
-                            </button>
+                                    data-title="<?php //_e("Custom amount",'account_balance_plugin');?>"><?php //_e("Account recharge",'page-profile');?>
+                            </button>-->
                             <?php
-                            echo do_shortcode('[modal_paymill]');
+                            //echo do_shortcode('[modal_paymill]');
                         }
                         ?>
                         <div class="setting-profile-wrapper <?php echo $user_role; ?>">
