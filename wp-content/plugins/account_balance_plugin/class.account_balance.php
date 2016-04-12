@@ -18,7 +18,7 @@ class account_balance
     }
     public static function get_payment_form()
     {
-        echo do_shortcode('[paymill id=99 amount=' . $_POST['custom_amount'] . ' title="Custom amount" custom_description="' . htmlspecialchars($_POST['custom_description']) . '" ]');
+        echo do_shortcode('[paymill id=99 amount=' . $_POST['custom_amount'] . ' title="'.__("Custom amount",'account_balance_plugin').' custom_description="' . htmlspecialchars($_POST['custom_description']) . '" ]');
         wp_die();
     }
 
@@ -45,11 +45,11 @@ class account_balance
                                 <div class="col-xs-6">
                                     <!--        <label for="custom_amount">Amount</label>-->
                                     <input id="custom_amount" type="number" min="1" name="custom_amount" class="form-control" required=""
-                                           value="" placeholder="Amount, &euro;">
+                                           value="" placeholder="<?php _e("Amount",'account_balance_plugin');?>, &euro;">
                                 </div>
                                 <div class="col-xs-6">
                                     <button id="amount_send" type="submit"
-                                            class="btn btn-primary btn-block">Confirm
+                                            class="btn btn-primary btn-block"><?php _e("Confirm",'account_balance_plugin');?>
                                     </button>
                                 </div>
 
@@ -84,10 +84,10 @@ class account_balance
             <script
                 src="https://button.paymill.com/v1/"
                 id="buttonPayment<?php echo $atts['id'] ?>"
-                data-label="Buy"
+                data-label="<?php _e("Buy",'account_balance_plugin') ?>"
                 data-title="<?php echo $atts['title'] ?>"
                 data-description=""
-                data-submit-button="Pay <?php echo $atts['amount'] ?> EUR"
+                data-submit-button="<?php _e("Pay",'account_balance_plugin');?> <?php echo $atts['amount'] ?> EUR"
                 data-amount="<?php echo $atts['amount'] * 100 ?>"
                 data-currency="EUR"
                 data-elv="false"

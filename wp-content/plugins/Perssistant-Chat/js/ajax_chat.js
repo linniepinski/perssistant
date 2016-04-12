@@ -65,7 +65,7 @@ function showResponse(responseText, statusText, xhr, $form) {
         reset_custom_file_input();
 
     }
-    jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+    jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar("update");
     jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
 }
 
@@ -102,7 +102,7 @@ function chatroom_check_updates() {
             } else {
 
             }
-            jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+            jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar("update");
 
             //jQuery("div.chat_history")
             //    .mouseout(function() {
@@ -179,7 +179,7 @@ function chatroom_refresh() {
                 jQuery.each(data.query, function (i, item) {
                     jQuery(template_chat_item.tmpl(item)).appendTo("div.chat_history .mCSB_container");
                 });
-                jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+                jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar("update");
                 jQuery("div.chat_history").mCustomScrollbar("scrollTo", "bottom");
                 chatblockUi.unblock(jQuery('.right-column-chat'));
             } else {
@@ -292,7 +292,7 @@ function chatroom_loadprev() {
 
             status_chat(chat_globals.loading, chat_globals.wait, 'alert-info');
             //jQuery('#loadprev').button('loading');
-            jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+            jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar("update");
         },
         success: function (data) {
             if (data.status == true) {
@@ -304,7 +304,7 @@ function chatroom_loadprev() {
                 jQuery.each(data.query, function (i, item) {
                     jQuery(template_chat_item.tmpl(item)).prependTo('div.chat_history .mCSB_container');
                 });
-                jQuery("#right-column-chat > div.chat_history").mCustomScrollbar("update");
+                jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar("update");
                 jQuery("div.chat_history").mCustomScrollbar("scrollTo", "top");
 
                 status_chat(chat_globals.success, chat_globals.history_loaded, 'alert-success');
@@ -335,7 +335,21 @@ function resizeChat() {
     if (jQuery(window).width() <= 767) {
         parallax_banner.height(jQuery(window).height('100%'));
     } else {
-        parallax_banner.height(Math.round(jQuery(window).height() * 0.75));
+        parallax_banner.height(Math.round(jQuery(window).height() - jQuery('header').height() - 60));
+    }
+}
+function resizeChatBox() {
+    var body = jQuery('body');
+    //var body_wrapper = jQuery('.body-wrapper');
+    var chat_his = jQuery('#chat_his');
+
+    if (jQuery(window).width() <= 767) {
+        //chat_his.height(jQuery(window).height('100%'));
+        jQuery('#chat_his').height('100%');
+        jQuery('.sieve-custom').height('100%');
+    } else {
+        jQuery('#chat_his').height(jQuery('#chat').height() - jQuery('.control-row').height() - 150);
+        jQuery('.sieve-custom').height(jQuery('#contacts').height() - jQuery('#search_chat').height() - 30);
     }
 }
 function OnKeyCodeEvents() {
@@ -452,12 +466,12 @@ function CountSearchMatches() {
 function reset_custom_file_input(){
     //chat_globals.send_button
     if(jQuery('.file-input-wrapper input').val()==''){
-        jQuery('.file-input-wrapper span').text(chat_globals.send_button);
+        jQuery('.file-input-wrapper span').text(chat_globals.attach_file);
     }
 }
 
 function InitGUI() {
-    resizeChat();
+
     jQuery("#contacts > section").mCustomScrollbar({
         theme: "dark",
         updateOnContentResize: true,
@@ -465,7 +479,7 @@ function InitGUI() {
             enable: true
         }
     });
-    jQuery("#right-column-chat > div.chat_history").mCustomScrollbar({
+    jQuery("#right-column-chat > .main-container > div.chat_history").mCustomScrollbar({
         theme: "dark",
         updateOnContentResize: true,
         scrollButtons: {
@@ -479,10 +493,13 @@ function InitGUI() {
     jQuery("section.sieve").sieve({itemSelector: "div.item_contact"});
     Init_CountSearchMatches();
 
+    resizeChat();
+    resizeChatBox();
 }
 
 jQuery(window).on('resize', function () {
     resizeChat();
+    resizeChatBox();
 });
 
 function centerModals($element) {
@@ -503,12 +520,9 @@ function centerModals($element) {
 jQuery('.modal-vcenter').on('show.bs.modal', function (e) {
     centerModals(jQuery(this));
 });
-jQuery(window).on('resize', centerModals);
+//jQuery(window).on('resize', centerModals);
 
 jQuery(document).ready(function () {
-    chatroom_count();
-    chatroom_notifications_everywhere();
-
     //alert(window.location.pathname);
     if (window.location.pathname == '/chat-room/' || window.location.pathname == '/de/chat-room/') {
 
@@ -530,6 +544,8 @@ jQuery(document).ready(function () {
         });
         OnKeyCodeEvents();
     }
+    chatroom_count();
+    chatroom_notifications_everywhere();
 });
 
 /////sendNotification /\/\/\/\/\/\/\/\

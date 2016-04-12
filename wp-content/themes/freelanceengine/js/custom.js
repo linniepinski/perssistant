@@ -631,14 +631,14 @@ jQuery(document).ready(function () {
 });
 
 jQuery(document).ready(function($) {
-  $('a').not('[href*="mailto:"]').each(function () {
-    if(!$(this).hasClass('disable-new-window-opening')){
-      var isInternalLink = new RegExp('/' + window.location.host + '/');
-      if ( ! isInternalLink.test(this.href) ) {
-        $(this).attr('target', '_blank');
-      }
-    }
-  });
+//  $('a').not('[href*="mailto:"]').each(function () {
+//    if(!$(this).hasClass('disable-new-window-opening')){
+//      var isInternalLink = new RegExp('/' + window.location.host + '/');
+//      if ( ! isInternalLink.test(this.href) ) {
+//        $(this).attr('target', '_blank');
+//      }
+//    }
+//  });
 
   $('input.wpcf7-submit').click(function(){
     $(this).parents('form').find('textarea').each(function () {
@@ -646,6 +646,42 @@ jQuery(document).ready(function($) {
       $(this).val(val.trim());
     });
   });
+
+  jQuery('.send_payment_request_js').on('click',function(){
+    var me = jQuery(this);
+    var bid_id = me.attr('data-bid-id');
+    jQuery.ajax({
+      url: myAjax.ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'send_payment_request',
+        bid_id: bid_id
+      },
+      dataType: 'json',
+      success: function(response) {
+        if(response.status == '01'){
+          me.parent().html('<b>'+ ae_globals.payment_was_sent +'</b>');
+          me.remove();
+        }
+      }
+
+    });
+  });
+
+  if(jQuery('.calc_price_with_fees').length){
+    jQuery('.calc_price_with_fees').on('change', function(){
+      jQuery('.calc_price_without_fees').html('');
+      var me = jQuery(this);
+      var persentage = me.attr('data-fee-percentage');
+      var stripe_fixed_fee = 0.33;
+      if(me.val() != '' && me.val() != 0) {
+        var price = Math.ceil(me.val() * 100 - ((Math.ceil(me.val() * persentage)) + stripe_fixed_fee * 100)) / 100;
+        jQuery('.calc_price_without_fees').html(ae_globals.fee_and_tax + ' ' + price );
+      }
+
+    });
+  }
+
 
 });
 

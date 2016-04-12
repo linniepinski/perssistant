@@ -5,6 +5,7 @@
             el: 'body.single',
             events: {
                 'click a.btn-apply-project': 'modalBidProject',
+                'click a.btn-disput-this': 'modalContactFormDisput',
                 'click button.btn-accept-bid': 'confirmShow',
                 'click button.btn-apply-project-item': 'confirmShow',
                 'click a.btn-complete-project': 'showReviewModal',
@@ -56,6 +57,7 @@
                 // fetch model data
                 switch (action) {
                     case 'edit':
+                        alert('fadsfadsf');
                         //trigger an event will be catch by AE.App to open modal edit
                         AE.pubsub.trigger('ae:model:onEdit', model);
                         break;
@@ -171,6 +173,7 @@
                 
                 // init modal bid for freelancer can user to submit a bid
                 view.modal_bid = new AE.Views.Modal_Bid();
+                view.modal_contact_form_disput = new AE.Views.Modal_contact_form_disput();
 
                 // init modal bid for freelancer can user to update a bid
                 view.modal_bid_update = new AE.Views.Modal_Bid_Update();
@@ -237,6 +240,10 @@ $("a.popup-login").trigger('click');
             modalBidProject: function() {
                 var view = this;
                 view.modal_bid.openModal();
+            },
+            modalContactFormDisput: function() {
+                var view = this;
+                view.modal_contact_form_disput.openModal();
             },
             // open modal review project
             showReviewModal: function(event) {
@@ -715,6 +722,15 @@ $("a.popup-login").trigger('click');
                         }
                     });
                 }
+            }
+        });
+        AE.Views.Modal_contact_form_disput = AE.Views.Modal_Box.extend({
+            el: '#modal_contact_form_disput',
+            events: {
+
+            },
+            initialize: function() {
+
             }
         });
         AE.Views.Modal_Bid = AE.Views.Modal_Box.extend({

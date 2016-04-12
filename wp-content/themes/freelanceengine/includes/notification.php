@@ -156,6 +156,64 @@ class Fre_Notification extends AE_PostAction
         return $this->insert($notification);
     }
 
+	/**
+	 * notify freelancer when his bid was paid by employer
+	 * @param int $bid_id the id of bid
+	 * @since 1.2
+	 * @author Dakachi
+	 */
+	function bidPaid($bid_id) {
+		$bid = get_post($bid_id);
+		if (!$bid || is_wp_error($bid)) return;
+
+		$project_id = $bid->post_parent;
+		$project = get_post($project_id);
+		if (!$project || is_wp_error($project)) return;
+
+		$content = 'type=bid_paid&project=' . $project_id;
+
+		// insert notification
+		$notification = array(
+			'post_type' => 'notify',
+			'post_parent' => $project_id,
+			'post_content' => $content,
+			'post_excerpt' => $content,
+			'post_status' => 'publish',
+			'post_author' => $bid->post_author,
+			'post_title' => sprintf(__("Bid on project %s was paided", 'notification-backend') , get_the_title($project->ID))
+		);
+		return Fre_Notification::insert($notification);
+	}
+
+	/**
+	 * notify employer when his bid neeed to be paid
+	 * @param int $bid_id the id of bid
+	 * @since 1.2
+	 * @author Dakachi
+	 */
+	function bidPaymentRequest($bid_id) {
+		$bid = get_post($bid_id);
+		if (!$bid || is_wp_error($bid)) return;
+
+		$project_id = $bid->post_parent;
+		$project = get_post($project_id);
+		if (!$project || is_wp_error($project)) return;
+
+		$content = 'type=bid_payment_request&project=' . $project_id;
+
+		// insert notification
+		$notification = array(
+			'post_type' => 'notify',
+			'post_parent' => $bid->ID,
+			'post_content' => $content,
+			'post_excerpt' => $content,
+			'post_status' => 'publish',
+			'post_author' => $project->post_author,
+			'post_title' => sprintf(__("%s need to be paided", 'notification-backend') , get_the_title($bid->ID))
+		);
+		return Fre_Notification::insert($notification);
+	}
+
     /**
      * notify freelancer when his bid was accepted by employer
      * @param int $bid_id the id of bid
@@ -442,8 +500,45 @@ class Fre_Notification extends AE_PostAction
                 break;
                 
                 // notify freelancer when employer complete a project
-                
-                
+
+		        case 'bid_paid':
+			        $project_author = get_post_field('post_author', $project);
+			        $author = '<a class="user-link" href="'. get_author_posts_url($project_author) .'" ><span class="avatar-notification">
+	                            ' . get_avatar($project_author, 45) . '
+	                        </span>&nbsp;&nbsp;
+	                        <span class="date-notification name">
+	                            ' . get_the_author_meta('display_name', $project_author) . '
+	                        </span>
+	                        </a>';
+			        $content.= sprintf(__("Your bid at %s was paid by %s", 'notification-backend') , $project_link, $author);
+			        break;
+
+		        // notify freelancer when employer complete a project
+
+		        case 'bid_payment_request':
+			        $bid_post = get_post($notify->post_parent);
+			        $bid_author = get_post_field('post_author', $bid_post);
+			        $user_profile_id = get_user_meta($bid_author, 'user_profile_id', true);
+
+			        $author = '<a class="user-link" href="'. get_author_posts_url($bid_author) .'">
+                        <span class="avatar-freelancer-notification">
+                            ' . get_avatar($bid_author, 45) . '
+                        </span>
+                        <div class="profile">
+                            <span class="name">
+                                ' . get_the_author_meta('display_name', $bid_author) . '
+                            </span>
+                            <span class="postion-employer">
+                                ' . get_post_meta($user_profile_id, 'et_professional_title', true) . '
+                            </span>
+                        </div>
+                        </a>';
+			        $content.= sprintf(__("%s is vaiting to be paid for %s", 'notification-backend') , $author, $project_link);
+			        break;
+
+		        // notify freelancer when employer complete a project
+
+
             case 'complete_project':
                 $project_owner = get_post_field('post_author', $project);
                 $author = '<a class="user-link" href="'. get_author_posts_url($project_owner) .'" >

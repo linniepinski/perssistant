@@ -16,5 +16,6 @@
         'match_results' => __("Matching results", 'chat-frontend') ,
         'upload_failed' => __('File upload failed!', 'chat-frontend') ,
         'send_button' => __("Send message", 'chat-frontend') ,
+        'attach_file' => __("Attach file",'chat-frontend') ,
 
     );

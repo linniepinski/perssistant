@@ -107,6 +107,8 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 	get_template_part( 'template-js/skill' , 'item' );
     get_template_part( 'template-js/modal' , 'delete-bid' );
     get_template_part( 'template-js/modal' , 'bid-update' );
+    get_template_part( 'template-js/modal' , 'contact-form-disput' );
+    get_template_part( 'template-js/modal' , 'edit-project' );
 
 	if(is_singular('project')){
 
@@ -134,15 +136,14 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
         ||  current_user_can('manage_options') || is_post_type_archive(PROJECT) 
         || is_page_template('page-profile.php') || is_singular( PROJECT )
     ){
-        get_template_part( 'template-js/modal' , 'edit-project' );
+//        get_template_part( 'template-js/modal' , 'edit-project' );
         get_template_part( 'template-js/modal' , 'reject' );
     }
 
     if(is_singular( PROJECT )) {
         get_template_part( 'template-js/message' , 'item' );   
-        get_template_part( 'template-js/report' , 'item' );   
-
-}
+        get_template_part( 'template-js/report' , 'item' );
+    }
 
 	wp_footer();
 ?>

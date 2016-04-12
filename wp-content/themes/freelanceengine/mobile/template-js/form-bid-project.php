@@ -21,27 +21,36 @@ global $user_ID, $post;
                 _e('Budget', 'form-bid-project-mobile');
             }
             ?></label>
-        <div class="checkbox" style="display: inline-block;margin-left: 20px;">
+        <div class="checkbox hidden" style="display: inline-block;margin-left: 20px;">
             <label><input type="checkbox" name="decide_later" class="checkbox1"><?php _e('Decide later', 'form-bid-project-mobile'); ?></label>
         </div>
         <script>
-            jQuery(document).ready(function () {
-                jQuery('.checkbox1').change(function () {
-                    if (jQuery(this).is(':checked')) {
-                        jQuery('#bid_budget').removeClass('required').removeAttr('value').parent().hide();
-                    }
-                    else {
-                        jQuery('#bid_budget').addClass('required').removeAttr('value').parent().show();
-                    }
-
-                });
-
-            });
-
+//            jQuery(document).ready(function () {
+//                jQuery('.checkbox1').change(function () {
+//                    if (jQuery(this).is(':checked')) {
+//                        jQuery('#bid_budget').removeClass('required').removeAttr('value').parent().hide();
+//                    }
+//                    else {
+//                        jQuery('#bid_budget').addClass('required').removeAttr('value').parent().show();
+//                    }
+//
+//                });
+//
+//            });
         </script>
-        <div class="form-group">
-        <input type="number" name="bid_budget" id="bid_budget" class="form-control required number" />
-            </div>
+		    <div class="form-group">
+			    <?php
+			    $settings_stripe_secret_key = get_option('settings_stripe_secret_key');
+			    $settings_stripe_public_key = get_option('settings_stripe_public_key');
+			    $settings_company_fee_for_stripe = get_option('settings_company_fee_for_stripe');
+			    if(!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key) && !empty($settings_company_fee_for_stripe)){
+				    ?>
+				    <input type="number" name="bid_budget" id="bid_budget" style="margin-bottom: 10px;" data-fee-percentage="<?php echo $settings_company_fee_for_stripe; ?>" class="form-control required number calc_price_with_fees" min="1"/>
+				    <span style="float: right;" class="calc_price_without_fees"></span>
+			    <?php } else { ?>
+				    <input type="number" name="bid_budget" id="bid_budget" class="form-control required number" min="1"/>
+			    <?php } ?>
+		    </div>
     </div>
 
     <div class="clearfix"></div>
