@@ -149,10 +149,10 @@ et_get_mobile_header();
 				                    <?php if(!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key) && !empty($settings_stripe_client_id)) { ?>
 					                    <?php if(!empty($user_stripe_account_id)) { ?>
 						                    <input type="text" class="form-control" value="<?php echo $user_stripe_account_id; ?>" readonly/>
-						                    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Reconect stripe account', 'page-profile') ?></a>
+						                    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Reconnect stripe account', 'page-profile') ?></a>
 					                    <?php } else { ?>
 						                    <br />
-						                    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Conect stripe account', 'page-profile') ?></a>
+						                    <a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=<?php echo $settings_stripe_client_id ?>&scope=read_write" class="btn btn-apply-project-item disable-new-window-opening" style="float: left; margin-bottom: 30px;"><?php _e('Connect stripe account', 'page-profile') ?></a>
 					                    <?php } ?>
 				                    <?php } ?>
 			                    </div>
