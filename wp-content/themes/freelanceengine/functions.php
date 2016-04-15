@@ -3182,7 +3182,7 @@ function ajax_logout(){
     wp_clear_auth_cookie();
     wp_logout();
     $response['status'] = true;
-    $response['redirect'] = home_url();
+    $response['redirect'] = site_url().ae_current_lang();
     $response['msg'] = __("Logout success!", 'functions');
     wp_send_json($response);
 }
