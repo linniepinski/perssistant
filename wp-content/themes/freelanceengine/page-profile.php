@@ -1082,17 +1082,17 @@ get_header();
                         //var_dump(strtotime('next monday +3 hours'));
                         //echo '<pre>'; var_dump( _get_cron_array() ); echo '</pre>';
 
-                        $account_balance = account_balance();
-                        if ($user_role == FREELANCER) {
-                            ?>
-                            <div class="account-balance">
-                                <label><?php _e("Total earned:",'page-profile');?></label>
-                                <span class="<?php echo $account_balance['style'] ?>">
-                                <?php echo $account_balance['string_balance'] ?>
-                                 </span>
-                            </div>
-                            <?php
-                        } elseif ($user_role == EMPLOYER) {
+//                        $account_balance = account_balance();
+//                        if ($user_role == FREELANCER) {
+//                            ?>
+<!--                            <div class="account-balance">-->
+<!--                                <label>--><?php //_e("Total earned:",'page-profile');?><!--</label>-->
+<!--                                <span class="--><?php //echo $account_balance['style'] ?><!--">-->
+<!--                                --><?php //echo $account_balance['string_balance'] ?>
+<!--                                 </span>-->
+<!--                            </div>-->
+<!--                            --><?php
+//                        } elseif ($user_role == EMPLOYER) {
                             ?>
                             <!--<div class="account-balance">
                                 <label><?php //_e("Your account balance:",'page-profile');?></label>
@@ -1107,7 +1107,7 @@ get_header();
                             </button>-->
                             <?php
                             //echo do_shortcode('[modal_paymill]');
-                        }
+//                        }
                         ?>
                         <div class="setting-profile-wrapper <?php echo $user_role; ?>">
 <!--                            --><?php //if ($totalPercent != 100) { ?>
