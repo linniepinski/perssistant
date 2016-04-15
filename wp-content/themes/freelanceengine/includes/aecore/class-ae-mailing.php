@@ -718,11 +718,9 @@ class AE_Mailing extends AE_Base
 
     public function disput_opened_for_admin($project_info_output)
     {
-//        $user = get_userdata($user_id);
-$content = '';
+        $content = '';
         $subject = __('Disput form', 'aecore-class-ae-mailing-backend');
 
-//        $output = print_r($project_info_output, true);
         $content .= "[main_content_body]";
         $content .= "<ul>";
         foreach ($project_info_output as $key => $item){
@@ -732,18 +730,10 @@ $content = '';
 
         $content .=  "[/main_content_body]";
 
-//        $content = ae_get_option('ae_disput_mail_'.ICL_LANGUAGE_CODE);
-
-
-        return $this->wp_mail('andrey02122@gmail.com', $subject, $content, array(
+        return $this->wp_mail('dispute@perssistant.com', $subject, $content, array(
 
             'user_id' => 1,
-//            'post' => $project_info_output['ID']
         ));
-
-
-//        return $this->wp_mail($user->user_email, $subject, $content);
-
     }
 
     /**
