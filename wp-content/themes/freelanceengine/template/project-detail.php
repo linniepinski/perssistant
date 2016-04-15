@@ -216,9 +216,9 @@ if ($project_status == 'publish') {
                                 break;
                             case 'opened_disput':
                                 ?>
-                                <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
-                                    <?php _e('Disput', 'projects-page'); ?>
-                                </a>
+<!--                                <a class="btn btn-apply-project-item btn-project-status btn-disput-this">-->
+<!--                                    --><?php //_e('Disput', 'projects-page'); ?>
+<!--                                </a>-->
                                 <?php
                                 break;
                             default:

@@ -140,9 +140,9 @@
                             }
                         } else if($project_status == 'opened_disput'){
                             ?>
-                            <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
-                                <?php _e('Disput', 'single-project-mobile'); ?>
-                            </a>
+<!--                            <a class="btn btn-apply-project-item btn-project-status btn-disput-this">-->
+<!--                                --><?php //_e('Disput', 'single-project-mobile'); ?>
+<!--                            </a>-->
                             <?php
                         } else{
                             $text_status =   array( 'pending'   => __('Pending','single-project-mobile'),
