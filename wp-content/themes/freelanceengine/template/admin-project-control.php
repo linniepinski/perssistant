@@ -44,7 +44,7 @@ if( current_user_can( 'manage_options' )) { ?>
                 <li class="tooltips remove approve"><a class="action" data-action="approve" data-toggle="tooltip" title="<?php _e("Approve", ET_DOMAIN); ?>" data-original-title="<?php _e("Approve", ET_DOMAIN); ?>" href="#"><span class="fa fa-check" data-icon="3"></span></a></li>
                 <li class="tooltips remove reject"><a class="action" data-action="reject" data-toggle="tooltip" title="<?php _e("Reject", ET_DOMAIN); ?>" data-original-title="<?php _e("Reject", ET_DOMAIN); ?>" href="#"><span class="icon color-purple fa fa-times" data-icon="*"></span></a></li>
             <?php }else { ?>
-                <li class="tooltips remove archive"><a class="action" data-action="archive" data-toggle="tooltip" title="<?php _e("Archive", ET_DOMAIN); ?>" data-original-title="<?php _e("Archive", ET_DOMAIN); ?>" href="#"><span class="icon fa fa-trash-o" data-icon="#"></span></a></li>
+                <li class="tooltips remove archive"><a class="action" data-action="archive" data-toggle="tooltip" title="<?php _e("Close", ET_DOMAIN); ?>" data-original-title="<?php _e("Close", ET_DOMAIN); ?>" href="#"><span class="icon fa fa-trash-o" data-icon="#"></span></a></li>
             <?php } 
         } ?>
     </ul>
