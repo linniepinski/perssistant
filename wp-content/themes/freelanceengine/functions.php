@@ -3174,3 +3174,15 @@ if (!function_exists('send_payment_request')) {
 		die(json_encode($response));
 	}
 }
+
+add_action("wp_ajax_ajax_logout", "ajax_logout");
+add_action("wp_ajax_nopriv_ajax_logout", "ajax_logout");
+function ajax_logout(){
+    $response = array();
+    wp_clear_auth_cookie();
+    wp_logout();
+    $response['status'] = true;
+    $response['redirect'] = home_url();
+    $response['msg'] = __("Logout success!", 'functions');
+    wp_send_json($response);
+}

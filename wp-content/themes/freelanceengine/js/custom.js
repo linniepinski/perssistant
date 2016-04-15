@@ -628,6 +628,35 @@ jQuery(document).ready(function () {
 			}
 		});
 	});
+	jQuery('.logout').on('click',function(event){
+		event.preventDefault();
+		jQuery.ajax({
+			type: "post",
+			dataType: "json",
+			url: ajaxurl,
+			data: {
+				action: 'ajax_logout'
+			},
+			beforeSend: function () {
+
+			},
+			success: function (status) {
+				if(status.status){
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+					window.location.href = status.redirect;
+				} else {
+					AE.pubsub.trigger('ae:notification', {
+						msg: status.msg,
+						notice_type: 'success'
+					});
+				}
+			}
+		});
+		return false;
+	});
 });
 
 jQuery(document).ready(function($) {
