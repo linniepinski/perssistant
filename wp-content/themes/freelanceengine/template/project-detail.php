@@ -214,6 +214,13 @@ if ($project_status == 'publish') {
                                 <?php
                                 }
                                 break;
+                            case 'opened_disput':
+                                ?>
+                                <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
+                                    <?php _e('Disput', 'projects-page'); ?>
+                                </a>
+                                <?php
+                                break;
                             default:
                                 $text_status =   array( 'pending'   => __('Pending','projects-page'),
                                                         'draft'     => __('Draft','projects-page'),
@@ -227,6 +234,7 @@ if ($project_status == 'publish') {
                                     <a href="#"  class="btn btn-apply-project-item" ><?php  echo isset($text_status[$convert->post_status]) ? $text_status[$convert->post_status] : ''; ;?></a>
                                     <?php
                                 }
+
                                 break;
                         }
                     }

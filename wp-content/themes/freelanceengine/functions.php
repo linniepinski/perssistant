@@ -665,7 +665,21 @@ class ET_FreelanceEngine extends AE_Base
 
         ));
 
-        
+        register_post_status('opened_disput', array(
+
+            'label' => _x('opened_disput', 'post') ,
+
+            'public' => true,
+
+            'exclude_from_search' => false,
+
+            'show_in_admin_all_list' => true,
+
+            'show_in_admin_status_list' => true,
+
+            'label_count' => _n_noop('opened_disput <span class="count">(%s)</span>', 'opened_disput <span class="count">(%s)</span>') ,
+
+        ));
 
         /** 
 

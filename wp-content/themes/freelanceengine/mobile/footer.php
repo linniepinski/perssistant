@@ -14,6 +14,8 @@
 		
 		if(is_singular(PROJECT)){
 			get_template_part( 'mobile/template-js/bid' , 'item' );
+			get_template_part( 'mobile/template-js/modal' , 'form-disput' );
+
 		}
 		
 		if(is_singular( PROJECT )) {

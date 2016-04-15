@@ -1952,6 +1952,34 @@ class ET_Admin extends AE_Base
                         )
                     )
                 ),
+                array(
+                    'args' => array(
+                        'title' => __("Disput Mail Template", 'admin-backend') ,
+                        'id' => 'ae-receipt_mail',
+                        'class' => 'payment-gateway',
+                        'name' => '',
+                        'toggle' => true,
+                        'desc' => __("Send to users after they finish a payment", 'admin-backend')
+                    ) ,
+                    'fields' => array(
+                        array(
+                            'id' => 'ae_receipt_mail',
+                            'type' => 'textarea',
+                            'title' => __("Disput Mail Template", 'admin-backend') ,
+                            'name' => 'ae_disput_mail_en',
+                            'class' => '',
+                            'reset' => 1
+                        ),
+                        array(
+                            'id' => 'ae_receipt_mail',
+                            'type' => 'textarea',
+                            'title' => __("Disput Mail Template", 'admin-backend') ,
+                            'name' => 'ae_disput_mail_de',
+                            'class' => '',
+                            'reset' => 1
+                        )
+                    )
+                ),
                 
                 array(
                     'args' => array(

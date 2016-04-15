@@ -446,6 +446,9 @@ class Fre_ProjectAction extends AE_PostAction
         if (isset($request['disputed'])) {
             $request['post_status'] = 'disputed';
         }
+        if (isset($request['close_disput'])) {
+            $request['post_status'] = get_post_meta($request['ID'],'post_status_before_disput',true);
+        }
 
         if (isset($request['project_type'])) unset($request['project_type']);
 

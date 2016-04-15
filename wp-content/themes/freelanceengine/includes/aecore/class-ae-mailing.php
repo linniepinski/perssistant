@@ -691,6 +691,60 @@ class AE_Mailing extends AE_Base
 
     }
 
+    public function disput_opened($user_id , $project_info_output)
+    {
+        $user = get_userdata($user_id);
+
+        $subject = __('Project suspended', 'aecore-class-ae-mailing-backend');
+
+        $content = ae_get_option('ae_disput_mail_'.ICL_LANGUAGE_CODE);
+
+        if ($project_info_output['current_user_id'] == $user_id){
+          $this->wp_mail($project_info_output['e_mail'], $subject, $content, array(
+                'user_id' => $user_id,
+                'post' => $project_info_output['ID']
+            ));
+
+        }else{
+          $this->wp_mail($user->user_email, $subject, $content, array(
+                'user_id' => $user_id,
+                'post' => $project_info_output['ID']
+            ));
+
+        }
+        Fre_Notification::project_suspended($user_id,$project_info_output['ID'],$project_info_output['current_user_id']);
+        return true;
+    }
+
+    public function disput_opened_for_admin($project_info_output)
+    {
+//        $user = get_userdata($user_id);
+$content = '';
+        $subject = __('Disput form', 'aecore-class-ae-mailing-backend');
+
+//        $output = print_r($project_info_output, true);
+        $content .= "[main_content_body]";
+        $content .= "<ul>";
+        foreach ($project_info_output as $key => $item){
+            $content .= '<li><b>'.$key.' </b> '.$item.'</li>';
+        }
+        $content .= "</ul>";
+
+        $content .=  "[/main_content_body]";
+
+//        $content = ae_get_option('ae_disput_mail_'.ICL_LANGUAGE_CODE);
+
+
+        return $this->wp_mail('andrey02122@gmail.com', $subject, $content, array(
+
+            'user_id' => 1,
+//            'post' => $project_info_output['ID']
+        ));
+
+
+//        return $this->wp_mail($user->user_email, $subject, $content);
+
+    }
 
     /**
      * send mail function

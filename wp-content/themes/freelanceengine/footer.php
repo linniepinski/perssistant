@@ -107,7 +107,8 @@ if( is_active_sidebar( 'fre-footer-1' )    || is_active_sidebar( 'fre-footer-2' 
 	get_template_part( 'template-js/skill' , 'item' );
     get_template_part( 'template-js/modal' , 'delete-bid' );
     get_template_part( 'template-js/modal' , 'bid-update' );
-    get_template_part( 'template-js/modal' , 'contact-form-disput' );
+//    get_template_part( 'template-js/modal' , 'contact-form-disput' );
+    get_template_part( 'template-js/modal' , 'form-disput' );
     get_template_part( 'template-js/modal' , 'edit-project' );
 
 	if(is_singular('project')){

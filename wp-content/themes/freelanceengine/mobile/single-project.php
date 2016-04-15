@@ -109,6 +109,9 @@
                         }
                         if($project_status == 'close'){
                             if( (int)$project->post_author == $user_ID){ ?>
+                                <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
+                                    <?php _e('Open disput', 'single-project-mobile'); ?>
+                                </a>
                                 <a href="#" class="btn btn-primary btn-close-project"><?php _e("Close", 'single-project-mobile'); ?></a>
                                 <a href="#" id="<?php the_ID();?>"   class="btn btn-primary btn-project-status btn-complete-project btn-complete-mobile" >
                                     <?php  _e('Complete','single-project-mobile');?>
@@ -135,6 +138,12 @@
                                 <a href="#"  class="btn-bid" title="<?php  _e('Completed','single-project-mobile');?>" ><?php  _e('Completed','single-project-mobile');?></a>
                                 <?php 
                             }
+                        } else if($project_status == 'opened_disput'){
+                            ?>
+                            <a class="btn btn-apply-project-item btn-project-status btn-disput-this">
+                                <?php _e('Disput', 'single-project-mobile'); ?>
+                            </a>
+                            <?php
                         } else{
                             $text_status =   array( 'pending'   => __('Pending','single-project-mobile'),
                                                         'draft'     => __('Draft','single-project-mobile'),

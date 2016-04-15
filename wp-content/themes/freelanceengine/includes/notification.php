@@ -215,6 +215,35 @@ class Fre_Notification extends AE_PostAction
 	}
 
     /**
+     * notify employer/freelancer when project suspended
+     * @param int $bid_id the id of bid
+     * @since 1.2
+     * @author Dakachi
+     */
+    function project_suspended($user_id,$project_id,$started_by) {
+//        $bid = get_post($bid_id);
+//        if (!$bid || is_wp_error($bid)) return;
+//
+//        $project_id = $bid->post_parent;
+        $project = get_post($project_id);
+        $user = get_userdata($started_by);
+//        if (!$project || is_wp_error($project)) return;
+
+        $content = 'type=project_suspended&started_by='.$started_by.'&project=' . $project_id;
+
+        // insert notification
+        $notification = array(
+            'post_type' => 'notify',
+            'post_parent' => $project_id,
+            'post_content' => $content,
+            'post_excerpt' => $content,
+            'post_status' => 'publish',
+            'post_author' => $user_id,
+            'post_title' => sprintf(__("%s ", 'notification-backend') , '')
+        );
+        return Fre_Notification::insert($notification);
+    }
+    /**
      * notify freelancer when his bid was accepted by employer
      * @param int $bid_id the id of bid
      * @since 1.2
@@ -533,8 +562,32 @@ class Fre_Notification extends AE_PostAction
                             </span>
                         </div>
                         </a>';
-			        $content.= sprintf(__("%s is vaiting to be paid for %s", 'notification-backend') , $author, $project_link);
+			        $content.= sprintf(__("%s is waiting to be paid for %s", 'notification-backend') , $author, $project_link);
 			        break;
+            case 'project_suspended':
+			        $project_post = get_post($notify->post_parent);
+
+			        $user_profile_id = get_user_meta($project_post->post_author, 'user_profile_id', true);
+
+			        $author = '<a class="user-link" href="'. get_author_posts_url($started_by) .'">
+                        <span class="avatar-freelancer-notification">
+                            ' . get_avatar($started_by, 45) . '
+                        </span>
+                        <div class="profile">
+                            <span class="name">
+                                ' . get_the_author_meta('display_name', $started_by) . '
+                            </span>
+                            <span class="postion-employer">
+                                ' . get_post_meta($user_profile_id, 'et_professional_title', true) . '
+                            </span>
+                        </div>
+                        </a>';
+                if ((int)$started_by == get_current_user_id() ){
+                    $content.= sprintf(__("%s was paused. You opened a dispute.", 'notification-backend') , $project_link);
+                }else{
+                    $content.= sprintf(__("%s was paused. %s opened a dispute.", 'notification-backend') , $project_link, $author);
+                }
+                break;
 
 		        // notify freelancer when employer complete a project
 

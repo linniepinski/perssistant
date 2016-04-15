@@ -57,7 +57,6 @@
                 // fetch model data
                 switch (action) {
                     case 'edit':
-                        alert('fadsfadsf');
                         //trigger an event will be catch by AE.App to open modal edit
                         AE.pubsub.trigger('ae:model:onEdit', model);
                         break;
@@ -144,6 +143,20 @@
                                 view.blockUi.unblock();
                                 if (status.success) {
                                     window.location.href = model.get('permalink');
+                                }
+                            }
+                        });
+                        break;
+                    case 'resolve-project-dispute' :
+                        // publish a model
+                        model.save('close_disput', '1', {
+                            beforeSend: function() {
+                                view.blockUi.block(target);
+                            },
+                            success: function(result, status) {
+                                view.blockUi.unblock();
+                                if (status.success) {
+                                    location.reload();
                                 }
                             }
                         });
@@ -727,10 +740,65 @@ $("a.popup-login").trigger('click');
         AE.Views.Modal_contact_form_disput = AE.Views.Modal_Box.extend({
             el: '#modal_contact_form_disput',
             events: {
-
+                'submit form.form_disput': 'submit_form_disput',
             },
             initialize: function() {
+                AE.Views.Modal_Box.prototype.initialize.apply(this, arguments);
+                this.LoadingButtonNew = new Views.LoadingButtonNew();
+                this.$("form#form_disput").validate({
+                    rules: {
+                        e_mail: "required",
+                        subject: "required",
+                        message: "required",
+                    }
+                    // errorPlacement: function(label, element) {
+                    //     // position error label after generated textarea
+                    //     if (element.is("textarea")) {
+                    //         label.insertAfter(element.next());
+                    //     } else {
+                    //         $(element).closest('div').append(label);
+                    //     }
+                    // }
+                });
+            },
+            submit_form_disput: function(event) {
+                event.preventDefault();
+                var view = this,
+                    $target = $(event.currentTarget),
+                    button = $target.find('button');
+                data = $target.serializeObject() || [];
+                $.ajax({
+                    url: ae_globals.ajaxURL,
+                    type: 'post',
+                    data: data,
+                    beforeSend: function() {
+                        view.LoadingButtonNew.loading(button);
+                    },
+                    success: function(res) {
+                        view.LoadingButtonNew.finish(button);
+                        AE.pubsub.trigger('ae:notification', {
+                            msg: res.msg,
+                            notice_type: res.success
+                        });
+                        if (res.success) {
 
+                            location.reload();
+                            view.$el.modal('hide');
+
+                            //if(ae_globals.ae_is_mobile){
+                            //
+                            //}else{
+                            //
+                            //}
+                        } else {
+                            AE.pubsub.trigger('ae:notification', {
+                                msg: res.msg,
+                                notice_type: 'error'
+                            });
+                        }
+                    }
+                });
+                return false;
             }
         });
         AE.Views.Modal_Bid = AE.Views.Modal_Box.extend({

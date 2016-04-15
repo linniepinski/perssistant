@@ -37,7 +37,9 @@ if( current_user_can( 'manage_options' )) { ?>
             <?php if($post->post_status == 'disputing' ) { ?>
                 <li class="tooltips remove resolve"><a class="action" data-action="resolve-dispute" data-toggle="tooltip" title="<?php _e("Resolve Dispute", ET_DOMAIN); ?>" data-original-title="<?php _e("Resolve", ET_DOMAIN); ?>" href="#"><span class="fa fa-check" data-icon="3"></span></a></li>
             <?php } ?>
-
+            <?php if($post->post_status == 'opened_disput' ) { ?>
+                <li class="tooltips remove resolve"><a class="action" data-action="resolve-project-dispute" data-toggle="tooltip" title="<?php _e("Resolve Dispute", ET_DOMAIN); ?>" data-original-title="<?php _e("Resolve", ET_DOMAIN); ?>" href="#"><span class="fa fa-check" data-icon="3"></span></a></li>
+            <?php } ?>
             <?php if( $post->post_status == 'pending') { ?>
                 <li class="tooltips remove approve"><a class="action" data-action="approve" data-toggle="tooltip" title="<?php _e("Approve", ET_DOMAIN); ?>" data-original-title="<?php _e("Approve", ET_DOMAIN); ?>" href="#"><span class="fa fa-check" data-icon="3"></span></a></li>
                 <li class="tooltips remove reject"><a class="action" data-action="reject" data-toggle="tooltip" title="<?php _e("Reject", ET_DOMAIN); ?>" data-original-title="<?php _e("Reject", ET_DOMAIN); ?>" href="#"><span class="icon color-purple fa fa-times" data-icon="*"></span></a></li>
