@@ -34,7 +34,7 @@ if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key) || e
 		$charge = \Stripe\Charge::create(
 			array(
 				"amount" => $stripe_price, // amount in cents
-				"currency" => "usd",
+				"currency" => "eur",
 				"source" => $stripeToken,
 				"description" => "Perssistant payment",
 				"application_fee" => $comp_fee // amount in cents
