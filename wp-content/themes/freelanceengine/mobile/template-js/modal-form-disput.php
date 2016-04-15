@@ -68,7 +68,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                     </div>
                     <div class="form-group">
                         <label for="login_user_login"><?php _e('Amount', 'modal-disput') ?></label>
-                        <input type="text" class="form-control" name="amount"
+                        <input type="number" min="0" class="form-control" name="amount"
                                placeholder="<?php _e('Enter amount', 'modal-disput') ?>">
                     </div>
                     <div class="form-group">
