@@ -26,7 +26,7 @@ if ($posts->have_posts()) {
         }
     }
     $args = array(
-//        'include' => array_keys($contacts_with),
+        'include' => array_keys($contacts_with),
         'orderby' => 'include',
     );
 
