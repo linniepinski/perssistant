@@ -14,7 +14,6 @@ $profile_id         = get_user_meta($post->post_author,'user_profile_id', true);
 $IsInvitedToProject = (get_post_meta($convert->ID,"invited_{$user_ID}",true) == '1') ? true : false;
 
 $currency           = ae_get_option('content_currency',array('align' => 'left', 'code' => 'USD', 'icon' => '$'));
-
 ?>
 
 
@@ -242,6 +241,40 @@ if ($project_status == 'publish') {
                     </div>
                 </div>
             </div>
+
+	        <?php if(!empty($bid_accepted)){ ?>
+		        <?php $project_paid_by_stripe = get_post_meta($project->ID, 'project_paid_by_stripe', true); ?>
+		        <?php if($project->post_author == $user_ID) { ?>
+			        <?php $bid_accepted_author = get_post_field( 'post_author', $bid_accepted); ?>
+		          <div class="project type-project project-item">
+			          <div class="row">
+				          <div class="col-xs-12">
+					          <span style="float: left; line-height: 32px;">
+						          <?php if(!empty($project_paid_by_stripe) && $project_paid_by_stripe == 'yes'){ ?>
+												<?php _e('Project is paid.','projects-page') ?>
+						          <?php } else { ?>
+							          <?php $bid_budget = get_post_meta($bid_accepted, 'bid_budget', true); ?>
+							          <?php _e('Bid from','projects-page') ?> <a href="<?php echo get_author_posts_url($bid_accepted_author); ?>"><?php echo get_the_author_meta('display_name', $bid_accepted_author) ?></a> (<?php echo $bid_budget ?><?php echo $currency['icon']; ?>) <?php _e('is accepted, please','projects-page') ?>
+							          &nbsp;
+							          <span style="float: right;"><?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, $bid_budget, $project->post_name, strtolower($currency['code'])); ?></span>
+				              <?php } ?>
+					          </span>
+				          </div>
+			          </div>
+		          </div>
+		        <?php } elseif($role == FREELANCER && !empty($project_paid_by_stripe) && $project_paid_by_stripe == 'yes') { ?>
+	            <div class="project type-project project-item">
+		            <div class="row">
+			            <div class="col-xs-12">
+					          <span style="float: left; line-height: 32px;">
+	                    <?php _e('Project is paid.','projects-page') ?>
+				            </span>
+			            </div>
+		            </div>
+	            </div>
+		        <?php } ?>
+	        <?php } ?>
+
                 <?php if( Fre_ReportForm::AccessReport()
                         && ($post->post_status == 'disputing' || $post->post_status == 'disputed')
                         && !isset($_REQUEST['workspace'])

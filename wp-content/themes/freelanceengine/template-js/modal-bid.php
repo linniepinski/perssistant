@@ -48,20 +48,7 @@ global $user_ID, $post; ?><!-- MODAL BIG -->
                                 });
                             </script>
                             <div class="form-group">
-                                <?php
-                                $settings_stripe_secret_key = get_option('settings_stripe_secret_key');
-                                $settings_stripe_public_key = get_option('settings_stripe_public_key');
-                                $settings_company_fee_for_stripe = get_option('settings_company_fee_for_stripe');
-                                if (!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key) && !empty($settings_company_fee_for_stripe)) {
-                                    ?>
-                                    <input type="number" name="bid_budget" id="bid_budget" style="margin-bottom: 10px;"
-                                           data-fee-percentage="<?php echo $settings_company_fee_for_stripe; ?>"
-                                           class="form-control required number calc_price_with_fees" min="1"/>
-                                    <span style="float: right;" class="calc_price_without_fees"></span>
-                                <?php } else { ?>
-                                    <input type="number" name="bid_budget" id="bid_budget"
-                                           class="form-control required number" min="1"/>
-                                <?php } ?>
+                                    <input type="number" name="bid_budget" id="bid_budget" class="form-control required number" min="1"/>
                             </div>
                         </div>
 

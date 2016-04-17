@@ -6,75 +6,71 @@
 
 $error_msg = '';
 
-$settings_stripe_secret_key = get_option('settings_stripe_secret_key');
-$settings_stripe_public_key = get_option('settings_stripe_public_key');
-$settings_stripe_client_id = get_option('settings_stripe_client_id');
-$settings_company_fee_for_stripe = get_option('settings_company_fee_for_stripe');
+$settings_stripe_secret_key = '';
+$settings_stripe_public_key = '';
+$stripe_key = ae_get_option('stripe');
+if(isset($stripe_key['publishable_key']) && !empty($stripe_key['publishable_key']) && isset($stripe_key['secret_key']) && !empty($stripe_key['secret_key'])){
+	$settings_stripe_secret_key = get_option('settings_stripe_secret_key');
+	$settings_stripe_public_key = get_option('settings_stripe_public_key');
+}
 
-if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key) || empty($settings_stripe_client_id)){
+if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key)){
 	$error_msg = "Stripe settings error.";
 } else {
 
-	if(isset($_POST) && !empty($_POST) && isset($_POST['user_stripe_acc']) && !empty($_POST['user_stripe_acc'])){
+	if(isset($_POST) && !empty($_POST) && isset($_POST['stripe_price']) && !empty($_POST['stripe_price'])){
 
 		require_once(get_template_directory().'/inc/stripe/init.php');
 
 		\Stripe\Stripe::setApiKey($settings_stripe_secret_key);
 
 		$stripe_price = isset($_POST['stripe_price']) ? $_POST['stripe_price'] : '';
-		$user_stripe_acc = isset($_POST['user_stripe_acc']) ? $_POST['user_stripe_acc'] : '';
+		$stripe_currency = isset($_POST['stripe_currency']) ? $_POST['stripe_currency'] : '';
 		$bid_id = isset($_POST['bid_id']) ? $_POST['bid_id'] : '';
+		$project_author_email = isset($_POST['project_author_email']) ? $_POST['project_author_email'] : '';
 		$project_slug = isset($_POST['project_slug']) ? $_POST['project_slug'] : '';
+		$project_id = isset($_POST['project_id']) ? $_POST['project_id'] : '';
 		$stripeToken = isset($_POST['stripeToken']) ? $_POST['stripeToken'] : '';
 		$stripeTokenType = isset($_POST['stripeTokenType']) ? $_POST['stripeTokenType'] : '';
 		$stripeEmail = isset($_POST['stripeEmail']) ? $_POST['stripeEmail'] : '';
 
-		$comp_fee = ceil($stripe_price * $settings_company_fee_for_stripe / 100);
 
-		$charge = \Stripe\Charge::create(
-			array(
-				"amount" => $stripe_price, // amount in cents
-				"currency" => "eur",
-				"source" => $stripeToken,
-				"description" => "Perssistant payment",
-				"application_fee" => $comp_fee // amount in cents
-			),
-			array("stripe_account" => $user_stripe_acc)
-		);
+		try {
 
+			\Stripe\Stripe::setApiKey($stripe_key['secret_key']);
 
-		if($charge['status'] == 'succeeded') {
+			$customer = \Stripe\Customer::create(array(
+				'card' => $stripeToken,
+				'description' => 'Customer from ' . home_url() ,
+				'email' => $stripeEmail
+			));
 
-			$this_bid = array(
-				'ID'           => $bid_id,
-				'post_status'  => 'complete',
-			);
-			wp_update_post($this_bid);
+			$customer_id = $customer->id;
 
-			$this_bid_post = get_post($bid_id);
-			$this_bid = array(
-				'ID'           => $this_bid_post->post_parent,
-				'post_status'  => 'complete',
-			);
-			wp_update_post($this_bid);
+			$charge = \Stripe\Charge::create(array(
+				'amount' => $stripe_price,
+				'currency' => $stripe_currency,
 
-			$curent_account_cash_balance = get_user_meta($this_bid_post->post_author, 'account_cash_balance', true);
-			if($curent_account_cash_balance != ''){
-				$new_balance = (int)$curent_account_cash_balance + ((int)$stripe_price - (int)$comp_fee - 33);
-				update_user_meta($this_bid_post->post_author, 'account_cash_balance', $new_balance);
-			} else {
-				$new_balance = (int)$stripe_price - (int)$comp_fee - 33;
-				add_user_meta($this_bid_post->post_author, 'account_cash_balance', $new_balance);
+				//'card' 		=> $token,
+				'customer' => $customer_id
+			));
+
+			if($charge['status'] == 'succeeded') {
+
+				$project_paid_by_stripe = get_post_meta($project_id, 'project_paid_by_stripe', true);
+				if(!empty($project_paid_by_stripe)){
+					update_post_meta($project_id, 'project_paid_by_stripe', 'yes');
+				} else {
+					add_post_meta($project_id, 'project_paid_by_stripe', 'yes');
+				}
+
+				wp_redirect(get_home_url().'/project/'.$project_slug , 301); exit;
 			}
-			
-			$bid_paid_by_stripe = get_post_meta($bid_id, 'bid_paid_by_stripe', true);
-			if(!empty($bid_paid_by_stripe)){
-				update_post_meta($bid_id, 'bid_paid_by_stripe', 'yes');
-			} else {
-				add_post_meta($bid_id, 'bid_paid_by_stripe', 'yes');
-			}
-			$notification = Fre_Notification::bidPaid($bid_id);
-			wp_redirect(get_home_url().'/project/'.$project_slug , 301); exit;
+
+		}
+		catch(Exception $e) {
+			$value  =   $e->getJsonBody();
+			$error_msg =  $value['error']['message'];
 		}
 
 

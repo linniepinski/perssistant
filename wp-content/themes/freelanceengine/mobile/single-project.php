@@ -19,7 +19,7 @@
         $exp                = $convert->et_expired_date;
         $IsInvitedToProject = (get_post_meta($convert->ID,"invited_{$user_ID}",true) == '1') ? true : false;
         ?>
-
+<?php $role = ae_user_role(); ?>
 	<div class="info-single-project-wrapper">
     	<div class="container">
             <div class="info-project-top">
@@ -40,6 +40,37 @@
                 </span>
             </div>
         </div>
+
+				<?php if(!empty($bid_accepted)){ ?>
+					<?php $project_paid_by_stripe = get_post_meta($project->ID, 'project_paid_by_stripe', true); ?>
+					<?php if($project->post_author == $user_ID) { ?>
+						<?php $bid_accepted_author = get_post_field( 'post_author', $bid_accepted); ?>
+					    <div class="container">
+						    <div class="info-bottom" style="border-top: 1px solid #dcdfe3; padding-top: 10px; margin: 10px 0;">
+				          <span style="float: left; line-height: 32px; text-align: center; width: 100%;">
+					          <?php if(!empty($project_paid_by_stripe) && $project_paid_by_stripe == 'yes'){ ?>
+						          <?php _e('Project is paid.','projects-page') ?>
+					          <?php } else { ?>
+						          <?php $bid_budget = get_post_meta($bid_accepted, 'bid_budget', true); ?>
+						          <?php _e('Bid from','projects-page') ?> <a href="<?php echo get_author_posts_url($bid_accepted_author); ?>"><?php echo get_the_author_meta('display_name', $bid_accepted_author) ?></a> (<?php echo $bid_budget ?><?php echo $currency['icon']; ?>) <?php _e('is accepted, please','projects-page') ?>
+						          &nbsp;
+						          <?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, $bid_budget, $project->post_name, strtolower($currency['code'])); ?>
+					          <?php } ?>
+				          </span>
+							</div>
+						</div>
+					<?php } elseif($role == FREELANCER && !empty($project_paid_by_stripe) && $project_paid_by_stripe == 'yes') { ?>
+					    <div class="container">
+						    <div class="info-bottom" style="border-top: 1px solid #dcdfe3; padding-top: 10px; margin: 10px 0;">
+				          <span style="float: left; line-height: 32px;">
+		                <?php _e('Project is paid.','projects-page') ?>
+			            </span>
+								</div>
+							</div>
+					<?php } ?>
+				<?php } ?>
+
+
     </div>
     <div class="info-bid-wrapper">
         <ul class="bid-top">

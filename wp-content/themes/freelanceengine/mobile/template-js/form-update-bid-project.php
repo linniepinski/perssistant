@@ -34,19 +34,7 @@ global $wp_query, $ae_post_factory, $user_ID, $post;
             }
         }
         ?>
-
-		    <?php
-		    $settings_stripe_secret_key = get_option('settings_stripe_secret_key');
-		    $settings_stripe_public_key = get_option('settings_stripe_public_key');
-		    $settings_company_fee_for_stripe = get_option('settings_company_fee_for_stripe');
-		    if(!empty($settings_stripe_secret_key) && !empty($settings_stripe_public_key) && !empty($settings_company_fee_for_stripe)){
-			    $calc_price = $bid_update - (ceil($bid_update * $settings_company_fee_for_stripe) / 100 + 0.33);
-			    ?>
-			    <input type="number" name="bid_budget" id="bid_budget_update" style="margin-bottom: 10px;" data-fee-percentage="<?php echo $settings_company_fee_for_stripe; ?>" class="form-control required number calc_price_with_fees" min="1" value="<?php echo $bid_update; ?>" />
-			    <span style="float: right;" class="calc_price_without_fees">For you, without taxes and fees  <?php echo $calc_price; ?></span>
-		    <?php } else { ?>
 			    <input type="number" name="bid_budget" id="bid_budget_update" class="form-control required number" min="1" value="<?php echo $bid_update; ?>"/>
-		    <?php } ?>
     </div>
     <div class="clearfix"></div>
 

@@ -3132,46 +3132,26 @@ if($stripe_result_page){
 	update_post_meta($new_page_id, '_wp_page_template', 'page-stripe-results.php');
 }
 
-function printStripePaymentForm($user_id, $bid_id, $price, $project_slug) {
-	$settings_stripe_public_key = get_option('settings_stripe_public_key');
-	$users_stripe_account_id = get_user_meta($user_id, 'stripe_account_id', true);
-	$stripePrice = $price * 100;
+function printStripePaymentForm($project_id, $project_author_id, $bid_id, $price, $project_slug, $string_currency) {
 
-	$form = '';
-	if(!empty($settings_stripe_public_key) && !empty($users_stripe_account_id)){
+	$stripe_key = ae_get_option('stripe');
+	if(isset($stripe_key['publishable_key']) && !empty($stripe_key['publishable_key']) && isset($stripe_key['secret_key']) && !empty($stripe_key['secret_key'])){
+
+		$project_author_email = get_the_author_meta('user_email', $project_author_id);
+		$settings_stripe_public_key = $stripe_key['publishable_key'];
+		$stripePrice = $price * 100;
+
+		$form = '';
 		$form .= '<form action="'.site_url().'/stripe-result-page" class="made_stripe_payment_js" method="post" style="min-width: 130px;">';
 		$form .= '<script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="'.$settings_stripe_public_key.'" data-amount="'.$stripePrice.'" data-description="Perssistant payment"></script>';
 		$form .= '<input name="stripe_price" value="'.$stripePrice.'" type="hidden" />';
-		$form .= '<input name="user_stripe_acc" value="'.$users_stripe_account_id.'" type="hidden" />';
+		$form .= '<input name="stripe_currency" value="'.$string_currency.'" type="hidden" />';
 		$form .= '<input name="bid_id" value="'.$bid_id.'" type="hidden" />';
+		$form .= '<input name="project_author_email" value="'.$project_author_email.'" type="hidden" />';
 		$form .= '<input name="project_slug" value="'.$project_slug.'" type="hidden" />';
+		$form .= '<input name="project_id" value="'.$project_id.'" type="hidden" />';
 		$form .= '</form>';
-	} elseif(empty($users_stripe_account_id)){
-		$form .= '<p>'. __("User hasn't connect stripe account", 'functions') .'</p>';
-	}
-  echo $form;
-}
-
-add_action("wp_ajax_send_payment_request", "send_payment_request");
-add_action("wp_ajax_nopriv_send_payment_request", "send_payment_request");
-
-if (!function_exists('send_payment_request')) {
-	function send_payment_request() {
-
-		$response['status'] = 'aaa';
-		$bid_id = trim($_POST['bid_id']);
-		if($bid_id != '') {
-			$bid_payment_request_sent = get_post_meta($bid_id, 'bid_payment_request_sent', true);
-			if(!empty($bid_payment_request_sent)){
-				update_post_meta($bid_id, 'bid_payment_request_sent', 'yes');
-			} else {
-				add_post_meta($bid_id, 'bid_payment_request_sent', 'yes');
-			}
-
-			Fre_Notification::bidPaymentRequest($bid_id);
-			$response['status'] = '01';
-		}
-		die(json_encode($response));
+	  echo $form;
 	}
 }
 
