@@ -676,6 +676,74 @@ jQuery(document).ready(function($) {
     });
   });
 
+  jQuery('.freelancer_send_payment_request_js').on('click',function(){
+    var me = jQuery(this);
+    var project_id = me.attr('data-project-id');
+    var project_author_id = me.attr('data-project-author-id');
+    var project_slug = me.attr('data-project-slug');
+
+    jQuery.ajax({
+      url: myAjax.ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'freelancer_send_payment_request',
+        project_id: project_id,
+        project_author_id: project_author_id
+      },
+      dataType: 'json',
+      success: function(response) {
+        if(response.status == '01'){
+          window.location = ae_globals.homeURL+'/project/'+project_slug;
+        }
+      }
+    });
+  });
+
+  jQuery('.author_approve_payment_request_js').on('click',function(){
+    var me = jQuery(this);
+    var project_id = me.attr('data-project-id');
+    var bid_author_email = me.attr('data-bid-author-email');
+    var project_slug = me.attr('data-project-slug');
+
+    jQuery.ajax({
+      url: myAjax.ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'author_approve_payment_request',
+        project_id: project_id,
+        bid_author_email: bid_author_email
+      },
+      dataType: 'json',
+      success: function(response) {
+        if(response.status == '01'){
+          window.location = ae_globals.homeURL+'/project/'+project_slug;
+        }
+      }
+    });
+  });
+
+  jQuery('.author_cancel_payment_request_js').on('click',function(){
+    var me = jQuery(this);
+    var project_id = me.attr('data-project-id');
+    var bid_author_email = me.attr('data-bid-author-email');
+    var project_slug = me.attr('data-project-slug');
+
+    jQuery.ajax({
+      url: myAjax.ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'author_cancel_payment_request',
+        project_id: project_id,
+        bid_author_email: bid_author_email
+      },
+      dataType: 'json',
+      success: function(response) {
+        if(response.status == '01'){
+          window.location = ae_globals.homeURL+'/project/'+project_slug;
+        }
+      }
+    });
+  });
 
 });
 

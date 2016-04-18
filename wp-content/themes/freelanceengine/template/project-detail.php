@@ -246,17 +246,34 @@ if ($project_status == 'publish') {
 		        <?php $project_paid_by_stripe = get_post_meta($project->ID, 'project_paid_by_stripe', true); ?>
 		        <?php if($project->post_author == $user_ID) { ?>
 			        <?php $bid_accepted_author = get_post_field( 'post_author', $bid_accepted); ?>
+			        <?php $bid_author_id = get_post_field('post_author', $bid_accepted ); ?>
+			        <?php $bid_author_email = get_the_author_meta('user_email', $bid_author_id); ?>
 		          <div class="project type-project project-item">
 			          <div class="row">
 				          <div class="col-xs-12">
 					          <span style="float: left; line-height: 32px;">
 						          <?php if(!empty($project_paid_by_stripe) && $project_paid_by_stripe == 'yes'){ ?>
-												<?php _e('Project is paid.','projects-page') ?>
+												<?php _e('The money is reserved.','projects-page') ?>
+							          <?php $freelancer_send_payment_request = get_post_meta($project->ID, 'freelancer_send_payment_request', true); ?>
+							          <?php if(!empty($freelancer_send_payment_request) && $freelancer_send_payment_request == 'yes'){ ?>
+								          <?php $author_approve_payment_request = get_post_meta($project->ID, 'author_approve_payment_request', true); ?>
+								          <?php if(empty($author_approve_payment_request) || $author_approve_payment_request != 'yes' ){ ?>
+									          &nbsp;
+									          <?php _e('Project is finished:','projects-page'); ?>
+									          &nbsp;
+									          <a href="javascript:void(0)" class="btn btn-apply-project-item author_cancel_payment_request_js" data-project-id="<?php echo $project->ID ?>" data-project-slug="<?php echo $project->post_name ?>" data-bid-author-email="<?php echo $bid_author_email ?>" style="width: 100px; max-width: 100px;"><?php _e('Decline','projects-page') ?></a>
+								            &nbsp;
+									          <a href="javascript:void(0)" class="btn btn-apply-project-item author_approve_payment_request_js" data-project-id="<?php echo $project->ID ?>" data-project-slug="<?php echo $project->post_name ?>" data-bid-author-email="<?php echo $bid_author_email ?>" style="width: 100px; max-width: 100px;"><?php _e('Approve','projects-page') ?></a>
+							            <?php } else { ?>
+										        &nbsp;
+										        <?php _e('Project is marked as finished.','projects-page') ?>
+									        <?php } ?>
+							          <?php } ?>
 						          <?php } else { ?>
 							          <?php $bid_budget = get_post_meta($bid_accepted, 'bid_budget', true); ?>
-							          <?php _e('Bid from','projects-page') ?> <a href="<?php echo get_author_posts_url($bid_accepted_author); ?>"><?php echo get_the_author_meta('display_name', $bid_accepted_author) ?></a> (<?php echo $bid_budget ?><?php echo $currency['icon']; ?>) <?php _e('is accepted, please','projects-page') ?>
+							          <?php _e('Bid from','projects-page') ?> <a href="<?php echo get_author_posts_url($bid_accepted_author); ?>"><?php echo get_the_author_meta('display_name', $bid_accepted_author) ?></a> <?php echo $bid_budget ?><?php echo $currency['icon']; ?> (<?php echo ceil($bid_budget*1.08) ?><?php echo $currency['icon']; ?> <?php _e('with site fee','projects-page') ?>) <?php _e('is accepted, please','projects-page') ?>
 							          &nbsp;
-							          <span style="float: right;"><?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, $bid_budget, $project->post_name, strtolower($currency['code'])); ?></span>
+							          <span style="float: right;"><?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, ceil($bid_budget*1.08), $project->post_name, strtolower($currency['code'])); ?></span>
 				              <?php } ?>
 					          </span>
 				          </div>
@@ -267,12 +284,21 @@ if ($project_status == 'publish') {
 		            <div class="row">
 			            <div class="col-xs-12">
 					          <span style="float: left; line-height: 32px;">
-	                    <?php _e('Project is paid.','projects-page') ?>
+	                    <?php _e('The money is reserved.','projects-page') ?>
+						          <?php $freelancer_send_payment_request = get_post_meta($project->ID, 'freelancer_send_payment_request', true); ?>
+											<?php if(empty($freelancer_send_payment_request) || $freelancer_send_payment_request != 'yes'){ ?>
+							          &nbsp;
+							          <a href="javascript:void(0)" class="btn btn-apply-project-item freelancer_send_payment_request_js" data-project-id="<?php echo $project->ID ?>" data-project-slug="<?php echo $project->post_name ?>" data-project-author-id="<?php echo $project->post_author ?>" style="width: 220px; max-width: 220px;"><?php _e('Mark project as finished','projects-page') ?></a>
+				              <?php } else { ?>
+												&nbsp;
+												<?php _e('Payment request is sent.','projects-page') ?>
+			                <?php } ?>
 				            </span>
 			            </div>
 		            </div>
 	            </div>
 		        <?php } ?>
+
 	        <?php } ?>
 
                 <?php if( Fre_ReportForm::AccessReport()

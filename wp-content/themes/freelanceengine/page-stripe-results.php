@@ -57,6 +57,8 @@ if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key)){
 
 			if($charge['status'] == 'succeeded') {
 
+				wp_mail(get_site_option('admin_email'), 'Project payment', 'Hi admin,<br /><br />The project ('.get_the_title($project_id).'), project id: ('.$project_id.') is paid.');
+
 				$project_paid_by_stripe = get_post_meta($project_id, 'project_paid_by_stripe', true);
 				if(!empty($project_paid_by_stripe)){
 					update_post_meta($project_id, 'project_paid_by_stripe', 'yes');

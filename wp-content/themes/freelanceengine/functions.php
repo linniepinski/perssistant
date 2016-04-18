@@ -3108,7 +3108,7 @@ add_action('login_head', 'custom_login_css');
 include 'includes/price_range.php';
 
 
-require_once('inc/admin-menu-extended.inc.php');
+//require_once('inc/admin-menu-extended.inc.php');
 
 $page_args = array('name' => 'stripe-result-page', 'post_type' => 'page');
 $stripe_result_page = get_posts($page_args);
@@ -3154,6 +3154,101 @@ function printStripePaymentForm($project_id, $project_author_id, $bid_id, $price
 	  echo $form;
 	}
 }
+
+add_action("wp_ajax_freelancer_send_payment_request", "freelancer_send_payment_request");
+add_action("wp_ajax_nopriv_freelancer_send_payment_request", "freelancer_send_payment_request");
+
+if (!function_exists('freelancer_send_payment_request')) {
+	function freelancer_send_payment_request() {
+
+		$response['status'] = '';
+		$project_id = isset($_POST['project_id']) ? trim($_POST['project_id']) : '';
+		$project_author_id = isset($_POST['project_author_id']) ? $_POST['project_author_id'] : '';
+
+		if($project_id != '' && $project_author_id != '') {
+
+			$project_author_email = get_the_author_meta('user_email', $project_author_id);
+			wp_mail(get_site_option('admin_email'), 'Virtual assistant marked project as finished', 'Hi admin,<br /><br />The virtual assistant is marked project ('.get_the_title($project_id).') as finished.' );
+			wp_mail($project_author_email, 'Virtual assistant marked project as finished', 'Hi,<br /><br />The virtual assistant is marked project ('.get_the_title($project_id).') as finished.' );
+
+			$freelancer_send_payment_request = get_post_meta($project_id, 'freelancer_send_payment_request', true);
+			if(!empty($freelancer_send_payment_request)){
+				update_post_meta($project_id, 'freelancer_send_payment_request', 'yes');
+			} else {
+				add_post_meta($project_id, 'freelancer_send_payment_request', 'yes');
+			}
+
+			$author_approve_payment_request = get_post_meta($project_id, 'author_approve_payment_request', true);
+			if(!empty($author_approve_payment_request)){
+				update_post_meta($project_id, 'author_approve_payment_request', 'no');
+			} else {
+				add_post_meta($project_id, 'author_approve_payment_request', 'no');
+			}
+
+			$response['status'] = '01';
+		}
+		die(json_encode($response));
+	}
+}
+
+add_action("wp_ajax_author_approve_payment_request", "author_approve_payment_request");
+add_action("wp_ajax_nopriv_author_approve_payment_request", "author_approve_payment_request");
+
+if (!function_exists('author_approve_payment_request')) {
+	function author_approve_payment_request() {
+
+		$response['status'] = '';
+		$project_id = isset($_POST['project_id']) ? trim($_POST['project_id']) : '';
+		$bid_author_email = isset($_POST['bid_author_email']) ? $_POST['bid_author_email'] : '';
+
+		if($project_id != '') {
+
+			wp_mail(get_site_option('admin_email'), 'Author marked project as finished', 'Hi admin,<br /><br />The author marked project ('.get_the_title($project_id).') as finished.' );
+			if($bid_author_email != '') {
+				wp_mail($bid_author_email, 'Author marked project as finished', 'Hi,<br /><br />The author marked project ('.get_the_title($project_id).') as finished.' );
+			}
+			$author_approve_payment_request = get_post_meta($project_id, 'author_approve_payment_request', true);
+			if(!empty($author_approve_payment_request)){
+				update_post_meta($project_id, 'author_approve_payment_request', 'yes');
+			} else {
+				add_post_meta($project_id, 'author_approve_payment_request', 'yes');
+			}
+
+			$response['status'] = '01';
+		}
+		die(json_encode($response));
+	}
+}
+
+add_action("wp_ajax_author_cancel_payment_request", "author_cancel_payment_request");
+add_action("wp_ajax_nopriv_author_cancel_payment_request", "author_cancel_payment_request");
+
+if (!function_exists('author_cancel_payment_request')) {
+	function author_cancel_payment_request() {
+
+		$response['status'] = '';
+		$project_id = isset($_POST['project_id']) ? trim($_POST['project_id']) : '';
+		$bid_author_email = isset($_POST['bid_author_email']) ? $_POST['bid_author_email'] : '';
+
+		if($project_id != '') {
+
+			if($bid_author_email != '') {
+				wp_mail($bid_author_email, 'Author decline VA request', 'Hi,<br /><br />Your rwkuest to mark project ('.get_the_title($project_id).') as finished is declined by project author.' );
+			}
+			$freelancer_send_payment_request = get_post_meta($project_id, 'freelancer_send_payment_request', true);
+			if(!empty($freelancer_send_payment_request)){
+				update_post_meta($project_id, 'freelancer_send_payment_request', 'no');
+			} else {
+				add_post_meta($project_id, 'freelancer_send_payment_request', 'no');
+			}
+
+			$response['status'] = '01';
+		}
+		die(json_encode($response));
+	}
+}
+
+
 
 add_action("wp_ajax_ajax_logout", "ajax_logout");
 add_action("wp_ajax_nopriv_ajax_logout", "ajax_logout");
