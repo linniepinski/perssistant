@@ -273,8 +273,34 @@ if ($project_status == 'publish') {
 							          <?php $bid_budget = get_post_meta($bid_accepted, 'bid_budget', true); ?>
 							          <?php _e('Bid from','projects-page') ?> <a href="<?php echo get_author_posts_url($bid_accepted_author); ?>"><?php echo get_the_author_meta('display_name', $bid_accepted_author) ?></a> <?php echo $bid_budget ?><?php echo $currency['icon']; ?> (<?php echo ceil($bid_budget*1.08) ?><?php echo $currency['icon']; ?> <?php _e('with site fee','projects-page') ?>) <?php _e('is accepted, please','projects-page') ?>
 							          &nbsp;
-							          <span style="float: right;"><?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, ceil($bid_budget*1.08), $project->post_name, strtolower($currency['code'])); ?></span>
+
+											 <?php $testmode = ae_get_option('test_mode'); ?>
+											 <?php $form_action = ($testmode) ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : "https://www.paypal.com/cgi-bin/webscr"; ?>
+							          <?php $et_paypal_api = get_option('et_paypal_api'); ?>
+												<?php if(!empty($et_paypal_api)){ ?>
+													<?php if(isset($et_paypal_api['enable']) && $et_paypal_api['enable'] == 1 && isset($et_paypal_api['api_username']) && !empty($et_paypal_api['api_username'])){ ?>
+									          <div style="float: right;">
+										          <form name="_xclick" action="<?php echo $form_action; ?>" method="post">
+											          <input type="hidden" name="cmd" value="_xclick">
+											          <input type="hidden" name="business" value="<?php echo $et_paypal_api['api_username']; ?>">
+											          <input type="hidden" name="currency_code" value="<?php echo strtoupper($currency['code']) ?>">
+											          <input type="hidden" name="item_name" value="<?php echo $project->post_name; ?>">
+											          <input type="hidden" name="item_number" value="<?php echo $project->ID; ?>">
+
+											          <input type="hidden" name="amount" value="<?php echo (ceil($bid_budget*1.08)) ?>">
+											          <input type="hidden" name="notify_url" value="<?php echo get_home_url() ?>/notyfy">
+											          <input type="hidden" name="return" value="<?php echo get_home_url() ?>/stripe-result-page?type=pp&id=<?php echo $project->ID; ?>">
+											          <a href="javascript:void(0)" class="btn btn-apply-project-item" onclick="jQuery(this).closest('form').submit();" style="width: 140px; max-width: 140px;">Pay by PayPal</a>
+										          </form>
+									          </div>
+					                <?php } ?>
+							          <?php } ?>
+
+							          <span style="float: right;">
+								          <?php printStripePaymentForm($project->ID, $project->post_author, $bid_accepted, ceil($bid_budget*1.08), $project->post_name, strtolower($currency['code'])); ?>
+							          </span>
 				              <?php } ?>
+
 					          </span>
 				          </div>
 			          </div>

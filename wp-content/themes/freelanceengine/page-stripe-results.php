@@ -96,6 +96,32 @@ if(empty($settings_stripe_secret_key) || empty($settings_stripe_public_key)){
 
 	}
 
+	if(is_user_logged_in() && isset($_GET['type']) && $_GET['type'] == 'pp' && isset($_GET['id']) && isset($_POST['item_number']) && $_GET['id'] == $_POST['item_number']){
+		$et_paypal_api = get_option('et_paypal_api');
+		if(!empty($et_paypal_api)){
+			if(isset($et_paypal_api['enable']) && $et_paypal_api['enable'] == 1 && isset($et_paypal_api['api_username']) && !empty($et_paypal_api['api_username'])){
+
+				if(isset($_POST['payment_status']) && $_POST['payment_status'] == 'Completed'){
+					wp_mail(get_site_option('admin_email'), 'Project payment', 'Hi admin,<br /><br />The project ('.get_the_title($_POST['item_number']).'), project id: ('.$_POST['item_number'].') is paid.');
+
+					$project_paid_by_stripe = get_post_meta($_POST['item_number'], 'project_paid_by_stripe', true);
+					if(!empty($project_paid_by_stripe)){
+						update_post_meta($_POST['item_number'], 'project_paid_by_stripe', 'yes');
+					} else {
+						add_post_meta($_POST['item_number'], 'project_paid_by_stripe', 'yes');
+					}
+
+					wp_redirect(get_the_permalink($_POST['item_number']) , 301); exit;
+				} else {
+					$error_msg = "PayPal payment error.";
+				}
+
+			} else {
+				$error_msg = "PayPal settings error.";
+			}
+		}
+	}
+
 	if (isset($_GET['code'])) { // Redirect w/ code
 		$code = $_GET['code'];
 
